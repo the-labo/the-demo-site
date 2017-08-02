@@ -1,0 +1,23 @@
+/**
+ * Bud file for resource
+ */
+'use strict'
+
+module.exports = [
+  'AliasResource',
+  'RoleResource',
+  'SignResource',
+  'UserResource',
+  'ProfileResource'
+].map((name) => ({
+  force: false,
+  mode: '644',
+  path: `${name}.js`,
+  data: {
+    name
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

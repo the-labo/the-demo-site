@@ -1,0 +1,100 @@
+{
+  "app": {
+    "APP_NAME": "the-demo-site"
+  },
+  "buttons": {
+    "DO_ADD": "Add",
+    "DO_CANCEL": "Cancel",
+    "DO_CREATE": "Create",
+    "DO_DELETE": "Delete",
+    "DO_EXECUTE": "Execute",
+    "DO_OK": "OK",
+    "DO_SAVE": "Save",
+    "DO_SIGNIN": "Sign In",
+    "DO_SIGNOUT": "Sign Out",
+    "DO_SIGNUP": "Sign Up",
+    "DO_SUBMIT": "Submit",
+    "DO_UPDATE": "Update",
+    "SHOW_ABOUT": "About",
+    "SHOW_LIST": "List",
+    "SHOW_MORE": "Show More",
+    "SHOW_NEW_ACCOUNT": "Create new Account",
+    "SHOW_PASSWORD_EDIT": "Change Password",
+    "SHOW_PASSWORD_EDIT_AGAIN": "Edit Again",
+    "SHOW_PASSWORD_RESET": "Forgot Password?",
+    "SHOW_PRIVACY_POLICY": "Privacy Policy",
+    "SHOW_TERMS_OF_USE": "Terms of Use"
+  },
+  "checks": {
+    "SURE_TO_DELETE": "I'm sure to delete"
+  },
+  "errors": {
+    "LENGTH_OUT_OF_RANGE_ERROR": "Invalid length",
+    "MULTIPLE_NOT_ALLOWED_ERROR": "Cannot be multiple",
+    "OUT_OF_RANGE_ERROR": "Out of range",
+    "PASSWORD_WRONG": "Password is wrong",
+    "PATTERN_NOT_MATCHED_ERROR": "Invalid value",
+    "RESOURCE_NOT_FOUND_ERROR": "Resource not found",
+    "SIGNIN_FAILED_ERROR": "#{labels.SIGN_KEY} or #{labels.USER_PASSWORD} is wrong",
+    "UNEXPECTED_ERROR": "Sorry! Something go wrong!",
+    "UNEXPECTED_TYPE_ERROR": "Unexpected type",
+    "UNEXPECTED_VALUE_ERROR": "Unexpected value",
+    "UNIQUE_VIOLATION_ERROR": "Already taken",
+    "USER_NOT_FOUND_ERROR": "User not found",
+    "VALIDATION_FAILED_ERROR": "There is input deficiencies",
+    "VALUE_MISSING_ERROR": "Required"
+  },
+  "labels": {
+    "ACTIONS": "Actions",
+    "NEW_PASSWORD": "New Password",
+    "USER_NAME": "Username",
+    "USER_PASSWORD": "Password",
+    "USER_PROFILE_NAME": "Display Name",
+    "USER_SIGNIN_AT": "Last Sign In"
+  },
+  "messages": {
+    "PAGE_NOT_FOUND": "Sorry! Page not found...",
+    "WORKING_DONE": "Done!",
+    "WORKING_SIGNOUT": "Signing out..."
+  },
+  "org": {
+    "ORG_EMAIL": "__email_of_your_org__",
+    "ORG_HOMEPAGE": "__homepage_or_your_org__",
+    "ORG_NAME": "__name_of_your_org__"
+  },
+  "placeholders": {
+    "USER_NAME": "e.g. johndo",
+    "USER_PASSWORD": "Password",
+    "USER_PROFILE_NAME": "e.g. John Do"
+  },
+  "titles": {
+    "ACCOUNT_PASSWORD_TITLE": "Password Change",
+    "ACCOUNT_PROFILE_TITLE": "Account Profile",
+    "ADMIN_GUARD_TITLE": "#{app.APP_NAME} for ADMIN",
+    "ADMIN_TOP_TITLE": "Admin Menu",
+    "ADMIN_USERS_TITLE": "User Management",
+    "PASSWORD_RESET_TITLE": "Password Reset",
+    "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
+    "SIGNIN_VIEW_TITLE": "Sign In",
+    "SIGNOUT_VIEW_TITLE": "Sign Out",
+    "SIGNUP_VIEW_TITLE": "Sign Up",
+    "TERMS_OF_USE_VIEW_TITLE": "Terms of Use",
+    "USERS_DESTROY_CONFIRM_TITLE": "Destroy Users",
+    "USERS_PASSWORD_RESET_CONFIRM_TITLE": "Password Reset",
+    "USERS_PASSWORD_RESET_RESULT_TITLE": "New Passwords"
+  },
+  "roleCodes": {
+    "ADMIN_ROLE": "Admin",
+    "NORMAL_ROLE": "Normal"
+  },
+  "toasts": {
+    "NEEDS_SIGN_IN": "You need Sign In",
+    "PASSWORD_UPDATE_DID_SUCCESS": "Password did updated",
+    "PROFILE_UPDATE_DID_SUCCESS": "Profile did updated",
+    "REPORT_SEND_DID_SUCCESS": "Data sent!",
+    "SIGNIN_DID_SUCCESS": "Sign in done",
+    "SIGNOUT_DID_SUCCESS": "Sign out done",
+    "SIGNUP_DID_SUCCESS": "Sign up succeeded!",
+    "USER_DESTROY_DID_SUCCESS": "User destroyed"
+  }
+}

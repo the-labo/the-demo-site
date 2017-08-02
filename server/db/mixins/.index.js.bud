@@ -1,0 +1,14 @@
+'use strict'
+
+const {dir} = require('the-templates')
+
+module.exports = dir({
+  dirname: __dirname,
+  node: true,
+  name: 'mixins',
+  description: 'Resource mixins'
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

@@ -1,0 +1,13 @@
+'use strict'
+
+const { dir } = require('the-templates')
+
+module.exports = dir({
+  dirname: __dirname,
+  name: 'wrappers',
+  description: 'HOC Wrappers'
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

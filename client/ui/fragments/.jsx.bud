@@ -1,0 +1,31 @@
+/**
+ * Bud file for fragment components
+ */
+'use strict'
+
+const path = require('path')
+
+module.exports = [
+  'dialogs/AdminPasswordResetConfirmDialog',
+  'dialogs/AdminPasswordResetResultDialog',
+  'dialogs/AdminUserDestroyConfirmDialog',
+  'dialogs/PasswordResetDialog',
+  'forms/PasswordForm',
+  'forms/SigninForm',
+  'forms/SignupForm',
+  'forms/UserCreateForm',
+  'forms/UserSearchForm'
+].map((name) => ({
+  force: false,
+  mkdirp: true,
+  mode: '644',
+  path: `${name}.jsx`,
+  data: {
+    name: path.basename(name)
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+

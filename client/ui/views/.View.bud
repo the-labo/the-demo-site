@@ -1,0 +1,40 @@
+'use strict'
+
+const path = require('path')
+
+module.exports = [
+  'sign/SignSigninView',
+  'sign/SignSignoutView',
+  'sign/SignSignupView',
+  'error/ErrorNotfoundView',
+  'accounts/AccountPasswordView',
+  'admin/AdminTopView',
+  'admin/AdminUsersView',
+  'about/AboutPrivacyPolicyView',
+  'about/AboutTermsOfUseView',
+].reduce((buds, fullName) => {
+  const name = path.basename(fullName)
+  return [
+    ...buds,
+    {
+      force: false,
+      mode: '644',
+      mkdirp: true,
+      tmpl: `.View.jsx.hbs`,
+      path: `${fullName}.jsx`,
+      data: {name}
+    },
+    {
+      force: false,
+      mode: '644',
+      mkdirp: true,
+      tmpl: `.View.pcss.hbs`,
+      path: `${fullName}.pcss`,
+      data: {name}
+    }
+  ]
+}, [])
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

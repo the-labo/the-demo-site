@@ -1,0 +1,79 @@
+{
+  "name": "the-demo-site",
+  "version": "5.0.0",
+  "description": "Demo site of the-framework",
+  "main": "lib",
+  "scripts": {
+    "build": "pon build",
+    "debug": "pon debug",
+    "prepare": "pon prepare",
+    "restart": "pon restart",
+    "share": "the-script-share",
+    "start": "pon start",
+    "stop": "pon stop",
+    "test": "pon test",
+    "update": "the-script-update"
+  },
+  "repository": "the-labo/the-demo-site",
+  "keywords": [
+    "Pon"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "email": "okunishinishi@gmail.com",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/the-labo/the-demo-site/issues"
+  },
+  "homepage": "https://github.com/the-labo/the-demo-site#readme",
+  "dependencies": {
+    "ape-tmpl": "^5.0.20",
+    "asleep": "^1.0.3",
+    "babel-polyfill": "^6.23.0",
+    "classnames": "^2.2.5",
+    "coz": "^6.0.20",
+    "mocha": "^3.4.2",
+    "numeral": "^2.0.6",
+    "pon": "^4.0.2",
+    "pon-task-basic": "^2.0.3",
+    "pon-task-db": "^1.2.2",
+    "pon-task-docker": "^1.1.3",
+    "pon-task-es": "^1.0.0",
+    "pon-task-icon": "^1.0.1",
+    "pon-task-pm2": "^1.0.2",
+    "pon-task-web": "^3.0.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "the-assets": "^1.0.0",
+    "the-check": "^1.1.1",
+    "the-client": "^1.5.4",
+    "the-components": "^1.6.0",
+    "the-controller-base": "^2.0.3",
+    "the-db": "^4.0.0",
+    "the-env": "^1.1.0",
+    "the-error": "^1.2.0",
+    "the-loc": "^1.1.0",
+    "the-mail": "^1.0.1",
+    "the-password": "^1.0.2",
+    "the-scope": "^1.0.4",
+    "the-seed": "^1.0.1",
+    "the-server": "^2.2.1",
+    "the-store": "^3.3.3",
+    "the-templates": "^1.1.5",
+    "the-window": "^4.0.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "the-script-release": "^1.0.6",
+    "the-script-share": "^1.0.5",
+    "the-script-update": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=7.6",
+    "npm": ">=4"
+  }
+}

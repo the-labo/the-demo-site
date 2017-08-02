@@ -1,0 +1,35 @@
+/**
+ * @class {{name}}
+ * @augments Resource
+ */
+'use strict'
+
+const { Resource, DataTypes } = require('the-db')
+const { STRING, ENTITY } = DataTypes
+
+/** @lends {{name}} */
+class {{name}} extends Resource {
+  static get policy () {
+    return {
+      name: {
+        description: 'Name of resource',
+        type: STRING,
+        unique: true,
+        required: true,
+        trim: true,
+        minLength: 2
+      }
+    }
+  }
+
+  static entityClass (ResourceEntity) {
+    /** @class */
+    class The{{name}}Entity extends ResourceEntity {
+    }
+    return The{{name}}Entity
+  }
+}
+
+Object.assign({{name}}, {})
+
+module.exports = {{name}}
