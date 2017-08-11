@@ -29,10 +29,13 @@ class App extends React.Component {
   render () {
     const s = this
     const {props} = s
-    const {user} = props
+    const {
+      synced,
+      user
+    } = props
     return (
       <TheRoot className='app'>
-        <Header {...{user}}/>
+        <Header {...{synced, user}}/>
         <Toasts/>
         <Main>
           <Routes/>
@@ -54,7 +57,8 @@ class App extends React.Component {
 }
 
 const ConnectedApp = connect((state) => ({
-  user: state['signed.user']
+  synced: state['sign.signed.synced'],
+  user: state['sign.signed.user']
 }))(withClient(withStore(App)))
 
 export default withProvider(

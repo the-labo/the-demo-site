@@ -18,6 +18,9 @@ module.exports = Object.freeze(
     SIGNUP_URL: '/sign/signup',
     SIGNOUT_URL: '/sign/signout',
 
+    ACCOUNT_PASSWORD_URL: '/account/password',
+    ACCOUNT_PROFILE_URL: '/account/profile',
+
     ADMIN_URL: '/admin',
     ADMIN_USERS_URL: '/admin/users',
 

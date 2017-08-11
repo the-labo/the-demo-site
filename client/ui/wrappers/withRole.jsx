@@ -22,7 +22,7 @@ function withRole (Class) {
         }
       }, props)
       return (
-        <Class {...{ComponentProps}}
+        <Class {...ComponentProps}
         />
       )
     }

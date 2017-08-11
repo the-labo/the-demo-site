@@ -63,12 +63,14 @@ module.exports = pon({
     'server/env',
     'server/server',
     'server/test',
+    'utils',
     'tmp',
     'test',
     'var'
   ]),
   'struct:symlink': symlink({
     'shim/conf': 'node_modules/@self/conf',
+    'shim/utils': 'node_modules/@self/utils',
     'client': 'node_modules/@self/client'
   }, {force: true}),
   'struct:cp': cp({
@@ -79,12 +81,15 @@ module.exports = pon({
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
   }),
-  'struct:compile': es('conf', 'shim/conf'),
+  'struct:compile': [
+    es('conf', 'shim/conf'),
+    es('utils', 'shim/utils')
+  ],
   'struct:json': fmtjson([
     'conf/**/*.json'
   ], {sort: true}),
   'struct:render': [
-    coz(['+(bin|client|conf|doc|misc|server)/**/.*.bud', '.*.bud'])
+    coz(['+(bin|client|conf|doc|misc|server|utils)/**/.*.bud', '.*.bud'])
   ],
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),

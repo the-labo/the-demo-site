@@ -49,6 +49,12 @@ module.exports = function create () {
     }
   }
 
+  {
+    const account = store.load(ObjectScope, 'account')
+    account.load(EdittingScope, 'profile')
+    account.load(EdittingScope, 'password')
+  }
+
   store.load(ToastScope, 'toast')
 
   {

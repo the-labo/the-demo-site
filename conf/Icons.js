@@ -20,6 +20,8 @@ module.exports = Object.freeze(
     SIGNOUT_ICON: 'fa fa-sign-out',
     SIGNUP_ICON: 'fa',
 
+    PASSWORD_ICON: 'fa',
+
     USERS_ICON: 'fa fa-users',
     PROFILE_ICON: 'fa fa-id-card-o',
 

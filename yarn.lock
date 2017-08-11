@@ -3164,6 +3164,12 @@ debug@2.3.3:
   dependencies:
     ms "0.7.2"
 
+debug@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.0.0.tgz#1d2feae53349047b08b264ec41906ba17a8516e4"
+  dependencies:
+    ms "2.0.0"
+
 debug@~0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
@@ -5908,7 +5914,7 @@ moment-timezone@^0.5.4:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.13.0, moment@^2.14.1, moment@^2.17.1:
+"moment@>= 2.9.0", moment@^2.13.0, moment@^2.14.1, moment@^2.17.1, moment@^2.18.1:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
@@ -8336,16 +8342,16 @@ success-symbol@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/success-symbol/-/success-symbol-0.1.0.tgz#24022e486f3bf1cdca094283b769c472d3b72897"
 
-sugo-actor@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-6.0.1.tgz#a88394f190ebf2308b2b80ad248ea1fcaefdfcef"
+sugo-actor@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-7.0.2.tgz#d432df510c684cdb4fc89d9fdef41cc31a71bb3a"
   dependencies:
     argx "^3.0.1"
     asenv "^1.1.1"
     asleep "^1.0.3"
     asobj "^1.5.0"
     bwindow "^1.0.7"
-    co "^4.6.0"
+    debug "^3.0.0"
     sg-queue "^1.1.4"
     sg-schemas "^2.1.3"
     sg-serializer "^1.1.6"
@@ -8358,7 +8364,7 @@ sugo-actor@^6.0.1:
     sugo-module-base "^1.2.6"
     uuid "^3.0.1"
 
-sugo-caller@^5.0.4:
+sugo-caller@^5.0.5:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-5.0.5.tgz#5b95cc67566736f600b5850fec28579c3a25ff23"
   dependencies:
@@ -8394,15 +8400,14 @@ sugo-constants@^2.4.1, sugo-constants@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/sugo-constants/-/sugo-constants-2.4.2.tgz#bf057ad57a1af829c5342b086a9817d987709f67"
 
-sugo-hub@^7.0.1:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/sugo-hub/-/sugo-hub-7.0.2.tgz#96c53516c45d55ddf3156a1af474178d6a43186e"
+sugo-hub@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/sugo-hub/-/sugo-hub-8.0.1.tgz#acf511039af1574e0e62a160592cf12751d03173"
   dependencies:
     asenv "^1.1.1"
     asleep "^1.0.3"
     aslogger "^1.0.2"
     brequest "^1.0.1"
-    co "^4.6.0"
     debug "^2.6.6"
     inflection "^1.10.0"
     mkdirp "^0.5.1"
@@ -8611,23 +8616,22 @@ the-card@^1.0.0:
     the-component-util "^1.3.0"
     the-style "^1.2.2"
 
-the-check@^1.0.0, the-check@^1.1.0, the-check@^1.1.1:
+the-check@^1.0.0, the-check@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/the-check/-/the-check-1.1.1.tgz#92b9dc844d82f6e1bce69ad9473f4d9ea14101f7"
   dependencies:
     asenv "^1.1.1"
 
-the-client@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-1.5.4.tgz#040cce791aff5916870cd6f2de76084220dcff25"
+the-client@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-2.0.4.tgz#94b5403eba73050a337eded173035540cc465135"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
     bstorage "^1.1.1"
     bwindow "^1.0.7"
-    co "^4.6.0"
     prop-types "^15.5.10"
-    sugo-caller "^5.0.4"
+    sugo-caller "^5.0.5"
     uuid "^3.1.0"
 
 the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-constants@^1.1.8:
@@ -8693,11 +8697,18 @@ the-container@^2.0.10:
     the-component-util "^1.3.0"
     the-style "^1.2.2"
 
-the-controller-base@^2.0.3, the-controller-base@^2.0.5:
+the-controller-base@^2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-2.0.6.tgz#c84de000ae186a15c50af1770a1a54cdaf5b43eb"
   dependencies:
     debug "^2.6.6"
+    sugo-module-base "^1.2.6"
+
+the-controller-base@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-2.1.0.tgz#11327dcafc220da627c9b8ba6e7b34c31aacd949"
+  dependencies:
+    debug "^3.0.0"
     sugo-module-base "^1.2.6"
 
 the-db@^4.0.0:
@@ -8886,9 +8897,9 @@ the-list@^1.2.1:
     the-link "^2.0.7"
     the-style "^1.2.3"
 
-the-loc@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.2.2.tgz#4d054a2b5b704c3ae94416aace1c37f7ca6fe906"
+the-loc@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.2.4.tgz#fdc815143955db11dbb028022dc176cee1d77ed8"
   dependencies:
     argx "^3.0.2"
     evaljson "^4.1.7"
@@ -9040,24 +9051,23 @@ the-seed@^1.0.1:
     argx "^3.0.2"
     pudding "^4.0.4"
 
-the-server@^2.2.1:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-2.5.0.tgz#d3c6a24f2e36d56961b38ffeca7fabb6fbc61add"
+the-server@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-3.1.0.tgz#7340a26abffd43fcb80c200a9f46f2aff85a9a1a"
   dependencies:
     aport "^1.0.0"
     asleep "^1.0.3"
     classnames "^2.2.5"
-    co "^4.6.0"
     locale "^0.1.0"
     prop-types "^15.5.9"
     stringcase "^4.0.0"
-    sugo-actor "^6.0.1"
+    sugo-actor "^7.0.2"
     sugo-constants "^2.4.2"
-    sugo-hub "^7.0.1"
+    sugo-hub "^8.0.1"
     sugo-module-scoped "^1.0.4"
-    the-check "^1.1.0"
+    the-check "^1.1.1"
     the-component-util "^1.4.1"
-    the-controller-base "^2.0.5"
+    the-controller-base "^2.1.0"
     uuid "^3.1.0"
 
 the-spin@^1.0.1:

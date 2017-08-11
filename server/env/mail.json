@@ -1,0 +1,10 @@
+{
+  "default": {
+    "MOCK": true
+  },
+  "production": {
+    "MOCK": false,
+    "SERVICE": "sendgrid",
+    "key": "__sendgrid_apikey__"
+  }
+}

@@ -21,7 +21,7 @@ function withText (Class) {
         }
       }, props)
       return (
-        <Class {...{ComponentProps}}
+        <Class {...ComponentProps}
         />
       )
     }

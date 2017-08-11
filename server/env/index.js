@@ -5,6 +5,8 @@ const Local = require('../../Local')
 
 const config = {
   database: require('./database'),
+  seal: require('./seal'),
+  mail: require('./mail'),
   redis: require('./redis')
 }
 

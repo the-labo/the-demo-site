@@ -1,7 +1,9 @@
 'use strict'
 
 module.exports = [
-  'SignScene'
+  'SignScene',
+  'AccountScene',
+  'AdminUsersScene'
 ].map((name) => ({
   force: false,
   mode: '644',

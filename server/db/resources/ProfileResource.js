@@ -5,7 +5,7 @@
 'use strict'
 
 const {Resource, DataTypes} = require('the-db')
-const {STRING, ENTITY} = DataTypes
+const {STRING, ENTITY, BOOLEAN} = DataTypes
 
 const {withUser} = require('../mixins')
 
@@ -17,6 +17,15 @@ class ProfileResource extends Resource {
         description: 'Display Name',
         type: STRING,
         trim: true
+      },
+      email: {
+        description: 'Email of user',
+        type: STRING,
+        trim: true
+      },
+      emailVerified: {
+        description: 'Email has verified or not',
+        type: BOOLEAN
       },
       user: {
         description: 'User',

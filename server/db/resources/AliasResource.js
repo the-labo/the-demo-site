@@ -7,12 +7,33 @@ const {Resource, DataTypes} = require('the-db')
 const {STRING} = DataTypes
 const uuid = require('uuid')
 const numeral = require('numeral')
+const {parse: parseUrl} = require('url')
 
 class AliasResource extends Resource {
   async generateKey () {
     const Alias = this
     const num = (await Alias.count()) + 1
     return uuid.v4().split('-').pop() + numeral(num).format('000')
+  }
+
+  async ofUrl (url, options = {}) {
+    const Alias = this
+    const found = await Alias.first({originalUrl: url})
+    if (found) {
+      return found
+    }
+    const key = await Alias.generateKey()
+    const parsed = parseUrl(url)
+    const {
+      protocol = parsed.protocol,
+      host = parsed.host
+    } = options
+    const shortUrl = `${protocol}//${host}/a/${key}`
+    return Alias.create({
+      originalUrl: url,
+      key,
+      shortUrl
+    })
   }
 
   static get policy () {

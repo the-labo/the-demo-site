@@ -7,6 +7,7 @@ import { TheRoute } from 'the-components'
 import {
   HomeView,
   AccountPasswordView,
+  AccountProfileView,
   AboutPrivacyPolicyView,
   AboutTermsOfUseView,
   AdminTopView,
@@ -28,6 +29,9 @@ const Routes = ({l}) => (
 
     <TheRoute exact path={Urls.ADMIN_URL} component={AdminTopView}/>
     <TheRoute exact path={Urls.ADMIN_USERS_URL} component={AdminUsersView}/>
+
+    <TheRoute exact path={Urls.ACCOUNT_PASSWORD_URL} component={AccountPasswordView}/>
+    <TheRoute exact path={Urls.ACCOUNT_PROFILE_URL} component={AccountProfileView}/>
 
     <TheRoute exact path={Urls.SIGNIN_URL} component={SignSigninView}/>
     <TheRoute exact path={Urls.SIGNUP_URL} component={SignSignupView}/>

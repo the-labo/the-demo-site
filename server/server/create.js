@@ -13,26 +13,34 @@ const {
   SignCtrl,
   AdminUsersCtrl
 } = require('../controllers')
+const {
+  aliasEndpoint
+} = require('../endpoints')
 const pkg = require('../../package.json')
 const env = require('../env')
 
 /** @lends create */
 function create (config) {
   const {locales, db, redis = env.redis} = config
+  const app = {
+    pkg,
+    db,
+    locales
+  }
   const server = theServer({
     static: ['public'],
     redis,
+    endpoints: {
+      '/a/:key': aliasEndpoint
+    },
     injectors: {
+      app: (ctx) => app,
       client: (ctx) => createClient(),
       store: (ctx) => createStore()
     },
     html: Html,
     langs: Object.keys(locales),
-    scope: {
-      pkg,
-      db,
-      locales
-    }
+    scope: app
   })
 
   server.load(AppCtrl, 'app')

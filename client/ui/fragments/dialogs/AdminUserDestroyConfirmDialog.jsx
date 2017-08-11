@@ -20,7 +20,7 @@ const AdminUserDestroyConfirmDialog = withText(
       <TheConfirmDialog className='admin-user-destroy-confirm-dialog'
                         present
                         title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
-                        checkText={l('checks.SURE_TO_DELETE')}
+                        checkText={l('checks.SURE_TO_DESTROY')}
                         onSubmit={onSubmit}
                         submitText={l('buttons.DO_DELETE')}
                         spinning={spinning}
