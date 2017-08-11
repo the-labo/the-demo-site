@@ -10,7 +10,10 @@ import {
 import { withLoc } from 'the-loc'
 import { Urls, Icons } from '@self/conf'
 
-const Header = ({ l }) => {
+const {Logo, Tab, TabItem, RightArea} = TheHeader
+const {Item: MenuItem} = TheDropdownMenu
+
+const Header = ({l}) => {
   return (
     <TheHeader className='header'>
       <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>

@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheButton } from 'the-components'
+import { TheView, TheButton, TheButtonGroup } from 'the-components'
 import { asView } from '../../wrappers'
 import { SigninForm, PasswordResetDialog } from '../../fragments'
 import { SignScene } from '../../../scenes'
@@ -40,11 +40,11 @@ class SignSigninView extends React.Component {
                       onSubmit={() => signScene.doSignin()}
           />
 
-          <div className={styles.actionRow}>
-            <TheButton to={Urls.SIGNUP_URL} simple>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
+          <TheButtonGroup collapsed>
+            <TheButton to={Urls.SIGNUP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
             <TheButton onClick={() => signScene.toggleResetting(true)}
-                       simple>{l('buttons.SHOW_PASSWORD_RESET')}</TheButton>
-          </div>
+            >{l('buttons.SHOW_PASSWORD_RESET')}</TheButton>
+          </TheButtonGroup>
 
           {
             resetting && (
