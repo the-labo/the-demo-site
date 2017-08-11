@@ -16,7 +16,17 @@ const icon = require('pon-task-icon')
 const {seed, setup, drop} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
-const {port} = require('./server/env')
+const {
+  APP_PORT,
+  MYSQL_CONTAINER_NAME,
+  MYSQL_PUBLISHED_PORT,
+  REDIS_CONTAINER_NAME,
+  REDIS_PUBLISHED_PORT,
+  NGINX_CONTAINER_NAME,
+  NGINX_PUBLISHED_PORT,
+  APP_PROCESS_NAME
+} = require('./Local')
+
 const {fork} = command
 
 const theAssets = require('the-assets')
@@ -30,14 +40,6 @@ const {
 const {EXTERNAL_BUNDLES} = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
-const {
-  MYSQL_IMAGE,
-  MYSQL_PUBLISHED_PORT,
-  REDIS_IMAGE,
-  REDIS_PUBLISHED_PORT,
-  NGINX_IMAGE,
-  NGINX_PUBLISHED_PORT
-} = require('./misc/docker/Container')
 
 module.exports = pon({
   // ----------------
@@ -127,24 +129,24 @@ module.exports = pon({
   ],
   'debug:server': fork('bin/app.js'),
   'debug:watch': ['ui:*/watch'],
-  'docker:mysql': mysql(`${pkg.name}-mysql`, {
-    image: MYSQL_IMAGE,
+  'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
+    image: 'mysql:8',
     publish: `${MYSQL_PUBLISHED_PORT}:3306`
   }),
-  'docker:redis': redis(`${pkg.name}-redis`, {
-    image: REDIS_IMAGE,
+  'docker:redis': redis(REDIS_CONTAINER_NAME, {
+    image: 'redis:4',
     publish: `${REDIS_PUBLISHED_PORT}:6379`
   }),
-  'docker:nginx': nginx(`${pkg.name}-nginx`, {
-    image: NGINX_IMAGE,
+  'docker:nginx': nginx(NGINX_CONTAINER_NAME, {
+    image: 'nginx:1.13',
     httpPublishPort: NGINX_PUBLISHED_PORT,
     template: 'misc/docker/nginx.conf.template',
     env: {
       HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT: port.APP
+      APP_PORT
     }
   }),
-  'pm2': pm2('./bin/app.js', {name: pkg.name}),
+  'pm2': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   // ----------------
   // Main Tasks
   // ----------------

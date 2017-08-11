@@ -67,6 +67,10 @@
     "USER_PASSWORD": "Password",
     "USER_PROFILE_NAME": "e.g. John Do"
   },
+  "roleCodes": {
+    "ADMIN_ROLE": "Admin",
+    "NORMAL_ROLE": "Normal"
+  },
   "titles": {
     "ACCOUNT_PASSWORD_TITLE": "Password Change",
     "ACCOUNT_PROFILE_TITLE": "Account Profile",
@@ -82,10 +86,6 @@
     "USERS_DESTROY_CONFIRM_TITLE": "Destroy Users",
     "USERS_PASSWORD_RESET_CONFIRM_TITLE": "Password Reset",
     "USERS_PASSWORD_RESET_RESULT_TITLE": "New Passwords"
-  },
-  "roleCodes": {
-    "ADMIN_ROLE": "Admin",
-    "NORMAL_ROLE": "Normal"
   },
   "toasts": {
     "NEEDS_SIGN_IN": "You need Sign In",

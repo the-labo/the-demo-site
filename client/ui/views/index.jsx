@@ -6,6 +6,7 @@
 
 import AboutPrivacyPolicyView from './about/AboutPrivacyPolicyView'
 import AboutTermsOfUseView from './about/AboutTermsOfUseView'
+import AccountPasswordView from './accounts/AccountPasswordView'
 import AdminTopView from './admin/AdminTopView'
 import AdminUsersView from './admin/AdminUsersView'
 import ErrorNotfoundView from './error/ErrorNotfoundView'
@@ -17,6 +18,7 @@ import SignSignupView from './sign/SignSignupView'
 export {
   AboutPrivacyPolicyView,
   AboutTermsOfUseView,
+  AccountPasswordView,
   AdminTopView,
   AdminUsersView,
   ErrorNotfoundView,

@@ -1,7 +1,7 @@
 {
   "default": {
     "HOST": "127.0.0.1",
-    "PORT": "#{Container.REDIS_PUBLISHED_PORT}",
+    "PORT": "#{Local.REDIS_PUBLISHED_PORT}",
     "DB": "1"
   }
 }

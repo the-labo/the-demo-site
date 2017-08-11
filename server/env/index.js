@@ -1,15 +1,14 @@
 'use strict'
 
 const theEnv = require('the-env')
-const Container = require('../../misc/docker/Container')
+const Local = require('../../Local')
 
-let config = {
-  port: require('./port'),
+const config = {
   database: require('./database'),
   redis: require('./redis')
 }
 
-const vars = { Container }
+const vars = {Local}
 
-const env = theEnv(config, { vars }).forEnv()
+const env = theEnv(config, {vars}).forEnv()
 module.exports = env

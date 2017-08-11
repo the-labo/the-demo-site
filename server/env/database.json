@@ -2,7 +2,7 @@
   "default": {
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Container.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
     "DATABASE": "thedemosite_dev",
     "USERNAME": "thedemosite_dev",
     "PASSWORD": "thedemosite_dev",
@@ -12,7 +12,7 @@
   "production": {
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Container.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
     "DATABASE": "thedemosite",
     "USERNAME": "thedemosite",
     "PASSWORD": "thedemosite",

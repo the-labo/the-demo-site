@@ -6,11 +6,11 @@
 'use strict'
 
 require('babel-polyfill')
-const { server, env } = require('../server')
-const { NGINX_PUBLISHED_PORT } = require('../misc/docker/Container')
+const {server} = require('../server')
+const {APP_PORT, NGINX_PUBLISHED_PORT} = require('../Local')
 
 ;(async () => {
-  const { port = env.port.APP } = process.env
+  const {port = APP_PORT} = process.env
   await server.listen(port)
   console.log(`
   =============================

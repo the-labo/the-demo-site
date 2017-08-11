@@ -21,7 +21,7 @@ import {
   AdminUserDestroyConfirmDialog,
   AdminPasswordResetConfirmDialog,
   AdminPasswordResetResultDialog
-} from '../../components'
+} from '../../fragments'
 import { Icons, Urls } from '@self/conf'
 
 class AdminUsersView extends React.Component {

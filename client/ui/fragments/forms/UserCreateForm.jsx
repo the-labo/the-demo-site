@@ -6,9 +6,8 @@
 import React from 'react'
 import { TheForm, TheInput, TheButton, TheButtonGroup } from 'the-components'
 import { asForm } from '../../wrappers'
-import { Types } from '@self/conf'
+import { RoleCodes } from '@self/conf'
 
-const {RoleType} = Types
 const {Text, Password, Radio} = TheInput
 const {Field, Label, Value} = TheForm
 
@@ -41,8 +40,8 @@ const UserCreateForm = ({
       <Value>
         <Radio {...getInputAttributesOf('role')}
                options={{
-                 [RoleType.ADMIN]: l('roles.ADMIN_ROLE'),
-                 [RoleType.NORMAL]: l('roles.NORMAL_ROLE')
+                 [RoleCodes.ADMIN_ROLE]: l('roles.ADMIN_ROLE'),
+                 [RoleCodes.NORMAL_ROLE]: l('roles.NORMAL_ROLE')
                }}
         />
       </Value>

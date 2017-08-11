@@ -9013,6 +9013,15 @@ the-script-update@^1.0.0:
     co "^4.6.0"
     commander "^2.9.0"
 
+the-seat@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/the-seat/-/the-seat-1.2.1.tgz#dd617fb1d23cbc15f3e95dc42643c59bcfb41aa9"
+  dependencies:
+    abind "^1.0.3"
+    asfs "^1.2.3"
+    json-pointer "^0.6.0"
+    mkdirp "^0.5.1"
+
 the-section@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/the-section/-/the-section-1.0.3.tgz#5963621fdb929c49f2433f0229ce1992c67db785"
