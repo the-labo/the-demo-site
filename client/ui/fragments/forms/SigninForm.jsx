@@ -31,6 +31,7 @@ const SigninForm = ({
       <Value>
         <Text placeholder={l('placeholders.USER_NAME')}
               {...getInputAttributesOf('name')}
+              autoFocus
         />
       </Value>
     </Field>

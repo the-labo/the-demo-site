@@ -1,5 +1,6 @@
 /**
- * @function withLabel
+ * HOC for text
+ * @function withText
  */
 'use strict'
 
@@ -17,7 +18,6 @@ function withText (Class) {
           }
           const {profile} = user
           return (profile && profile.name) ? profile.name : user.name
-
         }
       }, props)
       return (

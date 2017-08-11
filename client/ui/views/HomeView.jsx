@@ -18,23 +18,15 @@ class HomeView extends React.PureComponent {
 
   render () {
     const s = this
-    const { props, homeScene } = s
-    const { l } = props
+    const {props, homeScene} = s
+    const {l} = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={null}
         />
         <TheView.Body>
-          <p className={styles.loadingMessage}>
-            {props.busy && 'Now calculating...'}
-          </p>
           <p>
-
-            <span>Count={props.count}</span>
-            <TheButton onClick={ () => homeScene.countUp() }>
-              {l('buttons.DO_COUNT_UP')}
-            </TheButton>
           </p>
         </TheView.Body>
       </TheView>
@@ -49,8 +41,8 @@ class HomeView extends React.PureComponent {
 }
 
 export default asView(HomeView, (state) => ({
-  count: state[ 'app' ].count,
-  busy: state[ 'app.busy' ]
+  count: state['app'].count,
+  busy: state['app.busy']
 }))
 
 

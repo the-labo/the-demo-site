@@ -17,33 +17,44 @@ import { withProvider, connect, withStore } from 'the-store'
 import { withClient } from 'the-client'
 import { withLoc } from 'the-loc'
 import { locales } from '@self/conf'
+import { SignScene } from '../scenes'
 
 class App extends React.Component {
   constructor (props) {
     super(props)
     const s = this
+    s.signScene = new SignScene(props)
   }
 
   render () {
     const s = this
-    const { props } = s
-    const { user } = props
+    const {props} = s
+    const {user} = props
     return (
       <TheRoot className='app'>
         <Header {...{user}}/>
-        <Toasts />
+        <Toasts/>
         <Main>
-          <Routes />
+          <Routes/>
         </Main>
-        <Footer />
+        <Footer/>
       </TheRoot>
     )
+  }
+
+  componentDidMount () {
+    const s = this
+    const {signScene} = s
+
+    ;(async () => {
+      await signScene.syncSigned()
+    })()
   }
 
 }
 
 const ConnectedApp = connect((state) => ({
-
+  user: state['signed.user']
 }))(withClient(withStore(App)))
 
 export default withProvider(

@@ -8886,9 +8886,9 @@ the-list@^1.2.1:
     the-link "^2.0.7"
     the-style "^1.2.3"
 
-the-loc@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.1.1.tgz#d751d8fd911341b55ac645cfac90cd626320d1f5"
+the-loc@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.2.2.tgz#4d054a2b5b704c3ae94416aace1c37f7ca6fe906"
   dependencies:
     argx "^3.0.2"
     evaljson "^4.1.7"

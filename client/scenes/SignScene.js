@@ -7,7 +7,7 @@
 const Scene = require('./Scene')
 const {unlessProduction} = require('the-check')
 const {Urls} = require('@self/conf')
-const {expand, flatten} = require('objnest')
+const {expand} = require('objnest')
 
 const debug = require('debug')('app:ui:sign')
 
