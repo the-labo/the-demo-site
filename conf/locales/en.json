@@ -75,8 +75,10 @@
     "USER_DESTROY_CONFIRM": "Are you sure to delete these users?"
   },
   "messages": {
-    "PAGE_NOT_FOUND": "Sorry! Page not found...",
     "WORKING_DONE": "Done!",
+    "PAGE_NOT_FOUND": "Sorry! Page not found...",
+    "PASSWORD_UPDATE_DONE": "Password updated!",
+    "PROFILE_UPDATE_DONE": "Profile updated!",
     "WORKING_SIGNOUT": "Signing out..."
   },
   "org": {
