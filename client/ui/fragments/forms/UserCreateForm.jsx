@@ -34,14 +34,33 @@ const UserCreateForm = ({
       </Value>
     </Field>
     <Field>
+      <Label {...getLabelAttributesOf('profile.name')}>
+        {l('labels.USER_PROFILE_NAME')}
+      </Label>
+      <Value>
+        <Text placeholder={l('placeholders.USER_PROFILE_NAME')}
+              {...getInputAttributesOf('profile.name')}/>
+      </Value>
+    </Field>
+    <Field>
+      <Label {...getLabelAttributesOf('profile.email')}>
+        {l('labels.USER_EMAIL')}
+      </Label>
+      <Value>
+        <Text placeholder={l('placeholders.USER_EMAIL')}
+              type='email'
+              {...getInputAttributesOf('profile.email')}/>
+      </Value>
+    </Field>
+    <Field>
       <Label {...getLabelAttributesOf('role')}>
         {l('labels.USER_ROLE')}
       </Label>
       <Value>
         <Radio {...getInputAttributesOf('role')}
                options={{
-                 [RoleCodes.ADMIN_ROLE]: l('roles.ADMIN_ROLE'),
-                 [RoleCodes.NORMAL_ROLE]: l('roles.NORMAL_ROLE')
+                 [RoleCodes.ADMIN_ROLE]: l('roleCodes.ADMIN_ROLE'),
+                 [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE')
                }}
         />
       </Value>

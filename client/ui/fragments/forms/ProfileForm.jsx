@@ -46,7 +46,7 @@ const ProfileForm = ({
       </Label>
       <Value>
         <Text placeholder={l('placeholders.USER_EMAIL')}
-              autoFocus
+              type='email'
               {...getInputAttributesOf('email')}/>
       </Value>
     </Field>

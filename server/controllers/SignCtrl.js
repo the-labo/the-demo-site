@@ -95,6 +95,7 @@ class SignCtrl extends TheCtrl {
     const signed = await s.getSigned()
     const user = await User.one(signed.user.id)
     const profile = await Profile.ofUser(user)
+    await user.update({profile})
     await profile.update(profileAttributes)
     await s._reloadSigned()
     return true

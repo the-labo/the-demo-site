@@ -28,6 +28,7 @@ const SignupForm = ({
       </Label>
       <Value>
         <Text placeholder={l('placeholders.USER_NAME')}
+              autoFocus
               {...getInputAttributesOf('name')}/>
       </Value>
     </Field>
@@ -38,6 +39,16 @@ const SignupForm = ({
       <Value>
         <Text placeholder={l('placeholders.USER_PROFILE_NAME')}
               {...getInputAttributesOf('profile.name')}/>
+      </Value>
+    </Field>
+    <Field>
+      <Label {...getLabelAttributesOf('profile.email')}>
+        {l('labels.USER_EMAIL')}
+      </Label>
+      <Value>
+        <Text placeholder={l('placeholders.USER_EMAIL')}
+              type='email'
+              {...getInputAttributesOf('profile.email')}/>
       </Value>
     </Field>
     <Field>

@@ -149,13 +149,13 @@ class SignScene extends Scene {
     const {signed} = store.sign
     const signCtrl = await client.use('sign')
     signed.busy.true()
-    let {user} = (await signCtrl.getSigned()) || {}
+    const {user} = (await signCtrl.getSigned()) || {}
     signed.busy.false()
     if (user) {
       signed.user.set(user)
       unlessProduction(() => {
-        const {id, name, email} = user
-        console.log(`[SignScene] Signed as: "${name}"`, {id, name, email})
+        const {id, name, profile} = user
+        console.log(`[SignScene] Signed as: "${name}"`, {id, name, profile})
       })
     } else {
       signed.user.del()

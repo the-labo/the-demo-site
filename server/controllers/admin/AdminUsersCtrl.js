@@ -16,6 +16,26 @@ class AdminUsersCtrl extends AdminCtrl {
     return User.list({filter, sort, page})
   }
 
+  async createUser ({name, role: roleCode, profile: profileAttributes}) {
+    const s = this
+    const {app} = s
+    const {User, Role, Sign, Profile} = app.db.resources
+    const role = await Role.ofCode(roleCode)
+    const user = await User.create({
+      name, role
+    })
+    const password = await Sign.resetPasswordForUser(user)
+    user.password = password
+    const profile = await Profile.create(
+      Object.assign(
+        {},
+        profileAttributes,
+        {user}
+      ))
+    await user.update({profile})
+    return user
+  }
+
   async resetUserPasswords (userIds) {
     const s = this
     s._assertSigned()

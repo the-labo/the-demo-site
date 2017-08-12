@@ -6,7 +6,7 @@
 
 const {Resource, DataTypes} = require('the-db')
 const {STRING, ENTITY, BOOLEAN} = DataTypes
-
+const regexEmail = require('regex-email')
 const {withUser} = require('../mixins')
 
 /** @lends ProfileResource */
@@ -16,11 +16,13 @@ class ProfileResource extends Resource {
       name: {
         description: 'Display Name',
         type: STRING,
+        pattern: /^[a-z][a-z0-9_-]*$/,
         trim: true
       },
       email: {
         description: 'Email of user',
         type: STRING,
+        pattern:regexEmail,
         trim: true
       },
       emailVerified: {
