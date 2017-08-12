@@ -5,16 +5,16 @@
 
 import React from 'react'
 import {
-  TheView
+  TheView,
+  ThePager,
+  TheActionBar
 } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './AdminUsersView.pcss'
 import c from 'classnames'
 import { AdminUsersScene } from '../../../scenes'
 import {
-  Pager,
   UserSearchForm,
-  ActionBar,
   AdminUserList,
   AdminUserCreateResultDialog,
   AdminUserCreateInputDialog,
@@ -77,33 +77,33 @@ class AdminUsersView extends React.Component {
           {
             users && (
               <div>
-                <Pager.Row>
-                  <Pager counts={counts}
-                         onChange={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
+                <ThePager.Row>
+                  <ThePager.ByCounts counts={counts}
+                                     onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
                   />
-                  <Pager.Counter {...{l, counts}}/>
-                </Pager.Row>
+                  <ThePager.Counts {...{l, counts}}/>
+                </ThePager.Row>
                 <AdminUserList {...{l, counts, checks, sort, users}}
                                onSort={(sort) => adminUsersScene.syncList({sort})}
                                onUpdateCheck={(values) => adminUsersScene.updateChecks(values)}
                 />
-                <Pager.Row>
-                  <Pager counts={counts}
-                         onChange={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
+                <ThePager.Row>
+                  <ThePager.ByCounts counts={counts}
+                                     onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
                   />
-                </Pager.Row>
+                </ThePager.Row>
 
-                <ActionBar lead={l('leads.ACTION_WITH_SELECTED_USERS')}
-                           hidden={s.getCheckedIds().length === 0}
-                           buttons={{
-                             passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
-                             destroy: l('buttons.SHOW_DESTROY_USERS')
-                           }}
-                           danger={['destroy']}
-                           handlers={{
-                             passwordReset: () => adminUsersScene.togglePasswordResetConfirming(true),
-                             destroy: () => adminUsersScene.toggleDestroyConfirming(true)
-                           }}
+                <TheActionBar lead={l('leads.ACTION_WITH_SELECTED_USERS')}
+                              hidden={s.getCheckedIds().length === 0}
+                              buttons={{
+                                passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
+                                destroy: l('buttons.SHOW_DESTROY_USERS')
+                              }}
+                              danger={{destroy: true}}
+                              handlers={{
+                                passwordReset: () => adminUsersScene.togglePasswordResetConfirming(true),
+                                destroy: () => adminUsersScene.toggleDestroyConfirming(true)
+                              }}
                 />
               </div>
             )

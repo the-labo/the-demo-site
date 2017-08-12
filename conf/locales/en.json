@@ -23,6 +23,8 @@
     "SHOW_ADMIN_TOP": "Admin Top",
     "SHOW_ADMIN_USERS": "User Management",
     "SHOW_DESTROY_USERS": "Destroy Users",
+    "SHOW_DETAIL": "Detail",
+    "SHOW_EDIT": "Edit",
     "SHOW_LIST": "List",
     "SHOW_MORE": "Show More",
     "SHOW_NEW_ACCOUNT": "Create new Account",
@@ -73,8 +75,10 @@
     "USER_DESTROY_CONFIRM": "Are you sure to delete these users?"
   },
   "messages": {
-    "PAGE_NOT_FOUND": "Sorry! Page not found...",
     "WORKING_DONE": "Done!",
+    "PAGE_NOT_FOUND": "Sorry! Page not found...",
+    "PASSWORD_UPDATE_DONE": "Password updated!",
+    "PROFILE_UPDATE_DONE": "Profile updated!",
     "WORKING_SIGNOUT": "Signing out..."
   },
   "org": {
