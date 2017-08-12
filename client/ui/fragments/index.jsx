@@ -4,7 +4,6 @@
  */
 'use strict'
 
-import ActionBar from './bars/ActionBar'
 import AdminPasswordResetConfirmDialog from './dialogs/AdminPasswordResetConfirmDialog'
 import AdminPasswordResetResultDialog from './dialogs/AdminPasswordResetResultDialog'
 import AdminUserCreateInputDialog from './dialogs/AdminUserCreateInputDialog'
@@ -18,10 +17,8 @@ import SignupForm from './forms/SignupForm'
 import UserCreateForm from './forms/UserCreateForm'
 import UserSearchForm from './forms/UserSearchForm'
 import AdminUserList from './lists/AdminUserList'
-import Pager from './pager/Pager'
 
 export {
-  ActionBar,
   AdminPasswordResetConfirmDialog,
   AdminPasswordResetResultDialog,
   AdminUserCreateInputDialog,
@@ -34,6 +31,5 @@ export {
   SignupForm,
   UserCreateForm,
   UserSearchForm,
-  AdminUserList,
-  Pager
+  AdminUserList
 }
