@@ -6,12 +6,14 @@
 
 const Scene = require('./Scene')
 const {Urls} = require('@self/conf')
+const asleep = require('asleep')
 const {urlUtil} = require('@self/utils')
 
 /** @lends VerifyScene */
 class VerifyScene extends Scene {
-  async syncNeedsVerify () {
+  async syncNeedsVerify ({delay = 100} = {}) {
     const s = this
+    await asleep(delay)
     const {store, client, l} = s
     const {toast, verify} = store
     const verifyCtrl = await client.use('verify')
@@ -50,7 +52,6 @@ class VerifyScene extends Scene {
     const verifyCtrl = await client.use('verify')
     const {seal, envelop} = urlUtil.queryFromSearch()
     const {verify} = store
-    verify.done.false()
     {
       verify.busy.true()
       let ok
@@ -60,10 +61,10 @@ class VerifyScene extends Scene {
       } catch (e) {
         switch (e.name) {
           case 'ExpiredError':
-            verify.error.set(l('errors.VERIFY_EXPIRED_ERROR'))
+            verify.errorMessage.set(l('errors.VERIFY_EXPIRED_ERROR'))
             break
           default:
-            verify.error.set(l('errors.VERIFY_FAILED_ERROR'))
+            verify.errorMessage.set(l('errors.VERIFY_FAILED_ERROR'))
             break
         }
         console.error(e)
@@ -74,6 +75,13 @@ class VerifyScene extends Scene {
         verify.done.true()
       }
     }
+  }
+
+  prepareVerify () {
+    const s = this
+    const {store} = s
+    const {verify} = store
+    verify.done.false()
   }
 }
 

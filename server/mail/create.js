@@ -46,7 +46,7 @@ function create (config = env.mail) {
         content: _render(lang, 'recover.mail', {
           key: user.name,
           url,
-          expireAt: localeDate(expireAt),
+          expireAt: localeDate(lang, expireAt),
           by: l('app.APP_NAME')
         })
       })

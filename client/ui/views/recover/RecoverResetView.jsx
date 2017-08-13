@@ -20,7 +20,7 @@ class RecoverResetView extends React.Component {
 
   render () {
     const s = this
-    const {props} = s
+    const {props, recoverScene} = s
     const {
       l,
       busy,
@@ -58,6 +58,9 @@ class RecoverResetView extends React.Component {
   }
 
   componentDidMount () {
+    const s = this
+    const {recoverScene} = s
+    recoverScene.prepareRecoverReset()
   }
 
   componentWillUnmount () {

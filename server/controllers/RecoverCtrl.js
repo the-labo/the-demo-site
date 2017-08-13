@@ -42,6 +42,7 @@ class RecoverCtrl extends TheCtrl {
       url: alias.shortUrl,
       expireAt
     })
+    return user
   }
 
   async reset ({seal: sealString, envelop, password} = {}) {

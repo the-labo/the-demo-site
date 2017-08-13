@@ -34,10 +34,6 @@ class RecoverSendView extends React.Component {
                         text={l('titles.RECOVER_SEND_TITLE')}
         />
         <TheView.Body>
-
-          <TheLead text={l('leads.RECOVER_SEND')}
-                   error={errorMessage}
-          />
           {
             done ? (
               <TheDone linkTo='/'
@@ -45,11 +41,16 @@ class RecoverSendView extends React.Component {
                        message={l('messages.RECOVER_SEND_DONE')}
               />
             ) : (
-              <RecoverSendForm spinning={busy}
-                               {...{values, errors}}
-                               onUpdate={(v) => recoverScene.setSendEntryValues(v)}
-                               onSubmit={() => recoverScene.doSend()}
-              />
+              <div>
+                <TheLead text={l('leads.RECOVER_SEND')}
+                         error={errorMessage}
+                />
+                <RecoverSendForm spinning={busy}
+                                 {...{values, errors}}
+                                 onUpdate={(v) => recoverScene.setSendEntryValues(v)}
+                                 onSubmit={() => recoverScene.doSend()}
+                />
+              </div>
             )
           }
         </TheView.Body>
@@ -59,6 +60,8 @@ class RecoverSendView extends React.Component {
 
   componentDidMount () {
     const s = this
+    const {recoverScene} = s
+    recoverScene.prepareRecoverSend()
   }
 
   componentWillUnmount () {

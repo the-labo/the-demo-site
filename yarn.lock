@@ -6174,9 +6174,9 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     the-component-constants "^1.1.8"
     uuid "^3.0.1"
 
-the-components@^1.6.0:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.17.1.tgz#f4d62d54be35376694048ec727a2f393e101c35b"
+the-components@^1.18.0:
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.18.0.tgz#ff1d07b2a8160fbfcf46915a9c53f659fbf90d6a"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -6191,14 +6191,14 @@ the-components@^1.6.0:
     the-footer "^1.0.2"
     the-form "^1.0.12"
     the-head "^1.0.5"
-    the-header "^1.4.1"
+    the-header "^1.4.3"
     the-html "^1.0.6"
     the-icon "^1.0.6"
     the-image "^1.1.0"
     the-info "^1.0.2"
     the-input "^1.4.11"
     the-jumbotron "^1.0.1"
-    the-lead "^1.0.1"
+    the-lead "^1.1.0"
     the-link "^2.0.8"
     the-list "^1.2.1"
     the-main "^2.0.3"
@@ -6333,9 +6333,9 @@ the-head@^1.0.5:
     prop-types "^15.5.8"
     stringcase "^3.2.1"
 
-the-header@^1.4.1:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/the-header/-/the-header-1.4.2.tgz#d6906737b8e14d77d7100a85738906712e3cc7f4"
+the-header@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/the-header/-/the-header-1.4.3.tgz#14b1e3847865f1275904d16b9ecfad6f8845deb7"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.10"
@@ -6403,9 +6403,9 @@ the-jumbotron@^1.0.1:
     the-image "^1.0.3"
     the-style "^1.2.2"
 
-the-lead@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/the-lead/-/the-lead-1.0.1.tgz#02cdefc5323f55adaf892859c1cc5020929ed1c6"
+the-lead@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-lead/-/the-lead-1.1.0.tgz#735c62a4e4f9593047767057bcdfe06e40d42bfd"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -6526,6 +6526,12 @@ the-router@^1.0.10, the-router@^1.0.9:
     prop-types "^15.5.8"
     the-component-util "^1.4.0"
     the-style "^1.2.3"
+
+the-scene-base@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.0.0.tgz#9c5ac433990cd37b1f6b397aec2f2a99ee2a1938"
+  dependencies:
+    bwindow "^1.0.7"
 
 the-scope@^1.0.4, the-scope@^1.4.1:
   version "1.4.1"

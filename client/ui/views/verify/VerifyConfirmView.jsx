@@ -23,7 +23,7 @@ class VerifyConfirmView extends React.Component {
       l,
       busy,
       done,
-      error
+      errorMessage
     } = props
     return (
       <TheView className={styles.self}
@@ -42,7 +42,7 @@ class VerifyConfirmView extends React.Component {
               </div>
             ) : (
               <div>
-                <p className={styles.error}>{error}</p>
+                <p className={styles.error}>{errorMessage}</p>
               </div>
             )
           }
@@ -55,6 +55,7 @@ class VerifyConfirmView extends React.Component {
     const s = this
     const {verifyScene} = s
 
+    verifyScene.prepareVerify()
     ;(async () => {
       await verifyScene.doVerify()
     })()
@@ -68,5 +69,5 @@ class VerifyConfirmView extends React.Component {
 export default asView(VerifyConfirmView, (state) => ({
   busy: state['verify.busy'],
   done: state['verify.done'],
-  error: state['verify.error'],
+  errorMessage: state['verify.errorMessage'],
 }))

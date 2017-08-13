@@ -58,7 +58,7 @@ module.exports = function create () {
     const verify = store.load(ObjectScope, 'verify')
     verify.load(BooleanScope, 'busy')
     verify.load(BooleanScope, 'done')
-    verify.load(ValueScope, 'error')
+    verify.load(ValueScope, 'errorMessage')
     verify.load(BooleanScope, 'needsVerify')
   }
 

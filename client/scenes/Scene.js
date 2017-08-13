@@ -4,21 +4,21 @@
  */
 'use strict'
 
-const { errorMix, goMix } = require('./mixins')
+const {TheScene} = require('the-scene-base/shim')
 
-const SceneBase = [
-  errorMix,
-  goMix
-].reduce((Clazz, mix) => mix(Clazz), class Root {})
+class Scene extends TheScene {
+  parsePolicyError (e) {
+    try {
+      super.parsePolicyError(e)
+    } catch (e) {
+      switch (e.name) {
 
-class Scene extends SceneBase {
-  constructor ({ store, client, l, history }) {
-    super()
-    const s = this
-    s.store = store
-    s.client = client
-    s.history = history
-    s.l = l
+        // Custom error handling
+
+        default:
+          throw e
+      }
+    }
   }
 }
 

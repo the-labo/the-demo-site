@@ -53,7 +53,7 @@ class App extends React.Component {
 
     ;(async () => {
       await signScene.syncSigned()
-      await verifyScene.syncNeedsVerify()
+      await verifyScene.syncNeedsVerify({delay: 3 * 1000})
     })()
   }
 

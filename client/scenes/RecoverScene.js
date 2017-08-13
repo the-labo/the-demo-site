@@ -33,10 +33,10 @@ class RecoverScene extends Scene {
     recover.send.errorMessage.del()
     {
       recover.send.busy.true()
-
       let ok
       try {
-        ok = await recoverCtrl.send(email)
+        await recoverCtrl.send(email)
+        ok = true
       } catch (e) {
         switch (e.name) {
           case 'UnknownEmailError':
@@ -50,15 +50,27 @@ class RecoverScene extends Scene {
         recover.send.busy.false()
       }
       if (ok) {
-        toast.error.push(l('toasts.RECOVER_EMAIL_SENT'))
+        toast.info.push(l('toasts.RECOVER_EMAIL_SENT'))
+        recover.send.done.true()
       }
     }
+  }
 
+  prepareRecoverSend () {
+    const s = this
+    const {recover} = s.store
+    recover.send.done.false()
+  }
+
+  prepareRecoverReset () {
+    const s = this
+    const {recover} = s.store
+    recover.reset.done.false()
   }
 
   async doReset () {
     const s = this
-    const {store, client} = s
+    const {store, client, l} = s
     const recoverCtrl = await client.use('recover')
     const {seal, envelop} = urlUtil.queryFromSearch()
     const {recover, toast} = store
@@ -81,6 +93,10 @@ class RecoverScene extends Scene {
         console.error(e)
       } finally {
         recover.reset.busy.false()
+      }
+      if (ok) {
+        recover.reset.errorMessage.del()
+        recover.reset.done.true()
       }
     }
   }

@@ -22,9 +22,18 @@ function withDebug (Class,
     for (let name of instanceMethods) {
       WithDebug.prototype[name] = async function debugProxy (...args) {
         const startAt = new Date()
-        const res = await Class.prototype[name].apply(this, args)
-        const took = new Date() - startAt
-        debug(JSON.stringify({class: Class.name, method: name, args, took, context: contextFilter(this)}))
+        let res
+        let exception
+        try {
+          res = await Class.prototype[name].apply(this, args)
+        } catch (e) {
+          exception = e
+          throw e
+        } finally {
+          const took = new Date() - startAt
+          const context = contextFilter(this)
+          debug(`${Class.name}.${name}:`, JSON.stringify({args, took, context, exception}))
+        }
         return res
       }
     }

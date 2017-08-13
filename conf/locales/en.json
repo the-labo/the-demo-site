@@ -42,7 +42,7 @@
     "SHOW_SIGNIN_WITH_EXISTING": "Sign In with your Account",
     "SHOW_SIGNUP": "Sign Up",
     "SHOW_TERMS_OF_USE": "Terms of Use",
-    "SHOW_TOP_AGAIN": "Return to top",
+    "SHOW_TOP_AGAIN": "Return to Top",
     "SHOW_USER_CREATE": "Add User"
   },
   "captions": {
@@ -113,6 +113,7 @@
     "ORG_NAME": "__name_of_your_org__"
   },
   "placeholders": {
+    "NEW_PASSWORD": "New Password",
     "USER_EMAIL": "Email address",
     "USER_NAME": "e.g. john_do",
     "USER_PASSWORD": "Password",

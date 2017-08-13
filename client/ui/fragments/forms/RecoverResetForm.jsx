@@ -17,9 +17,9 @@ const RecoverResetForm = ({
                             getFormAttributes,
                             getSubmitAttributes
                           }) => (
-  <div className='recover-reset-form'
-       {...getFormAttributes()}
-       required={['password']}
+  <TheForm className='recover-reset-form'
+           {...getFormAttributes()}
+           required={['password']}
   >
     <Field>
       <Label {...getLabelAttributesOf('password')}>
@@ -37,7 +37,7 @@ const RecoverResetForm = ({
         {l('buttons.DO_UPDATE')}
       </TheButton>
     </Field>
-  </div>
+  </TheForm>
 )
 
 export default asForm(RecoverResetForm)
