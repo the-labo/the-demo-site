@@ -18,7 +18,7 @@ const PasswordForm = ({
                         getFormAttributes,
                         getSubmitAttributes
                       }) => (
-  <TheForm className='passwordForm primaryForm'
+  <TheForm className='password-form'
            {...getFormAttributes()}
            required={['name']}
   >

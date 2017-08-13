@@ -111,7 +111,7 @@ class AdminUsersScene extends Scene {
     const s = this
     s.updateCreatingValues({
       name: '',
-      role: RoleCodes.NORMAL
+      role: RoleCodes.NORMAL_ROLE
     })
     s.toggleCreatingActive(true)
   }

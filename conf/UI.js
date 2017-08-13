@@ -14,7 +14,7 @@ module.exports = Object.freeze(
     /** NPM packages to bundle as external */
     EXTERNAL_BUNDLES: 'react,react-dom,react-dom/server,react-router-dom,react-transition-group,' +
     'redux,react-redux,prop-types,classnames,fbjs,core-js,abind,asleep,' +
-    'the-store,the-check,the-client,the-scope,the-window,the-components,the-loc',
+    'the-url,the-error,the-store,the-check,the-client,the-scope,the-window,the-components,the-loc',
     /** Toast duration */
     TOAST_DURATION: 2000
   }

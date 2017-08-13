@@ -13,6 +13,8 @@
     "DO_EXECUTE": "Execute",
     "DO_OK": "OK",
     "DO_SAVE": "Save",
+    "DO_SEND": "Send",
+    "DO_SEND_VERIFY": "Send verify mail",
     "DO_SIGNIN": "Sign In",
     "DO_SIGNOUT": "Sign Out",
     "DO_SIGNUP": "Sign Up",
@@ -27,18 +29,24 @@
     "SHOW_EDIT": "Edit",
     "SHOW_LIST": "List",
     "SHOW_MORE": "Show More",
+    "SHOW_MYPAGE": "Account Info",
     "SHOW_NEW_ACCOUNT": "Create new Account",
     "SHOW_PASSWORD_EDIT": "Change Password",
     "SHOW_PASSWORD_EDIT_AGAIN": "Edit Again",
-    "SHOW_PASSWORD_RESET": "Forgot Password?",
     "SHOW_PRIVACY_POLICY": "Privacy Policy",
     "SHOW_PROFILE_EDIT": "Edit Profile",
     "SHOW_PROFILE_EDIT_AGAIN": "Edit Again",
+    "SHOW_RECOVER_SEND": "Forgot Password?",
     "SHOW_RESET_PASSWORD": "Password Reset",
     "SHOW_SIGNIN": "Sign In",
+    "SHOW_SIGNIN_WITH_EXISTING": "Sign In with your Account",
     "SHOW_SIGNUP": "Sign Up",
     "SHOW_TERMS_OF_USE": "Terms of Use",
+    "SHOW_TOP_AGAIN": "Return to top",
     "SHOW_USER_CREATE": "Add User"
+  },
+  "captions": {
+    "ACCOUNT_INFO": "Basic Info"
   },
   "checks": {
     "SURE_TO_DESTROY": "I'm sure to delete"
@@ -50,14 +58,16 @@
     "PASSWORD_WRONG": "Password is wrong",
     "PATTERN_NOT_MATCHED_ERROR": "Invalid value",
     "RESOURCE_NOT_FOUND_ERROR": "Resource not found",
-    "SIGNIN_FAILED_ERROR": "#{labels.SIGN_KEY} or #{labels.USER_PASSWORD} is wrong",
     "UNEXPECTED_ERROR": "Sorry! Something go wrong!",
     "UNEXPECTED_TYPE_ERROR": "Unexpected type",
     "UNEXPECTED_VALUE_ERROR": "Unexpected value",
     "UNIQUE_VIOLATION_ERROR": "Already taken",
     "USER_NOT_FOUND_ERROR": "User not found",
     "VALIDATION_FAILED_ERROR": "There is input deficiencies",
-    "VALUE_MISSING_ERROR": "Required"
+    "VALUE_MISSING_ERROR": "Required",
+    "VERIFY_EXPIRED_ERROR": "This url is already expired",
+    "VERIFY_FAILED_ERROR": "Failed to verify",
+    "VERIFY_SEND_FAILED_ERROR": "Failed to send verify email"
   },
   "labels": {
     "ACTIONS": "Actions",
@@ -66,6 +76,7 @@
     "USER_NAME": "Username",
     "USER_PASSWORD": "Password",
     "USER_PROFILE_NAME": "Display Name",
+    "USER_ROLE": "Role",
     "USER_SIGNIN_AT": "Last Sign In"
   },
   "leads": {
@@ -74,11 +85,19 @@
     "RESET_PASSWORDS_RESULT": "Password reset done. Notify the new passwords to each users",
     "USER_DESTROY_CONFIRM": "Are you sure to delete these users?"
   },
+  "mail": {
+    "GOODBYE_SUBJECT": "[#{app.APP_NAME}] Your withdrawal request has been processed",
+    "RECOVER_SUBJECT": "[#{app.APP_NAME}] Reset Your Password",
+    "VERIFY_SUBJECT": "[#{app.APP_NAME}] Verify Your Email Address"
+  },
   "messages": {
-    "WORKING_DONE": "Done!",
+    "NEEDS_EMAIL_VERIFIED": "Your email address is not verified",
     "PAGE_NOT_FOUND": "Sorry! Page not found...",
     "PASSWORD_UPDATE_DONE": "Password updated!",
     "PROFILE_UPDATE_DONE": "Profile updated!",
+    "RECOVER_SEND_DONE": "Recovery email has sent. Please check the email and follow the instruction.",
+    "VERIFY_DONE": "Email address verified",
+    "WORKING_DONE": "Done!",
     "WORKING_SIGNOUT": "Signing out..."
   },
   "org": {
@@ -101,16 +120,22 @@
     "ADMIN_MENU": "Admin Menu"
   },
   "titles": {
+    "ACCOUNT_MYPAGE_TITLE": "Account",
     "ACCOUNT_PASSWORD_TITLE": "Password Change",
     "ACCOUNT_PROFILE_TITLE": "Account Profile",
+    "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
     "ADMIN_USERS_TITLE": "User Management",
     "PASSWORD_RESET_TITLE": "Password Reset",
     "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
+    "RECOVER_SEND_TITLE": "Password Reset",
     "SIGNIN_VIEW_TITLE": "Sign In",
     "SIGNOUT_VIEW_TITLE": "Sign Out",
     "SIGNUP_VIEW_TITLE": "Sign Up",
     "TERMS_OF_USE_VIEW_TITLE": "Terms of Use",
+    "USER_CREATE_INPUT_TITLE": "Creating User",
+    "USER_CREATE_RESULT_TITLE": "Created User",
+    "USER_CREATE_TITLE": "Create User",
     "USERS_DESTROY_CONFIRM_TITLE": "Destroy Users",
     "USERS_PASSWORD_RESET_CONFIRM_TITLE": "Password Reset",
     "USERS_PASSWORD_RESET_RESULT_TITLE": "New Passwords"
@@ -119,9 +144,11 @@
     "NEEDS_SIGN_IN": "You need Sign In",
     "PASSWORD_UPDATE_DID_SUCCESS": "Password did updated",
     "PROFILE_UPDATE_DID_SUCCESS": "Profile did updated",
+    "RECOVER_EMAIL_SENT": "Recovery email has sent.",
     "SIGNIN_DID_SUCCESS": "Sign in done",
     "SIGNOUT_DID_SUCCESS": "Sign out done",
     "SIGNUP_DID_SUCCESS": "Sign up succeeded!",
-    "USER_DESTROY_DID_SUCCESS": "User destroyed"
+    "USER_DESTROY_DID_SUCCESS": "User destroyed",
+    "VERIFY_EMAIL_SENT": "Verify email has sent."
   }
 }

@@ -8,8 +8,11 @@
 const theServer = require('the-server')
 const {Html} = require('@self/client/shim/ui')
 const {createClient, createStore} = require('@self/client')
+const theSeal = require('the-seal')
 const {
   AppCtrl,
+  VerifyCtrl,
+  RecoverCtrl,
   SignCtrl,
   AdminUsersCtrl
 } = require('../controllers')
@@ -19,17 +22,27 @@ const {
 const pkg = require('../../package.json')
 const env = require('../env')
 
+
 /** @lends create */
 function create (config) {
-  const {locales, db, redis = env.redis} = config
+  const {
+    locales,
+    db,
+    mail,
+    redisConfig = env.redis,
+    sealConfig = env.seal
+  } = config
+  const seal = theSeal(sealConfig['SEAL_SECRET'])
   const app = {
     pkg,
     db,
-    locales
+    locales,
+    seal,
+    mail
   }
   const server = theServer({
     static: ['public'],
-    redis,
+    redis: redisConfig,
     endpoints: {
       '/a/:key': aliasEndpoint
     },
@@ -45,6 +58,8 @@ function create (config) {
 
   server.load(AppCtrl, 'app')
   server.load(SignCtrl, 'sign')
+  server.load(VerifyCtrl, 'verify')
+  server.load(RecoverCtrl, 'recover')
   server.load(AdminUsersCtrl, 'adminUsers')
 
   return server

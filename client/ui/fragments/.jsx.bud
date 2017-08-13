@@ -6,11 +6,9 @@
 const path = require('path')
 
 module.exports = [
-  'dialogs/AdminPasswordResetConfirmDialog',
-  'dialogs/AdminPasswordResetResultDialog',
-  'dialogs/AdminUserDestroyConfirmDialog',
-  'dialogs/PasswordResetDialog',
   'forms/PasswordForm',
+  'forms/RecoverSendForm',
+  'forms/RecoverResetForm',
   'forms/SigninForm',
   'forms/SignupForm',
   'forms/UserCreateForm',

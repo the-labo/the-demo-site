@@ -1,0 +1,14 @@
+{{! Password reset mail }}
+Hi {{#if name}}{{name}}{{else}}there{{/if}},
+
+We received a request to reset the password for your account ({{key}}).
+Please click on the following link, or paste this into your browser to complete the process:
+
+<a href='{{{url}}}'>{{{url}}}</a>
+
+The request will expire at {{expireAt}}.
+
+If you don't want to reset your password, please ignore this message.
+Your password will not be reset.
+
+{{{by}}}

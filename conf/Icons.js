@@ -22,7 +22,11 @@ module.exports = Object.freeze(
 
     PASSWORD_ICON: 'fa',
 
+    ADMIN_ICON: 'fa fa-cogs',
+
     USERS_ICON: 'fa fa-users',
+
+    ACCOUNT_ICON: 'fa fa-user',
     PROFILE_ICON: 'fa fa-id-card-o',
 
     SORT_ICON: 'fa fa-sort',

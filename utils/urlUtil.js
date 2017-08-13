@@ -6,6 +6,7 @@
 
 const qs = require('qs')
 const {formatUrl} = require('the-url')
+const {urlUtil} = require('@self/utils')
 
 /**
  * Resolve url
@@ -26,11 +27,11 @@ function resolveUrl (url, params, options = {}) {
   return resolved
 }
 
-function queryFromSearch (search) {
+function queryFromSearch (search = get('location.search')) {
   if (!search) {
     return {}
   }
-  return qs.parse(search.replace(/^\?/, ''))
+  return qs.parse(search, {ignoreQueryPrefix: true})
 }
 
 module.exports = {

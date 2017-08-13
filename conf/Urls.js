@@ -17,9 +17,15 @@ module.exports = Object.freeze(
     SIGNIN_URL: '/sign/signin',
     SIGNUP_URL: '/sign/signup',
     SIGNOUT_URL: '/sign/signout',
+    SIGNDEL_URL: '/sign/signdel',
 
+    ACCOUNT_MYPAGE_URL: '/account/mypage',
     ACCOUNT_PASSWORD_URL: '/account/password',
     ACCOUNT_PROFILE_URL: '/account/profile',
+
+    VERIFY_CONFIRM_URL: '/verify/confirm',
+    RECOVER_SEND_URL: '/recover/send',
+    RECOVER_RESET_URL: '/recover/reset',
 
     ADMIN_URL: '/admin',
     ADMIN_USERS_URL: '/admin/users',

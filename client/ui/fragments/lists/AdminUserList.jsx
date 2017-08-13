@@ -34,6 +34,7 @@ const AdminUserList = withMoment(
                                   {...{sort, onSort}}
               >{l('labels.USER_NAME')}</SortableHeaderCell>
               <HeaderCell>{l('labels.USER_PROFILE_NAME')}</HeaderCell>
+              <HeaderCell>{l('labels.USER_EMAIL')}</HeaderCell>
               <SortableHeaderCell name='signinAt'
                                   {...{sort, onSort}}
               >{l('labels.USER_SIGNIN_AT')}</SortableHeaderCell>
@@ -63,6 +64,7 @@ const AdminUserListItem = withMoment(
                                        checkValue,
                                        onUpdateCheck
                                      }) {
+    const {profile} = user
     return (
       <Row selected={checkValue}>
         <CheckboxCell
@@ -71,7 +73,8 @@ const AdminUserListItem = withMoment(
           onUpdate={onUpdateCheck}
         />
         <Cell>{user.name}</Cell>
-        <Cell>{user.profile && user.profile.name}</Cell>
+        <Cell>{profile && profile.name}</Cell>
+        <Cell>{profile && profile.email}</Cell>
         <Cell>{formatDate(user.signinAt, 'lll')}</Cell>
       </Row>
     )

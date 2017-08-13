@@ -18,7 +18,7 @@ const SigninForm = ({
                       onSubmit,
                       l
                     }) => (
-  <TheForm className='signinForm primaryForm'
+  <TheForm className='signinForm'
            {...getFormAttributes()}
   >
     <TheInput {...getInputAttributesOf('@')}

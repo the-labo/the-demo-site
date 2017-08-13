@@ -19,16 +19,19 @@ const Header = ({
                   isAdmin,
                   synced,
                   user,
+                  notices,
                   displayNameForUser
                 }) => {
   return (
-    <TheHeader className='header'>
+    <TheHeader className='header'
+               notices={notices}>
       <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
 
       <TheHeader.Tab>
         {
           user && isAdmin(user) && (
             <TheHeader.TabItem to={Urls.ADMIN_URL}
+                               icon={Icons.ADMIN_ICON}
             >{l('tabs.ADMIN_MENU')}</TheHeader.TabItem>
           )
         }
@@ -43,12 +46,9 @@ const Header = ({
                                  label={displayNameForUser(user)}
 
                 >
-                  <TheDropdownMenu.Item icon={Icons.PASSWORD_ICON}
-                                        to={Urls.ACCOUNT_PASSWORD_URL}
-                                        text={l('buttons.SHOW_PASSWORD_EDIT')}/>
-                  <TheDropdownMenu.Item icon={Icons.PROFILE_ICON}
-                                        to={Urls.ACCOUNT_PROFILE_URL}
-                                        text={l('buttons.SHOW_PROFILE_EDIT')}/>
+                  <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
+                                        to={Urls.ACCOUNT_MYPAGE_URL}
+                                        text={l('buttons.SHOW_MYPAGE')}/>
                   <TheDropdownMenu.Item to={Urls.SIGNOUT_URL}
                                         icon={Icons.SIGNOUT_ICON}
                                         text={l('buttons.DO_SIGNOUT')}/>

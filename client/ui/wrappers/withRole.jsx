@@ -18,7 +18,7 @@ function withRole (Class) {
       const {props} = s
       const ComponentProps = Object.assign({
         isAdmin (user) {
-          return hasRole(user, RoleCodes.ADMIN)
+          return hasRole(user, RoleCodes.ADMIN_ROLE)
         }
       }, props)
       return (

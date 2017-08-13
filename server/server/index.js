@@ -3,17 +3,20 @@
 const create = require('./create')
 const env = require('../env')
 const db = require('../db')
-const { locales } = require('../../conf')
+const mail = require('../mail')
+const {locales} = require('../../conf')
 
 const singleton = create({
   locales,
   db,
-  redis: env.redis
+  mail,
+  redis: env.redis,
 })
 
 Object.assign(singleton, {
   create,
   db,
+  mail,
   env
 })
 

@@ -98,6 +98,15 @@ class AccountScene extends Scene {
     const {password} = store.account
     password.done.toggle(done)
   }
+
+  async sendRecover () {
+    const s = this
+  }
+
+  async resetRecover () {
+    const s = this
+  }
+
 }
 
 module.exports = AccountScene

@@ -1,6 +1,7 @@
 {
   "default": {
-    "MOCK": true
+    "MOCK": true,
+    "SENDER_ADDRESS": "support@example.com"
   },
   "production": {
     "MOCK": false,

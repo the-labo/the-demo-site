@@ -64,8 +64,9 @@ class SignScene extends Scene {
     const {client, store, l} = s
     const {info} = store.toast
     const {signup, signed} = store.sign
+    const verifyCtrl = await client.use('verify')
     const signCtrl = await client.use('sign')
-    let {name, password, profile} = expand(signup.entry.values.state)
+    const {name, password, profile} = expand(signup.entry.values.state)
 
     {
       let user
@@ -182,13 +183,6 @@ class SignScene extends Scene {
   async goToSignin () {
     const s = this
     s.goTo(Urls.SIGNIN_URL)
-  }
-
-  async toggleResetting (resetting) {
-    const s = this
-    const {store} = s
-    const {sign} = store
-    sign.resetting.toggle(resetting)
   }
 }
 

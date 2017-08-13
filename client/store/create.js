@@ -39,7 +39,6 @@ module.exports = function create () {
     sign.load(CreatingScope, 'signin')
     sign.load(DestroyingScope, 'signout')
     sign.load(DestroyingScope, 'signdel')
-    sign.load(BooleanScope, 'resetting')
 
     {
       const singed = sign.load(ObjectScope, 'signed')
@@ -53,6 +52,20 @@ module.exports = function create () {
     const account = store.load(ObjectScope, 'account')
     account.load(EdittingScope, 'profile')
     account.load(EdittingScope, 'password')
+  }
+
+  {
+    const verify = store.load(ObjectScope, 'verify')
+    verify.load(BooleanScope, 'busy')
+    verify.load(BooleanScope, 'done')
+    verify.load(ValueScope, 'error')
+    verify.load(BooleanScope, 'needsVerify')
+  }
+
+  {
+    const recover = store.load(ObjectScope, 'recover')
+    recover.load(CreatingScope, 'send')
+    recover.load(EdittingScope, 'reset')
   }
 
   store.load(ToastScope, 'toast')

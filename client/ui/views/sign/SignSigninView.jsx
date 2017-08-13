@@ -6,7 +6,7 @@
 import React from 'react'
 import { TheView, TheButton, TheButtonGroup } from 'the-components'
 import { asView } from '../../wrappers'
-import { SigninForm, PasswordResetDialog } from '../../fragments'
+import { SigninForm } from '../../fragments'
 import { SignScene } from '../../../scenes'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignSigninView.pcss'
@@ -26,7 +26,6 @@ class SignSigninView extends React.Component {
       busy,
       values,
       errors,
-      resetting
     } = props
     return (
       <TheView className={styles.self}>
@@ -42,15 +41,9 @@ class SignSigninView extends React.Component {
 
           <TheButtonGroup collapsed>
             <TheButton to={Urls.SIGNUP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
-            <TheButton onClick={() => signScene.toggleResetting(true)}
-            >{l('buttons.SHOW_PASSWORD_RESET')}</TheButton>
+            <TheButton to={Urls.RECOVER_SEND_URL}
+            >{l('buttons.SHOW_RECOVER_SEND')}</TheButton>
           </TheButtonGroup>
-
-          {
-            resetting && (
-              <PasswordResetDialog onClose={() => signScene.toggleResetting(false)}/>
-            )
-          }
         </TheView.Body>
       </TheView>
     )
@@ -58,8 +51,6 @@ class SignSigninView extends React.Component {
 
   componentDidMount () {
     const s = this
-    const {signScene} = s
-    signScene.toggleResetting(false)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -83,7 +74,6 @@ class SignSigninView extends React.Component {
 export default asView(SignSigninView, (state) => ({
   user: state['sign.signed.user'],
   busy: state['sign.signin.busy'],
-  resetting: state['sign.resetting'],
   values: state['sign.signin.entry.values'],
   errors: state['sign.signin.entry.errors']
 }))

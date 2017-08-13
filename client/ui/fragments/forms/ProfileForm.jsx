@@ -18,7 +18,7 @@ const ProfileForm = ({
                        getFormAttributes,
                        getSubmitAttributes
                      }) => (
-  <TheForm className='profileForm primaryForm'
+  <TheForm className='profileForm'
            {...getFormAttributes()}
            required={['name']}
   >

@@ -17,6 +17,9 @@ class {{pascalcase name}} extends React.Component {
   render () {
     const s = this
     const { props } = s
+    const {
+      l
+    } = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
@@ -36,4 +39,6 @@ class {{pascalcase name}} extends React.Component {
   }
 }
 
-export default asView({{pascalcase name}})
+export default asView({{pascalcase name}}, (state) => ({
+
+}))

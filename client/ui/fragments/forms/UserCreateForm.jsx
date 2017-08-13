@@ -18,7 +18,7 @@ const UserCreateForm = ({
                           getFormAttributes,
                           getSubmitAttributes
                         }) => (
-  <TheForm className='userCreateForm primaryForm'
+  <TheForm className='userCreateForm'
            {...getFormAttributes()}
            required={['name']}
            autoComplete='off'

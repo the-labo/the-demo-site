@@ -24,9 +24,17 @@ class SignCtrl extends TheCtrl {
     const {User, Role, Sign, Profile} = app.db.resources
     const role = roleCode ? await Role.ofCode(roleCode) : undefined
     const user = await User.create({name, role})
-    const profile = await Profile.ofUser(user)
-    await profile.update(profileAttributes)
-    await user.update({profile})
+    try {
+      const profile = await Profile.ofUser(user)
+      await profile.update(
+        Object.assign({}, profileAttributes, {emailVerified: false}),
+        {errorNamespace: 'profile'}
+      )
+      await user.update({profile})
+    } catch (e) {
+      await user.destroy()
+      throw e
+    }
     const sign = await Sign.setUserPassword(user, password)
     s._setSigned(user, sign)
     return user
@@ -96,6 +104,11 @@ class SignCtrl extends TheCtrl {
     const user = await User.one(signed.user.id)
     const profile = await Profile.ofUser(user)
     await user.update({profile})
+    const {email} = profileAttributes
+    const needsVerify = email && (email !== profile.email)
+    if (needsVerify) {
+      profileAttributes.emailVerified = false
+    }
     await profile.update(profileAttributes)
     await s._reloadSigned()
     return true
@@ -116,6 +129,6 @@ class SignCtrl extends TheCtrl {
 
 module.exports = withSigned(
   withDebug(
-    SignCtrl, 'app:signCtrl'
+    SignCtrl, 'app:SignCtrl'
   )
 )

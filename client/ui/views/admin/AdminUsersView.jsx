@@ -6,21 +6,22 @@
 import React from 'react'
 import {
   TheView,
+  TheDialog,
   ThePager,
-  TheActionBar
+  TheActionBar,
+  TheOkDialog,
+  TheConfirmDialog,
+  TheYesNoDialog,
+  TheInfo
 } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withText } from '../../wrappers'
 import styles from './AdminUsersView.pcss'
 import c from 'classnames'
 import { AdminUsersScene } from '../../../scenes'
 import {
   UserSearchForm,
-  AdminUserList,
-  AdminUserCreateResultDialog,
-  AdminUserCreateInputDialog,
-  AdminUserDestroyConfirmDialog,
-  AdminPasswordResetConfirmDialog,
-  AdminPasswordResetResultDialog
+  UserCreateForm,
+  AdminUserList
 } from '../../fragments'
 import { Icons, Urls } from '@self/conf'
 
@@ -36,6 +37,7 @@ class AdminUsersView extends React.Component {
     const {props, adminUsersScene} = s
     const {
       l,
+      displayNameForUser,
       users,
       checks,
       sort,
@@ -110,69 +112,112 @@ class AdminUsersView extends React.Component {
           }
           {
             (creatingActive && !creatingDone) && (
-              <AdminUserCreateInputDialog
-                {...{l}}
-                values={creatingValues}
-                errors={creatingErrors}
+              <TheDialog
+                present
+                title={l('titles.USER_CREATE_INPUT_TITLE')}
                 spinning={creatingBusy}
                 onClose={() => adminUsersScene.toggleCreatingActive(false)}
-                onUpdate={(values) => adminUsersScene.updateCreatingValues(values)}
-                onSubmit={async () => {
-                  await adminUsersScene.doCreate()
-                  await adminUsersScene.syncList()
-                }}
-              />
+              >
+                <UserCreateForm values={creatingValues}
+                                errors={creatingErrors}
+                                onUpdate={(values) => adminUsersScene.updateCreatingValues(values)}
+                                onSubmit={async () => {
+                                  await adminUsersScene.doCreate()
+                                  await adminUsersScene.syncList()
+                                }}
+                />
+              </TheDialog>
             )
           }
           {
             (creatingActive && creatingDone) && (
-              <AdminUserCreateResultDialog
-                {...{l}}
-                user={creatingCreated}
+              <TheOkDialog
+                title={l('titles.USER_CREATE_RESULT_TITLE')}
+                hideCloseButton
                 onClose={() => {
                   adminUsersScene.toggleCreatingActive(false)
                   adminUsersScene.toggleCreatingDone(false)
                 }}
-              />
+              >
+                <TheInfo data={{
+                  [l('labels.USER_NAME')]: creatingCreated.name,
+                  [l('labels.USER_PROFILE_NAME')]: creatingCreated.profile.name,
+                  [l('labels.USER_EMAIL')]: creatingCreated.profile.email,
+                  [l('labels.USER_PASSWORD')]: creatingCreated.password
+                }}
+                />
+              </TheOkDialog>
             )
           }
           {
             destroyConfirming && (
-              <AdminUserDestroyConfirmDialog
-                {...{l}}
-                users={s.getCheckedUsers()}
+              <TheConfirmDialog
                 onClose={() => adminUsersScene.toggleDestroyConfirming(false)}
                 onSubmit={() => {
                   adminUsersScene.doDestroy(s.getCheckedIds())
                   adminUsersScene.removeChecks()
                 }}
                 spinning={destroyBusy}
-              />
+                present
+                title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
+                checkText={l('checks.SURE_TO_DESTROY')}
+                submitText={l('buttons.DO_DESTROY')}
+                lead={l('leads.USER_DESTROY_CONFIRM')}
+              >
+                <ul>
+                  {s.getCheckedUsers().map((user) => (
+                    <li key={user.id}>{displayNameForUser(user)}</li>
+                  ))}
+                </ul>
+              </TheConfirmDialog>
             )
           }
           {
             passwordResetConfirming && (
-              <AdminPasswordResetConfirmDialog
-                {...{l}}
-                users={s.getCheckedUsers()}
-                onNo={() => adminUsersScene.togglePasswordResetConfirming(false)}
-                onClose={() => adminUsersScene.togglePasswordResetConfirming(false)}
-                onYes={() => adminUsersScene.doPasswordReset(s.getCheckedIds())}
-                spinning={passwordResetBusy}
-              />
+              <TheYesNoDialog present
+                              className='admin-password-reset-confirm-dialog'
+                              title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
+                              yesText={l('buttons.DO_EXECUTE')}
+                              noText={l('buttons.DO_CANCEL')}
+                              lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+                              onNo={() => adminUsersScene.togglePasswordResetConfirming(false)}
+                              onClose={() => adminUsersScene.togglePasswordResetConfirming(false)}
+                              onYes={() => adminUsersScene.doPasswordReset(s.getCheckedIds())}
+                              spinning={passwordResetBusy}
+              >
+                <ul>
+                  {
+                    s.getCheckedUsers().map((user) => (
+                      <li key={user.id}>{displayNameForUser(user)}</li>
+                    ))
+                  }
+                </ul>
+              </TheYesNoDialog>
             )
           }
           {
             passwordResetResulting && (
-              <AdminPasswordResetResultDialog
-                {...{l}}
+              <TheOkDialog
+                present
+                className='admin-password-reset-result-dialog'
+                title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
+                lead={l('leads.RESET_PASSWORDS_RESULT')}
+                hideCloseButton
                 users={s.getCheckedUsers()}
-                newPasswords={passwordResetNewPasswords}
                 onClose={() => {
                   adminUsersScene.togglePasswordResetResulting(false)
                   adminUsersScene.removeChecks()
                 }}
-              />
+              >
+                <TheInfo data={
+                  Object.keys(users)
+                    .filter((user) => !!passwordResetNewPasswords[user.id])
+                    .reduce((data, user) => Object.assign(data, {
+                      [displayNameForUser(user)]: passwordResetNewPasswords[user.id]
+                    }), {})
+                }
+                />
+              </TheOkDialog>
             )
           }
         </TheView.Body>
@@ -207,7 +252,7 @@ class AdminUsersView extends React.Component {
   }
 }
 
-export default asView(AdminUsersView, (state) => ({
+export default asView(withText(AdminUsersView), (state) => ({
   users: state['admin.users.listing.entities'],
   checks: state['admin.users.listing.checks'],
   sort: state['admin.users.listing.sort'],

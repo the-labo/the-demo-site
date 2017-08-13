@@ -1,5 +1,5 @@
 /**
- * Define alias endpoint
+ * Endpoint for alias
  * @function aliasEndpoint
  */
 'use strict'

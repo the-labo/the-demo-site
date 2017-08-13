@@ -1,0 +1,12 @@
+'use strict'
+
+const {templates} = require('the-templates')
+
+module.exports = templates({
+  dirname: `${__dirname}/../../assets/mails`,
+  node: true
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

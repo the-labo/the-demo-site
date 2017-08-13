@@ -3,6 +3,8 @@
 module.exports = [
   'SignScene',
   'AccountScene',
+  'VerifyScene',
+  'RecoverScene',
   'AdminUsersScene'
 ].map((name) => ({
   force: false,

@@ -7,7 +7,7 @@ import React from 'react'
 import { TheView, TheButtonGroup, TheButton } from 'the-components'
 import { asView } from '../../wrappers'
 import { SignupForm } from '../../fragments'
-import { SignScene } from '../../../scenes'
+import { SignScene, VerifyScene } from '../../../scenes'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignSignupView.pcss'
 
@@ -16,6 +16,7 @@ class SignSignupView extends React.Component {
     super(props)
     const s = this
     s.signScene = new SignScene(props)
+    s.verifyScene = new VerifyScene(props)
   }
 
   render () {
@@ -57,13 +58,14 @@ class SignSignupView extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     const s = this
-    const {signScene} = s
+    const {signScene, verifyScene} = s
     const {user} = nextProps
 
     ;(async () => {
       if (user) {
         console.warn('[SignupView] Already signed')
         await signScene.finishSignup()
+        await verifyScene.sendVerify()
       }
     })()
   }

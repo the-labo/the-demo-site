@@ -26,13 +26,18 @@ class AdminUsersCtrl extends AdminCtrl {
     })
     const password = await Sign.resetPasswordForUser(user)
     user.password = password
-    const profile = await Profile.create(
-      Object.assign(
-        {},
-        profileAttributes,
-        {user}
-      ))
-    await user.update({profile})
+    try {
+      const profile = await Profile.create(
+        Object.assign(
+          {},
+          profileAttributes,
+          {user}
+        ), {errorNamespace: 'profile'})
+      await user.update({profile})
+    } catch (e) {
+      await user.destroy()
+      throw e
+    }
     return user
   }
 
@@ -41,14 +46,14 @@ class AdminUsersCtrl extends AdminCtrl {
     s._assertSigned()
     s._assertAsAdmin()
     const {app} = s
-    const {User} = app.db.resources
+    const {User, Sign} = app.db.resources
     const newPasswords = {}
     for (const id of userIds) {
       const user = await User.one(id)
       if (!user) {
         continue
       }
-      newPasswords[id] = await User.resetPassword(user)
+      newPasswords[id] = await Sign.resetPasswordForUser(user)
     }
     return newPasswords
   }

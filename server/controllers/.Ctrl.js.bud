@@ -5,7 +5,9 @@
 
 module.exports = [
   'AppCtrl',
-  'SignCtrl'
+  'SignCtrl',
+  'VerifyCtrl',
+  'RecoverCtrl'
 ].map((name) => ({
   force: false,
   mode: '644',

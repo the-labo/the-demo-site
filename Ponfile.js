@@ -122,7 +122,7 @@ module.exports = pon({
   'clean': ['clean:shim', 'clean:public'],
   'env:production': env('production'),
   'env:test': env('test'),
-  'env:debug': env('development'),
+  'env:debug': env('development', {DEBUG: 'app:*'}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
   'production:map': del('public/**/*.map'),
   'production:ccjs': [

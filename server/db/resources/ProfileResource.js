@@ -16,18 +16,19 @@ class ProfileResource extends Resource {
       name: {
         description: 'Display Name',
         type: STRING,
-        pattern: /^[a-z][a-z0-9_-]*$/,
         trim: true
       },
       email: {
         description: 'Email of user',
         type: STRING,
-        pattern:regexEmail,
+        unique: true,
+        pattern: regexEmail,
         trim: true
       },
       emailVerified: {
         description: 'Email has verified or not',
-        type: BOOLEAN
+        type: BOOLEAN,
+        default: () => false
       },
       user: {
         description: 'User',

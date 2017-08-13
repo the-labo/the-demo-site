@@ -9,7 +9,6 @@ import { asForm } from '../../wrappers'
 import { RoleCodes } from '@self/conf'
 
 const {Text, Password, Radio} = TheInput
-const {FieldRoleCodes, Label, Value} = TheForm
 
 const UseSearchForm = ({
                          l,
@@ -19,7 +18,7 @@ const UseSearchForm = ({
                          getFormAttributes,
                          getSubmitAttributes
                        }) => (
-  <TheForm className='userSearchForm primaryForm'
+  <TheForm className='user-search-form'
            inline
            {...getFormAttributes()}
            required={['name']}

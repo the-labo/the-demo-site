@@ -15,7 +15,7 @@ function withAdmin (Class) {
       const {session} = s
       const {user} = session.signed || {}
       const {role} = user || {}
-      return role && role.code === RoleCodes.ADMIN
+      return role && role.code === RoleCodes.ADMIN_ROLE
     }
 
     _assertAsAdmin () {
