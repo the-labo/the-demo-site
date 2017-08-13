@@ -17,8 +17,10 @@ class VerifyCtrl extends TheCtrl {
 
   async needsVerify () {
     const s = this
-    s._assertSigned()
     const user = await s._fetchSignedUser()
+    if (!user) {
+      return false
+    }
     const {profile = {}} = user
     return profile.email && !profile.emailVerified
   }
@@ -39,7 +41,7 @@ class VerifyCtrl extends TheCtrl {
 
     const expireAt = Number(dateAfter(Lifetimes.VERIFY_EMAIL_LIFETIME))
     const envelop = {
-      expireAt,
+      expireAt: String(expireAt),
       userId: user.id,
       email
     }
@@ -68,7 +70,7 @@ class VerifyCtrl extends TheCtrl {
       throw new TheInvalidParameterError(`Invalid parameter`, envelop)
     }
     const {expireAt, userId, email} = envelop
-    const isExpired = new Date(expireAt) < now()
+    const isExpired = new Date(Number(expireAt)) < now()
     if (isExpired) {
       throw new TheExpiredError('Verify expired')
     }

@@ -20,7 +20,6 @@ class RecoverCtrl extends TheCtrl {
     const {db, mail, seal} = app
     const {Profile, Alias} = db.resources
     const {protocol, host, lang} = client
-    s._assertSigned()
 
     const profile = await Profile.first({email})
     if (!profile) {
@@ -55,7 +54,7 @@ class RecoverCtrl extends TheCtrl {
       throw new TheInvalidParameterError(`Invalid parameter`, envelop)
     }
     const {expireAt, userId} = envelop
-    const isExpired = new Date(expireAt) < now()
+    const isExpired = new Date(Number(expireAt)) < now()
     if (isExpired) {
       throw new TheExpiredError('Recovery expired')
     }

@@ -49,22 +49,30 @@ class VerifyScene extends Scene {
     const {store, client, l} = s
     const verifyCtrl = await client.use('verify')
     const {seal, envelop} = urlUtil.queryFromSearch()
-    const {verify} = store.account
-    verify.busy.true()
-    try {
-      const ok = await verifyCtrl.verify({seal, envelop})
-    } catch (e) {
-      switch (e.name) {
-        case 'ExpiredError':
-          verify.error.set(l('errors.VERIFY_EXPIRED_ERROR'))
-          break
-        default:
-          verify.error.set(l('errors.VERIFY_FAILED_ERROR'))
-          break
+    const {verify} = store
+    verify.done.false()
+    {
+      verify.busy.true()
+      let ok
+      try {
+        ok = await verifyCtrl.verify({seal, envelop})
+        await s.syncNeedsVerify()
+      } catch (e) {
+        switch (e.name) {
+          case 'ExpiredError':
+            verify.error.set(l('errors.VERIFY_EXPIRED_ERROR'))
+            break
+          default:
+            verify.error.set(l('errors.VERIFY_FAILED_ERROR'))
+            break
+        }
+        console.error(e)
+      } finally {
+        verify.busy.false()
       }
-      console.error(e)
-    } finally {
-      verify.busy.false()
+      if (ok) {
+        verify.done.true()
+      }
     }
   }
 }

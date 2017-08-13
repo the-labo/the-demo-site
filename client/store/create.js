@@ -65,7 +65,9 @@ module.exports = function create () {
   {
     const recover = store.load(ObjectScope, 'recover')
     recover.load(CreatingScope, 'send')
+    recover.load(ValueScope, 'send', 'errorMessage')
     recover.load(EdittingScope, 'reset')
+    recover.load(ValueScope, 'reset', 'errorMessage')
   }
 
   store.load(ToastScope, 'toast')
@@ -80,7 +82,7 @@ module.exports = function create () {
         passwordReset.load(BooleanScope, 'busy')
         passwordReset.load(BooleanScope, 'confirming')
         passwordReset.load(BooleanScope, 'resulting')
-        passwordReset.load(ObjectScope, 'newPasswords')
+        passwordReset.load(ObjectScope, 'passwords')
       }
       {
         const destroying = users.load(ObjectScope, 'destroying')

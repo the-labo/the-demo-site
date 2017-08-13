@@ -6175,8 +6175,8 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     uuid "^3.0.1"
 
 the-components@^1.6.0:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.17.0.tgz#6105d1baa2611e53c1a39f1b70d4a51e2dfac35e"
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.17.1.tgz#f4d62d54be35376694048ec727a2f393e101c35b"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -6191,7 +6191,7 @@ the-components@^1.6.0:
     the-footer "^1.0.2"
     the-form "^1.0.12"
     the-head "^1.0.5"
-    the-header "^1.3.2"
+    the-header "^1.4.1"
     the-html "^1.0.6"
     the-icon "^1.0.6"
     the-image "^1.1.0"
@@ -6226,7 +6226,7 @@ the-container@^2.0.10:
     the-component-util "^1.3.0"
     the-style "^1.2.2"
 
-the-controller-base@^2.1.0:
+the-controller-base@^2.0.7:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-2.1.0.tgz#11327dcafc220da627c9b8ba6e7b34c31aacd949"
   dependencies:
@@ -6333,9 +6333,9 @@ the-head@^1.0.5:
     prop-types "^15.5.8"
     stringcase "^3.2.1"
 
-the-header@^1.3.2:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/the-header/-/the-header-1.4.1.tgz#94e38374bcc3ff1c75c0e1252ca5b957deb5d796"
+the-header@^1.4.1:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/the-header/-/the-header-1.4.2.tgz#d6906737b8e14d77d7100a85738906712e3cc7f4"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.10"
@@ -6561,11 +6561,12 @@ the-script-update@^1.0.0:
     co "^4.6.0"
     commander "^2.9.0"
 
-the-seal@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/the-seal/-/the-seal-1.0.0.tgz#248cc8a7a23e627bd2c03af52b6ef3ed3ce75d5c"
+the-seal@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-seal/-/the-seal-1.1.0.tgz#85b7f54e2a41eeae111cc7f8b06951b33d88dfe0"
   dependencies:
     abind "^1.0.3"
+    qs "^6.5.0"
 
 the-seat@^1.2.1:
   version "1.2.1"
@@ -6595,9 +6596,9 @@ the-seed@^1.0.1:
     argx "^3.0.2"
     pudding "^4.0.4"
 
-the-server@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-3.1.0.tgz#7340a26abffd43fcb80c200a9f46f2aff85a9a1a"
+the-server@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-3.1.1.tgz#77a2f93fdbea9b139a7f9c16bcc90bfe5f73c4c7"
   dependencies:
     aport "^1.0.0"
     asleep "^1.0.3"
@@ -6611,7 +6612,7 @@ the-server@^3.1.0:
     sugo-module-scoped "^1.0.4"
     the-check "^1.1.1"
     the-component-util "^1.4.1"
-    the-controller-base "^2.1.0"
+    the-controller-base "^2.0.7"
     uuid "^3.1.0"
 
 the-spin@^1.0.1:

@@ -31,13 +31,13 @@ const PasswordForm = ({
       </Value>
     </Field>
     <Field>
-      <Label {...getLabelAttributesOf('newPassword')}>
+      <Label {...getLabelAttributesOf('password')}>
         {l('labels.NEW_PASSWORD')}
       </Label>
       <Value>
         <Password placeholder={l('placeholders.NEW_PASSWORD')}
                   autoFocus
-                  {...getInputAttributesOf('newPassword')}/>
+                  {...getInputAttributesOf('password')}/>
       </Value>
     </Field>
     <br/>

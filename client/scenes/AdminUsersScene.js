@@ -167,14 +167,14 @@ class AdminUsersScene extends Scene {
     {
       users.passwordReset.busy.true()
 
-      let newPasswords
+      let passwords
       try {
-        newPasswords = await adminUsers.resetUserPasswords(ids)
+        passwords = await adminUsers.resetUserPasswords(ids)
       } finally {
         users.passwordReset.busy.false()
       }
-      if (newPasswords) {
-        users.passwordReset.newPasswords.set(newPasswords)
+      if (passwords) {
+        users.passwordReset.passwords.set(passwords)
         s.togglePasswordResetConfirming(false)
         s.togglePasswordResetResulting(true)
       }
@@ -185,7 +185,7 @@ class AdminUsersScene extends Scene {
     const s = this
     const {store} = s
     const {users} = store.admin
-    users.passwordReset.newPasswords.drop()
+    users.passwordReset.passwords.drop()
   }
 }
 

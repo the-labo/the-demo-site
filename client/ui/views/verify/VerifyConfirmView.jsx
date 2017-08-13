@@ -66,7 +66,7 @@ class VerifyConfirmView extends React.Component {
 }
 
 export default asView(VerifyConfirmView, (state) => ({
-  busy: state['account.verify.busy'],
-  done: state['account.verify.done'],
-  error: state['account.verify.error'],
+  busy: state['verify.busy'],
+  done: state['verify.done'],
+  error: state['verify.error'],
 }))

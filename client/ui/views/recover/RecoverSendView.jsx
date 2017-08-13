@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone } from 'the-components'
+import { TheView, TheDone, TheLead } from 'the-components'
 import { asView } from '../../wrappers/index'
 import { RecoverScene } from '../../../scenes'
 import { RecoverSendForm } from '../../fragments'
@@ -22,6 +22,7 @@ class RecoverSendView extends React.Component {
     const {props, recoverScene} = s
     const {
       l,
+      errorMessage,
       busy,
       done,
       values,
@@ -33,17 +34,21 @@ class RecoverSendView extends React.Component {
                         text={l('titles.RECOVER_SEND_TITLE')}
         />
         <TheView.Body>
+
+          <TheLead text={l('leads.RECOVER_SEND')}
+                   error={errorMessage}
+          />
           {
             done ? (
+              <TheDone linkTo='/'
+                       linkText={l('buttons.SHOW_TOP_AGAIN')}
+                       message={l('messages.RECOVER_SEND_DONE')}
+              />
+            ) : (
               <RecoverSendForm spinning={busy}
                                {...{values, errors}}
                                onUpdate={(v) => recoverScene.setSendEntryValues(v)}
                                onSubmit={() => recoverScene.doSend()}
-              />
-            ) : (
-              <TheDone linkTo='/'
-                       linkText={l('buttons.SHOW_TOP_AGAIN')}
-                       message={l('messages.RECOVER_SEND_DONE')}
               />
             )
           }
@@ -61,6 +66,7 @@ class RecoverSendView extends React.Component {
 }
 
 export default asView(RecoverSendView, (state) => ({
+  errorMessage: state['recover.send.errorMessage'],
   busy: state['recover.send.busy'],
   done: state['recover.send.done'],
   values: state['recover.send.entry.values'],

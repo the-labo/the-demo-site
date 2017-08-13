@@ -99,14 +99,6 @@ class AccountScene extends Scene {
     password.done.toggle(done)
   }
 
-  async sendRecover () {
-    const s = this
-  }
-
-  async resetRecover () {
-    const s = this
-  }
-
 }
 
 module.exports = AccountScene

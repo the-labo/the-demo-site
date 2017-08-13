@@ -270,5 +270,5 @@ export default asView(withText(AdminUsersView), (state) => ({
   passwordResetConfirming: state['admin.users.passwordReset.confirming'],
   passwordResetResulting: state['admin.users.passwordReset.resulting'],
   passwordResetBusy: state['admin.users.passwordReset.busy'],
-  passwordResetNewPasswords: state['admin.users.passwordReset.newPasswords']
+  passwordResetNewPasswords: state['admin.users.passwordReset.passwords']
 }))

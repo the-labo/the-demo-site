@@ -6,6 +6,7 @@
 
 const qs = require('qs')
 const {formatUrl} = require('the-url')
+const {get} = require('the-window')
 const {urlUtil} = require('@self/utils')
 
 /**
