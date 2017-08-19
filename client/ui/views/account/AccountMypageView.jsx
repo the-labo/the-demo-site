@@ -4,10 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheSection, TheInfo, TheButton, TheButtonGroup } from 'the-components'
+import { TheView, TheSection, TheInfo, TheLink, TheButton, TheButtonGroup } from 'the-components'
 import { asView, onlySigned } from '../../wrappers'
 import styles from './AccountMypageView.pcss'
-import {Urls} from '@self/conf'
+import { Urls } from '@self/conf'
 import { SignScene } from '../../../scenes'
 
 class AccountMypageView extends React.Component {
@@ -56,6 +56,12 @@ class AccountMypageView extends React.Component {
                         {l('buttons.SHOW_PROFILE_EDIT')}
                       </TheButton>
                     </TheButtonGroup>
+
+                    <br/>
+                    <hr/>
+                    <div className={styles.links}>
+                      <TheLink to={Urls.SIGNDEL_URL}>{l('buttons.SHOW_SIGNDEL')}</TheLink>
+                    </div>
                   </TheSection.Body>
                 </TheSection>
               </div>

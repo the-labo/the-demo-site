@@ -82,7 +82,7 @@ module.exports = function create () {
         passwordReset.load(BooleanScope, 'busy')
         passwordReset.load(BooleanScope, 'confirming')
         passwordReset.load(BooleanScope, 'resulting')
-        passwordReset.load(ObjectScope, 'passwords')
+        passwordReset.load(ObjectScope, 'newPasswords')
       }
       {
         const destroying = users.load(ObjectScope, 'destroying')

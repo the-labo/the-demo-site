@@ -7,13 +7,21 @@
 const {TheScene} = require('the-scene-base/shim')
 
 class Scene extends TheScene {
-  parsePolicyError (e) {
+  catchEntryError (e) {
+    const s = this
     try {
-      super.parsePolicyError(e)
+      return super.catchEntryError(e)
     } catch (e) {
       switch (e.name) {
 
-        // Custom error handling
+        case 'NotFoundError': {
+          return s.parseAppError(e, {
+            defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'
+          })
+        }
+        case 'WrongPasswordError': {
+          return s.parseAppError(e, {})
+        }
 
         default:
           throw e

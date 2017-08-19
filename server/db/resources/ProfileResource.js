@@ -11,6 +11,13 @@ const {withUser} = require('../mixins')
 
 /** @lends ProfileResource */
 class ProfileResource extends Resource {
+
+  async userWithEmail (email) {
+    const Profile = this
+    const profile = await Profile.first({email})
+    return profile ? profile.user : null
+  }
+
   static get policy () {
     return {
       name: {

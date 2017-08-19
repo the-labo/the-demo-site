@@ -63,7 +63,7 @@ class RecoverCtrl extends TheCtrl {
     if (!user) {
       throw new TheGoneError('User already gone')
     }
-    await Sign.setUserPassword(user)
+    await Sign.setUserPassword(user, password)
 
     const sign = await Sign.ofUser(user)
     s._setSigned(user, sign)

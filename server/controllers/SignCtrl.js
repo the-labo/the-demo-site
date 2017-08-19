@@ -43,8 +43,8 @@ class SignCtrl extends TheCtrl {
   async signin (name, password) {
     const s = this
     const {app} = s
-    const {User, Sign} = app.db.resources
-    const user = await User.first({name})
+    const {User, Sign, Profile} = app.db.resources
+    const user = (await User.first({name})) || (await Profile.userWithEmail(name))
     if (!user) {
       throw new TheNotFoundError(`User not found for name: ${name}`, {
         field: 'name',

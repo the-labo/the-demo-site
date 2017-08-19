@@ -1,0 +1,19 @@
+'use strict'
+
+const {getSetting} = require('@self/Local')
+
+const domain = getSetting('DOMAIN')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  path: `${domain}.conf`,
+  data: {
+    domain,
+    root: __dirname
+  }
+}
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

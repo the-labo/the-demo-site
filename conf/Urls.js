@@ -30,7 +30,7 @@ module.exports = Object.freeze(
     ADMIN_URL: '/admin',
     ADMIN_USERS_URL: '/admin/users',
 
-    ICON_URL: '/icons/favicon.svg',
+    ICON_URL: '/icons/favicon.png',
     JS_BUNDLE_URL: '/bundle.js',
     JS_BUNDLE_CC_URL: '/bundle.cc.js',
     JS_EXTERNAL_URL: '/external-bundle.js',

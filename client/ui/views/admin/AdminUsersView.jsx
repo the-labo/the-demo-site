@@ -210,7 +210,7 @@ class AdminUsersView extends React.Component {
                 }}
               >
                 <TheInfo data={
-                  Object.keys(users)
+                  users
                     .filter((user) => !!passwordResetNewPasswords[user.id])
                     .reduce((data, user) => Object.assign(data, {
                       [displayNameForUser(user)]: passwordResetNewPasswords[user.id]
@@ -270,5 +270,5 @@ export default asView(withText(AdminUsersView), (state) => ({
   passwordResetConfirming: state['admin.users.passwordReset.confirming'],
   passwordResetResulting: state['admin.users.passwordReset.resulting'],
   passwordResetBusy: state['admin.users.passwordReset.busy'],
-  passwordResetNewPasswords: state['admin.users.passwordReset.passwords']
+  passwordResetNewPasswords: state['admin.users.passwordReset.newPasswords']
 }))

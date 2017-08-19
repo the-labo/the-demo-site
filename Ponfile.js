@@ -16,6 +16,7 @@ const icon = require('pon-task-icon')
 const {seed, setup, drop} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
+const {domain} = require('./server/env')
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,
@@ -24,10 +25,12 @@ const {
   REDIS_PUBLISHED_PORT,
   NGINX_CONTAINER_NAME,
   NGINX_PUBLISHED_PORT,
-  APP_PROCESS_NAME
+  APP_PROCESS_NAME,
+  getSetting,
+  askSetting
 } = require('./Local')
 
-const {fork} = command
+const {fork, spawn} = command
 
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
@@ -70,6 +73,7 @@ module.exports = pon({
   ]),
   'struct:symlink': symlink({
     'shim/conf': 'node_modules/@self/conf',
+    'Local.js': 'node_modules/@self/Local.js',
     'shim/utils': 'node_modules/@self/utils',
     'client': 'node_modules/@self/client'
   }, {force: true}),
@@ -110,7 +114,7 @@ module.exports = pon({
     watchDelay: 300
   }),
   'assets:install': () => theAssets().installTo('assets'),
-  'assets:generate': icon('assets/icons/favicon.svg', {
+  'image:generate': icon('assets/icons/favicon.png', {
     text: pkg.name[0],
     font: 'a',
     shape: 'b',
@@ -152,6 +156,18 @@ module.exports = pon({
     }
   }),
   'pm2': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+
+  'vhost:render': coz('misc/vhost/.*.bud'),
+  'vhost:cert': spawn('certbot', [
+    'certonly', {
+      webroot: true,
+      agreeTos: true,
+      noEffEmail: true,
+      email: getSetting('ADMIN_EMAIL'),
+      w: 'misc/vhost',
+      d: getSetting('DOMAIN')
+    }
+  ]),
   // ----------------
   // Main Tasks
   // ----------------
@@ -172,6 +188,8 @@ module.exports = pon({
   restart: ['pm2/restart'],
   show: ['pm2/show'],
   logs: ['pm2/logs'],
+
+  setting: () => askSetting(),
   // ----------------
   // Aliases
   // ----------------

@@ -6,7 +6,13 @@
 'use strict'
 
 const theSeat = require('the-seat')
+const theSetting = require('the-setting')
 const seat = theSeat()
+const setting = theSetting(`${__dirname}/var/app/setting.json`, {
+  ADMIN_EMAIL: 'admin@the-demo-site.com',
+  DOMAIN: 'the-demo-site.com'
+})
+
 const pkg = require('./package.json')
 const crypto = require('crypto')
 
@@ -39,10 +45,11 @@ const Vars = Object.freeze({
 })
 
 const Local = Object.assign({
-  toEnv () {
-    return Object.assign({}, Vars)
-  }
-}, Vars)
+  toEnv: () => Object.assign({}, Vars),
+  askSetting: () => setting.ask(),
+  getSetting: () => setting.get(),
+  setSetting: () => setting.set()
+}, Vars, setting.get())
 
 module.exports = Local
 

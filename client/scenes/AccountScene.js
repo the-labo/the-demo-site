@@ -29,6 +29,7 @@ class AccountScene extends Scene {
     const {store, client} = s
     const {profile} = store.account
     const signCtrl = await client.use('sign')
+
     profile.busy.true()
     let signed
     try {

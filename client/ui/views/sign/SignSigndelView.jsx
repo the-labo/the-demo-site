@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView } from 'the-components'
+import { TheView, TheButton, TheButtonGroup } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './SignSigndelView.pcss'
 
@@ -16,17 +16,18 @@ class SignSigndelView extends React.Component {
 
   render () {
     const s = this
-    const { props } = s
+    const {props} = s
     const {
       l
     } = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
-                        text={null}
+                        text={l('titles.SIGNDEL_VIEW_TITLE')}
         />
         <TheView.Body>
-        This is SignSigndelView!
+          <TheButtonGroup>
+          </TheButtonGroup>
         </TheView.Body>
       </TheView>
     )
@@ -39,6 +40,4 @@ class SignSigndelView extends React.Component {
   }
 }
 
-export default asView(SignSigndelView, (state) => ({
-
-}))
+export default asView(SignSigndelView, (state) => ({}))
