@@ -1,8 +1,6 @@
 'use strict'
 
-const {getSetting} = require('@self/Local')
-
-const domain = getSetting('DOMAIN')
+const {APP_DOMAIN: domain, APP_PORT, port} = require('@self/Local')
 
 module.exports = {
   force: true,
@@ -10,6 +8,7 @@ module.exports = {
   path: `${domain}.conf`,
   data: {
     domain,
+    port,
     root: __dirname
   }
 }
