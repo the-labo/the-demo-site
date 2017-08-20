@@ -4428,8 +4428,8 @@ pon-task-basic@^2.0.3:
     pon-task-mocha "^1.0.2"
 
 pon-task-browser@^2.1.3:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-2.2.2.tgz#5a1c334de1373bc4b3ecca25c876bd154fcb1330"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-2.2.3.tgz#75ab68e2140beb38bffbc5df1324c9ab0c8eb961"
   dependencies:
     amkdirp "^1.0.0"
     asenv "^1.1.1"
@@ -5483,7 +5483,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@^2.5.4:
+rimraf@^2.5.4, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
@@ -6000,7 +6000,7 @@ sugo-constants@^2.4.1, sugo-constants@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/sugo-constants/-/sugo-constants-2.4.2.tgz#bf057ad57a1af829c5342b086a9817d987709f67"
 
-sugo-hub@^8.0.1:
+sugo-hub@^8.0.2:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/sugo-hub/-/sugo-hub-8.0.2.tgz#2e200e39696c255df57304ad00f9fd5a8f33db00"
   dependencies:
@@ -6202,8 +6202,8 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     uuid "^3.0.1"
 
 the-components@^1.18.0:
-  version "1.19.4"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.19.4.tgz#fefdd8c67d5fa44def29e8261b515b02b33985fe"
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.20.0.tgz#9da1fbde7d4e4635c9a269760a510b3a74f234d9"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -6218,7 +6218,7 @@ the-components@^1.18.0:
     the-drawer "^1.0.1"
     the-footer "^1.0.2"
     the-form "^1.1.0"
-    the-head "^1.0.5"
+    the-head "^1.0.6"
     the-header "^1.4.7"
     the-html "^1.0.6"
     the-icon "^1.0.6"
@@ -6254,13 +6254,6 @@ the-container@^2.0.10:
     prop-types "^15.5.8"
     the-component-util "^1.3.0"
     the-style "^1.2.2"
-
-the-controller-base@^2.0.7:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-2.1.0.tgz#11327dcafc220da627c9b8ba6e7b34c31aacd949"
-  dependencies:
-    debug "^3.0.0"
-    sugo-module-base "^1.2.6"
 
 the-controller-base@^3.0.1:
   version "3.0.1"
@@ -6368,13 +6361,13 @@ the-form@^1.1.0:
     the-input "^1.4.11"
     the-style "^1.2.4"
 
-the-head@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/the-head/-/the-head-1.0.5.tgz#3df723bb2d2886d6545b8c0c32d8c04d68fbcfd1"
+the-head@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/the-head/-/the-head-1.0.6.tgz#1d55ce1a78573fdd221d3a771692583b5393a20b"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
-    stringcase "^3.2.1"
+    stringcase "^4.0.0"
 
 the-header@^1.4.7:
   version "1.4.7"
@@ -6647,23 +6640,26 @@ the-seed@^1.0.1:
     argx "^3.0.2"
     pudding "^4.0.4"
 
-the-server@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-3.1.1.tgz#77a2f93fdbea9b139a7f9c16bcc90bfe5f73c4c7"
+the-server@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.0.2.tgz#6881a9c486c0c7a4c639f2d8586634d252eab376"
   dependencies:
+    adigest "^1.0.2"
     aport "^1.0.0"
+    asfs "^1.2.3"
     asleep "^1.0.3"
     classnames "^2.2.5"
     locale "^0.1.0"
     prop-types "^15.5.9"
+    rimraf "^2.6.1"
     stringcase "^4.0.0"
     sugo-actor "^7.0.2"
     sugo-constants "^2.4.2"
-    sugo-hub "^8.0.1"
+    sugo-hub "^8.0.2"
     sugo-module-scoped "^1.0.4"
     the-check "^1.1.1"
     the-component-util "^1.4.1"
-    the-controller-base "^2.0.7"
+    the-controller-base "^3.0.1"
     uuid "^3.1.0"
 
 the-setting@^1.0.1:

@@ -1,0 +1,25 @@
+/**
+ * Bud file for theme.css
+ */
+'use strict'
+
+const {TheThemeStyle} = require('the-components')
+const {Styles} = require('@self/conf')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  data: {
+    css: TheThemeStyle.cssString({
+      dominantColor: Styles.DOMINANT_COLOR
+    })
+  },
+  tmpl: `/** App Theme Style */
+
+{{{css}}}  
+`
+}
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

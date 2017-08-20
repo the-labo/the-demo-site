@@ -35,7 +35,8 @@ module.exports = Object.freeze(
     JS_BUNDLE_CC_URL: '/bundle.cc.js',
     JS_EXTERNAL_URL: '/external-bundle.js',
     JS_EXTERNAL_CC_URL: '/external-bundle.cc.js',
-    CSS_BUNDLE_URL: '/bundle.css',
-    CSS_FONT_URL: '/css/font-awesome.css'
+    CSS_THEME_URL: '/css/theme.css',
+    CSS_FONT_URL: '/css/font-awesome.css',
+    CSS_BUNDLE_URL: '/bundle.css'
   }
 )

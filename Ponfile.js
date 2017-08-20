@@ -10,6 +10,7 @@ const pon = require('pon')
 const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {fs, mocha, command, coz, fmtjson, env} = require('pon-task-basic')
 const {mysql, redis, nginx} = require('pon-task-docker')
+const {envify} = browser.transforms
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
@@ -106,12 +107,14 @@ module.exports = pon({
   'ui:css': css('client/shim/ui', 'public', {pattern: '*.pcss'}),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
     externals: EXTERNAL_BUNDLES,
-    watchTargets: 'client/shim/**/*.js'
+    watchTargets: 'client/shim/**/*.js',
+    transforms: [envify()]
   }),
   'ui:browser-external': browser('client/shim/ui/externals.js', `public/${JS_EXTERNAL_URL}`, {
     requires: EXTERNAL_BUNDLES,
     skipWatching: true,
-    watchDelay: 300
+    watchDelay: 300,
+    transforms: [envify()]
   }),
   'assets:install': () => theAssets().installTo('assets'),
   'image:generate': icon('assets/icons/favicon.png', {
@@ -155,7 +158,7 @@ module.exports = pon({
       APP_PORT
     }
   }),
-  'pm2': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
 
   'vhost:render': coz('misc/vhost/.*.bud'),
   'vhost:cert': spawn('certbot', [
@@ -183,11 +186,11 @@ module.exports = pon({
   debug: ['env:debug', 'build', 'debug:*'],
   production: ['production:prepare', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2/start'],
-  stop: ['pm2/stop'],
-  restart: ['pm2/restart'],
-  show: ['pm2/show'],
-  logs: ['pm2/logs'],
+  start: ['pm2:app/start'],
+  stop: ['pm2:app/stop'],
+  restart: ['pm2:app/restart'],
+  show: ['pm2:app/show'],
+  logs: ['pm2:app/logs'],
 
   setting: () => askSetting(),
   // ----------------

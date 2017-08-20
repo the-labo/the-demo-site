@@ -40,7 +40,7 @@ class App extends React.Component {
         <Header {...{synced, user, notices}}/>
         <Toasts/>
         <Main>
-          <Routes/>
+          <Routes {...{user}}/>
         </Main>
         <Footer/>
       </TheRoot>

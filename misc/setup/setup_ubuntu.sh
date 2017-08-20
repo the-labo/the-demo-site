@@ -58,3 +58,9 @@ sudo apt-get update
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx -y
+
+### Java
+
+sudo apt-get update
+sudo apt-get install default-jre -y
+

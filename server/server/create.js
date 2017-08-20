@@ -22,7 +22,6 @@ const {
 const pkg = require('../../package.json')
 const env = require('../env')
 
-
 /** @lends create */
 function create (config) {
   const {
@@ -46,6 +45,7 @@ function create (config) {
     endpoints: {
       '/a/:key': aliasEndpoint
     },
+    cacheDir: 'tmp/cache',
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),

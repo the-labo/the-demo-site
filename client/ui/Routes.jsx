@@ -7,7 +7,7 @@ import { TheRoute } from 'the-components'
 import * as views from './views'
 import { withLoc } from 'the-loc'
 
-const Routes = ({l}) => (
+const Routes = ({l, user}) => (
   <TheRoute.Switch>
     <TheRoute exact path={Urls.TOP_URL} component={views.HomeView}/>
 
