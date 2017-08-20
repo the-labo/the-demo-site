@@ -12,7 +12,8 @@
     "start": "pon start",
     "stop": "pon stop",
     "test": "pon test",
-    "update": "the-script-update"
+    "update": "the-script-update",
+    "release": "the-script-release -y"
   },
   "repository": "the-labo/the-demo-site",
   "keywords": [
