@@ -1,6 +1,6 @@
 'use strict'
 
-const {APP_DOMAIN: domain, APP_PORT: port} = require('@self/Local')
+const {APP_DOMAIN: domain, NGINX_PUBLISHED_PORT: port} = require('@self/Local')
 
 module.exports = [
   domain,
