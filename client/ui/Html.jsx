@@ -39,14 +39,14 @@ const Html = ({appScope, renderingContext}) => {
                title={l('app.APP_NAME')}
                icon={ICON_URL}
                version={version}
-               globals={{[APP_PROP_NAME]: {lang}}}
+               globals={{[APP_PROP_NAME]: appProps}}
                color={DOMINANT_COLOR}
       >
       </TheHead>
       <TheBody>
         <div id={APP_CONTAINER_ID}>
           <TheRouter.Static context={renderingContext}
-                            location={renderingContext.path}
+                            location={path}
           >
             <App {...appProps} {...{client, store}}/>
           </TheRouter.Static>
