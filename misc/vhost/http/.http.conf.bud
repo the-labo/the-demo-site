@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const {APP_DOMAIN: domain, APP_PORT: port} = require('@self/Local')
 
 module.exports = [
@@ -8,11 +9,11 @@ module.exports = [
 ].map((domain) => ({
   force: true,
   mode: '444',
-  path: `${domain}.http`,
+  path: `${domain}`,
   data: {
     domain,
     port,
-    root: __dirname
+    webroot: path.resolve(__dirname, '../webroot')
   }
 }))
 

@@ -1,2 +1,8 @@
-*.http
-*.https
+
+http/*.*
+!http/.*.bud
+!http/.*.hbs
+
+https/*.*
+!https/.*.bud
+!https/.*.hbs

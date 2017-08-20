@@ -8,11 +8,11 @@ module.exports = [
 ].map((domain) => ({
   force: true,
   mode: '444',
-  path: `${domain}.https`,
+  path: `${domain}`,
   data: {
     domain,
     port,
-    root: __dirname
+    certDir: '/etc/letsencrypt/live'
   }
 }))
 
