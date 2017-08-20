@@ -10,6 +10,7 @@ import {
 import App from './App'
 import { UI, Urls, Styles, locales } from '@self/conf'
 import { isProduction } from 'the-check'
+
 const {APP_PROP_NAME, APP_CONTAINER_ID} = UI
 const {DOMINANT_COLOR} = Styles
 const {
@@ -25,9 +26,9 @@ const {
 
 const Html = ({appScope, renderingContext}) => {
   const {version} = appScope.pkg
-  const {lang, client, store} = renderingContext
+  const {lang, client, store, path} = renderingContext
   const l = locales.bind(lang)
-  const appProps = {lang}
+  const appProps = {lang, path}
   return (
     <TheHtml>
       <TheHead js={[
