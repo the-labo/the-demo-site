@@ -2,16 +2,19 @@
 
 const {APP_DOMAIN: domain, APP_PORT: port} = require('@self/Local')
 
-module.exports = {
+module.exports = [
+  domain,
+  ['www', domain].join('.')
+].map((domain) => ({
   force: true,
   mode: '444',
-  path: `${domain}.conf`,
+  path: `${domain}.https`,
   data: {
     domain,
     port,
     root: __dirname
   }
-}
+}))
 
 if (!module.parent) {
   require('coz').render(__filename)

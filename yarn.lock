@@ -282,6 +282,19 @@ ape-tmpl@^5.0.20:
     objnest "^3.0.8"
     stringcase "^3.1.1"
 
+ape-tmpl@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ape-tmpl/-/ape-tmpl-6.0.0.tgz#683880d867f23ceafea0bf00f893a35c8ab5cd85"
+  dependencies:
+    aglob "^1.1.1"
+    arrayfilter "^1.1.2"
+    arraysort "^2.0.0"
+    co "^4.6.0"
+    evaljson "^4.0.12"
+    minimatch "^3.0.2"
+    objnest "^3.0.8"
+    stringcase "^3.1.1"
+
 ape-updating@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ape-updating/-/ape-updating-4.1.1.tgz#be436c875ad6762c3e1cad0d3a36c117d4dbebb2"
@@ -1674,7 +1687,7 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.2.5:
+clay-lump@^4.2.6:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.6.tgz#562fd858ff44466e47639b6dc24b90b17099830c"
   dependencies:
@@ -2252,7 +2265,7 @@ debug@*, debug@^3.0.0:
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.1.3, debug@^2.2.0, debug@^2.3.0, debug@^2.3.2, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6, debug@~2.6.8:
+debug@2.6.8, debug@^2.1.3, debug@^2.2.0, debug@^2.3.2, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6, debug@~2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -3213,11 +3226,7 @@ inflation@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/inflation/-/inflation-2.0.0.tgz#8b417e47c28f925a45133d914ca1fd389107f30f"
 
-inflection@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/inflection/-/inflection-1.10.0.tgz#5bffcb1197ad3e81050f8e17e21668087ee9eb2f"
-
-inflection@^1.10.0:
+inflection@1.12.0, inflection@^1.10.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/inflection/-/inflection-1.12.0.tgz#a200935656d6f5f6bc4dc7502e1aecb703228416"
 
@@ -5530,16 +5539,16 @@ seq-queue@0.0.5:
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
 sequelize@^4.4.2:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.5.0.tgz#d8a5b1b641728890fa96761b1704203e7ae30ebb"
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.6.0.tgz#2fd8bab15ac0b5362df5d2c1b1453f763d6f4f37"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
-    debug "^2.3.0"
+    debug "^3.0.0"
     depd "^1.1.0"
     dottie "^2.0.0"
     generic-pool "^3.1.6"
-    inflection "1.10.0"
+    inflection "1.12.0"
     lodash "^4.17.1"
     moment "^2.13.0"
     moment-timezone "^0.5.4"
@@ -5548,7 +5557,7 @@ sequelize@^4.4.2:
     terraformer-wkt-parser "^1.1.2"
     toposort-class "^1.0.1"
     uuid "^3.0.0"
-    validator "^6.3.0"
+    validator "^8.0.0"
     wkx "^0.4.1"
 
 set-blocking@^2.0.0:
@@ -6268,8 +6277,8 @@ the-date@^1.0.1:
     abind "^1.0.3"
 
 the-db@^5.0.4:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.0.5.tgz#45a0da9d86b5adf0cd8d318c08de4b410e7418e1"
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.0.tgz#b56a52705613446a84998d842b548900a7f6113d"
   dependencies:
     asleep "^1.0.3"
     asobj "^1.5.0"
@@ -6279,7 +6288,7 @@ the-db@^5.0.4:
     clay-driver-memory "^4.1.1"
     clay-driver-mysql "^4.0.4"
     clay-driver-sqlite "^5.0.5"
-    clay-lump "^4.2.5"
+    clay-lump "^4.2.6"
     clay-resource "^4.1.2"
     clay-resource-name "^4.0.2"
     execcli "^5.0.0"
@@ -6735,12 +6744,11 @@ the-tag@^1.0.0:
     the-style "^1.2.2"
 
 the-templates@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-1.1.5.tgz#5b009b24db531133b765cffe9d29d42264cc4aac"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-1.1.6.tgz#38f9c2fed25c12756fd411548ebe1b7b35159171"
   dependencies:
     aglob "^2.0.1"
-    ape-tmpl "^5.0.20"
-    co "^4.6.0"
+    ape-tmpl "^6.0.0"
     selfsigned "^1.9.1"
     stringcase "^4.0.0"
 
@@ -6981,9 +6989,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-validator@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-6.3.0.tgz#47ce23ed8d4eaddfa9d4b8ef0071b6cf1078d7c8"
+validator@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-8.0.0.tgz#00d6ec230ab5d3353ab1174162a96462b947bdbd"
 
 value-equal@^0.2.0:
   version "0.2.1"

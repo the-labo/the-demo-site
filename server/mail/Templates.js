@@ -10,7 +10,7 @@
  */
 'use strict'
 
-const { compile } = require('Handlebars')
+const { compile } = require('handlebars')
 const Templates = {}
 
 // From en/goodby.mail.hbs
