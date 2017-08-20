@@ -1,5 +1,5 @@
+/** App Theme Style */
 
-/** App Theme */
 .the-body { color:#555;margin:0;padding:0;font-family:ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;font-size:16px;background-color:#FFF;min-height:100vh; }
 .the-bar { display:flex;justify-content:space-between; }
 .the-action-bar { position:fixed;left:0px;bottom:0px;right:0px;z-index:4;background:rgba(0, 0, 0, 0.9);border-top:1px solid #333;box-shadow:-1px -1px 4px rgba(0, 0, 0, 0.33);color:white;transition:bottom 400ms; }
