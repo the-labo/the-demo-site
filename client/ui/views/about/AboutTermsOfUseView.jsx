@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheMarkdown } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import styles from './AboutTermsOfUseView.pcss'
 import Markdowns from '../../Markdowns'
 
@@ -17,19 +17,19 @@ class AboutTermsOfUseView extends React.Component {
 
   render () {
     const s = this
-    const { props } = s
+    const {props} = s
     const {
       l,
       lang
     } = props
-    const vars = { name: l('org.ORG_NAME') }
+    const vars = {name: l('org.ORG_NAME')}
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={l('titles.TERMS_OF_USE_VIEW_TITLE')}
         />
         <TheView.Body>
-          <TheMarkdown src={Markdowns[ `${lang}/terms-of-use` ]}
+          <TheMarkdown src={Markdowns[`${lang}/terms-of-use`]}
                        padded
                        vars={vars}
           />
@@ -45,4 +45,7 @@ class AboutTermsOfUseView extends React.Component {
   }
 }
 
-export default asView(AboutTermsOfUseView)
+export default asView(
+  withTitle(AboutTermsOfUseView, ({l}) => l('titles.TERMS_OF_USE_VIEW_TITLE')),
+  (state) => ({})
+)

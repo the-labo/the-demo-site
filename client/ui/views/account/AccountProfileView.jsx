@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone } from 'the-components'
-import { asView, onlySigned } from '../../wrappers'
+import { asView, withTitle, onlySigned } from '../../wrappers'
 import { ProfileForm } from '../../fragments'
 import styles from './AccountProfileView.pcss'
 import { AccountScene, SignScene } from '../../../scenes'
@@ -21,7 +21,7 @@ class AccountProfileView extends React.Component {
 
   render () {
     const s = this
-    const { props, accountScene, signScene } = s
+    const {props, accountScene, signScene} = s
     const {
       busy,
       user,
@@ -52,7 +52,7 @@ class AccountProfileView extends React.Component {
               <div>
                 {
                   values && (
-                    <ProfileForm {...{ user, values, errors }}
+                    <ProfileForm {...{user, values, errors}}
                                  onUpdate={(values) => accountScene.setProfileEntryValues(values)}
                                  onSubmit={async () => {
                                    await accountScene.doUpdateProfile()
@@ -73,7 +73,7 @@ class AccountProfileView extends React.Component {
 
   componentDidMount () {
     const s = this
-    const { accountScene } = s
+    const {accountScene} = s
 
     ;(async () => {
       accountScene.toggleProfileUpdateDone(false)
@@ -85,10 +85,16 @@ class AccountProfileView extends React.Component {
   }
 }
 
-export default asView(onlySigned(AccountProfileView), (state) => ({
-  user: state[ 'sign.signed.user' ],
-  busy: state[ 'account.profile.busy' ],
-  done: state[ 'account.profile.done' ],
-  values: state[ 'account.profile.entry.values' ],
-  errors: state[ 'account.profile.entry.errors' ]
-}))
+export default asView(
+  withTitle(
+    onlySigned(AccountProfileView),
+    ({l}) => l('titles.ACCOUNT_PASSWORD_TITLE')
+  ),
+  (state) => ({
+    user: state['sign.signed.user'],
+    busy: state['account.profile.busy'],
+    done: state['account.profile.done'],
+    values: state['account.profile.entry.values'],
+    errors: state['account.profile.entry.errors']
+  })
+)

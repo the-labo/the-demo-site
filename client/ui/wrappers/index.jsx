@@ -11,6 +11,7 @@ import onlySigned from './onlySigned'
 import withMoment from './withMoment'
 import withRole from './withRole'
 import withText from './withText'
+import withTitle from './withTitle'
 
 export {
   asForm,
@@ -19,5 +20,6 @@ export {
   onlySigned,
   withMoment,
   withRole,
-  withText
+  withText,
+  withTitle
 }

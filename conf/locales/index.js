@@ -2,10 +2,10 @@
 
 const theLoc = require('the-loc')
 
-const env = theLoc({
+const loc = theLoc({
   en: require('./en')
 }, {
   buildin: true
 })
 
-module.exports = env
+module.exports = loc

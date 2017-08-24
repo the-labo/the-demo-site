@@ -5,14 +5,14 @@
 
 import React from 'react'
 import { TheView, TheRoute } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import styles from './ErrorNotfoundView.pcss'
 
 class ErrorNotfoundView extends React.Component {
   render () {
     const s = this
-    const { props } = s
-    const { l } = props
+    const {props} = s
+    const {l} = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
@@ -39,4 +39,6 @@ class ErrorNotfoundView extends React.Component {
   }
 }
 
-export default asView(ErrorNotfoundView)
+export default asView(
+  withTitle(ErrorNotfoundView, ({l}) => l('titles.ERROR_NOTFOUND_VIEW_TITLE'))
+)

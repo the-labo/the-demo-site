@@ -126,7 +126,7 @@
     "NORMAL_ROLE": "Normal"
   },
   "tabs": {
-    "ADMIN_MENU": "Admin Menu"
+    "ADMIN_TAB": "Admin Menu"
   },
   "titles": {
     "ACCOUNT_MYPAGE_TITLE": "Account",
@@ -135,6 +135,7 @@
     "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
     "ADMIN_USERS_TITLE": "User Management",
+    "ERROR_NOTFOUND_VIEW_TITLE": "Page not found",
     "PASSWORD_RESET_TITLE": "Password Reset",
     "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
     "RECOVER_SEND_TITLE": "Password Reset",

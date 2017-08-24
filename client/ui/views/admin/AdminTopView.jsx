@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheButton } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import styles from './AdminTopView.pcss'
 import { Urls, Icons } from '@self/conf'
 

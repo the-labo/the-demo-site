@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheButton, TheButtonGroup } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import styles from './SignSigndelView.pcss'
 
 class SignSigndelView extends React.Component {
@@ -40,4 +40,7 @@ class SignSigndelView extends React.Component {
   }
 }
 
-export default asView(SignSigndelView, (state) => ({}))
+export default asView(
+  withTitle(SignSigndelView, ({l}) => l('titles.SIGNDEL_VIEW_TITLE')),
+  (state) => ({})
+)

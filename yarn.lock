@@ -3,8 +3,8 @@
 
 
 "@types/geojson@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.2.tgz#b02d10ab028e2928ac592a051aaa4981a1941d03"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.3.tgz#fbcf7fa5eb6dd108d51385cc6987ec1f24214523"
 
 "@types/node@^6.0.48":
   version "6.0.87"
@@ -55,11 +55,18 @@ abind@^1.0.0, abind@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abind/-/abind-1.0.3.tgz#63d85433933d9942218887003c76c7e08e2abcee"
 
-accepts@1.3.3, accepts@^1.2.2:
+accepts@1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.3.tgz#c3ca7434938648c3e0d9c1e328dd68b622c284ca"
   dependencies:
     mime-types "~2.1.11"
+    negotiator "0.6.1"
+
+accepts@^1.2.2:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.4.tgz#86246758c7dd6d21a6474ff084a4740ec05eb21f"
+  dependencies:
+    mime-types "~2.1.16"
     negotiator "0.6.1"
 
 acolor@^1.2.0:
@@ -1493,12 +1500,12 @@ caniuse-api@^1.5.3:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000715"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000715.tgz#0b9b5c795950dfbaf301a8806bafe87f126da8ca"
+  version "1.0.30000717"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000717.tgz#27ddf5feccdd338c99a62c9788c2694f99f67ed7"
 
 caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000715:
-  version "1.0.30000715"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000715.tgz#c327f5e6d907ebcec62cde598c3bf0dd793fb9a0"
+  version "1.0.30000717"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000717.tgz#4539b126af787c1d4851944de22b2bd8780d3612"
 
 cardinal@1.0.0:
   version "1.0.0"
@@ -1688,8 +1695,8 @@ clay-list-sorter@^2.0.1:
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
 clay-lump@^4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.6.tgz#562fd858ff44466e47639b6dc24b90b17099830c"
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.7.tgz#1482c4492932a03bf9025f1a07e99d5cf9fffb1f"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -1701,7 +1708,7 @@ clay-lump@^4.2.6:
     clay-driver-memory "^4.1.1"
     clay-entity "^2.1.2"
     clay-policy "^2.1.1"
-    clay-resource "^4.1.2"
+    clay-resource "^4.1.3"
     clay-resource-name "^4.0.2"
     debug "^3.0.0"
 
@@ -1757,9 +1764,9 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.1.2.tgz#019978fe55525cf0dbc630b483d101ddf51d133d"
+clay-resource@^4.1.3:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.1.5.tgz#8397eb4ee8d72b095a7082bf0e0102437d6520b2"
   dependencies:
     asleep "^1.0.3"
     asobj "^1.5.0"
@@ -2121,7 +2128,7 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
-create-hash@^1.1.0, create-hash@^1.1.1, create-hash@^1.1.2:
+create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/create-hash/-/create-hash-1.1.3.tgz#606042ac8b9262750f483caddab0f5819172d8fd"
   dependencies:
@@ -2579,10 +2586,11 @@ events@~1.1.0:
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
 evp_bytestokey@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/evp_bytestokey/-/evp_bytestokey-1.0.0.tgz#497b66ad9fef65cd7c08a6180824ba1476b66e53"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/evp_bytestokey/-/evp_bytestokey-1.0.2.tgz#f66bb88ecd57f71a766821e20283ea38c68bf80a"
   dependencies:
-    create-hash "^1.1.1"
+    md5.js "^1.3.4"
+    safe-buffer "^5.1.1"
 
 execa@^0.7.0:
   version "0.7.0"
@@ -3071,6 +3079,13 @@ hash-base@^2.0.0:
   dependencies:
     inherits "^2.0.1"
 
+hash-base@^3.0.0:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/hash-base/-/hash-base-3.0.4.tgz#5fc8686847ecd73499403319a6b0a3f3f6ae4918"
+  dependencies:
+    inherits "^2.0.1"
+    safe-buffer "^5.0.1"
+
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.3.tgz#340dedbe6290187151c1ea1d777a3448935df846"
@@ -3093,14 +3108,14 @@ hepburn@^1.0.0:
   dependencies:
     bulk-replace "0.0.1"
 
-history@^4.5.1, history@^4.6.0:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/history/-/history-4.6.3.tgz#6d723a8712c581d6bef37e8c26f4aedc6eb86967"
+history@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
   dependencies:
     invariant "^2.2.1"
     loose-envify "^1.2.0"
-    resolve-pathname "^2.0.0"
-    value-equal "^0.2.0"
+    resolve-pathname "^2.2.0"
+    value-equal "^0.4.0"
     warning "^3.0.0"
 
 hmac-drbg@^1.0.0:
@@ -3119,7 +3134,7 @@ hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
-hoist-non-react-statics@^2.2.1:
+hoist-non-react-statics@^2.2.1, hoist-non-react-statics@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.0.tgz#ede16318c2ff1f9fe3a025396ba06fd4c44608bb"
 
@@ -3862,6 +3877,13 @@ math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
 
+md5.js@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.4.tgz#e9bdbde94a20a5ac18b04340fc5764d5b09d901d"
+  dependencies:
+    hash-base "^3.0.0"
+    inherits "^2.0.1"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -3918,7 +3940,7 @@ mime-db@~1.29.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
 
-mime-types@^2.0.7, mime-types@^2.1.10, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.15, mime-types@~2.1.7:
+mime-types@^2.0.7, mime-types@^2.1.10, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.15, mime-types@~2.1.16, mime-types@~2.1.7:
   version "2.1.16"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.16.tgz#2b858a52e5ecd516db897ac2be87487830698e23"
   dependencies:
@@ -4085,6 +4107,10 @@ node-fetch@^1.0.1:
 node-forge@0.6.33:
   version "0.6.33"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.6.33.tgz#463811879f573d45155ad6a9f43dc296e8e85ebc"
+
+nodemailer@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.0.1.tgz#b95864b07facee8287e8232effd6f1d56ec75ab2"
 
 nopt@3.x:
   version "3.0.6"
@@ -4328,7 +4354,7 @@ path-platform@~0.11.15:
   version "0.11.15"
   resolved "https://registry.yarnpkg.com/path-platform/-/path-platform-0.11.15.tgz#e864217f74c36850f0852b78dc7bf7d4a5721bf2"
 
-path-to-regexp@^1.1.1, path-to-regexp@^1.5.3:
+path-to-regexp@^1.1.1, path-to-regexp@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
   dependencies:
@@ -5152,23 +5178,24 @@ react-redux@^5.0.6:
     prop-types "^15.5.10"
 
 react-router-dom@^4.1.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.2.tgz#7f8a7ca868d32acadd19ca09543b40d26df8ec37"
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.0.tgz#84238285ac31a1afe53c87a751b9f1ffc5b69af7"
   dependencies:
-    history "^4.5.1"
-    loose-envify "^1.3.1"
-    prop-types "^15.5.4"
-    react-router "^4.1.1"
-
-react-router@^4.1.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.1.2.tgz#7ae027341abc42eb08ad9f7a8cac08d0563672ce"
-  dependencies:
-    history "^4.6.0"
-    hoist-non-react-statics "^1.2.0"
+    history "^4.7.2"
     invariant "^2.2.2"
     loose-envify "^1.3.1"
-    path-to-regexp "^1.5.3"
+    prop-types "^15.5.4"
+    react-router "^4.2.0"
+
+react-router@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
+  dependencies:
+    history "^4.7.2"
+    hoist-non-react-statics "^2.3.0"
+    invariant "^2.2.2"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
 
@@ -5448,9 +5475,9 @@ resolve-path@^1.3.1:
     http-errors "~1.5.0"
     path-is-absolute "1.0.1"
 
-resolve-pathname@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.1.0.tgz#e8358801b86b83b17560d4e3c382d7aef2100944"
+resolve-pathname@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
 
 resolve@1.1.7, resolve@1.1.x:
   version "1.1.7"
@@ -5496,7 +5523,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
@@ -5522,7 +5549,7 @@ sendgrid-rest@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/sendgrid-rest/-/sendgrid-rest-2.4.0.tgz#88e11a86375ec0e14b5faf1b4a0a191639ce90ef"
 
-sendgrid@^5.2.0:
+sendgrid@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/sendgrid/-/sendgrid-5.2.2.tgz#eec220bec5ac462907b2a7d13f2920fe4f355f43"
   dependencies:
@@ -5539,8 +5566,8 @@ seq-queue@0.0.5:
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
 sequelize@^4.4.2:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.6.0.tgz#2fd8bab15ac0b5362df5d2c1b1453f763d6f4f37"
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.7.2.tgz#a4bc1712d3cc96a61c370fc1aa68c9d48539db14"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -5696,8 +5723,8 @@ shimmer@^1.1.0:
   resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.1.0.tgz#97d7377137ffbbab425522e429fe0aa89a488b35"
 
 showdown@^1.6.4:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.7.2.tgz#bf99da9f3af00fad1d73421e112fdc352e1249de"
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.7.3.tgz#8d27f501a0850f33a0c25f1a6b7a10b9fc464633"
   dependencies:
     yargs "^8.0.1"
 
@@ -5787,8 +5814,8 @@ source-map@^0.4.4:
     amdefine ">=0.0.4"
 
 source-map@^0.5.1, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 source-map@~0.2.0:
   version "0.2.0"
@@ -6202,8 +6229,8 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     uuid "^3.0.1"
 
 the-components@^1.18.0:
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.20.0.tgz#9da1fbde7d4e4635c9a269760a510b3a74f234d9"
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.20.3.tgz#016f560d25d8c0478f8ac55b14792610c689a6c0"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -6231,7 +6258,7 @@ the-components@^1.18.0:
     the-list "^1.2.1"
     the-main "^2.0.3"
     the-markdown "^1.0.1"
-    the-menu "^1.1.3"
+    the-menu "^1.2.1"
     the-pager "^1.0.5"
     the-root "^1.0.8"
     the-route "^1.0.8"
@@ -6270,8 +6297,8 @@ the-date@^1.0.1:
     abind "^1.0.3"
 
 the-db@^5.0.4:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.0.tgz#b56a52705613446a84998d842b548900a7f6113d"
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.1.tgz#522c235b9cb97b3d8a710fc2e3a47979ddcfff1d"
   dependencies:
     asleep "^1.0.3"
     asobj "^1.5.0"
@@ -6282,7 +6309,7 @@ the-db@^5.0.4:
     clay-driver-mysql "^4.0.4"
     clay-driver-sqlite "^5.0.5"
     clay-lump "^4.2.6"
-    clay-resource "^4.1.2"
+    clay-resource "^4.1.3"
     clay-resource-name "^4.0.2"
     execcli "^5.0.0"
     mkdirp "^0.5.1"
@@ -6480,12 +6507,13 @@ the-loc@^1.2.4:
     sprintf "^0.1.5"
 
 the-mail@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/the-mail/-/the-mail-2.0.0.tgz#b746e243d19355e5ffbc97d57f6112d7ca4cec3b"
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/the-mail/-/the-mail-2.0.2.tgz#695a35c223eb3de5147ac74307cd8d36c5e822a4"
   dependencies:
     asobj "^1.5.0"
     handlebars "^4.0.10"
-    sendgrid "^5.2.0"
+    nodemailer "^4.0.1"
+    sendgrid "^5.2.2"
     uuid "^3.1.0"
 
 the-main@^2.0.3:
@@ -6508,9 +6536,9 @@ the-markdown@^1.0.1:
     the-component-util "^1.3.0"
     the-style "^1.2.2"
 
-the-menu@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-1.1.3.tgz#f6cd55bafa16ad5f02d1267beac8d110f9bb29fe"
+the-menu@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-1.2.1.tgz#9b22eaf79e9171d707f3764029487d995524c278"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.10"
@@ -6548,8 +6576,8 @@ the-root@^1.0.8:
     the-style "^1.2.1"
 
 the-route@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/the-route/-/the-route-1.0.8.tgz#33ad17a3930e05128abb7a6c565d3a6896571a6f"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-route/-/the-route-1.1.0.tgz#fb8d42e9957fa144cdcc9b23cb0a3278634bd0fb"
   dependencies:
     bwindow "^1.0.7"
     classnames "^2.2.5"
@@ -6557,8 +6585,8 @@ the-route@^1.0.8:
     the-component-util "^1.4.1"
 
 the-router@^1.0.10, the-router@^1.0.9:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/the-router/-/the-router-1.0.10.tgz#940f027036a82bff06fd310d0b66e20e3b74dbb1"
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/the-router/-/the-router-1.0.11.tgz#e55c8b3a730d81aa4dbbc686c60ded2881a6fd6e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -6641,8 +6669,8 @@ the-seed@^1.0.1:
     pudding "^4.0.4"
 
 the-server@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.0.2.tgz#6881a9c486c0c7a4c639f2d8586634d252eab376"
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.0.3.tgz#e16ab4f9d65f6253199979dfd5feecec0c175199"
   dependencies:
     adigest "^1.0.2"
     aport "^1.0.0"
@@ -6986,12 +7014,12 @@ validate-npm-package-license@^3.0.1:
     spdx-expression-parse "~1.0.0"
 
 validator@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-8.0.0.tgz#00d6ec230ab5d3353ab1174162a96462b947bdbd"
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-8.1.0.tgz#89cf6b512ff71eba886afd8d10d47f8dc800eac0"
 
-value-equal@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.2.1.tgz#c220a304361fce6994dbbedaa3c7e1a1b895871d"
+value-equal@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
 
 vary@^1.0.0:
   version "1.1.1"

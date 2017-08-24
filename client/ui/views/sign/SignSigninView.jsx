@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheButton, TheButtonGroup } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import { SigninForm } from '../../fragments'
 import { SignScene } from '../../../scenes'
 import { Icons, Urls } from '@self/conf'
@@ -71,9 +71,12 @@ class SignSigninView extends React.Component {
 
 }
 
-export default asView(SignSigninView, (state) => ({
-  user: state['sign.signed.user'],
-  busy: state['sign.signin.busy'],
-  values: state['sign.signin.entry.values'],
-  errors: state['sign.signin.entry.errors']
-}))
+export default asView(
+  withTitle(SignSigninView, ({l}) => l('titles.SIGNIN_VIEW_TITLE')),
+  (state) => ({
+    user: state['sign.signed.user'],
+    busy: state['sign.signin.busy'],
+    values: state['sign.signin.entry.values'],
+    errors: state['sign.signin.entry.errors']
+  })
+)

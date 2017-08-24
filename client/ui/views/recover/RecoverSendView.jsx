@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone, TheLead } from 'the-components'
-import { asView } from '../../wrappers/index'
+import { asView, withTitle } from '../../wrappers'
 import { RecoverScene } from '../../../scenes'
 import { RecoverSendForm } from '../../fragments'
 import styles from './RecoverSendView.pcss'
@@ -68,10 +68,13 @@ class RecoverSendView extends React.Component {
   }
 }
 
-export default asView(RecoverSendView, (state) => ({
-  errorMessage: state['recover.send.errorMessage'],
-  busy: state['recover.send.busy'],
-  done: state['recover.send.done'],
-  values: state['recover.send.entry.values'],
-  errors: state['recover.send.entry.errors']
-}))
+export default asView(
+  withTitle(RecoverSendView, ({l}) => l('titles.RECOVER_SEND_TITLE')),
+  (state) => ({
+    errorMessage: state['recover.send.errorMessage'],
+    busy: state['recover.send.busy'],
+    done: state['recover.send.done'],
+    values: state['recover.send.entry.values'],
+    errors: state['recover.send.entry.errors']
+  })
+)

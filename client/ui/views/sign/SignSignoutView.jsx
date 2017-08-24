@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import { SignScene } from '../../../scenes'
 import { Icons } from '@self/conf'
 import styles from 'SignSignoutView.pcss'
@@ -62,7 +62,10 @@ class SignSignoutView extends React.Component {
   }
 }
 
-export default asView(SignSignoutView, (state) => ({
-  user: state['sign.signed.user'],
-  busy: state['sign.signout.busy']
-}))
+export default asView(
+  withTitle(SignSignoutView, ({l}) => l('titles.SIGNOUT_VIEW_TITLE')),
+  (state) => ({
+    user: state['sign.signed.user'],
+    busy: state['sign.signout.busy']
+  })
+)

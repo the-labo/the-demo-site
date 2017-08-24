@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone } from 'the-components'
-import { asView } from '../../wrappers/index'
+import { asView, withTitle } from '../../wrappers/index'
 import styles from './VerifyConfirmView.pcss'
 import { VerifyScene } from '../../../scenes/index'
 
@@ -66,8 +66,11 @@ class VerifyConfirmView extends React.Component {
   }
 }
 
-export default asView(VerifyConfirmView, (state) => ({
-  busy: state['verify.busy'],
-  done: state['verify.done'],
-  errorMessage: state['verify.errorMessage'],
-}))
+export default asView(
+  withTitle(VerifyConfirmView, ({l}) => l('titles.ACCOUNT_VERIFY_TITLE')),
+  (state) => ({
+    busy: state['verify.busy'],
+    done: state['verify.done'],
+    errorMessage: state['verify.errorMessage'],
+  })
+)

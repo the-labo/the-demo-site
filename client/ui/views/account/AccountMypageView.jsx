@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheSection, TheInfo, TheLink, TheButton, TheButtonGroup } from 'the-components'
-import { asView, onlySigned } from '../../wrappers'
+import { asView, withTitle, onlySigned } from '../../wrappers'
 import styles from './AccountMypageView.pcss'
 import { Urls } from '@self/conf'
 import { SignScene } from '../../../scenes'
@@ -86,9 +86,12 @@ class AccountMypageView extends React.Component {
 }
 
 export default onlySigned(
-  asView(AccountMypageView, (state) => ({
-    busy: state['sign.signed.busy'],
-    synced: state['sign.signed.synced'],
-    user: state['sign.signed.user']
-  }))
+  asView(
+    withTitle(AccountMypageView, ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE')),
+    (state) => ({
+      busy: state['sign.signed.busy'],
+      synced: state['sign.signed.synced'],
+      user: state['sign.signed.user']
+    })
+  )
 )

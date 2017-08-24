@@ -21,6 +21,7 @@ http {
       root ${STATIC_DIR};
     }
     location /fonts/ {
+      add_header Access-Control-Allow-Origin '*';
       root ${STATIC_DIR};
     }
   }

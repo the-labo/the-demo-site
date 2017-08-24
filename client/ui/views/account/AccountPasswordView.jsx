@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone } from 'the-components'
-import { asView, onlySigned } from '../../wrappers'
+import { asView, withTitle, onlySigned } from '../../wrappers'
 import styles from './AccountPasswordView.pcss'
 import { AccountScene, SignScene } from '../../../scenes'
 import { PasswordForm } from '../../fragments'
@@ -84,10 +84,16 @@ class AccountPasswordView extends React.Component {
   }
 }
 
-export default asView(onlySigned(AccountPasswordView), (state) => ({
-  user: state['sign.signed.user'],
-  busy: state['account.password.busy'],
-  done: state['account.password.done'],
-  values: state['account.password.entry.values'],
-  errors: state['account.password.entry.errors']
-}))
+export default asView(
+  withTitle(
+    onlySigned(AccountPasswordView),
+    ({l}) => l('titles.ACCOUNT_PASSWORD_TITLE')
+  ),
+  (state) => ({
+    user: state['sign.signed.user'],
+    busy: state['account.password.busy'],
+    done: state['account.password.done'],
+    values: state['account.password.entry.values'],
+    errors: state['account.password.entry.errors']
+  })
+)

@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheMarkdown } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import styles from './AboutPrivacyPolicyView.pcss'
 import Markdowns from '../../Markdowns'
 
@@ -17,7 +17,7 @@ class AboutPrivacyPolicyView extends React.Component {
 
   render () {
     const s = this
-    const { props } = s
+    const {props} = s
     const {
       l,
       lang
@@ -33,7 +33,7 @@ class AboutPrivacyPolicyView extends React.Component {
                         text={l('titles.PRIVACY_POLICY_VIEW_TITLE')}
         />
         <TheView.Body>
-          <TheMarkdown src={Markdowns[ `${lang}/privacy-policy` ]}
+          <TheMarkdown src={Markdowns[`${lang}/privacy-policy`]}
                        padded
                        vars={vars}
           />
@@ -49,4 +49,7 @@ class AboutPrivacyPolicyView extends React.Component {
   }
 }
 
-export default asView(AboutPrivacyPolicyView, (state) => ({}))
+export default asView(
+  withTitle(AboutPrivacyPolicyView, ({l}) => l('titles.PRIVACY_POLICY_VIEW_TITLE')),
+  (state) => ({})
+)

@@ -1,8 +1,8 @@
 'use strict'
 
-const React = require('react')
-const moment = require('moment')
-require('moment/locale/ja')
+import React from 'react'
+import moment from 'moment'
+import 'moment/locale/ja'
 
 function withMoment (Component, options = {}) {
   return class WithMoment extends React.Component {
@@ -36,9 +36,9 @@ function withMoment (Component, options = {}) {
           }
         }
       )
-      return React.createElement(Component, innerProps)
+      return <Component {...innerProps} />
     }
   }
 }
 
-module.exports = withMoment
+export default withMoment

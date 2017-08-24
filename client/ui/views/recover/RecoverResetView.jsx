@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone, TheLead } from 'the-components'
-import { asView } from '../../wrappers'
+import { asView, withTitle } from '../../wrappers'
 import { RecoverScene } from '../../../scenes'
 import { RecoverResetForm } from '../../fragments'
 

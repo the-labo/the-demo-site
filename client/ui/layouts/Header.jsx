@@ -32,7 +32,7 @@ const Header = ({
           user && isAdmin(user) && (
             <TheHeader.TabItem to={Urls.ADMIN_URL}
                                icon={Icons.ADMIN_ICON}
-            >{l('tabs.ADMIN_MENU')}</TheHeader.TabItem>
+            >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
           )
         }
       </TheHeader.Tab>
