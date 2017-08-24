@@ -6229,8 +6229,8 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     uuid "^3.0.1"
 
 the-components@^1.18.0:
-  version "1.20.3"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.20.3.tgz#016f560d25d8c0478f8ac55b14792610c689a6c0"
+  version "1.20.4"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.20.4.tgz#f9c5e35ddac4e8b8c7e4f9d5a5065c5cf3c46135"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -6261,8 +6261,8 @@ the-components@^1.18.0:
     the-menu "^1.2.1"
     the-pager "^1.0.5"
     the-root "^1.0.8"
-    the-route "^1.0.8"
-    the-router "^1.0.10"
+    the-route "^1.1.0"
+    the-router "^1.1.0"
     the-section "^1.0.4"
     the-spin "^1.0.1"
     the-style "^1.2.4"
@@ -6498,8 +6498,8 @@ the-list@^1.2.1:
     the-style "^1.2.3"
 
 the-loc@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.2.4.tgz#fdc815143955db11dbb028022dc176cee1d77ed8"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-1.2.5.tgz#9de66a489a261a404ff4d85251349323604a2f78"
   dependencies:
     argx "^3.0.2"
     evaljson "^4.1.7"
@@ -6575,7 +6575,7 @@ the-root@^1.0.8:
     the-component-util "^1.0.5"
     the-style "^1.2.1"
 
-the-route@^1.0.8:
+the-route@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/the-route/-/the-route-1.1.0.tgz#fb8d42e9957fa144cdcc9b23cb0a3278634bd0fb"
   dependencies:
@@ -6584,9 +6584,9 @@ the-route@^1.0.8:
     prop-types "^15.5.10"
     the-component-util "^1.4.1"
 
-the-router@^1.0.10, the-router@^1.0.9:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/the-router/-/the-router-1.0.11.tgz#e55c8b3a730d81aa4dbbc686c60ded2881a6fd6e"
+the-router@^1.1.0, the-router@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/the-router/-/the-router-1.1.1.tgz#4b14d9a6f473b6adb0cdbb836ffbddf152ee8ab9"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -6815,12 +6815,12 @@ the-view@^1.0.13:
     the-spin "^1.0.1"
     the-style "^1.2.4"
 
-the-window@^4.0.0, the-window@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/the-window/-/the-window-4.0.3.tgz#a56a0c4f2b4726fb318923a60773147472357bc5"
+the-window@^4.0.3, the-window@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/the-window/-/the-window-4.2.1.tgz#34338ad0b6ea6b19cdfd988ef09c4fc5c2248fd4"
   dependencies:
     bwindow "^1.0.7"
-    the-router "^1.0.9"
+    the-router "^1.1.0"
 
 thenify-all@^1.0.0:
   version "1.6.0"
