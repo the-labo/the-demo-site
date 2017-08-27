@@ -7,8 +7,8 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.3.tgz#fbcf7fa5eb6dd108d51385cc6987ec1f24214523"
 
 "@types/node@^6.0.48":
-  version "6.0.87"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.87.tgz#5ab5774f8351a33a935099fa6be850aa0b0ad564"
+  version "6.0.88"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.88.tgz#f618f11a944f6a18d92b5c472028728a3e3d4b66"
 
 JSONStream@^0.10.0:
   version "0.10.0"
@@ -276,19 +276,6 @@ ape-releasing@^4.0.4:
     taggit "^2.0.1"
     versionup "^2.0.1"
 
-ape-tmpl@^5.0.20:
-  version "5.0.20"
-  resolved "https://registry.yarnpkg.com/ape-tmpl/-/ape-tmpl-5.0.20.tgz#d39e1dd2e2b9e331ddc91c03226a247792111fec"
-  dependencies:
-    aglob "^1.1.1"
-    arrayfilter "^1.1.2"
-    arraysort "^2.0.0"
-    co "^4.6.0"
-    evaljson "^4.0.12"
-    minimatch "^3.0.2"
-    objnest "^3.0.8"
-    stringcase "^3.1.1"
-
 ape-tmpl@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/ape-tmpl/-/ape-tmpl-6.0.0.tgz#683880d867f23ceafea0bf00f893a35c8ab5cd85"
@@ -463,6 +450,12 @@ asobj@^1.5.0:
   resolved "https://registry.yarnpkg.com/asobj/-/asobj-1.5.0.tgz#7281776c9864220b13ac039deeed6db4ab8c11ad"
   dependencies:
     co "^4.6.0"
+    deep-equal "^1.0.1"
+
+asobj@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.0.tgz#c14e8fffee6f1b8af2f58388b1e9994ad3a3d85d"
+  dependencies:
     deep-equal "^1.0.1"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
@@ -1500,12 +1493,12 @@ caniuse-api@^1.5.3:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000717"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000717.tgz#27ddf5feccdd338c99a62c9788c2694f99f67ed7"
+  version "1.0.30000718"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000718.tgz#86cdd97987302554934c61e106f4e470f16f993c"
 
 caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000715:
-  version "1.0.30000717"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000717.tgz#4539b126af787c1d4851944de22b2bd8780d3612"
+  version "1.0.30000718"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000718.tgz#0dd24290beb11310b2d80f6b70a823c2a65a6fad"
 
 cardinal@1.0.0:
   version "1.0.0"
@@ -1630,40 +1623,41 @@ clay-driver-mysql@^4.0.4:
     clay-driver-sequelize "^5.0.17"
     mysql2 "^1.4.0"
 
-clay-driver-sequelize@^5.0.17:
-  version "5.0.17"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-5.0.17.tgz#aa976faf8c3f294a44c51e8d742a75acede6f463"
+clay-driver-sequelize@^5.0.17, clay-driver-sequelize@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-5.2.2.tgz#817675c39bbbad751d6734772729aace75e89af1"
   dependencies:
     asenv "^1.1.1"
     asleep "^1.0.3"
     asobj "^1.5.0"
-    clay-collection "^3.0.1"
+    clay-collection "^3.1.2"
     clay-constants "^3.1.1"
     clay-driver-base "^3.1.3"
-    clay-entity "^2.1.1"
+    clay-entity "^2.1.3"
     clay-id "^3.0.1"
     clay-list-pager "^2.0.2"
     clay-resource-name "^4.0.2"
     clay-serial "^2.0.3"
     continuation-local-storage "^3.2.0"
+    lru-cache "^4.1.1"
     objnest "^3.0.9"
     retry-as-promised "^2.3.0"
-    sequelize "^4.4.2"
+    sequelize "^4.7.5"
     sg-queue "^1.1.4"
     stringcase "^4.0.0"
 
 clay-driver-sqlite@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-5.0.5.tgz#0b9ec9d6544afcaddbf34cf0122e8dd5158700d8"
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-5.0.6.tgz#eb16cedb228e30cf8f510de473bfd10c4f1d5038"
   dependencies:
     asobj "^1.5.0"
     clay-constants "^3.1.1"
-    clay-driver-sequelize "^5.0.17"
+    clay-driver-sequelize "^5.2.2"
     mkdirp "^0.5.1"
 
-clay-entity@^2.0.1, clay-entity@^2.0.4, clay-entity@^2.1.1, clay-entity@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clay-entity/-/clay-entity-2.1.2.tgz#9d58eff55957b097a0b268afd803405bad49c0a5"
+clay-entity@^2.0.1, clay-entity@^2.0.4, clay-entity@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/clay-entity/-/clay-entity-2.1.3.tgz#bba4adcb91548bd856c7bf0ea46e72004ea72186"
   dependencies:
     asobj "^1.5.0"
     clay-constants "^3.1.1"
@@ -1694,9 +1688,9 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.2.6:
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.7.tgz#1482c4492932a03bf9025f1a07e99d5cf9fffb1f"
+clay-lump@^4.2.8:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.8.tgz#d05b6fb6f55ee494f46ec6d3bde4219fc1bd7bf5"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -1706,11 +1700,11 @@ clay-lump@^4.2.6:
     clay-crypto "^4.0.1"
     clay-driver-base "^3.1.3"
     clay-driver-memory "^4.1.1"
-    clay-entity "^2.1.2"
+    clay-entity "^2.1.3"
     clay-policy "^2.1.1"
-    clay-resource "^4.1.3"
+    clay-resource "^4.2.2"
     clay-resource-name "^4.0.2"
-    debug "^3.0.0"
+    debug "^3.0.1"
 
 clay-policy@^2.1.1:
   version "2.1.1"
@@ -1764,16 +1758,16 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^4.1.3:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.1.5.tgz#8397eb4ee8d72b095a7082bf0e0102437d6520b2"
+clay-resource@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.2.2.tgz#021b1e0fb5fca90628506d8ce879f27b28c0b34c"
   dependencies:
     asleep "^1.0.3"
     asobj "^1.5.0"
     clay-collection "^3.1.2"
     clay-constants "^3.1.1"
     clay-driver-base "^3.1.3"
-    clay-entity "^2.1.2"
+    clay-entity "^2.1.3"
     clay-errors "^3.1.1"
     clay-policy "^2.1.1"
     clay-resource-cache "^1.0.4"
@@ -2013,11 +2007,11 @@ cookiejar@^2.0.6:
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.1.tgz#41ad57b1b555951ec171412a81942b1e8200d34a"
 
 cookies@~0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.7.0.tgz#0bc961d910c35254980fc7c9eff5da12011bbf00"
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.7.1.tgz#7c8a615f5481c61ab9f16c833731bcb8f663b99b"
   dependencies:
-    depd "~1.1.0"
-    keygrip "~1.0.1"
+    depd "~1.1.1"
+    keygrip "~1.0.2"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2266,9 +2260,9 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@*, debug@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.0.0.tgz#1d2feae53349047b08b264ec41906ba17a8516e4"
+debug@*, debug@^3.0.0, debug@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.0.1.tgz#0564c612b521dc92d9f2988f0549e34f9c98db64"
   dependencies:
     ms "2.0.0"
 
@@ -2316,7 +2310,7 @@ denque@^1.1.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/denque/-/denque-1.2.2.tgz#e06cf7cf0da8badc88cbdaabf8fc0a70d659f1d4"
 
-depd@1.1.1, depd@^1.1.0, depd@~1.1.0:
+depd@1.1.1, depd@^1.1.0, depd@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
 
@@ -2497,8 +2491,8 @@ error-inject@~1.0.0:
   resolved "https://registry.yarnpkg.com/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
 es5-ext@^0.10.12, es5-ext@^0.10.13, es5-ext@^0.10.14, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
-  version "0.10.29"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.29.tgz#768eb2dfc4957bcf35fa0568f193ab71ede53fd8"
+  version "0.10.30"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.30.tgz#7141a16836697dbabfaaaeee41495ce29f52c939"
   dependencies:
     es6-iterator "2"
     es6-symbol "~3.1"
@@ -3533,9 +3527,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keygrip@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.1.tgz#b02fa4816eef21a8c4b35ca9e52921ffc89a30e9"
+keygrip@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.2.tgz#ad3297c557069dea8bcfe7a4fa491b75c5ddeb91"
 
 keypair@^1.0.1:
   version "1.0.1"
@@ -3895,8 +3889,8 @@ mem@^1.1.0:
     mimic-fn "^1.0.0"
 
 memoizee@^0.4.3:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.5.tgz#1bc3ea1e4be056dd475d521979d7be3d5e5b21c8"
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.6.tgz#04393e4541373921a88274ffc86d084d288614bb"
   dependencies:
     d "1"
     es5-ext "^0.10.13"
@@ -4137,9 +4131,9 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
-notepack.io@~2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/notepack.io/-/notepack.io-2.0.1.tgz#88deed2264196d9f8d14e7b30419f2d8d932b095"
+notepack.io@~2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/notepack.io/-/notepack.io-2.1.2.tgz#94a47f5e4ce4ace1f3d71b27c6f83c7163393c52"
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -4441,16 +4435,15 @@ pon-runner@^2.0.1, pon-runner@^2.0.2:
     minimatch "^3.0.3"
     pon-context "^2.0.2"
 
-pon-task-basic@^2.0.3:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-2.1.1.tgz#95512a0381e12fa5a99c76e1e5acdc7aa93c4b1c"
+pon-task-basic@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-3.0.1.tgz#f72a6a08dd480c6d00ccb8d216ffe0f80aff97f1"
   dependencies:
-    co "^4.6.0"
     pon-task-command "^1.0.4"
     pon-task-coz "^1.0.3"
     pon-task-env "^1.0.2"
     pon-task-fmtjson "^1.0.1"
-    pon-task-fs "^2.2.2"
+    pon-task-fs "^3.0.1"
     pon-task-mocha "^1.0.2"
 
 pon-task-browser@^2.1.3:
@@ -4553,13 +4546,12 @@ pon-task-fmtjson@^1.0.1:
     co "^4.6.0"
     fmtjson "^3.0.7"
 
-pon-task-fs@^2.2.2:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/pon-task-fs/-/pon-task-fs-2.3.1.tgz#06f2a5e1807c40aad0a2d84345a7dbd68e8233da"
+pon-task-fs@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/pon-task-fs/-/pon-task-fs-3.0.1.tgz#6b90e3200c29fedebc7a1d0f489a33dd6cd5bde9"
   dependencies:
     amkdirp "^1.0.0"
     asfs "^1.2.3"
-    co "^4.6.0"
     filedel "^3.0.0"
     filelink "^3.0.6"
     filemode "^2.0.3"
@@ -5178,14 +5170,15 @@ react-redux@^5.0.6:
     prop-types "^15.5.10"
 
 react-router-dom@^4.1.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.0.tgz#84238285ac31a1afe53c87a751b9f1ffc5b69af7"
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
   dependencies:
     history "^4.7.2"
     invariant "^2.2.2"
     loose-envify "^1.3.1"
     prop-types "^15.5.4"
     react-router "^4.2.0"
+    warning "^3.0.0"
 
 react-router@^4.2.0:
   version "4.2.0"
@@ -5285,25 +5278,17 @@ redis-commands@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.3.1.tgz#81d826f45fa9c8b2011f4cd7a0fe597d241d442b"
 
-redis-parser@^2.5.0, redis-parser@^2.6.0:
+redis-parser@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-2.6.0.tgz#52ed09dacac108f1a631c07e9b69941e7a19504b"
 
-redis@^2.6.2, redis@^2.6.3:
+redis@^2.6.2, redis@^2.6.3, redis@~2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/redis/-/redis-2.8.0.tgz#202288e3f58c49f6079d97af7a10e1303ae14b02"
   dependencies:
     double-ended-queue "^2.1.0-0"
     redis-commands "^1.2.0"
     redis-parser "^2.6.0"
-
-redis@~2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/redis/-/redis-2.7.1.tgz#7d56f7875b98b20410b71539f1d878ed58ebf46a"
-  dependencies:
-    double-ended-queue "^2.1.0-0"
-    redis-commands "^1.2.0"
-    redis-parser "^2.5.0"
 
 reduce-css-calc@^1.2.6, reduce-css-calc@^1.2.7:
   version "1.3.0"
@@ -5565,9 +5550,9 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@^4.4.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.7.2.tgz#a4bc1712d3cc96a61c370fc1aa68c9d48539db14"
+sequelize@^4.7.5:
+  version "4.7.5"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.7.5.tgz#a0b81b04206a46919db82cc5f2967c0ab379da62"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -5774,12 +5759,12 @@ socket.io-parser@~3.1.1:
     isarray "2.0.1"
 
 socket.io-redis@^5.0.1:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/socket.io-redis/-/socket.io-redis-5.1.0.tgz#a7d6a373d1de46583576b0089ff615de77d24005"
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/socket.io-redis/-/socket.io-redis-5.2.0.tgz#8fe2ad9445fc50886fb70abc759d67403d5899df"
   dependencies:
     debug "~2.6.8"
-    notepack.io "~2.0.0"
-    redis "~2.7.1"
+    notepack.io "~2.1.2"
+    redis "~2.8.0"
     socket.io-adapter "~1.1.0"
     uid2 "0.0.3"
 
@@ -5970,15 +5955,15 @@ subarg@^1.0.0:
     minimist "^1.1.0"
 
 sugo-actor@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-7.0.2.tgz#d432df510c684cdb4fc89d9fdef41cc31a71bb3a"
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-7.0.3.tgz#212856efb0e29434271ef8d695ec94d1b9b50d21"
   dependencies:
     argx "^3.0.1"
     asenv "^1.1.1"
     asleep "^1.0.3"
     asobj "^1.5.0"
     bwindow "^1.0.7"
-    debug "^3.0.0"
+    debug "^3.0.1"
     sg-queue "^1.1.4"
     sg-schemas "^2.1.3"
     sg-serializer "^1.1.6"
@@ -5991,13 +5976,12 @@ sugo-actor@^7.0.2:
     sugo-module-base "^1.2.6"
     uuid "^3.0.1"
 
-sugo-caller@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-5.0.5.tgz#5b95cc67566736f600b5850fec28579c3a25ff23"
+sugo-caller@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-6.0.1.tgz#90db30316e6e5b0d627e2a89d5d251adb0a3f6d6"
   dependencies:
     argx "^3.0.1"
     bwindow "^1.0.7"
-    co "^4.6.0"
     sg-queue "^1.1.4"
     sg-schemas "^2.2.2"
     sg-serializer "^1.1.10"
@@ -6203,16 +6187,16 @@ the-check@^1.0.0, the-check@^1.1.1:
   dependencies:
     asenv "^1.1.1"
 
-the-client@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-2.1.0.tgz#9fa27ace81bd948c27038368a45aac51eaf3f785"
+the-client@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-4.0.0.tgz#a71187b76b4b01ecd40759a044926d100ffb69d0"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
     bstorage "^1.1.1"
     bwindow "^1.0.7"
     prop-types "^15.5.10"
-    sugo-caller "^5.0.5"
+    sugo-caller "^6.0.1"
     uuid "^3.1.0"
 
 the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-constants@^1.1.8:
@@ -6297,8 +6281,8 @@ the-date@^1.0.1:
     abind "^1.0.3"
 
 the-db@^5.0.4:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.1.tgz#522c235b9cb97b3d8a710fc2e3a47979ddcfff1d"
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.3.tgz#82d9dac086d790df13fab9389740cc11485ca4c9"
   dependencies:
     asleep "^1.0.3"
     asobj "^1.5.0"
@@ -6308,8 +6292,8 @@ the-db@^5.0.4:
     clay-driver-memory "^4.1.1"
     clay-driver-mysql "^4.0.4"
     clay-driver-sqlite "^5.0.5"
-    clay-lump "^4.2.6"
-    clay-resource "^4.1.3"
+    clay-lump "^4.2.8"
+    clay-resource "^4.2.2"
     clay-resource-name "^4.0.2"
     execcli "^5.0.0"
     mkdirp "^0.5.1"

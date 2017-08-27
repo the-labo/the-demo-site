@@ -59,7 +59,9 @@ class SignCtrl extends TheCtrl {
         messageKey: 'PASSWORD_WRONG'
       })
     }
+    const profile = await Profile.ofUser(user)
     await sign.update({signinAt: new Date()})
+    await user.update({profile, sign})
     s._setSigned(user, sign)
     return user
   }
@@ -83,15 +85,19 @@ class SignCtrl extends TheCtrl {
   async signdel () {
     const s = this
     const {app} = s
-    const {Sign, User} = app.db.resources
+    const {Sign, User, Profile} = app.db.resources
     await s._reloadSigned()
     const signed = s._getSigned()
     if (!signed) {
       return false
     }
     const {user, sign} = signed
+    const profile = await Profile.ofUser(user)
+
     await Sign.destroy(sign.id)
+    await Profile.destroy(profile.id)
     await User.destroy(user.id)
+
     return true
   }
 
@@ -109,7 +115,7 @@ class SignCtrl extends TheCtrl {
     if (needsVerify) {
       profileAttributes.emailVerified = false
     }
-    await profile.update(profileAttributes)
+    await profile.update(Object.assign({}, profileAttributes, {user}))
     await s._reloadSigned()
     return true
   }
@@ -129,6 +135,6 @@ class SignCtrl extends TheCtrl {
 
 module.exports = withSigned(
   withDebug(
-    SignCtrl, 'app:SignCtrl'
+    SignCtrl
   )
 )

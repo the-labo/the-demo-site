@@ -38,13 +38,19 @@ module.exports = function create () {
     sign.load(CreatingScope, 'signup')
     sign.load(CreatingScope, 'signin')
     sign.load(DestroyingScope, 'signout')
-    sign.load(DestroyingScope, 'signdel')
 
     {
       const singed = sign.load(ObjectScope, 'signed')
       singed.load(ValueScope, 'user')
       singed.load(BooleanScope, 'busy')
       singed.load(BooleanScope, 'synced')
+    }
+
+    {
+      const signdel = sign.load(ObjectScope, 'signdel')
+      signdel.load(BooleanScope, 'busy')
+      signdel.load(BooleanScope, 'done')
+      signdel.load(BooleanScope, 'confirming')
     }
   }
 

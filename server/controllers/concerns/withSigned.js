@@ -39,7 +39,7 @@ function withSigned (Class) {
       const s = this
       const {session, app} = s
       const {User} = app.db.resources
-      let {user} = (session.signed || {})
+      const {user} = (session.signed || {})
       if (!user) {
         return null
       }

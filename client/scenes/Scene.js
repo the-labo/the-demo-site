@@ -13,7 +13,6 @@ class Scene extends TheScene {
       return super.catchEntryError(e)
     } catch (e) {
       switch (e.name) {
-
         case 'NotFoundError': {
           return s.parseAppError(e, {
             defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'

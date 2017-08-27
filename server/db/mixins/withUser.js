@@ -12,7 +12,8 @@ function withUser (Class) {
       if (entity) {
         return entity
       }
-      return Resource.create({user})
+      await Resource.create({user})
+      return Resource.only({user})
     }
   }
 

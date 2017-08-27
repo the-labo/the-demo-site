@@ -61,8 +61,8 @@ class App extends React.Component {
     const s = this
     const {verifyScene, props} = s
     const notices = {}
-    const {needsVerify, l} = props
-    if (needsVerify) {
+    const {needsVerify, user, l} = props
+    if (user && needsVerify) {
       notices[l('messages.NEEDS_EMAIL_VERIFIED')] = {
         [l('buttons.DO_SEND_VERIFY')]: () => verifyScene.sendVerify()
       }

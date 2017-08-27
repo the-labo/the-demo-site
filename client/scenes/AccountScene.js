@@ -6,7 +6,7 @@
 
 const Scene = require('./Scene')
 const {Urls} = require('@self/conf')
-const {expand, flatten} = require('objnest')
+const {clone} = require('asobj')
 
 /** @lends AccountScene */
 class AccountScene extends Scene {
@@ -37,7 +37,10 @@ class AccountScene extends Scene {
     } finally {
       profile.busy.false()
     }
-    profile.entry.setValues(signed.user.profile || {})
+    const values = clone(signed.user.profile || {}, {
+      without: ['user', 'id', 'sign', /^\$/]
+    })
+    profile.entry.setValues(values)
   }
 
   async doUpdateProfile () {

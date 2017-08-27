@@ -59,6 +59,7 @@ class AccountMypageView extends React.Component {
 
                     <br/>
                     <hr/>
+                    <br/>
                     <div className={styles.links}>
                       <TheLink to={Urls.SIGNDEL_URL}>{l('buttons.SHOW_SIGNDEL')}</TheLink>
                     </div>

@@ -7,6 +7,7 @@
   },
   "buttons": {
     "DO_ADD": "Add",
+    "DO_BACK": "Back",
     "DO_CANCEL": "Cancel",
     "DO_CREATE": "Create",
     "DO_DESTROY": "Destroy",
@@ -15,6 +16,7 @@
     "DO_SAVE": "Save",
     "DO_SEND": "Send",
     "DO_SEND_VERIFY": "Send verify mail",
+    "DO_SIGNDEL": "Destroy Account",
     "DO_SIGNIN": "Sign In",
     "DO_SIGNOUT": "Sign Out",
     "DO_SIGNUP": "Sign Up",
@@ -39,6 +41,7 @@
     "SHOW_RECOVER_SEND": "Forgot Password?",
     "SHOW_RESET_PASSWORD": "Password Reset",
     "SHOW_SIGNDEL": "Delete Your Account",
+    "SHOW_SIGNDEL_CONFIRM": "Proceed the deletion",
     "SHOW_SIGNIN": "Sign In",
     "SHOW_SIGNIN_WITH_EXISTING": "Sign In with your Account",
     "SHOW_SIGNUP": "Sign Up",
@@ -90,6 +93,8 @@
     "RECOVER_SEND": "Input your email address and we will send password recovery mail.",
     "RESET_PASSWORDS_CONFIRM": "Are you sure to reset password of these users?",
     "RESET_PASSWORDS_RESULT": "Password reset done. Notify the new passwords to each users",
+    "SIGNDEL_CONFIRM": "We will miss you...",
+    "SIGNDEL_LEAD": "Are you sure to delete your account?",
     "USER_DESTROY_CONFIRM": "Are you sure to delete these users?"
   },
   "mail": {
@@ -104,6 +109,8 @@
     "PROFILE_UPDATE_DONE": "Profile updated!",
     "RECOVER_RESET_DONE": "Your password has been reset",
     "RECOVER_SEND_DONE": "Recovery email has sent. Please check the email and follow the instruction.",
+    "SIGNDEL_DONE": "Your account has been deleted. Good bye!",
+    "SIGNDEL_LEAD_NOTICE": "Once you have deleted the account, there is no going back",
     "VERIFY_DONE": "Email address verified",
     "WORKING_DONE": "Done!",
     "WORKING_SIGNOUT": "Signing out..."

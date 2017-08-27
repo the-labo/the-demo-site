@@ -64,7 +64,6 @@ class SignScene extends Scene {
     const {client, store, l} = s
     const {info} = store.toast
     const {signup, signed} = store.sign
-    const verifyCtrl = await client.use('verify')
     const signCtrl = await client.use('sign')
     const {name, password, profile} = expand(signup.entry.values.state)
 
@@ -183,6 +182,44 @@ class SignScene extends Scene {
   async goToSignin () {
     const s = this
     s.goTo(Urls.SIGNIN_URL)
+  }
+
+  async abortSigndel () {
+    const s = this
+    s.goTo(Urls.TOP_URL)
+  }
+
+  toggleSigndelConfirming (confirming) {
+    const s = this
+    const {store} = s
+    const {signdel} = store.sign
+    signdel.confirming.toggle(confirming)
+  }
+
+  toggleSigndelDone (done) {
+    const s = this
+    const {store} = s
+    const {signdel} = store.sign
+    signdel.done.toggle(done)
+  }
+
+  async doSigndel () {
+    const s = this
+    const {store, client} = s
+    const {signed, signdel} = store.sign
+    const signCtrl = await client.use('sign')
+    signdel.busy.true()
+    let done
+    try {
+      done = await signCtrl.signdel()
+    } finally {
+      signdel.busy.false()
+    }
+    if (done) {
+      signed.user.del()
+      signdel.confirming.false()
+      signdel.done.true()
+    }
   }
 }
 

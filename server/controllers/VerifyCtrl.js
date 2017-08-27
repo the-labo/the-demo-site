@@ -21,8 +21,8 @@ class VerifyCtrl extends TheCtrl {
     if (!user) {
       return false
     }
-    const {profile = {}} = user
-    return profile.email && !profile.emailVerified
+    const {profile} = user
+    return profile && profile.email && !profile.emailVerified
   }
 
   async send () {
@@ -92,6 +92,6 @@ class VerifyCtrl extends TheCtrl {
 
 module.exports = withSigned(
   withDebug(
-    VerifyCtrl, 'app:VerifyCtrl'
+    VerifyCtrl
   )
 )

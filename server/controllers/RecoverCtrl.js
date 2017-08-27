@@ -74,6 +74,6 @@ class RecoverCtrl extends TheCtrl {
 
 module.exports = withSigned(
   withDebug(
-    RecoverCtrl, 'app:RecoverCtrl'
+    RecoverCtrl
   )
 )
