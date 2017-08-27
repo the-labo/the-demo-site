@@ -10,8 +10,8 @@ function asPure (Component, options = {}) {
   return class AsPure extends React.PureComponent {
     render () {
       const s = this
-      let { props } = s
-      return React.createElement(Component, props)
+      const {props} = s
+      return <Component {...props}/>
     }
   }
 }

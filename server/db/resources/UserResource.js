@@ -39,10 +39,10 @@ class UserResource extends Resource {
 
   static entityClass (ResourceEntity) {
     /** @class */
-    class TheUserResourceEntity extends ResourceEntity {
+    class UserResourceEntity extends ResourceEntity {
     }
 
-    return TheUserResourceEntity
+    return UserResourceEntity
   }
 }
 

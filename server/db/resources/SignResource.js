@@ -65,7 +65,7 @@ class SignResource extends Resource {
 
   static entityClass (ResourceEntity) {
     /** @class */
-    class TheSignResourceEntity extends ResourceEntity {
+    class SignResourceEntity extends ResourceEntity {
 
       verifyPassword (password) {
         const s = this
@@ -74,7 +74,7 @@ class SignResource extends Resource {
       }
     }
 
-    return TheSignResourceEntity
+    return SignResourceEntity
   }
 }
 

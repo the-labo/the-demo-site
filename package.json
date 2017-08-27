@@ -32,7 +32,7 @@
   "dependencies": {
     "ape-tmpl": "^6.0.0",
     "asleep": "^1.0.3",
-    "asobj": "^2.0.0",
+    "asobj": "^2.0.1",
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "coz": "^6.0.20",

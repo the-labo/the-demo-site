@@ -24,10 +24,10 @@ class RoleResource extends Resource {
 
   static entityClass (ResourceEntity) {
     /** @class */
-    class TheRoleResourceEntity extends ResourceEntity {
+    class RoleResourceEntity extends ResourceEntity {
     }
 
-    return TheRoleResourceEntity
+    return RoleResourceEntity
   }
 }
 

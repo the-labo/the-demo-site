@@ -48,10 +48,10 @@ class ProfileResource extends Resource {
 
   static entityClass (ResourceEntity) {
     /** @class */
-    class TheProfileResourceEntity extends ResourceEntity {
+    class ProfileResourceEntity extends ResourceEntity {
     }
 
-    return TheProfileResourceEntity
+    return ProfileResourceEntity
   }
 }
 
