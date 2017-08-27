@@ -452,9 +452,9 @@ asobj@^1.5.0:
     co "^4.6.0"
     deep-equal "^1.0.1"
 
-asobj@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.0.tgz#c14e8fffee6f1b8af2f58388b1e9994ad3a3d85d"
+asobj@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.1.tgz#f83f4d470c3f21f0d586317dc2d607dcb0250f61"
   dependencies:
     deep-equal "^1.0.1"
 
@@ -1557,9 +1557,9 @@ clay-collection@^3.0.1, clay-collection@^3.1.2:
   dependencies:
     clay-id "^3.0.2"
 
-clay-constants@^3.0.1, clay-constants@^3.0.2, clay-constants@^3.0.3, clay-constants@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/clay-constants/-/clay-constants-3.1.1.tgz#e00eac93d2166e190fea8686e3d9962504118fee"
+clay-constants@^3.0.1, clay-constants@^3.0.2, clay-constants@^3.0.3, clay-constants@^3.1.1, clay-constants@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/clay-constants/-/clay-constants-3.2.1.tgz#d2fe6a001c649ed3b61c248aca692d47d2c3baef"
 
 clay-crypto@^4.0.1:
   version "4.0.1"
@@ -1646,7 +1646,7 @@ clay-driver-sequelize@^5.0.17, clay-driver-sequelize@^5.2.2:
     sg-queue "^1.1.4"
     stringcase "^4.0.0"
 
-clay-driver-sqlite@^5.0.5:
+clay-driver-sqlite@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-5.0.6.tgz#eb16cedb228e30cf8f510de473bfd10c4f1d5038"
   dependencies:
@@ -1742,11 +1742,11 @@ clay-resource-entity@^2.0.1:
     clay-entity "^2.0.1"
     clay-resource-name "^4.0.1"
 
-clay-resource-name@^4.0.1, clay-resource-name@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/clay-resource-name/-/clay-resource-name-4.0.2.tgz#e5c89e76642d01fa79259bbdd12895f29493fb47"
+clay-resource-name@^4.0.1, clay-resource-name@^4.0.2, clay-resource-name@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/clay-resource-name/-/clay-resource-name-4.0.3.tgz#f85a9c182c9e32309a826c34b5e2b9097ea68513"
   dependencies:
-    clay-constants "^3.0.3"
+    clay-constants "^3.2.1"
     co "^4.6.0"
 
 clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
@@ -1758,14 +1758,14 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.2.2.tgz#021b1e0fb5fca90628506d8ce879f27b28c0b34c"
+clay-resource@^4.2.2, clay-resource@^4.4.1:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-4.4.2.tgz#0fa969eb88965fd5f81458b1ede44f783eecfaa9"
   dependencies:
     asleep "^1.0.3"
-    asobj "^1.5.0"
+    asobj "^2.0.1"
     clay-collection "^3.1.2"
-    clay-constants "^3.1.1"
+    clay-constants "^3.2.1"
     clay-driver-base "^3.1.3"
     clay-entity "^2.1.3"
     clay-errors "^3.1.1"
@@ -1773,7 +1773,7 @@ clay-resource@^4.2.2:
     clay-resource-cache "^1.0.4"
     clay-resource-collection "^1.0.1"
     clay-resource-entity "^2.0.1"
-    clay-resource-name "^4.0.2"
+    clay-resource-name "^4.0.3"
     clay-resource-ref "^2.0.2"
     clay-schemas "^4.0.5"
     objnest "^3.0.9"
@@ -4049,8 +4049,8 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 mysql2@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/mysql2/-/mysql2-1.4.1.tgz#53267ea0a43df850aee4e0bc993e7563c37ff552"
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/mysql2/-/mysql2-1.4.2.tgz#b5e04009fd6d63f00755253df88540a2532640b2"
   dependencies:
     cardinal "1.0.0"
     denque "^1.1.1"
@@ -6281,20 +6281,20 @@ the-date@^1.0.1:
     abind "^1.0.3"
 
 the-db@^5.0.4:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.3.tgz#82d9dac086d790df13fab9389740cc11485ca4c9"
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-5.1.4.tgz#a0fd83201f6ee48ff526c99a5b2c2cc8c6102711"
   dependencies:
     asleep "^1.0.3"
-    asobj "^1.5.0"
-    clay-constants "^3.1.1"
+    asobj "^2.0.1"
+    clay-constants "^3.2.1"
     clay-driver-json "^3.0.3"
     clay-driver-localstorage "^2.0.1"
     clay-driver-memory "^4.1.1"
     clay-driver-mysql "^4.0.4"
-    clay-driver-sqlite "^5.0.5"
+    clay-driver-sqlite "^5.0.6"
     clay-lump "^4.2.8"
-    clay-resource "^4.2.2"
-    clay-resource-name "^4.0.2"
+    clay-resource "^4.4.1"
+    clay-resource-name "^4.0.3"
     execcli "^5.0.0"
     mkdirp "^0.5.1"
     the-check "^1.1.1"

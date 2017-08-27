@@ -8,6 +8,7 @@ const {TheCtrl} = require('the-controller-base')
 const {withDebug, withSigned} = require('./concerns')
 const {TheError, TheNotFoundError} = require('the-error')
 const WrongPasswordError = TheError.withName('WrongPasswordError')
+const {RoleCodes} = require('@self/conf')
 
 /** @lends SignCtrl */
 class SignCtrl extends TheCtrl {
@@ -22,7 +23,7 @@ class SignCtrl extends TheCtrl {
     const {profile: profileAttributes = {}, roleCode} = options
     const {app} = s
     const {User, Role, Sign, Profile} = app.db.resources
-    const role = roleCode ? await Role.ofCode(roleCode) : undefined
+    const role = await Role.ofCode(RoleCodes.NORMAL_ROLE)
     const user = await User.create({name, role})
     try {
       const profile = await Profile.ofUser(user)
