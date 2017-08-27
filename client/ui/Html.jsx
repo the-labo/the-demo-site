@@ -38,7 +38,7 @@ const Html = ({appScope, renderingContext}) => {
                css={[CSS_THEME_URL, CSS_FONT_URL, CSS_BUNDLE_URL]}
                title={l('app.APP_NAME')}
                icon={ICON_URL}
-               version={version}
+               version={isProduction() ? version : new Date().getTime()}
                globals={{[APP_PROP_NAME]: appProps}}
                color={DOMINANT_COLOR}
       >

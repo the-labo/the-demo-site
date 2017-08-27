@@ -79,6 +79,7 @@ module.exports = pon({
     'client': 'node_modules/@self/client'
   }, {force: true}),
   'struct:cp': cp({
+    'assets/text': 'public',
     'assets/css': 'public/css',
     'assets/fonts': 'public/fonts',
     'assets/icons': 'public/icons'
