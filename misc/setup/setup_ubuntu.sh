@@ -8,6 +8,8 @@ sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
+    make \
+    build-essential \
     software-properties-common \
     -y
 
@@ -58,9 +60,4 @@ sudo apt-get update
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx -y
-
-### Java
-
-sudo apt-get update
-sudo apt-get install default-jre -y
 

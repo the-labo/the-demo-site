@@ -5,7 +5,8 @@
  */
 'use strict'
 
-const { TheClient } = require('the-client/shim')
+const {TheClient} = require('the-client/shim')
+const {get} = require('the-window')
 
 const ClientBase = [].reduce((Clazz, mix) => mix(Clazz), TheClient)
 
@@ -14,6 +15,17 @@ class Client extends ClientBase {}
 /** @lends create */
 function create (config = {}) {
   const client = new Client(config)
+  client.on('error', (e) => {
+    switch (e.name) {
+      case 'ServerRottenError': {
+        const location = get('window.location')
+        location && location.reload()
+        break
+      }
+      default:
+        break
+    }
+  })
   return client
 }
 

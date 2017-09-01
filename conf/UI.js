@@ -16,7 +16,7 @@ module.exports = Object.freeze(
     'redux,react-redux,prop-types,classnames,fbjs,' +
     'core-js,core-js/shim,core-js/library,' +
     'abind,asleep,argx,asobj,qs,objnest,' +
-    'the-scene-base,the-scene-base/shim,the-date,the-url,the-error,the-store,the-check,the-client,the-client/shim,the-scope,the-window,the-components,the-loc',
+    'the-scene-base,the-date,the-url,the-error,the-store,the-check,the-client,the-scope,the-window,the-components,the-loc',
     /** Toast duration */
     TOAST_DURATION: 2000
   }
