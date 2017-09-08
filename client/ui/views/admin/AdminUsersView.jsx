@@ -12,7 +12,8 @@ import {
   TheOkDialog,
   TheConfirmDialog,
   TheYesNoDialog,
-  TheInfo
+  TheInfo,
+  TheCondition
 } from 'the-components'
 import { asView, withText } from '../../wrappers'
 import styles from './AdminUsersView.pcss'
@@ -76,150 +77,138 @@ class AdminUsersView extends React.Component {
                             onSubmit={() => adminUsersScene.syncList()}
             />
           </div>
-          {
-            users && (
-              <div>
-                <ThePager.Row>
-                  <ThePager.ByCounts counts={counts}
-                                     onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
-                  />
-                  <ThePager.Counts {...{l, counts}}/>
-                </ThePager.Row>
-                <AdminUserList {...{l, counts, checks, sort, users}}
-                               onSort={(sort) => adminUsersScene.syncList({sort})}
-                               onUpdateCheck={(values) => adminUsersScene.updateChecks(values)}
+          <TheCondition if={Boolean(users)}>
+            <div>
+              <ThePager.Row>
+                <ThePager.ByCounts counts={counts}
+                                   onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
                 />
-                <ThePager.Row>
-                  <ThePager.ByCounts counts={counts}
-                                     onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
-                  />
-                </ThePager.Row>
+                <ThePager.Counts {...{l, counts}}/>
+              </ThePager.Row>
+              <AdminUserList {...{l, counts, checks, sort, users}}
+                             onSort={(sort) => adminUsersScene.syncList({sort})}
+                             onUpdateCheck={(values) => adminUsersScene.updateChecks(values)}
+              />
+              <ThePager.Row>
+                <ThePager.ByCounts counts={counts}
+                                   onUpdate={({pageNumber}) => adminUsersScene.syncList({pageNumber})}
+                />
+              </ThePager.Row>
 
-                <TheActionBar lead={l('leads.ACTION_WITH_SELECTED_USERS')}
-                              hidden={s.getCheckedIds().length === 0}
-                              buttons={{
-                                passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
-                                destroy: l('buttons.SHOW_DESTROY_USERS')
+              <TheActionBar lead={l('leads.ACTION_WITH_SELECTED_USERS')}
+                            hidden={s.getCheckedIds().length === 0}
+                            buttons={{
+                              passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
+                              destroy: l('buttons.SHOW_DESTROY_USERS')
+                            }}
+                            danger={{destroy: true}}
+                            handlers={{
+                              passwordReset: () => adminUsersScene.togglePasswordResetConfirming(true),
+                              destroy: () => adminUsersScene.toggleDestroyConfirming(true)
+                            }}
+              />
+            </div>
+          </TheCondition>
+          <TheCondition if={Boolean(creatingActive && !creatingDone)}>
+            <TheDialog
+              present
+              title={l('titles.USER_CREATE_INPUT_TITLE')}
+              spinning={creatingBusy}
+              onClose={() => adminUsersScene.toggleCreatingActive(false)}
+            >
+              <UserCreateForm values={creatingValues}
+                              errors={creatingErrors}
+                              onUpdate={(values) => adminUsersScene.updateCreatingValues(values)}
+                              onSubmit={async () => {
+                                await adminUsersScene.doCreate()
+                                await adminUsersScene.syncList()
                               }}
-                              danger={{destroy: true}}
-                              handlers={{
-                                passwordReset: () => adminUsersScene.togglePasswordResetConfirming(true),
-                                destroy: () => adminUsersScene.toggleDestroyConfirming(true)
-                              }}
-                />
-              </div>
-            )
-          }
-          {
-            (creatingActive && !creatingDone) && (
-              <TheDialog
-                present
-                title={l('titles.USER_CREATE_INPUT_TITLE')}
-                spinning={creatingBusy}
-                onClose={() => adminUsersScene.toggleCreatingActive(false)}
-              >
-                <UserCreateForm values={creatingValues}
-                                errors={creatingErrors}
-                                onUpdate={(values) => adminUsersScene.updateCreatingValues(values)}
-                                onSubmit={async () => {
-                                  await adminUsersScene.doCreate()
-                                  await adminUsersScene.syncList()
-                                }}
-                />
-              </TheDialog>
-            )
-          }
-          {
-            (creatingActive && creatingDone) && (
-              <TheOkDialog
-                title={l('titles.USER_CREATE_RESULT_TITLE')}
-                hideCloseButton
-                onClose={() => {
-                  adminUsersScene.toggleCreatingActive(false)
-                  adminUsersScene.toggleCreatingDone(false)
-                }}
-              >
-                <TheInfo data={{
-                  [l('labels.USER_NAME')]: creatingCreated.name,
-                  [l('labels.USER_PROFILE_NAME')]: creatingCreated.profile.name,
-                  [l('labels.USER_EMAIL')]: creatingCreated.profile.email,
-                  [l('labels.USER_PASSWORD')]: creatingCreated.password
-                }}
-                />
-              </TheOkDialog>
-            )
-          }
-          {
-            destroyConfirming && (
-              <TheConfirmDialog
-                onClose={() => adminUsersScene.toggleDestroyConfirming(false)}
-                onSubmit={() => {
-                  adminUsersScene.doDestroy(s.getCheckedIds())
-                  adminUsersScene.removeChecks()
-                }}
-                spinning={destroyBusy}
-                present
-                title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
-                checkText={l('checks.SURE_TO_DESTROY')}
-                submitText={l('buttons.DO_DESTROY')}
-                lead={l('leads.USER_DESTROY_CONFIRM')}
-              >
-                <ul>
-                  {s.getCheckedUsers().map((user) => (
+              />
+            </TheDialog>
+          </TheCondition>
+          <TheCondition if={Boolean(creatingActive && creatingDone)}>
+            <TheOkDialog
+              title={l('titles.USER_CREATE_RESULT_TITLE')}
+              hideCloseButton
+              onClose={() => {
+                adminUsersScene.toggleCreatingActive(false)
+                adminUsersScene.toggleCreatingDone(false)
+              }}
+            >
+              <TheInfo data={{
+                [l('labels.USER_NAME')]: creatingCreated.name,
+                [l('labels.USER_PROFILE_NAME')]: creatingCreated.profile.name,
+                [l('labels.USER_EMAIL')]: creatingCreated.profile.email,
+                [l('labels.USER_PASSWORD')]: creatingCreated.password
+              }}
+              />
+            </TheOkDialog>
+          </TheCondition>
+          <TheCondition if={Boolean(destroyConfirming)}>
+            <TheConfirmDialog
+              onClose={() => adminUsersScene.toggleDestroyConfirming(false)}
+              onSubmit={() => {
+                adminUsersScene.doDestroy(s.getCheckedIds())
+                adminUsersScene.removeChecks()
+              }}
+              spinning={destroyBusy}
+              present
+              title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
+              checkText={l('checks.SURE_TO_DESTROY')}
+              submitText={l('buttons.DO_DESTROY')}
+              lead={l('leads.USER_DESTROY_CONFIRM')}
+            >
+              <ul>
+                {s.getCheckedUsers().map((user) => (
+                  <li key={user.id}>{displayNameForUser(user)}</li>
+                ))}
+              </ul>
+            </TheConfirmDialog>
+          </TheCondition>
+          <TheCondition if={Boolean(passwordResetConfirming)}>
+            <TheYesNoDialog present
+                            className='admin-password-reset-confirm-dialog'
+                            title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
+                            yesText={l('buttons.DO_EXECUTE')}
+                            noText={l('buttons.DO_CANCEL')}
+                            lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+                            onNo={() => adminUsersScene.togglePasswordResetConfirming(false)}
+                            onClose={() => adminUsersScene.togglePasswordResetConfirming(false)}
+                            onYes={() => adminUsersScene.doPasswordReset(s.getCheckedIds())}
+                            spinning={passwordResetBusy}
+            >
+              <ul>
+                {
+                  s.getCheckedUsers().map((user) => (
                     <li key={user.id}>{displayNameForUser(user)}</li>
-                  ))}
-                </ul>
-              </TheConfirmDialog>
-            )
-          }
-          {
-            passwordResetConfirming && (
-              <TheYesNoDialog present
-                              className='admin-password-reset-confirm-dialog'
-                              title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
-                              yesText={l('buttons.DO_EXECUTE')}
-                              noText={l('buttons.DO_CANCEL')}
-                              lead={l('leads.RESET_PASSWORDS_CONFIRM')}
-                              onNo={() => adminUsersScene.togglePasswordResetConfirming(false)}
-                              onClose={() => adminUsersScene.togglePasswordResetConfirming(false)}
-                              onYes={() => adminUsersScene.doPasswordReset(s.getCheckedIds())}
-                              spinning={passwordResetBusy}
-              >
-                <ul>
-                  {
-                    s.getCheckedUsers().map((user) => (
-                      <li key={user.id}>{displayNameForUser(user)}</li>
-                    ))
-                  }
-                </ul>
-              </TheYesNoDialog>
-            )
-          }
-          {
-            passwordResetResulting && (
-              <TheOkDialog
-                present
-                className='admin-password-reset-result-dialog'
-                title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
-                lead={l('leads.RESET_PASSWORDS_RESULT')}
-                hideCloseButton
-                users={s.getCheckedUsers()}
-                onClose={() => {
-                  adminUsersScene.togglePasswordResetResulting(false)
-                  adminUsersScene.removeChecks()
-                }}
-              >
-                <TheInfo data={
-                  users
-                    .filter((user) => !!passwordResetNewPasswords[user.id])
-                    .reduce((data, user) => Object.assign(data, {
-                      [displayNameForUser(user)]: passwordResetNewPasswords[user.id]
-                    }), {})
+                  ))
                 }
-                />
-              </TheOkDialog>
-            )
-          }
+              </ul>
+            </TheYesNoDialog>
+          </TheCondition>
+          <TheCondition if={Boolean(passwordResetResulting)}>
+            <TheOkDialog
+              present
+              className='admin-password-reset-result-dialog'
+              title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
+              lead={l('leads.RESET_PASSWORDS_RESULT')}
+              hideCloseButton
+              users={s.getCheckedUsers()}
+              onClose={() => {
+                adminUsersScene.togglePasswordResetResulting(false)
+                adminUsersScene.removeChecks()
+              }}
+            >
+              <TheInfo data={
+                users
+                  .filter((user) => !!passwordResetNewPasswords[user.id])
+                  .reduce((data, user) => Object.assign(data, {
+                    [displayNameForUser(user)]: passwordResetNewPasswords[user.id]
+                  }), {})
+              }
+              />
+            </TheOkDialog>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

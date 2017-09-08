@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone, TheLead } from 'the-components'
+import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
 import { RecoverScene } from '../../../scenes'
 import { RecoverResetForm } from '../../fragments'
@@ -38,20 +38,18 @@ class RecoverResetView extends React.Component {
           <TheLead text={l('leads.RECOVER_RESET')}
                    error={errorMessage}
           />
-
-          {
-            done ? (
-              <TheDone message={l('messages.RECOVER_RESET_DONE')}
-                       linkTo='/'
-                       linkText={l('buttons.SHOW_TOP_AGAIN')}/>
-            ) : (
-              <RecoverResetForm spinning={busy}
-                                {...{values, errors}}
-                                onUpdate={(v) => recoverScene.setResetEntryValues(v)}
-                                onSubmit={() => recoverScene.doReset()}
-              />
-            )
-          }
+          <TheCondition if={done}>
+            <TheDone message={l('messages.RECOVER_RESET_DONE')}
+                     linkTo='/'
+                     linkText={l('buttons.SHOW_TOP_AGAIN')}/>
+          </TheCondition>
+          <TheCondition unless={done}>
+            <RecoverResetForm spinning={busy}
+                              {...{values, errors}}
+                              onUpdate={(v) => recoverScene.setResetEntryValues(v)}
+                              onSubmit={() => recoverScene.doReset()}
+            />
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

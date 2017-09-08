@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone } from 'the-components'
+import { TheView, TheDone, TheCondition } from 'the-components'
 import { asView, withTitle, onlySigned } from '../../wrappers'
 import { ProfileForm } from '../../fragments'
 import styles from './AccountProfileView.pcss'
@@ -38,34 +38,29 @@ class AccountProfileView extends React.Component {
                         text={l('titles.ACCOUNT_PROFILE_TITLE')}
         />
         <TheView.Body>
-
-          {
-            done ? (
-              <div>
-                <TheDone message={l('messages.PROFILE_UPDATE_DONE')}
-                         onLinkClick={() => accountScene.toggleProfileUpdateDone(false)}
-                         linkTo={Urls.ACCOUNT_PROFILE_URL}
-                         linkText={l('buttons.SHOW_PROFILE_EDIT_AGAIN')}
+          <TheCondition if={done}>
+            <div>
+              <TheDone message={l('messages.PROFILE_UPDATE_DONE')}
+                       onLinkClick={() => accountScene.toggleProfileUpdateDone(false)}
+                       linkTo={Urls.ACCOUNT_PROFILE_URL}
+                       linkText={l('buttons.SHOW_PROFILE_EDIT_AGAIN')}
+              />
+            </div>
+          </TheCondition>
+          <TheCondition unless={done}>
+            <div>
+              <TheCondition if={Boolean(values)}>
+                <ProfileForm {...{user, values, errors}}
+                             onUpdate={(values) => accountScene.setProfileEntryValues(values)}
+                             onSubmit={async () => {
+                               await accountScene.doUpdateProfile()
+                               await signScene.syncSigned()
+                               accountScene.toggleProfileUpdateDone(true)
+                             }}
                 />
-              </div>
-            ) : (
-              <div>
-                {
-                  values && (
-                    <ProfileForm {...{user, values, errors}}
-                                 onUpdate={(values) => accountScene.setProfileEntryValues(values)}
-                                 onSubmit={async () => {
-                                   await accountScene.doUpdateProfile()
-                                   await signScene.syncSigned()
-                                   accountScene.toggleProfileUpdateDone(true)
-                                 }}
-                    />
-                  )
-                }
-              </div>
-            )
-          }
-
+              </TheCondition>
+            </div>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

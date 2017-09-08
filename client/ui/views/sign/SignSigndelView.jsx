@@ -9,7 +9,8 @@ import {
   TheButton,
   TheLead,
   TheDone,
-  TheButtonGroup
+  TheButtonGroup,
+  TheCondition
 } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
 import { SignScene } from '../../../scenes'
@@ -38,51 +39,46 @@ class SignSigndelView extends React.Component {
                         text={l('titles.SIGNDEL_VIEW_TITLE')}
         />
         <TheView.Body>
-          {
-            (!done && !confirming) && (
+          <TheCondition if={Boolean(!done && !confirming)}>
+            <div>
               <div>
-                <div>
-                  <TheLead title={l('leads.SIGNDEL_LEAD')}
-                           text={l('messages.SIGNDEL_LEAD_NOTICE')}
-                  />
-                </div>
-                <br/>
-                <TheButtonGroup>
-                  <TheButton onClick={() => signScene.abortSigndel()}>{l('buttons.DO_CANCEL')}</TheButton>
-                  <TheButton.Next onClick={() => signScene.toggleSigndelConfirming(true)}
-                  >{l('buttons.SHOW_SIGNDEL_CONFIRM')}</TheButton.Next>
-                </TheButtonGroup>
-              </div>
-            )
-          }
-          {
-            (!done && confirming) && (
-              <div>
-                <div>
-                  <TheLead title={l('leads.SIGNDEL_CONFIRM')}
-                  />
-                </div>
-                <br/>
-                <TheButtonGroup>
-                  <TheButton.Prev onClick={() => signScene.toggleSigndelConfirming(false)}
-                  >{l('buttons.DO_BACK')}</TheButton.Prev>
-                  <TheButton primary
-                             onClick={() => signScene.doSigndel()}>{l('buttons.DO_SIGNDEL')}</TheButton>
-                </TheButtonGroup>
-              </div>
-            )
-          }
-          {
-            done && (
-              <div>
-                <br/>
-                <TheDone message={l('messages.SIGNDEL_DONE')}
-                         linkTo='/'
-                         linkText={l('buttons.SHOW_TOP_AGAIN')}
+                <TheLead title={l('leads.SIGNDEL_LEAD')}
+                         text={l('messages.SIGNDEL_LEAD_NOTICE')}
                 />
               </div>
+              <br/>
+              <TheButtonGroup>
+                <TheButton onClick={() => signScene.abortSigndel()}>{l('buttons.DO_CANCEL')}</TheButton>
+                <TheButton.Next onClick={() => signScene.toggleSigndelConfirming(true)}
+                >{l('buttons.SHOW_SIGNDEL_CONFIRM')}</TheButton.Next>
+              </TheButtonGroup>
+            </div>
             )
-          }
+          </TheCondition>
+          <TheCondition if={Boolean(!done && confirming)}>
+            <div>
+              <div>
+                <TheLead title={l('leads.SIGNDEL_CONFIRM')}
+                />
+              </div>
+              <br/>
+              <TheButtonGroup>
+                <TheButton.Prev onClick={() => signScene.toggleSigndelConfirming(false)}
+                >{l('buttons.DO_BACK')}</TheButton.Prev>
+                <TheButton primary
+                           onClick={() => signScene.doSigndel()}>{l('buttons.DO_SIGNDEL')}</TheButton>
+              </TheButtonGroup>
+            </div>
+          </TheCondition>
+          <TheCondition if={Boolean(done)}>
+            <div>
+              <br/>
+              <TheDone message={l('messages.SIGNDEL_DONE')}
+                       linkTo='/'
+                       linkText={l('buttons.SHOW_TOP_AGAIN')}
+              />
+            </div>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

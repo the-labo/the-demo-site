@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone } from 'the-components'
+import { TheView, TheDone, TheCondition } from 'the-components'
 import { asView, withTitle, onlySigned } from '../../wrappers'
 import styles from './AccountPasswordView.pcss'
 import { AccountScene, SignScene } from '../../../scenes'
@@ -37,35 +37,29 @@ class AccountPasswordView extends React.Component {
                         text={l('titles.ACCOUNT_PASSWORD_TITLE')}
         />
         <TheView.Body>
-
-          {
-            done ? (
-              <div>
-                <TheDone message={l('messages.PASSWORD_UPDATE_DONE')}
-                         onLinkClick={() => accountScene.togglePasswordUpdateDone(false)}
-                         linkTo={Urls.ACCOUNT_PASSWORD_URL}
-                         linkText={l('buttons.SHOW_PASSWORD_EDIT_AGAIN')}
+          <TheCondition if={done}>
+            <div>
+              <TheDone message={l('messages.PASSWORD_UPDATE_DONE')}
+                       onLinkClick={() => accountScene.togglePasswordUpdateDone(false)}
+                       linkTo={Urls.ACCOUNT_PASSWORD_URL}
+                       linkText={l('buttons.SHOW_PASSWORD_EDIT_AGAIN')}
+              />
+            </div>
+          </TheCondition>
+          <TheCondition unless={done}>
+            <div>
+              <TheCondition if={Boolean(user && values)}>
+                <PasswordForm {...{user, values, errors}}
+                              onUpdate={(values) => accountScene.setPasswordEntryValues(values)}
+                              onSubmit={async () => {
+                                await accountScene.doUpdatePassword()
+                                await signScene.syncSigned()
+                                await accountScene.togglePasswordUpdateDone(true)
+                              }}
                 />
-              </div>
-            ) : (
-              <div>
-
-                {
-                  user && values && (
-                    <PasswordForm {...{user, values, errors}}
-                                  onUpdate={(values) => accountScene.setPasswordEntryValues(values)}
-                                  onSubmit={async () => {
-                                    await accountScene.doUpdatePassword()
-                                    await signScene.syncSigned()
-                                    await accountScene.togglePasswordUpdateDone(true)
-                                  }}
-                    />
-                  )
-                }
-              </div>
-            )
-          }
-
+              </TheCondition>
+            </div>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

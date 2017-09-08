@@ -15,11 +15,21 @@ function onlySigned (Component, options = {}) {
     class OnlySigned extends React.Component {
       render () {
         const s = this
-        let {props} = s
-        return React.createElement(Component, props)
+        const {props} = s
+        return <Component {...props}/>
+      }
+
+      componentDidMount () {
+        const s = this
+        s.makeSureSigned()
       }
 
       componentDidUpdate () {
+        const s = this
+        s.makeSureSigned()
+      }
+
+      makeSureSigned () {
         const s = this
         const {store} = s.props
         const {signed} = store.sign
@@ -33,6 +43,7 @@ function onlySigned (Component, options = {}) {
           }
         }
       }
+
     }
   )
 }

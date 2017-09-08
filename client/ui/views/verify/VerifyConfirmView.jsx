@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone } from 'the-components'
+import { TheView, TheDone, TheCondition } from 'the-components'
 import { asView, withTitle } from '../../wrappers/index'
 import styles from './VerifyConfirmView.pcss'
 import { VerifyScene } from '../../../scenes/index'
@@ -32,20 +32,19 @@ class VerifyConfirmView extends React.Component {
                         text={l('titles.ACCOUNT_VERIFY_TITLE')}
         />
         <TheView.Body>
-          {
-            done ? (
-              <div>
-                <TheDone message={l('messages.VERIFY_DONE')}
-                         linkTo='/'
-                         linkText={l('buttons.SHOW_TOP_AGAIN')}
-                />
-              </div>
-            ) : (
-              <div>
-                <p className={styles.error}>{errorMessage}</p>
-              </div>
-            )
-          }
+          <TheCondition if={done}>
+            <div>
+              <TheDone message={l('messages.VERIFY_DONE')}
+                       linkTo='/'
+                       linkText={l('buttons.SHOW_TOP_AGAIN')}
+              />
+            </div>
+          </TheCondition>
+          <TheCondition unless={done}>
+            <div>
+              <p className={styles.error}>{errorMessage}</p>
+            </div>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )
@@ -56,6 +55,7 @@ class VerifyConfirmView extends React.Component {
     const {verifyScene} = s
 
     verifyScene.prepareVerify()
+
     ;(async () => {
       await verifyScene.doVerify()
     })()

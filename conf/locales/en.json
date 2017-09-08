@@ -168,5 +168,8 @@
     "SIGNUP_DID_SUCCESS": "Sign up succeeded!",
     "USER_DESTROY_DID_SUCCESS": "User destroyed",
     "VERIFY_EMAIL_SENT": "Verify email has sent."
+  },
+  "warnings": {
+    "SEEMS_INVALID_EMAIL": "does not seem to be a valid email"
   }
 }

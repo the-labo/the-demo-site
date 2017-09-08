@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone, TheLead } from 'the-components'
+import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
 import { RecoverScene } from '../../../scenes'
 import { RecoverSendForm } from '../../fragments'
@@ -34,25 +34,24 @@ class RecoverSendView extends React.Component {
                         text={l('titles.RECOVER_SEND_TITLE')}
         />
         <TheView.Body>
-          {
-            done ? (
-              <TheDone linkTo='/'
-                       linkText={l('buttons.SHOW_TOP_AGAIN')}
-                       message={l('messages.RECOVER_SEND_DONE')}
+          <TheCondition if={done}>
+            <TheDone linkTo='/'
+                     linkText={l('buttons.SHOW_TOP_AGAIN')}
+                     message={l('messages.RECOVER_SEND_DONE')}
+            />
+          </TheCondition>
+          <TheCondition unless={done}>
+            <div>
+              <TheLead text={l('leads.RECOVER_SEND')}
+                       error={errorMessage}
               />
-            ) : (
-              <div>
-                <TheLead text={l('leads.RECOVER_SEND')}
-                         error={errorMessage}
-                />
-                <RecoverSendForm spinning={busy}
-                                 {...{values, errors}}
-                                 onUpdate={(v) => recoverScene.setSendEntryValues(v)}
-                                 onSubmit={() => recoverScene.doSend()}
-                />
-              </div>
-            )
-          }
+              <RecoverSendForm spinning={busy}
+                               {...{values, errors}}
+                               onUpdate={(v) => recoverScene.setSendEntryValues(v)}
+                               onSubmit={() => recoverScene.doSend()}
+              />
+            </div>
+          </TheCondition>
         </TheView.Body>
       </TheView>
     )

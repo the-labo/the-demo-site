@@ -47,6 +47,8 @@ const ProfileForm = ({
       <Value>
         <Text placeholder={l('placeholders.USER_EMAIL')}
               type='email'
+              pattern={Text.EMAIL_PATTERN}
+              patternWarning={l('warnings.SEEMS_INVALID_EMAIL')}
               {...getInputAttributesOf('email')}/>
       </Value>
     </Field>
