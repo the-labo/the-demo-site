@@ -95,7 +95,7 @@ module.exports = pon({
     'conf/**/*.json'
   ], {sort: true}),
   'struct:render': [
-    coz(['+(assets|bin|client|conf|doc|misc|server|utils)/**/.*.bud', '.*.bud'])
+    coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
   ],
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
