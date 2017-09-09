@@ -9,13 +9,7 @@ const theServer = require('the-server')
 const {Html} = require('@self/client/shim/ui')
 const {createClient, createStore} = require('@self/client')
 const theSeal = require('the-seal')
-const {
-  AppCtrl,
-  VerifyCtrl,
-  RecoverCtrl,
-  SignCtrl,
-  AdminUsersCtrl
-} = require('../controllers')
+const c = require('../controllers')
 const {
   aliasEndpoint
 } = require('../endpoints')
@@ -56,11 +50,11 @@ function create (config) {
     scope: app
   })
 
-  server.load(AppCtrl, 'app')
-  server.load(SignCtrl, 'sign')
-  server.load(VerifyCtrl, 'verify')
-  server.load(RecoverCtrl, 'recover')
-  server.load(AdminUsersCtrl, 'adminUsers')
+  server.load(c.AppCtrl, 'app')
+  server.load(c.SignCtrl, 'sign')
+  server.load(c.VerifyCtrl, 'verify')
+  server.load(c.RecoverCtrl, 'recover')
+  server.load(c.AdminUsersCtrl, 'adminUsers')
 
   return server
 }
