@@ -49,7 +49,7 @@ class AccountMypageView extends React.Component {
                   {l('captions.ACCOUNT_INFO')}
                 </TheSection.Header>
                 <TheSection.Body>
-                  <TheInfo data={{
+                  <TheInfo data={user && {
                     [l('labels.USER_NAME')]: user.name,
                     [l('labels.USER_PROFILE_NAME')]: user.profile.name,
                     [l('labels.USER_EMAIL')]: user.profile.email

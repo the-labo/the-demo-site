@@ -62,7 +62,7 @@ class SignScene extends Scene {
   async doSignup () {
     const s = this
     const {client, store, l} = s
-    const {info} = store.toast
+
     const {signup, signed} = store.sign
     const signCtrl = await client.use('sign')
     const {name, password, profile} = expand(signup.entry.values.state)
@@ -80,7 +80,7 @@ class SignScene extends Scene {
       }
       if (user) {
         signed.user.set(user)
-        info.push(l('toasts.SIGNUP_DID_SUCCESS'))
+        s.pushInfoToast(l('toasts.SIGNUP_DID_SUCCESS'))
       }
     }
   }
@@ -92,7 +92,7 @@ class SignScene extends Scene {
   async doSignin () {
     const s = this
     const {client, store, l} = s
-    const {info} = store.toast
+
     const {signin, signed} = store.sign
     const signCtrl = await client.use('sign')
     let {name, password} = expand(signin.entry.values.state)
@@ -110,7 +110,7 @@ class SignScene extends Scene {
       if (user) {
         debug('signin as', user)
         signed.user.set(user)
-        info.push(l('toasts.SIGNIN_DID_SUCCESS'))
+        s.pushInfoToast(l('toasts.SIGNIN_DID_SUCCESS'))
         await s.dropSigninValues()
       }
     }
@@ -123,7 +123,7 @@ class SignScene extends Scene {
   async doSignout () {
     const s = this
     const {client, store, l} = s
-    const {info} = store.toast
+
     const {signout, signed} = store.sign
     const signCtrl = await client.use('sign')
 
@@ -134,7 +134,7 @@ class SignScene extends Scene {
     } finally {
       signout.busy.false()
     }
-    info.push(l('toasts.SIGNOUT_DID_SUCCESS'))
+    s.pushInfoToast(l('toasts.SIGNOUT_DID_SUCCESS'))
     await s.dropSignupValues()
     await s.dropSigninValues()
   }
@@ -166,12 +166,18 @@ class SignScene extends Scene {
 
   async finishSignin () {
     const s = this
-    s.goTo(Urls.TOP_URL)
+    const {back} = s.store.sign
+    const url = back.state || Urls.TOP_URL
+    back.del()
+    s.goTo(url)
   }
 
   async finishSignup () {
     const s = this
-    s.goTo(Urls.TOP_URL)
+    const {back} = s.store.sign
+    const url = back.state || Urls.TOP_URL
+    back.del()
+    s.goTo(url)
   }
 
   async finishSignout () {

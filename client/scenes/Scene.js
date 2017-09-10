@@ -27,6 +27,11 @@ class Scene extends TheScene {
       }
     }
   }
+
+  pushInfoToast (message) {
+    const s = this
+    s.store.toast.info.push(message)
+  }
 }
 
 module.exports = Scene

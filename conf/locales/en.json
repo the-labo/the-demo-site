@@ -104,6 +104,7 @@
   },
   "messages": {
     "NEEDS_EMAIL_VERIFIED": "Your email address is not verified",
+    "NEEDS_SIGNIN_IN": "You need to sign in",
     "PAGE_NOT_FOUND": "Sorry! Page not found...",
     "PASSWORD_UPDATE_DONE": "Password updated!",
     "PROFILE_UPDATE_DONE": "Profile updated!",
@@ -146,6 +147,7 @@
     "PASSWORD_RESET_TITLE": "Password Reset",
     "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
     "RECOVER_SEND_TITLE": "Password Reset",
+    "SIGNASK_VIEW_TITLE": "Sign In Required",
     "SIGNDEL_VIEW_TITLE": "Delete Your Account",
     "SIGNIN_VIEW_TITLE": "Sign In",
     "SIGNOUT_VIEW_TITLE": "Sign Out",

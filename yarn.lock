@@ -1237,12 +1237,11 @@ braces@^2.2.2:
     split-string "^2.1.0"
     to-regex "^3.0.1"
 
-bredux@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/bredux/-/bredux-1.7.2.tgz#9b9b29a7742cf15bfc7d88b1a7370c83925fb151"
+bredux@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/bredux/-/bredux-2.0.0.tgz#faa5e845764f2bfddd49f9df9fab561b84faef62"
   dependencies:
     bstorage "^1.1.1"
-    co "^4.6.0"
 
 brequest@^1.0.1:
   version "1.0.1"
@@ -5202,6 +5201,10 @@ qs@^6.1.0, qs@^6.2.1, qs@^6.5.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.0.tgz#8d04954d364def3efc55b5a0793e1e2c8b1e6e49"
 
+qs@^6.5.1:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
+
 qs@~4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
@@ -6363,9 +6366,20 @@ the-body@^2.0.4:
     the-component-util "^1.0.5"
     the-style "^1.2.1"
 
-the-button@^1.2.4, the-button@^1.3.3, the-button@^1.3.5, the-button@^1.3.6, the-button@^1.3.7:
+the-button@^1.2.4, the-button@^1.3.5, the-button@^1.3.6:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/the-button/-/the-button-1.3.7.tgz#842a9b26c0900f4b9b09051c24f0cbfacb2fb1d6"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.10"
+    the-component-util "^1.4.2"
+    the-icon "^1.0.6"
+    the-link "^2.0.9"
+    the-style "^1.3.0"
+
+the-button@^1.3.8:
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/the-button/-/the-button-1.3.8.tgz#ecc105378ffab9c76a92acf113def942ff1cd26c"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.10"
@@ -6416,16 +6430,16 @@ the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0,
     the-component-constants "^1.1.8"
     uuid "^3.0.1"
 
-the-components@^1.21.1:
-  version "1.22.2"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.22.2.tgz#91a3eae5fbd67a0a2e392e703cfa26688ee416e0"
+the-components@^1.22.5:
+  version "1.22.6"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-1.22.6.tgz#be766b9ecc7cb97f1c41ae247299a7b2abc41357"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
     prop-types "^15.5.10"
     the-bar "^1.0.0"
     the-body "^2.0.4"
-    the-button "^1.3.7"
+    the-button "^1.3.8"
     the-card "^1.0.0"
     the-condition "^1.0.0"
     the-container "^2.0.10"
@@ -6437,13 +6451,14 @@ the-components@^1.21.1:
     the-head "^1.0.6"
     the-header "^1.6.0"
     the-html "^1.0.6"
-    the-icon "^1.0.6"
+    the-icon "^1.0.7"
     the-image "^1.1.0"
     the-info "^1.0.2"
     the-input "^1.5.1"
     the-jumbotron "^1.0.1"
     the-lead "^1.1.0"
-    the-link "^2.0.9"
+    the-line "^1.0.0"
+    the-link "^2.0.10"
     the-list "^1.2.1"
     the-main "^2.0.3"
     the-markdown "^1.0.1"
@@ -6455,12 +6470,12 @@ the-components@^1.21.1:
     the-section "^1.0.5"
     the-spin "^1.0.1"
     the-style "^1.3.0"
-    the-tab "^1.1.1"
+    the-tab "^1.1.2"
     the-table "^1.0.1"
     the-tag "^1.1.0"
     the-toast "^1.1.0"
     the-video "^1.1.2"
-    the-view "^1.0.14"
+    the-view "^1.0.15"
 
 the-condition@^1.0.0:
   version "1.0.0"
@@ -6615,7 +6630,7 @@ the-html@^1.0.6:
     classnames "^2.2.5"
     prop-types "^15.5.8"
 
-the-icon@^1.0.3, the-icon@^1.0.4, the-icon@^1.0.6:
+the-icon@^1.0.3, the-icon@^1.0.4, the-icon@^1.0.6, the-icon@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/the-icon/-/the-icon-1.0.7.tgz#754fe80fe7057eb07c27f45f9d44a95d8e03b5f7"
   dependencies:
@@ -6677,7 +6692,16 @@ the-lead@^1.1.0:
     the-component-util "^1.3.0"
     the-style "^1.2.2"
 
-the-link@^2.0.7, the-link@^2.0.8, the-link@^2.0.9:
+the-line@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/the-line/-/the-line-1.0.0.tgz#7dcd7ad751ed6fb21937cccdc14a7c130e010e9e"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.10"
+    the-component-util "^1.4.1"
+    the-style "^1.2.4"
+
+the-link@^2.0.10, the-link@^2.0.7, the-link@^2.0.8, the-link@^2.0.9:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/the-link/-/the-link-2.0.10.tgz#e0c98af224d63d1eec92844e96ebdee14d25ab26"
   dependencies:
@@ -6911,13 +6935,13 @@ the-spin@^1.0.1:
     the-icon "^1.0.6"
     the-style "^1.2.4"
 
-the-store@^3.3.3:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/the-store/-/the-store-3.4.2.tgz#7d45735f45b01838cf1ecf40f4ef7bb6e6f65539"
+the-store@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/the-store/-/the-store-4.0.0.tgz#4657475ab2499b444c92d340ca117db247ff23bf"
   dependencies:
     argx "^3.0.2"
-    asobj "^1.5.0"
-    bredux "^1.7.2"
+    asobj "^2.0.1"
+    bredux "^2.0.0"
     objnest "^3.0.9"
     react-redux "^5.0.6"
     redux "^3.7.2"
@@ -6934,9 +6958,9 @@ the-style@^1.2.1, the-style@^1.2.2, the-style@^1.2.3, the-style@^1.2.4, the-styl
     prop-types "^15.5.10"
     the-component-constants "^1.1.10"
 
-the-tab@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/the-tab/-/the-tab-1.1.1.tgz#39818e2cb660ae11b7ce6a6b8dbf1827fd5dbc12"
+the-tab@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/the-tab/-/the-tab-1.1.2.tgz#a0432d86e2f3f35a104f59c397059b9a331afc4c"
   dependencies:
     asobj "^1.5.0"
     classnames "^2.2.5"
@@ -7003,19 +7027,19 @@ the-video@^1.1.2:
     the-spin "^1.0.1"
     the-style "^1.2.4"
 
-the-view@^1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/the-view/-/the-view-1.0.14.tgz#4696a3b20cc746fcad59a4e1179dcb53a54b4ace"
+the-view@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/the-view/-/the-view-1.0.15.tgz#0aa7efa099b9d13e1364ddd72ccc301005f3aa5e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.10"
-    the-button "^1.3.3"
-    the-component-util "^1.4.1"
+    the-button "^1.3.8"
+    the-component-util "^1.4.2"
     the-container "^2.0.10"
-    the-icon "^1.0.6"
-    the-link "^2.0.8"
+    the-icon "^1.0.7"
+    the-link "^2.0.10"
     the-spin "^1.0.1"
-    the-style "^1.2.4"
+    the-style "^1.3.0"
 
 the-window@^4.0.3, the-window@^4.2.1:
   version "4.2.1"

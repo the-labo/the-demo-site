@@ -15,6 +15,7 @@ import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
 import RecoverResetView from './recover/RecoverResetView'
 import RecoverSendView from './recover/RecoverSendView'
+import SignSignaskView from './sign/SignSignaskView'
 import SignSigndelView from './sign/SignSigndelView'
 import SignSigninView from './sign/SignSigninView'
 import SignSignoutView from './sign/SignSignoutView'
@@ -33,6 +34,7 @@ export {
   HomeView,
   RecoverResetView,
   RecoverSendView,
+  SignSignaskView,
   SignSigndelView,
   SignSigninView,
   SignSignoutView,

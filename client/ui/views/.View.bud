@@ -7,6 +7,7 @@ module.exports = [
   'sign/SignSignoutView',
   'sign/SignSignupView',
   'sign/SignSigndelView',
+  'sign/SignSignaskView',
   'error/ErrorNotfoundView',
   'recover/RecoverSendView',
   'recover/RecoverResetView',

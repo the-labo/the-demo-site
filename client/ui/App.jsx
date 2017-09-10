@@ -5,7 +5,8 @@
 
 import React from 'react'
 import {
-  TheRoot
+  TheRoot,
+  TheCondition
 } from 'the-components'
 
 import Header from './layouts/Header'
@@ -40,7 +41,9 @@ class App extends React.Component {
         <Header {...{synced, user, notices}}/>
         <Toasts/>
         <Main>
-          <Routes {...{user}}/>
+          <TheCondition if={synced}>
+            <Routes {...{user}}/>
+          </TheCondition>
         </Main>
         <Footer/>
       </TheRoot>
