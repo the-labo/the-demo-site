@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "5.3.5",
+  "version": "6.0.0",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -50,23 +50,22 @@
     "pon-task-web": "^4.1.1",
     "prop-types": "^15.5.10",
     "qs": "^6.5.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.2",
     "the-assets": "^1.0.0",
-    "the-check": "^1.1.1",
+    "the-check": "^1.2.0",
     "the-client": "^4.1.3",
-    "the-components": "^1.22.5",
+    "the-components": "^2.0.2",
     "the-controller-base": "^3.0.1",
     "the-date": "^1.0.1",
-    "the-db": "^6.0.2",
+    "the-db": "^7.1.12",
     "the-env": "^1.1.0",
     "the-error": "^1.3.0",
     "the-loc": "^1.2.4",
     "the-mail": "^2.0.0",
     "the-password": "^1.0.2",
-    "the-router": "^1.1.1",
     "the-scene-base": "^1.0.1",
     "the-scope": "^1.0.4",
     "the-seal": "^1.1.0",
@@ -74,10 +73,10 @@
     "the-seed": "^1.0.1",
     "the-server": "^4.0.3",
     "the-setting": "^1.0.1",
-    "the-store": "^4.0.0",
+    "the-store": "^4.0.2",
     "the-templates": "^1.1.5",
     "the-url": "^1.0.0",
-    "the-window": "^4.2.1",
+    "the-window": "^5.0.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
@@ -89,7 +88,7 @@
     "the-script-update": "^1.0.0"
   },
   "engines": {
-    "node": ">=7.6",
+    "node": ">=8",
     "npm": ">=4"
   }
 }
