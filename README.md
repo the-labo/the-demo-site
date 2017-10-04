@@ -57,7 +57,7 @@ Demo site of the-framework
 Requirements
 ----------
 
-+ [Node.js &gt;&#x3D;7.6](https://nodejs.org/en/)
++ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
 + [Docker](https://www.docker.com/)
 
 
