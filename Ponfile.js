@@ -14,10 +14,9 @@ const {envify} = browser.transforms
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
-const {seed, setup, drop} = require('pon-task-db')
+const {seed, setup, drop, dump} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
-const {domain} = require('./server/env')
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,
@@ -27,6 +26,7 @@ const {
   NGINX_CONTAINER_NAME,
   NGINX_PUBLISHED_PORT,
   APP_PROCESS_NAME,
+  BACKUP_PROCESS_NAME,
   getSetting,
   askSetting
 } = require('./Local')
@@ -100,6 +100,7 @@ module.exports = pon({
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:drop': drop(createDB),
+  'db:dump': dump(createDB, 'var/backup'),
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
     extractCss: `client/shim/ui/bundle.pcss`,
@@ -132,6 +133,7 @@ module.exports = pon({
   'env:test': env('test'),
   'env:debug': env('development', {DEBUG: 'app:*'}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
+  'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
   'production:map': del('public/**/*.map'),
   'production:ccjs': [
     ccjs(`public${JS_BUNDLE_URL}`, `public${JS_BUNDLE_CC_URL}`, {level: 'SIMPLE_OPTIMIZATIONS'}),
@@ -159,7 +161,9 @@ module.exports = pon({
       APP_PORT
     }
   }),
+
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+  'pm2:backup': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}`, cron: '* * * * 1'}),
 
   'vhost:render': coz('misc/vhost/.*.bud'),
   'vhost:cert': spawn('certbot', [
@@ -187,9 +191,9 @@ module.exports = pon({
   debug: ['env:debug', 'build', 'debug:*'],
   production: ['production:prepare', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2:app/start'],
-  stop: ['pm2:app/stop'],
-  restart: ['pm2:app/restart'],
+  start: ['pm2:*/start'],
+  stop: ['pm2:*/stop'],
+  restart: ['pm2:*/restart'],
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
 
@@ -203,4 +207,5 @@ module.exports = pon({
   w: 'watch',
   d: 'debug',
   p: 'production'
+
 })

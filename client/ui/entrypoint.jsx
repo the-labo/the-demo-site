@@ -1,6 +1,7 @@
 'use strict'
 
-import 'babel-polyfill'
+import 'the-polyfill/apply'
+
 import './constants/variables.pcss'
 import './base.pcss'
 

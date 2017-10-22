@@ -4,6 +4,8 @@
  */
 'use strict'
 
+require('the-polyfill')()
+
 const endpoints = require('../endpoints')
 const createDB = require('../db/create')
 const {ok, equal} = require('assert')

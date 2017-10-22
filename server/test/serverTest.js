@@ -4,8 +4,10 @@
  */
 'use strict'
 
+require('the-polyfill')()
+
 const server = require('../server')
-const { ok, equal } = require('assert')
+const {ok, equal} = require('assert')
 
 describe('server', () => {
   before(() => {

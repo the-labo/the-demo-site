@@ -5,7 +5,7 @@
  */
 'use strict'
 
-require('babel-polyfill')
+require('the-polyfill')()
 
 const {server} = require('../server')
 const {isProduction} = require('the-check')

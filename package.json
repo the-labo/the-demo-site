@@ -39,6 +39,7 @@
     "handlebars": "^4.0.10",
     "mocha": "^4.0.0",
     "moment": "^2.18.1",
+    "msgpack": "^1.0.2",
     "numeral": "^2.0.6",
     "pon": "^5.0.1",
     "pon-task-basic": "^3.0.1",
@@ -66,6 +67,7 @@
     "the-loc": "^1.2.4",
     "the-mail": "^2.0.0",
     "the-password": "^1.0.2",
+    "the-polyfill": "^1.0.1",
     "the-scene-base": "^1.0.1",
     "the-scope": "^1.0.4",
     "the-seal": "^1.1.0",
@@ -80,7 +82,7 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "akv": "^1.1.1",
+    "akv": "^2.0.0",
     "browserify": "^14.4.0",
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",

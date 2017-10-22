@@ -40,7 +40,8 @@ const Vars = Object.freeze({
   REDIS_CONTAINER_NAME: containerFor(`${pkg.name}-redis@${__dirname}`),
   NGINX_CONTAINER_NAME: containerFor(`${pkg.name}-nginx@${__dirname}`),
 
-  APP_PROCESS_NAME: processFor(`${pkg.name}-app@${__dirname}`)
+  APP_PROCESS_NAME: processFor(`${pkg.name}-app@${__dirname}`),
+  BACKUP_PROCESS_NAME: processFor(`${pkg.name}-backup@${__dirname}`)
 
 })
 
