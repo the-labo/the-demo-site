@@ -4630,8 +4630,8 @@ pon-logger@^2.0.2:
     colorprint "^4.1.0"
 
 pon-runner@^3.0.5, pon-runner@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.2.1.tgz#f9df6a9a8099a7fe900be2d8714ef1ab50b1726b"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.2.2.tgz#43697a31f4f5c66a4b8c5341af25abb56262e2b6"
   dependencies:
     abind "^1.0.3"
     minimatch "^3.0.3"
@@ -4781,8 +4781,8 @@ pon-task-mocha@^1.0.2:
     pon-task-watch "^2.0.1"
 
 pon-task-pm2@^2.0.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/pon-task-pm2/-/pon-task-pm2-2.1.1.tgz#f3e65633bf4196c67fcbeb21420903538e488e7b"
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/pon-task-pm2/-/pon-task-pm2-2.1.5.tgz#34512066b926bf43fe9d884cc8637ca4dc1130f9"
   dependencies:
     asobj "^2.0.1"
     execcli "^5.0.2"
@@ -4850,14 +4850,15 @@ pon-writer@^1.0.4:
     writeout "^2.2.0"
 
 pon@^5.0.1:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/pon/-/pon-5.0.5.tgz#19c0b5a6002a71a3aef5409237f671b71333fa0e"
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/pon/-/pon-5.1.1.tgz#4d668200a209b6a85283de278802ee60d71b0f01"
   dependencies:
     abind "^1.0.3"
     minimatch "^3.0.4"
     pon-cli "^4.1.1"
     pon-context "^2.0.2"
     pon-runner "^3.2.1"
+    ponfile "^4.0.4"
 
 ponfile@^4.0.4:
   version "4.0.4"

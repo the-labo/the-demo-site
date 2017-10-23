@@ -24,9 +24,10 @@ const containerFor = (name, length = 4) => [
   seat.scope('containers').acquire(name, () => crypto.randomBytes(length).toString('hex'))
 ].join('-')
 
-const processFor = (name, length = 4) => [
+const processFor = (name, kind, length = 4) => [
   name.split('@')[0],
-  seat.scope('processes').acquire(name, () => crypto.randomBytes(length).toString('hex'))
+  seat.scope('processes').acquire(name, () => crypto.randomBytes(length).toString('hex')),
+  kind
 ].join('-')
 
 const Vars = Object.freeze({
@@ -40,8 +41,8 @@ const Vars = Object.freeze({
   REDIS_CONTAINER_NAME: containerFor(`${pkg.name}-redis@${__dirname}`),
   NGINX_CONTAINER_NAME: containerFor(`${pkg.name}-nginx@${__dirname}`),
 
-  APP_PROCESS_NAME: processFor(`${pkg.name}-app@${__dirname}`),
-  BACKUP_PROCESS_NAME: processFor(`${pkg.name}-backup@${__dirname}`)
+  APP_PROCESS_NAME: processFor(`${pkg.name}@${__dirname}`, 'app'),
+  BACKUP_PROCESS_NAME: processFor(`${pkg.name}@${__dirname}`, 'backup')
 
 })
 

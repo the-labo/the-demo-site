@@ -163,7 +163,7 @@ module.exports = pon({
   }),
 
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
-  'pm2:backup': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}`, cron: '* * * * 1'}),
+  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: '* * * * 1'}),
 
   'vhost:render': coz('misc/vhost/.*.bud'),
   'vhost:cert': spawn('certbot', [
@@ -191,9 +191,9 @@ module.exports = pon({
   debug: ['env:debug', 'build', 'debug:*'],
   production: ['production:prepare', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2:*/start'],
-  stop: ['pm2:*/stop'],
-  restart: ['pm2:*/restart'],
+  start: ['pm2:app/start', 'pm2:backup:*/start'],
+  stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
+  restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
 
