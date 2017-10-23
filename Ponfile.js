@@ -100,7 +100,7 @@ module.exports = pon({
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:drop': drop(createDB),
-  'db:dump': dump(createDB, 'var/backup'),
+  'db:dump': dump(createDB, 'var/backup/dump'),
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
     extractCss: `client/shim/ui/bundle.pcss`,
