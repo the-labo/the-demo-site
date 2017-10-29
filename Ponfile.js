@@ -14,7 +14,7 @@ const {envify} = browser.transforms
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
-const {seed, setup, drop, dump} = require('pon-task-db')
+const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
 const {
@@ -44,6 +44,7 @@ const {
 const {EXTERNAL_BUNDLES} = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
+const migration = require('./server/db/migration')
 
 module.exports = pon({
   // ----------------
@@ -98,9 +99,12 @@ module.exports = pon({
     coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
   ],
   'db:setup': setup(createDB),
+  'db:cli': () => createDB().cli(),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
+  'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
   'db:drop': drop(createDB),
   'db:dump': dump(createDB, 'var/backup/dump'),
+  'db:load': load.ask(createDB),
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
     extractCss: `client/shim/ui/bundle.pcss`,

@@ -135,7 +135,7 @@ class AdminUsersView extends React.Component {
                 adminUsersScene.toggleCreatingDone(false)
               }}
             >
-              <TheInfo data={{
+              <TheInfo data={creatingCreated && {
                 [l('labels.USER_NAME')]: creatingCreated.name,
                 [l('labels.USER_PROFILE_NAME')]: creatingCreated.profile.name,
                 [l('labels.USER_EMAIL')]: creatingCreated.profile.email,
