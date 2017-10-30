@@ -103,7 +103,7 @@ module.exports = pon({
     extractCss: `client/shim/ui/bundle.pcss`,
     watchTargets: 'client/ui/**/*.pcss'
   }),
-  'ui:css': css('client/shim/ui', 'public', {pattern: '*.pcss'}),
+  'ui:css': css('client/shim/ui', 'public/build', {pattern: '*.pcss'}),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
     externals: UI.EXTERNAL_BUNDLES,
     watchTargets: 'client/shim/**/*.js',
