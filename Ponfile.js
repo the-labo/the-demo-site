@@ -35,13 +35,6 @@ const {fork, spawn} = command
 
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
-const {
-  JS_EXTERNAL_URL,
-  JS_EXTERNAL_CC_URL,
-  JS_BUNDLE_URL,
-  JS_BUNDLE_CC_URL
-} = Urls
-const {EXTERNAL_BUNDLES} = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
 const migration = require('./server/db/migration')
@@ -111,13 +104,13 @@ module.exports = pon({
     watchTargets: 'client/ui/**/*.pcss'
   }),
   'ui:css': css('client/shim/ui', 'public', {pattern: '*.pcss'}),
-  'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
-    externals: EXTERNAL_BUNDLES,
+  'ui:browser': browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
+    externals: UI.EXTERNAL_BUNDLES,
     watchTargets: 'client/shim/**/*.js',
     transforms: [envify()]
   }),
-  'ui:browser-external': browser('client/shim/ui/externals.js', `public/${JS_EXTERNAL_URL}`, {
-    requires: EXTERNAL_BUNDLES,
+  'ui:browser-external': browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
+    requires: UI.EXTERNAL_BUNDLES,
     skipWatching: true,
     watchDelay: 300,
     transforms: [envify()]
@@ -139,15 +132,23 @@ module.exports = pon({
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
   'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
   'production:map': del('public/**/*.map'),
-  'production:ccjs': [
-    ccjs(`public${JS_BUNDLE_URL}`, `public${JS_BUNDLE_CC_URL}`, {level: 'SIMPLE_OPTIMIZATIONS'}),
-    ccjs(`public${JS_EXTERNAL_URL}`, `public${JS_EXTERNAL_CC_URL}`, {level: 'SIMPLE_OPTIMIZATIONS'})
+  'production:js': ccjs([
+    `public${Urls.JS_EXTERNAL_URL}`,
+    `public${Urls.JS_BUNDLE_URL}`
+  ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
+  'production:css': css.minify([
+    Urls.CSS_THEME_URL,
+    Urls.CSS_FONT_URL,
+    Urls.CSS_BUNDLE_URL
+  ], Urls.PRODUCTION_CSS_URL),
+  'production:compile': [
+    'env:production', 'build', 'production:map', 'production:css', 'production:js',
   ],
-  'production:prepare': [
-    'env:production', 'db', 'build', 'production:map', 'production:ccjs'
+  'production:db': [
+    'env:production', 'db'
   ],
-  'debug:server': fork('bin/app.js'),
-  'debug:watch': ['ui:*/watch'],
+  'debug:server': ['env:debug', fork('bin/app.js')],
+  'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',
     publish: `${MYSQL_PUBLISHED_PORT}:3306`
@@ -193,7 +194,7 @@ module.exports = pon({
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
-  production: ['production:prepare', 'start'],
+  production: ['env:production', 'production:compile', 'production:db', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
   start: ['pm2:app/start', 'pm2:backup:*/start'],
   stop: ['pm2:app/stop', 'pm2:backup:*/stop'],

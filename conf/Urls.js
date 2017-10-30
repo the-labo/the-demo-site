@@ -32,12 +32,15 @@ module.exports = Object.freeze(
     ADMIN_USERS_URL: '/admin/users',
 
     ICON_URL: '/icons/favicon.png',
-    JS_BUNDLE_URL: '/bundle.js',
-    JS_BUNDLE_CC_URL: '/bundle.cc.js',
-    JS_EXTERNAL_URL: '/external-bundle.js',
-    JS_EXTERNAL_CC_URL: '/external-bundle.cc.js',
+
+    JS_BUNDLE_URL: '/build/bundle.js',
+    JS_EXTERNAL_URL: '/build/external-bundle.js',
+
     CSS_THEME_URL: '/css/theme.css',
     CSS_FONT_URL: '/css/font-awesome.css',
-    CSS_BUNDLE_URL: '/bundle.css'
+    CSS_BUNDLE_URL: '/build/bundle.css',
+
+    PRODUCTION_JS_URL: '/app.js',
+    PRODUCTION_CSS_URL: '/app.css'
   }
 )
