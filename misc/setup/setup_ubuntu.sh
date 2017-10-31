@@ -16,7 +16,7 @@ sudo apt-get install \
 ### Git
 
 sudo apt-get update
-sudo apt-get install git
+sudo apt-get install git -y
 
 
 ### Node
@@ -27,9 +27,18 @@ nvm install 8
 
 npm i pon yarn pm2 -g
 
+echo "NODE_ENV=production" >> ~/.bashrc
+source ~/.bashrc
+
+
+### Java
+
+sudo apt-get install default-jdk -y
+
 
 ### Docker
 
+sudo apt-get install curl software-properties-common python-software-properties -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
@@ -57,7 +66,6 @@ sudo apt-get install nginx -y
 ### Let's Encrypt
 
 sudo apt-get update
-sudo add-apt-repository ppa:certbot/certbot
+sudo add-apt-repository ppa:certbot/certbot -y
 sudo apt-get update
 sudo apt-get install python-certbot-nginx -y
-
