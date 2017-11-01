@@ -27,6 +27,8 @@ const {
   NGINX_PUBLISHED_PORT,
   APP_PROCESS_NAME,
   BACKUP_PROCESS_NAME,
+  DUMP_SCHEDULE,
+  DUMP_ROTATION,
   getSetting,
   askSetting
 } = require('./Local')
@@ -96,7 +98,7 @@ module.exports = pon({
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
   'db:drop': drop(createDB),
-  'db:dump': dump(createDB, 'var/backup/dump'),
+  'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
   'db:load': load.ask(createDB),
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
@@ -168,7 +170,7 @@ module.exports = pon({
   }),
 
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
-  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: '* * * * 1'}),
+  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
 
   'vhost:render': coz('misc/vhost/.*.bud'),
   'vhost:cert': spawn('certbot', [

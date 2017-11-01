@@ -10,7 +10,9 @@ const theSetting = require('the-setting')
 const seat = theSeat()
 const setting = theSetting(`${__dirname}/var/app/setting.json`, {
   APP_ADMIN_EMAIL: 'admin@the-demo-site.com',
-  APP_DOMAIN: 'the-demo-site.com'
+  APP_DOMAIN: 'the-demo-site.com',
+  DUMP_SCHEDULE: '00 00 * * 3',
+  DUMP_ROTATION: 3
 })
 
 const pkg = require('./package.json')
