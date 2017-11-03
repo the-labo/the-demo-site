@@ -133,20 +133,20 @@ module.exports = pon({
   'env:debug': env('development', {DEBUG: 'app:*'}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
   'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
-  'production:map': del('public/**/*.map'),
-  'production:js': ccjs([
+  'prod:map': del('public/**/*.map'),
+  'prod:js': ccjs([
     `public${Urls.JS_EXTERNAL_URL}`,
     `public${Urls.JS_BUNDLE_URL}`
   ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
-  'production:css': css.minify([
+  'prod:css': css.minify([
     Urls.CSS_THEME_URL,
     Urls.CSS_FONT_URL,
     Urls.CSS_BUNDLE_URL
   ], Urls.PRODUCTION_CSS_URL),
-  'production:compile': [
-    'env:production', 'build', 'production:map', 'production:css', 'production:js',
+  'prod:compile': [
+    'env:production', 'build', 'prod:map', 'prod:css', 'prod:js',
   ],
-  'production:db': [
+  'prod:db': [
     'env:production', 'db'
   ],
   'debug:server': ['env:debug', fork('bin/app.js')],
@@ -196,7 +196,7 @@ module.exports = pon({
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
-  production: ['env:production', 'production:compile', 'production:db', 'start'],
+  prod: ['env:production', 'prod:compile', 'prod:db', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
   start: ['pm2:app/start', 'pm2:backup:*/start'],
   stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
