@@ -28,7 +28,7 @@ const Html = ({appScope, renderingContext}) => {
   const {version} = appScope.pkg
   const {lang, client, store, path} = renderingContext
   const l = locales.bind(lang)
-  const appProps = {lang, path}
+  const appProps = {lang}
   return (
     <TheHtml>
       <TheHead js={[
