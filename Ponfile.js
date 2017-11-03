@@ -128,7 +128,7 @@ module.exports = pon({
   'clean:shim': del('client/shim/**/*.*'),
   'clean:public': del('public/*.*'),
   'clean': ['clean:shim', 'clean:public'],
-  'env:production': env('production'),
+  'env:prod': env('production'),
   'env:test': env('test'),
   'env:debug': env('development', {DEBUG: 'app:*'}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
@@ -144,10 +144,10 @@ module.exports = pon({
     Urls.CSS_BUNDLE_URL
   ], Urls.PRODUCTION_CSS_URL),
   'prod:compile': [
-    'env:production', 'build', 'prod:map', 'prod:css', 'prod:js',
+    'env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',
   ],
   'prod:db': [
-    'env:production', 'db'
+    'env:prod', 'db'
   ],
   'debug:server': ['env:debug', fork('bin/app.js')],
   'debug:watch': ['env:debug', 'ui:*/watch'],
@@ -196,7 +196,7 @@ module.exports = pon({
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
-  prod: ['env:production', 'prod:compile', 'prod:db', 'start'],
+  prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
   start: ['pm2:app/start', 'pm2:backup:*/start'],
   stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
