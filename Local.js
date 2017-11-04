@@ -35,6 +35,8 @@ const processFor = (name, kind, length = 4) => [
 const Vars = Object.freeze({
   APP_PORT: portFor(`app@${__dirname}`),
 
+  SUPER_ADMIN_PASSWORD: crypto.randomBytes(14).toString('hex'),
+
   MYSQL_PUBLISHED_PORT: portFor(`mysql@${__dirname}`),
   REDIS_PUBLISHED_PORT: portFor(`redis@${__dirname}`),
   NGINX_PUBLISHED_PORT: portFor(`nginx@${__dirname}`),

@@ -40,7 +40,7 @@ module.exports = Object.freeze(
     CSS_FONT_URL: '/css/font-awesome.css',
     CSS_BUNDLE_URL: '/build/bundle.css',
 
-    PRODUCTION_JS_URL: '/app.js',
-    PRODUCTION_CSS_URL: '/app.css'
+    PRODUCTION_JS_URL: '/dist/app.js',
+    PRODUCTION_CSS_URL: '/dist/app.css'
   }
 )

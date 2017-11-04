@@ -15,7 +15,7 @@ const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
 const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
-const {isMacOS} = require('the-check')
+const {isMacOS, isProduction} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
 const {
   APP_PORT,
@@ -93,13 +93,15 @@ module.exports = pon({
   'struct:render': [
     coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
   ],
+  'unless:production': env.notFor('production'),
   'db:setup': setup(createDB),
   'db:cli': () => createDB().cli(),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
-  'db:drop': drop(createDB),
+  'db:drop': ['unless:production', drop(createDB)],
   'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
   'db:load': load.ask(createDB),
+  'db:reset': ['unless:production', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
     extractCss: `client/shim/ui/bundle.pcss`,
@@ -109,13 +111,15 @@ module.exports = pon({
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
     externals: UI.EXTERNAL_BUNDLES,
     watchTargets: 'client/shim/**/*.js',
-    transforms: [envify()]
+    transforms: [envify()],
+    fullPaths: !isProduction()
   }),
   'ui:browser-external': browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
     requires: UI.EXTERNAL_BUNDLES,
     skipWatching: true,
     watchDelay: 300,
-    transforms: [envify()]
+    transforms: [envify()],
+    fullPaths: !isProduction()
   }),
   'assets:install': () => theAssets().installTo('assets'),
   'image:generate': icon('assets/icons/favicon.png', {
@@ -171,18 +175,6 @@ module.exports = pon({
 
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
-
-  'vhost:render': coz('misc/vhost/.*.bud'),
-  'vhost:cert': spawn('certbot', [
-    'certonly', {
-      webroot: true,
-      agreeTos: true,
-      noEffEmail: true,
-      email: getSetting('ADMIN_EMAIL'),
-      w: 'misc/vhost',
-      d: getSetting('DOMAIN')
-    }
-  ]),
   // ----------------
   // Main Tasks
   // ----------------

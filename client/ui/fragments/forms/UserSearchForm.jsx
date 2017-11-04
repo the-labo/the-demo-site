@@ -21,7 +21,7 @@ const UseSearchForm = ({
   <TheForm className='user-search-form'
            inline
            {...getFormAttributes()}
-           required={['name']}
+           required={['q']}
            autoComplete='off'
   >
     <Text placeholder={l('placeholders.USER_SEARCH')}
