@@ -6,7 +6,7 @@ be bound by the following terms and conditions of use, which together with our p
 terms and conditions, please do not use our website.
 
 
-The term ‘%(name)s’ or ‘us’ or ‘we’ refers to the owner of the service. The
+The term ‘%(en.org.ORG_NAME)s’ or ‘us’ or ‘we’ refers to the owner of the service. The
 term ‘you’ refers to the user or viewer of our website.
 
 The use of this website is subject to the following terms of use:

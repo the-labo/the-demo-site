@@ -15,7 +15,8 @@ const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
 const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
-const {isMacOS, isProduction} = require('the-check')
+const md = require('pon-task-md')
+const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
 const {
   APP_PORT,
@@ -69,6 +70,7 @@ module.exports = pon({
     'var'
   ]),
   'struct:symlink': symlink({
+    'package.json': 'shim/package.json',
     'shim/conf': 'node_modules/@self/conf',
     'Local.js': 'node_modules/@self/Local.js',
     'shim/utils': 'node_modules/@self/utils',
@@ -76,6 +78,8 @@ module.exports = pon({
   }, {force: true}),
   'struct:cp': cp({
     'assets/text': 'public',
+    'assets/html/partials': 'public/partials',
+    'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
     'assets/fonts': 'public/fonts',
     'assets/icons': 'public/icons'
@@ -108,20 +112,39 @@ module.exports = pon({
     watchTargets: 'client/ui/**/*.pcss'
   }),
   'ui:css': css('client/shim/ui', 'public/build', {pattern: '*.pcss'}),
-  'ui:browser': browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
-    externals: UI.EXTERNAL_BUNDLES,
-    watchTargets: 'client/shim/**/*.js',
-    transforms: [envify()],
-    fullPaths: !isProduction()
-  }),
-  'ui:browser-external': browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-    requires: UI.EXTERNAL_BUNDLES,
-    skipWatching: true,
-    watchDelay: 300,
-    transforms: [envify()],
-    fullPaths: !isProduction()
-  }),
+  'ui:browser': env.dynamic(({isProduction}) =>
+    browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
+      externals: UI.EXTERNAL_BUNDLES,
+      watchTargets: 'client/shim/**/*.js',
+      transforms: [envify()],
+      fullPaths: !isProduction(),
+      ignores: [
+        // TODO Be smarter
+        ...(isProduction() ? [
+          require.resolve('react/cjs/react.development.js'),
+          require.resolve('react-dom/cjs/react-dom.development.js'),
+          require.resolve('react-dom/cjs/react-dom-server.browser.development.js')
+        ] : [
+          require.resolve('react/cjs/react.production.min.js'),
+          require.resolve('react-dom/cjs/react-dom.production.min.js'),
+          require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
+        ])
+      ]
+    })
+  ),
+  'ui:browser-external': env.dynamic(({isProduction}) =>
+    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
+      requires: UI.EXTERNAL_BUNDLES,
+      skipWatching: true,
+      watchDelay: 300,
+      transforms: [envify()],
+      fullPaths: !isProduction()
+    })
+  ),
   'assets:install': () => theAssets().installTo('assets'),
+  'assets:compile': md('assets/markdowns', 'assets/html/partials', {
+    vars: require('./conf/locales')
+  }),
   'image:generate': icon('assets/icons/favicon.png', {
     text: pkg.name[0],
     font: 'a',

@@ -4,10 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheMarkdown } from 'the-components'
-import { asView, withTitle } from '../../wrappers'
+import { TheView, TheFrame } from 'the-components'
+import { asView } from '../../wrappers'
 import styles from './AboutTermsOfUseView.pcss'
-import Markdowns from '../../Markdowns'
 
 class AboutTermsOfUseView extends React.Component {
   constructor (props) {
@@ -22,17 +21,13 @@ class AboutTermsOfUseView extends React.Component {
       l,
       lang
     } = props
-    const vars = {name: l('org.ORG_NAME')}
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={l('titles.TERMS_OF_USE_VIEW_TITLE')}
         />
         <TheView.Body>
-          <TheMarkdown src={Markdowns[`${lang}/terms-of-use`]}
-                       padded
-                       vars={vars}
-          />
+          <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>
         </TheView.Body>
       </TheView>
     )
@@ -45,7 +40,4 @@ class AboutTermsOfUseView extends React.Component {
   }
 }
 
-export default asView(
-  withTitle(AboutTermsOfUseView, ({l}) => l('titles.TERMS_OF_USE_VIEW_TITLE')),
-  (state) => ({})
-)
+export default asView(AboutTermsOfUseView)

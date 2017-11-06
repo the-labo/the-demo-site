@@ -949,14 +949,12 @@ async-each@^1.0.0:
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
 
 async-helpers@^0.3.9:
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/async-helpers/-/async-helpers-0.3.14.tgz#63d14c7285d4442f71bdee792da479e3aa8dd21e"
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/async-helpers/-/async-helpers-0.3.16.tgz#a1532e7b42fb5b4ced257bee73f85bfbcccfdcc8"
   dependencies:
     co "^4.6.0"
-    define-property "^0.2.5"
-    extend-shallow "^2.0.1"
-    kind-of "^3.1.0"
-    safe-json-stringify "^1.0.3"
+    define-property "^1.0.0"
+    kind-of "^6.0.0"
 
 async-listener@^0.6.0:
   version "0.6.8"
@@ -2254,9 +2252,9 @@ bulk-replace@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/bulk-replace/-/bulk-replace-0.0.1.tgz#f095682a896abd4b3d9e08de409cc222e213f9dd"
 
-bwindow@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/bwindow/-/bwindow-1.0.7.tgz#0f89b43c53aee57b19fe055e41e46b245d17c235"
+bwindow@^1.0.7, bwindow@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/bwindow/-/bwindow-1.1.0.tgz#a11a8cb2d9e360de2180e2721e34cf63f95e03ab"
 
 bytes@3.0.0:
   version "3.0.0"
@@ -2529,8 +2527,8 @@ clay-driver-mysql@^5.2.6:
     mysqldump "^1.4.2"
 
 clay-driver-sequelize@^6.4.10, clay-driver-sequelize@^6.4.11:
-  version "6.4.11"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.11.tgz#fdd469fa2d3af90e7acf9b8751e18ef828922d74"
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.12.tgz#27a2b91d49203f4a84cec1cd5da2d9a8570f12c6"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
@@ -2667,9 +2665,9 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^5.4.7:
-  version "5.4.7"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.4.7.tgz#fd80418cfa08ab49083b61559dc764e0f7868566"
+clay-resource@^5.4.7, clay-resource@^5.4.8:
+  version "5.4.8"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.4.8.tgz#fe41d3b2ca98fb2745f7e51ec93abde9717e1832"
   dependencies:
     asleep "^1.0.3"
     asobj "^2.0.2"
@@ -3407,7 +3405,7 @@ debug@2.6.8:
   dependencies:
     ms "2.0.0"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -5047,7 +5045,7 @@ import-lazy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -5958,10 +5956,6 @@ lodash._basefor@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/lodash._basefor/-/lodash._basefor-3.0.3.tgz#7550b4e9218ef09fad24343b612021c79b4c20c2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-
 lodash._baseisequal@^3.0.0:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/lodash._baseisequal/-/lodash._baseisequal-3.0.7.tgz#d8025f76339d29342767dcc887ce5cb95a5b51f1"
@@ -5990,19 +5984,9 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*, lodash._bindcallback@^3.0.0:
+lodash._bindcallback@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  dependencies:
-    lodash._getnative "^3.0.0"
 
 lodash._createset@~4.0.0:
   version "4.0.3"
@@ -6014,7 +5998,7 @@ lodash._createwrapper@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash._getnative@*, lodash._getnative@^3.0.0:
+lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
@@ -6135,7 +6119,7 @@ lodash.pairs@^3.0.0:
   dependencies:
     lodash.keys "^3.0.0"
 
-lodash.restparam@*, lodash.restparam@^3.0.0:
+lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
@@ -7562,21 +7546,21 @@ pon-runner@^3.0.5, pon-runner@^3.3.1:
     minimatch "^3.0.3"
     pon-context "^2.0.2"
 
-pon-task-basic@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-3.1.3.tgz#da03bdba194d89c7940ce4dc81b758285e76c4e9"
+pon-task-basic@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-3.1.4.tgz#7e9228a70e69c96ae88824189f73acac71cff7d4"
   dependencies:
     pon-task-command "^2.0.1"
     pon-task-coz "^1.0.3"
-    pon-task-env "^1.2.1"
+    pon-task-env "^1.3.1"
     pon-task-fmtjson "^1.0.1"
     pon-task-fs "^3.0.1"
     pon-task-mocha "^1.0.2"
     pon-task-task "^1.0.1"
 
-pon-task-browser@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-3.0.3.tgz#901fe44c8824da133130537b8e536f60a3814f10"
+pon-task-browser@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-3.0.7.tgz#de51c3fb40b4d2e9d6770635d3abb1fdaa165374"
   dependencies:
     amkdirp "^2.0.0"
     asenv "^2.0.0"
@@ -7586,11 +7570,11 @@ pon-task-browser@^3.0.3:
     css-modulesify "^0.28.0"
     envify "^4.1.0"
     pon-cache "^1.0.1"
-    pon-task-compile "^3.0.1"
+    pon-task-compile "^3.0.3"
 
-pon-task-ccjs@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/pon-task-ccjs/-/pon-task-ccjs-1.3.1.tgz#838be63bf2450956c6b62beaf5f1191963177960"
+pon-task-ccjs@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/pon-task-ccjs/-/pon-task-ccjs-1.3.2.tgz#8f139de2a2017a5607ecd3859c5a0555e8a19f64"
   dependencies:
     google-closure-compiler "^20171023.0.1"
 
@@ -7615,9 +7599,9 @@ pon-task-coz@^1.0.3:
   dependencies:
     co "^4.6.0"
 
-pon-task-css@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-4.1.1.tgz#9e170f5eba7c34777f97fc33a79bff6cc83e96fe"
+pon-task-css@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-4.1.2.tgz#a75e920831c548df41d94e7225ab7adf4a8cc7eb"
   dependencies:
     asfs "^2.0.1"
     autoprefixer "^7.1.6"
@@ -7650,9 +7634,9 @@ pon-task-docker@^1.1.3:
     co "^4.6.0"
     execcli "^5.0.1"
 
-pon-task-env@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/pon-task-env/-/pon-task-env-1.2.1.tgz#ab91de12d63532cd06c8ed4afcbcd47d139a1ccc"
+pon-task-env@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/pon-task-env/-/pon-task-env-1.3.1.tgz#d153c9279c265c80bb18f1fa8e5da5fd8d5125bd"
   dependencies:
     argx "^3.0.2"
     asenv "^2.0.0"
@@ -7701,6 +7685,14 @@ pon-task-map@^2.0.2:
     pon-cache "^1.0.1"
     pon-task-compile "^3.0.1"
 
+pon-task-md@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/pon-task-md/-/pon-task-md-1.0.1.tgz#908e43a0e753a8667e31f6711d905918c89e50f3"
+  dependencies:
+    pon-task-compile "^3.0.3"
+    showdown "^1.8.1"
+    sprintf "^0.1.5"
+
 pon-task-mocha@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pon-task-mocha/-/pon-task-mocha-1.0.2.tgz#a95a855574319000130cba6cf56c6c05ac721aa0"
@@ -7730,8 +7722,8 @@ pon-task-react@^2.1.4:
     pon-task-compile "^3.0.1"
 
 pon-task-seed@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/pon-task-seed/-/pon-task-seed-2.0.2.tgz#b0d3e069f7d90b55048448a97c14d110a6fca8d6"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/pon-task-seed/-/pon-task-seed-2.0.3.tgz#02983ba5386497a0d18576447ff67f4a84a0f79d"
   dependencies:
     asleep "^1.0.3"
 
@@ -7746,13 +7738,13 @@ pon-task-watch@^2.0.1, pon-task-watch@^2.1.1:
     asleep "^1.0.3"
 
 pon-task-web@^4.1.1:
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/pon-task-web/-/pon-task-web-4.2.7.tgz#64d24b75a0c60b42126109a56a354b9973ab2ed5"
+  version "4.2.12"
+  resolved "https://registry.yarnpkg.com/pon-task-web/-/pon-task-web-4.2.12.tgz#8a7a3b4d18611615d196811904bca697a99c173d"
   dependencies:
-    pon-task-browser "^3.0.3"
-    pon-task-ccjs "^1.3.1"
+    pon-task-browser "^3.0.7"
+    pon-task-ccjs "^1.3.2"
     pon-task-compile "^3.0.3"
-    pon-task-css "^4.1.1"
+    pon-task-css "^4.1.2"
     pon-task-map "^2.0.2"
     pon-task-react "^2.1.4"
     pon-task-watch "^2.1.1"
@@ -8607,7 +8599,7 @@ readable-stream@~2.0.0:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   dependencies:
@@ -9031,10 +9023,6 @@ safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
-safe-json-stringify@^1.0.3:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/safe-json-stringify/-/safe-json-stringify-1.0.4.tgz#81a098f447e4bbc3ff3312a243521bc060ef5911"
-
 seekout@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/seekout/-/seekout-1.0.2.tgz#09ba9f1bd5b46fbb134718eb19a68382cbb1b9c9"
@@ -9064,8 +9052,8 @@ seq-queue@0.0.5:
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
 sequelize@^4.15.0:
-  version "4.22.1"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.22.1.tgz#876765a3b365ece3e82be8f3f670ae19fc583a25"
+  version "4.22.5"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.22.5.tgz#5771f8dc2173c61366d77b9fb89aeb34b0522435"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -9282,7 +9270,7 @@ shimmer@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.1.0.tgz#97d7377137ffbbab425522e429fe0aa89a488b35"
 
-showdown@^1.6.4:
+showdown@^1.6.4, showdown@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.1.tgz#2d8afd12847c80be32bce0a0dbb0e8dc06ba9469"
   dependencies:
@@ -10063,8 +10051,8 @@ the-check@^1.2.0:
     asenv "^1.1.1"
 
 the-client@^4.1.3:
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-4.1.8.tgz#b106d26363305b3e70391b060d81788e5cdda1ae"
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-4.2.0.tgz#db65bc6de33b130cf40bfe35aeffd564304af02c"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
@@ -10101,8 +10089,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0:
     video-extensions "^1.1.0"
 
 the-components@^2.0.2:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-2.2.1.tgz#f0cfe94758af4c14a44cf947e358ff166dbea2b9"
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-2.2.4.tgz#845290daecae12e95809d89ff6c8a548c8c75168"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -10119,13 +10107,13 @@ the-components@^2.0.2:
     the-flick "^2.1.6"
     the-footer "^2.0.0"
     the-form "^2.0.0"
-    the-head "^1.0.7"
+    the-head "^1.0.8"
     the-header "^2.0.2"
     the-html "^1.0.7"
     the-icon "^2.0.0"
     the-image "^1.3.2"
     the-info "^2.0.1"
-    the-input "^2.0.6"
+    the-input "^2.0.7"
     the-jumbotron "^2.0.0"
     the-lead "^1.1.1"
     the-line "^1.0.2"
@@ -10141,7 +10129,7 @@ the-components@^2.0.2:
     the-section "^2.0.0"
     the-spin "^2.0.0"
     the-style "^2.0.1"
-    the-tab "^3.0.2"
+    the-tab "^3.0.3"
     the-table "^2.0.0"
     the-tag "^2.0.0"
     the-toast "^2.0.4"
@@ -10183,8 +10171,8 @@ the-date@^1.0.1:
     moment-timezone "^0.5.13"
 
 the-db@^7.8.16:
-  version "7.8.17"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.17.tgz#8eb2b4a507e872f5a556894de96f47d75e83da31"
+  version "7.8.18"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.18.tgz#20822ab7945a8d30f65a020882706874635397ae"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.1"
@@ -10198,7 +10186,7 @@ the-db@^7.8.16:
     clay-driver-mysql "^5.2.6"
     clay-driver-sqlite "^6.3.4"
     clay-lump "^4.2.18"
-    clay-resource "^5.4.7"
+    clay-resource "^5.4.8"
     clay-resource-name "^4.0.3"
     debug "^3.1.0"
     execcli "^5.0.2"
@@ -10297,9 +10285,9 @@ the-form@^2.0.0:
     the-input "^2.0.0"
     the-style "^2.0.0"
 
-the-head@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/the-head/-/the-head-1.0.7.tgz#0a486d264e798979366e8ed3bd4e729efa6bd522"
+the-head@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/the-head/-/the-head-1.0.8.tgz#04fa422aa282f4317a1e2424dac9b06d62335892"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -10354,9 +10342,9 @@ the-info@^2.0.1:
     the-component-util "^2.1.0"
     the-style "^2.0.1"
 
-the-input@^2.0.0, the-input@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.0.6.tgz#527e8030794aec58a38592ec804c87429ac61c62"
+the-input@^2.0.0, the-input@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.0.7.tgz#a940a2cabc876f0bf34b87b0e62022344ffabc3f"
   dependencies:
     asobj "^2.0.1"
     chopcal "^3.0.1"
@@ -10493,8 +10481,8 @@ the-password@^1.0.2:
     abind "^1.0.3"
 
 the-polyfill@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/the-polyfill/-/the-polyfill-1.0.3.tgz#6e2390e8b7ffa3ac64e16931cfa483b07e1110d3"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/the-polyfill/-/the-polyfill-1.1.1.tgz#f4142bee969fef9618e80300f20f3cac701f92de"
   dependencies:
     abind "^1.0.3"
     babel-polyfill "^6.26.0"
@@ -10517,7 +10505,7 @@ the-route@^2.0.1:
     prop-types "^15.6.0"
     the-component-util "^2.1.0"
 
-the-router@^2.0.3, the-router@^2.0.6:
+the-router@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/the-router/-/the-router-2.0.6.tgz#cd5cecd87e33c8a8b8a0a1a12a6f56b682e0091f"
   dependencies:
@@ -10527,8 +10515,8 @@ the-router@^2.0.3, the-router@^2.0.6:
     the-style "^2.0.1"
 
 the-scene-base@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.0.1.tgz#eec1b84a69164d4b64d329e090d37b5e1f270297"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.0.2.tgz#969dca895396e05e0130c62b6acb5ccef6fb9f09"
   dependencies:
     bwindow "^1.0.7"
 
@@ -10659,16 +10647,16 @@ the-store@^4.0.2:
     the-scope "^1.6.1"
 
 the-style@*, the-style@^2.0.0, the-style@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/the-style/-/the-style-2.0.1.tgz#7c3de4a0da115414b2aaefc73b37c7d7a1288a3f"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/the-style/-/the-style-2.1.0.tgz#701e5eecd700c28c149a11d47a44a9d449d7f817"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-component-constants "^1.1.10"
 
-the-tab@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/the-tab/-/the-tab-3.0.2.tgz#b26b8835ea77bf5f0164d7723ecfc15d471d46e4"
+the-tab@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/the-tab/-/the-tab-3.0.3.tgz#13eed5fed0f4c8e8d92d167766ad8bec7da0cb14"
   dependencies:
     asobj "^2.0.2"
     chopcal "^3.0.1"
@@ -10750,12 +10738,12 @@ the-view@^2.0.0:
     the-style "^2.0.0"
 
 the-window@^5.0.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.1.1.tgz#9b6a07acf778e77505ac9b858b76940ff67d42f5"
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.2.4.tgz#ecad637a78c9758c46c9fd0696b881b69921cb82"
   dependencies:
-    bwindow "^1.0.7"
+    bwindow "^1.1.0"
     history "^4.7.2"
-    the-router "^2.0.3"
+    the-router "^2.0.6"
 
 thenify-all@^1.0.0:
   version "1.6.0"
@@ -11197,7 +11185,7 @@ vali-date@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vali-date/-/vali-date-1.0.0.tgz#1b904a59609fb328ef078138420934f6b86709a6"
 
-validate-npm-package-license@*, validate-npm-package-license@^3.0.1:
+validate-npm-package-license@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"
   dependencies:

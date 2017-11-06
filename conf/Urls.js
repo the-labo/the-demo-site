@@ -4,6 +4,8 @@
  */
 'use strict'
 
+const pkg = require('../package.json')
+
 module.exports = Object.freeze(
   /** @lends Urls */
   {
@@ -40,7 +42,8 @@ module.exports = Object.freeze(
     CSS_FONT_URL: '/css/font-awesome.css',
     CSS_BUNDLE_URL: '/build/bundle.css',
 
-    PRODUCTION_JS_URL: '/dist/app.js',
-    PRODUCTION_CSS_URL: '/dist/app.css'
+    PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
+    PRODUCTION_CSS_URL: `/${pkg.name}-${pkg.version}.css`
+
   }
 )

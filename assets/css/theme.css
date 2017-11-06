@@ -242,6 +242,8 @@
 .the-input-toggle .the-input-toggle-handle { display:inline-block;border-radius:50%;width:24px;height:24px;background-color:white;border:1px solid #AAA;flex-grow:0;flex-shrink:0;position:relative;z-index:4; }
 .the-input-select { display:inline-block;max-width:480px;vertical-align:middle;width:100%;box-sizing:border-box;position:relative; }
 .the-input-select .the-input-select-display { vertical-align:middle;display:inline-flex;align-items:center;padding:4px 2px 4px 8px;color:inherit;font-size:smaller;min-height:28px;max-width:480px;width:100%;cursor:pointer;background-color:#FFF;box-sizing:border-box;border-radius:2px;border:1px solid #AAA;justify-content:space-between;overflow:hidden;text-overflow:ellipsis; }
+.the-input-select .the-input-select-display-value {  }
+.the-input-select .the-input-select-display-alt { color:#BBB;display:block;width:100%;text-align:left; }
 .the-input-select .the-input-select-options { padding:0;margin:-1px 0 0;position:absolute;left:0;right:0;top:0;list-style:none;z-index:8;border:1px solid #EEE;box-shadow:2px 2px 4px rgba(0,0,0,0.33);box-sizing:border-box;border-radius:0 0 2px 2px;background-color:#FFF; }
 .the-input-select .the-input-select-option { display:flex;overflow:hidden;text-overflow:ellipsis;cursor:pointer;min-height:36px;align-items:center;justify-content:flex-start;background-color:#FFF;border-bottom:1px solid #EEE;padding:4px 8px;box-sizing:border-box; }
 .the-input-select .the-input-select-option:last-child { border-bottom:none; }

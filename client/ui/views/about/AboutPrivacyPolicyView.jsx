@@ -4,10 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheMarkdown } from 'the-components'
-import { asView, withTitle } from '../../wrappers'
+import { TheView, TheFrame } from 'the-components'
+import { asView } from '../../wrappers'
 import styles from './AboutPrivacyPolicyView.pcss'
-import Markdowns from '../../Markdowns'
 
 class AboutPrivacyPolicyView extends React.Component {
   constructor (props) {
@@ -22,21 +21,13 @@ class AboutPrivacyPolicyView extends React.Component {
       l,
       lang
     } = props
-    const vars = {
-      name: l('org.ORG_NAME'),
-      email: l('org.ORG_EMAIL'),
-      homepage: l('org.ORG_HOMEPAGE')
-    }
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={l('titles.PRIVACY_POLICY_VIEW_TITLE')}
         />
         <TheView.Body>
-          <TheMarkdown src={Markdowns[`${lang}/privacy-policy`]}
-                       padded
-                       vars={vars}
-          />
+          <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>
         </TheView.Body>
       </TheView>
     )
@@ -49,7 +40,4 @@ class AboutPrivacyPolicyView extends React.Component {
   }
 }
 
-export default asView(
-  withTitle(AboutPrivacyPolicyView, ({l}) => l('titles.PRIVACY_POLICY_VIEW_TITLE')),
-  (state) => ({})
-)
+export default asView(AboutPrivacyPolicyView, (state) => ({}))

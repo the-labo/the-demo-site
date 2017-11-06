@@ -1,6 +1,6 @@
 ## Privacy Policy
 
-This privacy policy discloses the privacy practices for %(name)s.
+This privacy policy discloses the privacy practices for %(en.org.ORG_NAME)s.
 This privacy policy applies solely to information collected by this web site.
 It will notify you of the following:
 
@@ -52,8 +52,8 @@ Our Privacy Policy may change from time to time and all updates will be posted o
 If you feel that we are not abiding by this privacy policy, you should contact us.
 
 
-%(name)s
+%(en.org.ORG_NAME)s
 
-%(email)s
+%(en.org.ORG_EMAIL)s
 
-%(homepage)s
+%(en.org.ORG_HOMEPAGE)s
