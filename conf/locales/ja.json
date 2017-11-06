@@ -1,0 +1,7 @@
+{
+  "org": {
+    "ORG_EMAIL": "__email_of_your_org__",
+    "ORG_HOMEPAGE": "__homepage_or_your_org__",
+    "ORG_NAME": "__name_of_your_org__"
+  }
+}
