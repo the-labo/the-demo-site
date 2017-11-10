@@ -5,83 +5,64 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {Urls} = require('@self/conf')
 const asleep = require('asleep')
 const {urlUtil} = require('@self/utils')
 
 /** @lends VerifyScene */
 class VerifyScene extends Scene {
+  get scope () {
+    const s = this
+    return s.store.auth.verify
+  }
+
   async syncNeedsVerify ({delay = 100} = {}) {
     const s = this
     await asleep(delay)
-    const {store, client, l} = s
-    const {toast, verify} = store
-    const verifyCtrl = await client.use('verify')
-    const needsVerify = await verifyCtrl.needsVerify()
-    store.verify.needsVerify.toggle(needsVerify)
+    const verifyCtrl = await s.use('verifyCtrl')
+    const {needsVerify} = s.scope
+    const needed = await verifyCtrl.needsVerify()
+    needsVerify.toggle(needed)
   }
 
   async sendVerify () {
     const s = this
-    const {store, client, l} = s
-    const {toast, verify} = store
-    const verifyCtrl = await client.use('verify')
-    verify.busy.true()
-    let ok
-    try {
-      const needsVerify = await verifyCtrl.needsVerify()
-      if (needsVerify) {
-        await verifyCtrl.send()
-      }
-      ok = true
-    } catch (e) {
-      toast.error.push(l('errors.VERIFY_SEND_FAILED_ERROR'))
-      console.error(e)
-    } finally {
-      verify.busy.false()
+    const {busy, needsVerify} = s.scope
+    const verifyCtrl = await s.use('verifyCtrl')
+    busy.true()
+    const needed = await verifyCtrl.needsVerify()
+    if (needed) {
+      await verifyCtrl.send()
     }
-    if (ok) {
-      toast.info.push(l('toasts.VERIFY_EMAIL_SENT'))
-      verify.needsVerify.false()
-    }
+    busy.false()
+    needsVerify.false()
   }
 
   async doVerify () {
     const s = this
-    const {store, client, l} = s
-    const verifyCtrl = await client.use('verify')
+    const verifyCtrl = await s.use('verifyCtrl')
     const {seal, envelop} = urlUtil.queryFromSearch()
-    const {verify} = store
-    {
-      verify.busy.true()
-      let ok
-      try {
-        ok = await verifyCtrl.verify({seal, envelop})
-        await s.syncNeedsVerify()
-      } catch (e) {
+    const {busy, errorMessage} = s.scope
+    busy.true()
+    const ok = await verifyCtrl.verify({seal, envelop})
+      .catch((e) => {
         switch (e.name) {
           case 'ExpiredError':
-            verify.errorMessage.set(l('errors.VERIFY_EXPIRED_ERROR'))
-            break
+            errorMessage.set(l('errors.VERIFY_EXPIRED_ERROR'))
+            return null
           default:
-            verify.errorMessage.set(l('errors.VERIFY_FAILED_ERROR'))
-            break
+            errorMessage.set(l('errors.VERIFY_FAILED_ERROR'))
+            return null
         }
-        console.error(e)
-      } finally {
-        verify.busy.false()
-      }
-      if (ok) {
-        verify.done.true()
-      }
-    }
+      })
+    await s.syncNeedsVerify()
+    busy.false()
+    s.toggleDone(ok)
   }
 
-  prepareVerify () {
+  toggleDone (flg) {
     const s = this
-    const {store} = s
-    const {verify} = store
-    verify.done.false()
+    const {done} = s.scope
+    done.toggle(flg)
   }
 }
 

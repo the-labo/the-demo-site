@@ -5,7 +5,7 @@
 'use strict'
 
 const {TheCtrl} = require('the-controller-base')
-const {withDebug, withSigned} = require('./concerns')
+const {withDebug, withAuthorized} = require('./concerns')
 const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = require('the-error')
 const UnknownEmailError = TheError.withName('UnknownEmailError')
 const {Urls, Lifetimes} = require('@self/conf')
@@ -66,13 +66,13 @@ class RecoverCtrl extends TheCtrl {
     await Sign.setUserPassword(user, password)
 
     const sign = await Sign.ofUser(user)
-    s._setSigned(user, sign)
-    await s._reloadSigned()
-    return s._fetchSignedUser()
+    await s._setAuthorized(user, sign)
+    await s._reloadAuthorized()
+    return s._fetchAuthorizedUser()
   }
 }
 
-module.exports = withSigned(
+module.exports = withAuthorized(
   withDebug(
     RecoverCtrl
   )

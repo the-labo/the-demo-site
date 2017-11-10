@@ -17,11 +17,10 @@ class SignSignaskView extends React.Component {
 
   render () {
     const s = this
-    const {props} = s
     const {
       l,
       back
-    } = props
+    } = s.props
     return (
       <TheView className={styles.self}>
         <TheView.Header leftIcon={Icons.BACK_ICON}
@@ -31,7 +30,7 @@ class SignSignaskView extends React.Component {
 
         />
         <TheView.Body>
-          <TheLead text={l('messages.NEEDS_SIGNIN_IN')} />
+          <TheLead text={l('messages.NEEDS_SIGNIN_IN')}/>
 
           <br/>
 
@@ -55,6 +54,6 @@ class SignSignaskView extends React.Component {
 export default asView(
   withTitle(SignSignaskView, ({l}) => l('titles.SIGNASK_VIEW_TITLE')),
   (state) => ({
-    back: state['sign.back'] || '/'
+    back: state['auth.signask.back'] || '/'
   })
 )

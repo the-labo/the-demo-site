@@ -7,40 +7,60 @@ import {
   TheBody,
   TheRouter
 } from 'the-components'
+
 import App from './App'
+import GAScript from './fragments/scripts/GAScript'
 import { UI, Urls, Styles, locales } from '@self/conf'
 import { isProduction } from 'the-check'
+import {
+  APP_CDN_URL,
+  GA_TRACKING_ID,
+  GA_DEV_TRACKING_ID,
+  AMAZON_ASSOCIATE_TRACKING_ID,
+  AMAZON_ASSOCIATE_REGION
+} from '@self/Local'
 
-const {APP_PROP_NAME, APP_CONTAINER_ID} = UI
+const {APP_PROP_NAME, APP_STAGE_NAME, APP_CONTAINER_ID} = UI
 const {DOMINANT_COLOR} = Styles
-const {
-  ICON_URL,
-  JS_BUNDLE_URL,
-  JS_BUNDLE_CC_URL,
-  JS_EXTERNAL_URL,
-  JS_EXTERNAL_CC_URL,
-  CSS_THEME_URL,
-  CSS_FONT_URL,
-  CSS_BUNDLE_URL,
-} = Urls
+const u = Urls
 
 const Html = ({appScope, renderingContext}) => {
   const {version} = appScope.pkg
-  const {lang, client, store, path} = renderingContext
+  const {lang, client, store, handle, path} = renderingContext
+  handle.setAttributes({store, client, l})
   const l = locales.bind(lang)
-  const appProps = {lang}
+  const appProps = {
+    lang,
+    AMAZON_ASSOCIATE_TRACKING_ID,
+    AMAZON_ASSOCIATE_REGION
+  }
   return (
     <TheHtml>
-      <TheHead js={[
-        isProduction() ? JS_EXTERNAL_CC_URL : JS_EXTERNAL_URL,
-        isProduction() ? JS_BUNDLE_CC_URL : JS_BUNDLE_URL
-      ]}
-               css={[CSS_THEME_URL, CSS_FONT_URL, CSS_BUNDLE_URL]}
-               title={l('app.APP_NAME')}
-               icon={ICON_URL}
+      <TheHead title={l('app.APP_NAME')}
+               js={[
+                 ...(isProduction() ? [
+                   u.PRODUCTION_JS_URL
+                 ] : [
+                   u.JS_EXTERNAL_URL,
+                   u.JS_BUNDLE_URL
+                 ])
+               ]}
+               css={[
+                 ...(isProduction() ? [
+                   u.PRODUCTION_CSS_URL
+                 ] : [
+                   u.CSS_THEME_URL,
+                   u.CSS_FONT_URL,
+                   u.CSS_BUNDLE_URL,
+                   u.CSS_TWITTER_URL
+                 ])
+               ]}
+               icon={u.ICON_URL}
                version={isProduction() ? version : String(new Date().getTime())}
                globals={{[APP_PROP_NAME]: appProps}}
                color={DOMINANT_COLOR}
+               cdn={isProduction() ? APP_CDN_URL : null}
+               fallbackUnless={APP_STAGE_NAME}
       >
       </TheHead>
       <TheBody>
@@ -48,7 +68,7 @@ const Html = ({appScope, renderingContext}) => {
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
-            <App {...appProps} {...{client, store}}/>
+            <App {...appProps} {...{client, store, handle}}/>
           </TheRouter.Static>
         </div>
       </TheBody>

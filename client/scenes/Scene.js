@@ -7,6 +7,22 @@
 const {TheScene} = require('the-scene-base/shim')
 
 class Scene extends TheScene {
+
+  async use (name) {
+    const s = this
+    return s.client.use(name)
+  }
+
+  catchError (e) {
+    const s = this
+    const {store, l} = s
+    try {
+      s.catchEntryError(e)
+    } catch (e) {
+      store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
+    }
+  }
+
   catchEntryError (e) {
     const s = this
     try {
@@ -28,10 +44,6 @@ class Scene extends TheScene {
     }
   }
 
-  pushInfoToast (message) {
-    const s = this
-    s.store.toast.info.push(message)
-  }
 }
 
 module.exports = Scene

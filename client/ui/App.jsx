@@ -14,7 +14,8 @@ import Main from './layouts/Main'
 import Toasts from './layouts/Toasts'
 import Footer from './layouts/Footer'
 import Routes from './Routes'
-import { withProvider, connect, withStore } from 'the-store'
+import { withProvider, withStore } from 'the-store'
+import { asBound } from './wrappers'
 import { withClient } from 'the-client'
 import { withLoc } from 'the-loc'
 import { locales } from '@self/conf'
@@ -34,7 +35,7 @@ class App extends React.Component {
     const {
       synced,
       user
-    } = props
+    } = s.props
 
     return (
       <TheRoot className='app'>
@@ -62,12 +63,12 @@ class App extends React.Component {
 
   get notices () {
     const s = this
-    const {verifyScene, props} = s
+    const {onVerify} = s.props
     const notices = {}
-    const {needsVerify, user, l} = props
+    const {needsVerify, user, l} = s.props
     if (user && needsVerify) {
       notices[l('messages.NEEDS_EMAIL_VERIFIED')] = {
-        [l('buttons.DO_SEND_VERIFY')]: () => verifyScene.sendVerify()
+        [l('buttons.DO_SEND_VERIFY')]: onVerify
       }
     }
     return notices
@@ -75,11 +76,24 @@ class App extends React.Component {
 
 }
 
-const ConnectedApp = connect((state) => ({
-  synced: state['sign.signed.synced'],
-  user: state['sign.signed.user'],
-  needsVerify: state['verify.needsVerify'],
-}))(withClient(withStore(App)))
+const ConnectedApp = asBound(
+  withClient(withStore(App)),
+  (state) => ({
+    synced: state['sign.signed.synced'],
+    user: state['sign.signed.user'],
+    needsVerify: state['verify.needsVerify'],
+  }),
+  ({
+     l,
+     verifyScene,
+     toastScene
+   }) => ({
+    onVerify: async () => {
+      await verifyScene.sendVerify()
+      toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
+    }
+  })
+)
 
 export default withProvider(
   withClient.root(

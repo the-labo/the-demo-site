@@ -27,13 +27,13 @@ class AccountMypageView extends React.Component {
 
   render () {
     const s = this
-    const {props} = s
+
     const {
       l,
       busy,
       synced,
       user
-    } = props
+    } = s.props
     const ready = Boolean(synced && user)
     return (
       <TheView className={styles.self}

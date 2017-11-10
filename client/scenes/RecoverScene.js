@@ -27,7 +27,7 @@ class RecoverScene extends Scene {
   async doSend () {
     const s = this
     const {store, client, l} = s
-    const recoverCtrl = await client.use('recover')
+    const recoverCtrl = await s.use('recover')
     const {toast, recover} = store
     const {email} = recover.send.entry.values.state
     recover.send.errorMessage.del()
@@ -71,7 +71,7 @@ class RecoverScene extends Scene {
   async doReset () {
     const s = this
     const {store, client, l} = s
-    const recoverCtrl = await client.use('recover')
+    const recoverCtrl = await s.use('recover')
     const {seal, envelop} = urlUtil.queryFromSearch()
     const {recover, toast} = store
     recover.reset.errorMessage.del()

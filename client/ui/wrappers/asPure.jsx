@@ -10,7 +10,7 @@ function asPure (Component, options = {}) {
   return class AsPure extends React.PureComponent {
     render () {
       const s = this
-      const {props} = s
+
       return <Component {...props}/>
     }
   }

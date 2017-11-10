@@ -5,11 +5,11 @@
 'use strict'
 
 const withAdmin = require('./withAdmin')
+const withAuthorized = require('./withAuthorized')
 const withDebug = require('./withDebug')
-const withSigned = require('./withSigned')
 
 module.exports = {
   withAdmin,
-  withDebug,
-  withSigned
+  withAuthorized,
+  withDebug
 }

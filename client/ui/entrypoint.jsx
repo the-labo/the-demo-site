@@ -23,7 +23,7 @@ once('DOMContentLoaded', () => {
     })
 
   rescue(() => {
-    const {lang} = props
+    const {lang} = s.props
     const l = locales.bind(lang)
     const {toast} = store
     toast.error.push(l('errors.UNEXPECTED_ERROR'))

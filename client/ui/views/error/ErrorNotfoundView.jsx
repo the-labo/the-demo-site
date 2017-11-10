@@ -11,8 +11,8 @@ import styles from './ErrorNotfoundView.pcss'
 class ErrorNotfoundView extends React.Component {
   render () {
     const s = this
-    const {props} = s
-    const {l} = props
+
+    const {l} = s.props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}

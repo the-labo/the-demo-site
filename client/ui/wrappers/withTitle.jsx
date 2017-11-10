@@ -14,7 +14,7 @@ function withTitle (Component, getTitle = () => null) {
 
     render () {
       const s = this
-      const {props} = s
+
       return <Component {...props} />
     }
 
@@ -38,8 +38,8 @@ function withTitle (Component, getTitle = () => null) {
     updateTitle () {
       const document = get('window.document')
       const s = this
-      const {props} = s
-      const {l} = props
+
+      const {l} = s.props
       const title = getTitle(props)
       if (document.title !== title) {
         s._titleQueue.push(document.title)

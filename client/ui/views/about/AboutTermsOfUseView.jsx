@@ -16,11 +16,11 @@ class AboutTermsOfUseView extends React.Component {
 
   render () {
     const s = this
-    const {props} = s
+
     const {
       l,
       lang
-    } = props
+    } = s.props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}

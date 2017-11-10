@@ -10,29 +10,29 @@ const {RoleCodes} = require('@self/conf')
 /** @lends withAdmin */
 function withAdmin (Class) {
   class WithAdmin extends Class {
-    _isAdmin () {
+    async _isAdmin () {
       const s = this
       const {session} = s
-      const {user} = session.signed || {}
+      const {user} = session.authorized || {}
       const {role} = user || {}
       return role && role.code === RoleCodes.ADMIN_ROLE
     }
 
-    _assertAsAdmin () {
+    async _assertAsAdmin () {
       const s = this
-      const isAdmin = s._isAdmin()
+      const isAdmin = await s._isAdmin()
       if (!isAdmin) {
         throw new TheForbiddenError('Needs to be an admin!')
       }
     }
 
-    _setConfirmedAsAdmin (confirmedAsAdmin) {
+    async _setConfirmedAsAdmin (confirmedAsAdmin) {
       const s = this
       const {session} = s
       session.confirmedAsAdmin = confirmedAsAdmin
     }
 
-    _isConfirmedAsAdmin () {
+    async _isConfirmedAsAdmin () {
       const s = this
       const {session} = s
       return session.confirmedAsAdmin

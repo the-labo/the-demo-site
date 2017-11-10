@@ -8,8 +8,8 @@ function withMoment (Component, options = {}) {
   return class WithMoment extends React.Component {
     render () {
       const s = this
-      const {props} = s
-      const {lang} = props
+
+      const {lang} = s.props
       const toMoment = (date) => {
         if (!date) {
           return null

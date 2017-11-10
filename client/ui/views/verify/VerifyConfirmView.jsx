@@ -7,24 +7,21 @@ import React from 'react'
 import { TheView, TheDone, TheCondition } from 'the-components'
 import { asView, withTitle } from '../../wrappers/index'
 import styles from './VerifyConfirmView.pcss'
-import { VerifyScene } from '../../../scenes/index'
 
 class VerifyConfirmView extends React.Component {
   constructor (props) {
     super(props)
     const s = this
-    s.verifyScene = new VerifyScene(props)
   }
 
   render () {
     const s = this
-    const {props} = s
     const {
       l,
       busy,
       done,
       errorMessage
-    } = props
+    } = s.props
     return (
       <TheView className={styles.self}
                spinning={busy}>
@@ -52,14 +49,10 @@ class VerifyConfirmView extends React.Component {
 
   componentDidMount () {
     const s = this
-    const {verifyScene} = s
+    const {onSetup, onReady} = s.props
 
-    verifyScene.prepareVerify()
-
-    ;(async () => {
-      await verifyScene.doVerify()
-    })()
-
+    onSetup()
+    onReady()
   }
 
   componentWillUnmount () {
@@ -69,8 +62,12 @@ class VerifyConfirmView extends React.Component {
 export default asView(
   withTitle(VerifyConfirmView, ({l}) => l('titles.ACCOUNT_VERIFY_TITLE')),
   (state) => ({
-    busy: state['verify.busy'],
-    done: state['verify.done'],
+    busy: state['auth.verify.busy'],
+    done: state['auth.verify.done'],
     errorMessage: state['verify.errorMessage'],
-  })
+  }),
+  ({verifyScene}) => (({
+    onSetup: () => verifyScene.toggleDone(false),
+    onReady: () => verifyScene
+  }))
 )

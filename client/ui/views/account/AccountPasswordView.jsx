@@ -29,7 +29,7 @@ class AccountPasswordView extends React.Component {
       l,
       done,
       errors
-    } = props
+    } = s.props
     return (
       <TheView className={styles.self}
                spinning={busy}>

@@ -15,7 +15,7 @@ function withRole (Class) {
   class WithRole extends React.Component {
     render () {
       const s = this
-      const {props} = s
+
       const ComponentProps = Object.assign({
         isAdmin (user) {
           return hasRole(user, RoleCodes.ADMIN_ROLE)

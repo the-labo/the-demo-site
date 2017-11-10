@@ -10,7 +10,7 @@ function withText (Class) {
   class WithText extends React.Component {
     render () {
       const s = this
-      const {props} = s
+
       const ComponentProps = Object.assign({
         displayNameForUser (user) {
           if (!user) {

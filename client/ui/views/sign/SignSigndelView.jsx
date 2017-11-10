@@ -13,25 +13,21 @@ import {
   TheCondition
 } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
-import { SignScene } from '../../../scenes'
 import styles from './SignSigndelView.pcss'
 
 class SignSigndelView extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-    s.signScene = new SignScene(props)
-  }
-
   render () {
     const s = this
-    const {props, signScene} = s
     const {
       l,
       busy,
       confirming,
-      done
-    } = props
+      done,
+      onCancel,
+      onConfirm,
+      onConfirmBack,
+      onExecute
+    } = s.props
     return (
       <TheView className={styles.self}
                spinning={busy}>
@@ -48,8 +44,8 @@ class SignSigndelView extends React.Component {
               </div>
               <br/>
               <TheButtonGroup>
-                <TheButton onClick={() => signScene.abortSigndel()}>{l('buttons.DO_CANCEL')}</TheButton>
-                <TheButton.Next onClick={() => signScene.toggleSigndelConfirming(true)}
+                <TheButton onClick={onCancel}>{l('buttons.DO_CANCEL')}</TheButton>
+                <TheButton.Next onClick={onConfirm}
                 >{l('buttons.SHOW_SIGNDEL_CONFIRM')}</TheButton.Next>
               </TheButtonGroup>
             </div>
@@ -63,10 +59,10 @@ class SignSigndelView extends React.Component {
               </div>
               <br/>
               <TheButtonGroup>
-                <TheButton.Prev onClick={() => signScene.toggleSigndelConfirming(false)}
+                <TheButton.Prev onClick={onConfirmBack}
                 >{l('buttons.DO_BACK')}</TheButton.Prev>
                 <TheButton primary
-                           onClick={() => signScene.doSigndel()}>{l('buttons.DO_SIGNDEL')}</TheButton>
+                           onClick={onExecute}>{l('buttons.DO_SIGNDEL')}</TheButton>
               </TheButtonGroup>
             </div>
           </TheCondition>
@@ -97,5 +93,11 @@ export default asView(
     busy: state['sign.signdel.busy'],
     confirming: state['sign.signdel.confirming'],
     done: state['sign.signdel.done'],
+  }),
+  ({signdelScene}) => ({
+    onCancel: () => signdelScene.goTo('/'),
+    onConfirm: () => signdelScene.toggleConfirming(true),
+    onConfirmBack: () => signdelScene.toggleConfirming(false),
+    onExecute: () => signdelScene.doSigndel()
   })
 )

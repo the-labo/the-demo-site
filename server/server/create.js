@@ -10,9 +10,7 @@ const {Html} = require('@self/client/shim/ui')
 const {createClient, createStore} = require('@self/client')
 const theSeal = require('the-seal')
 const c = require('../controllers')
-const {
-  aliasEndpoint
-} = require('../endpoints')
+const e = require('../endpoints')
 const pkg = require('../../package.json')
 const env = require('../env')
 
@@ -37,7 +35,7 @@ function create (config) {
     static: ['public'],
     redis: redisConfig,
     endpoints: {
-      '/a/:key': aliasEndpoint
+      '/a/:key': e.aliasEndpoint
     },
     cacheDir: 'tmp/cache',
     injectors: {
@@ -50,11 +48,12 @@ function create (config) {
     scope: app
   })
 
-  server.load(c.AppCtrl, 'app')
-  server.load(c.SignCtrl, 'sign')
-  server.load(c.VerifyCtrl, 'verify')
-  server.load(c.RecoverCtrl, 'recover')
-  server.load(c.AdminUsersCtrl, 'adminUsers')
+  server.load(c.AppCtrl, 'appCtrl')
+  server.load(c.AuthCtrl, 'authCtrl')
+  server.load(c.VerifyCtrl, 'verifyCtrl')
+  server.load(c.RecoverCtrl, 'recoverCtrl')
+
+  server.load(c.UserMasterCtrl, 'userMasterCtrl')
 
   return server
 }

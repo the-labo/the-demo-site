@@ -29,7 +29,7 @@ class AdminUsersScene extends Scene {
     const s = this
     const {client, store} = s
     const {users} = store.admin
-    const adminUsers = await client.use('adminUsers')
+    const adminUsers = await s.use('adminUsers')
 
     const filter = {}
     sort = users.listing.resolveSort(sort)
@@ -59,7 +59,7 @@ class AdminUsersScene extends Scene {
     const {client, store, l} = s
     const {users} = store.admin
     const {info} = store.toast
-    const adminUsersCtrl = await client.use('adminUsers')
+    const adminUsersCtrl = await s.use('adminUsers')
     const values = expand(users.creating.entry.values.state)
     users.creating.busy.true()
     {
@@ -142,7 +142,7 @@ class AdminUsersScene extends Scene {
     const {client, store, l} = s
     const {users} = store.admin
     const {info} = store.toast
-    const adminUsers = await client.use('adminUsers')
+    const adminUsers = await s.use('adminUsers')
 
     users.destroying.busy.true()
     let destroyed
@@ -163,7 +163,7 @@ class AdminUsersScene extends Scene {
     s.dropNewPasswords()
     const {client, store} = s
     const {users} = store.admin
-    const adminUsers = await client.use('adminUsers')
+    const adminUsers = await s.use('adminUsers')
     {
       users.passwordReset.busy.true()
 

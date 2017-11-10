@@ -27,7 +27,7 @@ class RecoverSendView extends React.Component {
       done,
       values,
       errors
-    } = props
+    } = s.props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}

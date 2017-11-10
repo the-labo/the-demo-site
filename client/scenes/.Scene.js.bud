@@ -1,11 +1,14 @@
 'use strict'
 
 module.exports = [
-  'SignScene',
-  'AccountScene',
+  'AuthScene',
+  'SigninScene',
+  'SignupScene',
+  'SignoutScene',
+  'SigndelScene',
+  'ToastScene',
   'VerifyScene',
-  'RecoverScene',
-  'AdminUsersScene'
+  'RecoverScene'
 ].map((name) => ({
   force: false,
   mode: '644',

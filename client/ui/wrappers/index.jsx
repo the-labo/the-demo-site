@@ -4,6 +4,7 @@
  */
 'use strict'
 
+import asBound from './asBound'
 import asForm from './asForm'
 import asPure from './asPure'
 import asView from './asView'
@@ -14,6 +15,7 @@ import withText from './withText'
 import withTitle from './withTitle'
 
 export {
+  asBound,
   asForm,
   asPure,
   asView,

@@ -3,17 +3,22 @@
  */
 'use strict'
 
+const path = require('path')
+
 module.exports = [
+  'AdminCtrl',
   'AppCtrl',
-  'SignCtrl',
+  'AuthCtrl',
   'VerifyCtrl',
-  'RecoverCtrl'
+  'RecoverCtrl',
+  'masters/UserMasterCtrl'
 ].map((name) => ({
   force: false,
   mode: '644',
+  mkdirp: true,
   path: `${name}.js`,
   data: {
-    name
+    name: path.basename(name)
   }
 }))
 

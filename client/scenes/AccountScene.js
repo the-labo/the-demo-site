@@ -1,6 +1,6 @@
 /**
- * AccountScene
- * @class AccountScene
+ * AuthScene
+ * @class AuthScene
  */
 'use strict'
 
@@ -8,8 +8,8 @@ const Scene = require('./Scene')
 const {Urls} = require('@self/conf')
 const {clone} = require('asobj')
 
-/** @lends AccountScene */
-class AccountScene extends Scene {
+/** @lends AuthScene */
+class AuthScene extends Scene {
   setProfileEntryValues (values) {
     const s = this
     const {store} = s
@@ -28,12 +28,12 @@ class AccountScene extends Scene {
     const s = this
     const {store, client} = s
     const {profile} = store.account
-    const signCtrl = await client.use('sign')
+    const authCtrl = await s.use('sign')
 
     profile.busy.true()
     let signed
     try {
-      signed = await signCtrl.getSigned()
+      signed = await authCtrl.getSigned()
     } finally {
       profile.busy.false()
     }
@@ -46,7 +46,7 @@ class AccountScene extends Scene {
   async doUpdateProfile () {
     const s = this
     const {store, client, l} = s
-    const signCtrl = await client.use('sign')
+    const authCtrl = await s.use('sign')
     const {toast} = store
     const {profile} = store.account
 
@@ -54,7 +54,7 @@ class AccountScene extends Scene {
     {
       let done
       try {
-        done = await signCtrl.updateProfile(profile.entry.values.state)
+        done = await authCtrl.updateProfile(profile.entry.values.state)
       } catch (e) {
         profile.entry.setErrors(s.catchEntryError(e))
       } finally {
@@ -69,7 +69,7 @@ class AccountScene extends Scene {
   async doUpdatePassword () {
     const s = this
     const {store, client, l} = s
-    const signCtrl = await client.use('sign')
+    const authCtrl = await s.use('sign')
     const {toast} = store
     const {password} = store.account
 
@@ -77,7 +77,7 @@ class AccountScene extends Scene {
     {
       let done
       try {
-        done = await signCtrl.updatePassword(password.entry.values.state)
+        done = await authCtrl.updatePassword(password.entry.values.state)
       } catch (e) {
         password.entry.setErrors(s.catchEntryError(e))
       } finally {
@@ -105,4 +105,4 @@ class AccountScene extends Scene {
 
 }
 
-module.exports = AccountScene
+module.exports = AuthScene

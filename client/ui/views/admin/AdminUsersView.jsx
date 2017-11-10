@@ -57,7 +57,7 @@ class AdminUsersView extends React.Component {
       passwordResetResulting,
       passwordResetBusy,
       passwordResetNewPasswords
-    } = props
+    } = s.props
 
     return (
       <TheView className={styles.self}
@@ -227,15 +227,15 @@ class AdminUsersView extends React.Component {
 
   getCheckedIds () {
     const s = this
-    const {props} = s
-    const {checks} = props
+
+    const {checks} = s.props
     return Object.keys(checks).filter((id) => checks[id])
   }
 
   getCheckedUsers () {
     const s = this
-    const {props} = s
-    const {users} = props
+
+    const {users} = s.props
     const ids = s.getCheckedIds()
     return users && users.filter((user) => !!~ids.indexOf(user.id))
   }

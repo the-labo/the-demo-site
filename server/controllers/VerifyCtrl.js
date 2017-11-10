@@ -5,7 +5,7 @@
 'use strict'
 
 const {TheCtrl} = require('the-controller-base')
-const {withDebug, withSigned} = require('./concerns')
+const {withDebug, withAuthorized} = require('./concerns')
 const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = require('the-error')
 const VerifySendError = TheError.withName('VerifySendError')
 const {Urls, Lifetimes} = require('@self/conf')
@@ -17,7 +17,7 @@ class VerifyCtrl extends TheCtrl {
 
   async needsVerify () {
     const s = this
-    const user = await s._fetchSignedUser()
+    const user = await s._fetchAuthorizedUser()
     if (!user) {
       return false
     }
@@ -31,9 +31,9 @@ class VerifyCtrl extends TheCtrl {
     const {db, mail, seal} = app
     const {Alias} = db.resources
     const {protocol, host, lang} = client
-    s._assertSigned()
+    await s._assertAuthorized()
 
-    const user = await s._fetchSignedUser()
+    const user = await s._fetchAuthorizedUser()
     const {email} = user.profile || {}
     if (!email) {
       throw new VerifySendError(`Email is not registered`)
@@ -79,18 +79,18 @@ class VerifyCtrl extends TheCtrl {
       throw new TheGoneError('User already gone')
     }
     const sign = await Sign.ofUser(user)
-    s._setSigned(user, sign)
+    s._setAuthorized(user, sign)
     const profile = await Profile.ofUser(user)
     if (profile.email !== email) {
       throw new TheInvalidParameterError(`Invalid parameter`, envelop)
     }
     profile.update({emailVerified: true})
-    await s._reloadSigned()
-    return s._fetchSignedUser()
+    await s._reloadAuthorized()
+    return s._fetchAuthorizedUser()
   }
 }
 
-module.exports = withSigned(
+module.exports = withAuthorized(
   withDebug(
     VerifyCtrl
   )

@@ -1,16 +1,18 @@
 /**
- * AdminUsersCtrl
- * @class AdminUsersCtrl
+ * UserMasterCtrl
+ * @class UserMasterCtrl
  */
 'use strict'
 
-const AdminCtrl = require('./AdminCtrl')
+const MasterCtrl = require('./MasterCtrl')
 const {withDebug} = require('../concerns')
 
-/** @lends AdminUsersCtrl */
-class AdminUsersCtrl extends AdminCtrl {
+/** @lends UserMasterCtrl */
+class UserMasterCtrl extends MasterCtrl {
   async fetchUserList ({filter, sort, page} = {}) {
     const s = this
+    await s.onlyAdmin()
+
     const {app} = s
     const {User} = app.db.resources
     return User.list({filter, sort, page})
@@ -18,6 +20,8 @@ class AdminUsersCtrl extends AdminCtrl {
 
   async createUser ({name, role: roleCode, profile: profileAttributes}) {
     const s = this
+    await s.onlyAdmin()
+
     const {app} = s
     const {User, Role, Sign, Profile} = app.db.resources
     const role = await Role.ofCode(roleCode)
@@ -43,8 +47,8 @@ class AdminUsersCtrl extends AdminCtrl {
 
   async resetUserPasswords (userIds) {
     const s = this
-    s._assertSigned()
-    s._assertAsAdmin()
+    await s.onlyAdmin()
+
     const {app} = s
     const {User, Sign} = app.db.resources
     const newPasswords = {}
@@ -60,8 +64,8 @@ class AdminUsersCtrl extends AdminCtrl {
 
   async destroyUsers (userIds) {
     const s = this
-    s._assertSigned()
-    s._assertAsAdmin()
+    await s.onlyAdmin()
+
     const {app} = s
     const {User} = app.db.resources
     return User.destroyBulk(userIds)
@@ -69,5 +73,5 @@ class AdminUsersCtrl extends AdminCtrl {
 }
 
 module.exports = withDebug(
-  AdminUsersCtrl, 'app:adminUsersCtrl'
+  UserMasterCtrl
 )
