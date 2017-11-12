@@ -5,12 +5,17 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
+const {urlUtil} = require('@self/utils')
 
 class Scene extends TheScene {
 
   async use (name) {
     const s = this
     return s.client.use(name)
+  }
+
+  queryFromSearch () {
+    return urlUtil.queryFromSearch()
   }
 
   catchError (e) {

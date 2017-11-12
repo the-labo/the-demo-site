@@ -1,22 +1,25 @@
 /**
- * Endpoint for alias
- * @function aliasEndpoint
+ * Route for alias
+ * @function aliasRoute
  */
 'use strict'
 
 const debug = require('debug')('app:endpoint:alias')
-const LRU = require('lru-cache')
+const theCache = require('the-cache')
 
-const cache = LRU({
+const cache = theCache({
   max: 1000 * 2,
   maxAge: 1000 * 60 * 6
 })
 
-/** @lends aliasEndpoint */
-async function aliasEndpoint (ctx) {
-  const {app} = ctx
-  const {Alias} = app.db.resources
-  const {key} = ctx.params
+/** @lends aliasRoute */
+async function aliasRoute (ctx) {
+  const {
+    app: {
+      db: {Alias}
+    },
+    params: {key}
+  } = ctx
   const cached = cache.get(key)
   const found = cached || await Alias.first({key})
   if (!found) {
@@ -32,4 +35,4 @@ async function aliasEndpoint (ctx) {
   ctx.redirect(originalUrl)
 }
 
-module.exports = aliasEndpoint
+module.exports = aliasRoute

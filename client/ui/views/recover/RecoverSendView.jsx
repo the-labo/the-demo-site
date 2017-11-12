@@ -6,27 +6,16 @@
 import React from 'react'
 import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
-import { RecoverScene } from '../../../scenes'
 import { RecoverSendForm } from '../../fragments'
 import styles from './RecoverSendView.pcss'
 
 class RecoverSendView extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-    s.recoverScene = new RecoverScene(props)
-  }
-
   render () {
     const s = this
-    const {props, recoverScene} = s
     const {
       l,
       errorMessage,
-      busy,
-      done,
-      values,
-      errors
+      done
     } = s.props
     return (
       <TheView className={styles.self}>
@@ -45,11 +34,7 @@ class RecoverSendView extends React.Component {
               <TheLead text={l('leads.RECOVER_SEND')}
                        error={errorMessage}
               />
-              <RecoverSendForm spinning={busy}
-                               {...{values, errors}}
-                               onUpdate={(v) => recoverScene.setSendEntryValues(v)}
-                               onSubmit={() => recoverScene.doSend()}
-              />
+              <RecoverSendForm/>
             </div>
           </TheCondition>
         </TheView.Body>
@@ -59,21 +44,25 @@ class RecoverSendView extends React.Component {
 
   componentDidMount () {
     const s = this
-    const {recoverScene} = s
-    recoverScene.prepareRecoverSend()
+    const {onSetup} = s.props
+    onSetup()
   }
 
   componentWillUnmount () {
+    const s = this
+    const {onTeardown} = s.props
+    onTeardown()
   }
 }
 
 export default asView(
   withTitle(RecoverSendView, ({l}) => l('titles.RECOVER_SEND_TITLE')),
   (state) => ({
-    errorMessage: state['recover.send.errorMessage'],
-    busy: state['recover.send.busy'],
-    done: state['recover.send.done'],
-    values: state['recover.send.entry.values'],
-    errors: state['recover.send.entry.errors']
+    errorMessage: state['auto.recover.send.errorMessage'],
+    done: state['auto.recover.send.done']
+  }),
+  ({recoverScene}) => ({
+    onSetup: () => recoverScene.setEntryValues({}),
+    onTeardown: () => recoverScene.dropEntryValues()
   })
 )

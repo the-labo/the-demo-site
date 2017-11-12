@@ -4,8 +4,7 @@
  */
 'use strict'
 
-import PasswordForm from './forms/PasswordForm'
-import ProfileForm from './forms/ProfileForm'
+import PasswordChangeForm from './forms/PasswordChangeForm'
 import RecoverResetForm from './forms/RecoverResetForm'
 import RecoverSendForm from './forms/RecoverSendForm'
 import SigninForm from './forms/SigninForm'
@@ -15,8 +14,7 @@ import UserSearchForm from './forms/UserSearchForm'
 import AdminUserList from './lists/AdminUserList'
 
 export {
-  PasswordForm,
-  ProfileForm,
+  PasswordChangeForm,
   RecoverResetForm,
   RecoverSendForm,
   SigninForm,

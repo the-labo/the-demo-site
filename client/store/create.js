@@ -6,19 +6,9 @@
 'use strict'
 
 const theStore = require('the-store')
-const {
-  ObjectScope,
-  ValueScope,
-  DetailingScope,
-  CreatingScope,
-  EdittingScope,
-  EntryScope,
-  DestroyingScope,
-  ListingScope,
-  ArrayScope,
-  ToastScope,
-  BooleanScope
-} = require('the-scope')
+const theScope = require('the-scope')
+
+const scopes = require('./scopes.json')
 
 /** @lends create */
 module.exports = function create () {
@@ -27,9 +17,40 @@ module.exports = function create () {
     persists: []
   })
 
+  store.loadFromDefs(scopes, {
+    types: {
+      'ARR': theScope.ArrayScope,
+      'BOOL': theScope.BooleanScope,
+      'STR': theScope.StringScope,
+      'VAL': theScope.ValueScope,
+      'NUM': theScope.NumberScope
+    }
+  })
+
   {
     const app = store.load(ObjectScope, 'app')
     app.load(BooleanScope, 'busy')
+  }
+
+  {
+    const signin = store.load(ObjectScope, 'signin')
+    signin.load(ValueScope, 'back')
+    signin.load(EntryScope, 'entry')
+    signin.load(BooleanScope, 'busy')
+  }
+  {
+    const signup = store.load(ObjectScope, 'signup')
+    signup.load(ValueScope, 'back')
+    signup.load(EntryScope, 'entry')
+    signup.load(BooleanScope, 'busy')
+  }
+  {
+    const signout = store.load(ObjectScope, 'signout')
+    signout.load(BooleanScope, 'busy')
+  }
+  {
+    const signask = auth.load(ObjectScope, 'signask')
+    signask.load(BooleanScope, 'busy')
   }
 
   {
@@ -38,26 +59,7 @@ module.exports = function create () {
       const user = auth.load(ValueScope, 'user')
       user.load(BooleanScope, 'synced')
     }
-    {
-      const signin = store.load(ObjectScope, 'signin')
-      signin.load(ValueScope, 'back')
-      signin.load(EntryScope, 'entry')
-      signin.load(BooleanScope, 'busy')
-    }
-    {
-      const signup = auth.load(ObjectScope, 'signup')
-      signup.load(ValueScope, 'back')
-      signup.load(EntryScope, 'entry')
-      signup.load(BooleanScope, 'busy')
-    }
-    {
-      const signout = auth.load(ObjectScope, 'signout')
-      signout.load(BooleanScope, 'busy')
-    }
-    {
-      const signask = auth.load(ObjectScope, 'signask')
-      signask.load(BooleanScope, 'busy')
-    }
+
     {
       const signdel = auth.load(ObjectScope, 'signdel')
       signdel.load(BooleanScope, 'busy')
@@ -93,9 +95,9 @@ module.exports = function create () {
   store.load(ToastScope, 'toast')
 
   {
-    const admin = store.load(ObjectScope, 'admin')
+    const master = store.load(ObjectScope, 'master')
     {
-      const users = admin.load(ObjectScope, 'users')
+      const users = master.load(ObjectScope, 'users')
 
       {
         const passwordReset = users.load(ObjectScope, 'passwordReset')

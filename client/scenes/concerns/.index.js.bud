@@ -5,8 +5,8 @@ const {dir} = require('the-templates')
 module.exports = dir({
   dirname: __dirname,
   node: true,
-  name: 'endpoints',
-  description: 'HTTP endpoints'
+  name: 'concerns',
+  description: 'Scene concerns'
 })
 
 if (!module.parent) {

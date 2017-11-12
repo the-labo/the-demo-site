@@ -9,15 +9,10 @@ import {
 } from 'the-components'
 
 import App from './App'
-import GAScript from './fragments/scripts/GAScript'
 import { UI, Urls, Styles, locales } from '@self/conf'
 import { isProduction } from 'the-check'
 import {
-  APP_CDN_URL,
-  GA_TRACKING_ID,
-  GA_DEV_TRACKING_ID,
-  AMAZON_ASSOCIATE_TRACKING_ID,
-  AMAZON_ASSOCIATE_REGION
+  APP_CDN_URL
 } from '@self/Local'
 
 const {APP_PROP_NAME, APP_STAGE_NAME, APP_CONTAINER_ID} = UI
@@ -30,9 +25,7 @@ const Html = ({appScope, renderingContext}) => {
   handle.setAttributes({store, client, l})
   const l = locales.bind(lang)
   const appProps = {
-    lang,
-    AMAZON_ASSOCIATE_TRACKING_ID,
-    AMAZON_ASSOCIATE_REGION
+    lang
   }
   return (
     <TheHtml>
@@ -51,8 +44,7 @@ const Html = ({appScope, renderingContext}) => {
                  ] : [
                    u.CSS_THEME_URL,
                    u.CSS_FONT_URL,
-                   u.CSS_BUNDLE_URL,
-                   u.CSS_TWITTER_URL
+                   u.CSS_BUNDLE_URL
                  ])
                ]}
                icon={u.ICON_URL}

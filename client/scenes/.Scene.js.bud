@@ -1,20 +1,16 @@
 'use strict'
 
+const path = require('path')
+
 module.exports = [
-  'AuthScene',
-  'SigninScene',
-  'SignupScene',
-  'SignoutScene',
-  'SigndelScene',
-  'ToastScene',
-  'VerifyScene',
-  'RecoverScene'
+
 ].map((name) => ({
   force: false,
+  mkdirp: true,
   mode: '644',
   path: `${name}.js`,
   data: {
-    name
+    name: path.basename(name)
   }
 }))
 

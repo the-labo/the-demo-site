@@ -6,7 +6,7 @@
 
 const {Resource, DataTypes} = require('the-db')
 const {STRING, ENTITY, BOOLEAN} = DataTypes
-const {withUser} = require('../mixins')
+const {withUser} = require('../concerns')
 
 /** @lends ProfileResource */
 class ProfileResource extends Resource {

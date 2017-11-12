@@ -1,8 +1,8 @@
 'use strict'
 
-const { dir } = require('the-templates')
+const {dir} = require('the-templates')
 
-module.exports = dir({
+module.exports = dir.recursive({
   dirname: __dirname,
   name: 'scenes',
   description: 'Scene classes',

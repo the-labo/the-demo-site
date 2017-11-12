@@ -1,6 +1,6 @@
 /**
- * Resource mixins
- * @module mixins
+ * Resource concerns
+ * @module concerns
  */
 'use strict'
 

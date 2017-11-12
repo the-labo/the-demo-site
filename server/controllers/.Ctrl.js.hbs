@@ -5,12 +5,14 @@
 'use strict'
 
 const {TheCtrl} = require('the-controller-base')
-const {withDebug} = require('./concerns')
+const cn = require('./concerns')
 
 /** @lends {{name}} */
-class {{name}} extends TheCtrl {
-}
-
-module.exports = withDebug(
-  {{name}}
+const {{name}} = cn.compose(
+  cn.withDebug
+)(
+  class {{name}}Base extends TheCtrl {
+ }
 )
+
+module.exports = {{name}}

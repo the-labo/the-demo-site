@@ -1,6 +1,6 @@
 /**
- * AdminUsersScene
- * @class AdminUsersScene
+ * UserMasterScene
+ * @class UserMasterScene
  */
 'use strict'
 
@@ -8,58 +8,56 @@ const Scene = require('./Scene')
 const {expand} = require('objnest')
 const {Urls, RoleCodes} = require('@self/conf')
 
-/** @lends AdminUsersScene */
-class AdminUsersScene extends Scene {
+/** @lends UserMasterScene */
+class UserMasterScene extends Scene {
+
+  get scope () {
+    const s = this
+    return s.store.master.users
+  }
 
   setSearchValues (values) {
     const s = this
-    const {store} = s
-    const {users} = store.admin
-    users.search.setValues(values)
+    const {search} = s.scope
+    search.setValues(values)
   }
 
   updateCreatingValues (values) {
     const s = this
-    const {store} = s
-    const {users} = store.admin
-    users.creating.entry.setValues(values)
+    const {creating} = s.scope
+    creating.entry.setValues(values)
   }
 
   async syncList ({pageNumber = 1, pageSize = 25, sort = '-createdAt'} = {}) {
     const s = this
-    const {client, store} = s
-    const {users} = store.admin
-    const adminUsers = await s.use('adminUsers')
+    const {listing, search} = s.scope
+    const adminUsers = await s.use('userMasterCtrl')
 
     const filter = {}
-    sort = users.listing.resolveSort(sort)
-    users.listing.sort.set(sort)
+    sort = listing.resolveSort(sort)
+    listing.sort.set(sort)
 
-    const {state: searchValues = {}} = users.search.values
+    const {state: searchValues = {}} = search.values
     const {q} = searchValues
     if (q) {
       filter.name = {$like: `%${String(q).trim()}%`}
     }
-    users.listing.busy.true()
-    try {
-      let {meta, entities} = await adminUsers.fetchUserList({
-        filter,
-        page: {number: pageNumber, size: pageSize},
-        sort: users.listing.sort.state || []
-      })
-      users.listing.entities.reset(entities)
-      users.listing.meta.set(meta)
-    } finally {
-      users.listing.busy.false()
-    }
+    listing.busy.true()
+    const {meta, entities} = await adminUsers.fetchUserList({
+      filter,
+      page: {number: pageNumber, size: pageSize},
+      sort: listing.sort.state || []
+    })
+    listing.entities.reset(entities)
+    listing.meta.set(meta)
+    listing.busy.false()
   }
 
   async doCreate () {
     const s = this
-    const {client, store, l} = s
-    const {users} = store.admin
+    const {creating} = s.scope
     const {info} = store.toast
-    const adminUsersCtrl = await s.use('adminUsers')
+    const adminUsersCtrl = await s.use('userMasterCtrl')
     const values = expand(users.creating.entry.values.state)
     users.creating.busy.true()
     {
@@ -189,4 +187,4 @@ class AdminUsersScene extends Scene {
   }
 }
 
-module.exports = AdminUsersScene
+module.exports = UserMasterScene

@@ -34,12 +34,12 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
 "@types/node@*":
-  version "8.0.50"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.50.tgz#dc545448e128c88c4eec7cd64025fcc3b7604541"
+  version "8.0.51"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
 
 "@types/request@^2.0.3":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.0.7.tgz#a2aa5a57317c21971d9b024e393091ab2c99ab98"
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.0.8.tgz#424d3de255868107ed4dd6695c65c5f1766aba80"
   dependencies:
     "@types/form-data" "*"
     "@types/node" "*"
@@ -991,7 +991,7 @@ atob@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
-autoprefixer@^7.1.1, autoprefixer@^7.1.6:
+autoprefixer@^7.1.1:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.1.6.tgz#fb933039f74af74a83e71225ce78d9fd58ba84d7"
   dependencies:
@@ -1184,13 +1184,6 @@ babel-plugin-check-es2015-constants@^6.22.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
   dependencies:
     babel-runtime "^6.22.0"
-
-babel-plugin-css-modules-transform@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/babel-plugin-css-modules-transform/-/babel-plugin-css-modules-transform-1.2.7.tgz#56bcc8ee2665bed8fe59dd8733767911b905bae3"
-  dependencies:
-    css-modules-require-hook "^4.0.6"
-    mkdirp "^0.5.1"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -2448,7 +2441,7 @@ classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
-clay-collection@^3.0.1, clay-collection@^3.1.2, clay-collection@^3.1.3:
+clay-collection@^3.0.1, clay-collection@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/clay-collection/-/clay-collection-3.1.3.tgz#e2ac462aebefc79b870137d91fd5023d31042faa"
   dependencies:
@@ -2515,25 +2508,25 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.3, clay-driver-memory@^4.1.5:
     clay-resource-name "^4.0.3"
     moment "^2.19.1"
 
-clay-driver-mysql@^5.2.6:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.7.tgz#fc6a39046a7c3b43f76baf9f7ad2f36752b5188d"
+clay-driver-mysql@^5.2.9:
+  version "5.2.9"
+  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.9.tgz#79b498994a8fa824172d1c3339244d2669c8f083"
   dependencies:
     amkdirp "^2.0.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.4.12"
+    clay-driver-sequelize "^6.4.14"
     moment "^2.19.1"
     mysql2 "^1.4.2"
     mysqldump "^1.4.2"
 
-clay-driver-sequelize@^6.4.11, clay-driver-sequelize@^6.4.12:
-  version "6.4.12"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.12.tgz#27a2b91d49203f4a84cec1cd5da2d9a8570f12c6"
+clay-driver-sequelize@^6.4.14:
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.15.tgz#776fc4b55d1a1b5ba79b2ba98c766e7eb9004ad6"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
     asobj "^2.0.2"
-    clay-collection "^3.1.2"
+    clay-collection "^3.1.3"
     clay-constants "^3.4.4"
     clay-driver-base "^4.0.1"
     clay-entity "^2.1.3"
@@ -2546,19 +2539,19 @@ clay-driver-sequelize@^6.4.11, clay-driver-sequelize@^6.4.12:
     lru-cache "^4.1.1"
     msgpack "^1.0.2"
     objnest "^4.0.0"
-    retry-as-promised "^2.3.1"
-    sequelize "^4.15.0"
+    retry-as-promised "^2.3.2"
+    sequelize "^4.22.6"
     sg-queue "^1.1.4"
     stringcase "^4.0.0"
 
 clay-driver-sqlite@^6.3.4:
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.4.tgz#94a397aa462ccdbfa89baaa5003a75fa0d6f1fb7"
+  version "6.3.5"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.5.tgz#5cb5aba4c932cfc9ebb19e278cd5cdf73a0f2d25"
   dependencies:
     amkdirp "^2.0.0"
     asobj "^2.0.2"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.4.11"
+    clay-driver-sequelize "^6.4.14"
     filecopy "^4.0.0"
     mkdirp "^0.5.1"
     moment "^2.19.1"
@@ -2596,7 +2589,7 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.2.18:
+clay-lump@^4.2.19:
   version "4.2.19"
   resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.19.tgz#4def58dfb0afd080df8beda092c6dad1615d669d"
   dependencies:
@@ -3276,7 +3269,7 @@ css-color-function@~1.3.3:
     debug "^3.1.0"
     rgb "~0.1.0"
 
-css-modules-loader-core@^1.0.0:
+css-modules-loader-core@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/css-modules-loader-core/-/css-modules-loader-core-1.1.0.tgz#5908668294a1becd261ae0a4ce21b0b551f21d16"
   dependencies:
@@ -3286,35 +3279,6 @@ css-modules-loader-core@^1.0.0:
     postcss-modules-local-by-default "1.2.0"
     postcss-modules-scope "1.1.0"
     postcss-modules-values "1.3.0"
-
-css-modules-require-hook@^4.0.6:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/css-modules-require-hook/-/css-modules-require-hook-4.2.2.tgz#99bb95e5ce9cf49060eed74997c7f7a04bf221eb"
-  dependencies:
-    debug "^2.2.0"
-    generic-names "^1.0.1"
-    glob-to-regexp "^0.3.0"
-    icss-replace-symbols "^1.0.2"
-    lodash "^4.3.0"
-    postcss "^6.0.1"
-    postcss-modules-extract-imports "^1.0.0"
-    postcss-modules-local-by-default "^1.0.1"
-    postcss-modules-resolve-imports "^1.3.0"
-    postcss-modules-scope "^1.0.0"
-    postcss-modules-values "^1.1.1"
-    seekout "^1.0.1"
-
-css-modulesify@^0.28.0:
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/css-modulesify/-/css-modulesify-0.28.0.tgz#ebaef5d9553e9c6eec4840241e39e7e23ea00508"
-  dependencies:
-    css-modules-loader-core "^1.0.0"
-    dependency-graph "^0.4.1"
-    object-assign "^3.0.0"
-    promise-polyfill "^2.1.0"
-    resolve "^1.1.7"
-    string-hash "^1.1.0"
-    through2 "^2.0.1"
 
 css-selector-tokenizer@^0.7.0:
   version "0.7.0"
@@ -3491,10 +3455,6 @@ denque@^1.1.1:
 depd@1.1.1, depd@^1.1.0, depd@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
-
-dependency-graph@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/dependency-graph/-/dependency-graph-0.4.1.tgz#302e58218d85c51a97638730dbf9b7d852a19693"
 
 deps-sort@^2.0.0:
   version "2.0.0"
@@ -4477,7 +4437,7 @@ generate-function@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
 
-generic-names@^1.0.1:
+generic-names@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/generic-names/-/generic-names-1.0.3.tgz#2d786a121aee508876796939e8e3bff836c20917"
   dependencies:
@@ -4578,10 +4538,6 @@ glob-stream@^5.3.2:
     through2 "^0.6.0"
     to-absolute-glob "^0.1.1"
     unique-stream "^2.0.2"
-
-glob-to-regexp@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
 
 glob@7.1.1:
   version "7.1.1"
@@ -4999,15 +4955,9 @@ iconv-lite@0.4.19, iconv-lite@^0.4.18, iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-icss-replace-symbols@1.1.0, icss-replace-symbols@^1.0.2, icss-replace-symbols@^1.1.0:
+icss-replace-symbols@1.1.0, icss-replace-symbols@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/icss-replace-symbols/-/icss-replace-symbols-1.1.0.tgz#06ea6f83679a7749e386cfe1fe812ae5db223ded"
-
-icss-utils@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/icss-utils/-/icss-utils-3.0.1.tgz#ee70d3ae8cac38c6be5ed91e851b27eed343ad0f"
-  dependencies:
-    postcss "^6.0.2"
 
 ieee754@^1.1.4:
   version "1.1.8"
@@ -6162,7 +6112,7 @@ lodash@^3.10.1, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.1, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.1, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6622,8 +6572,8 @@ moment-timezone@^0.5.13, moment-timezone@^0.5.4:
     moment ">= 2.9.0"
 
 "moment@>= 2.9.0", moment@^2.13.0, moment@^2.14.1, moment@^2.18.1, moment@^2.19.1:
-  version "2.19.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
+  version "2.19.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.2.tgz#8a7f774c95a64550b4c7ebd496683908f9419dbe"
 
 move-concurrently@^1.0.1, move-concurrently@~1.0.1:
   version "1.0.1"
@@ -6803,8 +6753,8 @@ node-gyp@~3.6.2:
     which "1"
 
 nodemailer@^4.1.0:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.3.1.tgz#40e162f54193ba2fecca200d544e8f6c1106d694"
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.4.0.tgz#571989e524a906fb83b1518f3e4c0d3140db24af"
 
 noncharacters@^1.1.0:
   version "1.1.0"
@@ -7083,10 +7033,6 @@ numeral@^2.0.6:
 oauth-sign@~0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
-
-object-assign@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
 object-assign@^4.0.0, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
@@ -7547,27 +7493,26 @@ pon-runner@^3.0.5, pon-runner@^3.3.1:
     pon-context "^2.0.2"
 
 pon-task-basic@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-3.1.4.tgz#7e9228a70e69c96ae88824189f73acac71cff7d4"
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/pon-task-basic/-/pon-task-basic-3.1.7.tgz#085a2953ab0b2dd4bac3d13bc5f1d0153972cfcb"
   dependencies:
     pon-task-command "^2.0.1"
     pon-task-coz "^1.0.3"
-    pon-task-env "^1.3.1"
+    pon-task-env "^1.3.2"
     pon-task-fmtjson "^1.0.1"
-    pon-task-fs "^3.0.1"
+    pon-task-fs "^3.1.3"
     pon-task-mocha "^1.0.2"
     pon-task-task "^1.0.1"
 
-pon-task-browser@^3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-3.0.7.tgz#de51c3fb40b4d2e9d6770635d3abb1fdaa165374"
+pon-task-browser@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/pon-task-browser/-/pon-task-browser-4.0.2.tgz#444a6b6cb87a8716d263226ad8c35af0e865b15d"
   dependencies:
     amkdirp "^2.0.0"
     asenv "^2.0.0"
     asfs "^2.0.1"
     browserify "^14.5.0"
     browserify-incremental "^3.1.1"
-    css-modulesify "^0.28.0"
     envify "^4.1.0"
     pon-cache "^1.0.1"
     pon-task-compile "^3.0.3"
@@ -7599,17 +7544,19 @@ pon-task-coz@^1.0.3:
   dependencies:
     co "^4.6.0"
 
-pon-task-css@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-4.1.2.tgz#a75e920831c548df41d94e7225ab7adf4a8cc7eb"
+pon-task-css@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-5.0.6.tgz#18e1d8764c2a76db27b15a5328652415cb4b4bdb"
   dependencies:
+    adigest "^3.0.0"
     asfs "^2.0.1"
-    autoprefixer "^7.1.6"
     clean-css "^4.1.9"
     pon-cache "^1.0.1"
     pon-task-compile "^3.0.3"
-    postcss "^6.0.13"
+    pon-task-fs "^3.1.3"
+    postcss "^6.0.14"
     postcss-cssnext "^3.0.2"
+    postcss-modules "^1.1.0"
 
 pon-task-db@^2.0.1:
   version "2.3.7"
@@ -7634,9 +7581,9 @@ pon-task-docker@^1.1.3:
     co "^4.6.0"
     execcli "^5.0.1"
 
-pon-task-env@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/pon-task-env/-/pon-task-env-1.3.1.tgz#d153c9279c265c80bb18f1fa8e5da5fd8d5125bd"
+pon-task-env@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/pon-task-env/-/pon-task-env-1.3.2.tgz#e41341401e462d56f4de4fbb844182529c0c94b1"
   dependencies:
     argx "^3.0.2"
     asenv "^2.0.0"
@@ -7658,15 +7605,17 @@ pon-task-fmtjson@^1.0.1:
     co "^4.6.0"
     fmtjson "^3.0.7"
 
-pon-task-fs@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/pon-task-fs/-/pon-task-fs-3.0.1.tgz#6b90e3200c29fedebc7a1d0f489a33dd6cd5bde9"
+pon-task-fs@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/pon-task-fs/-/pon-task-fs-3.1.3.tgz#1d5058d5e07669271d39a1efa3d7b83c7b97f7cb"
   dependencies:
-    amkdirp "^1.0.0"
-    asfs "^1.2.3"
-    filedel "^3.0.0"
+    aglob "^3.0.0"
+    amkdirp "^2.0.0"
+    asfs "^2.0.1"
+    filedel "^4.0.0"
     filelink "^3.0.6"
     filemode "^2.0.3"
+    pon-task-watch "^2.1.1"
 
 pon-task-icon@^1.0.1:
   version "1.0.1"
@@ -7710,16 +7659,15 @@ pon-task-pm2@^2.0.1:
     execcli "^5.0.2"
     writeout "^2.2.1"
 
-pon-task-react@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/pon-task-react/-/pon-task-react-2.1.4.tgz#9b4d8989975bed0e5430587df8758719b5dc2d07"
+pon-task-react@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/pon-task-react/-/pon-task-react-3.1.1.tgz#c154fdf1243fb6893a1f1eea408e51ba3a775fad"
   dependencies:
     babel-core "^6.24.1"
-    babel-plugin-css-modules-transform "^1.2.7"
     babel-preset-env "^1.6.1"
     babel-preset-react "^6.24.1"
     pon-cache "^1.0.1"
-    pon-task-compile "^3.0.1"
+    pon-task-compile "^3.0.3"
 
 pon-task-seed@^2.0.2:
   version "2.0.4"
@@ -7737,16 +7685,16 @@ pon-task-watch@^2.0.1, pon-task-watch@^2.1.1:
   dependencies:
     asleep "^1.0.3"
 
-pon-task-web@^4.1.1:
-  version "4.2.12"
-  resolved "https://registry.yarnpkg.com/pon-task-web/-/pon-task-web-4.2.12.tgz#8a7a3b4d18611615d196811904bca697a99c173d"
+pon-task-web@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/pon-task-web/-/pon-task-web-5.0.5.tgz#efae525559efb1b84ed443b1328a3e5657e491b2"
   dependencies:
-    pon-task-browser "^3.0.7"
+    pon-task-browser "^4.0.2"
     pon-task-ccjs "^1.3.2"
     pon-task-compile "^3.0.3"
-    pon-task-css "^4.1.2"
+    pon-task-css "^5.0.6"
     pon-task-map "^2.0.2"
-    pon-task-react "^2.1.4"
+    pon-task-react "^3.1.1"
     pon-task-watch "^2.1.1"
 
 pon-timer@^2.0.1:
@@ -7985,40 +7933,35 @@ postcss-modules-extract-imports@1.1.0:
   dependencies:
     postcss "^6.0.1"
 
-postcss-modules-extract-imports@^1.0.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/postcss-modules-extract-imports/-/postcss-modules-extract-imports-1.2.0.tgz#66140ecece38ef06bf0d3e355d69bf59d141ea85"
-  dependencies:
-    postcss "^6.0.1"
-
-postcss-modules-local-by-default@1.2.0, postcss-modules-local-by-default@^1.0.1:
+postcss-modules-local-by-default@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/postcss-modules-local-by-default/-/postcss-modules-local-by-default-1.2.0.tgz#f7d80c398c5a393fa7964466bd19500a7d61c069"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
 
-postcss-modules-resolve-imports@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/postcss-modules-resolve-imports/-/postcss-modules-resolve-imports-1.3.0.tgz#398d3000b95ae969420cdf4cd83fa8067f1c5eae"
-  dependencies:
-    css-selector-tokenizer "^0.7.0"
-    icss-utils "^3.0.1"
-    minimist "^1.2.0"
-
-postcss-modules-scope@1.1.0, postcss-modules-scope@^1.0.0:
+postcss-modules-scope@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/postcss-modules-scope/-/postcss-modules-scope-1.1.0.tgz#d6ea64994c79f97b62a72b426fbe6056a194bb90"
   dependencies:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
 
-postcss-modules-values@1.3.0, postcss-modules-values@^1.1.1:
+postcss-modules-values@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/postcss-modules-values/-/postcss-modules-values-1.3.0.tgz#ecffa9d7e192518389f42ad0e83f72aec456ea20"
   dependencies:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
+
+postcss-modules@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-modules/-/postcss-modules-1.1.0.tgz#c9f94f76ff6addf7c35b842e69ed442118156bb0"
+  dependencies:
+    css-modules-loader-core "^1.1.0"
+    generic-names "^1.0.2"
+    postcss "^6.0.1"
+    string-hash "^1.1.1"
 
 postcss-nesting@^4.0.1:
   version "4.2.1"
@@ -8079,7 +8022,7 @@ postcss@6.0.1:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.2, postcss@^6.0.5, postcss@^6.0.6:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.5, postcss@^6.0.6:
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
   dependencies:
@@ -8129,10 +8072,6 @@ project-name@^0.2.4, project-name@^0.2.5, project-name@^0.2.6:
 promise-inflight@^1.0.1, promise-inflight@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
-
-promise-polyfill@^2.1.0:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-2.1.4.tgz#7319223532c26ac3e555e7e9bcc0cf76201b51ad"
 
 promise-retry@^1.1.1:
   version "1.1.1"
@@ -8406,8 +8345,8 @@ react-click-outside@^3.0.0:
     hoist-non-react-statics "^2.1.1"
 
 react-dom@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.0.tgz#ab6fd2a285096f388aeba51919a573d06c9bdde4"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -8467,8 +8406,8 @@ react-transition-group@^2.2.1:
     warning "^3.0.0"
 
 react@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.1.0.tgz#1c2bdac3c17fe7ee9282fa35aca6cc36387903e1"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -8955,7 +8894,7 @@ rethrow@^0.2.3:
     lazy-cache "^0.2.3"
     right-align "^0.1.3"
 
-retry-as-promised@^2.3.1:
+retry-as-promised@^2.3.1, retry-as-promised@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/retry-as-promised/-/retry-as-promised-2.3.2.tgz#cd974ee4fd9b5fe03cbf31871ee48221c07737b7"
   dependencies:
@@ -9023,10 +8962,6 @@ safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
-seekout@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/seekout/-/seekout-1.0.2.tgz#09ba9f1bd5b46fbb134718eb19a68382cbb1b9c9"
-
 selfsigned@^1.9.1:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/selfsigned/-/selfsigned-1.10.1.tgz#bf8cb7b83256c4551e31347c6311778db99eec52"
@@ -9051,9 +8986,9 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@^4.15.0:
-  version "4.22.5"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.22.5.tgz#5771f8dc2173c61366d77b9fb89aeb34b0522435"
+sequelize@^4.22.6:
+  version "4.22.6"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.22.6.tgz#33bc0c2e6367e22b08c5abd04472ae771fed0626"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -9271,8 +9206,8 @@ shimmer@^1.1.0:
   resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.1.0.tgz#97d7377137ffbbab425522e429fe0aa89a488b35"
 
 showdown@^1.6.4, showdown@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.1.tgz#2d8afd12847c80be32bce0a0dbb0e8dc06ba9469"
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.2.tgz#788ced4a57d76ed436cbc404464148c4cd674d89"
   dependencies:
     yargs "^10.0.3"
 
@@ -9617,7 +9552,7 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
 
-string-hash@^1.1.0:
+string-hash@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/string-hash/-/string-hash-1.1.3.tgz#e8aafc0ac1855b4666929ed7dd1275df5d6c811b"
 
@@ -10035,6 +9970,12 @@ the-button@*, the-button@^2.0.0, the-button@^2.0.2, the-button@^2.0.4:
     the-link "^3.0.1"
     the-style "^2.0.1"
 
+the-cache@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/the-cache/-/the-cache-1.0.0.tgz#23c1f6e4fe6c1b5d9d32d38ca53eed8116dde2f2"
+  dependencies:
+    lru-cache "^4.1.1"
+
 the-card@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/the-card/-/the-card-2.0.0.tgz#7305bd2abd5c8cd71c0b55cdde7961185847869f"
@@ -10171,8 +10112,8 @@ the-date@^1.0.1:
     moment-timezone "^0.5.13"
 
 the-db@^7.8.16:
-  version "7.8.18"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.18.tgz#20822ab7945a8d30f65a020882706874635397ae"
+  version "7.8.20"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.20.tgz#fda246046d6a5a91025700f7b1d39829e5bfd513"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.1"
@@ -10183,9 +10124,9 @@ the-db@^7.8.16:
     clay-driver-json "^4.0.3"
     clay-driver-localstorage "^2.0.1"
     clay-driver-memory "^4.1.5"
-    clay-driver-mysql "^5.2.6"
+    clay-driver-mysql "^5.2.9"
     clay-driver-sqlite "^6.3.4"
-    clay-lump "^4.2.18"
+    clay-lump "^4.2.19"
     clay-resource "^5.4.8"
     clay-resource-name "^4.0.3"
     debug "^3.1.0"
@@ -10530,9 +10471,9 @@ the-scene-base@^1.0.1, the-scene-base@^1.0.4:
   dependencies:
     bwindow "^1.1.0"
 
-the-scope@^1.0.4, the-scope@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.6.1.tgz#f74d1e8bcd22199cf97ba1a8f931ce266f88a3a1"
+the-scope@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.7.0.tgz#d659aebefe0b8d0800274b5fea1d21e33d4df671"
   dependencies:
     the-check "^1.2.0"
 
@@ -10641,9 +10582,9 @@ the-spin@^2.0.0:
     the-icon "^2.0.0"
     the-style "^2.0.0"
 
-the-store@^4.0.2:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/the-store/-/the-store-4.0.4.tgz#9285a6f85614a1ca620b2e1745a3c2c79a32815e"
+the-store@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/the-store/-/the-store-4.1.0.tgz#dd4422df56c6286656b56d750af70dc17e43b3e5"
   dependencies:
     argx "^3.0.2"
     asobj "^2.0.2"
@@ -10654,7 +10595,7 @@ the-store@^4.0.2:
     redux-actions "^2.2.1"
     redux-promise "^0.5.3"
     the-check "^1.2.0"
-    the-scope "^1.6.1"
+    the-scope "^1.7.0"
 
 the-style@*, the-style@^2.0.0, the-style@^2.0.1, the-style@^2.1.0:
   version "2.1.0"

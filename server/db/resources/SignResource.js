@@ -9,7 +9,7 @@ const {STRING, ENTITY, DATE} = DataTypes
 const thePassword = require('the-password')
 const {generateSalt, generatePassword, digest: digestPassword} = thePassword()
 
-const {withUser} = require('../mixins')
+const {withUser} = require('../concerns')
 
 /** @lends SignResource */
 class SignResource extends Resource {

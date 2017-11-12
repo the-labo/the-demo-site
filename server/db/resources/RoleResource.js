@@ -7,7 +7,7 @@
 const {Resource, DataTypes} = require('the-db')
 const {STRING} = DataTypes
 const {RoleCodes} = require('@self/conf')
-const {withCode} = require('../mixins')
+const {withCode} = require('../concerns')
 
 /** @lends RoleResource */
 class RoleResource extends Resource {

@@ -1,0 +1,57 @@
+{
+  "account": {
+    "synced": "BOOL",
+    "busy": "BOOL",
+    "user": "VAL"
+  },
+  "app": {
+    "busy": "BOOL"
+  },
+  "password": {
+    "change": {
+      "busy": "BOOL",
+      "errors": "OBJ",
+      "values": "OBJ"
+    }
+  },
+  "profile": {
+    "edit": {
+      "busy": "BOOL",
+      "entry": "ENTRY"
+    }
+  },
+  "verify": {
+    "needsVerify": "BOOL"
+  },
+  "sign": {
+    "signask": {
+      "busy": "BOOL"
+    },
+    "signdel": {
+      "busy": "BOOL",
+      "confirming": "BOOL",
+      "done": "BOOL"
+    },
+    "signin": {
+      "back": "STR",
+      "busy": "BOOL",
+      "errors": "OBJ",
+      "values": "OBJ"
+    },
+    "signout": {
+      "busy": "BOOL"
+    },
+    "signup": {
+      "back": "VAL",
+      "busy": "BOOL",
+      "entry": "ENTRY",
+      "errors": "OBJ",
+      "values": "OBJ"
+    }
+  },
+  "toast": {
+    "error": "ARR",
+    "info": "ARR",
+    "warn": "ARR"
+  }
+}

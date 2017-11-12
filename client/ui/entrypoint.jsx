@@ -2,9 +2,6 @@
 
 import 'the-polyfill/apply'
 
-import './constants/variables.pcss'
-import './base.pcss'
-
 import React from 'react'
 import { once, get, mount, rescue } from 'the-window'
 import App from './App'

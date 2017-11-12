@@ -92,7 +92,8 @@ module.exports = pon({
     es('utils', 'shim/utils')
   ],
   'struct:json': fmtjson([
-    'conf/**/*.json'
+    'conf/**/*.json',
+    'client/**/*.json'
   ], {sort: true}),
   'struct:render': [
     coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
@@ -107,11 +108,23 @@ module.exports = pon({
   'db:load': load.ask(createDB),
   'db:reset': ['unless:production', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
-    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
+    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
     extractCss: `client/shim/ui/bundle.pcss`,
     watchTargets: 'client/ui/**/*.pcss'
   }),
-  'ui:css': css('client/shim/ui', 'public/build', {pattern: '*.pcss'}),
+  'ui:css': [
+    css('client/ui', 'client/shim/ui', {
+      modules: true,
+      pattern: ['*.pcss', '+(bounds|views|fragments|layouts|wrappers|components)/**/*.pcss'],
+      inlineMap: true
+    }),
+    concat([
+      'client/shim/ui/**/*.css',
+      'client/ui/base.pcss',
+      'client/ui/constants/variables.pcss'
+    ], 'public/build/bundle.pcss', {}),
+    css('public/build', 'public/build', {pattern: '*.pcss'})
+  ],
   'ui:browser': env.dynamic(({isProduction}) =>
     browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
       externals: UI.EXTERNAL_BUNDLES,
@@ -203,7 +216,7 @@ module.exports = pon({
   // ----------------
   assets: ['assets:*'],
   struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
-  ui: ['ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map'],
+  ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client'],
   build: ['struct', 'ui'],

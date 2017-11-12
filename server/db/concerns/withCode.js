@@ -4,6 +4,7 @@
  */
 'use strict'
 
+/** @lends withCode */
 function withCode (Class) {
   class WithCode extends Class {
     async ofCode (code) {
