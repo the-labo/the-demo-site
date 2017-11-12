@@ -5,10 +5,13 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {withEntry, withBusy} = require('./concerns')
+const cn = require('./concerns')
 
 /** @lends SigninScene */
-const SigninScene = withBusy(withEntry(
+const SigninScene = cn.compose(
+  cn.withBusy,
+  cn.withEntry
+)(
   class SigninSceneBase extends Scene {
     get scope () {
       const s = this
@@ -17,12 +20,12 @@ const SigninScene = withBusy(withEntry(
 
     async doSignin () {
       const s = this
-      const authCtrl = await s.use('authCtrl')
+      const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        await s.processEntry(({name, password}) => authCtrl.signin(name, password))
+        await s.processEntry(({name, password}) => signCtrl.signin(name, password))
       })
     }
   }
-))
+)
 
 module.exports = SigninScene

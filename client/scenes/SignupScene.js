@@ -17,10 +17,10 @@ const SignupScene = withBusy(withEntry(
 
     async doSignup () {
       const s = this
-      const authCtrl = await s.use('authCtrl')
+      const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
         await s.processEntry(({name, password, profile}) =>
-          authCtrl.signup(name, password)
+          signCtrl.signup(name, password)
         )
       })
     }

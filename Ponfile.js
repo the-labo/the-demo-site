@@ -17,7 +17,7 @@ const icon = require('pon-task-icon')
 const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
 const md = require('pon-task-md')
 const {isMacOS} = require('the-check')
-const {mkdir, symlink, chmod, del, cp} = fs
+const {mkdir, symlink, chmod, del, cp, concat} = fs
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,

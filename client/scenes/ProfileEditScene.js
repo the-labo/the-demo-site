@@ -21,9 +21,9 @@ const ProfileEditScene = cn.compose(
 
     async doSync () {
       const s = this
-      const authCtrl = await s.use('authCtrl')
+      const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        const user = await authCtrl.getCurrentUser()
+        const user = await signCtrl.getCurrentUser()
         const values = clone(user.profile || {}, {
           without: ['user', 'id', 'sign', /^\$/]
         })
@@ -33,9 +33,9 @@ const ProfileEditScene = cn.compose(
 
     async doSave () {
       const s = this
-      const authCtrl = await s.use('authCtrl')
+      const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        await s.processEntry((values) => authCtrl.updateProfile(values))
+        await s.processEntry((values) => signCtrl.updateProfile(values))
       })
     }
   }

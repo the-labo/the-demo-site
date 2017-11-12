@@ -7,7 +7,7 @@ import React from 'react'
 import { TheView } from 'the-components'
 import { asView, withTitle } from '../../wrappers'
 import { Icons } from '@self/conf'
-import styles from 'SignSignoutView.pcss'
+import styles from './SignSignoutView.pcss'
 
 class SignSignoutView extends React.Component {
   render () {

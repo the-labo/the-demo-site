@@ -1,7 +1,7 @@
 {
   "account": {
-    "synced": "BOOL",
     "busy": "BOOL",
+    "synced": "BOOL",
     "user": "VAL"
   },
   "app": {
@@ -19,9 +19,6 @@
       "busy": "BOOL",
       "entry": "ENTRY"
     }
-  },
-  "verify": {
-    "needsVerify": "BOOL"
   },
   "sign": {
     "signask": {
@@ -53,5 +50,8 @@
     "error": "ARR",
     "info": "ARR",
     "warn": "ARR"
+  },
+  "verify": {
+    "needsVerify": "BOOL"
   }
 }

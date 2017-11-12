@@ -24,11 +24,7 @@ const SigninScene = require('./SigninScene')
 const SignoutScene = require('./SignoutScene')
 const SignupScene = require('./SignupScene')
 const ToastScene = require('./ToastScene')
-const UserCreateScene = require('./UserCreateScene')
-const UserDestroyScene = require('./UserDestroyScene')
-const UserListScene = require('./UserListScene')
 const UserMasterScene = require('./UserMasterScene')
-const UserSearchScene = require('./UserSearchScene')
 const VerifyScene = require('./VerifyScene')
 
 module.exports = {
@@ -52,10 +48,6 @@ module.exports = {
   SignoutScene,
   SignupScene,
   ToastScene,
-  UserCreateScene,
-  UserDestroyScene,
-  UserListScene,
   UserMasterScene,
-  UserSearchScene,
   VerifyScene
 }

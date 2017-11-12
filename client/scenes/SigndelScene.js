@@ -21,9 +21,9 @@ const SigndelScene = cn.compose(
 
     async doSigndel () {
       const s = this
-      const authCtrl = await s.use('authCtrl')
+      const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        await authCtrl.signdel()
+        await signCtrl.signdel()
       })
       s.toggle({confirming: false, done: true})
     }
