@@ -6,16 +6,15 @@
 'use strict'
 
 const theHandle = require('the-handle')
-const sc = require('../scenes')
+const SceneMapping = require('../mappings')
 
 /** @lends create */
 module.exports = function create () {
   const handle = theHandle({})
 
-  handle.load(sc.AccountScene, 'accountScene')
-  handle.load(sc.HomeScene, 'homeScene')
-  handle.load(sc.ToastScene, 'toastScene')
-  handle.load(sc.VerifyScene, 'verifyScene')
+  for (const [name, Scene] of Object.entries(SceneMapping)) {
+    handle.load(Scene, name)
+  }
 
   return handle
 }

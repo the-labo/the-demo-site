@@ -5,43 +5,32 @@
 
 import React from 'react'
 import { TheView } from 'the-components'
-import { asView, withTitle } from '../../wrappers'
+import { asView } from '../../wrappers'
 import styles from './{{pascalcase name}}.pcss'
 
-class {{pascalcase name}} extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-  }
+function {{pascalcase name}} ({
+                                l
+                              }) {
+  return (
+  <TheView className={styles.self}>
+    <TheView.Header icon={null}
+                    text={null}
+    />
+    <TheView.Body>  This is {{pascalcase name}}!
 
-  render () {
-    const s = this
-    const { props } = s
-    const {
-      l
-    } = s.props
-    return (
-      <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={null}
-        />
-        <TheView.Body>
-        This is {{pascalcase name}}!
-        </TheView.Body>
-      </TheView>
-    )
-  }
-
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
+    </TheView.Body>
+  </TheView>
+  )
 }
 
 export default asView(
-  withTitle({{pascalcase name}}),
+  {{pascalcase name}},
   (state) => ({
 
-  })
+  }),
+  ({}) => ({
+  }),
+  {
+    title: () => null
+  }
 )

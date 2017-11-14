@@ -6,12 +6,7 @@
 const path = require('path')
 
 module.exports = [
-  'forms/RecoverSendForm',
-  'forms/RecoverResetForm',
-  'forms/SigninForm',
-  'forms/SignupForm',
-  'forms/UserCreateForm',
-  'forms/UserSearchForm'
+
 ].map((name) => ({
   force: false,
   mkdirp: true,

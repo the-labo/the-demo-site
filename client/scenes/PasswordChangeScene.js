@@ -27,7 +27,6 @@ const PasswordChangeScene = cn.compose(
         await s.processEntry(({password}) =>
           accountCtrl.updatePassword(password))
       })
-      s.toggle({done: true})
     }
   }
 )

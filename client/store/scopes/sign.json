@@ -1,0 +1,20 @@
+{
+  "ask": {
+    "busy": "BOOL"
+  },
+  "in": {
+    "back": "STR",
+    "busy": "BOOL",
+    "errors": "OBJ",
+    "values": "OBJ"
+  },
+  "out": {
+    "busy": "BOOL"
+  },
+  "up": {
+    "back": "VAL",
+    "busy": "BOOL",
+    "errors": "OBJ",
+    "values": "OBJ"
+  }
+}

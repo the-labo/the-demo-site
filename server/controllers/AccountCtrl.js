@@ -4,15 +4,16 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 
 /** @lends AccountCtrl */
 const AccountCtrl = cn.compose(
   cn.withDebug,
-  cn.withAuthorized
+  cn.withAuth
 )(
-  class AccountCtrlBase extends TheCtrl {
+  class AccountCtrlBase extends Ctrl {
+
     async getCurrentUser () {
       const s = this
       const authorized = await s._getAuthorized()
@@ -22,11 +23,7 @@ const AccountCtrl = cn.compose(
     async updateProfile (profileAttributes) {
       const s = this
       await s._assertAuthorized()
-      const {
-        db: {
-          resources: {Profile}
-        }
-      } = s.app
+      const {Profile} = s.resources
       const user = await s._fetchAuthorizedUser()
       const profile = await Profile.ofUser(user)
       await user.update({profile})
@@ -36,20 +33,6 @@ const AccountCtrl = cn.compose(
         profileAttributes.emailVerified = false
       }
       await profile.update(Object.assign({}, profileAttributes, {user}))
-      await s._reloadAuthorized()
-      return true
-    }
-
-    async updatePassword (newPassword) {
-      const s = this
-      await s._assertAuthorized()
-      const {
-        db: {
-          resources: {Sign}
-        }
-      } = s.app
-      const user = await s._fetchAuthorizedUser()
-      await Sign.setUserPassword(user, newPassword)
       await s._reloadAuthorized()
       return true
     }

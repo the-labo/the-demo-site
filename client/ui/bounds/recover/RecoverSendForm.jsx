@@ -41,8 +41,8 @@ export default asBound(
   RecoverSendForm,
   (state) => ({
     spinning: state['auth.recover.send.busy'],
-    values: state['auth.recover.send.entry.values'],
-    errors: state['auth.recover.send.entry.errors'],
+    values: state['auth.recover.send.values'],
+    errors: state['auth.recover.send.errors'],
   }),
   ({
      l,

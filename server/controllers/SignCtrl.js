@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 const {TheError, TheNotFoundError} = require('the-error')
 const WrongPasswordError = TheError.withName('WrongPasswordError')
@@ -13,18 +13,14 @@ const {RoleCodes} = require('@self/conf')
 /** @lends SignCtrl */
 const SignCtrl = cn.compose(
   cn.withDebug,
-  cn.withAuthorized
+  cn.withAuth
 )(
-  class SignCtrlBase extends TheCtrl {
+  class SignCtrlBase extends Ctrl {
 
-    async signup (name, password, options = {}) {
+    async signUp (name, password, options = {}) {
       const s = this
       const {profile: profileAttributes = {}} = options
-      const {
-        db: {
-          resources: {User, Role, Sign, Profile}
-        }
-      } = s.app
+      const {User, Role, Sign, Profile} = s.resources
       const role = await Role.ofCode(RoleCodes.NORMAL_ROLE)
       const user = await User.create({name, role})
       try {
@@ -43,13 +39,9 @@ const SignCtrl = cn.compose(
       return user
     }
 
-    async signin (name, password) {
+    async signIn (name, password) {
       const s = this
-      const {
-        db: {
-          resources: {User, Sign, Profile}
-        }
-      } = s.app
+      const {User, Sign, Profile} = s.resources
       const user = (await User.first({name})) || (await Profile.userWithEmail(name))
       if (!user) {
         throw new TheNotFoundError(`User not found for name: ${name}`, {
@@ -66,51 +58,25 @@ const SignCtrl = cn.compose(
         })
       }
       const profile = await Profile.ofUser(user)
-      await sign.update({signinAt: new Date()})
+      await sign.update({signInAt: new Date()})
       await user.update({profile, sign})
       await s._setAuthorized(user, sign)
       return user
     }
 
-    async signout () {
+    async signOut () {
       const s = this
-      const {
-        db: {
-          resources: {Sign}
-        }
-      } = s.app
+      const {Sign} = s.resources
       await s._reloadAuthorized()
       const authorized = await s._getAuthorized()
       if (authorized) {
         const {sign} = authorized
         if (sign) {
-          await Sign.update(sign.id, {signoutAt: new Date()})
+          await Sign.update(sign.id, {signOutAt: new Date()})
         }
         await s._delAuthorized()
       }
       return !!authorized
-    }
-
-    async signdel () {
-      const s = this
-      const {
-        db: {
-          resources: {User, Sign, Profile}
-        }
-      } = s.app
-      await s._reloadAuthorized()
-      const authorized = await s._getAuthorized()
-      if (!authorized) {
-        return false
-      }
-      const {user, sign} = authorized
-      const profile = await Profile.ofUser(user)
-
-      await Sign.destroy(sign.id)
-      await Profile.destroy(profile.id)
-      await User.destroy(user.id)
-
-      return true
     }
   }
 )

@@ -13,7 +13,7 @@ const {{name}} = cn.compose(
   class {{name}}Base extends Scene {
     get scope () {
       const s = this
-      return s.store
+      return s.store.{{scopePath}}
     }
   }
 )

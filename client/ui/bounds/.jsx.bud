@@ -1,0 +1,23 @@
+/**
+ * Bud file for fragment components
+ */
+'use strict'
+
+const path = require('path')
+
+module.exports = [
+  'user/UserDestroyDialog'
+].map((name) => ({
+  force: false,
+  mkdirp: true,
+  mode: '644',
+  path: `${name}.jsx`,
+  data: {
+    name: path.basename(name)
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+

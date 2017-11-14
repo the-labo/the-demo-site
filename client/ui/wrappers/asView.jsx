@@ -8,6 +8,7 @@ import { connect, withStore } from 'the-store'
 import withTitle from './withTitle'
 import { inject } from 'the-handle'
 import { get } from 'the-window'
+import onlySigned from './onlySigned'
 
 function asView (Component,
                  mapStateToProps = () => ({}),
@@ -51,15 +52,18 @@ function asView (Component,
     (Componnet) => withTitle(Componnet, options.title),
     connect(mapStateToProps),
     inject(mapHandleToProps),
+    options.onlySigned && onlySigned,
     withLoc,
     withStore,
     withHistory,
     withRoute,
     withClient
-  ].reduce(
-    (Component, wrapper) => wrapper(Component),
-    ViewWrap
-  )
+  ]
+    .filter(Boolean)
+    .reduce(
+      (Component, wrapper) => wrapper(Component),
+      ViewWrap
+    )
 
 }
 

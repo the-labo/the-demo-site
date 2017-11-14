@@ -25,7 +25,7 @@ const RecoverResetScene = cn.compose(
       const {l} = s
       const recoverCtrl = await s.use('recoverCtrl')
       const {seal, envelop} = s.queryFromSearch()
-      s.clearError()
+      s.clearFailure()
       await s.busyFor(async () => {
         await s.processEntry(({password}) =>
           recoverCtrl.reset({password, seal, envelop}).catch((e) =>

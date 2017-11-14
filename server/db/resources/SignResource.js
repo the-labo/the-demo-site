@@ -46,11 +46,16 @@ class SignResource extends Resource {
         minLength: 2,
         default: () => digestPassword(generatePassword(), generateSalt())
       },
-      signinAt: {
+      signUpAt: {
+        description: 'Date of signing up',
+        type: DATE,
+        default: () => new Date()
+      },
+      signInAt: {
         description: 'Last time signed in',
         type: DATE
       },
-      signoutAt: {
+      signOutAt: {
         description: 'Last time signed out',
         type: DATE
       },

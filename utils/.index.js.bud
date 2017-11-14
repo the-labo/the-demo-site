@@ -5,7 +5,7 @@ const {dir} = require('the-templates')
 module.exports = dir({
   dirname: __dirname,
   name: 'utils',
-  node: true,
+  cjs: true,
   description: 'Utility modules'
 })
 

@@ -4,7 +4,7 @@ const {templates} = require('the-templates')
 
 module.exports = templates({
   dirname: `${__dirname}/../../assets/mails`,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

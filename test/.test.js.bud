@@ -11,7 +11,7 @@ module.exports = test({
     `${__dirname}/../utils/**/*.js`,
   ],
   dest: __dirname,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

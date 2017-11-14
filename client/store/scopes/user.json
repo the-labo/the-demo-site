@@ -1,0 +1,25 @@
+{
+  "check": {
+    "checked": "OBJ"
+  },
+  "create": {
+    "busy": "BOOL"
+  },
+  "destroy": {
+    "busy": "BOOL",
+    "confirm": "BOOL"
+  },
+  "list": {
+    "busy": "BOOL",
+    "counts": "OBJ",
+    "entities": "ARR",
+    "filter": "OBJ",
+    "page": "OBJ",
+    "sort": "STR"
+  },
+  "search": {
+    "busy": "BOOL",
+    "errors": "OBJ",
+    "values": "OBJ"
+  }
+}

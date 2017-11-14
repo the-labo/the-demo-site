@@ -2,15 +2,25 @@
 
 const path = require('path')
 
-module.exports = [
+const scopes = require('../store/scopes')
+const {flatten} = require('objnest')
+const {pascalcase, snakecase} = require('stringcase')
+const names = Object.keys(flatten(scopes))
+  .map((name) => {
+    const components = name.split('.')
+    return pascalcase(
+      components.slice(0, components.length - 1).join('_')
+    )
+  }).filter((v, i, arr) => arr.indexOf(v) === i)
 
-].map((name) => ({
+module.exports = names.map((name) => ({
   force: false,
   mkdirp: true,
   mode: '644',
-  path: `${name}.js`,
+  path: `${name}Scene.js`,
   data: {
-    name: path.basename(name)
+    name: path.basename(name) + 'Scene',
+    scopePath: snakecase(name).split('_').join('.')
   }
 }))
 

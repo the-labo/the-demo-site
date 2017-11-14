@@ -12,7 +12,7 @@ module.exports = test.dir({
     `${__dirname}/../../store`
   ],
   dest: __dirname,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = require('the-error')
 const VerifySendError = TheError.withName('VerifySendError')
@@ -15,9 +15,9 @@ const qs = require('qs')
 /** @lends VerifyCtrl */
 const VerifyCtrl = cn.compose(
   cn.withDebug,
-  cn.withAuthorized
+  cn.withAuth
 )(
-  class VerifyCtrlBase extends TheCtrl {
+  class VerifyCtrlBase extends Ctrl {
 
     async needsVerify () {
       const s = this
@@ -31,8 +31,8 @@ const VerifyCtrl = cn.compose(
 
     async send () {
       const s = this
-      const {db, mail, seal} = s.app
-      const {Alias} = db.resources
+      const {mail, seal} = s.app
+      const {Alias} = s.resources
       const {protocol, host, lang} = s.client
       await s._assertAuthorized()
 
@@ -65,12 +65,8 @@ const VerifyCtrl = cn.compose(
 
     async verify ({seal: sealString, envelop} = {}) {
       const s = this
-      const {
-        seal,
-        db: {
-          resources: {User, Sign, Profile}
-        }
-      } = s.app
+      const {seal} = s.app
+      const {User, Sign, Profile} = s.resources
       const ok = seal.verify(sealString, envelop)
       if (!ok) {
         throw new TheInvalidParameterError(`Invalid parameter`, envelop)

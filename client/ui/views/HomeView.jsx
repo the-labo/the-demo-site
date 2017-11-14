@@ -6,43 +6,27 @@
 import React from 'react'
 import { TheView, TheButton } from 'the-components'
 import { asView } from '../wrappers'
-import { HomeScene } from '../../scenes'
 import styles from './HomeView.pcss'
 
-class HomeView extends React.PureComponent {
-  constructor (props) {
-    super(props)
-    const s = this
-    s.homeScene = new HomeScene(props)
-  }
-
-  render () {
-    const s = this
-    const {props, homeScene} = s
-    const {l} = s.props
-    return (
-      <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={null}
-        />
-        <TheView.Body>
-          <p>
-          </p>
-        </TheView.Body>
-      </TheView>
-    )
-  }
-
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
+function HomeView ({}) {
+  return (
+    <TheView className={styles.self}>
+      <TheView.Header icon={null}
+                      text={null}
+      />
+      <TheView.Body>
+        <p>
+        </p>
+      </TheView.Body>
+    </TheView>
+  )
 }
 
-export default asView(HomeView, (state) => ({
-  count: state['app'].count,
-  busy: state['app.busy']
-}))
+export default asView(
+  HomeView,
+  (state) => ({
+    busy: state['app.busy']
+  })
+)
 
 

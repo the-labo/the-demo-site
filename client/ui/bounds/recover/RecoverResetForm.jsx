@@ -47,7 +47,20 @@ const RecoverResetForm = asForm(
 
 export default asBound(
   RecoverResetForm,
-  (state) => ({}),
-  () => ({})
+  (state) => ({
+    spinning: state['recover.reset.busy'],
+    values: state['recover.reset.values'],
+    errors: state['recover.reset.errors']
+  }),
+  ({
+     l,
+     recoverResetScene,
+     toastScene
+   }) => ({
+    onUpdate: (v) => recoverResetScene.setEntryValues(v),
+    onSubmit: async () => {
+      await recoverResetScene.doReset()
+    }
+  })
 )
 

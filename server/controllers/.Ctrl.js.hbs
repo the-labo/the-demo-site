@@ -4,14 +4,14 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 
 /** @lends {{name}} */
 const {{name}} = cn.compose(
   cn.withDebug
 )(
-  class {{name}}Base extends TheCtrl {
+  class {{name}}Base extends Ctrl {
  }
 )
 

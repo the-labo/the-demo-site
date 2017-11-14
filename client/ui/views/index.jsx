@@ -6,38 +6,38 @@
 
 import AboutPrivacyPolicyView from './about/AboutPrivacyPolicyView'
 import AboutTermsOfUseView from './about/AboutTermsOfUseView'
-import AccountMypageView from './account/AccountMypageView'
-import AccountPasswordView from './account/AccountPasswordView'
-import AccountProfileView from './account/AccountProfileView'
 import AdminTopView from './admin/AdminTopView'
-import AdminUsersView from './admin/AdminUsersView'
 import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
+import UserManageView from './manage/UserManageView'
+import MypageView from './mypage/MypageView'
+import PasswordChangeView from './password/PasswordChangeView'
+import ProfileEditView from './profile/ProfileEditView'
+import QuitView from './quit/QuitView'
 import RecoverResetView from './recover/RecoverResetView'
 import RecoverSendView from './recover/RecoverSendView'
-import SignSignaskView from './sign/SignSignaskView'
-import SignSigndelView from './sign/SignSigndelView'
-import SignSigninView from './sign/SignSigninView'
-import SignSignoutView from './sign/SignSignoutView'
-import SignSignupView from './sign/SignSignupView'
+import SignAskView from './sign/SignAskView'
+import SignInView from './sign/SignInView'
+import SignOutView from './sign/SignOutView'
+import SignUpView from './sign/SignUpView'
 import VerifyConfirmView from './verify/VerifyConfirmView'
 
 export {
   AboutPrivacyPolicyView,
   AboutTermsOfUseView,
-  AccountMypageView,
-  AccountPasswordView,
-  AccountProfileView,
   AdminTopView,
-  AdminUsersView,
   ErrorNotfoundView,
   HomeView,
+  UserManageView,
+  MypageView,
+  PasswordChangeView,
+  ProfileEditView,
+  QuitView,
   RecoverResetView,
   RecoverSendView,
-  SignSignaskView,
-  SignSigndelView,
-  SignSigninView,
-  SignSignoutView,
-  SignSignupView,
+  SignAskView,
+  SignInView,
+  SignOutView,
+  SignUpView,
   VerifyConfirmView
 }

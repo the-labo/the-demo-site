@@ -1,0 +1,5 @@
+{
+  "busy": "BOOL",
+  "synced": "BOOL",
+  "user": "VAL"
+}

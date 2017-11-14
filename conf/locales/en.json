@@ -138,12 +138,12 @@
   },
   "titles": {
     "ACCOUNT_MYPAGE_TITLE": "Account",
-    "ACCOUNT_PASSWORD_TITLE": "Password Change",
     "ACCOUNT_PROFILE_TITLE": "Account Profile",
     "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
     "ADMIN_USERS_TITLE": "User Management",
     "ERROR_NOTFOUND_VIEW_TITLE": "Page not found",
+    "PASSWORD_CHANGE_TITLE": "Password Change",
     "PASSWORD_RESET_TITLE": "Password Reset",
     "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
     "RECOVER_SEND_TITLE": "Password Reset",

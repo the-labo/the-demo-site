@@ -4,7 +4,7 @@ const { dir } = require('the-templates')
 
 module.exports = dir({
   dirname: __dirname,
-  node: true,
+  cjs: true,
   name: 'resources',
   description: 'Db resource classes'
 })

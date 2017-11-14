@@ -1,5 +1,5 @@
 /**
- * ProfileForm component
+ * ProfileEditForm component
  */
 'use strict'
 
@@ -10,15 +10,15 @@ import { asForm, asBound } from '../../wrappers'
 const {Text} = TheInput
 const {Field, Label, Value} = TheForm
 
-const ProfileForm = asForm(
-  function ProfileFormImpl ({
-                              l,
-                              user,
-                              getInputAttributesOf,
-                              getLabelAttributesOf,
-                              getFormAttributes,
-                              getSubmitAttributes
-                            }) {
+const ProfileEditForm = asForm(
+  function ProfileEditFormImpl ({
+                                  l,
+                                  user,
+                                  getInputAttributesOf,
+                                  getLabelAttributesOf,
+                                  getFormAttributes,
+                                  getSubmitAttributes
+                                }) {
     return (
       <TheForm className='profileForm'
                {...getFormAttributes()}
@@ -65,11 +65,11 @@ const ProfileForm = asForm(
   })
 
 export default asBound(
-  ProfileForm,
+  ProfileEditForm,
   (state) => ({
     spinning: state['profile.edit.busy'],
-    values: state['profile.edit.entry.values'],
-    errors: state['profile.edit.entry.errors']
+    values: state['profile.edit.values'],
+    errors: state['profile.edit.errors']
   }),
   ({
      l,

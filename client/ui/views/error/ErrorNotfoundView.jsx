@@ -5,40 +5,33 @@
 
 import React from 'react'
 import { TheView, TheRoute } from 'the-components'
-import { asView, withTitle } from '../../wrappers'
+import { asView } from '../../wrappers'
 import styles from './ErrorNotfoundView.pcss'
 
-class ErrorNotfoundView extends React.Component {
-  render () {
-    const s = this
-
-    const {l} = s.props
-    return (
-      <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={null}
-        />
-        <TheView.Body>
-          <TheRoute.Status code={404}>
+function ErrorNotfoundView ({l}) {
+  return (
+    <TheView className={styles.self}>
+      <TheView.Header icon={null}
+                      text={null}
+      />
+      <TheView.Body>
+        <TheRoute.Status code={404}>
+          <div>
+            <h3>{l('messages.PAGE_NOT_FOUND')}</h3>
             <div>
-              <h3>{l('messages.PAGE_NOT_FOUND')}</h3>
-              <div>
-              </div>
             </div>
-          </TheRoute.Status>
-        </TheView.Body>
-      </TheView>
-    )
-  }
-
-  componentDidMount () {
-
-  }
-
-  componentWillUnmount () {
-  }
+          </div>
+        </TheRoute.Status>
+      </TheView.Body>
+    </TheView>
+  )
 }
 
 export default asView(
-  withTitle(ErrorNotfoundView, ({l}) => l('titles.ERROR_NOTFOUND_VIEW_TITLE'))
+  ErrorNotfoundView,
+  (state) => ({}),
+  ({}) => ({}),
+  {
+    title: ({l}) => l('titles.ERROR_NOTFOUND_VIEW_TITLE')
+  }
 )

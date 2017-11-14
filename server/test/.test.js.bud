@@ -14,7 +14,7 @@ module.exports = test.dir({
     `${__dirname}/../endpoints`
   ],
   dest: __dirname,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

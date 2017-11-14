@@ -8,36 +8,22 @@ import { TheView, TheFrame } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './AboutTermsOfUseView.pcss'
 
-class AboutTermsOfUseView extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-  }
-
-  render () {
-    const s = this
-
-    const {
-      l,
-      lang
-    } = s.props
-    return (
-      <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={l('titles.TERMS_OF_USE_VIEW_TITLE')}
-        />
-        <TheView.Body>
-          <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>
-        </TheView.Body>
-      </TheView>
-    )
-  }
-
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
+function AboutTermsOfUseView ({
+                                l,
+                                lang
+                              }) {
+  return (
+    <TheView className={styles.self}>
+      <TheView.Header icon={null}
+                      text={l('titles.TERMS_OF_USE_VIEW_TITLE')}
+      />
+      <TheView.Body>
+        <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>
+      </TheView.Body>
+    </TheView>
+  )
 }
 
-export default asView(AboutTermsOfUseView)
+export default asView(
+  AboutTermsOfUseView
+)

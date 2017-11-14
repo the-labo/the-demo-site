@@ -37,6 +37,7 @@ const ProfileEditScene = cn.compose(
       await s.busyFor(async () => {
         await s.processEntry((values) => signCtrl.updateProfile(values))
       })
+      s.toggle({done: true})
     }
   }
 )

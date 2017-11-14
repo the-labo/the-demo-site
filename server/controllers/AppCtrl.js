@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 
 /** @lends AppCtrl */
-class AppCtrl extends TheCtrl {
+class AppCtrl extends Ctrl {
 
   async getPreference (name) {
     const s = this

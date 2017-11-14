@@ -6,7 +6,8 @@ module.exports = dir.recursive({
   dirname: __dirname,
   name: 'scenes',
   description: 'Scene classes',
-  node: true
+  ignore: ['concerns/*.js'],
+  cjs: true
 })
 
 if (!module.parent) {

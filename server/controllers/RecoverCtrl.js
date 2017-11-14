@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = require('the-error')
 const UnknownEmailError = TheError.withName('UnknownEmailError')
@@ -14,19 +14,14 @@ const qs = require('qs')
 
 /** @lends RecoverCtrl */
 const RecoverCtrl = cn.compose(
-  cn.withAuthorized,
+  cn.withAuth,
   cn.withDebug
 )(
-  class RecoverCtrlBase extends TheCtrl {
+  class RecoverCtrlBase extends Ctrl {
     async send (email) {
       const s = this
-      const {
-        mail,
-        seal,
-        db: {
-          resources: {Profile, Alias}
-        }
-      } = s.app
+      const {mail, seal} = s.app
+      const {Profile, Alias} = s.resources
       const {protocol, host, lang} = s.client
 
       const profile = await Profile.first({email})
@@ -55,12 +50,8 @@ const RecoverCtrl = cn.compose(
 
     async reset ({seal: sealString, envelop, password} = {}) {
       const s = this
-      const {
-        seal,
-        db: {
-          resources: {User, Sign}
-        }
-      } = s.app
+      const {seal} = s.app
+      const {User, Sign} = s.resources
       const ok = seal.verify(sealString, envelop)
       if (!ok) {
         throw new TheInvalidParameterError(`Invalid parameter`, envelop)

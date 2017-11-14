@@ -4,7 +4,7 @@
 'use strict'
 
 module.exports = [
-  'withAuthorized',
+  'withAuth',
   'withDebug'
 ].map((name) => ({
   force: false,

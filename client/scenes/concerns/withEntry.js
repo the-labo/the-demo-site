@@ -13,29 +13,31 @@ function withEntry (Class) {
   class EntryMixed extends Class {
     dropEntryValues () {
       const s = this
-      const {entry} = s.scope
-      entry.values.drop()
+      s.scope.values.drop()
     }
 
     setEntryValues (values) {
       const s = this
-      const {entry} = s.scope
-      entry.values.setValues(values)
+      s.scope.values.set(values)
 
       {
-        const names = Object.keys(values).filter((name) => s.errors.state[name])
+        const names = Object.keys(values).filter((name) => s.scope.errors.state[name])
         if (names.length > 0) {
-          entry.errors.del(...names)
+          s.scope.errors.del(...names)
         }
       }
     }
 
+    setEntryErrors (errors) {
+      const s = this
+      s.scope.errors.set(errors)
+    }
+
     async processEntry (handler) {
       const s = this
-      const {entry} = s.scope
-      const values = expand(entry.values.state)
+      const values = expand(s.scope.values.state)
       return Promise.resolve(handler(values)).catch((e) =>
-        entry.setErrors(s.catchEntryError(e))
+        s.setEntryErrors(s.catchEntryError(e))
       )
     }
   }

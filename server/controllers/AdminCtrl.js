@@ -4,22 +4,18 @@
  */
 'use strict'
 
-const {TheCtrl} = require('the-controller-base')
+const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 
 /** @lends AdminCtrl */
 const AdminCtrl = cn.compose(
-  cn.withAuthorized,
+  cn.withAuth,
   cn.withDebug
 )(
-  class AdminCtrlBase extends TheCtrl {
-    async confirmAsAdmin (password) {
+  class AdminCtrlBase extends Ctrl {
+    async confirm (password) {
       const s = this
-      const {
-        db: {
-          resources: {Sign}
-        }
-      } = s.app
+      const {Sign} = s.resources
       await s._assertAuthorized()
       const {signed} = await s._getAuthorized()
       const sign = await Sign.one(signed.sign.id)

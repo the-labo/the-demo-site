@@ -1,0 +1,33 @@
+/**
+ * Bud file for mappings
+ */
+'use strict'
+
+const {camelcase} = require('stringcase')
+const sc = require('../scenes')
+
+module.exports = [
+  {
+    name: 'SceneMapping',
+    requirePath: '../scenes',
+    requireAs: 'sc',
+    mapping: Object.keys(sc).map((name) => ({
+      instanceName: camelcase(name),
+      className: name
+    }))
+  }
+].map(({name, mapping, requirePath, requireAs}) => ({
+  force: true,
+  mode: '444',
+  path: `${name}.js`,
+  data: {
+    name,
+    mapping,
+    requirePath,
+    requireAs
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

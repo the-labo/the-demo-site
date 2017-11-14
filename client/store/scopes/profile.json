@@ -1,0 +1,7 @@
+{
+  "edit": {
+    "busy": "BOOL",
+    "errors": "OBJ",
+    "values": "OBJ"
+  }
+}

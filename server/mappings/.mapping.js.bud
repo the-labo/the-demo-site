@@ -11,7 +11,7 @@ const {camelcase} = require('stringcase')
 module.exports = [
   {
     name: 'ControllerMapping',
-    requirePath: './controllers',
+    requirePath: '../controllers',
     requireAs: 'c',
     mapping: Object.keys(c).map((name) => ({
       instanceName: camelcase(name),
