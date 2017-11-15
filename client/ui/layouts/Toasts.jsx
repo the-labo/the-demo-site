@@ -7,26 +7,37 @@ import React from 'react'
 import { TheToastGroup, TheToast } from 'the-components'
 import { connect, withStore } from 'the-store'
 import { UI } from '@self/conf'
+import * as wp from '../wrappers'
 
-const { TOAST_DURATION } = UI
+const {TOAST_DURATION} = UI
 
-const Toasts = ({ info, warn, error, store }) => {
-  const { toast } = store
-  return (
-    <TheToastGroup className='main'>
-      <TheToast.Info onUpdate={({ info }) => toast.info.reset(info)} messages={info} clearAfter={TOAST_DURATION}/>
-      <TheToast.Warn onUpdate={({ warn }) => toast.warn.reset(warn)} messages={warn} clearAfter={TOAST_DURATION}/>
-      <TheToast.Error onUpdate={({ error }) => toast.error.reset(error)} messages={error} clearAfter={TOAST_DURATION}/>
-    </TheToastGroup>
-  )
-}
+const Toasts = wp.compose()(
+  function ToastsImpl ({
+                         info,
+                         warn,
+                         error,
+                         onReset
+                       }) {
+    return (
+      <TheToastGroup className='main'>
+        <TheToast.Info onUpdate={onReset} messages={info} clearAfter={TOAST_DURATION}/>
+        <TheToast.Warn onUpdate={onReset} messages={warn} clearAfter={TOAST_DURATION}/>
+        <TheToast.Error onUpdate={onReset} messages={error} clearAfter={TOAST_DURATION}/>
+      </TheToastGroup>
+    )
+  }
+)
 
-export default connect(
+export default wp.asBound(
+  Toasts,
   (state) => ({
-    info: state[ 'toast.info' ],
-    warn: state[ 'toast.warn' ],
-    error: state[ 'toast.error' ]
+    info: state['toast.info'],
+    warn: state['toast.warn'],
+    error: state['toast.error']
+  }),
+  ({
+     toastScene
+   }) => ({
+    onReset: (queues) => toastScene.reset(queues)
   })
-)(
-  withStore(Toasts)
 )

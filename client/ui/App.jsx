@@ -79,8 +79,8 @@ class App extends React.Component {
 const ConnectedApp = asBound(
   withClient(withStore(App)),
   (state) => ({
-    synced: state['sign.signed.synced'],
-    user: state['sign.signed.user'],
+    synced: state['account.synced'],
+    user: state['account.user'],
     needsVerify: state['verify.needsVerify'],
   }),
   ({
@@ -89,7 +89,7 @@ const ConnectedApp = asBound(
      toastScene
    }) => ({
     onVerify: async () => {
-      await verifyScene.sendVerify()
+      await verifyScene.doSend()
       toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
     }
   })

@@ -1,3 +1,10 @@
 {
-  "needsVerify": "BOOL"
+  "needsVerify": "BOOL",
+  "send": {
+    "busy": "BOOL"
+  },
+  "verify": {
+    "busy": "BOOL",
+    "done": "BOOL"
+  }
 }

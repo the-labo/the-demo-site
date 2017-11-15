@@ -6,7 +6,7 @@
 import React from 'react'
 import { TheMain } from 'the-components'
 
-const Main = ({ children }) => {
+const Main = function MainImpl ({children}) {
   return (
     <TheMain className='main'>
       {children}

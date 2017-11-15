@@ -30,7 +30,7 @@ function create (config = {}) {
 }
 
 create.for = (namespace, config) => {
-  let client = Client.for(namespace, config)
+  const client = Client.for(namespace, config)
   console.log(`client created for ${namespace}, with scope:`, client.scope)
   return client
 }

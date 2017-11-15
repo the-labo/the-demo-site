@@ -28,6 +28,13 @@ class ToastScene extends Scene {
     const s = this
     s.scope.error.push(message)
   }
+
+  reset (queues) {
+    const s = this
+    for (const [name, queue] of Object.entries(queues)) {
+      s.scope[name].reset(queue)
+    }
+  }
 }
 
 module.exports = ToastScene

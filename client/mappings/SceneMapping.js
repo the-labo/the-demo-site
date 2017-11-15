@@ -25,6 +25,7 @@ module.exports = Object.freeze({
   'userDestroyScene': sc.UserDestroyScene,
   'userListScene': sc.UserListScene,
   'userMasterScene': sc.UserMasterScene,
+  'userPasswordScene': sc.UserPasswordScene,
   'userSearchScene': sc.UserSearchScene,
   'verifyScene': sc.VerifyScene,
 })

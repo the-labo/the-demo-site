@@ -11,18 +11,20 @@ import {
   TheDropdownMenu,
   TheCondition
 } from 'the-components'
-import { withLoc } from 'the-loc'
 import { Urls, Icons } from '@self/conf'
-import { withRole, withText } from '../wrappers'
+import * as wp from '../wrappers'
 
-const Header = ({
-                  l,
-                  isAdmin,
-                  synced,
-                  user,
-                  notices,
-                  displayNameForUser
-                }) => {
+const Header = wp.compose(
+  wp.withRole,
+  wp.withLoc
+)(function HeaderImpl ({
+                         l,
+                         isAdmin,
+                         synced,
+                         user,
+                         notices,
+                         displayNameForUser
+                       }) {
   return (
     <TheHeader className='header'
                notices={notices}>
@@ -60,10 +62,10 @@ const Header = ({
       </TheCondition>
     </TheHeader>
   )
-}
+})
 
-export default withRole(
-  withText(
-    withLoc(Header)
-  )
+export default wp.asBound(
+  Header,
+  (state) => ({}),
+  ({}) => ({})
 )

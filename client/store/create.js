@@ -19,6 +19,7 @@ module.exports = function create () {
 
   store.loadFromDefs(scopes, {
     types: {
+      'OBJ': theScope.ObjectScope,
       'ARR': theScope.ArrayScope,
       'BOOL': theScope.BooleanScope,
       'STR': theScope.StringScope,
