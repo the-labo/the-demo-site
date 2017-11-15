@@ -15,14 +15,14 @@ const SigninScene = cn.compose(
   class SigninSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.sign.signin
+      return s.store.sign.in
     }
 
-    async doSignin () {
+    async doSignIn () {
       const s = this
       const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        await s.processEntry(({name, password}) => signCtrl.signin(name, password))
+        await s.processEntry(({name, password}) => signCtrl.signIn(name, password))
       })
     }
   }

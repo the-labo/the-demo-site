@@ -41,15 +41,15 @@ export default asBound(
   RecoverSendForm,
   (state) => ({
     spinning: state['auth.recover.send.busy'],
-    values: state['auth.recover.send.values'],
-    errors: state['auth.recover.send.errors'],
+    values: state['auth.recover.send.entry'],
+    errors: state['auth.recover.send.entryErrors'],
   }),
   ({
      l,
      recoverSendScene,
      toastScene
    }) => ({
-    onUpdate: (v) => recoverSendScene.setEntryValues(v),
+    onUpdate: (v) => recoverSendScene.setEntry(v),
     onSubmit: async () => {
       await recoverSendScene.doSend()
       await toastScene.showInfo(l('toasts.RECOVER_EMAIL_SENT'))

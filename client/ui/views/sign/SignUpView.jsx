@@ -45,9 +45,9 @@ export default asView(
     onSetup: () => {
       const {user} = propsProxy
       if (user) {
-        signupScene.putBack()
+        signupScene.goBack()
       } else {
-        signupScene.setEntryValues({})
+        signupScene.setEntry({})
       }
     },
     onTeardown: () => signupScene.dropEntryValues()

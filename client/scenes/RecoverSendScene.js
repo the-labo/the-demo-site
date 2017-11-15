@@ -24,11 +24,10 @@ const RecoverSendScene = cn.compose(
       const s = this
       const {l} = s
       const recoverCtrl = await s.use('recoverCtrl')
-      s.clearError()
       await s.busyFor(async () => {
         await s.processEntry(({email}) =>
           recoverCtrl.send(email).catch((e) =>
-            s.catchBad(e, {
+            s.catchFailure(e, {
               'UnknownEmailError': l('errors.RECOVER_UNKNOWN_EMAIL_ERROR'),
               default: l('errors.RECOVER_SEND_FAILED_ERROR')
             })

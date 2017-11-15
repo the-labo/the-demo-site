@@ -22,10 +22,10 @@ const PasswordChangeScene = cn.compose(
 
     async doSave () {
       const s = this
-      const accountCtrl = await s.use('accountCtrl')
+      const passwordCtrl = await s.use('passwordCtrl')
       await s.busyFor(async () => {
         await s.processEntry(({password}) =>
-          accountCtrl.updatePassword(password))
+          passwordCtrl.update(password))
       })
     }
   }

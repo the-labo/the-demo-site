@@ -24,16 +24,6 @@ function withToggle (Class) {
       }
       scope.toggle(value)
     }
-
-    true (name) {
-      const s = this
-      s.toggle(name, true)
-    }
-
-    false (name) {
-      const s = this
-      s.toggle(name, false)
-    }
   }
 
   return WithToggle

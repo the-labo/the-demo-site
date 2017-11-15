@@ -68,15 +68,15 @@ export default asBound(
   ProfileEditForm,
   (state) => ({
     spinning: state['profile.edit.busy'],
-    values: state['profile.edit.values'],
-    errors: state['profile.edit.errors']
+    values: state['profile.edit.entry'],
+    errors: state['profile.edit.entryErrors']
   }),
   ({
      l,
      profileEditScene,
      toastScene
    }) => ({
-    onUpdate: (v) => profileEditScene.setEntryValues(v),
+    onUpdate: (v) => profileEditScene.setEntry(v),
     onSubmit: async () => {
       await profileEditScene.doSave()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))

@@ -18,9 +18,9 @@ import {
 import { asView, withText } from '../../wrappers'
 import styles from './UserManageView.pcss'
 import c from 'classnames'
-import { UserManageScene } from '../../../scenes'
 import {
   UserSearchForm,
+  UserActionBar,
   UserCreateForm,
   UserList
 } from '../../bounds'
@@ -60,11 +60,7 @@ function UserManageView ({
       />
       <TheView.Body>
         <div className={styles.searchRow}>
-          <UserSearchForm className={styles.searchForm}
-                          values={searchValues}
-                          onUpdate={(v) => adminUsersScene.setSearchValues(v)}
-                          onSubmit={() => adminUsersScene.syncList()}
-          />
+          <UserSearchForm/>
         </div>
         <TheCondition if={Boolean(users)}>
           <div>
@@ -84,17 +80,7 @@ function UserManageView ({
               />
             </ThePager.Row>
 
-            <TheActionBar lead={l('leads.ACTION_WITH_SELECTED_USERS')}
-                          hidden={s.getCheckedIds().length === 0}
-                          buttons={{
-                            passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
-                            destroy: l('buttons.SHOW_DESTROY_USERS')
-                          }}
-                          danger={{destroy: true}}
-                          handlers={{
-                            passwordReset: () => adminUsersScene.togglePasswordResetConfirming(true),
-                            destroy: () => adminUsersScene.toggleDestroyConfirming(true)
-                          }}
+            <UserActionBar/>
             />
           </div>
         </TheCondition>
@@ -196,17 +182,9 @@ function UserManageView ({
   )
 }
 
-export default asView(withText(UserManageView), (state) => ({
-  users: state['admin.users.listing.entities'],
-  checks: state['admin.users.listing.checks'],
-  sort: state['admin.users.listing.sort'],
-  counts: state['admin.users.listing.meta'],
-  busy: state['admin.users.listing.busy'],
-  searchValues: state['admin.users.search.values'],
-  destroyConfirming: state['admin.users.destroying.confirming'],
-  destroyBusy: state['admin.users.destroying.busy'],
-  passwordResetConfirming: state['admin.users.passwordReset.confirming'],
-  passwordResetResulting: state['admin.users.passwordReset.resulting'],
-  passwordResetBusy: state['admin.users.passwordReset.busy'],
-  passwordResetNewPasswords: state['admin.users.passwordReset.newPasswords']
-}))
+export default asView(
+  withText(UserManageView),
+  (state) => ({}),
+  () => ({}),
+  {}
+)

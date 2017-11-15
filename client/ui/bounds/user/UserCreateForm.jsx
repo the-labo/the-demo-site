@@ -79,15 +79,15 @@ export default asBound(
   UserCreateForm,
   (state) => ({
     spinning: state['user.create.busy'],
-    values: state['user.create.values'],
-    errors: state['user.create.errors'],
+    values: state['user.create.entry'],
+    errors: state['user.create.entryErrors'],
   }),
   ({
      l,
      toastScene,
      userCreateScene
    }) => ({
-    onUpdate: (v) => userCreateScene.setEntryValues(v),
+    onUpdate: (v) => userCreateScene.setEntry(v),
     onSubmit: async () => {
       await userCreateScene.doCreate()
       userCreateScene.toggle({done: true})

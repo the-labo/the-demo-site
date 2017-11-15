@@ -23,19 +23,19 @@ const ProfileEditScene = cn.compose(
       const s = this
       const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
-        const user = await signCtrl.getCurrentUser()
-        const values = clone(user.profile || {}, {
+        const {profile} = await signCtrl.getCurrentUser()
+        const values = clone(profile || {}, {
           without: ['user', 'id', 'sign', /^\$/]
         })
-        s.setEntryValues(values)
+        s.setEntry(values)
       })
     }
 
     async doSave () {
       const s = this
-      const signCtrl = await s.use('signCtrl')
+      const accountCtrl = await s.use('accountCtrl')
       await s.busyFor(async () => {
-        await s.processEntry((values) => signCtrl.updateProfile(values))
+        await s.processEntry((values) => accountCtrl.updateProfile(values))
       })
       s.toggle({done: true})
     }

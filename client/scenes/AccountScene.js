@@ -18,7 +18,7 @@ const AccountScene = cn.compose(
       return s.store.account
     }
 
-    async syncUser () {
+    async doSync () {
       const s = this
       const accountCtrl = await s.use('accountCtrl')
       await s.busyFor(async () => {

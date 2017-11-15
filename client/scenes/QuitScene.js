@@ -1,33 +1,33 @@
 /**
- * SigndelScene
- * @class SigndelScene
+ * QuitScene
+ * @class QuitScene
  */
 'use strict'
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends SigndelScene */
-const SigndelScene = cn.compose(
+/** @lends QuitScene */
+const QuitScene = cn.compose(
   cn.withEntry,
   cn.withBusy,
   cn.withToggle
 )(
-  class SigndelSceneBase extends Scene {
+  class QuitSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.auth.signdel
+      return s.store.sign.del
     }
 
-    async doSigndel () {
+    async doQuit () {
       const s = this
-      const signCtrl = await s.use('signCtrl')
+      const quitCtrl = await s.use('quitCtrl')
       await s.busyFor(async () => {
-        await signCtrl.signdel()
+        await quitCtrl.execute()
       })
       s.toggle({confirming: false, done: true})
     }
   }
 )
 
-module.exports = SigndelScene
+module.exports = QuitScene

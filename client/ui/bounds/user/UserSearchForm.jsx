@@ -42,14 +42,14 @@ export default asBound(
   UseSearchForm,
   (state) => ({
     spinning: state['user.search.busy'],
-    values: state['user.search.values'],
-    errors: state['user.search.errors']
+    values: state['user.search.entry'],
+    errors: state['user.search.entryErrors']
   }),
   ({
      userSearchScene,
      userListScene
    }, propsProxy) => ({
-    onUpdate: (v) => userSearchScene.setEntryValues(v),
+    onUpdate: (v) => userSearchScene.setEntry(v),
     onSubmit: async () => {
       const {q} = propsProxy.value || {}
       userListScene.set({

@@ -12,7 +12,7 @@ const SignupScene = withBusy(withEntry(
   class SignupSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.sign.signup
+      return s.store.sign.up
     }
 
     async doSignup () {
@@ -20,7 +20,7 @@ const SignupScene = withBusy(withEntry(
       const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
         await s.processEntry(({name, password, profile}) =>
-          signCtrl.signup(name, password)
+          signCtrl.signUp(name, password)
         )
       })
     }

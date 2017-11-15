@@ -49,17 +49,18 @@ export default asBound(
   RecoverResetForm,
   (state) => ({
     spinning: state['recover.reset.busy'],
-    values: state['recover.reset.values'],
-    errors: state['recover.reset.errors']
+    values: state['recover.reset.entry'],
+    errors: state['recover.reset.entryErrors']
   }),
   ({
      l,
      recoverResetScene,
      toastScene
    }) => ({
-    onUpdate: (v) => recoverResetScene.setEntryValues(v),
+    onUpdate: (v) => recoverResetScene.setEntry(v),
     onSubmit: async () => {
       await recoverResetScene.doReset()
+      recoverResetScene.toggle({done: true})
     }
   })
 )

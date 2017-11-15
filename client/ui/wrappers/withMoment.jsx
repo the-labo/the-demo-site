@@ -19,7 +19,7 @@ function withMoment (Component, options = {}) {
       }
       const innerProps = Object.assign(
         {},
-        props,
+        s.props,
         {
           dateFromNow (date) {
             if (!date) {

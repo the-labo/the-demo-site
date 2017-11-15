@@ -37,12 +37,12 @@ export default asView(
     user: state['auth.user']
   }),
   ({auth: {signinScene}}) => ({
-    onSetup: () => signinScene.setEntryValues({}),
-    onTeardown: () => signinScene.dropEntryValues(),
+    onSetup: () => signinScene.setEntry({}),
+    onTeardown: () => signinScene.dropEntry(),
     onReceive: ({user}) => {
       if (user) {
         console.warn('[SigninView] Already signed')
-        signinScene.putBack()
+        signinScene.goBack()
       }
     }
   }),

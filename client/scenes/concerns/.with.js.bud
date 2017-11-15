@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = [
-  'withChecked'
 ].map((name) => (
   {
     force: false,

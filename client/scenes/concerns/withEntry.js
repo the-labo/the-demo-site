@@ -11,33 +11,34 @@ const {expand} = require('objnest')
 /** @lends withEntry */
 function withEntry (Class) {
   class EntryMixed extends Class {
-    dropEntryValues () {
+    dropEntry () {
       const s = this
-      s.scope.values.drop()
+      const {entry, entryErrors} = s.scope
+      entry.drop()
+      entryErrors.drop()
     }
 
-    setEntryValues (values) {
+    setEntry (values) {
       const s = this
-      s.scope.values.set(values)
+      const {entry, entryErrors} = s.scope
+      entry.set(values)
 
       {
-        const names = Object.keys(values).filter((name) => s.scope.errors.state[name])
+        const names = Object.keys(values)
+          .filter((name) => entryErrors.state[name])
         if (names.length > 0) {
-          s.scope.errors.del(...names)
+          entryErrors.del(...names)
         }
       }
     }
 
-    setEntryErrors (errors) {
-      const s = this
-      s.scope.errors.set(errors)
-    }
-
     async processEntry (handler) {
       const s = this
-      const values = expand(s.scope.values.state)
+      const {entry, entryErrors} = s.scope
+      entryErrors.drop()
+      const values = expand(entry.state)
       return Promise.resolve(handler(values)).catch((e) =>
-        s.setEntryErrors(s.catchEntryError(e))
+        entryErrors.set(s.catchEntryError(e))
       )
     }
   }

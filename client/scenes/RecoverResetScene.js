@@ -36,7 +36,6 @@ const RecoverResetScene = cn.compose(
           )
         )
       })
-      s.toggle({done: true})
     }
   }
 )

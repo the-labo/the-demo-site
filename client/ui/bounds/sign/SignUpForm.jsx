@@ -75,8 +75,8 @@ export default asBound(
   SignUpForm,
   (state) => ({
     spinning: state['auth.signup.busy'],
-    values: state['auth.signup.values'],
-    errors: state['auth.signup.errors'],
+    values: state['auth.signup.entry'],
+    errors: state['auth.signup.entryErrors'],
   }),
   ({
      l,
@@ -84,12 +84,12 @@ export default asBound(
      signupScene,
      toastScene
    }) => ({
-    onUpdate: (v) => signupScene.setEntryValues(v),
+    onUpdate: (v) => signupScene.setEntry(v),
     onSubmit: async () => {
       await signupScene.doSignup()
-      await authScene.syncUser()
+      await authScene.doSync()
       toastScene.showInfo(l('toasts.SIGNUP_DID_SUCCESS'))
-      signupScene.putBack()
+      signupScene.goBack()
     }
   })
 )

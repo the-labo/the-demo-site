@@ -46,7 +46,7 @@ export default asView(
     done: state['auto.recover.send.done']
   }),
   ({recoverScene}) => ({
-    onSetup: () => recoverScene.setEntryValues({}),
+    onSetup: () => recoverScene.setEntry({}),
     onTeardown: () => recoverScene.dropEntryValues()
   })
 )

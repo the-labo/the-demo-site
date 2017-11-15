@@ -10,6 +10,7 @@ import RecoverResetForm from './recover/RecoverResetForm'
 import RecoverSendForm from './recover/RecoverSendForm'
 import SignInForm from './sign/SignInForm'
 import SignUpForm from './sign/SignUpForm'
+import UserActionBar from './user/UserActionBar'
 import UserCreateForm from './user/UserCreateForm'
 import UserDestroyDialog from './user/UserDestroyDialog'
 import UserList from './user/UserList'
@@ -23,6 +24,7 @@ export {
   RecoverSendForm,
   SignInForm,
   SignUpForm,
+  UserActionBar,
   UserCreateForm,
   UserDestroyDialog,
   UserList,

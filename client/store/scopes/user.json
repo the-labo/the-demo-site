@@ -1,13 +1,15 @@
 {
   "check": {
-    "checked": "OBJ"
+    "values": "OBJ"
   },
   "create": {
     "busy": "BOOL"
   },
   "destroy": {
+    "active": "BOOL",
     "busy": "BOOL",
-    "confirm": "BOOL"
+    "done": "BOOL",
+    "targets": "ARR"
   },
   "list": {
     "busy": "BOOL",
@@ -16,6 +18,12 @@
     "filter": "OBJ",
     "page": "OBJ",
     "sort": "STR"
+  },
+  "password": {
+    "active": "BOOL",
+    "busy": "BOOL",
+    "done": "BOOL",
+    "targets": "ARR"
   },
   "search": {
     "busy": "BOOL",

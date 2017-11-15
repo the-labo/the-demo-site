@@ -57,15 +57,15 @@ export default asBound(
   PasswordChangeForm,
   (state) => ({
     user: state['account.user'],
-    values: state['password.change.values'],
-    errors: state['password.change.errors']
+    values: state['password.change.entry'],
+    errors: state['password.change.entryErrors']
   }),
   ({
      l,
      passwordChangeScene,
      toastScene
    }) => ({
-    onUpdate: (v) => passwordChangeScene.setEntryValues(v),
+    onUpdate: (v) => passwordChangeScene.setEntry(v),
     onSubmit: async () => {
       await passwordChangeScene.doSave()
       passwordChangeScene.toggle({done: true})

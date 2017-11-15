@@ -6,7 +6,8 @@
 const path = require('path')
 
 module.exports = [
-  'user/UserDestroyDialog'
+  'user/UserDestroyDialog',
+  'user/UserActionBar'
 ].map((name) => ({
   force: false,
   mkdirp: true,

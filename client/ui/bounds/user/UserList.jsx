@@ -6,20 +6,21 @@
 import React from 'react'
 import { Urls } from '@self/conf'
 import { TheTable } from 'the-components'
-import { withMoment, asPure, asBound } from '../../wrappers'
+import wp from '../../wrappers'
 import UserListItem from './UserListItem'
 import styles from './UserList.pcss'
 
 const {Head, Body, Row, HeaderCell, SortableHeaderCell} = TheTable
 
-const UserList = asPure(function UserListImpl ({
-                                                 users,
-                                                 l,
-                                                 sort,
-                                                 onSort,
-                                                 onUpdateCheck,
-                                                 checks = {}
-                                               }) {
+const UserList = wp.compose(
+  wp.withLoc,
+  wp.asPure
+)(function UserListImpl ({
+                           users,
+                           l,
+                           sort,
+                           onSort
+                         }) {
   return (
     <div className='user-list'>
       <TheTable className={styles.table}
@@ -44,8 +45,6 @@ const UserList = asPure(function UserListImpl ({
           users.map((user) => (
             <UserListItem key={user.id}
                           user={user}
-                          checkValue={checks[user.id]}
-                          onUpdateCheck={onUpdateCheck}
             />
           ))
         }
@@ -55,8 +54,12 @@ const UserList = asPure(function UserListImpl ({
   )
 })
 
-export default asBound(
+export default wp.asBound(
   UserList,
   (state) => ({}),
-  ({}) => ({})
+  ({userListScene}) => ({
+    onSort: async () => {
+
+    }
+  })
 )
