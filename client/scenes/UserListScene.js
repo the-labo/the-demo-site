@@ -9,7 +9,8 @@ const cn = require('./concerns')
 
 /** @lends UserListScene */
 const UserListScene = cn.compose(
-  cn.withBusy
+  cn.withBusy,
+  cn.withSet
 )(
   class UserListSceneBase extends Scene {
     get scope () {
@@ -22,12 +23,15 @@ const UserListScene = cn.compose(
       const userCtrl = await s.use('userCtrl')
 
       await s.busyFor(async () => {
-        const list = await userCtrl.fetchUserList({
+        const {meta, entities} = await userCtrl.list({
           filter: {},
           page: s.scope.page.state,
           sort: s.scope.sort.state
         })
-        s.setList(list)
+        s.set({
+          meta,
+          entities
+        })
       })
     }
   }

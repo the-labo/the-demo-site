@@ -7,11 +7,13 @@ import React from 'react'
 import { TheToastGroup, TheToast } from 'the-components'
 import { connect, withStore } from 'the-store'
 import { UI } from '@self/conf'
-import * as wp from '../wrappers'
+import { asPure, asBound, compose } from '../wrappers'
 
 const {TOAST_DURATION} = UI
 
-const Toasts = wp.compose()(
+const Toasts = compose(
+  asPure
+)(
   function ToastsImpl ({
                          info,
                          warn,
@@ -28,7 +30,7 @@ const Toasts = wp.compose()(
   }
 )
 
-export default wp.asBound(
+export default asBound(
   Toasts,
   (state) => ({
     info: state['toast.info'],

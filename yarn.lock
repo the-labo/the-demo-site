@@ -118,19 +118,18 @@ adigest@^3.0.0:
   dependencies:
     json-pointer "^0.6.0"
 
-adocker-mysql@^4.0.0:
+adocker-mysql@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/adocker-mysql/-/adocker-mysql-4.0.4.tgz#41ad6e62f7d5ed011986b2886aa77dcadaa51828"
   dependencies:
     adocker "^3.0.0"
     asfs "^2.0.1"
 
-adocker-nginx@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/adocker-nginx/-/adocker-nginx-4.0.1.tgz#76ea7af4bb242342507abef3a8ccd6aa42203a18"
+adocker-nginx@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/adocker-nginx/-/adocker-nginx-5.0.0.tgz#46cbe68c64178c2acb58f0988bac2b2fb7bd76fb"
   dependencies:
-    adocker "^2.0.0"
-    co "^4.6.0"
+    adocker "^3.0.0"
 
 adocker-node@^2.0.4:
   version "2.0.4"
@@ -140,13 +139,12 @@ adocker-node@^2.0.4:
     asleep "^1.0.3"
     co "^4.6.0"
 
-adocker-redis@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/adocker-redis/-/adocker-redis-1.0.4.tgz#932536a3978a993d571100ec8086b971617d61fd"
+adocker-redis@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/adocker-redis/-/adocker-redis-2.0.0.tgz#3c81b4e92be4cfdf03d86484c90bc52f07ec47a6"
   dependencies:
-    adocker "^2.0.0"
-    asfs "^1.2.3"
-    co "^4.6.0"
+    adocker "^3.0.0"
+    asfs "^2.0.1"
 
 adocker@^1.4.2:
   version "1.4.4"
@@ -155,15 +153,6 @@ adocker@^1.4.2:
     asleep "^1.0.3"
     co "^4.6.0"
     debug "^2.3.2"
-    hasbin "^1.2.3"
-
-adocker@^2.0.0, adocker@^2.0.1:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/adocker/-/adocker-2.0.4.tgz#d12231130d45061729e7ad862244004be47a0412"
-  dependencies:
-    asleep "^1.0.3"
-    co "^4.6.0"
-    debug "^3.1.0"
     hasbin "^1.2.3"
 
 adocker@^3.0.0:
@@ -3887,7 +3876,7 @@ execcli@^4.0.11, execcli@^4.0.6, execcli@^4.0.8:
     hasbin "^1.2.3"
     stringcase "^3.2.1"
 
-execcli@^5.0.1, execcli@^5.0.2:
+execcli@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/execcli/-/execcli-5.0.2.tgz#f6c2c79fbdf1b6961d9fb5eda976690e4851c642"
   dependencies:
@@ -7574,17 +7563,16 @@ pon-task-db@^2.0.1:
     asleep "^1.0.3"
     pon-task-seed "^2.0.2"
 
-pon-task-docker@^1.1.3:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/pon-task-docker/-/pon-task-docker-1.1.5.tgz#bd9cb9826d7aed2a403fef2ab8fbc41c098054a5"
+pon-task-docker@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/pon-task-docker/-/pon-task-docker-2.0.1.tgz#42ca6d0050947ae238c409fc7a17a354b03b5a95"
   dependencies:
-    adocker "^2.0.1"
-    adocker-mysql "^4.0.0"
-    adocker-nginx "^4.0.1"
+    adocker "^3.0.0"
+    adocker-mysql "^4.0.4"
+    adocker-nginx "^5.0.0"
     adocker-node "^2.0.4"
-    adocker-redis "^1.0.4"
-    co "^4.6.0"
-    execcli "^5.0.1"
+    adocker-redis "^2.0.0"
+    execcli "^5.0.2"
 
 pon-task-env@^1.3.2:
   version "1.3.2"

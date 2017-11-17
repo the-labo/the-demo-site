@@ -35,6 +35,15 @@ const UserPasswordScene = cn.compose(
         targets: []
       })
     }
+
+    async doReset () {
+      const s = this
+      const userCtrl = await s.use('userCtrl')
+      const userIds = s.scope.targets.state.map(({id}) => String(id))
+      await s.busyFor(async () => {
+        await userCtrl.resetPassword(userIds)
+      })
+    }
   }
 )
 

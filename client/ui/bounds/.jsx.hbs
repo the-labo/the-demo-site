@@ -4,13 +4,17 @@
 'use strict'
 
 import React from 'react'
-import { asBound } from '../../wrappers'
+import { compose, asBound } from '../../wrappers'
 
-const {{pascalcase name}} = function {{pascalcase name}}Impl(props) {
-  return (
-   <div>{{name}}</div>
-  )
-}
+const {{pascalcase name}} = compose(
+
+)(
+  function {{pascalcase name}}Impl(props) {
+    return (
+     <div>{{name}}</div>
+    )
+  }
+)
 
 export default asBound(
   {{pascalcase name}},

@@ -21,10 +21,11 @@ const UserCheckScene = require('./UserCheckScene')
 const UserCreateScene = require('./UserCreateScene')
 const UserDestroyScene = require('./UserDestroyScene')
 const UserListScene = require('./UserListScene')
-const UserMasterScene = require('./UserMasterScene')
 const UserPasswordScene = require('./UserPasswordScene')
 const UserSearchScene = require('./UserSearchScene')
 const VerifyScene = require('./VerifyScene')
+const VerifySendScene = require('./VerifySendScene')
+const VerifyVerifyScene = require('./VerifyVerifyScene')
 
 module.exports = {
   AccountScene,
@@ -44,8 +45,9 @@ module.exports = {
   UserCreateScene,
   UserDestroyScene,
   UserListScene,
-  UserMasterScene,
   UserPasswordScene,
   UserSearchScene,
-  VerifyScene
+  VerifyScene,
+  VerifySendScene,
+  VerifyVerifyScene
 }

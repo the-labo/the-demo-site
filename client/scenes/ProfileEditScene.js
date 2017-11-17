@@ -11,12 +11,19 @@ const cn = require('./concerns')
 /** @lends ProfileEditScene */
 const ProfileEditScene = cn.compose(
   cn.withEntry,
+  cn.withSet,
   cn.withBusy
 )(
   class ProfileEditSceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.profile.edit
+    }
+
+    prepare () {
+      const s = this
+      s.dropEntry()
+      s.set({done: false})
     }
 
     async doSync () {
@@ -37,7 +44,7 @@ const ProfileEditScene = cn.compose(
       await s.busyFor(async () => {
         await s.processEntry((values) => accountCtrl.updateProfile(values))
       })
-      s.toggle({done: true})
+      s.set({done: true})
     }
   }
 )

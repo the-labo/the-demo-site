@@ -11,13 +11,20 @@ const cn = require('./concerns')
 const RecoverResetScene = cn.compose(
   cn.withEntry,
   cn.withBusy,
-  cn.withToggle,
+  cn.withSet,
   cn.withFailure
 )(
   class RecoverResetSceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.recover.reset
+    }
+
+    prepare () {
+      const s = this
+      s.clearFailure()
+      s.dropEntry()
+      s.set({done: false})
     }
 
     async doReset () {
@@ -35,6 +42,7 @@ const RecoverResetScene = cn.compose(
             })
           )
         )
+        s.set({done: true})
       })
     }
   }

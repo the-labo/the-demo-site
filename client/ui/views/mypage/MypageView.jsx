@@ -70,11 +70,15 @@ function MypageView ({
 
 export default onlySigned(
   asView(
-    withTitle(MypageView, ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE')),
+    MypageView,
     (state) => ({
       busy: state['sign.signed.busy'],
       synced: state['sign.signed.synced'],
       user: state['sign.signed.user']
-    })
+    }),
+    () => ({}),
+    {
+      title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE')
+    }
   )
 )

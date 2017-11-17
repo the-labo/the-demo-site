@@ -13,7 +13,6 @@ import onlySigned from './onlySigned'
 import withLoc from './withLoc'
 import withMoment from './withMoment'
 import withRole from './withRole'
-import withText from './withText'
 import withTitle from './withTitle'
 
 export {
@@ -26,6 +25,5 @@ export {
   withLoc,
   withMoment,
   withRole,
-  withText,
   withTitle
 }

@@ -7,11 +7,11 @@ import React from 'react'
 import {
   TheFooter
 } from 'the-components'
-import { withLoc } from 'the-loc'
-import * as wp from '../wrappers'
+import { asPure, withLoc, asBound, compose } from '../wrappers'
 
-const Footer = wp.compose(
-  wp.withLoc
+const Footer = compose(
+  asPure,
+  withLoc
 )(function FooterImpl ({
                          l
                        }) {
@@ -33,4 +33,6 @@ const Footer = wp.compose(
   }
 )
 
-export default Footer
+export default asBound(
+  Footer
+)

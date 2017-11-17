@@ -11,7 +11,7 @@ const cn = require('./concerns')
 const UserCreateScene = cn.compose(
   cn.withBusy,
   cn.withEntry,
-  cn.withToggle
+  cn.withSet
 )(
   class UserCreateSceneBase extends Scene {
     get scope () {

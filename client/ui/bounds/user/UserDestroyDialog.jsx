@@ -4,18 +4,23 @@
 'use strict'
 
 import React from 'react'
-import { TheConfirmDialog } from 'the-components'
-import { asBound } from '../../wrappers'
-import { withLoc } from 'the-loc'
+import { TheConfirmDialog, } from 'the-components'
+import { withLoc, compose, asBound } from '../../wrappers'
+import { labelHelper } from '../../helpers'
 
-const UserDestroyDialog = withLoc(
+const {displayNameForUser} = labelHelper
+
+const UserDestroyDialog = compose(
+  withLoc
+)(
   function UserDestroyDialogImpl ({
                                     l,
                                     spinning,
                                     onClose,
                                     onSubmit,
                                     active,
-                                    done
+                                    done,
+                                    users
                                   }) {
     if (!active) {
       return null
@@ -35,7 +40,11 @@ const UserDestroyDialog = withLoc(
                           spinning
                         }}
       >
-
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>{displayNameForUser(user)}</li>
+          ))}
+        </ul>
       </TheConfirmDialog>
     )
   }
@@ -54,9 +63,10 @@ export default asBound(
    }, propsProxy) => ({
     onClose: () => userDestroyScene.clear(),
     onSubmit: async () => {
-      userDestroyScene.doDestroy()
+      await userDestroyScene.doDestroy()
       userDestroyScene.set({done: true})
       userCheckScene.clear()
+
     }
   })
 )

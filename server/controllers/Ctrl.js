@@ -8,7 +8,7 @@ const {TheCtrl} = require('the-controller-base')
 class Ctrl extends TheCtrl {
   get resources () {
     const s = this
-    return s.resources
+    return s.app.db.resources
   }
 }
 

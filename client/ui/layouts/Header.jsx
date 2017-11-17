@@ -12,11 +12,11 @@ import {
   TheCondition
 } from 'the-components'
 import { Urls, Icons } from '@self/conf'
-import * as wp from '../wrappers'
+import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
 
-const Header = wp.compose(
-  wp.withRole,
-  wp.withLoc
+const Header = compose(
+  withRole,
+  withLoc
 )(function HeaderImpl ({
                          l,
                          isAdmin,
@@ -64,7 +64,7 @@ const Header = wp.compose(
   )
 })
 
-export default wp.asBound(
+export default asBound(
   Header,
   (state) => ({}),
   ({}) => ({})

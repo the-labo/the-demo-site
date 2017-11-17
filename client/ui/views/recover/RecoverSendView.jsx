@@ -40,7 +40,7 @@ function RecoverSendView ({
 }
 
 export default asView(
-  withTitle(RecoverSendView, ({l}) => l('titles.RECOVER_SEND_TITLE')),
+  RecoverSendView,
   (state) => ({
     failure: state['auto.recover.send.failure'],
     done: state['auto.recover.send.done']
@@ -48,5 +48,8 @@ export default asView(
   ({recoverScene}) => ({
     onSetup: () => recoverScene.setEntry({}),
     onTeardown: () => recoverScene.dropEntryValues()
-  })
+  }),
+  {
+    title: ({l}) => l('titles.RECOVER_SEND_TITLE')
+  }
 )

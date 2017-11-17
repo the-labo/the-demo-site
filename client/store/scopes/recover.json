@@ -1,12 +1,14 @@
 {
   "reset": {
     "busy": "BOOL",
+    "done": "BOOL",
     "errors": "OBJ",
     "failure": "BOOL",
     "values": "OBJ"
   },
   "send": {
     "busy": "BOOL",
+    "done": "BOOL",
     "errors": "OBJ",
     "failure": "BOOL",
     "values": "OBJ"

@@ -23,9 +23,11 @@ const AccountScene = cn.compose(
       const accountCtrl = await s.use('accountCtrl')
       await s.busyFor(async () => {
         const user = await accountCtrl.getCurrentUser()
-        s.set({user})
+        s.set({
+          user,
+          synced: true
+        })
       })
-      s.toggle({synced: true})
     }
   }
 )

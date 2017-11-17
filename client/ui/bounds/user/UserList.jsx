@@ -6,15 +6,15 @@
 import React from 'react'
 import { Urls } from '@self/conf'
 import { TheTable } from 'the-components'
-import wp from '../../wrappers'
+import { withLoc, asPure, asBound, compose } from '../../wrappers'
 import UserListItem from './UserListItem'
 import styles from './UserList.pcss'
 
 const {Head, Body, Row, HeaderCell, SortableHeaderCell} = TheTable
 
-const UserList = wp.compose(
-  wp.withLoc,
-  wp.asPure
+const UserList = compose(
+  withLoc,
+  asPure
 )(function UserListImpl ({
                            users,
                            l,
@@ -54,12 +54,16 @@ const UserList = wp.compose(
   )
 })
 
-export default wp.asBound(
+export default asBound(
   UserList,
-  (state) => ({}),
+  (state) => ({
+    users: state['user.list.entities'],
+    sort: state['user.list.sort']
+  }),
   ({userListScene}) => ({
-    onSort: async () => {
-
+    onSort: async (name) => {
+      userListScene.set({sort: [name]})
+      await userListScene.doSync()
     }
   })
 )
