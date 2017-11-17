@@ -7,7 +7,7 @@
 
 const theServer = require('the-server')
 const {Html} = require('@self/client/shim/ui')
-const {createClient, createStore} = require('@self/client')
+const {createClient, createStore, createHandle} = require('@self/client')
 const theSeal = require('the-seal')
 const endpoints = require('../endpoints')
 const pkg = require('../../package.json')
@@ -40,7 +40,8 @@ function create (config) {
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),
-      store: (ctx) => createStore()
+      store: (ctx) => createStore(),
+      handle: (ctx) => createHandle()
     },
     html: Html,
     langs: Object.keys(locales),
