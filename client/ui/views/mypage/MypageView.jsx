@@ -57,7 +57,7 @@ function MypageView ({
                 <hr/>
                 <br/>
                 <div className={styles.links}>
-                  <TheLink to={Urls.SIGNDEL_URL}>{l('buttons.SHOW_SIGNDEL')}</TheLink>
+                  <TheLink to={Urls.QUIT_URL}>{l('buttons.SHOW_SIGNDEL')}</TheLink>
                 </div>
               </TheSection.Body>
             </TheSection>

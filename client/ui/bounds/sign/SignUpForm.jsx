@@ -74,22 +74,22 @@ const SignUpForm = asForm(
 export default asBound(
   SignUpForm,
   (state) => ({
-    spinning: state['auth.signup.busy'],
-    values: state['auth.signup.entry'],
-    errors: state['auth.signup.entryErrors'],
+    spinning: state['sign.up.busy'],
+    values: state['sign.up.entry'],
+    errors: state['sign.up.entryErrors'],
   }),
   ({
      l,
      authScene,
-     signupScene,
+     signUpScene,
      toastScene
    }) => ({
-    onUpdate: (v) => signupScene.setEntry(v),
+    onUpdate: (v) => signUpScene.setEntry(v),
     onSubmit: async () => {
-      await signupScene.doSignup()
+      await signUpScene.doSignup()
       await authScene.doSync()
       toastScene.showInfo(l('toasts.SIGNUP_DID_SUCCESS'))
-      signupScene.goBack()
+      signUpScene.goBack()
     }
   })
 )

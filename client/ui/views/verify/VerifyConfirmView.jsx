@@ -47,8 +47,7 @@ export default asView(
     failure: state['verify.failure'],
   }),
   ({verifyScene}) => (({
-    onSetup: () => verifyScene.toggle({done: false}),
-    onReady: () => verifyScene
+    onSetup: () => verifyScene.set({done: false}),
   })),
   {
     title: ({l}) => l('titles.ACCOUNT_VERIFY_TITLE')

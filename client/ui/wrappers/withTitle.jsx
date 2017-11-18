@@ -4,7 +4,7 @@ import React from 'react'
 import { get } from 'the-window'
 
 /** @lends withTitle */
-function withTitle (Component, getTitle = () => null) {
+function withTitle (Component, titleFor = (props) => null) {
   return class WithTitle extends React.Component {
     constructor (props) {
       super(props)
@@ -14,7 +14,7 @@ function withTitle (Component, getTitle = () => null) {
 
     render () {
       const s = this
-
+      const {props} = s
       return <Component {...props} />
     }
 
@@ -35,15 +35,21 @@ function withTitle (Component, getTitle = () => null) {
       }
     }
 
+    getTitle () {
+      const s = this
+      const {l} = s.props
+      const title = titleFor(s.props)
+      const appName = l('app.APP_NAME')
+      return title ? `${title} | ${appName}` : appName
+    }
+
     updateTitle () {
       const document = get('window.document')
       const s = this
-
-      const {l} = s.props
-      const title = getTitle(props)
+      const title = s.getTitle(s.props)
       if (document.title !== title) {
         s._titleQueue.push(document.title)
-        document.title = `${title} | ${l('app.APP_NAME')}`
+        document.title = title
       }
     }
   }

@@ -20,7 +20,7 @@ module.exports = Object.freeze(
     SIGNUP_URL: '/sign/signup',
     SIGNASK_URL: '/sign/please',
     SIGNOUT_URL: '/sign/signout',
-    SIGNDEL_URL: '/sign/signdel',
+    QUIT_URL: '/sign/signdel',
 
     ACCOUNT_MYPAGE_URL: '/account/mypage',
     ACCOUNT_PASSWORD_URL: '/account/password',

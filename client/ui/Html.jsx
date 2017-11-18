@@ -69,4 +69,3 @@ const Html = ({appScope, renderingContext}) => {
 }
 
 export default Html
-export { APP_CONTAINER_ID, locales }

@@ -11,7 +11,7 @@ function withSet (Class) {
   class WithSet extends Class {
     set (name, value) {
       const s = this
-      const byObj = arguments.length === 0 && typeof arguments[0] === 'object'
+      const byObj = arguments.length === 1 && typeof arguments[0] === 'object'
       if (byObj) {
         for (const [name, value] of Object.entries(arguments[0])) {
           s.set(name, value)

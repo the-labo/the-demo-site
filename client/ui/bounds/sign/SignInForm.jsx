@@ -60,22 +60,22 @@ const SigninForm = asForm(
 export default asBound(
   SigninForm,
   (state) => ({
-    spinning: state['sign.signin.busy'],
-    values: state['sign.signin.entry'],
-    errors: state['sign.signin.entryErrors']
+    spinning: state['sign.in.busy'],
+    values: state['sign.in.entry'],
+    errors: state['sign.in.entryErrors']
   }),
   ({
      l,
      accountScene,
-     signinScene,
+     signInScene,
      toastScene
    }) => ({
-    onUpdate: (v) => signinScene.setEntry(v),
+    onUpdate: (v) => signInScene.setEntry(v),
     onSubmit: async () => {
-      await signinScene.doSignIn()
+      await signInScene.doSignIn()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGNIN_DID_SUCCESS'))
-      signinScene.goBack()
+      signInScene.goBack()
     }
   })
 )

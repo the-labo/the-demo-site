@@ -130,6 +130,15 @@ module.exports = pon({
       externals: UI.EXTERNAL_BUNDLES,
       watchTargets: 'client/shim/**/*.js',
       transforms: [envify()],
+      fullPaths: !isProduction()
+    }), {sub: ['watch']}
+  ),
+  'ui:browser-external': env.dynamic(({isProduction}) =>
+    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
+      requires: UI.EXTERNAL_BUNDLES,
+      skipWatching: true,
+      watchDelay: 300,
+      transforms: [envify()],
       fullPaths: !isProduction(),
       ignores: [
         // TODO Be smarter
@@ -143,15 +152,6 @@ module.exports = pon({
           require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
         ])
       ]
-    })
-  ),
-  'ui:browser-external': env.dynamic(({isProduction}) =>
-    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-      requires: UI.EXTERNAL_BUNDLES,
-      skipWatching: true,
-      watchDelay: 300,
-      transforms: [envify()],
-      fullPaths: !isProduction()
     })
   ),
   'assets:install': () => theAssets().installTo('assets'),

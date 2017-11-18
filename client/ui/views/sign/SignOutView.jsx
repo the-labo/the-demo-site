@@ -9,7 +9,9 @@ import { asView } from '../../wrappers'
 import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
 
-function SignOutView ({l, busy}) {
+function SignOutView ({
+                        l, busy
+                      }) {
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGNOUT_ICON}
@@ -27,8 +29,8 @@ function SignOutView ({l, busy}) {
 export default asView(
   SignOutView,
   (state) => ({
-    user: state['auth.user'],
-    busy: state['auth.signout.busy']
+    user: state['account.user'],
+    busy: state['sign.out.busy']
   }),
   ({signoutScene}) => ({
     onReady: () => signoutScene.doSignout()

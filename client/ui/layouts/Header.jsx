@@ -12,7 +12,10 @@ import {
   TheCondition
 } from 'the-components'
 import { Urls, Icons } from '@self/conf'
+import { labelHelper } from '../helpers'
 import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
+
+const {displayNameForUser} = labelHelper
 
 const Header = compose(
   withRole,
@@ -22,8 +25,7 @@ const Header = compose(
                          isAdmin,
                          synced,
                          user,
-                         notices,
-                         displayNameForUser
+                         notices
                        }) {
   return (
     <TheHeader className='header'
@@ -67,5 +69,6 @@ const Header = compose(
 export default asBound(
   Header,
   (state) => ({}),
-  ({}) => ({})
+  () => ({}),
+  {}
 )

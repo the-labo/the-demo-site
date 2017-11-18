@@ -7,6 +7,7 @@ import React from 'react'
 import {
   TheFooter
 } from 'the-components'
+import { Urls } from '@self/conf'
 import { asPure, withLoc, asBound, compose } from '../wrappers'
 
 const Footer = compose(

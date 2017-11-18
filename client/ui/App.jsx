@@ -15,20 +15,12 @@ import Toasts from './layouts/Toasts'
 import Footer from './layouts/Footer'
 import Routes from './Routes'
 import { withProvider, withStore } from 'the-store'
-import { asBound } from './wrappers'
+import { asBound, withLoc } from './wrappers'
+import { withBinder } from 'the-handle'
 import { withClient } from 'the-client'
-import { withLoc } from 'the-loc'
 import { locales } from '@self/conf'
-import { SignScene, VerifyScene } from '../scenes'
 
 class App extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-    s.signScene = new SignScene(props)
-    s.verifyScene = new VerifyScene(props)
-  }
-
   render () {
     const s = this
     const {props, notices} = s
@@ -53,12 +45,8 @@ class App extends React.Component {
 
   componentDidMount () {
     const s = this
-    const {signScene, verifyScene} = s
-
-    ;(async () => {
-      await signScene.syncSigned()
-      await verifyScene.syncNeedsVerify({delay: 3 * 1000})
-    })()
+    const {props} = s
+    props.onSetup()
   }
 
   get notices () {
@@ -85,18 +73,25 @@ const ConnectedApp = asBound(
   }),
   ({
      l,
+     accountScene,
      verifyScene,
+     verifySendScene,
      toastScene
    }) => ({
+    onSetup: async () => {
+      await accountScene.doSync()
+      await verifyScene.doSync({delay: 3 * 1000})
+    },
     onVerify: async () => {
-      await verifyScene.doSend()
+      await verifySendScene.doSend()
+      await verifyScene.doSync()
       toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
     }
   })
 )
 
-export default withProvider(
+export default withBinder(withProvider(
   withClient.root(
     withLoc.root(ConnectedApp, locales)
   )
-)
+))

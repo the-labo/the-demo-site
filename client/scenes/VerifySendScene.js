@@ -6,6 +6,7 @@
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
+const asleep = require('asleep')
 
 /** @lends VerifySendScene */
 const VerifySendScene = cn.compose(
@@ -18,14 +19,6 @@ const VerifySendScene = cn.compose(
       return s.store.verify.send
     }
 
-    async doSync ({delay = 100} = {}) {
-      const s = this
-      await asleep(delay)
-      const verifyCtrl = await s.use('verifyCtrl')
-      const needsVerify = await verifyCtrl.needsVerify()
-      s.toggle({needsVerify})
-    }
-
     async doSend () {
       const s = this
       const verifyCtrl = await s.use('verifyCtrl')
@@ -35,7 +28,6 @@ const VerifySendScene = cn.compose(
           await verifyCtrl.send()
         }
       })
-      s.toggle({needsVerify: false})
     }
 
   }

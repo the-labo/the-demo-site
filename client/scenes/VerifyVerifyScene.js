@@ -31,9 +31,7 @@ const VerifyVerifyScene = cn.compose(
               default: l('errors.VERIFY_FAILED_ERROR')
             })
           )
-        await s.syncNeedsVerify()
       })
-      s.toggle({done: true})
     }
   }
 )

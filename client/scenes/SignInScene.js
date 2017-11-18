@@ -1,18 +1,19 @@
 /**
- * SigninScene
- * @class SigninScene
+ * SignInScene
+ * @class SignInScene
  */
 'use strict'
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends SigninScene */
-const SigninScene = cn.compose(
+/** @lends SignInScene */
+const SignInScene = cn.compose(
   cn.withBusy,
-  cn.withEntry
+  cn.withEntry,
+  cn.withBack
 )(
-  class SigninSceneBase extends Scene {
+  class SignInSceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.sign.in
@@ -28,4 +29,4 @@ const SigninScene = cn.compose(
   }
 )
 
-module.exports = SigninScene
+module.exports = SignInScene

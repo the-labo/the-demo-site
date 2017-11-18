@@ -1,21 +1,25 @@
 /**
- * SignupScene
- * @class SignupScene
+ * SignUpScene
+ * @class SignUpScene
  */
 'use strict'
 
 const Scene = require('./Scene')
-const {withEntry, withBusy} = require('./concerns')
+const cn = require('./concerns')
 
-/** @lends SignupScene */
-const SignupScene = withBusy(withEntry(
-  class SignupSceneBase extends Scene {
+/** @lends SignUpScene */
+const SignUpScene = cn.compose(
+  cn.withBusy,
+  cn.withEntry,
+  cn.withBack
+)(
+  class SignUpSceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.sign.up
     }
 
-    async doSignup () {
+    async doSignUp () {
       const s = this
       const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
@@ -25,6 +29,6 @@ const SignupScene = withBusy(withEntry(
       })
     }
   }
-))
+)
 
-module.exports = SignupScene
+module.exports = SignUpScene

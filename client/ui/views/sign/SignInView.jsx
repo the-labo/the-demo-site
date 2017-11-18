@@ -6,7 +6,7 @@
 import React from 'react'
 import { TheView, TheButton, TheButtonGroup } from 'the-components'
 import { asView } from '../../wrappers'
-import { SigninForm } from '../../bounds'
+import { SignInForm } from '../../bounds'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignInView.pcss'
 
@@ -19,7 +19,7 @@ function SignInView ({
                       text={l('titles.SIGNIN_VIEW_TITLE')}
       />
       <TheView.Body narrow>
-        <SigninForm/>
+        <SignInForm/>
 
         <TheButtonGroup collapsed>
           <TheButton to={Urls.SIGNUP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
@@ -34,15 +34,15 @@ function SignInView ({
 export default asView(
   SignInView,
   (state) => ({
-    user: state['auth.user']
+    user: state['account.user']
   }),
-  ({auth: {signinScene}}) => ({
-    onSetup: () => signinScene.setEntry({}),
-    onTeardown: () => signinScene.dropEntry(),
+  ({signInScene}) => ({
+    onSetup: () => signInScene.setEntry({}),
+    onTeardown: () => signInScene.dropEntry(),
     onReceive: ({user}) => {
       if (user) {
         console.warn('[SigninView] Already signed')
-        signinScene.goBack()
+        signInScene.goBack()
       }
     }
   }),

@@ -5,8 +5,8 @@
   "in": {
     "back": "STR",
     "busy": "BOOL",
-    "errors": "OBJ",
-    "values": "OBJ"
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   },
   "out": {
     "busy": "BOOL"
@@ -14,7 +14,7 @@
   "up": {
     "back": "VAL",
     "busy": "BOOL",
-    "errors": "OBJ",
-    "values": "OBJ"
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   }
 }
