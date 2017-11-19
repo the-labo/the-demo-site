@@ -18,7 +18,7 @@ import styles from './QuitView.pcss'
 function QuitView ({
                      l,
                      busy,
-                     confirming,
+                     confirm,
                      done,
                      onCancel,
                      onConfirm,
@@ -32,7 +32,7 @@ function QuitView ({
                       text={l('titles.SIGNDEL_VIEW_TITLE')}
       />
       <TheView.Body>
-        <TheCondition if={Boolean(!done && !confirming)}>
+        <TheCondition if={Boolean(!done && !confirm)}>
           <div>
             <div>
               <TheLead title={l('leads.SIGNDEL_LEAD')}
@@ -46,9 +46,8 @@ function QuitView ({
               >{l('buttons.SHOW_SIGNDEL_CONFIRM')}</TheButton.Next>
             </TheButtonGroup>
           </div>
-          )
         </TheCondition>
-        <TheCondition if={Boolean(!done && confirming)}>
+        <TheCondition if={Boolean(!done && confirm)}>
           <div>
             <div>
               <TheLead title={l('leads.SIGNDEL_CONFIRM')}
@@ -81,16 +80,20 @@ export default asView(
   QuitView,
   (state) => ({
     busy: state['quit.busy'],
-    confirming: state['quit.confirm'],
+    confirm: state['quit.confirm'],
     done: state['quit.done'],
   }),
-  ({quitScene}) => ({
+  ({
+     quitScene,
+     accountScene
+   }) => ({
     onCancel: () => quitScene.goTo('/'),
     onConfirm: () => quitScene.set({confirm: true}),
     onConfirmBack: () => quitScene.set({confirm: false}),
     onExecute: async () => {
       await quitScene.doQuit()
       quitScene.set({confirm: false, done: true})
+      await accountScene.doSync()
     }
   }),
   {

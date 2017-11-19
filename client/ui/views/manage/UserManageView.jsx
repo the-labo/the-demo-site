@@ -64,7 +64,7 @@ export default asView(
      userCheckScene,
      userCreateScene
    }) => ({
-    onSetup: async () => {
+    onMount: async () => {
       userListScene.init()
       userSearchScene.init()
       userCheckScene.init()

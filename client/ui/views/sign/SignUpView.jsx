@@ -6,7 +6,7 @@
 import React from 'react'
 import { TheView, TheButtonGroup, TheButton } from 'the-components'
 import { asView } from '../../wrappers'
-import { SignUpForm } from '../../fragments'
+import { SignUpForm } from '../../bounds'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignUpView.pcss'
 
@@ -42,15 +42,14 @@ export default asView(
     user: state['account.user']
   }),
   ({signUpScene}, propsProxy) => ({
-    onSetup: () => {
+    onMount: () => {
       const {user} = propsProxy
       if (user) {
         signUpScene.goBack()
       } else {
-        signUpScene.setEntry({})
+        signUpScene.init()
       }
-    },
-    onTeardown: () => signUpScene.dropEntry()
+    }
   }),
   {
     title: ({l}) => l('titles.SIGNUP_VIEW_TITLE')

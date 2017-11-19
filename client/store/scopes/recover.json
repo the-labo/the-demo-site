@@ -5,7 +5,7 @@
     "entry": "OBJ",
     "entryErrors": "OBJ",
     "envelop": "VAL",
-    "failure": "BOOL",
+    "failure": "STR",
     "seal": "VAL"
   },
   "send": {
@@ -13,6 +13,6 @@
     "done": "BOOL",
     "entry": "OBJ",
     "entryErrors": "OBJ",
-    "failure": "BOOL"
+    "failure": "STR"
   }
 }

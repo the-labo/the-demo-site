@@ -26,7 +26,7 @@ const RecoverCtrl = cn.compose(
 
       const profile = await Profile.first({email})
       if (!profile) {
-        throw UnknownEmailError(`Unknown email: ${email}`)
+        throw new UnknownEmailError(`Unknown email: ${email}`)
       }
       const {user} = profile
       const expireAt = Number(dateAfter(Lifetimes.RECOVER_EMAIL_LIFETIME))

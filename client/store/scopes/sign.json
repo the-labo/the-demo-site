@@ -1,5 +1,6 @@
 {
   "ask": {
+    "back": "STR",
     "busy": "BOOL"
   },
   "in": {
@@ -9,7 +10,8 @@
     "entryErrors": "OBJ"
   },
   "out": {
-    "busy": "BOOL"
+    "busy": "BOOL",
+    "done": "BOOL"
   },
   "up": {
     "back": "VAL",

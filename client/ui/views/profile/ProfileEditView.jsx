@@ -48,12 +48,13 @@ export default asView(
   ProfileEditView,
   (state) => ({
     user: state['account.user'],
-    busy: state['account.profile.busy']
+    busy: state['profile.edit.busy'],
+    done: state['profile.edit.done']
   }),
   ({
      profileEditScene
    }) => ({
-    onSetup: () => profileEditScene.doSync(),
+    onMount: () => profileEditScene.doSync(),
     onAgain: () => profileEditScene.set({done: false})
   }),
   {

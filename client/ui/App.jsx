@@ -46,7 +46,7 @@ class App extends React.Component {
   componentDidMount () {
     const s = this
     const {props} = s
-    props.onSetup()
+    props.onMount()
   }
 
   get notices () {
@@ -78,7 +78,7 @@ const ConnectedApp = asBound(
      verifySendScene,
      toastScene
    }) => ({
-    onSetup: async () => {
+    onMount: async () => {
       await accountScene.doSync()
       await verifyScene.doSync({delay: 3 * 1000})
     },

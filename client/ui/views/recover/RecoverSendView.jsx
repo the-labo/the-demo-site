@@ -6,7 +6,7 @@
 import React from 'react'
 import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView } from '../../wrappers'
-import { RecoverSendForm } from '../../fragments'
+import { RecoverSendForm } from '../../bounds'
 import styles from './RecoverSendView.pcss'
 
 function RecoverSendView ({
@@ -42,11 +42,11 @@ function RecoverSendView ({
 export default asView(
   RecoverSendView,
   (state) => ({
-    failure: state['auto.recover.send.failure'],
-    done: state['auto.recover.send.done']
+    failure: state['recover.send.failure'],
+    done: state['recover.send.done']
   }),
-  ({recoverScene}) => ({
-    onSetup: () => recoverScene.init()
+  ({recoverSendScene}) => ({
+    onMount: () => recoverSendScene.init()
   }),
   {
     title: ({l}) => l('titles.RECOVER_SEND_TITLE')

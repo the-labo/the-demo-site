@@ -25,8 +25,8 @@ function asView (Component,
 
     componentDidMount () {
       const s = this
-      const {onSetup} = s.props
-      onSetup && onSetup()
+      const {onMount} = s.props
+      onMount && onMount()
     }
 
     componentWillReceiveProps (nextProps) {

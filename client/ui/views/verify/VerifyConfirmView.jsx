@@ -47,11 +47,13 @@ export default asView(
     done: state['verify.verify.done'],
     failure: state['verify.verify.failure'],
   }),
-  ({verifyScene}) => (({
-    onSetup: () => {
-      verifyScene.init()
+  ({verifyVerifyScene}) => (({
+    onMount: async () => {
+      verifyVerifyScene.init()
       const {seal, envelop} = urlUtil.queryFromSearch()
-      verifyScene.set({seal, envelop})
+      verifyVerifyScene.set({seal, envelop})
+      await verifyVerifyScene.doVerify()
+      verifyVerifyScene.set({done: true})
     },
   })),
   {

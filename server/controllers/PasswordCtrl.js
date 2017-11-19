@@ -16,7 +16,7 @@ const PasswordCtrl = cn.compose(
     async update (newPassword) {
       const s = this
       await s._assertAuthorized()
-      const Sign = s.resources
+      const {Sign} = s.resources
       const user = await s._fetchAuthorizedUser()
       await Sign.setUserPassword(user, newPassword)
       await s._reloadAuthorized()

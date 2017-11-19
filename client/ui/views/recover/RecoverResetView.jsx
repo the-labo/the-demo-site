@@ -32,7 +32,6 @@ function RecoverResetView ({
         </TheCondition>
         <TheCondition unless={done}>
           <RecoverResetForm/>
-          }
         </TheCondition>
       </TheView.Body>
     </TheView>
@@ -47,7 +46,7 @@ export default asView(
     done: state['recover.reset.done'],
   }),
   ({recoverResetScene}) => ({
-    onSetup: () => {
+    onMount: () => {
       recoverResetScene.init()
       const {seal, envelop} = urlUtil.queryFromSearch()
       recoverResetScene.set({seal, envelop})

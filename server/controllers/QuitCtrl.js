@@ -9,7 +9,8 @@ const cn = require('./concerns')
 
 /** @lends QuitCtrl */
 const QuitCtrl = cn.compose(
-  cn.withDebug
+  cn.withDebug,
+  cn.withAuth
 )(
   class QuitCtrlBase extends Ctrl {
     async execute () {
@@ -26,6 +27,8 @@ const QuitCtrl = cn.compose(
       await Sign.destroy(sign.id)
       await Profile.destroy(profile.id)
       await User.destroy(user.id)
+
+      await s._reloadAuthorized()
 
       return true
     }

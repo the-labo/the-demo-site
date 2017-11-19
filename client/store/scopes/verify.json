@@ -7,7 +7,7 @@
     "busy": "BOOL",
     "done": "BOOL",
     "envelop": "VAL",
-    "failure": "OBJ",
+    "failure": "STR",
     "seal": "VAL"
   }
 }

@@ -24,7 +24,7 @@ function withFailure (Class) {
       const {messages = {}} = options
       const message = messages[e.name] || messages.default
       if (message) {
-        s.setFailure(message)
+        s.setFailure(String(message))
       } else {
         return Promise.reject(e)
       }

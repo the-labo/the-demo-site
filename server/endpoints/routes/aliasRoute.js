@@ -15,11 +15,10 @@ const cache = theCache({
 /** @lends aliasRoute */
 async function aliasRoute (ctx) {
   const {
-    app: {
-      db: {Alias}
-    },
+    app: {db},
     params: {key}
   } = ctx
+  const {Alias} = db.resources
   const cached = cache.get(key)
   const found = cached || await Alias.first({key})
   if (!found) {
