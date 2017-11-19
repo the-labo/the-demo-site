@@ -18,7 +18,7 @@ const UserListItem = withMoment(
                                       checkValue,
                                       onUpdateCheck
                                     }) {
-    const {profile} = user
+    const {profile, sign} = user
     return (
       <Row selected={checkValue}>
         <CheckboxCell
@@ -29,7 +29,7 @@ const UserListItem = withMoment(
         <Cell>{user.name}</Cell>
         <Cell>{profile && profile.name}</Cell>
         <Cell>{profile && profile.email}</Cell>
-        <Cell>{formatDate(user.signinAt, 'lll')}</Cell>
+        <Cell>{sign && formatDate(sign.signInAt, 'lll')}</Cell>
       </Row>
     )
   })
@@ -38,11 +38,11 @@ const UserListItem = withMoment(
 export default asBound(
   UserListItem,
   (state, props) => ({
-    checkValue: state['user.check.checked'][props.user.id]
+    checkValue: state['user.check.values'][props.user.id]
   }),
   ({
-     userChecksScene
+     userCheckScene
    }, propsProxy) => ({
-    onUpdateCheck: (v) => userChecksScene.setValues(v)
+    onUpdateCheck: (v) => userCheckScene.setValues(v)
   })
 )

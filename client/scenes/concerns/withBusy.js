@@ -12,9 +12,12 @@ function withBusy (Class) {
     async busyFor (task) {
       const s = this
       const {busy} = s.scope
+      if (!busy) {
+        throw new Error(`busy not found in "${s.scope.name}"`)
+      }
       busy.true()
       try {
-        return task()
+        return await task()
       } finally {
         busy.false()
       }

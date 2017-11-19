@@ -5,8 +5,9 @@
 
 import React from 'react'
 import { TheView, TheDone, TheCondition } from 'the-components'
-import { asView } from '../../wrappers/index'
+import { asView } from '../../wrappers'
 import styles from './VerifyConfirmView.pcss'
+import { urlUtil } from '@self/utils'
 
 function VerifyConfirmView ({
                               l,
@@ -42,12 +43,16 @@ function VerifyConfirmView ({
 export default asView(
   VerifyConfirmView,
   (state) => ({
-    busy: state['auth.verify.busy'],
-    done: state['auth.verify.done'],
-    failure: state['verify.failure'],
+    busy: state['verify.verify.busy'],
+    done: state['verify.verify.done'],
+    failure: state['verify.verify.failure'],
   }),
   ({verifyScene}) => (({
-    onSetup: () => verifyScene.set({done: false}),
+    onSetup: () => {
+      verifyScene.init()
+      const {seal, envelop} = urlUtil.queryFromSearch()
+      verifyScene.set({seal, envelop})
+    },
   })),
   {
     title: ({l}) => l('titles.ACCOUNT_VERIFY_TITLE')

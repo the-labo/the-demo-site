@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import TheActionBar from 'the-components'
+import { TheActionBar } from 'the-components'
 import { withLoc } from 'the-loc'
 import { asPure, asBound } from '../../wrappers'
 

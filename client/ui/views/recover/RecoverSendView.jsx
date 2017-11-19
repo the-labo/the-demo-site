@@ -46,8 +46,7 @@ export default asView(
     done: state['auto.recover.send.done']
   }),
   ({recoverScene}) => ({
-    onSetup: () => recoverScene.setEntry({}),
-    onTeardown: () => recoverScene.dropEntryValues()
+    onSetup: () => recoverScene.init()
   }),
   {
     title: ({l}) => l('titles.RECOVER_SEND_TITLE')

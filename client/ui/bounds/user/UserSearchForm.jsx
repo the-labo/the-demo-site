@@ -4,36 +4,18 @@
 'use strict'
 
 import React from 'react'
-import { TheForm, TheInput, TheButton, TheButtonGroup } from 'the-components'
-import { asForm, asBound } from '../../wrappers'
+import { withLoc, asBound } from '../../wrappers'
 import { RoleCodes } from '@self/conf'
+import { SearchForm } from '../../fragments'
 
-const {Text, Password, Radio} = TheInput
-
-const UseSearchForm = asForm(
-  function UseSearchFormImpl ({
-                                l,
-                                onSubmit,
-                                getInputAttributesOf,
-                                getLabelAttributesOf,
-                                getFormAttributes,
-                                getSubmitAttributes
-                              }) {
+const UseSearchForm = withLoc(
+  function UseSearchFormImpl (props) {
+    const {l} = props
     return (
-      <TheForm className='user-search-form'
-               inline
-               {...getFormAttributes()}
-               required={['q']}
-               autoComplete='off'
-      >
-        <Text placeholder={l('placeholders.USER_SEARCH')}
-              autoFocus
-              onEnter={onSubmit}
-              {...getInputAttributesOf('q')}/>
-        <TheButton primary {...getSubmitAttributes()}>
-          {l('buttons.DO_SEARCH')}
-        </TheButton>
-      </TheForm>
+      <SearchForm {...props}
+                  placeholder={l('placeholders.USER_SEARCH')}
+                  name={'q'}
+      />
     )
   }
 )
@@ -51,11 +33,13 @@ export default asBound(
    }, propsProxy) => ({
     onUpdate: (v) => userSearchScene.setEntry(v),
     onSubmit: async () => {
-      const {q} = propsProxy.value || {}
+      const {q} = propsProxy.values || {}
       userListScene.set({
-        filter: {name: {$like: `%${String(q).trim()}%`}}
+        filter: q ? {name: {$like: `%${String(q).trim()}%`}} : {}
       })
-      await userListScene.syncList()
+      await userSearchScene.busyFor(async () => {
+        await userListScene.doSync()
+      })
     }
   })
 )

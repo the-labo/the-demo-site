@@ -79,6 +79,7 @@ export default asBound(
     onUpdate: (v) => profileEditScene.setEntry(v),
     onSubmit: async () => {
       await profileEditScene.doSave()
+      profileEditScene.set({done: true})
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))
     }
   })

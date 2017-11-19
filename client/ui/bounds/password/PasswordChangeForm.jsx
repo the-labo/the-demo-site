@@ -68,7 +68,7 @@ export default asBound(
     onUpdate: (v) => passwordChangeScene.setEntry(v),
     onSubmit: async () => {
       await passwordChangeScene.doSave()
-      passwordChangeScene.toggle({done: true})
+      passwordChangeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
     }
   })

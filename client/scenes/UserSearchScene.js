@@ -17,6 +17,7 @@ const UserSearchScene = cn.compose(
       const s = this
       return s.store.user.search
     }
+
   }
 )
 

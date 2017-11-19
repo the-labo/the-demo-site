@@ -16,11 +16,6 @@ const UserCheckScene = cn.compose(
       const s = this
       return s.store.user.check
     }
-
-    clear () {
-      const s = this
-      s.dropValues()
-    }
   }
 )
 

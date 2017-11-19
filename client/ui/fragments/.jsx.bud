@@ -6,7 +6,7 @@
 const path = require('path')
 
 module.exports = [
-
+  'forms/SearchForm'
 ].map((name) => ({
   force: false,
   mkdirp: true,

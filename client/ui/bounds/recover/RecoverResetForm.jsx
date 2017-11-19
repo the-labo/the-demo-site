@@ -60,7 +60,7 @@ export default asBound(
     onUpdate: (v) => recoverResetScene.setEntry(v),
     onSubmit: async () => {
       await recoverResetScene.doReset()
-      recoverResetScene.toggle({done: true})
+      recoverResetScene.set({done: true})
     }
   })
 )

@@ -9,8 +9,7 @@ const cn = require('./concerns')
 
 /** @lends AccountScene */
 const AccountScene = cn.compose(
-  cn.withBusy,
-  cn.withSet
+  cn.withBusy
 )(
   class AccountSceneBase extends Scene {
     get scope () {
@@ -23,10 +22,7 @@ const AccountScene = cn.compose(
       const accountCtrl = await s.use('accountCtrl')
       await s.busyFor(async () => {
         const user = await accountCtrl.getCurrentUser()
-        s.set({
-          user,
-          synced: true
-        })
+        s.set({user, synced: true})
       })
     }
   }

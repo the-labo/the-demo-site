@@ -90,7 +90,7 @@ export default asBound(
     onUpdate: (v) => userCreateScene.setEntry(v),
     onSubmit: async () => {
       await userCreateScene.doCreate()
-      userCreateScene.toggle({done: true})
+      userCreateScene.set({done: true})
       toastScene.showInfo(l('toasts.USER_CREATE_DID_SUCCESS'))
     }
   })

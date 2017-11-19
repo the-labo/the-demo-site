@@ -9,6 +9,7 @@ const cn = require('./concerns')
 
 /** @lends AppScene */
 const AppScene = cn.compose(
+  cn.withBusy
 )(
   class AppSceneBase extends Scene {
     get scope () {

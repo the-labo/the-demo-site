@@ -9,13 +9,40 @@ const {urlUtil} = require('@self/utils')
 
 class Scene extends TheScene {
 
+  get scope () {
+    const s = this
+    return null
+  }
+
+  init () {
+    const s = this
+    for (const name of Object.keys(s.scope || {})) {
+      const scope = s.scope[name]
+      scope.init()
+    }
+  }
+
+  get (name) {
+    const s = this
+    return s.scope.get(name)
+  }
+
+  set (name, value) {
+    const s = this
+    s.scope.set(name, value)
+  }
+
+  merge (name, value) {
+    const s = this
+    s.scope.set(
+      name,
+      Object.assign({}, s.get(name), value)
+    )
+  }
+
   async use (name) {
     const s = this
     return s.client.use(name)
-  }
-
-  queryFromSearch () {
-    return urlUtil.queryFromSearch()
   }
 
   catchError (e) {

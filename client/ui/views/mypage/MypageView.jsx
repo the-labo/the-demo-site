@@ -72,9 +72,9 @@ export default onlySigned(
   asView(
     MypageView,
     (state) => ({
-      busy: state['sign.signed.busy'],
-      synced: state['sign.signed.synced'],
-      user: state['sign.signed.user']
+      busy: state['account.busy'],
+      synced: state['account.synced'],
+      user: state['account.user']
     }),
     () => ({}),
     {

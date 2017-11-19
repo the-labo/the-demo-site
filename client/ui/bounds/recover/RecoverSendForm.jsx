@@ -52,6 +52,7 @@ export default asBound(
     onUpdate: (v) => recoverSendScene.setEntry(v),
     onSubmit: async () => {
       await recoverSendScene.doSend()
+      recoverSendScene.set({done: true})
       await toastScene.showInfo(l('toasts.RECOVER_EMAIL_SENT'))
     }
   })

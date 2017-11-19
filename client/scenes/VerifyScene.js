@@ -10,7 +10,7 @@ const asleep = require('asleep')
 
 /** @lends VerifyScene */
 const VerifyScene = cn.compose(
-  cn.withSet
+
 )(
   class VerifySceneBase extends Scene {
     get scope () {

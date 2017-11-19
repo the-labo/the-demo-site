@@ -11,20 +11,12 @@ const cn = require('./concerns')
 const RecoverSendScene = cn.compose(
   cn.withEntry,
   cn.withBusy,
-  cn.withSet,
   cn.withFailure
 )(
   class RecoverSendSceneImpl extends Scene {
     get scope () {
       const s = this
       return s.store.recover.send
-    }
-
-    prepare () {
-      const s = this
-      s.clearFailure()
-      s.dropEntry()
-      s.set({done: false})
     }
 
     async doSend () {
@@ -40,7 +32,6 @@ const RecoverSendScene = cn.compose(
             })
           )
         )
-        s.set({done: true})
       })
     }
   }

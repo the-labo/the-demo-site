@@ -10,7 +10,6 @@ const cn = require('./concerns')
 /** @lends VerifyVerifyScene */
 const VerifyVerifyScene = cn.compose(
   cn.withBusy,
-  cn.withSet,
   cn.withFailure
 )(
   class VerifyVerifySceneBase extends Scene {
@@ -21,10 +20,13 @@ const VerifyVerifyScene = cn.compose(
 
     async doVerify () {
       const s = this
+      const {l} = this
       const verifyCtrl = await s.use('verifyCtrl')
-      const {seal, envelop} = s.queryFromSearch()
       await s.busyFor(async () => {
-        await verifyCtrl.verify({seal, envelop})
+        await verifyCtrl.verify({
+          seal: s.get('seal'),
+          envelop: s.get('envelop')
+        })
           .catch((e) =>
             s.catchFailure(e, {
               'ExpiredError': l('errors.VERIFY_EXPIRED_ERROR'),

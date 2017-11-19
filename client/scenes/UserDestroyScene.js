@@ -9,31 +9,12 @@ const cn = require('./concerns')
 
 /** @lends UserDestroyScene */
 const UserDestroyScene = cn.compose(
-  cn.withBusy,
-  cn.withSet,
+  cn.withBusy
 )(
   class UserDestroySceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.user.destroy
-    }
-
-    prepare (targets) {
-      const s = this
-      s.set({
-        active: true,
-        done: false,
-        targets
-      })
-    }
-
-    clear () {
-      const s = this
-      s.set({
-        active: false,
-        done: false,
-        targets: []
-      })
     }
 
     async doDestroy () {

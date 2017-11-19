@@ -10,8 +10,7 @@ const cn = require('./concerns')
 /** @lends UserCreateScene */
 const UserCreateScene = cn.compose(
   cn.withBusy,
-  cn.withEntry,
-  cn.withSet
+  cn.withEntry
 )(
   class UserCreateSceneBase extends Scene {
     get scope () {

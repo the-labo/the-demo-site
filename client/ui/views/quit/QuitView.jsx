@@ -80,15 +80,18 @@ function QuitView ({
 export default asView(
   QuitView,
   (state) => ({
-    busy: state['sign.signdel.busy'],
-    confirming: state['sign.signdel.confirming'],
-    done: state['sign.signdel.done'],
+    busy: state['quit.busy'],
+    confirming: state['quit.confirm'],
+    done: state['quit.done'],
   }),
-  ({signdelScene}) => ({
-    onCancel: () => signdelScene.goTo('/'),
-    onConfirm: () => signdelScene.toggleConfirming(true),
-    onConfirmBack: () => signdelScene.toggleConfirming(false),
-    onExecute: () => signdelScene.doSigndel()
+  ({quitScene}) => ({
+    onCancel: () => quitScene.goTo('/'),
+    onConfirm: () => quitScene.set({confirm: true}),
+    onConfirmBack: () => quitScene.set({confirm: false}),
+    onExecute: async () => {
+      await quitScene.doQuit()
+      quitScene.set({confirm: false, done: true})
+    }
   }),
   {
     title: ({l}) => l('titles.SIGNDEL_VIEW_TITLE'),

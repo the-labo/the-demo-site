@@ -1,6 +1,6 @@
 {
   "check": {
-    "values": "OBJ"
+    "entry": "OBJ"
   },
   "create": {
     "busy": "BOOL"
@@ -9,25 +9,25 @@
     "active": "BOOL",
     "busy": "BOOL",
     "done": "BOOL",
-    "targets": "ARR"
+    "targets": "ARRY"
   },
   "list": {
     "busy": "BOOL",
     "counts": "OBJ",
-    "entities": "ARR",
+    "entities": "ARRY",
     "filter": "OBJ",
-    "page": "OBJ",
+    "pageNumber": "NUM",
     "sort": "STR"
   },
   "password": {
     "active": "BOOL",
     "busy": "BOOL",
     "done": "BOOL",
-    "targets": "ARR"
+    "targets": "ARRY"
   },
   "search": {
     "busy": "BOOL",
-    "errors": "OBJ",
-    "values": "OBJ"
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   }
 }

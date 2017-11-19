@@ -5,6 +5,9 @@
   },
   "verify": {
     "busy": "BOOL",
-    "done": "BOOL"
+    "done": "BOOL",
+    "envelop": "VAL",
+    "failure": "OBJ",
+    "seal": "VAL"
   }
 }

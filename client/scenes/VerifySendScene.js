@@ -10,7 +10,6 @@ const asleep = require('asleep')
 
 /** @lends VerifySendScene */
 const VerifySendScene = cn.compose(
-  cn.withSet,
   cn.withBusy
 )(
   class VerifySendSceneBase extends Scene {

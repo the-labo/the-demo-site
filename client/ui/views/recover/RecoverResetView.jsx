@@ -6,8 +6,8 @@
 import React from 'react'
 import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView } from '../../wrappers'
-import { RecoverScene } from '../../../scenes'
-import { RecoverResetForm } from '../../fragments'
+import { RecoverResetForm } from '../../bounds'
+import { urlUtil } from '@self/utils'
 
 import styles from './RecoverResetView.pcss'
 
@@ -31,7 +31,8 @@ function RecoverResetView ({
                    linkText={l('buttons.SHOW_TOP_AGAIN')}/>
         </TheCondition>
         <TheCondition unless={done}>
-          <RecoverResetForm/>}
+          <RecoverResetForm/>
+          }
         </TheCondition>
       </TheView.Body>
     </TheView>
@@ -45,7 +46,11 @@ export default asView(
     busy: state['recover.reset.busy'],
     done: state['recover.reset.done'],
   }),
-  ({recoverResetView}) => ({
-    onSetup: recoverResetView.toggle({done: false})
+  ({recoverResetScene}) => ({
+    onSetup: () => {
+      recoverResetScene.init()
+      const {seal, envelop} = urlUtil.queryFromSearch()
+      recoverResetScene.set({seal, envelop})
+    }
   })
 )

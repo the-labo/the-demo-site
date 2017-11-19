@@ -50,7 +50,7 @@ export default asView(
         signUpScene.setEntry({})
       }
     },
-    onTeardown: () => signUpScene.dropEntryValues()
+    onTeardown: () => signUpScene.dropEntry()
   }),
   {
     title: ({l}) => l('titles.SIGNUP_VIEW_TITLE')

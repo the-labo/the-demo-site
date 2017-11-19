@@ -34,9 +34,12 @@ export default asBound(
   (state) => ({
     counts: state['user.list.counts']
   }),
-  ({}, propsProxy) => ({
+  ({
+     userListScene
+   }, propsProxy) => ({
     onPage: async ({pageNumber}) => {
-
+      await userListScene.set({pageNumber})
+      await userListScene.doSync()
     }
   })
 )

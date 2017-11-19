@@ -10,20 +10,12 @@ const cn = require('./concerns')
 /** @lends PasswordChangeScene */
 const PasswordChangeScene = cn.compose(
   cn.withBusy,
-  cn.withEntry,
-  cn.withSet,
-  cn.withSet
+  cn.withEntry
 )(
   class PasswordChangeSceneBase extends Scene {
     get scope () {
       const s = this
       return s.store.password.change
-    }
-
-    prepare () {
-      const s = this
-      s.dropEntry()
-      s.set({done: false})
     }
 
     async doSave () {
@@ -32,7 +24,6 @@ const PasswordChangeScene = cn.compose(
       await s.busyFor(async () => {
         await s.processEntry(({password}) =>
           passwordCtrl.update(password))
-        s.set({done: true})
       })
 
     }

@@ -51,8 +51,8 @@ export default asView(
     done: state['password.change.done']
   }),
   ({passwordChangeScene}) => ({
-    onSetup: () => passwordChangeScene.toggle({done: false}),
-    onAgain: () => passwordChangeScene.toggle({done: false})
+    onSetup: () => passwordChangeScene.init(),
+    onAgain: () => passwordChangeScene.set({done: false})
   }),
   {
     title: ({l}) => l('titles.PASSWORD_CHANGE_TITLE'),

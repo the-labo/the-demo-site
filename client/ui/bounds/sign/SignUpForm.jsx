@@ -86,7 +86,7 @@ export default asBound(
    }) => ({
     onUpdate: (v) => signUpScene.setEntry(v),
     onSubmit: async () => {
-      await signUpScene.doSignup()
+      await signUpScene.doSignUp()
       await authScene.doSync()
       toastScene.showInfo(l('toasts.SIGNUP_DID_SUCCESS'))
       signUpScene.goBack()

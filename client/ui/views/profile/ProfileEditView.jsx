@@ -54,7 +54,7 @@ export default asView(
      profileEditSceneBase
    }) => ({
     onSetup: () => profileEditSceneBase.doSync(),
-    onAgain: () => profileEditSceneBase.toggle({done: false})
+    onAgain: () => profileEditSceneBase.set({done: false})
   }),
   {
     title: ({l}) => l('titles.ACCOUNT_PASSWORD_TITLE'),

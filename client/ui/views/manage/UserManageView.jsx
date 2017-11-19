@@ -44,7 +44,7 @@ function UserManageView ({
             <UserPager showCounts/>
             <UserList/>
             <UserPager/>
-            <UserActionBar/>/>
+            <UserActionBar/>
             <UserCreateDialog/>
           </div>
         </TheCondition>
@@ -58,7 +58,20 @@ export default asView(
   (state) => ({
     ready: !!state['user.list.entities']
   }),
-  ({userCreateScene}) => ({
+  ({
+     userListScene,
+     userSearchScene,
+     userCheckScene,
+     userCreateScene
+   }) => ({
+    onSetup: async () => {
+      userListScene.init()
+      userSearchScene.init()
+      userCheckScene.init()
+      userCreateScene.init()
+      await userListScene.doSync()
+    },
+    onTearDown: () => {},
     onCreate: () => userCreateScene.set({active: true})
   }),
   {}
