@@ -38,7 +38,7 @@ const UserListItem = withMoment(
 export default asBound(
   UserListItem,
   (state, props) => ({
-    checkValue: state['user.check.values'][props.user.id]
+    checkValue: (state['user.check.values'] || {})[props.user.id]
   }),
   ({
      userCheckScene

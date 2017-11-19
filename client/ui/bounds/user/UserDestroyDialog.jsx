@@ -56,6 +56,7 @@ export default asBound(
     spinning: state['user.destroy.busy'],
     active: state['user.destroy.active'],
     done: state['user.destroy.done'],
+    users: state['user.destroy.targets'],
   }),
   ({
      userDestroyScene,
@@ -64,8 +65,11 @@ export default asBound(
     onClose: () => userDestroyScene.clear(),
     onSubmit: async () => {
       await userDestroyScene.doDestroy()
-      userDestroyScene.set({done: true})
-      userCheckScene.clear()
+      userDestroyScene.set({
+        done: true,
+        active: false
+      })
+      userCheckScene.init()
 
     }
   })

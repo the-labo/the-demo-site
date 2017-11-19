@@ -41,11 +41,17 @@ export default asBound(
      userPasswordScene,
      userDestroyScene
    }, propsProxy) => ({
-    onPasswordReset: async () => {
-      userPasswordScene.prepare(propsProxy.targets)
+    onPasswordReset: () => {
+      userPasswordScene.set({
+        active: true,
+        targets: propsProxy.targets
+      })
     },
-    onDestroy: async () => {
-      userDestroyScene.prepare(propsProxy.targets)
+    onDestroy: () => {
+      userDestroyScene.set({
+        active: true,
+        targets: propsProxy.targets
+      })
     }
   })
 )

@@ -10,7 +10,6 @@ const cn = require('./concerns')
 /** @lends UserPasswordScene */
 const UserPasswordScene = cn.compose(
   cn.withBusy,
-
 )(
   class UserPasswordSceneBase extends Scene {
     get scope () {
@@ -18,13 +17,13 @@ const UserPasswordScene = cn.compose(
       return s.store.user.password
     }
 
-
     async doReset () {
       const s = this
       const userCtrl = await s.use('userCtrl')
-      const userIds = s.scope.targets.state.map(({id}) => String(id))
+      const userIds = s.get('targets').map(({id}) => String(id))
       await s.busyFor(async () => {
-        await userCtrl.resetPassword(userIds)
+        const newPasswords = await userCtrl.resetPassword(...userIds)
+        s.set({results: newPasswords})
       })
     }
   }

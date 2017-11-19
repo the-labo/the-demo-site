@@ -1,6 +1,6 @@
 {
   "check": {
-    "entry": "OBJ"
+    "values": "OBJ"
   },
   "create": {
     "busy": "BOOL"
@@ -17,12 +17,14 @@
     "entities": "ARR",
     "filter": "OBJ",
     "pageNumber": "NUM",
+    "ready": "BOOL",
     "sort": "STR"
   },
   "password": {
     "active": "BOOL",
     "busy": "BOOL",
     "done": "BOOL",
+    "results": "OBJ",
     "targets": "ARR"
   },
   "search": {

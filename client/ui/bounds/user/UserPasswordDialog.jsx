@@ -5,7 +5,12 @@
 
 import React from 'react'
 import { compose, asBound, withLoc } from '../../wrappers'
-import { TheOkDialog, TheYesNoDialog, TheCondition } from 'the-components'
+import {
+  TheOkDialog,
+  TheYesNoDialog,
+  TheCondition,
+  TheInfo
+} from 'the-components'
 import { labelHelper } from '../../helpers'
 
 const {displayNameForUser} = labelHelper
@@ -28,44 +33,42 @@ const UserPasswordDialog = compose(
     }
     if (done) {
       return (
-        <TheYesNoDialog present
-                        className='admin-password-reset-confirm-dialog'
-                        title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
-                        yesText={l('buttons.DO_EXECUTE')}
-                        noText={l('buttons.DO_CANCEL')}
-                        lead={l('leads.RESET_PASSWORDS_CONFIRM')}
-                        spinning={spinning}
-                        onNo={onClose}
-                        onClose={onClose}
-                        onYes={onYes}
+        <TheOkDialog
+          present
+          title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
+          lead={l('leads.RESET_PASSWORDS_RESULT')}
+          hideCloseButton
+          onClose={onClose}
         >
-          <ul>
-            {
-              users.map((user) => (
-                <li key={user.id}>{displayNameForUser(user)}</li>
-              ))
-            }
-          </ul>
-        </TheYesNoDialog>
+          <TheInfo data={
+            users
+              .reduce((data, user) => Object.assign(data, {
+                [displayNameForUser(user)]: passwords[user.id]
+              }), {})
+          }
+          />
+        </TheOkDialog>
       )
     }
     return (
-      <TheOkDialog
-        present
-        className='admin-password-reset-result-dialog'
-        title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
-        lead={l('leads.RESET_PASSWORDS_RESULT')}
-        hideCloseButton
-        onClose={onClose}
+      <TheYesNoDialog present
+                      title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
+                      yesText={l('buttons.DO_EXECUTE')}
+                      noText={l('buttons.DO_CANCEL')}
+                      lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+                      spinning={spinning}
+                      onNo={onClose}
+                      onClose={onClose}
+                      onYes={onYes}
       >
-        <TheInfo data={
-          users
-            .reduce((data, user) => Object.assign(data, {
-              [displayNameForUser(user)]: passwords[user.id]
-            }), {})
-        }
-        />
-      </TheOkDialog>
+        <ul>
+          {
+            users.map((user) => (
+              <li key={user.id}>{displayNameForUser(user)}</li>
+            ))
+          }
+        </ul>
+      </TheYesNoDialog>
     )
   }
 )
@@ -79,11 +82,18 @@ export default asBound(
     passwords: state['user.password.results'],
     spinning: state['user.password.busy'],
   }),
-  ({userPasswordScene}, propsProxy) => ({
-    onClose: () => userPasswordScene.set({active: false}),
+  ({
+     userPasswordScene,
+     userCheckScene
+   }, propsProxy) => ({
+    onClose: () => userPasswordScene.set({
+      active: false,
+      done: false
+    }),
     onYes: async () => {
       await userPasswordScene.doReset()
       userPasswordScene.set({done: true})
+      userCheckScene.init()
     }
   })
 )

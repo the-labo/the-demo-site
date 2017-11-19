@@ -15,6 +15,8 @@ import {
   UserActionBar,
   UserPager,
   UserCreateDialog,
+  UserDestroyDialog,
+  UserPasswordDialog,
   UserList
 } from '../../bounds'
 import { Icons, Urls } from '@self/conf'
@@ -46,6 +48,8 @@ function UserManageView ({
             <UserPager/>
             <UserActionBar/>
             <UserCreateDialog/>
+            <UserDestroyDialog/>
+            <UserPasswordDialog/>
           </div>
         </TheCondition>
       </TheView.Body>
@@ -56,7 +60,8 @@ function UserManageView ({
 export default asView(
   UserManageView,
   (state) => ({
-    ready: !!state['user.list.entities']
+    busy: !state['user.list.ready'] && state['user.list.busy'],
+    ready: state['user.list.ready']
   }),
   ({
      userListScene,
@@ -69,7 +74,9 @@ export default asView(
       userSearchScene.init()
       userCheckScene.init()
       userCreateScene.init()
+      userListScene.set({pageNumber: 1})
       await userListScene.doSync()
+      userListScene.set({ready: true})
     },
     onTearDown: () => {},
     onCreate: () => userCreateScene.set({active: true})
