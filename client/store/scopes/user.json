@@ -9,12 +9,12 @@
     "active": "BOOL",
     "busy": "BOOL",
     "done": "BOOL",
-    "targets": "ARRY"
+    "targets": "ARR"
   },
   "list": {
     "busy": "BOOL",
     "counts": "OBJ",
-    "entities": "ARRY",
+    "entities": "ARR",
     "filter": "OBJ",
     "pageNumber": "NUM",
     "sort": "STR"
@@ -23,7 +23,7 @@
     "active": "BOOL",
     "busy": "BOOL",
     "done": "BOOL",
-    "targets": "ARRY"
+    "targets": "ARR"
   },
   "search": {
     "busy": "BOOL",

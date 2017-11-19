@@ -15,7 +15,7 @@ const QuitScene = cn.compose(
   class QuitSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.sign.del
+      return s.store.quit
     }
 
     async doQuit () {

@@ -21,9 +21,9 @@ const ProfileEditScene = cn.compose(
 
     async doSync () {
       const s = this
-      const signCtrl = await s.use('signCtrl')
+      const accountCtrl = await s.use('accountCtrl')
       await s.busyFor(async () => {
-        const {profile} = await signCtrl.getCurrentUser()
+        const {profile} = await accountCtrl.getCurrentUser()
         const values = clone(profile || {}, {
           without: ['user', 'id', 'sign', /^\$/]
         })

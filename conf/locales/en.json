@@ -138,7 +138,6 @@
   },
   "titles": {
     "ACCOUNT_MYPAGE_TITLE": "Account",
-    "ACCOUNT_PROFILE_TITLE": "Account Profile",
     "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
     "ADMIN_USERS_TITLE": "User Management",
@@ -146,6 +145,7 @@
     "PASSWORD_CHANGE_TITLE": "Password Change",
     "PASSWORD_RESET_TITLE": "Password Reset",
     "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
+    "PROFILE_EDIT_TITLE": "Account Profile",
     "RECOVER_SEND_TITLE": "Password Reset",
     "SIGNASK_VIEW_TITLE": "Sign In Required",
     "SIGNDEL_VIEW_TITLE": "Delete Your Account",

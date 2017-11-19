@@ -16,28 +16,17 @@ class Scene extends TheScene {
 
   init () {
     const s = this
-    for (const name of Object.keys(s.scope || {})) {
-      const scope = s.scope[name]
-      scope.init()
-    }
+    s.scope.init()
   }
 
-  get (name) {
+  get (...args) {
     const s = this
-    return s.scope.get(name)
+    return s.scope.get(...args)
   }
 
-  set (name, value) {
+  set (...args) {
     const s = this
-    s.scope.set(name, value)
-  }
-
-  merge (name, value) {
-    const s = this
-    s.scope.set(
-      name,
-      Object.assign({}, s.get(name), value)
-    )
+    s.scope.set(...args)
   }
 
   async use (name) {

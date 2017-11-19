@@ -35,15 +35,15 @@ function onlySigned (Component, options = {}) {
         makeSureSigned () {
           const s = this
           const {store, history} = s.props
-          const {signed, back} = store.sign
-          const synced = signed.synced.state
+          const synced = store.account.get('synced')
           if (synced) {
-            const user = signed.user.state
+            const user = store.account.get('user')
             let hasSigned = Boolean(user)
             if (!hasSigned) {
               const {pathname} = get('location')
-              back.set(pathname)
-              debug(`Ask sign in for: ${back.state}`)
+              store.sign.up.back.set(pathname)
+              store.sign.in.back.set(pathname)
+              debug(`Ask sign in for: ${pathname}`)
               history.push(Urls.SIGNASK_URL)
             }
           }

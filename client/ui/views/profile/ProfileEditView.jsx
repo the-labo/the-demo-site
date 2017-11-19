@@ -22,7 +22,7 @@ function ProfileEditView ({
              spinning={busy}
     >
       <TheView.Header icon={Icons.PROFILE_ICON}
-                      text={l('titles.ACCOUNT_PROFILE_TITLE')}
+                      text={l('titles.PROFILE_EDIT_TITLE')}
       />
       <TheView.Body>
         <TheCondition if={done}>
@@ -51,13 +51,13 @@ export default asView(
     busy: state['account.profile.busy']
   }),
   ({
-     profileEditSceneBase
+     profileEditScene
    }) => ({
-    onSetup: () => profileEditSceneBase.doSync(),
-    onAgain: () => profileEditSceneBase.set({done: false})
+    onSetup: () => profileEditScene.doSync(),
+    onAgain: () => profileEditScene.set({done: false})
   }),
   {
-    title: ({l}) => l('titles.ACCOUNT_PASSWORD_TITLE'),
+    title: ({l}) => l('titles.PROFILE_EDIT_TITLE'),
     onlySigned: true
   }
 )
