@@ -140,7 +140,6 @@
     "ACCOUNT_MYPAGE_TITLE": "Account",
     "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
-    "USER_MANAGE_TITLE": "User Management",
     "ERROR_NOTFOUND_VIEW_TITLE": "Page not found",
     "PASSWORD_CHANGE_TITLE": "Password Change",
     "PASSWORD_RESET_TITLE": "Password Reset",
@@ -156,6 +155,7 @@
     "USER_CREATE_INPUT_TITLE": "Creating User",
     "USER_CREATE_RESULT_TITLE": "Created User",
     "USER_CREATE_TITLE": "Create User",
+    "USER_MANAGE_TITLE": "User Management",
     "USERS_DESTROY_CONFIRM_TITLE": "Destroy Users",
     "USERS_PASSWORD_RESET_CONFIRM_TITLE": "Password Reset",
     "USERS_PASSWORD_RESET_RESULT_TITLE": "New Passwords"
