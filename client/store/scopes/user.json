@@ -3,7 +3,12 @@
     "values": "OBJ"
   },
   "create": {
-    "busy": "BOOL"
+    "active": "BOOL",
+    "busy": "BOOL",
+    "created": "VAL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   },
   "destroy": {
     "active": "BOOL",

@@ -4011,6 +4011,12 @@ extend-shallow@^2.0.0, extend-shallow@^2.0.1:
   dependencies:
     is-extendable "^0.1.0"
 
+extend-shallow@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/extend-shallow/-/extend-shallow-3.0.0.tgz#34d45c2bb1f4ea804fe9c35d40d798a7b869c087"
+  dependencies:
+    is-extendable "^1.0.1"
+
 extend@^3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
@@ -5219,7 +5225,7 @@ is-extendable@^0.1.0, is-extendable@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
 
-is-extendable@^1.0.0:
+is-extendable@^1.0.0, is-extendable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-extendable/-/is-extendable-1.0.1.tgz#a7470f9e426733d81bd81e1155264e3a3507cab4"
   dependencies:
@@ -9449,10 +9455,10 @@ split-string@^1.0.1:
     extend-shallow "^2.0.1"
 
 split-string@^3.0.1, split-string@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/split-string/-/split-string-3.0.2.tgz#6129bc92731716e5aa1fb73c333078f0b7c114c8"
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
   dependencies:
-    extend-shallow "^2.0.1"
+    extend-shallow "^3.0.0"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -10498,8 +10504,8 @@ the-scene-base@^1.0.1, the-scene-base@^1.0.4:
     bwindow "^1.1.0"
 
 the-scope@^1.7.0, the-scope@^1.8.2:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.3.tgz#272cb17ba236843ef565d318388ad6f5625a1a3b"
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.5.tgz#fe640af093da85cd3a50ecb01e09bd54c595dcbd"
   dependencies:
     the-check "^1.2.0"
 

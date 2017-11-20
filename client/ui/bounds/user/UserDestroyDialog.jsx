@@ -59,10 +59,15 @@ export default asBound(
     users: state['user.destroy.targets'],
   }),
   ({
+     l,
      userDestroyScene,
-     userCheckScene
+     userCheckScene,
+     toastScene
    }, propsProxy) => ({
-    onClose: () => userDestroyScene.clear(),
+    onClose: () => userDestroyScene.set({
+      done: false,
+      active: false
+    }),
     onSubmit: async () => {
       await userDestroyScene.doDestroy()
       userDestroyScene.set({
@@ -70,7 +75,7 @@ export default asBound(
         active: false
       })
       userCheckScene.init()
-
+      toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
     }
   })
 )

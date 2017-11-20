@@ -20,7 +20,7 @@ const UserDestroyScene = cn.compose(
     async doDestroy () {
       const s = this
       const userCtrl = await s.use('userCtrl')
-      const userIds = s.scope.targets.map(({id}) => id)
+      const userIds = s.get('targets').map(({id}) => id)
       await s.busyFor(async () => {
         await userCtrl.destroy(...userIds)
       })

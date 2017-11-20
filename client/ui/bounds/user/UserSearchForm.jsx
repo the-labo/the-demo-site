@@ -34,9 +34,11 @@ export default asBound(
     onUpdate: (v) => userSearchScene.setEntry(v),
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
-      userListScene.set({
-        filter: q ? {name: {$like: `%${String(q).trim()}%`}} : {}
-      })
+      if (q) {
+        userListScene.set({filter: {name: {$like: `%${String(q).trim()}%`}}})
+      } else {
+        userListScene.init('filter')
+      }
       await userSearchScene.busyFor(async () => {
         await userListScene.doSync()
       })
