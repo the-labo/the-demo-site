@@ -9,6 +9,7 @@ const Ctrl = require('./Ctrl')
 
 /** @lends UserCtrl */
 const UserCtrl = cn.compose(
+  cn.withDebug,
   cn.withAdmin
 )(
   class UserCtrlBase extends Ctrl {
@@ -57,9 +58,7 @@ const UserCtrl = cn.compose(
     async destroy (...userIds) {
       const s = this
       await s._assertAsAdmin()
-
-      const {app} = s
-      const {User} = app.db.resources
+      const {User} = s.resources
       return User.destroyBulk(userIds)
     }
   }

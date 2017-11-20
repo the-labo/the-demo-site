@@ -5,7 +5,9 @@
 'use strict'
 
 import SearchForm from './forms/SearchForm'
+import Pager from './pager/Pager'
 
 export {
-  SearchForm
+  SearchForm,
+  Pager
 }

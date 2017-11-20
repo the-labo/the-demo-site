@@ -31,7 +31,7 @@ module.exports = Object.freeze(
     RECOVER_RESET_URL: '/recover/reset',
 
     ADMIN_URL: '/admin',
-    ADMIN_USERS_URL: '/admin/users',
+    USER_MANAGE_URL: '/admin/users',
 
     ICON_URL: '/icons/favicon.png',
 

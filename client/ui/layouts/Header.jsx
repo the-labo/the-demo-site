@@ -15,7 +15,7 @@ import { Urls, Icons } from '@self/conf'
 import { labelHelper } from '../helpers'
 import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
 
-const {displayNameForUser} = labelHelper
+const {labelForUser} = labelHelper
 
 const Header = compose(
   withRole,
@@ -43,7 +43,7 @@ const Header = compose(
         <TheHeader.RightArea>
           <TheCondition if={Boolean(user)}>
             <TheDropdownMenu righted
-                             label={displayNameForUser(user)}
+                             label={labelForUser(user)}
 
             >
               <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}

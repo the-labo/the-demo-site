@@ -6,6 +6,7 @@
 import React from 'react'
 import { ThePager, TheCondition } from 'the-components'
 import { compose, asBound, withLoc } from '../../wrappers'
+import { Pager } from '../../fragments'
 
 const UserPager = compose(
   withLoc
@@ -17,14 +18,7 @@ const UserPager = compose(
                             onPage
                           }) {
     return (
-      <ThePager.Row>
-        <ThePager.ByCounts counts={counts}
-                           onUpdate={onPage}
-        />
-        <TheCondition if={showCounts}>
-          <ThePager.Counts {...{l, counts}}/>
-        </TheCondition>
-      </ThePager.Row>
+      <Pager {...{l, showCounts, counts, onPage}}/>
     )
   }
 )

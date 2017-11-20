@@ -17,7 +17,7 @@ class RoleResource extends Resource {
       code: {
         description: 'Role code',
         type: STRING,
-        oneOf: Object.keys(RoleCodes).map((key) => RoleCodes[key]),
+        oneOf: Object.values(RoleCodes),
         required: true
       }
     }

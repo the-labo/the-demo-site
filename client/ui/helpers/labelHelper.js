@@ -1,7 +1,7 @@
 'use strict'
 
 
-exports.displayNameForUser = function displayNameForUser (user) {
+exports.labelForUser = function labelForUser (user) {
   if (!user) {
     return null
   }

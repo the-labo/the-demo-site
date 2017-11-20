@@ -140,7 +140,7 @@
     "ACCOUNT_MYPAGE_TITLE": "Account",
     "ACCOUNT_VERIFY_TITLE": "Verify Email",
     "ADMIN_TOP_TITLE": "Admin Menu",
-    "ADMIN_USERS_TITLE": "User Management",
+    "USER_MANAGE_TITLE": "User Management",
     "ERROR_NOTFOUND_VIEW_TITLE": "Page not found",
     "PASSWORD_CHANGE_TITLE": "Password Change",
     "PASSWORD_RESET_TITLE": "Password Reset",

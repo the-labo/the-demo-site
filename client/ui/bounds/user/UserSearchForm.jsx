@@ -1,5 +1,5 @@
 /**
- * UseSearchForm component
+ * UserSearchForm component
  */
 'use strict'
 
@@ -8,8 +8,8 @@ import { withLoc, asBound } from '../../wrappers'
 import { RoleCodes } from '@self/conf'
 import { SearchForm } from '../../fragments'
 
-const UseSearchForm = withLoc(
-  function UseSearchFormImpl (props) {
+const UserSearchForm = withLoc(
+  function UserSearchFormImpl (props) {
     const {l} = props
     return (
       <SearchForm {...props}
@@ -21,7 +21,7 @@ const UseSearchForm = withLoc(
 )
 
 export default asBound(
-  UseSearchForm,
+  UserSearchForm,
   (state) => ({
     spinning: state['user.search.busy'],
     values: state['user.search.entry'],

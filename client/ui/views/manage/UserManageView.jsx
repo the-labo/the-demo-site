@@ -33,7 +33,7 @@ function UserManageView ({
     >
       <TheView.Header leftTo={Urls.ADMIN_URL}
                       icon={Icons.USERS_ICON}
-                      text={l('titles.ADMIN_USERS_TITLE')}
+                      text={l('titles.USER_MANAGE_TITLE')}
                       rightText={l('buttons.SHOW_USER_CREATE')}
                       onRightClick={onCreate}
       />

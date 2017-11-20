@@ -13,7 +13,7 @@ import {
 } from 'the-components'
 import { labelHelper } from '../../helpers'
 
-const {displayNameForUser} = labelHelper
+const {labelForUser} = labelHelper
 
 const UserPasswordDialog = compose(
   withLoc
@@ -43,7 +43,7 @@ const UserPasswordDialog = compose(
           <TheInfo data={
             users
               .reduce((data, user) => Object.assign(data, {
-                [displayNameForUser(user)]: passwords[user.id]
+                [labelForUser(user)]: passwords[user.id]
               }), {})
           }
           />
@@ -64,7 +64,7 @@ const UserPasswordDialog = compose(
         <ul>
           {
             users.map((user) => (
-              <li key={user.id}>{displayNameForUser(user)}</li>
+              <li key={user.id}>{labelForUser(user)}</li>
             ))
           }
         </ul>
