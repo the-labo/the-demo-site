@@ -85,13 +85,15 @@ export default asBound(
   ({
      l,
      toastScene,
-     userCreateScene
+     userCreateScene,
+     userListScene
    }) => ({
     onUpdate: (v) => userCreateScene.setEntry(v),
     onSubmit: async () => {
       await userCreateScene.doCreate()
       userCreateScene.set({done: true})
       toastScene.showInfo(l('toasts.USER_CREATE_DID_SUCCESS'))
+      await userListScene.doSync()
     }
   })
 )

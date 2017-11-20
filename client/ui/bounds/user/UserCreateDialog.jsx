@@ -55,9 +55,14 @@ export default asBound(
   UserCreateDialog,
   (state) => ({
     spinning: state['user.create.busy'],
+    active: state['user.create.active'],
+    done: state['user.create.done'],
     created: state['user.create.created']
   }),
   ({userCreateScene}, propsProxy) => ({
-    onClose: () => userCreateScene.set({active: false})
+    onClose: () => userCreateScene.set({
+      active: false,
+      done: false
+    })
   })
 )
