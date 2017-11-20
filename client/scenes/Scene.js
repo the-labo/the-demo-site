@@ -14,9 +14,9 @@ class Scene extends TheScene {
     return null
   }
 
-  init () {
+  init (...args) {
     const s = this
-    s.scope.init()
+    s.scope.init(...args)
   }
 
   get (...args) {

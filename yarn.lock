@@ -10504,8 +10504,8 @@ the-scene-base@^1.0.1, the-scene-base@^1.0.4:
     bwindow "^1.1.0"
 
 the-scope@^1.7.0, the-scope@^1.8.2:
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.5.tgz#fe640af093da85cd3a50ecb01e09bd54c595dcbd"
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.6.tgz#18cc4e0ec713b87bcef59d7c54cfaa02e0040c07"
   dependencies:
     the-check "^1.2.0"
 

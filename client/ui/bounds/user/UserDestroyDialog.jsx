@@ -62,6 +62,7 @@ export default asBound(
      l,
      userDestroyScene,
      userCheckScene,
+     userListScene,
      toastScene
    }, propsProxy) => ({
     onClose: () => userDestroyScene.set({
@@ -76,6 +77,7 @@ export default asBound(
       })
       userCheckScene.init()
       toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
+      await userListScene.doSync()
     }
   })
 )

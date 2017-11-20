@@ -44,7 +44,7 @@ function UserManageView ({
         <TheCondition if={ready}>
           <div>
             <UserPager showCounts/>
-            <UserList/>
+            <UserList className={styles.list}/>
             <UserPager/>
             <UserActionBar/>
             <UserCreateDialog/>

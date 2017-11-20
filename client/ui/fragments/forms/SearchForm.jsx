@@ -7,6 +7,7 @@ import React from 'react'
 import c from 'classnames'
 import { TheForm, TheInput, TheButton } from 'the-components'
 import { asForm } from '../../wrappers'
+import styles from './SearchForm.pcss'
 
 const SearchForm = asForm(
   function SearchFormImpl ({
@@ -21,7 +22,7 @@ const SearchForm = asForm(
                              getSubmitAttributes
                            }) {
     return (
-      <TheForm className={c(className, 'search-form')}
+      <TheForm className={c(className, styles.self, 'search-form')}
                inline
                {...getFormAttributes()}
                required={[name]}

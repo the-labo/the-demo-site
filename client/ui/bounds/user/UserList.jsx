@@ -5,6 +5,7 @@
 
 import React from 'react'
 import { Urls } from '@self/conf'
+import c from 'classnames'
 import { TheTable } from 'the-components'
 import { withLoc, asPure, asBound, compose } from '../../wrappers'
 import UserListItem from './UserListItem'
@@ -17,12 +18,13 @@ const UserList = compose(
   asPure
 )(function UserListImpl ({
                            users,
+                           className,
                            l,
                            sort,
                            onSort
                          }) {
   return (
-    <div className='user-list'>
+    <div className={c('user-list', className)}>
       <TheTable className={styles.table}
                 empty={users && users.length === 0}
                 alt={l('alt.LIST_EMPTY')}
