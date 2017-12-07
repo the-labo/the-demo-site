@@ -64,7 +64,7 @@ export default asBound(
   }),
   ({userListScene}) => ({
     onSort: async (name) => {
-      userListScene.set({sort: [name]})
+      userListScene.setSort(name)
       await userListScene.doSync()
     }
   })

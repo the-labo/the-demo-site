@@ -10,6 +10,7 @@ const cn = require('./concerns')
 /** @lends UserListScene */
 const UserListScene = cn.compose(
   cn.withBusy,
+  cn.withSort
 )(
   class UserListSceneBase extends Scene {
     get scope () {
@@ -25,7 +26,8 @@ const UserListScene = cn.compose(
         const {meta: counts, entities} = await userCtrl.list({
           filter: s.get('filter'),
           page: {
-            number: s.get('pageNumber')
+            number: s.get('pageNumber'),
+            size: 50
           },
           sort: s.get('sort')
         })

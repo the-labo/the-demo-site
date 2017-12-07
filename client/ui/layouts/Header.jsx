@@ -12,6 +12,7 @@ import {
   TheCondition
 } from 'the-components'
 import { Urls, Icons } from '@self/conf'
+import { get } from 'the-window'
 import { labelHelper } from '../helpers'
 import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
 
@@ -68,7 +69,9 @@ const Header = compose(
 
 export default asBound(
   Header,
-  (state) => ({}),
+  (state) => ({
+    pathname: get('location.pathname')
+  }),
   () => ({}),
   {}
 )
