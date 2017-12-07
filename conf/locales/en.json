@@ -168,6 +168,7 @@
     "SIGNIN_DID_SUCCESS": "Sign in done",
     "SIGNOUT_DID_SUCCESS": "Sign out done",
     "SIGNUP_DID_SUCCESS": "Sign up succeeded!",
+    "USER_CREATE_DID_SUCCESS": "User created",
     "USER_DESTROY_DID_SUCCESS": "User destroyed",
     "VERIFY_EMAIL_SENT": "Verify email has sent."
   },

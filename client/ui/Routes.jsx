@@ -30,7 +30,7 @@ const Routes = ({l, user}) => (
     <TheRoute exact path={Urls.SIGNUP_URL} component={v.SignUpView}/>
     <TheRoute exact path={Urls.SIGNOUT_URL} component={v.SignOutView}/>
     <TheRoute exact path={Urls.QUIT_URL} component={v.QuitView}/>
-      <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
+    <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
 
     <TheRoute component={v.ErrorNotfoundView}/>
   </TheRoute.Switch>
