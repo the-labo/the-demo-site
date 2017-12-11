@@ -78,7 +78,8 @@ export default onlySigned(
     }),
     () => ({}),
     {
-      title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE')
+      title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
+      onlySigned: true
     }
   )
 )

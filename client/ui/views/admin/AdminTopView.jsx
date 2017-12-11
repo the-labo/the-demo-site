@@ -29,4 +29,12 @@ function AdminTopView ({l}) {
   )
 }
 
-export default asView(AdminTopView)
+export default asView(
+  AdminTopView,
+  () => ({}),
+  () => ({}),
+  {
+    title: ({l}) => l('titles.ADMIN_TOP_TITLE'),
+    onlySigned: true
+  }
+)

@@ -291,6 +291,21 @@
 .the-input-range .the-input-range-handle .the-input-range-handle-icon { width:24px;height:24px;border-radius:50%;display:inline-block;background-color:white;border:1px solid #DDD;box-shadow:1px 1px 2px rgba(0,0,0,0.5);position:relative;z-index:3; }
 .the-input-range .the-input-range-handle .the-input-range-handle-icon:hover { box-shadow:1px 1px 3px rgba(0,0,0,0.5); }
 .the-input-range .the-input-range-handle .the-input-range-handle-icon .the-input-range-label { display:inline-block;padding:2px 4px;text-align:right;min-width:24px;font-size:14px;line-height:24px;box-sizing:border-box; }
+.the-input-upload { position:relative;display:inline-block;color:#888;overflow:hidden; }
+.the-input-upload:hover { color:#555; }
+.the-input-upload:active { text-shadow:none;opacity:1;color:#777; }
+.the-input-upload .the-input-upload-input { opacity:0;display:inline-block;cursor:pointer;position:relative;z-index:2; }
+.the-input-upload .the-input-upload-label { position:absolute;z-index:1;text-align:center;box-sizing:border-box;left:0;top:0;right:0;bottom:0;pointer-events:none;background-color:#FFF;box-shadow:inset 1px 1px 2px rgba(0,0,0,0.33);border:1px solid #CCC;border-radius:2px; }
+.the-input-upload .the-input-upload-label-inner { display:inline-block;vertical-align:middle; }
+.the-input-upload .the-input-upload-icon { display:block;font-size:2em; }
+.the-input-upload .the-input-upload-aligner { display:inline-block;width:1px;margin-right:-1px;height:100%;box-sizing:border-box;vertical-align:middle; }
+.the-input-upload .the-input-upload-text {  }
+.the-input-upload .the-input-upload-spin {  }
+.the-input-upload .the-input-upload-close { display:inline-block;position:absolute;right:0;top:0;z-index:5;margin:0;border:none;padding:8px;font-size:24px;color:#AAA;background:rgba(255,255,255,0.2);border-radius:0; }
+.the-input-upload .the-input-upload-close:hover { opacity:1;box-shadow:none;color:#555; }
+.the-input-upload .the-input-upload-close:active { opacity:1;box-shadow:none;color:#555; }
+.the-input-upload .the-input-upload-preview { display:inline-block;box-sizing:border-box;z-index:4;position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;border:1px solid #AAA; }
+.the-input-upload .the-input-upload-preview-img {  }
 .the-jumbotron { background-color:#3A8;color:white;padding:16px 0;margin:16px 0;position:relative;overflow:hidden; }
 .the-jumbotron .the-jumbotron-title { margin:0;display:block;padding:0 8px; }
 .the-jumbotron .the-jumbotron-sub-title { margin:0;display:block;padding:0 8px; }

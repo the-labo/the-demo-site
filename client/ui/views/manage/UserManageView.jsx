@@ -81,5 +81,8 @@ export default asView(
     onTearDown: () => {},
     onCreate: () => userCreateScene.set({active: true})
   }),
-  {}
+  {
+    title: ({l}) => l('titles.USER_MANAGE_TITLE'),
+    onlySigned: true
+  }
 )
