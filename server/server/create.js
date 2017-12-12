@@ -33,7 +33,7 @@ function create (config) {
     mail
   }
   const server = theServer({
-    static: isProduction ? [] : ['public'],
+    static: isProduction() ? [] : ['public'],
     redis: redisConfig,
     endpoints,
     cacheDir: 'tmp/cache',

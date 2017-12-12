@@ -5,6 +5,7 @@ import { withLoc } from 'the-loc'
 import { withClient } from 'the-client/shim'
 import { withHistory, withRoute } from 'the-components'
 import { connect, withStore } from 'the-store'
+import withCycle from './withCycle'
 import withTitle from './withTitle'
 import { inject } from 'the-handle'
 import { get } from 'the-window'
@@ -23,35 +24,13 @@ function asView (Component,
       />
     }
 
-    componentDidMount () {
-      const s = this
-      const {onMount} = s.props
-      onMount && onMount()
-    }
-
-    componentWillReceiveProps (nextProps) {
-      const s = this
-      const receiving = {}
-      for (const [key, value] of Object.entries(nextProps)) {
-        if (s.props[key] !== value)
-          receiving[key] = value
-      }
-      const {onReceive} = s.props
-      onReceive && onReceive(receiving)
-    }
-
-    componentWillUnmount () {
-      const s = this
-      const {onTeardown} = s.props
-      onTeardown && onTeardown()
-    }
-
   }
 
   return [
-    (Componnet) => withTitle(Componnet, options.title),
-    connect(mapStateToProps),
+    (Component) => withTitle(Component, options.title),
+    withCycle,
     inject(mapHandleToProps),
+    connect(mapStateToProps),
     options.onlySigned && onlySigned,
     withLoc,
     withStore,

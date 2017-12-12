@@ -30,7 +30,6 @@ const SearchForm = asForm(
       >
         <TheInput.Text {...getInputAttributesOf(name)}
                        placeholder={placeholder}
-                       autoFocus
                        onEnter={onSubmit}
         />
         <TheButton primary {...getSubmitAttributes()}>
