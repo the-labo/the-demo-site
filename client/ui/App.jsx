@@ -15,7 +15,7 @@ import Toasts from './layouts/Toasts'
 import Footer from './layouts/Footer'
 import Routes from './Routes'
 import { withProvider, withStore } from 'the-store'
-import { asBound, withLoc } from './wrappers'
+import { asBound, withLoc, withCycle } from './wrappers'
 import { withBinder } from 'the-handle'
 import { withClient } from 'the-client'
 import { locales } from '@self/conf'
@@ -27,7 +27,7 @@ class App extends React.Component {
     const {
       synced,
       user
-    } = s.props
+    } = srops
 
     return (
       <TheRoot className='app'>
@@ -41,12 +41,6 @@ class App extends React.Component {
         <Footer/>
       </TheRoot>
     )
-  }
-
-  componentDidMount () {
-    const s = this
-    const {props} = s
-    props.onMount()
   }
 
   get notices () {
@@ -65,7 +59,7 @@ class App extends React.Component {
 }
 
 const ConnectedApp = asBound(
-  withClient(withStore(App)),
+  withCycle(withClient(withStore(App))),
   (state) => ({
     synced: state['account.synced'],
     user: state['account.user'],
