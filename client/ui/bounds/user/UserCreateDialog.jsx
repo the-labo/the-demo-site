@@ -24,10 +24,10 @@ const UserCreateDialog = compose(
     }
     if (done) {
       return (
-        <TheOkDialog
-          title={l('titles.USER_CREATE_RESULT_TITLE')}
-          hideCloseButton
-          {...{spinning, onClose}}
+        <TheOkDialog present
+                     title={l('titles.USER_CREATE_RESULT_TITLE')}
+                     hideCloseButton
+                     {...{spinning, onClose}}
         >
           <TheInfo data={created && {
             [l('labels.USER_NAME')]: created.name,

@@ -35,7 +35,10 @@ export default asBound(
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
       if (q) {
-        userListScene.set({filter: {name: {$like: `%${String(q).trim()}%`}}})
+        userListScene.set({
+          pageNumber: 1,
+          filter: {name: {$like: `%${String(q).trim()}%`}}
+        })
       } else {
         userListScene.init('filter')
       }

@@ -22,7 +22,10 @@ const UserCreateScene = cn.compose(
       const s = this
       const userCtrl = await s.use('userCtrl')
       await s.busyFor(async () => {
-        await s.processEntry((values) => userCtrl.create(values))
+        await s.processEntry(async (values) => {
+          const created = await userCtrl.create(values)
+          s.set({created})
+        })
       })
     }
 

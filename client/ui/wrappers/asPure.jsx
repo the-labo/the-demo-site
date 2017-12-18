@@ -5,14 +5,6 @@
 'use strict'
 
 import React from 'react'
-
-function asPure (Component, options = {}) {
-  return class AsPure extends React.PureComponent {
-    render () {
-      const s = this
-      return <Component {...s.props}/>
-    }
-  }
-}
+import { asPure } from 'the-hoc'
 
 export default asPure

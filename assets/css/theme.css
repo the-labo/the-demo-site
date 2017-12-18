@@ -184,7 +184,7 @@
 .the-image .the-image-inner { display:flex;justify-content:center;align-items:center;width:auto;height:auto;overflow:hidden; }
 .the-image .the-image-spin { text-align:center;padding:8px 0;position:absolute;z-index:1;color:#BBB;background-color:rgba(255,255,255,0.8);top:0;left:0;right:0;bottom:0;display:flex;justify-content:center;align-items:center; }
 .the-image .the-image-spin .the-icon-spin { font-size:larger; }
-.the-image .the-image-img { transition:width 300ms, height 300ms; }
+.the-image .the-image-img { transition:width 300ms, height 300ms;object-fit:none; }
 .the-image .the-image-failed { color:#BBB;text-align:center; }
 .the-image .the-image-img-failed { opacity:0;visibility:hidden; }
 .the-image.the-image-fill {  }

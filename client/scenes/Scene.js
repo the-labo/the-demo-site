@@ -5,29 +5,8 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
-const {urlUtil} = require('@self/utils')
 
 class Scene extends TheScene {
-
-  get scope () {
-    const s = this
-    return null
-  }
-
-  init (...args) {
-    const s = this
-    s.scope.init(...args)
-  }
-
-  get (...args) {
-    const s = this
-    return s.scope.get(...args)
-  }
-
-  set (...args) {
-    const s = this
-    s.scope.set(...args)
-  }
 
   async use (name) {
     const s = this

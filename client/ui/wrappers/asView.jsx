@@ -27,7 +27,13 @@ function asView (Component,
   }
 
   return [
-    (Component) => withTitle(Component, options.title),
+    (Component) => withTitle(Component, (props) => {
+      const {l} = props
+      const title = options.title && options.title(props)
+      const appName = l('app.APP_NAME')
+      return title ? `${title} | ${appName}` : appName
+
+    }),
     withCycle,
     inject(mapHandleToProps),
     connect(mapStateToProps),

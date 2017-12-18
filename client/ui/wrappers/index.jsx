@@ -10,6 +10,7 @@ import asPure from './asPure'
 import asView from './asView'
 import compose from './compose'
 import onlySigned from './onlySigned'
+import withCycle from './withCycle'
 import withLoc from './withLoc'
 import withMoment from './withMoment'
 import withRole from './withRole'
@@ -22,6 +23,7 @@ export {
   asView,
   compose,
   onlySigned,
+  withCycle,
   withLoc,
   withMoment,
   withRole,

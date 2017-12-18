@@ -20,6 +20,7 @@ import {
   UserList
 } from '../../bounds'
 import { Icons, Urls } from '@self/conf'
+import { RoleCodes } from '@self/conf'
 
 function UserManageView ({
                            l,
@@ -79,7 +80,13 @@ export default asView(
       userListScene.set({ready: true})
     },
     onTearDown: () => {},
-    onCreate: () => userCreateScene.set({active: true})
+    onCreate: () => {
+      userCreateScene.init()
+      userCreateScene.set({
+        active: true,
+        entry: {role: RoleCodes.NORMAL_ROLE}
+      })
+    }
   }),
   {
     title: ({l}) => l('titles.USER_MANAGE_TITLE'),

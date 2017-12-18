@@ -38,12 +38,12 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
 "@types/node@*":
-  version "8.0.57"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.1.tgz#4ec3020bcdfe2abffeef9ba3fbf26fca097514b5"
 
 "@types/request@^2.0.3":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.0.8.tgz#424d3de255868107ed4dd6695c65c5f1766aba80"
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.0.9.tgz#125b8a60d8a439e8d87e6d1335c61cccdc18343a"
   dependencies:
     "@types/form-data" "*"
     "@types/node" "*"
@@ -56,8 +56,8 @@ JSONStream@^0.10.0:
     through ">=2.2.7 <3"
 
 JSONStream@^1.0.3, JSONStream@~1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.1.tgz#707f761e01dae9e16f1bcf93703b78c70966579a"
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"
   dependencies:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
@@ -209,8 +209,8 @@ aglob@^3.0.0:
     glob "^7.1.1"
 
 ajv@^5.1.0:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.1.tgz#b38bb8876d9e86bee994956a04e721e88b248eb2"
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
   dependencies:
     co "^4.6.0"
     fast-deep-equal "^1.0.0"
@@ -946,11 +946,10 @@ async-each@^1.0.0:
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
 
 async-helpers@^0.3.9:
-  version "0.3.16"
-  resolved "https://registry.yarnpkg.com/async-helpers/-/async-helpers-0.3.16.tgz#a1532e7b42fb5b4ced257bee73f85bfbcccfdcc8"
+  version "0.3.17"
+  resolved "https://registry.yarnpkg.com/async-helpers/-/async-helpers-0.3.17.tgz#3d91af1ff853d62e9809b0f31c4bdac79baa6ba4"
   dependencies:
     co "^4.6.0"
-    define-property "^1.0.0"
     kind-of "^6.0.0"
 
 async-limiter@~1.0.0:
@@ -993,11 +992,11 @@ atob@^2.0.0:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 autoprefixer@^7.1.1:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.2.tgz#082293b964be00602efacc59aa4aa7df5158bb6e"
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.3.tgz#c2841e38b7940c2d0a9bbffd72c75f33637854f8"
   dependencies:
     browserslist "^2.10.0"
-    caniuse-lite "^1.0.30000780"
+    caniuse-lite "^1.0.30000783"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^6.0.14"
@@ -2356,9 +2355,9 @@ caniuse-api@^2.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000780:
-  version "1.0.30000782"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000782.tgz#5b82b8c385f25348745c471ca51320afb1b7f254"
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000780, caniuse-lite@^1.0.30000783:
+  version "1.0.30000783"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000783.tgz#9b5499fb1b503d2345d12aa6b8612852f4276ffd"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2506,20 +2505,20 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.3, clay-driver-memory@^4.1.5:
     clay-resource-name "^4.0.3"
     moment "^2.19.1"
 
-clay-driver-mysql@^5.2.10:
-  version "5.2.10"
-  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.10.tgz#8fe4897f4b56582e37f13d0e4293c191345ef4f0"
+clay-driver-mysql@^5.2.13:
+  version "5.2.13"
+  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.13.tgz#9903f12b0fec49f9631b98d1fa84e938d2b7065d"
   dependencies:
     amkdirp "^2.0.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.4.15"
-    moment "^2.19.2"
+    clay-driver-sequelize "^6.4.19"
+    moment "^2.19.4"
     mysql2 "^1.5.1"
     mysqldump "^1.4.2"
 
-clay-driver-sequelize@^6.4.15, clay-driver-sequelize@^6.4.16:
-  version "6.4.16"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.16.tgz#341111834e1bd6105a010bfd83a55cf56c7e9496"
+clay-driver-sequelize@^6.4.19:
+  version "6.4.19"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.19.tgz#42fe1dd1ebf9feb2b4c13e791447320fd21bc0db"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
@@ -2538,21 +2537,21 @@ clay-driver-sequelize@^6.4.15, clay-driver-sequelize@^6.4.16:
     msgpack "^1.0.2"
     objnest "^4.0.0"
     retry-as-promised "^2.3.2"
-    sequelize "^4.23.1"
+    sequelize "4.28.0"
     sg-queue "^1.1.4"
     stringcase "^4.0.0"
 
-clay-driver-sqlite@^6.3.6:
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.6.tgz#51cbc182461a2f31872c97af8a20dea7cf069872"
+clay-driver-sqlite@^6.3.8:
+  version "6.3.8"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.8.tgz#0cf19cc2842dd0662eb031e1501aa350d84bd749"
   dependencies:
     amkdirp "^2.0.0"
     asobj "^2.0.2"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.4.16"
+    clay-driver-sequelize "^6.4.19"
     filecopy "^4.0.0"
     mkdirp "^0.5.1"
-    moment "^2.19.2"
+    moment "^2.19.4"
 
 clay-entity@^2.0.4, clay-entity@^2.1.3:
   version "2.1.3"
@@ -2589,9 +2588,9 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.2.20:
-  version "4.2.20"
-  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.20.tgz#55b649835ecc883011baf97cb9ea5d2a6cf9416d"
+clay-lump@^4.2.23:
+  version "4.2.24"
+  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.2.24.tgz#b0aaffd42a7411b8a5a88fbbb5b93ffd4badcbae"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -2603,7 +2602,7 @@ clay-lump@^4.2.20:
     clay-driver-memory "^4.1.5"
     clay-entity "^2.1.3"
     clay-policy "^2.1.4"
-    clay-resource "^5.4.10"
+    clay-resource "^5.4.12"
     clay-resource-name "^4.0.3"
     debug "^3.1.0"
 
@@ -2658,9 +2657,9 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^5.4.10:
-  version "5.4.11"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.4.11.tgz#5a9ff2783257dfd5d33dd474b694bee45a2dedef"
+clay-resource@^5.4.12:
+  version "5.4.12"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.4.12.tgz#0bd2bec35d246a22c79a3beafac7daf99c997407"
   dependencies:
     asleep "^1.0.3"
     asobj "^2.0.2"
@@ -3100,8 +3099,8 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 core-js@^2.4.0, core-js@^2.5.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.2.tgz#bc4648656e7dc9dc80d7d3c7bbc172d96e744e63"
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -3739,8 +3738,8 @@ err-code@^1.0.0:
   resolved "https://registry.yarnpkg.com/err-code/-/err-code-1.1.2.tgz#06e0116d3028f6aef4806849eb0ea6a748ae6960"
 
 errno@^0.1.4:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.5.tgz#a563781a6052bc2c9ccd89e8cef0eb9506e0c321"
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.6.tgz#c386ce8a6283f14fc09563b71560908c9bf53026"
   dependencies:
     prr "~1.0.1"
 
@@ -5693,8 +5692,8 @@ koa-router@^7.1.0:
     urijs "^1.19.0"
 
 koa-send@^4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/koa-send/-/koa-send-4.1.1.tgz#bd3fa116b1f592f5fff23c9670aae69787f6cb57"
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/koa-send/-/koa-send-4.1.2.tgz#92861d184c4d8458a54f92e6708e09b14d64111c"
   dependencies:
     debug "^2.6.3"
     http-errors "^1.6.1"
@@ -6622,9 +6621,9 @@ moment-timezone@^0.5.13, moment-timezone@^0.5.4:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.13.0, moment@^2.14.1, moment@^2.18.1, moment@^2.19.1, moment@^2.19.2:
-  version "2.19.4"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.4.tgz#17e5e2c6ead8819c8ecfad83a0acccb312e94682"
+"moment@>= 2.9.0", moment@^2.13.0, moment@^2.14.1, moment@^2.18.1, moment@^2.19.1, moment@^2.19.2, moment@^2.19.4:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.0.tgz#53396358994dd3a551e966a66af715ecb6c30ad0"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -9062,9 +9061,31 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@^4.23.1, sequelize@^4.24.0:
-  version "4.27.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.27.0.tgz#d416ec807604e15262c27b125b4fa87eacc6fbf1"
+sequelize@4.28.0:
+  version "4.28.0"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.28.0.tgz#1b1877de816b04aad069c96800092abc94cdddff"
+  dependencies:
+    bluebird "^3.4.6"
+    cls-bluebird "^2.0.1"
+    debug "^3.0.0"
+    depd "^1.1.0"
+    dottie "^2.0.0"
+    generic-pool "^3.1.8"
+    inflection "1.12.0"
+    lodash "^4.17.1"
+    moment "^2.13.0"
+    moment-timezone "^0.5.4"
+    retry-as-promised "^2.3.1"
+    semver "^5.0.1"
+    terraformer-wkt-parser "^1.1.2"
+    toposort-class "^1.0.1"
+    uuid "^3.0.0"
+    validator "^9.1.0"
+    wkx "^0.4.1"
+
+sequelize@^4.28.1:
+  version "4.28.5"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.28.5.tgz#4a7927eacca926f56847cb8c270afba9be98c080"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -10111,8 +10132,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0:
     video-extensions "^1.1.0"
 
 the-components@^3.1.5:
-  version "3.1.12"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.12.tgz#2ac8570a0d1a1436425fcad06428f8aacc20bedd"
+  version "3.1.13"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.13.tgz#3d1035ad6b9dfec41e383cecad42f04e132b9aff"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -10134,9 +10155,9 @@ the-components@^3.1.5:
     the-header "^2.0.2"
     the-html "^1.0.7"
     the-icon "^2.0.0"
-    the-image "^1.3.2"
+    the-image "^1.3.3"
     the-info "^2.0.1"
-    the-input "^2.1.4"
+    the-input "^2.1.5"
     the-jumbotron "^2.0.0"
     the-lead "^1.1.1"
     the-line "^1.0.2"
@@ -10193,8 +10214,8 @@ the-date@^1.0.1:
     moment-timezone "^0.5.13"
 
 the-db@^7.8.16:
-  version "7.8.28"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.28.tgz#930228e42807b72fd102eb531e178a72958983a0"
+  version "7.8.32"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.32.tgz#80ef926485520ee5e5e03a64cb14e2e009e7cea9"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.1"
@@ -10205,16 +10226,16 @@ the-db@^7.8.16:
     clay-driver-json "^4.0.3"
     clay-driver-localstorage "^2.0.1"
     clay-driver-memory "^4.1.5"
-    clay-driver-mysql "^5.2.10"
-    clay-driver-sqlite "^6.3.6"
-    clay-lump "^4.2.20"
-    clay-resource "^5.4.10"
+    clay-driver-mysql "^5.2.13"
+    clay-driver-sqlite "^6.3.8"
+    clay-lump "^4.2.23"
+    clay-resource "^5.4.12"
     clay-resource-name "^4.0.3"
     debug "^3.1.0"
     execcli "^5.0.2"
     mkdirp "^0.5.1"
     msgpack5 "^3.6.0"
-    sequelize "^4.24.0"
+    sequelize "^4.28.1"
     the-check "^1.2.1"
     uuid "^3.1.0"
 
@@ -10350,6 +10371,16 @@ the-header@^2.0.2:
     the-style "^2.0.1"
     the-window "^5.0.0"
 
+the-hoc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.0.0.tgz#2b9fd7b51a28ce75d4498d0717f52ecc086c5fe6"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    the-component-util "^2.0.0"
+    the-style "^2.0.0"
+    the-window "^5.2.4"
+
 the-html@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/the-html/-/the-html-1.0.7.tgz#79c58a2f6374daffc427358851814bc09a72c01e"
@@ -10366,15 +10397,15 @@ the-icon@^2.0.0:
     the-component-util "^1.5.1"
     the-style "^2.0.0"
 
-the-image@^1.0.2, the-image@^1.0.3, the-image@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/the-image/-/the-image-1.3.2.tgz#5db76efdbf0adae9b70d72676e0349de577554fd"
+the-image@^1.0.2, the-image@^1.0.3, the-image@^1.3.2, the-image@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/the-image/-/the-image-1.3.3.tgz#ce2a21c82bfb5642a4d4c23f8660a1cd66b16236"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-component-util "^2.1.0"
     the-icon "^2.0.0"
-    the-style "^2.0.0"
+    the-style "^2.1.0"
 
 the-info@^2.0.1:
   version "2.0.1"
@@ -10385,9 +10416,9 @@ the-info@^2.0.1:
     the-component-util "^2.1.0"
     the-style "^2.0.1"
 
-the-input@^2.0.0, the-input@^2.1.3, the-input@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.4.tgz#39adf75c15534d65c789dd03118a4c1cce14497e"
+the-input@^2.0.0, the-input@^2.1.3, the-input@^2.1.5:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.6.tgz#a67950dee47e8719f0b8dbff450a7bf2337672ff"
   dependencies:
     asobj "^2.0.2"
     chopcal "^3.0.1"
@@ -10548,16 +10579,16 @@ the-router@^2.0.6:
     the-style "^2.0.1"
 
 the-scene-base@^1.0.1, the-scene-base@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.0.4.tgz#a91a0ae8a85a82c299bf4f609b9adadfc719501f"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.1.0.tgz#27436447d00e6399f58cdfdb99e228da24778e31"
   dependencies:
     bwindow "^1.1.0"
 
 the-scope@^1.7.0, the-scope@^1.8.2:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.6.tgz#18cc4e0ec713b87bcef59d7c54cfaa02e0040c07"
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.7.tgz#e2530c8c3d035edb0c64e6c0b935860fd83bf6ef"
   dependencies:
-    the-check "^1.2.0"
+    the-check "^1.2.1"
 
 the-script-release@^1.0.6:
   version "1.0.6"
@@ -11478,8 +11509,8 @@ writexml@^2.0.0:
     writeout "^2.0.4"
 
 ws@~3.3.1:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-3.3.2.tgz#96c1d08b3fefda1d5c1e33700d3bfaa9be2d5608"
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
