@@ -13,7 +13,7 @@ const SignaskScene = cn.compose(
   class SignaskSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['signAsk']
+      return s.store.signAsk
     }
   }
 )

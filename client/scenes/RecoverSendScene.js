@@ -16,7 +16,7 @@ const RecoverSendScene = cn.compose(
   class RecoverSendSceneImpl extends Scene {
     get scope () {
       const s = this
-      return s.store['recoverSend']
+      return s.store.recoverSend
     }
 
     async doSend () {

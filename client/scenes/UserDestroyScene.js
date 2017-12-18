@@ -14,7 +14,7 @@ const UserDestroyScene = cn.compose(
   class UserDestroySceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['userDestroy']
+      return s.store.userDestroy
     }
 
     async doDestroy () {

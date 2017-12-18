@@ -15,7 +15,7 @@ const VerifyNeedScene = cn.compose(
   class VerifyNeedSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['verifyNeed']
+      return s.store.verifyNeed
     }
 
     async doSync ({delay = 100} = {}) {

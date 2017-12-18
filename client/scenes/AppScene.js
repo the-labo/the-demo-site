@@ -14,7 +14,7 @@ const AppScene = cn.compose(
   class AppSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['app']
+      return s.store.app
     }
   }
 )

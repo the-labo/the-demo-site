@@ -4,7 +4,7 @@ const path = require('path')
 
 const scopes = require('../store/scopes')
 const {flatten} = require('objnest')
-const {pascalcase, snakecase} = require('stringcase')
+const {pascalcase, camelcase} = require('stringcase')
 const names = Object.keys(flatten(scopes))
   .map((name) => {
     const components = name.split('.')
@@ -20,7 +20,7 @@ module.exports = names.map((name) => ({
   path: `${name}Scene.js`,
   data: {
     name: path.basename(name) + 'Scene',
-    scopePath: name
+    scopePath: camelcase(name)
   }
 }))
 

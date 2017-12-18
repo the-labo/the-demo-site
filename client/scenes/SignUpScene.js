@@ -16,7 +16,7 @@ const SignUpScene = cn.compose(
   class SignUpSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['signUp']
+      return s.store.signUp
     }
 
     async doSignUp () {

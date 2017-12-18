@@ -15,7 +15,7 @@ const UserSearchScene = cn.compose(
   class UserSearchSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['userSearch']
+      return s.store.userSearch
     }
 
   }

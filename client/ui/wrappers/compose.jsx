@@ -15,4 +15,4 @@ function compose (...mixins) {
   }
 }
 
-module.exports = compose
+export default compose

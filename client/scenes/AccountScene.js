@@ -14,7 +14,7 @@ const AccountScene = cn.compose(
   class AccountSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['account']
+      return s.store.account
     }
 
     async doSync () {

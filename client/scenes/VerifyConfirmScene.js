@@ -15,7 +15,7 @@ const VerifyConfirmScene = cn.compose(
   class VerifyConfirmSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['verifyConfirm']
+      return s.store.verifyConfirm
     }
 
     async doVerify () {

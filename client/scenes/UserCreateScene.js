@@ -15,7 +15,7 @@ const UserCreateScene = cn.compose(
   class UserCreateSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['userCreate']
+      return s.store.userCreate
     }
 
     async doCreate () {

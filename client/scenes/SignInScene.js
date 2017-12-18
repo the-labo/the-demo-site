@@ -16,7 +16,7 @@ const SignInScene = cn.compose(
   class SignInSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store['signIn']
+      return s.store.signIn
     }
 
     async doSignIn () {

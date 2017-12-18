@@ -11,7 +11,7 @@ const {Urls} = require('@self/conf')
 class ToastScene extends Scene {
   get scope () {
     const s = this
-    return s.store['toast']
+    return s.store.toast
   }
 
   showInfo (message) {
