@@ -15,7 +15,7 @@ const UserListScene = cn.compose(
   class UserListSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.user.list
+      return s.store['userList']
     }
 
     async doSync () {

@@ -16,7 +16,7 @@ const ProfileEditScene = cn.compose(
   class ProfileEditSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.profile.edit
+      return s.store['profileEdit']
     }
 
     async doSync () {

@@ -15,7 +15,7 @@ const PasswordChangeScene = cn.compose(
   class PasswordChangeSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.password.change
+      return s.store['passwordChange']
     }
 
     async doSave () {

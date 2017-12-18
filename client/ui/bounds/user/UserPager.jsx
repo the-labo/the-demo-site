@@ -26,7 +26,7 @@ const UserPager = compose(
 export default asBound(
   UserPager,
   (state) => ({
-    counts: state['user.list.counts']
+    counts: state['userList.counts']
   }),
   ({
      userListScene

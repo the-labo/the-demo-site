@@ -41,9 +41,9 @@ function RecoverResetView ({
 export default asView(
   RecoverResetView,
   (state) => ({
-    failure: state['recover.reset.failure'],
-    busy: state['recover.reset.busy'],
-    done: state['recover.reset.done'],
+    failure: state['recoverReset.failure'],
+    busy: state['recoverReset.busy'],
+    done: state['recoverReset.done'],
   }),
   ({recoverResetScene}) => ({
     onMount: () => {

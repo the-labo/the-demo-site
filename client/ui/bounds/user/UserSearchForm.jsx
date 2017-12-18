@@ -23,9 +23,9 @@ const UserSearchForm = withLoc(
 export default asBound(
   UserSearchForm,
   (state) => ({
-    spinning: state['user.search.busy'],
-    values: state['user.search.entry'],
-    errors: state['user.search.entryErrors']
+    spinning: state['userSearch.busy'],
+    values: state['userSearch.entry'],
+    errors: state['userSearch.entryErrors']
   }),
   ({
      userSearchScene,

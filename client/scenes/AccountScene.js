@@ -14,12 +14,13 @@ const AccountScene = cn.compose(
   class AccountSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.account
+      return s.store['account']
     }
 
     async doSync () {
       const s = this
       const accountCtrl = await s.use('accountCtrl')
+      const verifyCtrl = await s.use('verifyCtrl')
       await s.busyFor(async () => {
         const user = await accountCtrl.getCurrentUser()
         s.set({user, synced: true})

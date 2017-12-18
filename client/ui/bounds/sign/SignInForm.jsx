@@ -60,9 +60,9 @@ const SigninForm = asForm(
 export default asBound(
   SigninForm,
   (state) => ({
-    spinning: state['sign.in.busy'],
-    values: state['sign.in.entry'],
-    errors: state['sign.in.entryErrors']
+    spinning: state['signIn.busy'],
+    values: state['signIn.entry'],
+    errors: state['signIn.entryErrors']
   }),
   ({
      l,

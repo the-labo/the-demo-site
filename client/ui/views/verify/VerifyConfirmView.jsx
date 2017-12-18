@@ -43,17 +43,17 @@ function VerifyConfirmView ({
 export default asView(
   VerifyConfirmView,
   (state) => ({
-    busy: state['verify.verify.busy'],
-    done: state['verify.verify.done'],
-    failure: state['verify.verify.failure'],
+    busy: state['verifyConfirm.busy'],
+    done: state['verifyConfirm.done'],
+    failure: state['verifyConfirm.failure'],
   }),
-  ({verifyVerifyScene}) => (({
+  ({verifyConfirmScene}) => (({
     onMount: async () => {
-      verifyVerifyScene.init()
+      verifyConfirmScene.init()
       const {seal, envelop} = urlUtil.queryFromSearch()
-      verifyVerifyScene.set({seal, envelop})
-      await verifyVerifyScene.doVerify()
-      verifyVerifyScene.set({done: true})
+      verifyConfirmScene.set({seal, envelop})
+      await verifyConfirmScene.doVerify()
+      verifyConfirmScene.set({done: true})
     },
   })),
   {

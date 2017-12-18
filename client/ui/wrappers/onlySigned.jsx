@@ -41,8 +41,9 @@ function onlySigned (Component, options = {}) {
             let hasSigned = Boolean(user)
             if (!hasSigned) {
               const {pathname} = get('location')
-              store.sign.up.back.set(pathname)
-              store.sign.in.back.set(pathname)
+              const {signUp, signIn} = store
+              signUp.back.set(pathname)
+              signIn.back.set(pathname)
               debug(`Ask sign in for: ${pathname}`)
               history.push(Urls.SIGNASK_URL)
             }

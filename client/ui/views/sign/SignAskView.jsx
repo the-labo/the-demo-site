@@ -39,7 +39,7 @@ function SignAskView ({
 export default asView(
   SignAskView,
   (state) => ({
-    back: state['sign.ask.back'] || '/'
+    back: state['signAsk.back'] || '/'
   }),
   ({}) => ({}),
   {

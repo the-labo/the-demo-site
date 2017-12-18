@@ -61,8 +61,8 @@ function UserManageView ({
 export default asView(
   UserManageView,
   (state) => ({
-    busy: !state['user.list.ready'] && state['user.list.busy'],
-    ready: state['user.list.ready']
+    busy: !state['userList.ready'] && state['userList.busy'],
+    ready: state['userList.ready']
   }),
   ({
      userListScene,

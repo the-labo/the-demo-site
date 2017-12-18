@@ -54,10 +54,10 @@ const UserCreateDialog = compose(
 export default asBound(
   UserCreateDialog,
   (state) => ({
-    spinning: state['user.create.busy'],
-    active: state['user.create.active'],
-    done: state['user.create.done'],
-    created: state['user.create.created']
+    spinning: state['userCreate.busy'],
+    active: state['userCreate.active'],
+    done: state['userCreate.done'],
+    created: state['userCreate.created']
   }),
   ({userCreateScene}, propsProxy) => ({
     onClose: () => userCreateScene.set({

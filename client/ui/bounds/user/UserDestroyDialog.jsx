@@ -53,10 +53,10 @@ const UserDestroyDialog = compose(
 export default asBound(
   UserDestroyDialog,
   (state) => ({
-    spinning: state['user.destroy.busy'],
-    active: state['user.destroy.active'],
-    done: state['user.destroy.done'],
-    users: state['user.destroy.targets'],
+    spinning: state['userDestroy.busy'],
+    active: state['userDestroy.active'],
+    done: state['userDestroy.done'],
+    users: state['userDestroy.targets'],
   }),
   ({
      l,

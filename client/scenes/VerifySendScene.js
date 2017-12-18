@@ -15,7 +15,7 @@ const VerifySendScene = cn.compose(
   class VerifySendSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.verify.send
+      return s.store['verifySend']
     }
 
     async doSend () {

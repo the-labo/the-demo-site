@@ -76,11 +76,11 @@ const UserPasswordDialog = compose(
 export default asBound(
   UserPasswordDialog,
   (state) => ({
-    active: state['user.password.active'],
-    done: state['user.password.done'],
-    users: state['user.password.targets'],
-    passwords: state['user.password.results'],
-    spinning: state['user.password.busy'],
+    active: state['userPassword.active'],
+    done: state['userPassword.done'],
+    users: state['userPassword.targets'],
+    passwords: state['userPassword.results'],
+    spinning: state['userPassword.busy'],
   }),
   ({
      userPasswordScene,

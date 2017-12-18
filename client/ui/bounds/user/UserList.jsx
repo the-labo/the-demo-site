@@ -59,8 +59,8 @@ const UserList = compose(
 export default asBound(
   UserList,
   (state) => ({
-    users: state['user.list.entities'],
-    sort: state['user.list.sort']
+    users: state['userList.entities'],
+    sort: state['userList.sort']
   }),
   ({userListScene}) => ({
     onSort: async (name) => {

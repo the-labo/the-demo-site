@@ -74,17 +74,17 @@ const ConnectedApp = asBound(
   ({
      l,
      accountScene,
-     verifyScene,
+     verifyNeedScene,
      verifySendScene,
      toastScene
    }) => ({
     onMount: async () => {
       await accountScene.doSync()
-      await verifyScene.doSync({delay: 3 * 1000})
+      await verifyNeedScene.doSync({delay: 3 * 1000})
     },
     onVerify: async () => {
       await verifySendScene.doSend()
-      await verifyScene.doSync()
+      await verifyNeedScene.doSync()
       toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
     }
   })

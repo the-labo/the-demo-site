@@ -33,8 +33,8 @@ export default asView(
   SignOutView,
   (state) => ({
     user: state['account.user'],
-    busy: state['sign.out.busy'],
-    done: state['sign.out.done'],
+    busy: state['signOut.busy'],
+    done: state['signOut.done'],
   }),
   ({
      signOutScene,

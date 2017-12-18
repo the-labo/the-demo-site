@@ -57,8 +57,8 @@ export default asBound(
   PasswordChangeForm,
   (state) => ({
     user: state['account.user'],
-    values: state['password.change.entry'],
-    errors: state['password.change.entryErrors']
+    values: state['passwordChange.entry'],
+    errors: state['passwordChange.entryErrors']
   }),
   ({
      l,

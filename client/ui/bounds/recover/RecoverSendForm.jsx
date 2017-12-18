@@ -40,9 +40,9 @@ const RecoverSendForm = asForm(
 export default asBound(
   RecoverSendForm,
   (state) => ({
-    spinning: state['recover.send.busy'],
-    values: state['recover.send.entry'],
-    errors: state['recover.send.entryErrors'],
+    spinning: state['recoverSend.busy'],
+    values: state['recoverSend.entry'],
+    errors: state['recoverSend.entryErrors'],
   }),
   ({
      l,

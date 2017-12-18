@@ -48,9 +48,9 @@ const RecoverResetForm = asForm(
 export default asBound(
   RecoverResetForm,
   (state) => ({
-    spinning: state['recover.reset.busy'],
-    values: state['recover.reset.entry'],
-    errors: state['recover.reset.entryErrors']
+    spinning: state['recoverReset.busy'],
+    values: state['recoverReset.entry'],
+    errors: state['recoverReset.entryErrors']
   }),
   ({
      l,

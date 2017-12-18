@@ -20,7 +20,7 @@ module.exports = names.map((name) => ({
   path: `${name}Scene.js`,
   data: {
     name: path.basename(name) + 'Scene',
-    scopePath: snakecase(name).split('_').join('.')
+    scopePath: name
   }
 }))
 

@@ -67,9 +67,9 @@ const ProfileEditForm = asForm(
 export default asBound(
   ProfileEditForm,
   (state) => ({
-    spinning: state['profile.edit.busy'],
-    values: state['profile.edit.entry'],
-    errors: state['profile.edit.entryErrors']
+    spinning: state['profileEdit.busy'],
+    values: state['profileEdit.entry'],
+    errors: state['profileEdit.entryErrors']
   }),
   ({
      l,

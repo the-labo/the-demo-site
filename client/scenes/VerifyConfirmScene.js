@@ -1,21 +1,21 @@
 /**
- * VerifyVerifyScene
- * @class VerifyVerifyScene
+ * VerifyConfirmScene
+ * @class VerifyConfirmScene
  */
 'use strict'
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends VerifyVerifyScene */
-const VerifyVerifyScene = cn.compose(
+/** @lends VerifyConfirmScene */
+const VerifyConfirmScene = cn.compose(
   cn.withBusy,
   cn.withFailure
 )(
-  class VerifyVerifySceneBase extends Scene {
+  class VerifyConfirmSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.verify.verify
+      return s.store['verifyConfirm']
     }
 
     async doVerify () {
@@ -38,4 +38,4 @@ const VerifyVerifyScene = cn.compose(
   }
 )
 
-module.exports = VerifyVerifyScene
+module.exports = VerifyConfirmScene

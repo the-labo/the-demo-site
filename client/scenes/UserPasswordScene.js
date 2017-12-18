@@ -14,7 +14,7 @@ const UserPasswordScene = cn.compose(
   class UserPasswordSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.user.password
+      return s.store['userPassword']
     }
 
     async doReset () {

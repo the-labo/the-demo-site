@@ -16,7 +16,7 @@ const RecoverResetScene = cn.compose(
   class RecoverResetSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.recover.reset
+      return s.store['recoverReset']
     }
 
     async doReset () {

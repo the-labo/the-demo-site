@@ -34,7 +34,7 @@ const UserActionBar = asPure(withLoc(
 export default asBound(
   UserActionBar,
   (state) => ({
-    targets: state['user.list.entities'].filter(({id}) => state['user.check.values'][id])
+    targets: state['userList.entities'].filter(({id}) => state['userCheck.values'][id])
   }),
   ({
      l,

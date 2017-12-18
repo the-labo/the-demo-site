@@ -7,123 +7,113 @@
   "app": {
     "busy": "BOOL"
   },
-  "password": {
-    "change": {
-      "busy": "BOOL",
-      "done": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    }
+  "passwordChange": {
+    "busy": "BOOL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   },
-  "profile": {
-    "edit": {
-      "busy": "BOOL",
-      "done": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    }
+  "profileEdit": {
+    "busy": "BOOL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   },
   "quit": {
     "busy": "BOOL",
     "confirm": "BOOL",
     "done": "BOOL"
   },
-  "recover": {
-    "reset": {
-      "busy": "BOOL",
-      "done": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ",
-      "envelop": "VAL",
-      "failure": "STR",
-      "seal": "VAL"
-    },
-    "send": {
-      "busy": "BOOL",
-      "done": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ",
-      "failure": "STR"
-    }
+  "recoverReset": {
+    "busy": "BOOL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ",
+    "envelop": "VAL",
+    "failure": "STR",
+    "seal": "VAL"
   },
-  "sign": {
-    "ask": {
-      "back": "STR",
-      "busy": "BOOL"
-    },
-    "in": {
-      "back": "STR",
-      "busy": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    },
-    "out": {
-      "busy": "BOOL",
-      "done": "BOOL"
-    },
-    "up": {
-      "back": "VAL",
-      "busy": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    }
+  "recoverSend": {
+    "busy": "BOOL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ",
+    "failure": "STR"
+  },
+  "signAsk": {
+    "back": "STR",
+    "busy": "BOOL"
+  },
+  "signIn": {
+    "back": "STR",
+    "busy": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
+  },
+  "signOut": {
+    "busy": "BOOL",
+    "done": "BOOL"
+  },
+  "signUp": {
+    "back": "VAL",
+    "busy": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
   },
   "toast": {
     "error": "ARR",
     "info": "ARR",
     "warn": "ARR"
   },
-  "user": {
-    "check": {
-      "values": "OBJ"
-    },
-    "create": {
-      "active": "BOOL",
-      "busy": "BOOL",
-      "created": "VAL",
-      "done": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    },
-    "destroy": {
-      "active": "BOOL",
-      "busy": "BOOL",
-      "done": "BOOL",
-      "targets": "ARR"
-    },
-    "list": {
-      "busy": "BOOL",
-      "counts": "OBJ",
-      "entities": "ARR",
-      "filter": "OBJ",
-      "pageNumber": "NUM",
-      "ready": "BOOL",
-      "sort": "STR"
-    },
-    "password": {
-      "active": "BOOL",
-      "busy": "BOOL",
-      "done": "BOOL",
-      "results": "OBJ",
-      "targets": "ARR"
-    },
-    "search": {
-      "busy": "BOOL",
-      "entry": "OBJ",
-      "entryErrors": "OBJ"
-    }
+  "userCheck": {
+    "values": "OBJ"
   },
-  "verify": {
-    "needsVerify": "BOOL",
-    "send": {
-      "busy": "BOOL"
-    },
-    "verify": {
-      "busy": "BOOL",
-      "done": "BOOL",
-      "envelop": "VAL",
-      "failure": "STR",
-      "seal": "VAL"
-    }
+  "userCreate": {
+    "active": "BOOL",
+    "busy": "BOOL",
+    "created": "VAL",
+    "done": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
+  },
+  "userDestroy": {
+    "active": "BOOL",
+    "busy": "BOOL",
+    "done": "BOOL",
+    "targets": "ARR"
+  },
+  "userList": {
+    "busy": "BOOL",
+    "counts": "OBJ",
+    "entities": "ARR",
+    "filter": "OBJ",
+    "pageNumber": "NUM",
+    "ready": "BOOL",
+    "sort": "STR"
+  },
+  "userPassword": {
+    "active": "BOOL",
+    "busy": "BOOL",
+    "done": "BOOL",
+    "results": "OBJ",
+    "targets": "ARR"
+  },
+  "userSearch": {
+    "busy": "BOOL",
+    "entry": "OBJ",
+    "entryErrors": "OBJ"
+  },
+  "verifyConfirm": {
+    "busy": "BOOL",
+    "done": "BOOL",
+    "envelop": "VAL",
+    "failure": "STR",
+    "seal": "VAL"
+  },
+  "verifyNeed": {
+    "needed": "BOOL"
+  },
+  "verifySend": {
+    "busy": "BOOL"
   }
 }

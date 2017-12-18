@@ -1,6 +1,6 @@
 /**
- * VerifyScene
- * @class VerifyScene
+ * VerifyNeedScene
+ * @class VerifyNeedScene
  */
 'use strict'
 
@@ -8,24 +8,24 @@ const Scene = require('./Scene')
 const cn = require('./concerns')
 const asleep = require('asleep')
 
-/** @lends VerifyScene */
-const VerifyScene = cn.compose(
+/** @lends VerifyNeedScene */
+const VerifyNeedScene = cn.compose(
 
 )(
-  class VerifySceneBase extends Scene {
+  class VerifyNeedSceneBase extends Scene {
     get scope () {
       const s = this
-      return s.store.verify
+      return s.store['verifyNeed']
     }
 
     async doSync ({delay = 100} = {}) {
       const s = this
       await asleep(delay)
       const verifyCtrl = await s.use('verifyCtrl')
-      const needsVerify = await verifyCtrl.needsVerify()
-      s.set({needsVerify})
+      const needed = await verifyCtrl.needsVerify()
+      s.set({needed})
     }
   }
 )
 
-module.exports = VerifyScene
+module.exports = VerifyNeedScene
