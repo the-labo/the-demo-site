@@ -25,7 +25,6 @@ const PasswordChangeScene = cn.compose(
         await s.processEntry(({password}) =>
           passwordCtrl.update(password))
       })
-
     }
   }
 )

@@ -27,7 +27,7 @@ class App extends React.Component {
     const {
       synced,
       user
-    } = srops
+    } = props
 
     return (
       <TheRoot className='app'>
