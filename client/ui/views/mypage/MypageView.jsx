@@ -13,7 +13,7 @@ import {
   TheButtonGroup,
   TheCondition
 } from 'the-components'
-import { asView, onlySigned } from '../../wrappers'
+import { asView } from '../../wrappers'
 import styles from './MypageView.pcss'
 import { Urls } from '@self/conf'
 
@@ -68,18 +68,16 @@ function MypageView ({
   )
 }
 
-export default onlySigned(
-  asView(
-    MypageView,
-    (state) => ({
-      busy: state['account.busy'],
-      synced: state['account.synced'],
-      user: state['account.user']
-    }),
-    () => ({}),
-    {
-      title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
-      onlySigned: true
-    }
-  )
+export default asView(
+  MypageView,
+  (state) => ({
+    busy: state['account.busy'],
+    synced: state['account.synced'],
+    user: state['account.user']
+  }),
+  () => ({}),
+  {
+    title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
+    onlySigned: true
+  }
 )

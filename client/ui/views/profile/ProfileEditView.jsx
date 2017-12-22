@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheView, TheDone, TheCondition } from 'the-components'
-import { asView, onlySigned } from '../../wrappers'
+import { asView } from '../../wrappers'
 import { ProfileEditForm } from '../../bounds'
 import styles from './ProfileEditView.pcss'
 import { Urls, Icons } from '@self/conf'
