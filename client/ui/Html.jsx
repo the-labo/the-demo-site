@@ -22,7 +22,7 @@ const u = Urls
 const Html = ({appScope, renderingContext}) => {
   const {version} = appScope.pkg
   const {lang, client, store, handle, path} = renderingContext
-  handle.setAttributes({store, client, l})
+  handle.setAttributes({store, client, l, lang})
   const l = locales.bind(lang)
   const appProps = {
     lang

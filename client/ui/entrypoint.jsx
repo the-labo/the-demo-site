@@ -20,7 +20,7 @@ once('DOMContentLoaded', () => {
   const props = get(APP_PROP_NAME)
   const app = (<App {...props} {...{store, client, handle}}/>)
   const l = locales.bind(lang)
-  handle.setAttributes({store, client, l})
+  handle.setAttributes({store, client, l, lang})
 
   mount(app, APP_CONTAINER_ID, {router: true})
     .then(() => {
@@ -29,6 +29,9 @@ once('DOMContentLoaded', () => {
     })
 
   rescue((e) => {
+    if (e.resolved) {
+      return
+    }
     const {lang} = props
     const l = locales.bind(lang)
     const {toast} = store

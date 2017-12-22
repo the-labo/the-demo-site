@@ -45,11 +45,13 @@ export default asView(
   PasswordChangeView,
   (state) => ({
     user: state['account.user'],
-    done: state['password.change.done']
+    done: state['passwordChange.done']
   }),
   ({passwordChangeScene}) => ({
     onMount: () => passwordChangeScene.init(),
-    onAgain: () => passwordChangeScene.set({done: false})
+    onAgain: async () => {
+      passwordChangeScene.set({done: false})
+    }
   }),
   {
     title: ({l}) => l('titles.PASSWORD_CHANGE_TITLE'),

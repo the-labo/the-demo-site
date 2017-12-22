@@ -49,7 +49,7 @@ export default asView(
     onMount: () => {
       recoverResetScene.init()
       const {seal, envelop} = urlUtil.queryFromSearch()
-      recoverResetScene.set({seal, envelop})
+      recoverResetScene.setEntry({seal, envelop})
     }
   })
 )

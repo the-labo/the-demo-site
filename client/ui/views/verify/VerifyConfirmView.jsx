@@ -51,7 +51,7 @@ export default asView(
     onMount: async () => {
       verifyConfirmScene.init()
       const {seal, envelop} = urlUtil.queryFromSearch()
-      verifyConfirmScene.set({seal, envelop})
+      verifyConfirmScene.setEntry({seal, envelop})
       await verifyConfirmScene.doVerify()
       verifyConfirmScene.set({done: true})
     },

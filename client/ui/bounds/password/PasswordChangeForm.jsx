@@ -17,7 +17,8 @@ const PasswordChangeForm = asForm(
                                      getInputAttributesOf,
                                      getLabelAttributesOf,
                                      getFormAttributes,
-                                     getSubmitAttributes
+                                     getSubmitAttributes,
+                                     onSubmit
                                    }) {
     return (
       <TheForm className='password-form'
@@ -39,6 +40,7 @@ const PasswordChangeForm = asForm(
           <Value>
             <Password placeholder={l('placeholders.NEW_PASSWORD')}
                       autoFocus
+                      onEnter={onSubmit}
                       {...getInputAttributesOf('password')}/>
           </Value>
         </Field>
@@ -57,6 +59,7 @@ export default asBound(
   PasswordChangeForm,
   (state) => ({
     user: state['account.user'],
+    spinning: state['passwordChange.busy'],
     values: state['passwordChange.entry'],
     errors: state['passwordChange.entryErrors']
   }),

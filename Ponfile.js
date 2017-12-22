@@ -96,7 +96,11 @@ module.exports = pon({
     'client/**/*.json'
   ], {sort: true}),
   'struct:render': [
-    coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
+    coz([
+      '+(client|server)/**/.index.*.bud',
+      '+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
+      '.*.bud'
+    ])
   ],
   'unless:production': env.notFor('production'),
   'db:setup': setup(createDB),

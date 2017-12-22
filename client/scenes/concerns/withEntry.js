@@ -7,6 +7,7 @@
 'use strict'
 
 const {expand} = require('objnest')
+const {TheError} = require('the-error')
 
 /** @lends withEntry */
 function withEntry (Class) {
@@ -37,9 +38,12 @@ function withEntry (Class) {
       const {entry, entryErrors} = s.scope
       entryErrors.drop()
       const values = expand(entry.state)
-      return Promise.resolve(handler(values)).catch((e) =>
+      return Promise.resolve(handler(values)).catch((e) => {
         entryErrors.set(s.catchEntryError(e))
-      )
+        throw Object.assign(
+          new TheError('Failed to process entry', {}, {resolved: true})
+        )
+      })
     }
   }
 

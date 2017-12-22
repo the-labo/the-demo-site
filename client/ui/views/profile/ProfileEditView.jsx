@@ -12,15 +12,12 @@ import { Urls, Icons } from '@self/conf'
 
 function ProfileEditView ({
                             l,
-                            busy,
                             user,
                             done,
                             onAgain
                           }) {
   return (
-    <TheView className={styles.self}
-             spinning={busy}
-    >
+    <TheView className={styles.self}>
       <TheView.Header icon={Icons.PROFILE_ICON}
                       text={l('titles.PROFILE_EDIT_TITLE')}
       />
@@ -48,14 +45,16 @@ export default asView(
   ProfileEditView,
   (state) => ({
     user: state['account.user'],
-    busy: state['profile.edit.busy'],
-    done: state['profile.edit.done']
+    done: state['profileEdit.done']
   }),
   ({
      profileEditScene
    }) => ({
     onMount: () => profileEditScene.doSync(),
-    onAgain: () => profileEditScene.set({done: false})
+    onAgain: async () => {
+      profileEditScene.set({done: false})
+      await profileEditScene.doSync()
+    }
   }),
   {
     title: ({l}) => l('titles.PROFILE_EDIT_TITLE'),

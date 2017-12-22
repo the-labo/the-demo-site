@@ -1,6 +1,6 @@
 /**
- * Fragment components
- * @module fragments
+ * Bound components
+ * @module bounds
  */
 'use strict'
 
