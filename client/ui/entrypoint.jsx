@@ -29,9 +29,6 @@ once('DOMContentLoaded', () => {
     })
 
   rescue((e) => {
-    if (e.resolved) {
-      return
-    }
     const {lang} = props
     const l = locales.bind(lang)
     const {toast} = store

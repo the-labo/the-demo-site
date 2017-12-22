@@ -19,16 +19,12 @@ const ProfileEditScene = cn.compose(
       return s.store.profileEdit
     }
 
-    async doSync () {
+    setEntryFromEntity (entity) {
       const s = this
-      const accountCtrl = await s.use('accountCtrl')
-      await s.busyFor(async () => {
-        const {profile} = await accountCtrl.getCurrentUser()
-        const values = clone(profile || {}, {
-          without: ['user', 'id', 'sign', /^\$/]
-        })
-        s.setEntry(values)
+      const values = clone(entity || {}, {
+        without: ['user', 'id', 'sign', /^\$/]
       })
+      s.setEntry(values)
     }
 
     async doSave () {

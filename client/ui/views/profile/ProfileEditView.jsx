@@ -12,12 +12,14 @@ import { Urls, Icons } from '@self/conf'
 
 function ProfileEditView ({
                             l,
+                            busy,
                             user,
                             done,
                             onAgain
                           }) {
   return (
-    <TheView className={styles.self}>
+    <TheView className={styles.self}
+             spinning={busy}>
       <TheView.Header icon={Icons.PROFILE_ICON}
                       text={l('titles.PROFILE_EDIT_TITLE')}
       />
@@ -44,16 +46,26 @@ function ProfileEditView ({
 export default asView(
   ProfileEditView,
   (state) => ({
+    busy: state['account.busy'],
     user: state['account.user'],
     done: state['profileEdit.done']
   }),
   ({
+     accountScene,
      profileEditScene
-   }) => ({
-    onMount: () => profileEditScene.doSync(),
+   }, propsProxy) => ({
+    onMount: async () => {
+      await propsProxy.ponPrepareProfile()
+
+    },
     onAgain: async () => {
       profileEditScene.set({done: false})
-      await profileEditScene.doSync()
+      await propsProxy.ponPrepareProfile()
+    },
+    ponPrepareProfile: async () => {
+      await accountScene.doSync()
+      const {profile} = accountScene.get('user')
+      profileEditScene.setEntryFromEntity(profile)
     }
   }),
   {
