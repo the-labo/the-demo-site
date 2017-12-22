@@ -55,14 +55,14 @@ export default asView(
      profileEditScene
    }, propsProxy) => ({
     onMount: async () => {
-      await propsProxy.ponPrepareProfile()
+      await propsProxy.onPrepareProfile()
 
     },
     onAgain: async () => {
       profileEditScene.set({done: false})
-      await propsProxy.ponPrepareProfile()
+      await propsProxy.onPrepareProfile()
     },
-    ponPrepareProfile: async () => {
+    onPrepareProfile: async () => {
       await accountScene.doSync()
       const {profile} = accountScene.get('user')
       profileEditScene.setEntryFromEntity(profile)

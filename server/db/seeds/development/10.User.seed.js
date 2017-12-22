@@ -21,5 +21,5 @@ module.exports = [
     id: ({index}) => String(index),
     name: ({email}) => email.split('@')[0],
     createdAt: new Date()
-  }, 120)
+  }, 102)
 ]
