@@ -1,0 +1,35 @@
+'use strict'
+
+const pkg = require('../../../package')
+
+module.exports = [
+  {
+    name: 'server-error',
+    title: 'Ops! Something is wrong',
+    texts: [
+      'Sorry, something is wrong with our server. Please try again later',
+      '申し訳ありません。予期せぬエラーが発生しました。時間を置いて再度お試しください'
+    ]
+  },
+  {
+    name: 'server-gone',
+    title: 'Ops! Connection Lost',
+    texts: [
+      'Check your Internet connection and try it again',
+      'インターネットへの接続を確認して再度お試しください'
+    ]
+  }
+].map(({name, title, texts}) => ({
+  force: true,
+  mode: '444',
+  path: `${name}.html`,
+  data: {
+    title,
+    texts,
+    pkg
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

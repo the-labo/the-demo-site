@@ -2521,8 +2521,8 @@ clay-driver-mysql@^5.2.13:
     mysqldump "^1.4.2"
 
 clay-driver-sequelize@^6.4.19:
-  version "6.4.19"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.19.tgz#42fe1dd1ebf9feb2b4c13e791447320fd21bc0db"
+  version "6.4.20"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.20.tgz#01232ca9323e98e88ea10e20ca04d444a8abc51b"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
@@ -2541,7 +2541,7 @@ clay-driver-sequelize@^6.4.19:
     msgpack "^1.0.2"
     objnest "^4.0.0"
     retry-as-promised "^2.3.2"
-    sequelize "4.28.0"
+    sequelize "^4.28.6"
     sg-queue "^1.1.4"
     stringcase "^4.0.0"
 
@@ -9058,29 +9058,7 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@4.28.0:
-  version "4.28.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.28.0.tgz#1b1877de816b04aad069c96800092abc94cdddff"
-  dependencies:
-    bluebird "^3.4.6"
-    cls-bluebird "^2.0.1"
-    debug "^3.0.0"
-    depd "^1.1.0"
-    dottie "^2.0.0"
-    generic-pool "^3.1.8"
-    inflection "1.12.0"
-    lodash "^4.17.1"
-    moment "^2.13.0"
-    moment-timezone "^0.5.4"
-    retry-as-promised "^2.3.1"
-    semver "^5.0.1"
-    terraformer-wkt-parser "^1.1.2"
-    toposort-class "^1.0.1"
-    uuid "^3.0.0"
-    validator "^9.1.0"
-    wkx "^0.4.1"
-
-sequelize@^4.28.1:
+sequelize@^4.28.1, sequelize@^4.28.6:
   version "4.28.6"
   resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.28.6.tgz#44b4b69f550bc53f41135bf8db73c5d492cb7e64"
   dependencies:
@@ -9296,8 +9274,8 @@ shimmer@^1.1.0, shimmer@^1.2.0:
   resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.2.0.tgz#f966f7555789763e74d8841193685a5e78736665"
 
 showdown@^1.8.1:
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.5.tgz#418390cc5bd2d18dea979b9a1b22a156a7a9ecd7"
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.6.tgz#91ea4ee3b7a5448aaca6820a4e27e690c6ad771c"
   dependencies:
     yargs "^10.0.3"
 
@@ -9781,16 +9759,16 @@ sugo-actor@^7.0.6:
     sugo-module-base "^1.2.6"
     uuid "^3.0.1"
 
-sugo-caller@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-6.0.1.tgz#90db30316e6e5b0d627e2a89d5d251adb0a3f6d6"
+sugo-caller@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-6.0.2.tgz#5e4cb65a78a1cb03bc588dd90d59ecd2b40101e4"
   dependencies:
     argx "^3.0.1"
     bwindow "^1.0.7"
     sg-queue "^1.1.4"
     sg-schemas "^2.2.2"
     sg-serializer "^1.1.10"
-    sg-socket-client "^2.0.1"
+    sg-socket-client "^3.1.1"
     sg-socket-constants "^1.6.2"
     sg-validator "^1.1.1"
     sugo-client "^2.0.1"
@@ -10090,17 +10068,19 @@ the-check@^1.2.0, the-check@^1.2.1:
     asfs "^2.0.1"
     hasbin "^1.2.3"
 
-the-client@^4.1.3:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-4.2.0.tgz#db65bc6de33b130cf40bfe35aeffd564304af02c"
+the-client@^4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-4.2.4.tgz#127531f87ab369b0d3ae3dba15c9eb060bd890a7"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
     bstorage "^2.0.1"
-    bwindow "^1.0.7"
+    bwindow "^1.1.0"
+    debug "^3.1.0"
     prop-types "^15.6.0"
-    sugo-caller "^6.0.1"
-    the-error "^1.4.1"
+    sugo-caller "^6.0.2"
+    the-check "^1.2.1"
+    the-error "^1.4.2"
     uuid "^3.1.0"
 
 the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-constants@^1.1.8:
@@ -10129,8 +10109,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0:
     video-extensions "^1.1.0"
 
 the-components@^3.1.16:
-  version "3.1.16"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.16.tgz#ded6ead67d585bcb32687ae6d1103e4fe360c957"
+  version "3.1.17"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.17.tgz#fff4fbe927586d57c3536b634a33b4825377af4d"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -10154,7 +10134,7 @@ the-components@^3.1.16:
     the-icon "^2.0.0"
     the-image "^1.3.3"
     the-info "^2.0.1"
-    the-input "^2.1.7"
+    the-input "^2.1.8"
     the-jumbotron "^2.0.0"
     the-lead "^1.1.1"
     the-line "^1.0.2"
@@ -10282,7 +10262,7 @@ the-env@^1.1.0:
     evaljson "^5.1.0"
     stringcase "^4.0.0"
 
-the-error@^1.4.1, the-error@^1.4.2:
+the-error@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/the-error/-/the-error-1.4.2.tgz#84bb596c6ed226e3dac8b9bb20aae4d2366d0aa9"
 
@@ -10413,7 +10393,7 @@ the-info@^2.0.1:
     the-component-util "^2.1.0"
     the-style "^2.0.1"
 
-the-input@^2.0.0, the-input@^2.1.6, the-input@^2.1.7:
+the-input@^2.0.0, the-input@^2.1.6, the-input@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.8.tgz#8767d1ab236c129e7bf86854353c6898387b37b6"
   dependencies:
@@ -10582,8 +10562,8 @@ the-scene-base@^1.0.1, the-scene-base@^1.1.2:
     bwindow "^1.1.0"
 
 the-scope@^1.7.0, the-scope@^1.8.7:
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.7.tgz#e2530c8c3d035edb0c64e6c0b935860fd83bf6ef"
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-1.8.8.tgz#ed5c204596dbf67326643f5c932ecb3a7d0f07be"
   dependencies:
     the-check "^1.2.1"
 
@@ -10802,6 +10782,14 @@ the-view@^2.0.0:
 the-window@^5.0.0, the-window@^5.2.4, the-window@^5.2.5:
   version "5.2.5"
   resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.2.5.tgz#4a92f5f0d4de2f059f2825244467b5ba66fe3f9e"
+  dependencies:
+    bwindow "^1.1.0"
+    history "^4.7.2"
+    the-router "^2.0.6"
+
+the-window@^5.2.6:
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.2.6.tgz#e942bbc63d0300f68e8948758f37ef807c0ee7e9"
   dependencies:
     bwindow "^1.1.0"
     history "^4.7.2"

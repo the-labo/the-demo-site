@@ -17,6 +17,10 @@ http {
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
+    location /errors {
+      try_files $uri $uri/index.html $uri.html;
+      root ${STATIC_DIR};
+    }
     location ~* ^/.+\.(html|htm|js|css|map) {
       root ${STATIC_DIR};
     }
