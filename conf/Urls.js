@@ -45,6 +45,7 @@ module.exports = Object.freeze(
     PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
     PRODUCTION_CSS_URL: `/${pkg.name}-${pkg.version}.css`,
 
-    ERROR_SERVER_ERROR_URL: '/errors/server-error'
+    ERROR_SERVER_ERROR_URL: '/errors/server-error',
+    ERROR_NOTFOUND_URL: '/errors/not-found'
   }
 )

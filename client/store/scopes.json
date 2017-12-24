@@ -65,8 +65,8 @@
     "back": "STR"
   },
   "signOut": {
-    "busy": "BOOL",
     "back": "STR",
+    "busy": "BOOL",
     "done": "BOOL"
   },
   "signUp": {

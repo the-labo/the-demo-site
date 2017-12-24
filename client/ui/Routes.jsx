@@ -32,6 +32,8 @@ const Routes = ({l, user}) => (
     <TheRoute exact path={Urls.QUIT_URL} component={v.QuitView}/>
     <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
 
+      <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
+
     <TheRoute component={v.ErrorNotfoundView}/>
   </TheRoute.Switch>
 )

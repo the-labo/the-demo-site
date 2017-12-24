@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.3.2",
+  "version": "7.3.3",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -84,7 +84,7 @@
     "the-server": "^4.0.3",
     "the-setting": "^1.0.1",
     "the-store": "^4.4.6",
-    "the-templates": "^2.1.0",
+    "the-templates": "^2.1.2",
     "the-url": "^1.0.0",
     "the-window": "^5.3.0",
     "uuid": "^3.1.0"

@@ -5,6 +5,7 @@
 
 const {camelcase} = require('stringcase')
 const sc = require('../scenes')
+const {mapping} = require('the-templates')
 
 module.exports = [
   {
@@ -14,19 +15,10 @@ module.exports = [
     mapping: Object.keys(sc).map((name) => ({
       instanceName: camelcase(name),
       className: name
-    }))
+    })),
+    cjs: true
   }
-].map(({name, mapping, requirePath, requireAs}) => ({
-  force: true,
-  mode: '444',
-  path: `${name}.js`,
-  data: {
-    name,
-    mapping,
-    requirePath,
-    requireAs
-  }
-}))
+].map(mapping)
 
 if (!module.parent) {
   require('coz').render(__filename)

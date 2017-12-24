@@ -5,8 +5,14 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
+const {urlUtil} = require('@self/utils')
 
 class Scene extends TheScene {
+
+  goTo (url, params) {
+    const resolved = urlUtil.resolveUrl(url, params)
+    super.goTo(resolved)
+  }
 
   async use (name) {
     const s = this

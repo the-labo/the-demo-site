@@ -6,6 +6,7 @@ const scopes = require('../store/scopes')
 const {flatten} = require('objnest')
 const {pascalcase, camelcase} = require('stringcase')
 const names = Object.keys(flatten(scopes))
+  .filter((name) => !/^_/.test(name))
   .map((name) => {
     const components = name.split('.')
     return pascalcase(

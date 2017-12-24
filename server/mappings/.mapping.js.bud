@@ -7,16 +7,20 @@ const c = require('../controllers')
 const r = require('../db/resources')
 
 const {camelcase} = require('stringcase')
+const {mapping} = require('the-templates')
 
 module.exports = [
   {
     name: 'ControllerMapping',
     requirePath: '../controllers',
     requireAs: 'c',
-    mapping: Object.keys(c).map((name) => ({
-      instanceName: camelcase(name),
-      className: name
-    }))
+    mapping: Object.keys(c)
+      .filter((name) => !['Ctrl'].includes(name))
+      .map((name) => ({
+        instanceName: camelcase(name),
+        className: name
+      })),
+    cjs: true
   },
   {
     name: 'ResourceMapping',
@@ -25,19 +29,10 @@ module.exports = [
     mapping: Object.keys(r).map((name) => ({
       instanceName: name.replace(/Resource$/, ''),
       className: name
-    }))
+    })),
+    cjs: true
   }
-].map(({name, mapping, requirePath, requireAs}) => ({
-  force: true,
-  mode: '444',
-  path: `${name}.js`,
-  data: {
-    name,
-    mapping,
-    requirePath,
-    requireAs
-  }
-}))
+].map(mapping)
 
 if (!module.parent) {
   require('coz').render(__filename)
