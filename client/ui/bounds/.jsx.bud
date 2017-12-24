@@ -10,7 +10,8 @@ module.exports = [
   'user/UserPasswordDialog',
   'user/UserCreateDialog',
   'user/UserActionBar',
-  'user/UserPager'
+  'user/UserPager',
+  'caution/CautionDisconnectedDialog'
 ].map((name) => ({
   force: false,
   mkdirp: true,

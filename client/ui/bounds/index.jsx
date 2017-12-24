@@ -4,6 +4,7 @@
  */
 'use strict'
 
+import CautionDisconnectedDialog from './caution/CautionDisconnectedDialog'
 import PasswordChangeForm from './password/PasswordChangeForm'
 import ProfileEditForm from './profile/ProfileEditForm'
 import RecoverResetForm from './recover/RecoverResetForm'
@@ -21,6 +22,7 @@ import UserPasswordDialog from './user/UserPasswordDialog'
 import UserSearchForm from './user/UserSearchForm'
 
 export {
+  CautionDisconnectedDialog,
   PasswordChangeForm,
   ProfileEditForm,
   RecoverResetForm,

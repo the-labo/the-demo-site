@@ -1,9 +1,10 @@
 'use strict'
 
 const create = require('./create')
-
-const singleton = create.for('singleton')
-
+const handle = require('../handle')
+const singleton = create.for('singleton', {
+  handle
+})
 Object.assign(singleton, {
   create
 })

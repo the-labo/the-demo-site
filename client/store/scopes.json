@@ -33,6 +33,10 @@
   "app": {
     "busy": "BOOL"
   },
+  "cautionDisconnected": {
+    "active": "BOOL",
+    "busy": "BOOL"
+  },
   "passwordChange": {
     "$ref": "#/_/input"
   },

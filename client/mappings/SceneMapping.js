@@ -9,6 +9,7 @@ const sc = require('../scenes')
 module.exports = Object.freeze({
   'accountScene': sc.AccountScene,
   'appScene': sc.AppScene,
+  'cautionDisconnectedScene': sc.CautionDisconnectedScene,
   'passwordChangeScene': sc.PasswordChangeScene,
   'profileEditScene': sc.ProfileEditScene,
   'quitScene': sc.QuitScene,

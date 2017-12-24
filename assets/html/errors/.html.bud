@@ -12,11 +12,11 @@ module.exports = [
     ]
   },
   {
-    name: 'server-gone',
-    title: 'Ops! Connection Lost',
+    name: 'under-maintenance',
+    title: 'Sorry! We are under maintenance',
     texts: [
-      'Check your Internet connection and try it again',
-      'インターネットへの接続を確認して再度お試しください'
+      'We will come back later. Please wait and try again later',
+      'メンテナンス中です。時間を置いて再度お試しください'
     ]
   }
 ].map(({name, title, texts}) => ({

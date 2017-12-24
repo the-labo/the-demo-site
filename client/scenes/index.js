@@ -6,6 +6,7 @@
 
 const AccountScene = require('./AccountScene')
 const AppScene = require('./AppScene')
+const CautionDisconnectedScene = require('./CautionDisconnectedScene')
 const PasswordChangeScene = require('./PasswordChangeScene')
 const ProfileEditScene = require('./ProfileEditScene')
 const QuitScene = require('./QuitScene')
@@ -30,6 +31,7 @@ const VerifySendScene = require('./VerifySendScene')
 module.exports = {
   AccountScene,
   AppScene,
+  CautionDisconnectedScene,
   PasswordChangeScene,
   ProfileEditScene,
   QuitScene,

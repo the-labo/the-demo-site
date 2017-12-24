@@ -19,6 +19,7 @@ import { asBound, withLoc, withCycle } from './wrappers'
 import { withBinder } from 'the-handle'
 import { withClient } from 'the-client'
 import { locales } from '@self/conf'
+import { CautionDisconnectedDialog } from './bounds'
 
 class App extends React.Component {
   render () {
@@ -39,6 +40,7 @@ class App extends React.Component {
           </TheCondition>
         </Main>
         <Footer/>
+        <CautionDisconnectedDialog/>
       </TheRoot>
     )
   }

@@ -14,21 +14,18 @@ const ClientBase = [].reduce((Clazz, mix) => mix(Clazz), TheClient)
 
 class Client extends ClientBase {}
 
-function bindClientEvents (client) {
-  client.on(TheClientEvents.SERVER_GONE, () => show(Urls.ERROR_SERVER_GONE_URL))
-  client.on(TheClientEvents.SOCKET_GONE, () => show(Urls.ERROR_SERVER_GONE_URL))
-}
-
 /** @lends create */
 function create (config = {}) {
   const client = new Client(config)
-  bindClientEvents(client)
   return client
 }
 
-create.for = (namespace, config) => {
-  const client = Client.for(namespace, config)
-  bindClientEvents(client)
+create.for = (namespace, options = {}) => {
+  const {
+    handle: {cautionDisconnectedScene}
+  } = options
+  const client = Client.for(namespace, {})
+  client.on(TheClientEvents.SOCKET_GONE, () => cautionDisconnectedScene.set({active: true}))
   return client
 }
 
