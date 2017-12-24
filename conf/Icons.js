@@ -31,7 +31,11 @@ module.exports = Object.freeze(
 
     SORT_ICON: 'fa fa-sort',
     SORT_DESC_ICON: 'fa fa-sort-desc',
-    SORT_ASC_ICON: 'fa fa-sort-asc'
+    SORT_ASC_ICON: 'fa fa-sort-asc',
+
+    WARNING_ICON: 'fa fa-exclamation-triangle',
+
+    RELOAD_ICON: 'fa fa-refresh'
 
   }
 )
