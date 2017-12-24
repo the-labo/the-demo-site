@@ -22,7 +22,7 @@ const UserListScene = cn.compose(
     get defaults () {
       const s = this
       return {
-        pageNumber: s.defaultPageSize,
+        pageNumber: s.defaultPageNumber,
         pageSize: s.defaultPageSize,
         filter: {}
       }

@@ -13,8 +13,7 @@ function withBack (Class) {
   class WithBack extends Class {
     goBack () {
       const s = this
-      const {back} = s.scope
-      const url = back.state || Urls.TOP_URL
+      const url = s.get('back') || Urls.TOP_URL
       s.goTo(url)
     }
   }

@@ -10,7 +10,8 @@ const cn = require('./concerns')
 /** @lends SignoutScene */
 const SignoutScene = cn.compose(
   cn.withBusy,
-  cn.withEntry
+  cn.withEntry,
+  cn.withBack
 )(
   class SignoutSceneBase extends Scene {
     get scope () {

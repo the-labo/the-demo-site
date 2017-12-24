@@ -10408,8 +10408,8 @@ the-info@^2.0.1:
     the-style "^2.0.1"
 
 the-input@^2.0.0, the-input@^2.1.6, the-input@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.8.tgz#8767d1ab236c129e7bf86854353c6898387b37b6"
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.9.tgz#0899105d474b7391e43e701ed4a0d910611c4cfb"
   dependencies:
     asobj "^2.0.2"
     chopcal "^3.0.1"
@@ -10570,8 +10570,8 @@ the-router@^2.0.6:
     the-style "^2.0.1"
 
 the-scene-base@^1.0.1, the-scene-base@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.1.2.tgz#a8166bee3ff9703f8a007a7df9196d178618c5fd"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/the-scene-base/-/the-scene-base-1.1.3.tgz#c7261c31fd6325c953cefea1e2f4a29e313b3ac5"
   dependencies:
     bwindow "^1.1.0"
 

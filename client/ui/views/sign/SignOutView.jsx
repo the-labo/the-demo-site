@@ -45,6 +45,7 @@ export default asView(
       await signOutScene.doSignout()
       await accountScene.doSync()
       signOutScene.set({done: true})
+      signOutScene.goBack()
     }
   }),
   {
