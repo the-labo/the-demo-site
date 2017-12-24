@@ -6,21 +6,7 @@
  */
 'use strict'
 
+const {withValues} = require('the-scene-base/shim')
+
 /** @lends withValues */
-function withValues (Class) {
-  class WithValues extends Class {
-    setValues (v) {
-      const s = this
-      s.scope.values.set(v)
-    }
-
-    dropValues () {
-      const s = this
-      s.scope.values.drop()
-    }
-  }
-
-  return WithValues
-}
-
 module.exports = withValues

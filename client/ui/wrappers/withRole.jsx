@@ -21,8 +21,7 @@ function withRole (Class) {
         }
       }, s.props)
       return (
-        <Class {...ComponentProps}
-        />
+        <Class {...ComponentProps}/>
       )
     }
   }

@@ -24,13 +24,14 @@ function MypageView ({
                        user
                      }) {
   const ready = Boolean(synced && user)
+  const {profile} = user
   return (
     <TheView className={styles.self}
              spinning={busy}>
       <TheView.Header icon={null}
                       text={l('titles.ACCOUNT_MYPAGE_TITLE')}
       />
-      <TheView.Body>
+      <TheView.Body narrow>
         <TheCondition if={ready}>
           <div>
             <TheSection>
@@ -40,8 +41,8 @@ function MypageView ({
               <TheSection.Body>
                 <TheInfo data={user && {
                   [l('labels.USER_NAME')]: user.name,
-                  [l('labels.USER_PROFILE_NAME')]: user.profile.name,
-                  [l('labels.USER_EMAIL')]: user.profile.email
+                  [l('labels.USER_PROFILE_NAME')]: profile && profile.name,
+                  [l('labels.USER_EMAIL')]: profile && profile.email
                 }}/>
                 <br/>
                 <TheButtonGroup>

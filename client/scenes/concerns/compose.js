@@ -6,13 +6,7 @@
  */
 'use strict'
 
-/** @lends compose */
-function compose (...mixins) {
-  return function composed (Class) {
-    return mixins.reduce((Class, mix) => {
-      return mix(...[].concat(Class, mix))
-    }, Class)
-  }
-}
+const {compose} = require('the-scene-base/shim')
 
+/** @lends compose */
 module.exports = compose

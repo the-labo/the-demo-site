@@ -38,7 +38,7 @@ function onlySigned (Component, options = {}) {
           const synced = store.account.get('synced')
           if (synced) {
             const user = store.account.get('user')
-            let hasSigned = Boolean(user)
+            const hasSigned = Boolean(user)
             if (!hasSigned) {
               const {pathname} = get('location')
               const {signUp, signIn} = store

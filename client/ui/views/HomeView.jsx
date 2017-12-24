@@ -8,9 +8,12 @@ import { TheView, TheButton } from 'the-components'
 import { asView } from '../wrappers'
 import styles from './HomeView.pcss'
 
-function HomeView ({}) {
+function HomeView ({
+                     busy
+                   }) {
   return (
-    <TheView className={styles.self}>
+    <TheView className={styles.self}
+             spinning={busy}>
       <TheView.Header icon={null}
                       text={null}
       />

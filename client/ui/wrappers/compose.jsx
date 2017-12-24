@@ -6,13 +6,7 @@
  */
 'use strict'
 
-/** @lends compose */
-function compose (...mixins) {
-  return function composed (Class) {
-    return mixins.reduce((Class, mix) => {
-      return mix(...[].concat(Class, mix))
-    }, Class)
-  }
-}
+import { compose } from 'the-hoc'
 
+/** @lends compose */
 export default compose

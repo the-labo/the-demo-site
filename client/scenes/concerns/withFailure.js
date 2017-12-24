@@ -6,32 +6,7 @@
  */
 'use strict'
 
+const {withFailure} = require('the-scene-base/shim')
+
 /** @lends withFailure */
-function withFailure (Class) {
-  class WithFailure extends Class {
-    setFailure (failure) {
-      const s = this
-      s.scope.failure.set(failure)
-    }
-
-    clearFailure () {
-      const s = this
-      s.scope.failure.del()
-    }
-
-    async catchFailure (e, options = {}) {
-      const s = this
-      const {messages = {}} = options
-      const message = messages[e.name] || messages.default
-      if (message) {
-        s.setFailure(String(message))
-      } else {
-        return Promise.reject(e)
-      }
-    }
-  }
-
-  return WithFailure
-}
-
 module.exports = withFailure

@@ -6,27 +6,7 @@
  */
 'use strict'
 
+const {withPage} = require('the-scene-base/shim')
+
 /** @lends withPage */
-function withPage (Class) {
-  class WithPage extends Class {
-    get defaultPageNumber () {
-      return 1
-    }
-
-    get defaultPageSize () {
-      return 25
-    }
-
-    getPage () {
-      const s = this
-      return {
-        number: s.get('pageNumber') || s.defaultPageNumber,
-        size: s.get('pageSize') || s.defaultPageSize
-      }
-    }
-  }
-
-  return WithPage
-}
-
 module.exports = withPage

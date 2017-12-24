@@ -7,18 +7,8 @@
 'use strict'
 
 const {Urls} = require('@self/conf')
+const {withBack} = require('the-scene-base/shim')
 
-/** @lends withBack */
-function withBack (Class) {
-  class WithBack extends Class {
-    goBack () {
-      const s = this
-      const url = s.get('back') || Urls.TOP_URL
-      s.goTo(url)
-    }
-  }
-
-  return WithBack
-}
-
-module.exports = withBack
+module.exports = (Class) => withBack(Class, {
+  top: Urls.TOP_URL
+})

@@ -7,7 +7,7 @@
 
 const theServer = require('the-server')
 const {Html} = require('@self/client/shim/ui')
-const {createClient, createStore, createHandle} = require('@self/client')
+const {createClient, createStore, createHandle} = require('@self/client/shim')
 const theSeal = require('the-seal')
 const endpoints = require('../endpoints')
 const pkg = require('../../package.json')

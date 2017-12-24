@@ -6,11 +6,7 @@
  */
 'use strict'
 
-/** @lends compose */
-function compose (...mixins) {
-  return function composed (Class) {
-    return mixins.reduce((Class, mix) => mix(Class), Class)
-  }
-}
+const {compose} = require('the-controller-base')
 
+/** @lends compose */
 module.exports = compose
