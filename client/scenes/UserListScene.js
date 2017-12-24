@@ -19,8 +19,13 @@ const UserListScene = cn.compose(
       return s.store.userList
     }
 
-    get defaultPageSize () {
-      return 50
+    get defaults () {
+      const s = this
+      return {
+        pageNumber: s.defaultPageSize,
+        pageSize: s.defaultPageSize,
+        filter: {}
+      }
     }
 
     async doSync () {

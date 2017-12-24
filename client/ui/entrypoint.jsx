@@ -2,7 +2,7 @@
 import 'the-polyfill/apply'
 
 import React from 'react'
-import { once, get, set, mount, rescue } from 'the-window'
+import { once, get, set, mount, rescue, history as historyFor } from 'the-window'
 import App from './App'
 import { UI, locales } from '@self/conf'
 import client from '../client'
@@ -16,22 +16,20 @@ set(APP_STAGE_NAME, 'registering')
 once('DOMContentLoaded', () => {
   set(APP_STAGE_NAME, 'mounting')
 
-  const [lang] = (get('navigator.language') || DEFAULT_LANG).split('-')
+  const [lang] = (get('appLang') || get('navigator.language') || DEFAULT_LANG).split('-')
   const props = get(APP_PROP_NAME)
+  const history = historyFor()
   const app = (<App {...props} {...{store, client, handle}}/>)
   const l = locales.bind(lang)
-  handle.setAttributes({store, client, l, lang})
+  handle.setAttributes({store, client, l, lang, history})
 
-  mount(app, APP_CONTAINER_ID, {router: true})
+  mount(app, APP_CONTAINER_ID, {router: true, history})
     .then(() => {
       console.debug(`The app mounted on "#${APP_CONTAINER_ID}" with props:`, props)
       set(APP_STAGE_NAME, 'mounted')
     })
 
   rescue((e) => {
-    const {lang} = props
-    const l = locales.bind(lang)
-    const {toast} = store
-    toast.error.push(l('errors.UNEXPECTED_ERROR'))
+    store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
   })
 })

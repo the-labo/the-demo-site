@@ -29,5 +29,6 @@ http {
       root ${STATIC_DIR};
     }
     error_page 502 /errors/server-error.html;
+    error_page 503 /errors/under-maintenance.html;
   }
 }

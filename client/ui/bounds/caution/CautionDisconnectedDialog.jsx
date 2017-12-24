@@ -21,7 +21,7 @@ const CautionDisconnectedDialog = compose(
       <TheDialog present={active}
                  spinning={busy}
                  title={(
-                   <span><TheIcon className={Icons.WARNING_ICON}/>{l('titles.SERVER_GONE_TITLE')}</span>
+                   <span><TheIcon className={Icons.WARNING_ICON}/>{l('titles.CAUTION_DISCONNECTED_TITLE')}</span>
                  )}
                  lead={l('messages.CONNECTION_SEEMS_TO_BE_LOST')}
       >

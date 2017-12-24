@@ -2521,8 +2521,8 @@ clay-driver-mysql@^5.2.13:
     mysqldump "^1.4.2"
 
 clay-driver-sequelize@^6.4.19:
-  version "6.4.20"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.20.tgz#01232ca9323e98e88ea10e20ca04d444a8abc51b"
+  version "6.4.21"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.21.tgz#28ebe5402772412dbb0627fb82f84870ea749199"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
@@ -3376,7 +3376,7 @@ debug@2.6.8:
   dependencies:
     ms "2.0.0"
 
-debuglog@^1.0.1:
+debuglog@*, debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -5041,7 +5041,7 @@ import-lazy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
 
-imurmurhash@^0.1.4:
+imurmurhash@*, imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -5953,6 +5953,10 @@ lodash._basefor@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/lodash._basefor/-/lodash._basefor-3.0.3.tgz#7550b4e9218ef09fad24343b612021c79b4c20c2"
 
+lodash._baseindexof@*:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
+
 lodash._baseisequal@^3.0.0:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/lodash._baseisequal/-/lodash._baseisequal-3.0.7.tgz#d8025f76339d29342767dcc887ce5cb95a5b51f1"
@@ -5981,9 +5985,19 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@^3.0.0:
+lodash._bindcallback@*, lodash._bindcallback@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
+
+lodash._cacheindexof@*:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
+
+lodash._createcache@*:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
+  dependencies:
+    lodash._getnative "^3.0.0"
 
 lodash._createset@~4.0.0:
   version "4.0.3"
@@ -5995,7 +6009,7 @@ lodash._createwrapper@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash._getnative@^3.0.0:
+lodash._getnative@*, lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
@@ -6116,7 +6130,7 @@ lodash.pairs@^3.0.0:
   dependencies:
     lodash.keys "^3.0.0"
 
-lodash.restparam@^3.0.0:
+lodash.restparam@*, lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
@@ -8610,7 +8624,7 @@ readable-stream@~2.0.0:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   dependencies:
@@ -10109,8 +10123,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0:
     video-extensions "^1.1.0"
 
 the-components@^3.1.16:
-  version "3.1.17"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.17.tgz#fff4fbe927586d57c3536b634a33b4825377af4d"
+  version "3.1.18"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-3.1.18.tgz#141bc284fff1d82c65aaab9a9a681adfd17bba4c"
   dependencies:
     classnames "^2.2.5"
     co "^4.6.0"
@@ -10121,7 +10135,7 @@ the-components@^3.1.16:
     the-card "^2.0.0"
     the-condition "^2.0.0"
     the-container "^3.0.0"
-    the-dialog "^1.3.3"
+    the-dialog "^1.3.4"
     the-done "^2.0.0"
     the-drawer "^2.0.0"
     the-flick "^2.1.8"
@@ -10216,20 +10230,20 @@ the-db@^7.8.16:
     the-check "^1.2.1"
     uuid "^3.1.0"
 
-the-dialog@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/the-dialog/-/the-dialog-1.3.3.tgz#0f552ef9084becab2c5db7cd4025a4b3980afd75"
+the-dialog@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/the-dialog/-/the-dialog-1.3.4.tgz#05a27dc7a07f63f2d014b4bec8119b8d2ecffb19"
   dependencies:
-    asobj "^2.0.1"
+    asobj "^2.0.2"
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    the-button "^2.0.0"
-    the-component-util "^1.5.1"
+    the-button "^2.0.6"
+    the-component-util "^2.1.0"
     the-icon "^2.0.0"
-    the-input "^2.0.0"
+    the-input "^2.1.8"
     the-spin "^2.0.0"
-    the-style "^2.0.0"
-    the-window "^5.0.0"
+    the-style "^2.1.0"
+    the-window "^5.2.6"
 
 the-done@^2.0.0:
   version "2.0.0"
@@ -10779,17 +10793,9 @@ the-view@^2.0.0:
     the-spin "^2.0.0"
     the-style "^2.0.0"
 
-the-window@^5.0.0, the-window@^5.2.4, the-window@^5.2.5:
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.2.5.tgz#4a92f5f0d4de2f059f2825244467b5ba66fe3f9e"
-  dependencies:
-    bwindow "^1.1.0"
-    history "^4.7.2"
-    the-router "^2.0.6"
-
-the-window@^5.2.6:
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.2.6.tgz#e942bbc63d0300f68e8948758f37ef807c0ee7e9"
+the-window@^5.0.0, the-window@^5.2.4, the-window@^5.2.5, the-window@^5.2.6, the-window@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.3.0.tgz#a2db198333d0433a605f8b7df8b207504fe16766"
   dependencies:
     bwindow "^1.1.0"
     history "^4.7.2"
@@ -11226,7 +11232,7 @@ vali-date@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vali-date/-/vali-date-1.0.0.tgz#1b904a59609fb328ef078138420934f6b86709a6"
 
-validate-npm-package-license@^3.0.1:
+validate-npm-package-license@*, validate-npm-package-license@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"
   dependencies:

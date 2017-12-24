@@ -75,7 +75,6 @@ export default asView(
       userSearchScene.init()
       userCheckScene.init()
       userCreateScene.init()
-      userListScene.set({pageNumber: 1})
       await userListScene.doSync()
       userListScene.set({ready: true})
     },

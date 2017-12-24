@@ -9,6 +9,10 @@
 /** @lends withPage */
 function withPage (Class) {
   class WithPage extends Class {
+    get defaultPageNumber () {
+      return 1
+    }
+
     get defaultPageSize () {
       return 25
     }
@@ -16,8 +20,8 @@ function withPage (Class) {
     getPage () {
       const s = this
       return {
-        number: s.get('pageNumber') || 1,
-        size: s.get('pageSize')
+        number: s.get('pageNumber') || s.defaultPageNumber,
+        size: s.get('pageSize') || s.defaultPageSize
       }
     }
   }
