@@ -47,9 +47,8 @@ class App extends React.Component {
 
   get notices () {
     const s = this
-    const {onVerify} = s.props
     const notices = {}
-    const {needsVerify, user, l} = s.props
+    const {onVerify, needsVerify, user, l} = s.props
     if (user && needsVerify) {
       notices[l('messages.NEEDS_EMAIL_VERIFIED')] = {
         [l('buttons.DO_SEND_VERIFY')]: onVerify
@@ -78,8 +77,8 @@ const ConnectedApp = asBound(
     onMount: async () => {
       await appScene.busyFor(async () => {
         await accountScene.doSync()
-        await verifyNeedScene.doSync({delay: 3 * 1000})
       })
+      await verifyNeedScene.doSync({delay: 3 * 1000})
     },
     onVerify: async () => {
       await verifySendScene.doSend()

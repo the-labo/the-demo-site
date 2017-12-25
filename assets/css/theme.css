@@ -27,10 +27,12 @@
 .the-button.the-button-disabled { pointer-events:none;cursor:default;color:#CCC;background-color:#F0F0F0; }
 .the-button.the-button-disabled:hover { cursor:default;box-shadow:none; }
 .the-button.the-button-disabled:active { cursor:default;box-shadow:none; }
+.the-button.the-button-vertical { flex-direction:column; }
 .the-button .the-button-spinner { position:absolute;left:0;top:0;right:0;bottom:0;z-index:1;background-color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.8);color:#555;display:flex;align-items:center;justify-content:center;overflow:hidden; }
 .the-button .the-button-text { display:inline-block;padding:0 2px; }
 .the-button .the-button-icon { margin-right:2px;margin-left:0px; }
 .the-button .the-button-icon-right { margin-left:2px;margin-right:0px; }
+.the-button .the-button-large-icon { font-size:4em;margin:0px;display:block; }
 .the-button-group { display:flex;margin:8px auto;justify-content:center;align-items:center;flex-wrap:wrap; }
 .the-button-group.the-button-group-left { justify-content:flex-start; }
 .the-button-group.the-button-group-right { justify-content:flex-end; }

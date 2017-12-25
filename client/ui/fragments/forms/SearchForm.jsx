@@ -17,7 +17,6 @@ const SearchForm = asForm(
                              placeholder,
                              onSubmit,
                              getInputAttributesOf,
-                             getLabelAttributesOf,
                              getFormAttributes,
                              getSubmitAttributes
                            }) {

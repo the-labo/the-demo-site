@@ -20,7 +20,6 @@ const AccountScene = cn.compose(
     async doSync () {
       const s = this
       const accountCtrl = await s.use('accountCtrl')
-      const verifyCtrl = await s.use('verifyCtrl')
       await s.busyFor(async () => {
         const user = await accountCtrl.getCurrentUser()
         s.set({user, synced: true})

@@ -25,9 +25,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 source ~/.bashrc
 nvm install 8
 
-npm i pon yarn pm2 -g
+sudo apt-get update && sudo apt-get install yarn
+npm i pon pm2 -g
 
-echo "NODE_ENV=production" >> ~/.bashrc
+echo "export NODE_ENV=production" >> ~/.bashrc
 source ~/.bashrc
 
 
