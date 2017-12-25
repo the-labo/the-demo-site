@@ -12,6 +12,8 @@ module.exports = Object.freeze(
 
     TOP_URL: '/',
 
+    ALIAS_URL: '/a/:key',
+
     ABOUT_APP_URL: '/about/app',
     ABOUT_PRIVACY_POLICY_URL: '/about/privacy-policy',
     ABOUT_TERMS_OF_USE_URL: '/about/terms-of-use',

@@ -7,7 +7,8 @@ const {Resource, DataTypes} = require('the-db')
 const {STRING} = DataTypes
 const uuid = require('uuid')
 const numeral = require('numeral')
-const {parse: parseUrl} = require('url')
+const {Urls} = require('@self/conf')
+const {resolveUrl} = require('the-site-util')
 
 class AliasResource extends Resource {
   async generateKey () {
@@ -16,23 +17,17 @@ class AliasResource extends Resource {
     return uuid.v4().split('-').pop() + numeral(num).format('000')
   }
 
-  async ofUrl (url, options = {}) {
+  async ofUrl (originalUrl) {
     const Alias = this
-    const found = await Alias.first({originalUrl: url})
+    const found = await Alias.first({originalUrl})
     if (found) {
       return found
     }
     const key = await Alias.generateKey()
-    const parsed = parseUrl(url)
-    const {
-      protocol = parsed.protocol,
-      host = parsed.host
-    } = options
-    const shortUrl = `${protocol}//${host}/a/${key}`
     return Alias.create({
-      originalUrl: url,
+      originalUrl,
       key,
-      shortUrl
+      shortUrl: resolveUrl(Urls.ALIAS_URL, {key})
     })
   }
 

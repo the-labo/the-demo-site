@@ -25,11 +25,18 @@ describe('db', () => {
     {
       const {User, Profile} = db.resources
       const user01 = await User.create({name: 'foo'})
-      // await user01.update({name: 'bar'})
+      await user01.update({name: 'bar'})
 
-      console.log('user01', user01)
-      const profile = await Profile.ofUser({user: user01})
-      console.log('profile', profile)
+      ok(user01)
+      const profile = await Profile.ofUser(user01)
+      ok(profile)
+    }
+
+    {
+      const {Alias} = db.resources
+      const alias01 = await Alias.ofUrl('http://hoge.example.com/foo/bar?bar=x')
+      const alias02 = await Alias.ofUrl('http://hoge.example.com/foo/bar?bar=x')
+      equal(alias01.shortUrl, alias02.shortUrl)
     }
   })
 })

@@ -5,7 +5,7 @@
 'use strict'
 
 const {Resource, DataTypes} = require('the-db')
-const {STRING, ENTITY, BOOLEAN} = DataTypes
+const {STRING, ENTITY, BOOLEAN, REF} = DataTypes
 const {withUser} = require('../concerns')
 
 /** @lends ProfileResource */
@@ -37,7 +37,7 @@ class ProfileResource extends Resource {
       },
       user: {
         description: 'User',
-        type: ENTITY,
+        type: [ENTITY, REF],
         required: true,
         unique: true
       }
