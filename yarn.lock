@@ -2509,7 +2509,7 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.6:
     clay-resource-name "^4.0.3"
     moment "^2.20.1"
 
-clay-driver-mysql@^5.2.14:
+clay-driver-mysql@^5.2.15:
   version "5.2.15"
   resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.15.tgz#343bd2c07002b064ebc41f1402a08f0a767c743f"
   dependencies:
@@ -2546,7 +2546,7 @@ clay-driver-sequelize@^6.4.22:
     stringcase "^4.0.0"
     utf8 "^3.0.0"
 
-clay-driver-sqlite@^6.3.9:
+clay-driver-sqlite@^6.3.10:
   version "6.3.10"
   resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.10.tgz#e271f8b7a1c86883c1eca8a6f7dc7eebb1b5ba03"
   dependencies:
@@ -2662,7 +2662,7 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^5.4.12:
+clay-resource@^5.4.12, clay-resource@^5.4.13:
   version "5.4.13"
   resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.4.13.tgz#2c6839c39fdb104101e9669903d26e4c3acda571"
   dependencies:
@@ -10019,6 +10019,10 @@ text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+the-array@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/the-array/-/the-array-1.3.0.tgz#706b917b7cd9751fd515cb50c0a13c9b64bade4c"
+
 the-assets@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-1.0.0.tgz#33093cb7c8550825f7596a4830071a5e893de9c4"
@@ -10207,8 +10211,8 @@ the-date@^1.0.1:
     moment-timezone "^0.5.13"
 
 the-db@^7.8.16:
-  version "7.8.38"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.38.tgz#4560db9624cbf2edd36138f3bdd082f869906ad3"
+  version "7.8.39"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-7.8.39.tgz#b3412260d9b134f67f1c9197d377d41a59955fc8"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.1"
@@ -10219,10 +10223,10 @@ the-db@^7.8.16:
     clay-driver-json "^4.0.5"
     clay-driver-localstorage "^2.0.1"
     clay-driver-memory "^4.1.6"
-    clay-driver-mysql "^5.2.14"
-    clay-driver-sqlite "^6.3.9"
+    clay-driver-mysql "^5.2.15"
+    clay-driver-sqlite "^6.3.10"
     clay-lump "^4.2.26"
-    clay-resource "^5.4.12"
+    clay-resource "^5.4.13"
     clay-resource-name "^4.0.3"
     debug "^3.1.0"
     execcli "^5.0.2"
@@ -10410,8 +10414,8 @@ the-info@^2.0.1:
     the-style "^2.0.1"
 
 the-input@^2.0.0, the-input@^2.1.10, the-input@^2.1.6, the-input@^2.1.8:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.1.10.tgz#63c73f6b4ede08075283a5e94570390722c7a990"
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/the-input/-/the-input-2.2.1.tgz#938f7067098e014bb026d8b9ce6de1b0ff93ff37"
   dependencies:
     asobj "^2.0.2"
     chopcal "^3.0.1"
@@ -10421,6 +10425,7 @@ the-input@^2.0.0, the-input@^2.1.10, the-input@^2.1.6, the-input@^2.1.8:
     react-draggable "^3.0.4"
     regex-email "^1.0.2"
     regex-url "^1.0.0"
+    the-array "^1.3.0"
     the-component-util "^2.1.0"
     the-condition "^2.0.0"
     the-icon "^2.0.0"

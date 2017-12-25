@@ -121,7 +121,7 @@ pon production
 
 <a name="section-doc-guides-10-tips-md"></a>
 
-Tops
+Tips
 -----------
 
 ### Managing Docker Infra
