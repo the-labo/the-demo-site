@@ -39,3 +39,4 @@ public
 .setting
 assets/css/theme.css
 package-lock.json
+secrets.json

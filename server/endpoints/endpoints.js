@@ -1,8 +1,9 @@
 'use strict'
 
+const {Urls} = require('@self/conf')
 const rt = require('./routes')
 const mw = require('./middlewares')
 
 module.exports = Object.freeze({
-  '/a/:key': rt.aliasRoute
+  [Urls.ALIAS_URL]: rt.aliasRoute
 })
