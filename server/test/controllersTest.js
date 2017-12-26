@@ -17,33 +17,36 @@ describe('controllers', () => {
   after(() => {
   })
 
-  it('Auth Ctrl', async () => {
-    const {AuthCtrl} = controllers
+  it('Sign Ctrl', async () => {
+    const {SignCtrl, AccountCtrl, QuitCtrl,PasswordCtrl} = controllers
     const session = {}
     const db = createDB({
       dialect: 'memory'
     })
     const app = {db}
     const client = {}
-    const authCtrl = new AuthCtrl({app, client, session})
+    const signCtrl = new SignCtrl({app, client, session})
+    const accountCtrl = new AccountCtrl({app, client, session})
+    const quitCtrl = new QuitCtrl({app, client, session})
+    const passwordCtrl = new PasswordCtrl({app, client, session})
 
-    await authCtrl.signup('foo', 'bar')
+    await signCtrl.signUp('foo', 'bar')
 
-    const user = await authCtrl.getCurrentUser()
+    const user = await accountCtrl.getCurrentUser()
     equal(user.name, 'foo')
 
-    await authCtrl.signout()
-    ok(!(await authCtrl.getCurrentUser()))
+    await signCtrl.signOut()
+    ok(!(await accountCtrl.getCurrentUser()))
 
-    ok(await authCtrl.signin('foo', 'bar'))
-    await authCtrl.updatePassword('bar2')
-    ok(await authCtrl.signin('foo', 'bar2'))
+    ok(await signCtrl.signIn('foo', 'bar'))
+    await passwordCtrl.update('bar2')
+    ok(await signCtrl.signIn('foo', 'bar2'))
 
-    await authCtrl.updateProfile(({
+    await accountCtrl.updateProfile(({
       email: 'foo@example.com'
     }))
 
-    await authCtrl.signdel()
+    await quitCtrl.execute()
   })
 })
 
