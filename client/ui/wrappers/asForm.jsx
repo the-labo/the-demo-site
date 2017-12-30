@@ -7,13 +7,17 @@
 import { withLoc } from 'the-loc'
 import { withForm } from 'the-components'
 import withCycle from './withCycle'
+import asBound from './asBound'
 
 /** @lends asForm */
-function asForm (Component) {
+function asForm (Component,
+                 mapStateToProps,
+                 mapHandleToProps) {
   return [
     withLoc,
     withCycle,
-    withForm
+    withForm,
+    (Component) => asBound(Component, mapStateToProps, mapHandleToProps)
   ].reduce(
     (Component, wrapper) => wrapper(Component),
     Component

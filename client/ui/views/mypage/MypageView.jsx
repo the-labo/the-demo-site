@@ -15,7 +15,7 @@ import {
 } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './MypageView.pcss'
-import UserImage from '../../fragments'
+import { UserImage } from '../../fragments'
 import { Urls } from '@self/conf'
 
 function MypageView ({

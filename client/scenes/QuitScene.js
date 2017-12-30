@@ -6,6 +6,7 @@
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
+const {Urls} = require('@self/conf')
 
 /** @lends QuitScene */
 const QuitScene = cn.compose(
@@ -24,6 +25,16 @@ const QuitScene = cn.compose(
       await s.busyFor(async () => {
         await quitCtrl.execute()
       })
+    }
+
+    goToCancel () {
+      const s = this
+      s.goTo(Urls.TOP_URL)
+    }
+
+    goToDone(){
+      const s = this
+      s.goTo(Urls.TOP_URL)
     }
   }
 )

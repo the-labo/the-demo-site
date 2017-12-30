@@ -4,16 +4,15 @@ import React from 'react'
 import { withLoc } from 'the-loc'
 import { withClient } from 'the-client/shim'
 import { withHistory, withRoute } from 'the-components'
-import { connect, withStore } from 'the-store'
 import withCycle from './withCycle'
 import withTitle from './withTitle'
-import { inject } from 'the-handle'
+import asBound from './asBound'
 import { get } from 'the-window'
 import onlySigned from './onlySigned'
 
 function asView (Component,
-                 mapStateToProps = () => ({}),
-                 mapHandleToProps = () => ({}),
+                 mapStateToProps,
+                 mapHandleToProps,
                  options = {}) {
 
   class ViewWrap extends React.Component {
@@ -35,11 +34,9 @@ function asView (Component,
 
     }),
     withCycle,
-    inject(mapHandleToProps),
-    connect(mapStateToProps),
+    (Component) => asBound(Component, mapStateToProps, mapHandleToProps),
     options.onlySigned && onlySigned,
     withLoc,
-    withStore,
     withHistory,
     withRoute,
     withClient

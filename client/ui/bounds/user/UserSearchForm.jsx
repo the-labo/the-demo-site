@@ -4,23 +4,20 @@
 'use strict'
 
 import React from 'react'
-import { withLoc, asBound } from '../../wrappers'
-import { RoleCodes } from '@self/conf'
+import { asForm } from '../../wrappers'
 import { SearchForm } from '../../fragments'
 
-const UserSearchForm = withLoc(
-  function UserSearchFormImpl (props) {
-    const {l} = props
-    return (
-      <SearchForm {...props}
-                  placeholder={l('placeholders.USER_SEARCH')}
-                  name={'q'}
-      />
-    )
-  }
-)
+function UserSearchForm (props) {
+  const {l} = props
+  return (
+    <SearchForm {...props}
+                placeholder={l('placeholders.USER_SEARCH')}
+                name={'q'}
+    />
+  )
+}
 
-export default asBound(
+export default asForm(
   UserSearchForm,
   (state) => ({
     spinning: state['userSearch.busy'],

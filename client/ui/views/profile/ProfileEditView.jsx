@@ -22,6 +22,8 @@ function ProfileEditView ({
              spinning={busy}>
       <TheView.Header icon={Icons.PROFILE_ICON}
                       text={l('titles.PROFILE_EDIT_TITLE')}
+                      leftIcon={Icons.BACK_ICON}
+                      leftTo={Urls.ACCOUNT_MYPAGE_URL}
       />
       <TheView.Body>
         <TheCondition if={done}>

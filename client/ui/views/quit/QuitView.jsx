@@ -87,12 +87,13 @@ export default asView(
      quitScene,
      accountScene
    }) => ({
-    onCancel: () => quitScene.goTo('/'),
+    onCancel: () => quitScene.goToCancel(),
     onConfirm: () => quitScene.set({confirm: true}),
     onConfirmBack: () => quitScene.set({confirm: false}),
     onExecute: async () => {
       await quitScene.doQuit()
       quitScene.set({confirm: false, done: true})
+      quitScene.goToDone()
       await accountScene.doSync()
     }
   }),

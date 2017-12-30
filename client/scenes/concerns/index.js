@@ -10,6 +10,7 @@ const withBusy = require('./withBusy')
 const withEntry = require('./withEntry')
 const withFailure = require('./withFailure')
 const withPage = require('./withPage')
+const withReady = require('./withReady')
 const withSort = require('./withSort')
 const withValues = require('./withValues')
 
@@ -20,6 +21,7 @@ module.exports = {
   withEntry,
   withFailure,
   withPage,
+  withReady,
   withSort,
   withValues
 }

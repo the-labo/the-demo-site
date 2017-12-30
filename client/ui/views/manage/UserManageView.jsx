@@ -75,8 +75,9 @@ export default asView(
       userSearchScene.init()
       userCheckScene.init()
       userCreateScene.init()
-      await userListScene.doSync()
-      userListScene.set({ready: true})
+      await userListScene.readyFor(async () => {
+        await userListScene.doSync()
+      })
     },
     onTearDown: () => {},
     onCreate: () => {

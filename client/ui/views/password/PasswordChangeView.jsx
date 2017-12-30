@@ -20,6 +20,8 @@ function PasswordChangeView ({
     <TheView className={styles.self}>
       <TheView.Header icon={null}
                       text={l('titles.PASSWORD_CHANGE_TITLE')}
+                      leftIcon={Icons.BACK_ICON}
+                      leftTo={Urls.ACCOUNT_MYPAGE_URL}
       />
       <TheView.Body>
         <TheCondition if={done}>
