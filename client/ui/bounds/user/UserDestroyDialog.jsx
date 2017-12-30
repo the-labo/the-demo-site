@@ -8,7 +8,7 @@ import { TheConfirmDialog, } from 'the-components'
 import { withLoc, compose, asBound } from '../../wrappers'
 import { labelHelper } from '../../helpers'
 
-const {labelForUser} = labelHelper
+const {labelTextForUser} = labelHelper
 
 const UserDestroyDialog = compose(
   withLoc
@@ -42,7 +42,7 @@ const UserDestroyDialog = compose(
       >
         <ul>
           {users.map((user) => (
-            <li key={user.id}>{labelForUser(user)}</li>
+            <li key={user.id}>{labelTextForUser(user)}</li>
           ))}
         </ul>
       </TheConfirmDialog>

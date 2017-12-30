@@ -15,6 +15,7 @@ import {
 } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './MypageView.pcss'
+import UserImage from '../../fragments'
 import { Urls } from '@self/conf'
 
 function MypageView ({
@@ -42,7 +43,8 @@ function MypageView ({
                 <TheInfo data={user && {
                   [l('labels.USER_NAME')]: user.name,
                   [l('labels.USER_PROFILE_NAME')]: profile && profile.name,
-                  [l('labels.USER_EMAIL')]: profile && profile.email
+                  [l('labels.USER_EMAIL')]: profile && profile.email,
+                  [l('labels.USER_IMAGE')]: <UserImage {...{user}} size={64}/>
                 }}/>
                 <br/>
                 <TheButtonGroup>

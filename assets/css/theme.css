@@ -308,14 +308,14 @@
 .the-input-upload .the-input-upload-close:active { opacity:1;box-shadow:none;color:#555; }
 .the-input-upload .the-input-upload-preview { display:inline-block;box-sizing:border-box;z-index:4;position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;border:1px solid #AAA; }
 .the-input-upload .the-input-upload-preview-img {  }
-.the-input-tag { display:inline-flex;flex-direction:row-reverse;background-color:#FFF;box-shadow:1px 1px 1px rgba(0,0,0,.05) inset;border:1px solid #AAA;box-sizing:border-box;align-items:center;padding:0 2px;overflow:auto;justify-content:flex-end; }
+.the-input-tag { display:inline-flex;flex-direction:row;flex-wrap:wrap;background-color:#FFF;box-shadow:1px 1px 1px rgba(0,0,0,.05) inset;border:1px solid #AAA;box-sizing:border-box;align-items:center;padding:4px;overflow:auto;justify-content:flex-start; }
 .the-input-tag.the-input-tag-focused { outline:5px auto #3A8;outline-offset:-2px; }
-.the-input-tag .the-input-tag-tag { display:inline-flex;justify-content:center;align-items:center;padding:0 2px;margin:0 2px;font-size:small;border-radius:2px;background-color:rgba(51, 170, 136, 0.2);color:#3A8;position:relative;z-index:1; }
+.the-input-tag .the-input-tag-tag { display:inline-flex;justify-content:space-between;align-items:center;padding:0 2px;margin:2px;font-size:small;border-radius:2px;background-color:rgba(51, 170, 136, 0.2);color:#3A8;position:relative;z-index:1;flex-grow:1; }
 .the-input-tag .the-input-tag-text { display:inline-block;vertical-align:middle;padding:2px; }
-.the-input-tag .the-input-tag-remover { display:inline-block;vertical-align:middle;font-size:x-small;padding:2px; }
+.the-input-tag .the-input-tag-remover { display:inline-block;vertical-align:middle;padding:2px; }
 .the-input-tag .the-input-tag-remover .the-icon { padding:0px; }
 .the-input-tag .the-input-tag-remover:hover { cursor:pointer; }
-.the-input-tag .the-input-text-input { background-color:transparent;outline:none;border:none;box-shadow:none;min-width:72px; }
+.the-input-tag .the-input-text-input { background-color:transparent;outline:none;border:none;box-shadow:none;min-width:48px;flex-grow:1;width:auto; }
 .the-jumbotron { background-color:#3A8;color:white;padding:16px 0;margin:16px 0;position:relative;overflow:hidden; }
 .the-jumbotron .the-jumbotron-title { margin:0;display:block;padding:0 8px; }
 .the-jumbotron .the-jumbotron-sub-title { margin:0;display:block;padding:0 8px; }
