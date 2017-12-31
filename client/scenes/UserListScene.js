@@ -11,7 +11,8 @@ const cn = require('./concerns')
 const UserListScene = cn.compose(
   cn.withBusy,
   cn.withSort,
-  cn.withPage
+  cn.withPage,
+  cn.withReady
 )(
   class UserListSceneBase extends Scene {
     get scope () {

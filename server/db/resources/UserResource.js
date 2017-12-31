@@ -19,7 +19,7 @@ class UserResource extends Resource {
         required: true,
         trim: true,
         minLength: 2,
-        pattern: /^[a-z][a-z0-9_-]*$/,
+        pattern: /^[a-z0-9_\-@]*$/,
       },
       profile: {
         description: 'User profile',
