@@ -183,10 +183,10 @@ module.exports = pon({
     `public${Urls.JS_BUNDLE_URL}`
   ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
   'prod:css': css.minify([
-    Urls.CSS_THEME_URL,
-    Urls.CSS_FONT_URL,
-    Urls.CSS_BUNDLE_URL
-  ], Urls.PRODUCTION_CSS_URL),
+    `public${Urls.CSS_THEME_URL}`,
+    `public${Urls.CSS_FONT_URL}`,
+    `public${Urls.CSS_BUNDLE_URL}`,
+  ], `public${Urls.PRODUCTION_CSS_URL}`),
   'prod:compile': [
     'env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',
   ],
