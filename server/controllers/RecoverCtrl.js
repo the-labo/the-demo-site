@@ -42,7 +42,7 @@ const RecoverCtrl = cn.compose(
       await mail.sendRecover({
         lang,
         user,
-        url: alias.shortUrl,
+        url: `${protocol}//${host}${alias.shortUrl}`,
         expireAt
       })
       return user

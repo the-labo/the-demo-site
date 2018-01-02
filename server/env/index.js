@@ -14,3 +14,8 @@ const vars = {Local}
 
 const env = theEnv(config, {vars}).forEnv()
 module.exports = env
+
+if (!module.parent) {
+  const {inspect} = require('util')
+  console.log(inspect(env))
+}
