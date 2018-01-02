@@ -18,7 +18,6 @@ server {
 
   ssl_certificate {{certDir}}/{{domain}}/fullchain.pem;
   ssl_certificate_key {{certDir}}/{{domain}}/privkey.pem;
-  include /etc/letsencrypt/options-ssl-nginx.conf;
   ssl_trusted_certificate {{certDir}}/{{domain}}/fullchain.pem;
 
   location / {

@@ -22,7 +22,7 @@ const {
 } = seatAccess(seat)
 
 const setting = theSetting(`${__dirname}/var/app/setting.json`, {
-  APP_DOMAIN: 'the-demo-site.com',
+  APP_DOMAIN: 'the-demo-site.work',
   APP_CDN_URL: '',
   DUMP_SCHEDULE: '00 00 * * 3',
   DUMP_ROTATION: 3

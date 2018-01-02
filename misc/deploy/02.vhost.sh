@@ -5,8 +5,8 @@
 BASE_DIR=$(cd "$(dirname $0)/../.." && pwd)
 cd ${BASE_DIR}
 
-NGINX_AVAILABLE_DIR='/etc/nginx/sites-available/'
-NGINX_ENABLED_DIR='/etc/nginx/sites-enabled/'
+NGINX_AVAILABLE_DIR='/etc/nginx/sites-available'
+NGINX_ENABLED_DIR='/etc/nginx/sites-enabled'
 
 for filename in ${BASE_DIR}/misc/vhost/*.*
 do
