@@ -21,7 +21,7 @@ http {
       try_files $uri $uri/index.html $uri.html;
       root ${STATIC_DIR};
     }
-    location ~* ^/.+\.(html|htm|js|css|map) {
+    location ~* ^/.+\.(html|htm|js|css|map|jpg|jpeg|png|ico) {
       root ${STATIC_DIR};
     }
     location /fonts/ {

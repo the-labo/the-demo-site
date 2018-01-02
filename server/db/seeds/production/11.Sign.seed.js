@@ -10,6 +10,6 @@ module.exports = [
     id: 'superadmin',
     passwordSalt: 'superadmin-salt',
     passwordHash: digestPassword(SUPER_ADMIN_PASSWORD, 'superadmin-salt'),
-    user: {$$entity: true, $$as: 'User', id: '1'}
+    user: {$$entity: true, $$as: 'User', id: 'superadmin'}
   }
 ]
