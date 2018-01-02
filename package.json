@@ -73,7 +73,7 @@
     "the-handle": "^1.1.0",
     "the-hoc": "^1.1.0",
     "the-loc": "^1.2.4",
-    "the-mail": "^2.0.0",
+    "the-mail": "file:../the-mail/",
     "the-password": "^1.0.2",
     "the-polyfill": "^1.0.1",
     "the-scene-base": "^1.1.6",

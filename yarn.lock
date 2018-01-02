@@ -16,7 +16,7 @@
   dependencies:
     chalk "^2.0.1"
 
-"@sendgrid/mail@^6.1.2":
+"@sendgrid/mail@*":
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-6.1.4.tgz#b2d33bfb550e08ca0e7ffabda1d7a0c19ebf1736"
   dependencies:
@@ -4756,7 +4756,7 @@ gulp-sourcemaps@1.6.0:
     through2 "^2.0.0"
     vinyl "^1.0.0"
 
-handlebars@^4.0.1, handlebars@^4.0.10, handlebars@^4.0.5:
+handlebars@^4.0.1, handlebars@^4.0.10, handlebars@^4.0.11, handlebars@^4.0.5:
   version "4.0.11"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.11.tgz#630a35dfe0294bc281edae6ffc5d329fc7982dcc"
   dependencies:
@@ -6861,7 +6861,7 @@ node-gyp@^3.6.2:
     tar "^2.0.0"
     which "1"
 
-nodemailer@^4.1.0:
+nodemailer@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.4.1.tgz#ce480eb3db7b949b3366e301b8f0af1c1248025e"
 
@@ -10598,14 +10598,22 @@ the-loc@^1.2.4:
     prop-types "^15.6.0"
     sprintf "^0.1.5"
 
-the-mail@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/the-mail/-/the-mail-2.0.3.tgz#e53747c13418a33dfa388926bb895de846890c11"
+"the-mail@file:../the-mail":
+  version "2.1.0"
   dependencies:
-    "@sendgrid/mail" "^6.1.2"
-    asobj "^2.0.1"
-    handlebars "^4.0.10"
-    nodemailer "^4.1.0"
+    "@sendgrid/mail" "*"
+    asobj "^2.0.2"
+    handlebars "^4.0.11"
+    nodemailer "^4.4.1"
+    uuid "^3.1.0"
+
+"the-mail@file:../the-mail/":
+  version "2.1.0"
+  dependencies:
+    "@sendgrid/mail" "*"
+    asobj "^2.0.2"
+    handlebars "^4.0.11"
+    nodemailer "^4.4.1"
     uuid "^3.1.0"
 
 the-main@^3.0.3:

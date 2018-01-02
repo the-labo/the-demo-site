@@ -57,7 +57,7 @@ const VerifyCtrl = cn.compose(
       await mail.sendVerify({
         lang,
         user,
-        url: alias.shortUrl,
+        url: `${protocol}//${host}${alias.shortUrl}`,
         expireAt
       })
 
