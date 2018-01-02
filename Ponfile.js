@@ -85,7 +85,9 @@ module.exports = pon({
     'assets/icons': 'public/icons'
   }, {force: true}),
   'struct:chmod': chmod({
-    'bin/**/*.*': '577'
+    'bin/**/*.*': '577',
+    'misc/scripts/*.*': '577',
+    'misc/**/*.sh': '577'
   }),
   'struct:compile': [
     es('conf', 'shim/conf'),
@@ -181,7 +183,7 @@ module.exports = pon({
   'prod:js': ccjs([
     `public${Urls.JS_EXTERNAL_URL}`,
     `public${Urls.JS_BUNDLE_URL}`
-  ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
+  ], `public${Urls.PRODUCTION_JS_URL}`, {memory: '512m'}),
   'prod:css': css.minify([
     `public${Urls.CSS_THEME_URL}`,
     `public${Urls.CSS_FONT_URL}`,
