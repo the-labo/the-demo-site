@@ -102,15 +102,15 @@ module.exports = pon({
       '.*.bud'
     ])
   ],
-  'unless:production': env.notFor('production'),
+  'unless:prod': env.notFor('production'),
   'db:setup': setup(createDB),
   'db:cli': () => createDB().cli(),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
-  'db:drop': ['unless:production', drop(createDB)],
+  'db:drop': ['unless:prod', drop(createDB)],
   'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
   'db:load': load.ask(createDB),
-  'db:reset': ['unless:production', 'db:drop', 'db:setup', 'db:seed'],
+  'db:reset': ['unless:prod', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
     extractCss: `client/shim/ui/bundle.pcss`,
