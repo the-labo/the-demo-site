@@ -1,11 +1,11 @@
 {
   "default": {
     "MOCK": true,
-    "SENDER_ADDRESS": "support@example.com"
+    "SENDER_ADDRESS": "support@#{Local.APP_DOMAIN}"
   },
   "production": {
     "MOCK": false,
     "SERVICE": "sendgrid",
-    "key": "__sendgrid_apikey__"
+    "key": "#{Local.SEND_GRID_API_KEY}"
   }
 }

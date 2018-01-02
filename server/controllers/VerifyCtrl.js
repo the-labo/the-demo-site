@@ -26,7 +26,7 @@ const VerifyCtrl = cn.compose(
         return false
       }
       const {profile} = user
-      return profile && profile.email && !profile.emailVerified
+      return Boolean(profile && profile.email && !profile.emailVerified)
     }
 
     async send () {

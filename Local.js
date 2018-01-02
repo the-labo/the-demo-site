@@ -7,22 +7,25 @@
 
 const theSeat = require('the-seat')
 const theSetting = require('the-setting')
+const theSecret = require('the-secret')
 const pkg = require('./package.json')
-const {seatAccess} = require('the-site-util')
+const {inspect} = require('util')
+const {seatAccess, envOf} = require('the-site-util')
 
 const seat = theSeat()
+const secret = theSecret(`${__dirname}/secrets.json`, envOf('DEMO_SITE_MASTER_PASSWORD', {strict: true}))
 const {
   portNumberFor,
   containerNameFor,
-  processNameFor
+  processNameFor,
+  userNameFor
 } = seatAccess(seat)
 
 const setting = theSetting(`${__dirname}/var/app/setting.json`, {
   APP_DOMAIN: 'the-demo-site.com',
+  APP_CDN_URL: '',
   DUMP_SCHEDULE: '00 00 * * 3',
-  DUMP_ROTATION: 3,
-  // https://github.com/the-labo/the-date/blob/master/doc/helps/TimeZones.md
-  TIMEZONE: 'Asia/Tokyo'
+  DUMP_ROTATION: 3
 })
 
 const Vars = Object.freeze({
@@ -37,15 +40,20 @@ const Vars = Object.freeze({
   NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
 
   APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
-  BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup'
+  BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
+
+  SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`)
 })
 
-const Local = Object.assign({
-  askSetting: () => setting.ask()
-}, Vars, setting.get())
+const Local = Object.assign(
+  {__proto__: {setting, secret}},
+  Vars,
+  setting.get(),
+  secret.get()
+)
 
 module.exports = Local
 
 if (!module.parent) {
-  console.log(JSON.stringify(Local, null, '  '))
+  console.log(inspect(Local))
 }

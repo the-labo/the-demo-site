@@ -30,7 +30,8 @@ const {
   BACKUP_PROCESS_NAME,
   DUMP_SCHEDULE,
   DUMP_ROTATION,
-  askSetting
+  setting,
+  secret
 } = require('./Local')
 
 const {fork} = command
@@ -211,7 +212,8 @@ module.exports = pon({
       APP_PORT
     }
   }),
-
+  'secret:encrypt': () => secret.encrypt(),
+  'secret:decrypt': () => secret.decrypt(),
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
   // ----------------
@@ -223,7 +225,7 @@ module.exports = pon({
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client'],
   build: ['struct', 'ui'],
-  prepare: ['struct', 'assets', 'docker', 'db', 'build'],
+  prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build'],
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
@@ -234,8 +236,7 @@ module.exports = pon({
   restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
-
-  setting: () => askSetting(),
+  setting: () => setting.ask(),
   // ----------------
   // Aliases
   // ----------------

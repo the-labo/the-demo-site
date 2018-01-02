@@ -64,7 +64,7 @@ const ConnectedApp = asBound(
   (state) => ({
     synced: state['account.synced'],
     user: state['account.user'],
-    needsVerify: state['verify.needsVerify'],
+    needsVerify: state['verifyNeed.needed'],
   }),
   ({
      l,

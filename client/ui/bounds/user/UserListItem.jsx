@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { Urls } from '@self/conf'
-import { TheTable } from 'the-components'
+import { TheTable, TheCondition } from 'the-components'
 import { withMoment, asPure, asBound } from '../../wrappers'
 import styles from './UserList.pcss'
 
@@ -19,13 +19,19 @@ const UserListItem = withMoment(
                                       onUpdateCheck
                                     }) {
     const {profile, sign} = user
+    const freezed = String(user.id) === 'superadmin'
     return (
       <Row selected={checkValue}>
-        <CheckboxCell
-          name={user.id}
-          value={checkValue}
-          onUpdate={onUpdateCheck}
-        />
+        <TheCondition if={freezed}>
+          <Cell/>
+        </TheCondition>
+        <TheCondition unless={freezed}>
+          <CheckboxCell
+            name={user.id}
+            value={checkValue}
+            onUpdate={onUpdateCheck}
+          />
+        </TheCondition>
         <Cell>{user.name}</Cell>
         <Cell>{profile && profile.name}</Cell>
         <Cell>{profile && profile.email}</Cell>

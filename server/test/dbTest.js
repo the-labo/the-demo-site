@@ -8,6 +8,7 @@ require('the-polyfill')()
 
 const createDB = require('../db/create')
 const {ok, equal} = require('assert')
+const {SUPER_ADMIN_NAME} = require('@self/Local')
 
 describe('db', () => {
   before(() => {
@@ -30,6 +31,12 @@ describe('db', () => {
       ok(user01)
       const profile = await Profile.ofUser(user01)
       ok(profile)
+      {
+        const superadmin = await User.create({name: SUPER_ADMIN_NAME})
+        const users = await User.all({name: 'bar'})
+        equal(users.length, 1)
+        ok(await User.one(superadmin.id))
+      }
     }
 
     {

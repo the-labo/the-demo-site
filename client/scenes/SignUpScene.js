@@ -24,7 +24,7 @@ const SignUpScene = cn.compose(
       const signCtrl = await s.use('signCtrl')
       await s.busyFor(async () => {
         await s.processEntry(({name, password, profile}) =>
-          signCtrl.signUp(name, password)
+          signCtrl.signUp(name, password, {profile})
         )
       })
     }
