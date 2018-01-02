@@ -1,10 +1,9 @@
 'use strict'
 
-const Users = require('./10.User.seed')
-
 const thePassword = require('the-password')
-const {generateSalt, digest: digestPassword} = thePassword()
-const {SUPER_ADMIN_PASSWORD} = require('@self/Local')
+const {randomBytes} = require('crypto')
+const {digest: digestPassword} = thePassword()
+const SUPER_ADMIN_PASSWORD = randomBytes(8).toString('hex')
 
 module.exports = [
   {

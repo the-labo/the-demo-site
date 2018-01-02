@@ -139,7 +139,7 @@
 .the-form .the-form-value { width:100%; }
 .the-form .the-form-value .the-input-text { margin:0px; }
 .the-form .the-form-spinner { position:absolute;left:0;top:0;right:0;bottom:0;z-index:4;background-color:rgba(255,255,255,0.8);color:#BBB;display:flex;align-items:center;justify-content:center;font-size:3em; }
-.the-form.the-form-inline { display:flex;align-items:flex-end;padding:0 8px; }
+.the-form.the-form-inline { display:inline-flex;margin:0px;align-items:flex-end;padding:0 8px; }
 .the-form.the-form-inline > * { margin:0px; }
 .the-form.the-form-inline input { height:36px;border-radius:4px 0 0 4px ; }
 .the-form.the-form-inline .the-button { border-radius:0 4px 4px 0;height:36px;white-space:nowrap;margin-left:-1px; }

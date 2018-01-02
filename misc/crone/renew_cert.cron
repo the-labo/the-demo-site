@@ -1,0 +1,4 @@
+# Renew cert files
+
+0 3  1  *  *  root certbot renew
+0 3  1  *  *  root  nginx -s reload

@@ -7,54 +7,41 @@
 
 const theSeat = require('the-seat')
 const theSetting = require('the-setting')
+const pkg = require('./package.json')
+const {seatAccess} = require('the-site-util')
+
 const seat = theSeat()
+const {
+  portNumberFor,
+  containerNameFor,
+  processNameFor
+} = seatAccess(seat)
+
 const setting = theSetting(`${__dirname}/var/app/setting.json`, {
-  APP_ADMIN_EMAIL: 'admin@the-demo-site.com',
   APP_DOMAIN: 'the-demo-site.com',
   DUMP_SCHEDULE: '00 00 * * 3',
-  DUMP_ROTATION: 3
+  DUMP_ROTATION: 3,
+  // https://github.com/the-labo/the-date/blob/master/doc/helps/TimeZones.md
+  TIMEZONE: 'Asia/Tokyo'
 })
 
-const pkg = require('./package.json')
-const crypto = require('crypto')
-
-const portFor = (name, portBase = 6000) =>
-  seat.scope('ports').acquire(name, (port = portBase) => port + 1)
-
-const containerFor = (name, length = 4) => [
-  name.split('@')[0],
-  seat.scope('containers').acquire(name, () => crypto.randomBytes(length).toString('hex'))
-].join('-')
-
-const processFor = (name, kind, length = 4) => [
-  name.split('@')[0],
-  seat.scope('processes').acquire(name, () => crypto.randomBytes(length).toString('hex')),
-  kind
-].join('-')
-
 const Vars = Object.freeze({
-  APP_PORT: portFor(`app@${__dirname}`),
+  APP_PORT: portNumberFor(`app@${__dirname}`),
 
-  SUPER_ADMIN_PASSWORD: crypto.randomBytes(14).toString('hex'),
+  MYSQL_PUBLISHED_PORT: portNumberFor(`mysql@${__dirname}`),
+  REDIS_PUBLISHED_PORT: portNumberFor(`redis@${__dirname}`),
+  NGINX_PUBLISHED_PORT: portNumberFor(`nginx@${__dirname}`),
 
-  MYSQL_PUBLISHED_PORT: portFor(`mysql@${__dirname}`),
-  REDIS_PUBLISHED_PORT: portFor(`redis@${__dirname}`),
-  NGINX_PUBLISHED_PORT: portFor(`nginx@${__dirname}`),
+  MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
+  REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
+  NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
 
-  MYSQL_CONTAINER_NAME: containerFor(`${pkg.name}-mysql@${__dirname}`),
-  REDIS_CONTAINER_NAME: containerFor(`${pkg.name}-redis@${__dirname}`),
-  NGINX_CONTAINER_NAME: containerFor(`${pkg.name}-nginx@${__dirname}`),
-
-  APP_PROCESS_NAME: processFor(`${pkg.name}@${__dirname}`, 'app'),
-  BACKUP_PROCESS_NAME: processFor(`${pkg.name}@${__dirname}`, 'backup')
-
+  APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
+  BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup'
 })
 
 const Local = Object.assign({
-  toEnv: () => Object.assign({}, Vars),
-  askSetting: () => setting.ask(),
-  getSetting: () => setting.get(),
-  setSetting: () => setting.set()
+  askSetting: () => setting.ask()
 }, Vars, setting.get())
 
 module.exports = Local

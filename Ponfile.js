@@ -30,11 +30,10 @@ const {
   BACKUP_PROCESS_NAME,
   DUMP_SCHEDULE,
   DUMP_ROTATION,
-  getSetting,
   askSetting
 } = require('./Local')
 
-const {fork, spawn} = command
+const {fork} = command
 
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
