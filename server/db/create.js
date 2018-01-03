@@ -20,4 +20,6 @@ function create (config = env.database) {
   return db
 }
 
+create.forTask = () => create(env.database, {enableHooks: false})
+
 module.exports = create

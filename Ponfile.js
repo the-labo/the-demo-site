@@ -8,16 +8,22 @@
 const pon = require('pon')
 
 const {react, css, browser, map, ccjs} = require('pon-task-web')
-const {fs, mocha, command, coz, fmtjson, env} = require('pon-task-basic')
+const {
+  fs: {mkdir, symlink, chmod, del, cp, concat},
+  mocha,
+  command: {fork},
+  coz,
+  fmtjson,
+  env
+} = require('pon-task-basic')
 const {mysql, redis, nginx} = require('pon-task-docker')
-const {envify} = browser.transforms
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
 const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
 const md = require('pon-task-md')
 const {isMacOS} = require('the-check')
-const {mkdir, symlink, chmod, del, cp, concat} = fs
+const {envify} = browser.transforms
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,
@@ -34,12 +40,10 @@ const {
   secret
 } = require('./Local')
 
-const {fork} = command
-
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
 const pkg = require('./package.json')
-const createDB = () => require('./server/db/create')()
+const {forTask: createDB} = require('./server/db/create')
 const migration = require('./server/db/migration')
 
 module.exports = pon({
