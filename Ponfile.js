@@ -43,7 +43,7 @@ const {
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
 const pkg = require('./package.json')
-const {forTask: createDB} = require('./server/db/create')
+const createDB = () => require('./server/db/create').forTask()
 const migration = require('./server/db/migration')
 
 module.exports = pon({
