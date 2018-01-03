@@ -2205,8 +2205,8 @@ browserify@^14.4.0, browserify@^14.5.0:
     xtend "^4.0.0"
 
 browserslist@^2.0.0, browserslist@^2.1.2, browserslist@^2.10.2:
-  version "2.10.2"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.10.2.tgz#0838eec4b3db2d860cee13bf6c0691e7e8133822"
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.0.tgz#50350d6873a82ebe0f3ae5483658c571ae5f9d7d"
   dependencies:
     caniuse-lite "^1.0.30000784"
     electron-to-chromium "^1.3.30"
@@ -10488,8 +10488,8 @@ the-header@^2.0.5:
     the-window "^5.3.0"
 
 the-hoc@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.1.0.tgz#37f9372a35116f7e499795f4b321ec034d02e108"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.1.1.tgz#8562906fdb07bb5975b35408e4ac468349edd69a"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

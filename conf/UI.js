@@ -20,6 +20,8 @@ module.exports = Object.freeze(
     'abind,asleep,argx,asobj,qs,objnest,' +
     'the-scene-base,the-date,the-url,the-error,the-store,the-check,the-client,the-scope,the-window,the-components,the-loc',
     /** Toast duration */
-    TOAST_DURATION: 2000
+    TOAST_DURATION: 2000,
+
+    DEFAULT_LANG: 'en'
   }
 )

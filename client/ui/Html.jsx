@@ -15,15 +15,11 @@ import {
   APP_CDN_URL
 } from '@self/Local'
 
-const {APP_PROP_NAME, APP_STAGE_NAME, APP_CONTAINER_ID} = UI
-const {DOMINANT_COLOR} = Styles
-const u = Urls
-
 const Html = ({appScope, renderingContext}) => {
   const {version} = appScope.pkg
   const {lang, client, store, handle, path} = renderingContext
-  handle.setAttributes({store, client, l, lang})
   const l = locales.bind(lang)
+  handle.setAttributes({store, client, l, lang})
   const appProps = {
     lang
   }
@@ -32,31 +28,31 @@ const Html = ({appScope, renderingContext}) => {
       <TheHead title={l('app.APP_NAME')}
                js={[
                  ...(isProduction() ? [
-                   u.PRODUCTION_JS_URL
+                   Urls.PRODUCTION_JS_URL
                  ] : [
-                   u.JS_EXTERNAL_URL,
-                   u.JS_BUNDLE_URL
+                   Urls.JS_EXTERNAL_URL,
+                   Urls.JS_BUNDLE_URL
                  ])
                ]}
                css={[
                  ...(isProduction() ? [
-                   u.PRODUCTION_CSS_URL
+                   Urls.PRODUCTION_CSS_URL
                  ] : [
-                   u.CSS_THEME_URL,
-                   u.CSS_FONT_URL,
-                   u.CSS_BUNDLE_URL
+                   Urls.CSS_THEME_URL,
+                   Urls.CSS_FONT_URL,
+                   Urls.CSS_BUNDLE_URL
                  ])
                ]}
-               icon={u.ICON_URL}
+               icon={Urls.ICON_URL}
                version={isProduction() ? version : String(new Date().getTime())}
-               globals={{[APP_PROP_NAME]: appProps}}
-               color={DOMINANT_COLOR}
+               globals={{[UI.APP_PROP_NAME]: appProps}}
+               color={Styles.DOMINANT_COLOR}
                cdn={isProduction() ? APP_CDN_URL : null}
-               fallbackUnless={APP_STAGE_NAME}
+               fallbackUnless={UI.APP_STAGE_NAME}
       >
       </TheHead>
       <TheBody>
-        <div id={APP_CONTAINER_ID}>
+        <div id={UI.APP_CONTAINER_ID}>
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
