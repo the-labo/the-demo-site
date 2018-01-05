@@ -40,6 +40,11 @@ class UserResource extends Resource {
   static entityClass (ResourceEntity) {
     /** @class */
     class UserResourceEntity extends ResourceEntity {
+      hasRoleOf (code) {
+        const user = this
+        const {role} = user
+        return role && role.code === code
+      }
     }
 
     return UserResourceEntity

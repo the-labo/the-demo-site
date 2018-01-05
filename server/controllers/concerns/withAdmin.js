@@ -14,8 +14,7 @@ function withAdmin (Class) {
       const s = this
       const {session} = s
       const {user} = session.authorized || {}
-      const {role} = user || {}
-      return role && role.code === RoleCodes.ADMIN_ROLE
+      return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 
     async _assertAsAdmin () {

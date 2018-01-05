@@ -6,7 +6,6 @@
 
 const {Resource, DataTypes} = require('the-db')
 const {STRING, ENTITY, BOOLEAN, REF} = DataTypes
-const {withUser} = require('../concerns')
 
 /** @lends ProfileResource */
 class ProfileResource extends Resource {
@@ -60,6 +59,4 @@ class ProfileResource extends Resource {
 
 Object.assign(ProfileResource, {})
 
-module.exports = withUser(
-  ProfileResource
-)
+module.exports = ProfileResource
