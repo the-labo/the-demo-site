@@ -10,7 +10,6 @@ const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = requ
 const VerifySendError = TheError.withName('VerifySendError')
 const {Urls, Lifetimes} = require('@self/conf')
 const {now, dateAfter} = require('the-date')
-const qs = require('qs')
 
 /** @lends VerifyCtrl */
 const VerifyCtrl = cn.compose(
@@ -26,14 +25,13 @@ const VerifyCtrl = cn.compose(
         return false
       }
       const {profile} = user
-      return Boolean(profile && profile.email && !profile.emailVerified)
+      return Boolean(profile && profile.isEmailVerifyNeeded())
     }
 
     async send () {
       const s = this
       const {mail, seal} = s.app
-      const {Alias} = s.resources
-      const {protocol, host, lang} = s.client
+      const {lang} = s.client
       await s._assertAuthorized()
 
       const user = await s._fetchAuthorizedUser()
@@ -48,16 +46,16 @@ const VerifyCtrl = cn.compose(
         userId: user.id,
         email
       }
-      const sealString = seal.seal(envelop)
-      const query = qs.stringify({envelop, seal: sealString, expireAt})
-      const url = `${protocol}//${host}${Urls.VERIFY_CONFIRM_URL}?${query}`
-      const alias = await Alias.ofUrl(url)
+      const url = await s.aliasUrlFor(Urls.VERIFY_CONFIRM_URL, {
+        envelop,
+        seal: seal.seal(envelop),
+        expireAt
+      })
       s._debug(`Create verify url: ${url}`)
-
       await mail.sendVerify({
         lang,
         user,
-        url: `${protocol}//${host}${alias.shortUrl}`,
+        url,
         expireAt
       })
 

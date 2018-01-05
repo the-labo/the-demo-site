@@ -25,14 +25,13 @@ const VerifyConfirmScene = cn.compose(
       const verifyCtrl = await s.use('verifyCtrl')
       await s.busyFor(async () => {
         await s.processEntry(async ({seal, envelop}) =>
-          await verifyCtrl.verify({seal, envelop})
-        )
-          .catch((e) =>
+          await verifyCtrl.verify({seal, envelop}).catch((e) =>
             s.catchFailure(e, {
               'ExpiredError': l('errors.VERIFY_EXPIRED_ERROR'),
               default: l('errors.VERIFY_FAILED_ERROR')
             })
           )
+        )
       })
     }
   }

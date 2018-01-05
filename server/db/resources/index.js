@@ -17,3 +17,9 @@ module.exports = {
   SignResource,
   UserResource
 }
+
+exports.AliasResource = AliasResource
+exports.ProfileResource = ProfileResource
+exports.RoleResource = RoleResource
+exports.SignResource = SignResource
+exports.UserResource = UserResource

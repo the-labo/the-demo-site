@@ -53,3 +53,27 @@ module.exports = {
   VerifyNeedScene,
   VerifySendScene
 }
+
+exports.AccountScene = AccountScene
+exports.AppScene = AppScene
+exports.CautionDisconnectedScene = CautionDisconnectedScene
+exports.PasswordChangeScene = PasswordChangeScene
+exports.ProfileEditScene = ProfileEditScene
+exports.QuitScene = QuitScene
+exports.RecoverResetScene = RecoverResetScene
+exports.RecoverSendScene = RecoverSendScene
+exports.Scene = Scene
+exports.SignAskScene = SignAskScene
+exports.SignInScene = SignInScene
+exports.SignOutScene = SignOutScene
+exports.SignUpScene = SignUpScene
+exports.ToastScene = ToastScene
+exports.UserCheckScene = UserCheckScene
+exports.UserCreateScene = UserCreateScene
+exports.UserDestroyScene = UserDestroyScene
+exports.UserListScene = UserListScene
+exports.UserPasswordScene = UserPasswordScene
+exports.UserSearchScene = UserSearchScene
+exports.VerifyConfirmScene = VerifyConfirmScene
+exports.VerifyNeedScene = VerifyNeedScene
+exports.VerifySendScene = VerifySendScene

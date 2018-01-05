@@ -47,6 +47,11 @@ class ProfileResource extends Resource {
   static entityClass (ResourceEntity) {
     /** @class */
     class ProfileResourceEntity extends ResourceEntity {
+
+      get isEmailVerifyNeeded () {
+        const profile = this
+        return Boolean(profile.email && !profile.emailVerified)
+      }
     }
 
     return ProfileResourceEntity

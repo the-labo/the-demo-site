@@ -1,11 +1,16 @@
 /**
  * Life time durations
- * @name Lifetimes
+ * @enum {number} Lifetimes
  */
 'use strict'
 
 const {hours} = require('the-date')
 
-exports.VERIFY_EMAIL_LIFETIME = hours(48)
-exports.RECOVER_EMAIL_LIFETIME = hours(48)
+module.exports = Object.freeze(
+  /** @lends Lifetimes */
+  {
+    VERIFY_EMAIL_LIFETIME: hours(48),
+    RECOVER_EMAIL_LIFETIME: hours(48)
+  }
+)
 

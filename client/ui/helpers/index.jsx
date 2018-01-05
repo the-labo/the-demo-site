@@ -9,3 +9,7 @@ import labelHelper from './labelHelper'
 export {
   labelHelper
 }
+
+export default {
+    labelHelper
+}

@@ -15,3 +15,10 @@ export {
   UserLabel,
   Pager
 }
+
+export default {
+    SearchForm,
+    UserImage,
+    UserLabel,
+    Pager
+}

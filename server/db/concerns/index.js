@@ -11,3 +11,6 @@ module.exports = {
   withCode,
   withUser
 }
+
+exports.withCode = withCode
+exports.withUser = withUser

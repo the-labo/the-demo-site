@@ -25,3 +25,13 @@ module.exports = {
   withSort,
   withValues
 }
+
+exports.compose = compose
+exports.withBack = withBack
+exports.withBusy = withBusy
+exports.withEntry = withEntry
+exports.withFailure = withFailure
+exports.withPage = withPage
+exports.withReady = withReady
+exports.withSort = withSort
+exports.withValues = withValues

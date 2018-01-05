@@ -15,3 +15,8 @@ module.exports = {
   withAuth,
   withDebug
 }
+
+exports.compose = compose
+exports.withAdmin = withAdmin
+exports.withAuth = withAuth
+exports.withDebug = withDebug

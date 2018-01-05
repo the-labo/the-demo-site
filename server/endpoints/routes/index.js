@@ -9,3 +9,5 @@ const aliasRoute = require('./aliasRoute')
 module.exports = {
   aliasRoute
 }
+
+exports.aliasRoute = aliasRoute

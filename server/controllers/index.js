@@ -27,3 +27,14 @@ module.exports = {
   UserCtrl,
   VerifyCtrl
 }
+
+exports.AccountCtrl = AccountCtrl
+exports.AdminCtrl = AdminCtrl
+exports.AppCtrl = AppCtrl
+exports.Ctrl = Ctrl
+exports.PasswordCtrl = PasswordCtrl
+exports.QuitCtrl = QuitCtrl
+exports.RecoverCtrl = RecoverCtrl
+exports.SignCtrl = SignCtrl
+exports.UserCtrl = UserCtrl
+exports.VerifyCtrl = VerifyCtrl

@@ -29,3 +29,17 @@ export {
   withRole,
   withTitle
 }
+
+export default {
+    asBound,
+    asForm,
+    asPure,
+    asView,
+    compose,
+    onlySigned,
+    withCycle,
+    withLoc,
+    withMoment,
+    withRole,
+    withTitle
+}

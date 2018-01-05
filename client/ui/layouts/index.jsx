@@ -15,3 +15,10 @@ export {
   Main,
   Toasts
 }
+
+export default {
+    Footer,
+    Header,
+    Main,
+    Toasts
+}

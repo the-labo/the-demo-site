@@ -15,7 +15,8 @@ function RecoverResetForm ({
                              getInputAttributesOf,
                              getLabelAttributesOf,
                              getFormAttributes,
-                             getSubmitAttributes
+                             getSubmitAttributes,
+                             onSubmit
                            }) {
 
   return (
@@ -29,8 +30,8 @@ function RecoverResetForm ({
         </Label>
         <Value>
           <Password placeholder={l('placeholders.NEW_PASSWORD')}
-                    autoFocus
-                    {...getInputAttributesOf('password')}/>
+                    {...getInputAttributesOf('password')}
+                    onEnter={onSubmit}/>
         </Value>
       </Field>
       <br/>

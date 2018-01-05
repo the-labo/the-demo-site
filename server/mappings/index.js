@@ -11,3 +11,6 @@ module.exports = {
   ControllerMapping,
   ResourceMapping
 }
+
+exports.ControllerMapping = ControllerMapping
+exports.ResourceMapping = ResourceMapping

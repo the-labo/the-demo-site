@@ -21,3 +21,11 @@ module.exports = {
   Urls,
   locales
 }
+
+exports.Icons = Icons
+exports.Lifetimes = Lifetimes
+exports.RoleCodes = RoleCodes
+exports.Styles = Styles
+exports.UI = UI
+exports.Urls = Urls
+exports.locales = locales

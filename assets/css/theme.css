@@ -128,6 +128,13 @@
 .the-lead .the-lead-text {  }
 .the-lead .the-lead-error { color:#B31818; }
 .the-line { margin:32px 0;color:#CCC;border-style:solid; }
+.the-repeatable { position:relative;min-height:36px; }
+.the-repeatable.the-repeatable-horizontal {  }
+.the-repeatable.the-repeatable-horizontal .the-repeatable-list { flex-wrap:noWrap;overflow:auto; }
+.the-repeatable.the-repeatable-horizontal .the-repeatable-item { flex-shrink:0; }
+.the-repeatable .the-repeatable-list { display:flex;flex-wrap:wrap;align-items:center;padding:0;margin:0;list-style:none; }
+.the-repeatable .the-repeatable-item { display:inline-block;margin:0px;padding:0px;flex-grow:1; }
+.the-repeatable .the-repeatable-alt { color:#BBB;width:100%;padding:8px 16px;text-align:center;font-size:1.25em; }
 .the-aside { display:block;flex-grow:1;width:216px;min-height:1px; }
 .the-aside-for { display:block;flex-grow:4;min-width:280px; }
 .the-aside-container { display:flex;width:100%;flex-wrap:wrap; }

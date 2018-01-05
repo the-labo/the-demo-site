@@ -39,3 +39,22 @@ export {
   UserPasswordDialog,
   UserSearchForm
 }
+
+export default {
+    CautionDisconnectedDialog,
+    PasswordChangeForm,
+    ProfileEditForm,
+    RecoverResetForm,
+    RecoverSendForm,
+    SignInForm,
+    SignUpForm,
+    UserActionBar,
+    UserCreateDialog,
+    UserCreateForm,
+    UserDestroyDialog,
+    UserList,
+    UserListItem,
+    UserPager,
+    UserPasswordDialog,
+    UserSearchForm
+}

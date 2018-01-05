@@ -12,12 +12,16 @@ const {withCode} = require('../concerns')
 /** @lends RoleResource */
 class RoleResource extends Resource {
 
+  static get codes () {
+    return RoleCodes
+  }
+
   static get policy () {
     return {
       code: {
         description: 'Role code',
         type: STRING,
-        oneOf: Object.values(RoleCodes),
+        oneOf: Object.values(this.codes),
         required: true
       }
     }

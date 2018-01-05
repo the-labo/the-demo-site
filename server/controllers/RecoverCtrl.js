@@ -10,7 +10,6 @@ const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = requ
 const UnknownEmailError = TheError.withName('UnknownEmailError')
 const {Urls, Lifetimes} = require('@self/conf')
 const {now, dateAfter} = require('the-date')
-const qs = require('qs')
 
 /** @lends RecoverCtrl */
 const RecoverCtrl = cn.compose(
@@ -21,8 +20,8 @@ const RecoverCtrl = cn.compose(
     async send (email) {
       const s = this
       const {mail, seal} = s.app
-      const {Profile, Alias} = s.resources
-      const {protocol, host, lang} = s.client
+      const {Profile} = s.resources
+      const {lang} = s.client
 
       const profile = await Profile.first({email})
       if (!profile) {
@@ -34,15 +33,16 @@ const RecoverCtrl = cn.compose(
         expireAt,
         userId: user.id,
       }
-      const sealString = seal.seal(envelop)
-      const query = qs.stringify({envelop, seal: sealString, expireAt})
-      const url = `${protocol}//${host}${Urls.RECOVER_RESET_URL}?${query}`
-      const alias = await Alias.ofUrl(url)
+      const url = await s.aliasUrlFor(Urls.RECOVER_RESET_URL, {
+        envelop,
+        seal: seal.seal(envelop),
+        expireAt
+      })
       s._debug(`Create recover url: ${url}`)
       await mail.sendRecover({
         lang,
         user,
-        url: `${protocol}//${host}${alias.shortUrl}`,
+        url,
         expireAt
       })
       return user

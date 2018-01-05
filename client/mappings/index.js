@@ -9,3 +9,5 @@ const SceneMapping = require('./SceneMapping')
 module.exports = {
   SceneMapping
 }
+
+exports.SceneMapping = SceneMapping
