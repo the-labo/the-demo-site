@@ -72,8 +72,8 @@ export default asBound(
   Header,
   (state) => ({
     pathname: get('location.pathname'),
-    synced: state['account.synced'],
     user: state['account.user'],
+    synced: state['account.synced'],
     needsVerify: state['verifyNeed.needed']
   }),
   ({

@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.9.0",
+  "version": "7.10.1",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -73,7 +73,7 @@
     "the-handle": "^1.1.0",
     "the-hoc": "^1.1.0",
     "the-loc": "^1.2.4",
-    "the-mail": "file:../the-mail",
+    "the-mail": "^2.1.0",
     "the-password": "^1.0.2",
     "the-polyfill": "^1.0.1",
     "the-scene-base": "^1.1.6",

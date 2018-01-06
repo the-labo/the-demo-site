@@ -3,7 +3,6 @@
  * @class Ctrl
  */
 const {TheCtrl, withClient, withSeal, compose} = require('the-controller-base')
-const {Urls} = require('@self/conf')
 
 const CtrBase = compose(
   withClient,

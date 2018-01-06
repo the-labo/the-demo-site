@@ -6,7 +6,7 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheError, TheGoneError, TheExpiredError, TheInvalidParameterError} = require('the-error')
+const {TheError, TheExpiredError, TheInvalidParameterError} = require('the-error')
 const VerifySendError = TheError.withName('VerifySendError')
 const {Urls, Lifetimes} = require('@self/conf')
 const {now, dateAfter} = require('the-date')
