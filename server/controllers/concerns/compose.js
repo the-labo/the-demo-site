@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {compose} = require('the-controller-base')
+const {compose} = require('the-controller-base/mixins')
 
 /** @lends compose */
 module.exports = compose

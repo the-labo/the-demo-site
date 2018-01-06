@@ -4,6 +4,6 @@
  */
 'use strict'
 
-const {withDebug} = require('the-controller-base')
+const {withDebug} = require('the-controller-base/mixins')
 
 module.exports = withDebug

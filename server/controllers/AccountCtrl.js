@@ -27,12 +27,7 @@ const AccountCtrl = cn.compose(
       const user = await s._fetchAuthorizedUser()
       const profile = await Profile.ofUser(user)
       await user.update({profile})
-      const {email} = profileAttributes
-      const needsVerify = email && (email !== profile.email)
-      if (needsVerify) {
-        profileAttributes.emailVerified = false
-      }
-      await profile.update(Object.assign({}, profileAttributes, {user}))
+      await profile.update(profileAttributes)
       await s._reloadAuthorized()
       return true
     }

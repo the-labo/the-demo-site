@@ -19,8 +19,7 @@ function ProfileEditForm ({
                             getSubmitAttributes
                           }) {
   return (
-    <TheForm className='profileForm'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
              required={['name']}
     >
       <Field>

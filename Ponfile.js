@@ -103,7 +103,7 @@ module.exports = pon({
   ], {sort: true}),
   'struct:render': [
     coz([
-      '+(client|server)/**/.index.*.bud',
+      '+(conf/client|server)/**/.index.*.bud',
       '+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
       '.*.bud'
     ])

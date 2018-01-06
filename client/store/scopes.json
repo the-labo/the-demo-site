@@ -106,6 +106,7 @@
     "failure": "STR"
   },
   "verifyNeed": {
+    "busy": "BOOL",
     "needed": "BOOL"
   },
   "verifySend": {

@@ -1,0 +1,11 @@
+{
+  "ACTIONS": "Actions",
+  "NEW_PASSWORD": "New Password",
+  "USER_EMAIL": "email",
+  "USER_IMAGE": "Image",
+  "USER_NAME": "Username",
+  "USER_PASSWORD": "Password",
+  "USER_PROFILE_NAME": "Display Name",
+  "USER_ROLE": "Role",
+  "USER_SIGNIN_AT": "Last Sign In"
+}

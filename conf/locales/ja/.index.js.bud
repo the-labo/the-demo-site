@@ -1,0 +1,14 @@
+'use strict'
+
+const {dir} = require('the-templates')
+
+module.exports = dir({
+  dirname: __dirname,
+  name: 'ja',
+  cjs: true,
+  description: 'ja locales'
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

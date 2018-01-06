@@ -17,11 +17,11 @@ const Footer = compose(
                          l
                        }) {
     return (
-      <TheFooter className='footer'>
+      <TheFooter>
         <TheFooter.CopyRight year={2017}
                              footer={l('org.ORG_NAME')}
         />
-        <TheFooter.Links className='footerLinks'>
+        <TheFooter.Links>
           <TheFooter.Link to={Urls.ABOUT_PRIVACY_POLICY_URL}>
             {l('buttons.SHOW_PRIVACY_POLICY')}
           </TheFooter.Link>

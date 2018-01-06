@@ -2,11 +2,12 @@
  * @abstract
  * @class Ctrl
  */
-const {TheCtrl, withClient, compose} = require('the-controller-base')
+const {TheCtrl, withClient, withSeal, compose} = require('the-controller-base')
 const {Urls} = require('@self/conf')
 
 const CtrBase = compose(
-  withClient
+  withClient,
+  withSeal
 )(TheCtrl)
 
 /** @lends Ctrl */
@@ -16,7 +17,7 @@ class Ctrl extends CtrBase {
     return s.app.db.resources
   }
 
-  async aliasUrlFor (pathname, query = {}) {
+  async _aliasUrlFor (pathname, query = {}) {
     const s = this
     const {protocol, host} = s.client
     const {Alias} = s.resources
@@ -25,6 +26,7 @@ class Ctrl extends CtrBase {
     )
     return alias.urlFor({protocol, host})
   }
+
 }
 
 module.exports = Ctrl

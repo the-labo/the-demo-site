@@ -4,13 +4,7 @@
  */
 'use strict'
 
-const debug = require('debug')('app:endpoint:alias')
-const theCache = require('the-cache')
-
-const cache = theCache({
-  max: 1000 * 2,
-  maxAge: 1000 * 60 * 6
-})
+const {theAliasRouteFor} = require('the-site-routes')
 
 /** @lends aliasRoute */
 async function aliasRoute (ctx) {
@@ -19,19 +13,9 @@ async function aliasRoute (ctx) {
     params: {key}
   } = ctx
   const {Alias} = db.resources
-  const cached = cache.get(key)
-  const found = cached || await Alias.first({key})
-  if (!found) {
-    ctx.status = 404
-    ctx.body = `Unknown alias key: ${key}`
-    return
-  }
-  if (!cached) {
-    cache.set(key, found)
-  }
-  const {originalUrl} = found
-  debug(`Redirect ${ctx.url} -> ${originalUrl} (Using cache: ${!!cached})`)
-  ctx.redirect(originalUrl)
+
+  const route = theAliasRouteFor({Alias, key})
+  await route(ctx)
 }
 
 module.exports = aliasRoute

@@ -25,12 +25,12 @@ const VerifyCtrl = cn.compose(
         return false
       }
       const {profile} = user
-      return Boolean(profile && profile.isEmailVerifyNeeded())
+      return Boolean(profile && profile.isEmailVerifyNeeded)
     }
 
     async send () {
       const s = this
-      const {mail, seal} = s.app
+      const {mail} = s.app
       const {lang} = s.client
       await s._assertAuthorized()
 
@@ -41,45 +41,29 @@ const VerifyCtrl = cn.compose(
       }
 
       const expireAt = Number(dateAfter(Lifetimes.VERIFY_EMAIL_LIFETIME))
-      const envelop = {
-        expireAt: String(expireAt),
-        userId: user.id,
-        email
-      }
-      const url = await s.aliasUrlFor(Urls.VERIFY_CONFIRM_URL, {
-        envelop,
-        seal: seal.seal(envelop),
-        expireAt
-      })
+      const envelop = {expireAt, userId: user.id, email}
+
+      const seal = await s._sealFor(envelop)
+      const url = await s._aliasUrlFor(Urls.VERIFY_CONFIRM_URL, {envelop, seal, expireAt})
       s._debug(`Create verify url: ${url}`)
-      await mail.sendVerify({
-        lang,
-        user,
-        url,
-        expireAt
-      })
+      await mail.sendVerify({lang, user, url, expireAt})
 
     }
 
     async verify ({seal: sealString, envelop} = {}) {
       const s = this
-      const {seal} = s.app
       const {User, Sign, Profile} = s.resources
-      const ok = seal.verify(sealString, envelop)
-      if (!ok) {
-        throw new TheInvalidParameterError(`Invalid parameter`, envelop)
-      }
+      await s._assertSeal(sealString, envelop)
+
       const {expireAt, userId, email} = envelop
       const isExpired = new Date(Number(expireAt)) < now()
       if (isExpired) {
         throw new TheExpiredError('Verify expired')
       }
+      await User.assertUserNotGone(userId)
       const user = await User.one(userId)
-      if (!user) {
-        throw new TheGoneError('User already gone')
-      }
       const sign = await Sign.ofUser(user)
-      await s._setAuthorized(user, sign)
+      await s._setAuthorized({user, sign})
       const profile = await Profile.ofUser(user)
       if (profile.email !== email) {
         throw new TheInvalidParameterError(`Invalid parameter`, envelop)

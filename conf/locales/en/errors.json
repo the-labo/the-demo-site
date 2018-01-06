@@ -1,0 +1,22 @@
+{
+  "LENGTH_OUT_OF_RANGE_ERROR": "Invalid length",
+  "MULTIPLE_NOT_ALLOWED_ERROR": "Cannot be multiple",
+  "OUT_OF_RANGE_ERROR": "Out of range",
+  "PASSWORD_WRONG": "Password is wrong",
+  "PATTERN_NOT_MATCHED_ERROR": "Invalid value",
+  "RECOVER_EXPIRED_ERROR": "This url is already expired",
+  "RECOVER_FAILED_ERROR": "Failed to recovery",
+  "RECOVER_SEND_FAILED_ERROR": "Failed to send recovery email",
+  "RECOVER_UNKNOWN_EMAIL_ERROR": "This email is not registered",
+  "RESOURCE_NOT_FOUND_ERROR": "Resource not found",
+  "UNEXPECTED_ERROR": "Sorry! Something go wrong!",
+  "UNEXPECTED_TYPE_ERROR": "Unexpected type",
+  "UNEXPECTED_VALUE_ERROR": "Unexpected value",
+  "UNIQUE_VIOLATION_ERROR": "Already taken",
+  "USER_NOT_FOUND_ERROR": "User not found",
+  "VALIDATION_FAILED_ERROR": "There is input deficiencies",
+  "VALUE_MISSING_ERROR": "Required",
+  "VERIFY_EXPIRED_ERROR": "This url is already expired",
+  "VERIFY_FAILED_ERROR": "Failed to verify",
+  "VERIFY_SEND_FAILED_ERROR": "Failed to send verify email"
+}

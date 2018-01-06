@@ -18,8 +18,7 @@ function RecoverSendForm ({
                             getSubmitAttributes
                           }) {
   return (
-    <TheForm className='recover-form'
-             inline
+    <TheForm inline
              {...getFormAttributes()}
              required={['email']}
              autoComplete='off'

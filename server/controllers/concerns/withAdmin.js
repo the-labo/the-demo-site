@@ -12,8 +12,7 @@ function withAdmin (Class) {
   class WithAdmin extends Class {
     async _isAdmin () {
       const s = this
-      const {session} = s
-      const {user} = session.authorized || {}
+      const {user} = s.session.authorized || {}
       return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 
@@ -27,14 +26,12 @@ function withAdmin (Class) {
 
     async _setConfirmedAsAdmin (confirmedAsAdmin) {
       const s = this
-      const {session} = s
-      session.confirmedAsAdmin = confirmedAsAdmin
+      s.session.confirmedAsAdmin = confirmedAsAdmin
     }
 
     async _isConfirmedAsAdmin () {
       const s = this
-      const {session} = s
-      return session.confirmedAsAdmin
+      return s.session.confirmedAsAdmin
     }
   }
 

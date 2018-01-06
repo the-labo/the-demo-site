@@ -21,7 +21,7 @@ const Toasts = compose(
                          onReset
                        }) {
     return (
-      <TheToastGroup className='main'>
+      <TheToastGroup>
         <TheToast.Info onUpdate={onReset} messages={info} clearAfter={TOAST_DURATION}/>
         <TheToast.Warn onUpdate={onReset} messages={warn} clearAfter={TOAST_DURATION}/>
         <TheToast.Error onUpdate={onReset} messages={error} clearAfter={TOAST_DURATION}/>

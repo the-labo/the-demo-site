@@ -4,42 +4,17 @@
  */
 'use strict'
 
-const {TheUnauthorizedError} = require('the-error')
+const {withAuthorized} = require('the-controller-base/mixins')
 
 /** @lends withAuth */
 function withAuth (Class) {
-  class WithAuthorized extends Class {
-    async _getAuthorized () {
-      const s = this
-      const {session} = s
-      return session.authorized || false
-    }
+  const WithAuthorized = withAuthorized(Class)
 
-    async _assertAuthorized () {
-      const s = this
-      const authorized = await s._getAuthorized()
-      if (!authorized) {
-        throw new TheUnauthorizedError('Needs Sign In')
-      }
-    }
-
-    async _setAuthorized (user, sign) {
-      const s = this
-      const {session} = s
-      session.authorized = {user, sign}
-    }
-
-    async _delAuthorized () {
-      const s = this
-      const {session} = s
-      session.authorized = false
-    }
-
+  class withAuth extends WithAuthorized {
     async _fetchAuthorizedUser () {
       const s = this
-      const {session, app} = s
-      const {User} = app.db.resources
-      const {user} = (session.authorized || {})
+      const {User} = s.resources
+      const {user} = (await s._getAuthorized()) || {}
       if (!user) {
         return null
       }
@@ -48,23 +23,18 @@ function withAuth (Class) {
 
     async _reloadAuthorized () {
       const s = this
-      const authorized = await s._getAuthorized()
-      if (!authorized) {
-        return
-      }
-      const {app, session} = s
-      const {User, Sign} = app.db.resources
-      const user = await User.one(authorized.user.id)
+      const {Sign} = s.resources
+      const user = await s._fetchAuthorizedUser()
       if (user) {
         const sign = await Sign.ofUser(user)
-        session.authorized = {user, sign}
+        await s._setAuthorized({user, sign})
       } else {
-        session.authorized = false
+        await s._delAuthorized()
       }
     }
   }
 
-  return WithAuthorized
+  return withAuth
 }
 
 module.exports = withAuth

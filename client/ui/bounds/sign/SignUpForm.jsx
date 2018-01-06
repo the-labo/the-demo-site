@@ -18,8 +18,7 @@ function SignUpForm ({
                        getSubmitAttributes
                      }) {
   return (
-    <TheForm className='signup-form'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
              required={['name', 'password']}
              autoComplete='off'
     >

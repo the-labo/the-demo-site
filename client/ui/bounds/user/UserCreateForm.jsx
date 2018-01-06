@@ -19,8 +19,7 @@ function UserCreateForm ({
                            getSubmitAttributes
                          }) {
   return (
-    <TheForm className='userCreateForm'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
              required={['name']}
              autoComplete='off'
     >

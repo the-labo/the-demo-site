@@ -20,8 +20,7 @@ function RecoverResetForm ({
                            }) {
 
   return (
-    <TheForm className='recover-reset-form'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
              required={['password']}
     >
       <Field>
@@ -54,11 +53,13 @@ export default asForm(
   ({
      l,
      recoverResetScene,
+     accountScene,
      toastScene
    }) => ({
     onUpdate: (v) => recoverResetScene.setEntry(v),
     onSubmit: async () => {
       await recoverResetScene.doReset()
+      await accountScene.doSync()
       recoverResetScene.set({done: true})
     }
   })

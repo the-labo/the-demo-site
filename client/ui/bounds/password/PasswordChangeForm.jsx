@@ -20,8 +20,7 @@ function PasswordChangeForm ({
                                onSubmit
                              }) {
   return (
-    <TheForm className='password-form'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
              required={['name']}
     >
       <Field>

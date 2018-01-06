@@ -22,7 +22,7 @@ function RecoverResetView ({
                       text={null}
       />
       <TheView.Body>
-        <TheLead text={l('leads.RECOVER_RESET')}
+        <TheLead title={l('leads.RECOVER_RESET')}
                  error={failure}
         />
         <TheCondition if={done}>

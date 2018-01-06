@@ -21,41 +21,23 @@ import { withClient } from 'the-client'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 
-class App extends React.Component {
-  render () {
-    const s = this
-    const {props, notices} = s
-    const {
-      synced,
-      user
-    } = props
-
-    return (
-      <TheRoot className='app'>
-        <Header {...{synced, user, notices}}/>
-        <Toasts/>
-        <Main>
-          <TheCondition if={synced}>
-            <Routes {...{user}}/>
-          </TheCondition>
-        </Main>
-        <Footer/>
-        <CautionDisconnectedDialog/>
-      </TheRoot>
-    )
-  }
-
-  get notices () {
-    const s = this
-    const notices = {}
-    const {onVerify, needsVerify, user, l} = s.props
-    if (user && needsVerify) {
-      notices[l('messages.NEEDS_EMAIL_VERIFIED')] = {
-        [l('buttons.DO_SEND_VERIFY')]: onVerify
-      }
-    }
-    return notices
-  }
+function App ({
+                synced,
+                user
+              }) {
+  return (
+    <TheRoot>
+      <Header/>
+      <Toasts/>
+      <Main>
+        <TheCondition if={synced}>
+          <Routes {...{user}}/>
+        </TheCondition>
+      </Main>
+      <Footer/>
+      <CautionDisconnectedDialog/>
+    </TheRoot>
+  )
 
 }
 
@@ -63,27 +45,18 @@ const ConnectedApp = asBound(
   withCycle(withClient(withStore(App))),
   (state) => ({
     synced: state['account.synced'],
-    user: state['account.user'],
-    needsVerify: state['verifyNeed.needed'],
+    user: state['account.user']
   }),
   ({
-     l,
      appScene,
      accountScene,
      verifyNeedScene,
-     verifySendScene,
-     toastScene
    }) => ({
     onMount: async () => {
       await appScene.busyFor(async () => {
         await accountScene.doSync()
       })
       await verifyNeedScene.doSync({delay: 3 * 1000})
-    },
-    onVerify: async () => {
-      await verifySendScene.doSend()
-      await verifyNeedScene.doSync()
-      toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
     }
   })
 )

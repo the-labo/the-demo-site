@@ -10,7 +10,7 @@ const asleep = require('asleep')
 
 /** @lends VerifyNeedScene */
 const VerifyNeedScene = cn.compose(
-
+  cn.withBusy
 )(
   class VerifyNeedSceneBase extends Scene {
     get scope () {
@@ -21,9 +21,11 @@ const VerifyNeedScene = cn.compose(
     async doSync ({delay = 100} = {}) {
       const s = this
       await asleep(delay)
-      const verifyCtrl = await s.use('verifyCtrl')
-      const needed = await verifyCtrl.needsVerify()
-      s.set({needed})
+      await s.busyFor(async () => {
+        const verifyCtrl = await s.use('verifyCtrl')
+        const needed = await verifyCtrl.needsVerify()
+        s.set({needed})
+      })
     }
   }
 )

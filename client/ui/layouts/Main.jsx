@@ -8,7 +8,7 @@ import { TheMain } from 'the-components'
 
 const Main = function MainImpl ({children}) {
   return (
-    <TheMain className='main'>
+    <TheMain>
       {children}
     </TheMain>
   )

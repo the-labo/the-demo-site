@@ -19,8 +19,7 @@ function SigninForm ({
                        l
                      }) {
   return (
-    <TheForm className='signinForm'
-             {...getFormAttributes()}
+    <TheForm {...getFormAttributes()}
     >
       <TheInput {...getInputAttributesOf('@')}
                 onUpdate={() => null}

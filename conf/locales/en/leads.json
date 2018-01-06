@@ -1,0 +1,10 @@
+{
+  "ACTION_WITH_SELECTED_USERS": "Select action with the selected users",
+  "RECOVER_RESET": "Reset your password",
+  "RECOVER_SEND": "Input your email address and we will send password recovery mail.",
+  "RESET_PASSWORDS_CONFIRM": "Are you sure to reset password of these users?",
+  "RESET_PASSWORDS_RESULT": "Password reset done. Notify the new passwords to each users",
+  "SIGNDEL_CONFIRM": "We will miss you...",
+  "SIGNDEL_LEAD": "Are you sure to delete your account?",
+  "USER_DESTROY_CONFIRM": "Are you sure to delete these users?"
+}

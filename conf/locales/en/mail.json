@@ -1,0 +1,5 @@
+{
+  "GOODBYE_SUBJECT": "[#{app.APP_NAME}] Your withdrawal request has been processed",
+  "RECOVER_SUBJECT": "[#{app.APP_NAME}] Reset Your Password",
+  "VERIFY_SUBJECT": "[#{app.APP_NAME}] Verify Your Email Address"
+}

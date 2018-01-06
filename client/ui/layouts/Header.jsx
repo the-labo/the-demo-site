@@ -13,7 +13,7 @@ import {
 } from 'the-components'
 import { Urls, Icons } from '@self/conf'
 import { get } from 'the-window'
-import {UserLabel} from '../fragments'
+import { UserLabel } from '../fragments'
 import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
 
 const Header = compose(
@@ -24,11 +24,14 @@ const Header = compose(
                          isAdmin,
                          synced,
                          user,
-                         notices
+                         needsVerify,
+                         onVerify
                        }) {
+  const notices = user && needsVerify && {
+    [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify}
+  } || {}
   return (
-    <TheHeader className='header'
-               notices={notices}>
+    <TheHeader notices={notices}>
       <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
 
       <TheHeader.Tab>
@@ -68,8 +71,22 @@ const Header = compose(
 export default asBound(
   Header,
   (state) => ({
-    pathname: get('location.pathname')
+    pathname: get('location.pathname'),
+    synced: state['account.synced'],
+    user: state['account.user'],
+    needsVerify: state['verifyNeed.needed']
   }),
-  () => ({}),
-  {}
+  ({
+     l,
+     verifySendScene,
+     verifyNeedScene,
+     toastScene
+   }) => ({
+    onVerify: async () => {
+      await verifySendScene.doSend()
+      await verifyNeedScene.doSync()
+      toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
+      verifyNeedScene.set({needed: false})
+    }
+  })
 )

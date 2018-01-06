@@ -35,7 +35,7 @@ const SignCtrl = cn.compose(
         throw e
       }
       const sign = await Sign.setUserPassword(user, password)
-      await s._setAuthorized(user, sign)
+      await s._setAuthorized({user, sign})
       return user
     }
 
@@ -60,7 +60,7 @@ const SignCtrl = cn.compose(
       const profile = await Profile.ofUser(user)
       await sign.update({signInAt: new Date()})
       await user.update({profile, sign})
-      await s._setAuthorized(user, sign)
+      await s._setAuthorized({user, sign})
       return user
     }
 

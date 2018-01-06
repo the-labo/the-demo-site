@@ -17,13 +17,19 @@ const AdminCtrl = cn.compose(
       const s = this
       const {Sign} = s.resources
       await s._assertAuthorized()
-      const {signed} = await s._getAuthorized()
-      const sign = await Sign.one(signed.sign.id)
+      const user = await s._fetchAuthorizedUser()
+      const sign = await Sign.of(user)
       const ok = sign.verifyPassword(password)
       if (ok) {
         await s._setConfirmedAsAdmin(true)
       }
       return ok
+    }
+
+    async needsConfirmAsAdmin () {
+      const s = this
+      const isConfirmed = await s._isConfirmedAsAdmin()
+      return !isConfirmed
     }
   }
 )
