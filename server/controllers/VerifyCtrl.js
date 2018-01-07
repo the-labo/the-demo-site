@@ -6,10 +6,8 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheError, TheExpiredError, TheInvalidParameterError} = require('the-error')
-const VerifySendError = TheError.withName('VerifySendError')
+const {TheVerifyService} = require('the-site-services')
 const {Urls, Lifetimes} = require('@self/conf')
-const {now, dateAfter} = require('the-date')
 
 /** @lends VerifyCtrl */
 const VerifyCtrl = cn.compose(
@@ -20,57 +18,50 @@ const VerifyCtrl = cn.compose(
 
     async needsVerify () {
       const s = this
+      const {verifyService} = s.services
       const user = await s._fetchAuthorizedUser()
       if (!user) {
         return false
       }
-      const {profile} = user
-      return Boolean(profile && profile.isEmailVerifyNeeded)
+      return verifyService.pickNeeded({userId: user.id})
     }
 
     async send () {
       const s = this
-      const {mail} = s.app
-      const {lang} = s.client
+      const {verifyService} = s.services
+      const {mail, lang} = s
       await s._assertAuthorized()
-
       const user = await s._fetchAuthorizedUser()
-      const {email} = user.profile || {}
-      if (!email) {
-        throw new VerifySendError(`Email is not registered`)
-      }
 
-      const expireAt = Number(dateAfter(Lifetimes.VERIFY_EMAIL_LIFETIME))
-      const envelop = {expireAt, userId: user.id, email}
+      const {envelop, expireAt} = await verifyService.processPrepare({
+        userId: user.id,
+        expireIn: Lifetimes.VERIFY_EMAIL_LIFETIME
+      })
 
       const seal = await s._sealFor(envelop)
       const url = await s._aliasUrlFor(Urls.VERIFY_CONFIRM_URL, {envelop, seal, expireAt})
       s._debug(`Create verify url: ${url}`)
+
       await mail.sendVerify({lang, user, url, expireAt})
 
     }
 
     async verify ({seal: sealString, envelop} = {}) {
       const s = this
-      const {User, Sign, Profile} = s.resources
+      const {verifyService} = s.services
       await s._assertSeal(sealString, envelop)
 
-      const {expireAt, userId, email} = envelop
-      const isExpired = new Date(Number(expireAt)) < now()
-      if (isExpired) {
-        throw new TheExpiredError('Verify expired')
-      }
-      await User.assertUserNotGone(userId)
-      const user = await User.one(userId)
-      const sign = await Sign.ofUser(user)
+      const {sign, user} = await verifyService.processVerify({envelop})
       await s._setAuthorized({user, sign})
-      const profile = await Profile.ofUser(user)
-      if (profile.email !== email) {
-        throw new TheInvalidParameterError(`Invalid parameter`, envelop)
-      }
-      await profile.update({emailVerified: true})
       await s._reloadAuthorized()
       return s._fetchAuthorizedUser()
+    }
+
+    get services () {
+      const s = this
+      return {
+        verifyService: new TheVerifyService(s.resources)
+      }
     }
   }
 )

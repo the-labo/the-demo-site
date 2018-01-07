@@ -6,6 +6,7 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
+const {TheQuitService} = require('the-site-services')
 
 /** @lends QuitCtrl */
 const QuitCtrl = cn.compose(
@@ -15,22 +16,24 @@ const QuitCtrl = cn.compose(
   class QuitCtrlBase extends Ctrl {
     async execute () {
       const s = this
-      const {User, Sign, Profile} = s.resources
+      const {quitService} = s.services
       await s._reloadAuthorized()
-      const authorized = await s._getAuthorized()
-      if (!authorized) {
+      const user = await s._fetchAuthorizedUser()
+      if (!user) {
         return false
       }
-      const {user, sign} = authorized
-      const profile = await Profile.ofUser(user)
+      const {destroyed} = await quitService.processQuit({
+        userId: user.id
+      })
 
-      await Sign.destroy(sign.id)
-      await Profile.destroy(profile.id)
-      await User.destroy(user.id)
+      return destroyed
+    }
 
-      await s._reloadAuthorized()
-
-      return true
+    get services () {
+      const s = this
+      return {
+        quitService: new TheQuitService(s.resources)
+      }
     }
   }
 )

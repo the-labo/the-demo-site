@@ -4,61 +4,12 @@
 'use strict'
 
 import React from 'react'
-import { TheForm, TheInput, TheButton } from 'the-components'
+import { TheProfileEditForm } from 'the-site-components'
 import { asForm } from '../../wrappers'
 
-const {Text} = TheInput
-const {Field, Label, Value} = TheForm
-
-function ProfileEditForm ({
-                            l,
-                            user,
-                            getInputAttributesOf,
-                            getLabelAttributesOf,
-                            getFormAttributes,
-                            getSubmitAttributes
-                          }) {
+function ProfileEditForm (props) {
   return (
-    <TheForm {...getFormAttributes()}
-             required={['name']}
-    >
-      <Field>
-        <Label>
-          {l('labels.USER_NAME')}
-        </Label>
-        <Value>
-          {user && user.name}
-        </Value>
-      </Field>
-      <Field>
-        <Label {...getLabelAttributesOf('name')}>
-          {l('labels.USER_PROFILE_NAME')}
-        </Label>
-        <Value>
-          <Text placeholder={l('placeholders.USER_PROFILE_NAME')}
-                autoFocus
-                {...getInputAttributesOf('name')}/>
-        </Value>
-      </Field>
-      <Field>
-        <Label {...getLabelAttributesOf('email')}>
-          {l('labels.USER_EMAIL')}
-        </Label>
-        <Value>
-          <Text placeholder={l('placeholders.USER_EMAIL')}
-                type='email'
-                pattern={Text.EMAIL_PATTERN}
-                patternWarning={l('warnings.SEEMS_INVALID_EMAIL')}
-                {...getInputAttributesOf('email')}/>
-        </Value>
-      </Field>
-      <br/>
-      <Field>
-        <TheButton wide primary {...getSubmitAttributes()}>
-          {l('buttons.DO_UPDATE')}
-        </TheButton>
-      </Field>
-    </TheForm>
+    <TheProfileEditForm {...props}/>
   )
 }
 
@@ -72,12 +23,14 @@ export default asForm(
   ({
      l,
      profileEditScene,
-     toastScene
+     toastScene,
+     accountScene
    }) => ({
     onUpdate: (v) => profileEditScene.setEntry(v),
     onSubmit: async () => {
       await profileEditScene.doSave()
       profileEditScene.set({done: true})
+      await accountScene.doSync()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))
     }
   })

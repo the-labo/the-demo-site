@@ -10,7 +10,6 @@ module.exports = Object.freeze({
   'accountCtrl': c.AccountCtrl,
   'adminCtrl': c.AdminCtrl,
   'appCtrl': c.AppCtrl,
-  'passwordCtrl': c.PasswordCtrl,
   'quitCtrl': c.QuitCtrl,
   'recoverCtrl': c.RecoverCtrl,
   'signCtrl': c.SignCtrl,

@@ -12,7 +12,7 @@ function withAdmin (Class) {
   class WithAdmin extends Class {
     async _isAdmin () {
       const s = this
-      const {user} = s.session.authorized || {}
+      const user = await s._fetchAuthorizedUser()
       return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 

@@ -6,8 +6,7 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheError, TheNotFoundError} = require('the-error')
-const WrongPasswordError = TheError.withName('WrongPasswordError')
+const {TheSignService} = require('the-site-services')
 const {RoleCodes} = require('@self/conf')
 
 /** @lends SignCtrl */
@@ -16,67 +15,43 @@ const SignCtrl = cn.compose(
   cn.withAuth
 )(
   class SignCtrlBase extends Ctrl {
-
     async signUp (name, password, options = {}) {
       const s = this
       const {profile: profileAttributes = {}} = options
-      const {User, Role, Sign, Profile} = s.resources
-      const role = await Role.ofCode(RoleCodes.NORMAL_ROLE)
-      const user = await User.create({name, role})
-      try {
-        const profile = await Profile.ofUser(user)
-        await profile.update(
-          Object.assign({}, profileAttributes, {emailVerified: false}),
-          {errorNamespace: 'profile'}
-        )
-        await user.update({profile})
-      } catch (e) {
-        await user.destroy()
-        throw e
-      }
-      const sign = await Sign.setUserPassword(user, password)
+      const {signService} = s.services
+
+      const roleCode = RoleCodes.NORMAL_ROLE
+      const {user, sign} = await signService.processSignUp({name, password, profileAttributes, roleCode})
       await s._setAuthorized({user, sign})
       return user
     }
 
     async signIn (name, password) {
       const s = this
-      const {User, Sign, Profile} = s.resources
-      const user = (await User.first({name})) || (await Profile.userWithEmail(name))
-      if (!user) {
-        throw new TheNotFoundError(`User not found for name: ${name}`, {
-          field: 'name',
-          messageKey: 'USER_NOT_FOUND_ERROR'
-        })
-      }
-      const sign = await Sign.ofUser(user)
-      const ok = sign.verifyPassword(password)
-      if (!ok) {
-        throw new WrongPasswordError('Password wrong', {
-          field: 'password',
-          messageKey: 'PASSWORD_WRONG'
-        })
-      }
-      const profile = await Profile.ofUser(user)
-      await sign.update({signInAt: new Date()})
-      await user.update({profile, sign})
+      const {signService} = s.services
+
+      const {sign, user} = await signService.processSignIn({name, password})
       await s._setAuthorized({user, sign})
       return user
     }
 
     async signOut () {
       const s = this
-      const {Sign} = s.resources
+      const {signService} = s.services
       await s._reloadAuthorized()
-      const authorized = await s._getAuthorized()
-      if (authorized) {
-        const {sign} = authorized
-        if (sign) {
-          await Sign.update(sign.id, {signOutAt: new Date()})
-        }
+      const user = await s._fetchAuthorizedUser()
+      if (user) {
+        await signService.processSignOut({userId: user.id})
         await s._delAuthorized()
       }
-      return !!authorized
+      return !!user
+    }
+
+    get services () {
+      const s = this
+      return {
+        signService: new TheSignService(s.resources)
+      }
     }
   }
 )

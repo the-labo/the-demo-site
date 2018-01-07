@@ -6,7 +6,6 @@
 import React from 'react'
 import c from 'classnames'
 import UserImage from '../images/UserImage'
-import { labelHelper } from '../../helpers'
 import styles from './UserLabel.pcss'
 
 const UserLabel = function UserLabelImpl ({
@@ -19,7 +18,7 @@ const UserLabel = function UserLabelImpl ({
                  className={styles.image}
                  size={24}
       />
-      <span>{labelHelper.labelTextForUser(user)}</span>
+      <span>{user.displayName}</span>
     </div>
   )
 }

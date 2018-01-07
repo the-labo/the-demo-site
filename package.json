@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.10.1",
+  "version": "7.12.0",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -65,7 +65,7 @@
     "the-check": "^1.2.1",
     "the-client": "^4.2.4",
     "the-components": "^3.1.25",
-    "the-controller-base": "^3.1.3",
+    "the-controller-base": "^3.1.4",
     "the-date": "^1.0.1",
     "the-db": "^7.8.43",
     "the-env": "^1.1.0",
@@ -84,8 +84,10 @@
     "the-seed": "^1.0.1",
     "the-server": "^4.0.3",
     "the-setting": "^1.0.1",
+    "the-site-components": "^1.0.2",
     "the-site-resources": "^1.2.4",
     "the-site-routes": "^1.0.0",
+    "the-site-services": "^1.0.1",
     "the-site-util": "^1.4.1",
     "the-store": "^4.4.6",
     "the-templates": "^2.1.2",

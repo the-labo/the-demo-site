@@ -4,68 +4,14 @@
 'use strict'
 
 import React from 'react'
-import { TheForm, TheInput, TheButton, TheButtonGroup } from 'the-components'
+import { TheSignUpForm } from 'the-site-components'
 import { asForm } from '../../wrappers'
 
-const {Text, Password} = TheInput
-const {Field, Label, Value} = TheForm
-
-function SignUpForm ({
-                       l,
-                       getInputAttributesOf,
-                       getLabelAttributesOf,
-                       getFormAttributes,
-                       getSubmitAttributes
-                     }) {
+function SignUpForm (props) {
   return (
-    <TheForm {...getFormAttributes()}
-             required={['name', 'password']}
-             autoComplete='off'
+    <TheSignUpForm {...props}
     >
-      <Field>
-        <Label {...getLabelAttributesOf('name')}>
-          {l('labels.USER_NAME')}
-        </Label>
-        <Value>
-          <Text placeholder={l('placeholders.USER_NAME')}
-                autoFocus
-                {...getInputAttributesOf('name')}/>
-        </Value>
-      </Field>
-      <Field>
-        <Label {...getLabelAttributesOf('profile.name')}>
-          {l('labels.USER_PROFILE_NAME')}
-        </Label>
-        <Value>
-          <Text placeholder={l('placeholders.USER_PROFILE_NAME')}
-                {...getInputAttributesOf('profile.name')}/>
-        </Value>
-      </Field>
-      <Field>
-        <Label {...getLabelAttributesOf('profile.email')}>
-          {l('labels.USER_EMAIL')}
-        </Label>
-        <Value>
-          <Text placeholder={l('placeholders.USER_EMAIL')}
-                type='email'
-                {...getInputAttributesOf('profile.email')}/>
-        </Value>
-      </Field>
-      <Field>
-        <Label {...getLabelAttributesOf('password')}>
-          {l('labels.USER_PASSWORD')}
-        </Label>
-        <Value>
-          <Password {...getInputAttributesOf('password')}
-          />
-        </Value>
-      </Field>
-      <Field>
-        <TheButton wide primary {...getSubmitAttributes()}>
-          {l('buttons.DO_SIGNUP')}
-        </TheButton>
-      </Field>
-    </TheForm>
+    </TheSignUpForm>
   )
 }
 

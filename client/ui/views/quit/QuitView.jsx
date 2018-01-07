@@ -29,28 +29,28 @@ function QuitView ({
     <TheView className={styles.self}
              spinning={busy}>
       <TheView.Header icon={null}
-                      text={l('titles.SIGNDEL_VIEW_TITLE')}
+                      text={l('titles.QUIT_VIEW_TITLE')}
       />
       <TheView.Body>
         <TheCondition if={Boolean(!done && !confirm)}>
           <div>
             <div>
-              <TheLead title={l('leads.SIGNDEL_LEAD')}
-                       text={l('messages.SIGNDEL_LEAD_NOTICE')}
+              <TheLead title={l('leads.QUIT_LEAD')}
+                       text={l('messages.QUIT_LEAD_NOTICE')}
               />
             </div>
             <br/>
             <TheButtonGroup>
               <TheButton onClick={onCancel}>{l('buttons.DO_CANCEL')}</TheButton>
               <TheButton.Next onClick={onConfirm}
-              >{l('buttons.SHOW_SIGNDEL_CONFIRM')}</TheButton.Next>
+              >{l('buttons.SHOW_QUIT_CONFIRM')}</TheButton.Next>
             </TheButtonGroup>
           </div>
         </TheCondition>
         <TheCondition if={Boolean(!done && confirm)}>
           <div>
             <div>
-              <TheLead title={l('leads.SIGNDEL_CONFIRM')}
+              <TheLead title={l('leads.QUIT_CONFIRM')}
               />
             </div>
             <br/>
@@ -58,14 +58,14 @@ function QuitView ({
               <TheButton.Prev onClick={onConfirmBack}
               >{l('buttons.DO_BACK')}</TheButton.Prev>
               <TheButton primary
-                         onClick={onExecute}>{l('buttons.DO_SIGNDEL')}</TheButton>
+                         onClick={onExecute}>{l('buttons.DO_QUIT')}</TheButton>
             </TheButtonGroup>
           </div>
         </TheCondition>
         <TheCondition if={Boolean(done)}>
           <div>
             <br/>
-            <TheDone message={l('messages.SIGNDEL_DONE')}
+            <TheDone message={l('messages.QUIT_DONE')}
                      linkTo='/'
                      linkText={l('buttons.SHOW_TOP_AGAIN')}
             />
@@ -98,7 +98,7 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGNDEL_VIEW_TITLE'),
+    title: ({l}) => l('titles.QUIT_VIEW_TITLE'),
     onlySigned: true
   }
 )

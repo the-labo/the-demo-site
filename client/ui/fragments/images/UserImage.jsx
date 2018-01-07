@@ -5,8 +5,7 @@
 
 import React from 'react'
 import c from 'classnames'
-import { TheImage } from 'the-components'
-import { labelHelper } from '../../helpers'
+import { TheUserImage } from 'the-site-components'
 import styles from './UserImage.pcss'
 
 const UserImage = function UserImageImpl ({
@@ -14,18 +13,9 @@ const UserImage = function UserImageImpl ({
                                             user,
                                             size = 48
                                           }) {
-  const {profile} = user || {}
-  const {image: src} = profile
-  if (!src) {
-    return null
-  }
   return (
-    <TheImage className={c(styles.self, className)}
-              alt={labelHelper.labelTextForUser(user)}
-              width={size}
-              height={size}
-              src={src}
-              scale={'fit'}
+    <TheUserImage className={c(styles.self, className)}
+                  {...{user, size}}
     />
   )
 }

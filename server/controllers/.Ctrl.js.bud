@@ -6,8 +6,7 @@
 const path = require('path')
 
 module.exports = [
-  'QuitCtrl',
-  'PasswordCtrl'
+  'QuitCtrl'
 ].map((name) => ({
   force: false,
   mode: '644',

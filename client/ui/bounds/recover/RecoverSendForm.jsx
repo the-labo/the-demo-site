@@ -4,33 +4,12 @@
 'use strict'
 
 import React from 'react'
-import { TheForm, TheInput, TheButton, TheButtonGroup } from 'the-components'
+import { TheRecoverSendForm } from 'the-site-components'
 import { asForm } from '../../wrappers'
 
-const {Text} = TheInput
-
-function RecoverSendForm ({
-                            l,
-                            onSubmit,
-                            getInputAttributesOf,
-                            getLabelAttributesOf,
-                            getFormAttributes,
-                            getSubmitAttributes
-                          }) {
+function RecoverSendForm (props) {
   return (
-    <TheForm inline
-             {...getFormAttributes()}
-             required={['email']}
-             autoComplete='off'
-    >
-      <Text placeholder={l('placeholders.USER_EMAIL')}
-            autoFocus
-            onEnter={onSubmit}
-            {...getInputAttributesOf('email')}/>
-      <TheButton primary {...getSubmitAttributes()}>
-        {l('buttons.DO_SEND')}
-      </TheButton>
-    </TheForm>
+    <TheRecoverSendForm {...props}/>
   )
 }
 

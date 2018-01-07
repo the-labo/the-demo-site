@@ -5,10 +5,10 @@
   "PAGE_NOT_FOUND": "Sorry! Page not found...",
   "PASSWORD_UPDATE_DONE": "Password updated!",
   "PROFILE_UPDATE_DONE": "Profile updated!",
+  "QUIT_DONE": "Your account has been deleted. Good bye!",
+  "QUIT_LEAD_NOTICE": "Once you have deleted the account, there is no going back",
   "RECOVER_RESET_DONE": "OK, your password has been reset.",
   "RECOVER_SEND_DONE": "Recovery email has sent. Please check the email and follow the instruction.",
-  "SIGNDEL_DONE": "Your account has been deleted. Good bye!",
-  "SIGNDEL_LEAD_NOTICE": "Once you have deleted the account, there is no going back",
   "VERIFY_DONE": "Email address verified",
   "WORKING_DONE": "Done!",
   "WORKING_SIGNOUT": "Signing out..."

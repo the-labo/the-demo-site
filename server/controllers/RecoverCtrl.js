@@ -6,9 +6,8 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheExpiredError} = require('the-error')
 const {Urls, Lifetimes} = require('@self/conf')
-const {now, dateAfter} = require('the-date')
+const {TheRecoverService} = require('the-site-services')
 
 /** @lends RecoverCtrl */
 const RecoverCtrl = cn.compose(
@@ -18,14 +17,12 @@ const RecoverCtrl = cn.compose(
   class RecoverCtrlBase extends Ctrl {
     async send (email) {
       const s = this
-      const {mail} = s.app
-      const {Profile} = s.resources
-      const {lang} = s.client
-
-      await Profile.assertEmailExists(email)
-      const user = await Profile.userWithEmail(email)
-      const expireAt = Number(dateAfter(Lifetimes.RECOVER_EMAIL_LIFETIME))
-      const envelop = {expireAt, userId: user.id,}
+      const {recoverService} = s.services
+      const {mail, lang} = s
+      const {envelop, expireAt, user} = await recoverService.processPrepare({
+        email,
+        expireIn: Lifetimes.RECOVER_EMAIL_LIFETIME
+      })
       const seal = await s._sealFor(envelop)
       const url = await s._aliasUrlFor(Urls.RECOVER_RESET_URL, {envelop, seal, expireAt})
       s._debug(`Create recover url: ${url}`)
@@ -35,23 +32,20 @@ const RecoverCtrl = cn.compose(
 
     async reset ({seal: sealString, envelop, password} = {}) {
       const s = this
-      const {User, Sign} = s.resources
+      const {recoverService} = s.services
       await s._assertSeal(sealString, envelop)
 
-      const {expireAt, userId} = envelop
-      const isExpired = new Date(Number(expireAt)) < now()
-      if (isExpired) {
-        throw new TheExpiredError('Recovery expired')
-      }
-      await User.assertUserNotGone(userId)
-
-      const user = await User.one(userId)
-      await Sign.setUserPassword(user, password)
-
-      const sign = await Sign.ofUser(user)
+      const {user, sign} = await recoverService.processReset({envelop, password})
       await s._setAuthorized({user, sign})
       await s._reloadAuthorized()
       return s._fetchAuthorizedUser()
+    }
+
+    get services () {
+      const s = this
+      return {
+        recoverService: new TheRecoverService(s.resources)
+      }
     }
   }
 )

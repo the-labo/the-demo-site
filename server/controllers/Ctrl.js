@@ -16,6 +16,16 @@ class Ctrl extends CtrBase {
     return s.app.db.resources
   }
 
+  get lang () {
+    const s = this
+    return s.client.lang
+  }
+
+  get mail () {
+    const s = this
+    return s.app.mail
+  }
+
   async _aliasUrlFor (pathname, query = {}) {
     const s = this
     const {protocol, host} = s.client

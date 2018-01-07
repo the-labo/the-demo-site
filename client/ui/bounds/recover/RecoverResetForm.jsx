@@ -4,42 +4,13 @@
 'use strict'
 
 import React from 'react'
-import { TheForm, TheInput, TheButton } from 'the-components'
+import { TheRecoverResetForm } from 'the-site-components'
 import { asForm } from '../../wrappers'
 
-const {Password} = TheInput
-const {Field, Label, Value} = TheForm
-
-function RecoverResetForm ({
-                             l,
-                             getInputAttributesOf,
-                             getLabelAttributesOf,
-                             getFormAttributes,
-                             getSubmitAttributes,
-                             onSubmit
-                           }) {
+function RecoverResetForm (props) {
 
   return (
-    <TheForm {...getFormAttributes()}
-             required={['password']}
-    >
-      <Field>
-        <Label {...getLabelAttributesOf('password')}>
-          {l('labels.NEW_PASSWORD')}
-        </Label>
-        <Value>
-          <Password placeholder={l('placeholders.NEW_PASSWORD')}
-                    {...getInputAttributesOf('password')}
-                    onEnter={onSubmit}/>
-        </Value>
-      </Field>
-      <br/>
-      <Field>
-        <TheButton wide primary {...getSubmitAttributes()}>
-          {l('buttons.DO_UPDATE')}
-        </TheButton>
-      </Field>
-    </TheForm>
+    <TheRecoverResetForm {...props}/>
   )
 }
 

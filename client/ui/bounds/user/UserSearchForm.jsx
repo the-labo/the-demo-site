@@ -5,14 +5,13 @@
 
 import React from 'react'
 import { asForm } from '../../wrappers'
-import { SearchForm } from '../../fragments'
+import { TheSearchForm } from 'the-site-components'
 
 function UserSearchForm (props) {
   const {l} = props
   return (
-    <SearchForm {...props}
-                placeholder={l('placeholders.USER_SEARCH')}
-                name={'q'}
+    <TheSearchForm {...props}
+                   placeholder={l('placeholders.USER_SEARCH')}
     />
   )
 }

@@ -6,6 +6,7 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
+const {TheAccountService} = require('the-site-services')
 
 /** @lends AccountCtrl */
 const AccountCtrl = cn.compose(
@@ -16,20 +17,35 @@ const AccountCtrl = cn.compose(
 
     async getCurrentUser () {
       const s = this
-      const authorized = await s._getAuthorized()
-      return authorized ? authorized.user : null
+      const user = await s._fetchAuthorizedUser()
+      return user || null
     }
 
     async updateProfile (profileAttributes) {
       const s = this
+      const {accountService} = s.services
       await s._assertAuthorized()
-      const {Profile} = s.resources
-      const user = await s._fetchAuthorizedUser()
-      const profile = await Profile.ofUser(user)
-      await user.update({profile})
-      await profile.update(profileAttributes)
+      const {id: userId} = await s._fetchAuthorizedUser()
+      await accountService.processProfile({userId, profileAttributes})
       await s._reloadAuthorized()
       return true
+    }
+
+    async updatePassword (newPassword) {
+      const s = this
+      const {accountService} = s.services
+      await s._assertAuthorized()
+      const {id: userId} = await s._fetchAuthorizedUser()
+      await accountService.processPassword({userId, newPassword})
+      await s._reloadAuthorized()
+      return true
+    }
+
+    get services () {
+      const s = this
+      return {
+        accountService: new TheAccountService(s.resources)
+      }
     }
   }
 )
