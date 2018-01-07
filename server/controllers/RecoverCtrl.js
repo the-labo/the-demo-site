@@ -7,7 +7,6 @@
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
 const {Urls, Lifetimes} = require('@self/conf')
-const {TheRecoverService} = require('the-site-services')
 
 /** @lends RecoverCtrl */
 const RecoverCtrl = cn.compose(
@@ -39,13 +38,6 @@ const RecoverCtrl = cn.compose(
       await s._setAuthorized({user, sign})
       await s._reloadAuthorized()
       return s._fetchAuthorizedUser()
-    }
-
-    get services () {
-      const s = this
-      return {
-        recoverService: new TheRecoverService(s.resources)
-      }
     }
   }
 )

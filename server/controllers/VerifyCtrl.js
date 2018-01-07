@@ -6,7 +6,6 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheVerifyService} = require('the-site-services')
 const {Urls, Lifetimes} = require('@self/conf')
 
 /** @lends VerifyCtrl */
@@ -55,13 +54,6 @@ const VerifyCtrl = cn.compose(
       await s._setAuthorized({user, sign})
       await s._reloadAuthorized()
       return s._fetchAuthorizedUser()
-    }
-
-    get services () {
-      const s = this
-      return {
-        verifyService: new TheVerifyService(s.resources)
-      }
     }
   }
 )

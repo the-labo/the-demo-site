@@ -6,7 +6,6 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheSignService} = require('the-site-services')
 const {RoleCodes} = require('@self/conf')
 
 /** @lends SignCtrl */
@@ -45,13 +44,6 @@ const SignCtrl = cn.compose(
         await s._delAuthorized()
       }
       return !!user
-    }
-
-    get services () {
-      const s = this
-      return {
-        signService: new TheSignService(s.resources)
-      }
     }
   }
 )

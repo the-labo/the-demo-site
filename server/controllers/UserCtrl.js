@@ -6,7 +6,6 @@
 
 const cn = require('./concerns')
 const Ctrl = require('./Ctrl')
-const {TheUserService} = require('the-site-services')
 
 /** @lends UserCtrl */
 const UserCtrl = cn.compose(
@@ -46,13 +45,6 @@ const UserCtrl = cn.compose(
       const {userService} = s.services
       const {destroyed} = await userService.processDestroy({userIds})
       return destroyed.users
-    }
-
-    get services () {
-      const s = this
-      return {
-        userService: new TheUserService(s.resources)
-      }
     }
   }
 )

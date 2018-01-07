@@ -11,8 +11,9 @@ const {createClient, createStore, createHandle} = require('@self/client/shim')
 const theSeal = require('the-seal')
 const endpoints = require('../endpoints')
 const pkg = require('../../package.json')
+const {servicesProxy} = require('the-service-base')
 const env = require('../env')
-const {ControllerMapping} = require('../mappings')
+const {ControllerMapping, ServiceMapping} = require('../mappings')
 const {isProduction} = require('the-check')
 
 /** @lends create */
@@ -30,8 +31,10 @@ function create (config) {
     db,
     locales,
     seal,
-    mail
+    mail,
+    services: servicesProxy(ServiceMapping, db)
   }
+
   const server = theServer({
     static: isProduction() ? [] : ['public'],
     redis: redisConfig,

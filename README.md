@@ -50,18 +50,29 @@ Demo site of the-framework
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "doc/guides/00.Requiements.md.hbs" Start -->
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
 
-<a name="section-doc-guides-00-requiements-md"></a>
+<a name="section-doc-guides-00-t-o-c-md"></a>
 
-Requirements
-----------
+Table of Contents
+----------------
 
-+ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
-+ [Docker](https://www.docker.com/)
+- [the-demo-site](#the-demo-site)
+  * [Preparing](#preparing)
+  * [Requirements](#requirements)
+  * [Development](#development)
+    + [Starting dev server](#starting-dev-server)
+  * [Production](#production)
+  * [Tips](#tips)
+    + [Managing Docker Infra](#managing-docker-infra)
+    + [Restarting Server](#restarting-server)
+  * [Console to database](#console-to-database)
+    + [Project Structure](#project-structure)
+  * [License](#license)
+  * [Links](#links)
 
 
-<!-- Section from "doc/guides/00.Requiements.md.hbs" End -->
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
 
 <!-- Section from "doc/guides/01.Preparing.md.hbs" Start -->
 
@@ -85,9 +96,22 @@ $ yarn prepare
 
 <!-- Section from "doc/guides/01.Preparing.md.hbs" End -->
 
-<!-- Section from "doc/guides/02.Development.md.hbs" Start -->
+<!-- Section from "doc/guides/02.Requiements.md.hbs" Start -->
 
-<a name="section-doc-guides-02-development-md"></a>
+<a name="section-doc-guides-02-requiements-md"></a>
+
+Requirements
+----------
+
++ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
++ [Docker](https://www.docker.com/)
+
+
+<!-- Section from "doc/guides/02.Requiements.md.hbs" End -->
+
+<!-- Section from "doc/guides/10.Development.md.hbs" Start -->
+
+<a name="section-doc-guides-10-development-md"></a>
 
 Development
 ----------
@@ -99,27 +123,26 @@ Development
 pon d
 ```
 
-<!-- Section from "doc/guides/02.Development.md.hbs" End -->
+<!-- Section from "doc/guides/10.Development.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.Production.md.hbs" Start -->
+<!-- Section from "doc/guides/11.Production.md.hbs" Start -->
 
-<a name="section-doc-guides-03-production-md"></a>
+<a name="section-doc-guides-11-production-md"></a>
 
 Production
 ----------
 
 ```bash
 
-# Start app on production
-
+## Start production server
 pon production
 ```
 
-<!-- Section from "doc/guides/03.Production.md.hbs" End -->
+<!-- Section from "doc/guides/11.Production.md.hbs" End -->
 
-<!-- Section from "doc/guides/10.Tips.md.hbs" Start -->
+<!-- Section from "doc/guides/20.Tips.md.hbs" Start -->
 
-<a name="section-doc-guides-10-tips-md"></a>
+<a name="section-doc-guides-20-tips-md"></a>
 
 Tips
 -----------
@@ -147,6 +170,12 @@ Or, just
 pon restart
 ```
 
+## Console to database
+
+```bash
+pon db:cli
+```
+
 
 ### Project Structure
 
@@ -171,6 +200,7 @@ Directory structure of this project
 | server | Server side files |
 | server/controllers | Controller classes to handle RPC |
 | server/db | Database modules |
+| server/services | Database access wrappers |
 | server/env | Env dependant variables |
 | server/server | HTTP Server module |
 | server/test | Server tests |
@@ -180,7 +210,7 @@ Directory structure of this project
 
 
 
-<!-- Section from "doc/guides/10.Tips.md.hbs" End -->
+<!-- Section from "doc/guides/20.Tips.md.hbs" End -->
 
 
 <!-- Sections Start -->

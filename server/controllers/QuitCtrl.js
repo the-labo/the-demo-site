@@ -6,7 +6,6 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheQuitService} = require('the-site-services')
 
 /** @lends QuitCtrl */
 const QuitCtrl = cn.compose(
@@ -29,12 +28,6 @@ const QuitCtrl = cn.compose(
       return destroyed
     }
 
-    get services () {
-      const s = this
-      return {
-        quitService: new TheQuitService(s.resources)
-      }
-    }
   }
 )
 

@@ -6,7 +6,6 @@
 
 const Ctrl = require('./Ctrl')
 const cn = require('./concerns')
-const {TheAccountService} = require('the-site-services')
 
 /** @lends AccountCtrl */
 const AccountCtrl = cn.compose(
@@ -41,12 +40,6 @@ const AccountCtrl = cn.compose(
       return true
     }
 
-    get services () {
-      const s = this
-      return {
-        accountService: new TheAccountService(s.resources)
-      }
-    }
   }
 )
 

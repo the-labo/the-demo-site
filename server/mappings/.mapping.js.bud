@@ -4,6 +4,7 @@
 'use strict'
 
 const c = require('../controllers')
+const sv = require('../services')
 const r = require('../db/resources')
 
 const {camelcase} = require('stringcase')
@@ -30,6 +31,18 @@ module.exports = [
       instanceName: name.replace(/Resource$/, ''),
       className: name
     })),
+    cjs: true
+  },
+  {
+    name: 'ServiceMapping',
+    requirePath: '../services',
+    requireAs: 'sv',
+    mapping: Object.keys(sv)
+      .filter((name) => /Service$/.test(name))
+      .map((name) => ({
+        instanceName: camelcase(name),
+        className: name
+      })),
     cjs: true
   }
 ].map(mapping)

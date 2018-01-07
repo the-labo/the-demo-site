@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.12.0",
+  "version": "7.13.0",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -83,11 +83,12 @@
     "the-secret": "^1.1.0",
     "the-seed": "^1.0.1",
     "the-server": "^4.0.3",
+    "the-service-base": "^1.0.1",
     "the-setting": "^1.0.1",
     "the-site-components": "^1.0.2",
     "the-site-resources": "^1.2.4",
     "the-site-routes": "^1.0.0",
-    "the-site-services": "^1.0.1",
+    "the-site-services": "^1.0.3",
     "the-site-util": "^1.4.1",
     "the-store": "^4.4.6",
     "the-templates": "^2.1.2",
@@ -98,6 +99,7 @@
   "devDependencies": {
     "akv": "^2.0.0",
     "browserify": "^14.4.0",
+    "markdown-toc": "^1.2.0",
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",
     "the-script-update": "^1.0.0"
