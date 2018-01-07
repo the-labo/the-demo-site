@@ -6,6 +6,7 @@
 
 const {TheScene} = require('the-scene-base/shim')
 const {urlUtil} = require('@self/utils')
+const qs = require('qs')
 
 class Scene extends TheScene {
 
@@ -27,6 +28,11 @@ class Scene extends TheScene {
     } catch (e) {
       store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
     }
+  }
+
+  replaceQuery (query) {
+    const s = this
+    s.history.replace({search: '?' + qs.stringify(query)})
   }
 
   catchEntryError (e) {

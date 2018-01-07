@@ -62,19 +62,24 @@ export default asView(
   UserManageView,
   (state) => ({
     busy: !state['userList.ready'] && state['userList.busy'],
-    ready: state['userList.ready']
+    ready: state['userList.ready'],
+    query: state['app.query']
   }),
   ({
      userListScene,
      userSearchScene,
      userCheckScene,
      userCreateScene
-   }) => ({
+   }, ownProps) => ({
     onMount: async () => {
       userListScene.init()
       userSearchScene.init()
       userCheckScene.init()
       userCreateScene.init()
+
+      const {q} = ownProps.query
+      userListScene.setQuery(q)
+
       await userListScene.readyFor(async () => {
         await userListScene.doSync()
       })

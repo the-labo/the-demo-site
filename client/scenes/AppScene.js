@@ -6,6 +6,7 @@
 
 const {Urls} = require('@self/conf')
 const {get} = require('the-window')
+const qs = require('qs')
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
@@ -18,6 +19,11 @@ const AppScene = cn.compose(
     get scope () {
       const s = this
       return s.store.app
+    }
+
+    setLocation ({pathname, search}) {
+      const s = this
+      s.set({pathname, query: qs.parse(search, {ignoreQueryPrefix: true})})
     }
 
     handleRejectionReason (reason) {

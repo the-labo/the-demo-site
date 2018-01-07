@@ -21,6 +21,10 @@ once('DOMContentLoaded', () => {
   const l = locales.bind(lang)
   handle.setAttributes({store, client, l, lang, history})
 
+  const {appScene, toastScene} = handle
+  history.listen((location) => appScene.setLocation(location))
+  appScene.setLocation(history.location)
+
   mount(app, UI.APP_CONTAINER_ID, {router: true, history})
     .then(() => {
       console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
@@ -28,12 +32,10 @@ once('DOMContentLoaded', () => {
     })
 
   rescue((e) => {
-    const {appScene, toastScene} = handle
     const handled = appScene.handleRejectionReason(e.reason)
     if (handled) {
       return
     }
-
     toastScene.showError(l('errors.UNEXPECTED_ERROR'))
   })
 })

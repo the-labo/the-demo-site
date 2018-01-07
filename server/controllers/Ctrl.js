@@ -26,6 +26,11 @@ class Ctrl extends CtrBase {
     return s.app.mail
   }
 
+  get services () {
+    const s = this
+    return s.app.services
+  }
+
   async _aliasUrlFor (pathname, query = {}) {
     const s = this
     const {protocol, host} = s.client

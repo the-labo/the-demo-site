@@ -6,6 +6,7 @@
 import React from 'react'
 import { asForm } from '../../wrappers'
 import { TheSearchForm } from 'the-site-components'
+import { get } from 'the-window'
 
 function UserSearchForm (props) {
   const {l} = props
@@ -31,10 +32,7 @@ export default asForm(
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
       if (q) {
-        userListScene.set({
-          pageNumber: 1,
-          filter: {name: {$like: `%${String(q).trim()}%`}}
-        })
+        userListScene.setQuery(q)
       } else {
         userListScene.init('filter')
       }

@@ -20,6 +20,21 @@ const UserListScene = cn.compose(
       return s.store.userList
     }
 
+    setQuery (q = null) {
+      const s = this
+      if (s.get('q') === q) {
+        return
+      }
+      s.set({
+        q,
+        pageNumber: 1,
+        filter: q ? {name: {$like: `%${String(q).trim()}%`}} : {}
+      })
+      if (q) {
+        s.replaceQuery({q})
+      }
+    }
+
     get defaults () {
       const s = this
       return {

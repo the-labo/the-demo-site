@@ -31,7 +31,9 @@
     "user": "VAL"
   },
   "app": {
-    "busy": "BOOL"
+    "busy": "BOOL",
+    "pathname": "STR",
+    "query": "OBJ"
   },
   "cautionDisconnected": {
     "active": "BOOL",
@@ -91,7 +93,8 @@
     "active": "BOOL"
   },
   "userList": {
-    "$ref": "#/_/list"
+    "$ref": "#/_/list",
+    "q": "STR"
   },
   "userPassword": {
     "$ref": "#/_/process",

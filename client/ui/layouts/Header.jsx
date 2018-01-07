@@ -71,7 +71,7 @@ const Header = compose(
 export default asBound(
   Header,
   (state) => ({
-    pathname: get('location.pathname'),
+    pathname: state['app.pathname'],
     user: state['account.user'],
     synced: state['account.synced'],
     needsVerify: state['verifyNeed.needed']

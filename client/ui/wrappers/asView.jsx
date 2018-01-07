@@ -7,7 +7,6 @@ import { withHistory, withRoute } from 'the-components'
 import withCycle from './withCycle'
 import withTitle from './withTitle'
 import asBound from './asBound'
-import { get } from 'the-window'
 import onlySigned from './onlySigned'
 
 function asView (Component,
@@ -18,9 +17,7 @@ function asView (Component,
   class ViewWrap extends React.Component {
     render () {
       const s = this
-      return <Component {...s.props}
-                        pathname={get('location.pathname')}
-      />
+      return <Component {...s.props} />
     }
 
   }
