@@ -11,7 +11,7 @@ import handle from '../handle'
 
 set(UI.APP_STAGE_NAME, 'registering')
 
-once('DOMContentLoaded', () => {
+once('DOMContentLoaded', async () => {
   set(UI.APP_STAGE_NAME, 'mounting')
 
   const [lang] = (get('appLang') || get('navigator.language') || UI.DEFAULT_LANG).split('-')
@@ -25,17 +25,15 @@ once('DOMContentLoaded', () => {
   history.listen((location) => appScene.setLocation(location))
   appScene.setLocation(history.location)
 
-  mount(app, UI.APP_CONTAINER_ID, {router: true, history})
-    .then(() => {
-      console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
-      set(UI.APP_STAGE_NAME, 'mounted')
-    })
-
   rescue((e) => {
     const handled = appScene.handleRejectionReason(e.reason)
-    if (handled) {
-      return
+    if (!handled) {
+      toastScene.showError(l('errors.UNEXPECTED_ERROR'))
     }
-    toastScene.showError(l('errors.UNEXPECTED_ERROR'))
   })
+
+  await mount(app, UI.APP_CONTAINER_ID, {router: true, history})
+  console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
+  set(UI.APP_STAGE_NAME, 'mounted')
+
 })

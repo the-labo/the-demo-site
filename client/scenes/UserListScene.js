@@ -26,6 +26,9 @@ const UserListScene = cn.compose(
         pageNumber: 1,
         filter: q ? {name: {$like: `%${String(q).trim()}%`}} : {}
       })
+      if (!q) {
+        s.init('filter')
+      }
       s.replaceQuery({q})
     }
 

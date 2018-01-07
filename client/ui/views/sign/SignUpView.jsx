@@ -41,8 +41,12 @@ export default asView(
   (state) => ({
     user: state['account.user']
   }),
-  ({signUpScene}, propsProxy) => ({
+  ({
+     signUpScene,
+     signAskScene
+   }, propsProxy) => ({
     onMount: () => {
+      signAskScene.init()
       const {user} = propsProxy
       if (user) {
         signUpScene.goBack()
