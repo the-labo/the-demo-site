@@ -77,8 +77,9 @@ export default asView(
       userCheckScene.init()
       userCreateScene.init()
 
-      const {q} = ownProps.query
-      userListScene.setQuery(q)
+      const {q = null} = ownProps.query
+      userListScene.setQ(q)
+      userSearchScene.setEntry({q})
 
       await userListScene.readyFor(async () => {
         await userListScene.doSync()

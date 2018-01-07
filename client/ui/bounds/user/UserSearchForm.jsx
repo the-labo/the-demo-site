@@ -31,11 +31,7 @@ export default asForm(
     onUpdate: (v) => userSearchScene.setEntry(v),
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
-      if (q) {
-        userListScene.setQuery(q)
-      } else {
-        userListScene.init('filter')
-      }
+      userListScene.setQ(q)
       await userSearchScene.busyFor(async () => {
         await userListScene.doSync()
       })
