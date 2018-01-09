@@ -1,0 +1,4 @@
+{
+  "$ref": "abstract/process",
+  "active": "BOOL"
+}

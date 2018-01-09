@@ -1,0 +1,6 @@
+{
+  "busy": "BOOL",
+  "done": "BOOL",
+  "entry": "OBJ",
+  "entryErrors": "OBJ"
+}

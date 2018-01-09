@@ -1,0 +1,10 @@
+{
+  "busy": "BOOL",
+  "counts": "OBJ",
+  "entities": "ARR",
+  "filter": "OBJ",
+  "pageNumber": "NUM",
+  "pageSize": "NUM",
+  "ready": "BOOL",
+  "sort": "STR"
+}

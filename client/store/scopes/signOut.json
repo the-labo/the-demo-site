@@ -1,0 +1,5 @@
+{
+  "back": "STR",
+  "busy": "BOOL",
+  "done": "BOOL"
+}

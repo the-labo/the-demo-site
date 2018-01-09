@@ -1,0 +1,4 @@
+{
+  "$ref": "abstract/input",
+  "failure": "STR"
+}

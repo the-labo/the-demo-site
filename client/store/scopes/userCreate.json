@@ -1,0 +1,5 @@
+{
+  "$ref": "abstract/input",
+  "active": "BOOL",
+  "created": "VAL"
+}

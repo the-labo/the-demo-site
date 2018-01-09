@@ -1,0 +1,5 @@
+{
+  "busy": "BOOL",
+  "done": "BOOL",
+  "targets": "ARR"
+}

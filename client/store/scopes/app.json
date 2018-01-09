@@ -1,0 +1,5 @@
+{
+  "busy": "BOOL",
+  "pathname": "STR",
+  "query": "OBJ"
+}
