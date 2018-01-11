@@ -10972,8 +10972,8 @@ the-seed@^1.0.1:
     pudding "^4.0.4"
 
 the-server@^4.3.1:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.4.0.tgz#95fa8dba715a82e91df124a839aaa41c967ac364"
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.5.0.tgz#5891d0eb38eca4335722e0c6b40b9e194ab61699"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"
@@ -11034,8 +11034,8 @@ the-site-routes@^1.0.0:
     the-cache "^1.0.0"
 
 the-site-services@^1.0.3:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/the-site-services/-/the-site-services-1.0.4.tgz#2c9bd4c00a0b639b386cb3242933143446bec9ce"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/the-site-services/-/the-site-services-1.0.5.tgz#d216a1f18f8ca4234dea8763c72da7ee381b9547"
   dependencies:
     the-date "^1.4.0"
     the-service-base "^1.0.1"

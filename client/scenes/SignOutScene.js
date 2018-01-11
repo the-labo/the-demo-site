@@ -7,24 +7,24 @@
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends SignoutScene */
-const SignoutScene = cn.compose(
+const SignoutSceneBase = cn.compose(
   cn.withBusy,
   cn.withEntry,
   cn.withBack
-)(
-  class SignoutSceneBase extends Scene {
-    get scope () {
-      return this.store.signOut
-    }
+)(Scene)
 
-    async doSignout () {
-      const signCtrl = await this.use('signCtrl')
-      await this.busyFor(async () => {
-        await signCtrl.signOut()
-      })
-    }
+/** @lends SignoutScene */
+class SignoutScene extends SignoutSceneBase {
+  get scope () {
+    return this.store.signOut
   }
-)
+
+  async doSignout () {
+    const signCtrl = await this.use('signCtrl')
+    await this.busyFor(async () => {
+      await signCtrl.signOut()
+    })
+  }
+}
 
 module.exports = SignoutScene

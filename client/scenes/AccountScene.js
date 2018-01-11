@@ -7,23 +7,23 @@
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends AccountScene */
-const AccountScene = cn.compose(
+const AccountSceneBase = cn.compose(
   cn.withBusy
-)(
-  class AccountSceneBase extends Scene {
-    get scope () {
-      return this.store.account
-    }
+)(Scene)
 
-    async doSync () {
-      const accountCtrl = await this.use('accountCtrl')
-      await this.busyFor(async () => {
-        const user = await accountCtrl.getCurrentUser()
-        this.set({user, synced: true})
-      })
-    }
+/** @lends AccountScene */
+class AccountScene extends AccountSceneBase {
+  get scope () {
+    return this.store.account
   }
-)
+
+  async doSync () {
+    const accountCtrl = await this.use('accountCtrl')
+    await this.busyFor(async () => {
+      const user = await accountCtrl.getCurrentUser()
+      this.set({user, synced: true})
+    })
+  }
+}
 
 module.exports = AccountScene

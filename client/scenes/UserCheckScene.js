@@ -7,15 +7,15 @@
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends UserCheckScene */
-const UserCheckScene = cn.compose(
+const UserCheckSceneBase = cn.compose(
   cn.withValues
-)(
-  class UserCheckSceneBase extends Scene {
-    get scope () {
-      return this.store.userCheck
-    }
+)(Scene)
+
+/** @lends UserCheckScene */
+class UserCheckScene extends UserCheckSceneBase {
+  get scope () {
+    return this.store.userCheck
   }
-)
+}
 
 module.exports = UserCheckScene

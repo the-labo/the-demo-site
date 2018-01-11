@@ -7,21 +7,21 @@
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends CautionDisconnectedScene */
-const CautionDisconnectedScene = cn.compose(
+const CautionDisconnectedSceneBase = cn.compose(
   cn.withBusy,
   cn.withLocation
-)(
-  class CautionDisconnectedSceneBase extends Scene {
-    get scope () {
-      return this.store.cautionDisconnected
-    }
+)(Scene)
 
-    async doReload () {
-      this.set({busy: true})
-      this.reloadLocation()
-    }
+/** @lends CautionDisconnectedScene */
+class CautionDisconnectedScene extends CautionDisconnectedSceneBase {
+  get scope () {
+    return this.store.cautionDisconnected
   }
-)
+
+  async doReload () {
+    this.set({busy: true})
+    this.reloadLocation()
+  }
+}
 
 module.exports = CautionDisconnectedScene

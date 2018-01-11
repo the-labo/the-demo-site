@@ -6,15 +6,16 @@
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
-/** @lends SignaskScene */
-const SignaskScene = cn.compose(
+
+const SignaskSceneBase = cn.compose(
   cn.withBusy
-)(
-  class SignaskSceneBase extends Scene {
-    get scope () {
-      return this.store.signAsk
-    }
+)(Scene)
+
+/** @lends SignaskScene */
+class SignaskScene extends SignaskSceneBase {
+  get scope () {
+    return this.store.signAsk
   }
-)
+}
 
 module.exports = SignaskScene

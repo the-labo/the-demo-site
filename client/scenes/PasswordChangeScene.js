@@ -7,24 +7,24 @@
 const Scene = require('./Scene')
 const cn = require('./concerns')
 
-/** @lends PasswordChangeScene */
-const PasswordChangeScene = cn.compose(
+const PasswordChangeSceneBase = cn.compose(
   cn.withBusy,
   cn.withEntry
-)(
-  class PasswordChangeSceneBase extends Scene {
-    get scope () {
-      return this.store.passwordChange
-    }
+)(Scene)
 
-    async doSave () {
-      const accountCtrl = await this.use('accountCtrl')
-      await this.busyFor(async () => {
-        await this.processEntry(({password}) =>
-          accountCtrl.updatePassword(password))
-      })
-    }
+/** @lends PasswordChangeScene */
+class PasswordChangeScene extends PasswordChangeSceneBase {
+  get scope () {
+    return this.store.passwordChange
   }
-)
+
+  async doSave () {
+    const accountCtrl = await this.use('accountCtrl')
+    await this.busyFor(async () => {
+      await this.processEntry(({password}) =>
+        accountCtrl.updatePassword(password))
+    })
+  }
+}
 
 module.exports = PasswordChangeScene

@@ -28,9 +28,11 @@ export default asForm(
      accountScene,
      signUpScene,
      toastScene
-   }) => ({
+   }, ownProps) => ({
     onUpdate: (v) => signUpScene.setEntry(v),
-    onStep: (step) => signUpScene.set({step}),
+    onStep: (step) => {
+      signUpScene.setStep(step)
+    },
     onSubmit: async () => {
       await signUpScene.doSignUp()
       await accountScene.doSync()
