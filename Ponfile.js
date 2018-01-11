@@ -85,7 +85,7 @@ module.exports = pon({
     'assets/html/partials': 'public/partials',
     'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
-    'assets/fonts': 'public/fonts',
+    'assets/webfonts': 'public/webfonts',
     'assets/icons': 'public/icons'
   }, {force: true}),
   'struct:chmod': chmod({
@@ -103,7 +103,7 @@ module.exports = pon({
   ], {sort: true}),
   'struct:render': [
     coz([
-      '+(conf/client|server)/**/.index.*.bud',
+      '+(conf|client|server)/**/.index.*.bud',
       '+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
       '.*.bud'
     ])
@@ -164,7 +164,7 @@ module.exports = pon({
       ]
     })
   ),
-  'assets:install': () => theAssets().installTo('assets'),
+  'assets:install': () => theAssets().installTo('assets', {copy: true}),
   'assets:compile': md('assets/markdowns', 'assets/html/partials', {
     vars: require('./conf/locales')
   }),
@@ -176,8 +176,9 @@ module.exports = pon({
   }),
   'ui:map': map('public', 'public', {watchDelay: 400}),
   'clean:shim': del('client/shim/**/*.*'),
-  'clean:public': del('public/*.*'),
-  'clean': ['clean:shim', 'clean:public'],
+  'clean:cache': del('tmp/cache/**/*.*'),
+  'clean:public': del('public/build/*.*'),
+  'clean': ['clean:shim', 'clean:public', 'clean:cache'],
   'env:prod': env('production'),
   'env:test': env('test'),
   'env:debug': env('development', {DEBUG: 'app:*'}),

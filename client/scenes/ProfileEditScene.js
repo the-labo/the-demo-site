@@ -15,23 +15,20 @@ const ProfileEditScene = cn.compose(
 )(
   class ProfileEditSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.profileEdit
+      return this.store.profileEdit
     }
 
     setEntryFromEntity (entity) {
-      const s = this
       const values = clone(entity || {}, {
         without: ['user', 'id', 'sign', /^\$/]
       })
-      s.setEntry(values)
+      this.setEntry(values)
     }
 
     async doSave () {
-      const s = this
-      const accountCtrl = await s.use('accountCtrl')
-      await s.busyFor(async () => {
-        await s.processEntry((values) => accountCtrl.updateProfile(values))
+      const accountCtrl = await this.use('accountCtrl')
+      await this.busyFor(async () => {
+        await this.processEntry((values) => accountCtrl.updateProfile(values))
       })
     }
   }

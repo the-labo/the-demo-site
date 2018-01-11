@@ -12,9 +12,9 @@ function withAuth (Class) {
 
   class withAuth extends WithAuthorized {
     async _fetchAuthorizedUser () {
-      const s = this
-      const {User} = s.resources
-      const {user} = (await s._getAuthorized()) || {}
+
+      const {User} = this.resources
+      const {user} = (await this._getAuthorized()) || {}
       if (!user) {
         return null
       }
@@ -22,15 +22,23 @@ function withAuth (Class) {
     }
 
     async _reloadAuthorized () {
-      const s = this
-      const {Sign} = s.resources
-      const user = await s._fetchAuthorizedUser()
+
+      const {Sign} = this.resources
+      const user = await this._fetchAuthorizedUser()
       if (user) {
         const sign = await Sign.ofUser(user)
-        await s._setAuthorized({user, sign})
+        await this._setAuthorized({user, sign})
       } else {
-        await s._delAuthorized()
+        await this._delAuthorized()
       }
+    }
+
+    async _verifyAuthorisedPassword (password) {
+
+      const {Sign} = this.resources
+      const user = await this._fetchAuthorizedUser()
+      const sign = await Sign.of(user)
+      return sign.verifyPassword(password)
     }
   }
 

@@ -1,6 +1,8 @@
 'use strict'
 
 module.exports = [
+  'withHistory',
+  'withLocation'
 ].map((name) => (
   {
     force: false,

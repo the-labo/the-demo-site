@@ -15,26 +15,22 @@ const QuitScene = cn.compose(
 )(
   class QuitSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.quit
+      return this.store.quit
     }
 
     async doQuit () {
-      const s = this
-      const quitCtrl = await s.use('quitCtrl')
-      await s.busyFor(async () => {
+      const quitCtrl = await this.use('quitCtrl')
+      await this.busyFor(async () => {
         await quitCtrl.execute()
       })
     }
 
     goToCancel () {
-      const s = this
-      s.goTo(Urls.TOP_URL)
+      this.goTo(Urls.TOP_URL)
     }
 
-    goToDone(){
-      const s = this
-      s.goTo(Urls.TOP_URL)
+    goToDone () {
+      this.goTo(Urls.TOP_URL)
     }
   }
 )

@@ -15,33 +15,28 @@ const SignCtrl = cn.compose(
 )(
   class SignCtrlBase extends Ctrl {
     async signUp (name, password, options = {}) {
-      const s = this
       const {profile: profileAttributes = {}} = options
-      const {signService} = s.services
-
+      const {signService} = this.services
       const roleCode = RoleCodes.NORMAL_ROLE
       const {user, sign} = await signService.processSignUp({name, password, profileAttributes, roleCode})
-      await s._setAuthorized({user, sign})
+      await this._setAuthorized({user, sign})
       return user
     }
 
     async signIn (name, password) {
-      const s = this
-      const {signService} = s.services
-
+      const {signService} = this.services
       const {sign, user} = await signService.processSignIn({name, password})
-      await s._setAuthorized({user, sign})
+      await this._setAuthorized({user, sign})
       return user
     }
 
     async signOut () {
-      const s = this
-      const {signService} = s.services
-      await s._reloadAuthorized()
-      const user = await s._fetchAuthorizedUser()
+      const {signService} = this.services
+      await this._reloadAuthorized()
+      const user = await this._fetchAuthorizedUser()
       if (user) {
         await signService.processSignOut({userId: user.id})
-        await s._delAuthorized()
+        await this._delAuthorized()
       }
       return !!user
     }

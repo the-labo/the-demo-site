@@ -7,7 +7,6 @@ import React from 'react'
 import { TheView, TheDone, TheCondition } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './VerifyConfirmView.pcss'
-import { urlUtil } from '@self/utils'
 
 function VerifyConfirmView ({
                               l,
@@ -43,14 +42,15 @@ function VerifyConfirmView ({
 export default asView(
   VerifyConfirmView,
   (state) => ({
+    query: state['app.query'],
     busy: state['verifyConfirm.busy'],
     done: state['verifyConfirm.done'],
     failure: state['verifyConfirm.failure'],
   }),
-  ({verifyConfirmScene}) => (({
+  ({verifyConfirmScene}, propsProxy) => (({
     onMount: async () => {
       verifyConfirmScene.init()
-      const {seal, envelop} = urlUtil.queryFromSearch()
+      const {seal, envelop} = propsProxy.query
       verifyConfirmScene.setEntry({seal, envelop})
       await verifyConfirmScene.doVerify()
       verifyConfirmScene.set({done: true})

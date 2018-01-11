@@ -13,18 +13,15 @@ const UserDestroyScene = cn.compose(
 )(
   class UserDestroySceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.userDestroy
+      return this.store.userDestroy
     }
 
     async doDestroy () {
-      const s = this
-      const userCtrl = await s.use('userCtrl')
-      const userIds = s.get('targets').map(({id}) => id)
-      await s.busyFor(async () => {
+      const userCtrl = await this.use('userCtrl')
+      const userIds = this.get('targets').map(({id}) => id)
+      await this.busyFor(async () => {
         await userCtrl.destroy(...userIds)
       })
-
     }
   }
 )

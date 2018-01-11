@@ -14,14 +14,12 @@ const VerifySendScene = cn.compose(
 )(
   class VerifySendSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.verifySend
+      return this.store.verifySend
     }
 
     async doSend () {
-      const s = this
-      const verifyCtrl = await s.use('verifyCtrl')
-      await s.busyFor(async () => {
+      const verifyCtrl = await this.use('verifyCtrl')
+      await this.busyFor(async () => {
         const needed = await verifyCtrl.needsVerify()
         if (needed) {
           await verifyCtrl.send()

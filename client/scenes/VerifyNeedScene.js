@@ -14,17 +14,15 @@ const VerifyNeedScene = cn.compose(
 )(
   class VerifyNeedSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.verifyNeed
+      return this.store.verifyNeed
     }
 
     async doSync ({delay = 100} = {}) {
-      const s = this
       await asleep(delay)
-      await s.busyFor(async () => {
-        const verifyCtrl = await s.use('verifyCtrl')
+      await this.busyFor(async () => {
+        const verifyCtrl = await this.use('verifyCtrl')
         const needed = await verifyCtrl.needsVerify()
-        s.set({needed})
+        this.set({needed})
       })
     }
   }

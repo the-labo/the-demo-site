@@ -8,7 +8,6 @@ import { TheRecoverResetForm } from 'the-site-components'
 import { asForm } from '../../wrappers'
 
 function RecoverResetForm (props) {
-
   return (
     <TheRecoverResetForm {...props}/>
   )

@@ -10,29 +10,29 @@ const {Urls} = require('@self/conf')
 /** @lends ToastScene */
 class ToastScene extends Scene {
   get scope () {
-    const s = this
-    return s.store.toast
+
+    return this.store.toast
   }
 
   showInfo (message) {
-    const s = this
-    s.scope.info.push(message)
+
+    this.scope.info.push(message)
   }
 
   showWarn (message) {
-    const s = this
-    s.scope.warn.push(message)
+
+    this.scope.warn.push(message)
   }
 
   showError (message) {
-    const s = this
-    s.scope.error.push(message)
+
+    this.scope.error.push(message)
   }
 
   reset (queues) {
-    const s = this
+
     for (const [name, queue] of Object.entries(queues)) {
-      s.scope[name].reset(queue)
+      this.scope[name].reset(queue)
     }
   }
 }

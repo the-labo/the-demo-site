@@ -20,6 +20,7 @@ export default asForm(
   (state) => ({
     spinning: state['signUp.busy'],
     values: state['signUp.entry'],
+    step: state['signUp.step'],
     errors: state['signUp.entryErrors'],
   }),
   ({
@@ -29,6 +30,7 @@ export default asForm(
      toastScene
    }) => ({
     onUpdate: (v) => signUpScene.setEntry(v),
+    onStep: (step) => signUpScene.set({step}),
     onSubmit: async () => {
       await signUpScene.doSignUp()
       await accountScene.doSync()

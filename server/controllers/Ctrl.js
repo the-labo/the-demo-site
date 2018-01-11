@@ -12,35 +12,20 @@ const CtrBase = compose(
 /** @lends Ctrl */
 class Ctrl extends CtrBase {
   get resources () {
-    const s = this
-    return s.app.db.resources
+    return this.app.db.resources
   }
 
   get lang () {
-    const s = this
-    return s.client.lang
+    return this.client.lang
   }
 
   get mail () {
-    const s = this
-    return s.app.mail
+    return this.app.mail
   }
 
   get services () {
-    const s = this
-    return s.app.services
+    return this.app.services
   }
-
-  async _aliasUrlFor (pathname, query = {}) {
-    const s = this
-    const {protocol, host} = s.client
-    const {Alias} = s.resources
-    const alias = await Alias.ofUrl(
-      s.clientUrlFor(pathname, query)
-    )
-    return alias.urlFor({protocol, host})
-  }
-
 }
 
 module.exports = Ctrl

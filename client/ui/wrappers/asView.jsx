@@ -16,8 +16,7 @@ function asView (Component,
 
   class ViewWrap extends React.Component {
     render () {
-      const s = this
-      return <Component {...s.props} />
+      return <Component {...this.props} />
     }
 
   }

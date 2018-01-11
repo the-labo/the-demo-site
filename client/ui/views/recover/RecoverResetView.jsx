@@ -7,7 +7,6 @@ import React from 'react'
 import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
 import { asView } from '../../wrappers'
 import { RecoverResetForm } from '../../bounds'
-import { urlUtil } from '@self/utils'
 
 import styles from './RecoverResetView.pcss'
 
@@ -41,14 +40,15 @@ function RecoverResetView ({
 export default asView(
   RecoverResetView,
   (state) => ({
+    query: state['app.query'],
     failure: state['recoverReset.failure'],
     busy: state['recoverReset.busy'],
     done: state['recoverReset.done'],
   }),
-  ({recoverResetScene}) => ({
+  ({recoverResetScene, propsProxy}) => ({
     onMount: () => {
       recoverResetScene.init()
-      const {seal, envelop} = urlUtil.queryFromSearch()
+      const {seal, envelop} = propsProxy.query
       recoverResetScene.setEntry({seal, envelop})
     }
   })

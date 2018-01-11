@@ -18,32 +18,27 @@ function onlySigned (Component, options = {}) {
     withStore(
       class OnlySigned extends React.Component {
         render () {
-          const s = this
-          return <Component {...s.props}/>
+          return <Component {...this.props}/>
         }
 
         componentDidMount () {
-          const s = this
-          s.makeSureSigned()
+          this.makeSureSigned()
         }
 
         componentDidUpdate () {
-          const s = this
-          s.makeSureSigned()
+          this.makeSureSigned()
         }
 
         makeSureSigned () {
-          const s = this
-          const {store, history} = s.props
+          const {store, history} = this.props
           const synced = store.account.get('synced')
           if (synced) {
             const user = store.account.get('user')
             const hasSigned = Boolean(user)
             if (!hasSigned) {
               const {pathname} = get('location')
-              const {signUp, signIn} = store
-              signUp.back.set(pathname)
-              signIn.back.set(pathname)
+              store.signUp.back.set(pathname)
+              store.signIn.back.set(pathname)
               debug(`Ask sign in for: ${pathname}`)
               history.push(Urls.SIGNASK_URL)
             }

@@ -41,7 +41,7 @@ module.exports = Object.freeze(
     JS_EXTERNAL_URL: '/build/external-bundle.js',
 
     CSS_THEME_URL: '/css/theme.css',
-    CSS_FONT_URL: '/css/font-awesome.css',
+    CSS_FONT_URL: '/css/fontawesome-all.css',
     CSS_BUNDLE_URL: '/build/bundle.css',
 
     PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,

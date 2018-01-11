@@ -13,8 +13,7 @@ const UserCheckScene = cn.compose(
 )(
   class UserCheckSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.userCheck
+      return this.store.userCheck
     }
   }
 )

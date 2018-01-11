@@ -5,57 +5,53 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
-const {urlUtil} = require('@self/utils')
-const qs = require('qs')
+const {resolveUrl} = require('the-site-util')
+const cn = require('./concerns')
+const {isProduction} = require('the-check')
 
-class Scene extends TheScene {
-
-  goTo (url, params) {
-    const resolved = urlUtil.resolveUrl(url, params)
-    super.goTo(resolved)
-  }
-
-  async use (name) {
-    const s = this
-    return s.client.use(name)
-  }
-
-  catchError (e) {
-    const s = this
-    const {store, l} = s
-    try {
-      s.catchEntryError(e)
-    } catch (e) {
-      store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
+const Scene = cn.compose(
+)(
+  class SceneBase extends TheScene {
+    goTo (url, params = {}) {
+      super.goTo(resolveUrl(url, params))
     }
-  }
 
-  replaceQuery (query) {
-    const s = this
-    s.history.replace({search: '?' + qs.stringify(query)})
-  }
+    async use (name) {
+      return this.client.use(name, {
+        debug: !isProduction()
+      })
+    }
 
-  catchEntryError (e) {
-    const s = this
-    try {
-      return super.catchEntryError(e)
-    } catch (e) {
-      switch (e.name) {
-        case 'NotFoundError': {
-          return s.parseAppError(e, {
-            defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'
-          })
-        }
-        case 'WrongPasswordError': {
-          return s.parseAppError(e, {})
-        }
-
-        default:
-          throw e
+    catchError (e) {
+      const {store, l} = this
+      try {
+        return super.catchError(e)
+      } catch (e) {
+        store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
       }
     }
-  }
 
-}
+    catchEntryError (e) {
+      try {
+        return super.catchEntryError(e)
+      } catch (e) {
+        switch (e.name) {
+          case 'NotFoundError': {
+            return this.parseAppError(e, {
+              defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'
+            })
+          }
+          case 'WrongPasswordError': {
+            return this.parseAppError(e, {})
+          }
+
+          default:
+            throw e
+        }
+      }
+    }
+
+  }
+)
 
 module.exports = Scene

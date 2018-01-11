@@ -14,17 +14,15 @@ const UserCreateScene = cn.compose(
 )(
   class UserCreateSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.userCreate
+      return this.store.userCreate
     }
 
     async doCreate () {
-      const s = this
-      const userCtrl = await s.use('userCtrl')
-      await s.busyFor(async () => {
-        await s.processEntry(async (values) => {
+      const userCtrl = await this.use('userCtrl')
+      await this.busyFor(async () => {
+        await this.processEntry(async (values) => {
           const created = await userCtrl.create(values)
-          s.set({created})
+          this.set({created})
         })
       })
     }

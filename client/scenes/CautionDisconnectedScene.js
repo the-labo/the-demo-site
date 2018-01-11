@@ -6,23 +6,20 @@
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
-const {get} = require('the-window')
 
 /** @lends CautionDisconnectedScene */
 const CautionDisconnectedScene = cn.compose(
-  cn.withBusy
+  cn.withBusy,
+  cn.withLocation
 )(
   class CautionDisconnectedSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.cautionDisconnected
+      return this.store.cautionDisconnected
     }
 
     async doReload () {
-      const s = this
-      s.set({busy: true})
-      const location = get('location')
-      location.reload()
+      this.set({busy: true})
+      this.reloadLocation()
     }
   }
 )

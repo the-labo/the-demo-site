@@ -13,17 +13,16 @@ const UserPasswordScene = cn.compose(
 )(
   class UserPasswordSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.userPassword
+
+      return this.store.userPassword
     }
 
     async doReset () {
-      const s = this
-      const userCtrl = await s.use('userCtrl')
-      const userIds = s.get('targets').map(({id}) => String(id))
-      await s.busyFor(async () => {
+      const userCtrl = await this.use('userCtrl')
+      const userIds = this.get('targets').map(({id}) => String(id))
+      await this.busyFor(async () => {
         const newPasswords = await userCtrl.resetPassword(...userIds)
-        s.set({results: newPasswords})
+        this.set({results: newPasswords})
       })
     }
   }

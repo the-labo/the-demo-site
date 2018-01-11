@@ -15,19 +15,17 @@ const RecoverResetScene = cn.compose(
 )(
   class RecoverResetSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.recoverReset
+      return this.store.recoverReset
     }
 
     async doReset () {
-      const s = this
-      const {l} = s
-      const recoverCtrl = await s.use('recoverCtrl')
-      s.clearFailure()
-      await s.busyFor(async () => {
-        await s.processEntry(({password, seal, envelop}) =>
+      const {l} = this
+      const recoverCtrl = await this.use('recoverCtrl')
+      this.clearFailure()
+      await this.busyFor(async () => {
+        await this.processEntry(({password, seal, envelop}) =>
           recoverCtrl.reset({password, seal, envelop}).catch((e) => {
-            return s.catchFailure(e, {
+            return this.catchFailure(e, {
               'ExpiredError': l('errors.RECOVER_EXPIRED_ERROR'),
               default: l('errors.RECOVER_FAILED_ERROR')
             })

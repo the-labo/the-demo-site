@@ -10,15 +10,13 @@ const Ctrl = require('./Ctrl')
 class AppCtrl extends Ctrl {
 
   async getPreference (name) {
-    const s = this
-    const {preferences = {}} = s.session
+    const {preferences = {}} = this.session
     return preferences[name]
   }
 
   async setPreference (name, value) {
-    const s = this
-    const {preferences = {}} = s.session
-    s.session.preferences = Object.assign({}, preferences, {[name]: value})
+    const {preferences = {}} = this.session
+    this.session.preferences = Object.assign({}, preferences, {[name]: value})
   }
 }
 

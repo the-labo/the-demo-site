@@ -13,17 +13,18 @@ const cn = require('./concerns')
 
 /** @lends AppScene */
 const AppScene = cn.compose(
-  cn.withBusy
+  cn.withBusy,
+  cn.withQuery,
+  cn.withLocation
 )(
   class AppSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.app
+      return this.store.app
     }
 
     setLocation ({pathname, search}) {
-      const s = this
-      s.set({pathname, query: qs.parse(search, {ignoreQueryPrefix: true})})
+      this.set({pathname})
+      this.setQueryBySearch(search)
     }
 
     handleRejectionReason (reason) {
@@ -32,8 +33,7 @@ const AppScene = cn.compose(
       }
       switch (reason.name) {
         case 'UnauthorizedError': {
-          const location = get('location')
-          location.href = Urls.SIGNIN_URL
+          this.changeLocationTo(Urls.SIGNIN_URL)
           return true
         }
         default:

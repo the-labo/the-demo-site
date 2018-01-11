@@ -14,17 +14,15 @@ const QuitCtrl = cn.compose(
 )(
   class QuitCtrlBase extends Ctrl {
     async execute () {
-      const s = this
-      const {quitService} = s.services
-      await s._reloadAuthorized()
-      const user = await s._fetchAuthorizedUser()
+      const {quitService} = this.services
+      await this._reloadAuthorized()
+      const user = await this._fetchAuthorizedUser()
       if (!user) {
         return false
       }
       const {destroyed} = await quitService.processQuit({
         userId: user.id
       })
-
       return destroyed
     }
 

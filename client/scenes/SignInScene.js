@@ -6,6 +6,7 @@
 
 const Scene = require('./Scene')
 const cn = require('./concerns')
+const {trimcase, lowercase} = require('stringcase')
 
 /** @lends SignInScene */
 const SignInScene = cn.compose(
@@ -15,16 +16,16 @@ const SignInScene = cn.compose(
 )(
   class SignInSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.signIn
+      return this.store.signIn
     }
 
     async doSignIn () {
-      const s = this
-      const signCtrl = await s.use('signCtrl')
-      await s.busyFor(async () => {
-        await s.processEntry(({name, password}) => signCtrl.signIn(name, password))
-      })
+      const signCtrl = await this.use('signCtrl')
+      await this.busyFor(async () =>
+        this.processEntry(async ({name, password}) =>
+          await signCtrl.signIn(name, password)
+        )
+      )
     }
   }
 )

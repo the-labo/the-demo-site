@@ -15,28 +15,25 @@ const AccountCtrl = cn.compose(
   class AccountCtrlBase extends Ctrl {
 
     async getCurrentUser () {
-      const s = this
-      const user = await s._fetchAuthorizedUser()
+      const user = await this._fetchAuthorizedUser()
       return user || null
     }
 
     async updateProfile (profileAttributes) {
-      const s = this
-      const {accountService} = s.services
-      await s._assertAuthorized()
-      const {id: userId} = await s._fetchAuthorizedUser()
+      const {accountService} = this.services
+      await this._assertAuthorized()
+      const {id: userId} = await this._fetchAuthorizedUser()
       await accountService.processProfile({userId, profileAttributes})
-      await s._reloadAuthorized()
+      await this._reloadAuthorized()
       return true
     }
 
     async updatePassword (newPassword) {
-      const s = this
-      const {accountService} = s.services
-      await s._assertAuthorized()
-      const {id: userId} = await s._fetchAuthorizedUser()
+      const {accountService} = this.services
+      await this._assertAuthorized()
+      const {id: userId} = await this._fetchAuthorizedUser()
       await accountService.processPassword({userId, newPassword})
-      await s._reloadAuthorized()
+      await this._reloadAuthorized()
       return true
     }
 

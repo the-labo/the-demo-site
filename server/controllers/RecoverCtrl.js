@@ -11,33 +11,31 @@ const {Urls, Lifetimes} = require('@self/conf')
 /** @lends RecoverCtrl */
 const RecoverCtrl = cn.compose(
   cn.withAuth,
-  cn.withDebug
+  cn.withDebug,
+  cn.withAlias
 )(
   class RecoverCtrlBase extends Ctrl {
     async send (email) {
-      const s = this
-      const {recoverService} = s.services
-      const {mail, lang} = s
+      const {recoverService} = this.services
+      const {mail, lang} = this
       const {envelop, expireAt, user} = await recoverService.processPrepare({
         email,
         expireIn: Lifetimes.RECOVER_EMAIL_LIFETIME
       })
-      const seal = await s._sealFor(envelop)
-      const url = await s._aliasUrlFor(Urls.RECOVER_RESET_URL, {envelop, seal, expireAt})
-      s._debug(`Create recover url: ${url}`)
+      const seal = await this._sealFor(envelop)
+      const url = await this._aliasUrlFor(Urls.RECOVER_RESET_URL, {envelop, seal, expireAt})
+      this._debug(`Create recover url: ${url}`)
       await mail.sendRecover({lang, user, url, expireAt})
       return user
     }
 
     async reset ({seal: sealString, envelop, password} = {}) {
-      const s = this
-      const {recoverService} = s.services
-      await s._assertSeal(sealString, envelop)
-
+      const {recoverService} = this.services
+      await this._assertSeal(sealString, envelop)
       const {user, sign} = await recoverService.processReset({envelop, password})
-      await s._setAuthorized({user, sign})
-      await s._reloadAuthorized()
-      return s._fetchAuthorizedUser()
+      await this._setAuthorized({user, sign})
+      await this._reloadAuthorized()
+      return this._fetchAuthorizedUser()
     }
   }
 )

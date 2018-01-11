@@ -12,46 +12,38 @@ const UserListScene = cn.compose(
   cn.withBusy,
   cn.withSort,
   cn.withPage,
-  cn.withReady
+  cn.withReady,
+  cn.withFilter,
+  cn.withHistory
 )(
   class UserListSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.userList
+      return this.store.userList
     }
 
     setQ (q) {
-      const s = this
-      s.set({
-        pageNumber: 1,
-        filter: q ? {name: {$like: `%${String(q).trim()}%`}} : {}
-      })
-      if (!q) {
-        s.init('filter')
-      }
-      s.replaceQuery({q})
+      this.set({pageNumber: 1})
+      this.setFilterByQ(q, {fields: ['name']})
+      this.replaceHistoryByQuery({q})
     }
 
     get defaults () {
-      const s = this
       return {
-        pageNumber: s.defaultPageNumber,
-        pageSize: s.defaultPageSize,
+        pageNumber: this.defaultPageNumber,
+        pageSize: this.defaultPageSize,
         filter: {}
       }
     }
 
     async doSync () {
-      const s = this
-      const userCtrl = await s.use('userCtrl')
-
-      await s.busyFor(async () => {
+      const userCtrl = await this.use('userCtrl')
+      await this.busyFor(async () => {
         const {meta: counts, entities} = await userCtrl.list({
-          filter: s.get('filter'),
-          page: s.getPage(),
-          sort: s.get('sort')
+          filter: this.getFilter(),
+          page: this.getPage(),
+          sort: this.getSort()
         })
-        s.set({counts, entities})
+        this.set({counts, entities})
       })
     }
   }

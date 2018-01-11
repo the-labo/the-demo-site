@@ -12,9 +12,8 @@ before_install:
 # - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
 # - npm who
 install:
-- npm install
+- yarn install
 script:
-- npm run build
-- npm run test
+- pon c b
 after_success:
 # - ./ci/travis/publish.js

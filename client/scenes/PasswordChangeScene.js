@@ -14,15 +14,13 @@ const PasswordChangeScene = cn.compose(
 )(
   class PasswordChangeSceneBase extends Scene {
     get scope () {
-      const s = this
-      return s.store.passwordChange
+      return this.store.passwordChange
     }
 
     async doSave () {
-      const s = this
-      const accountCtrl = await s.use('accountCtrl')
-      await s.busyFor(async () => {
-        await s.processEntry(({password}) =>
+      const accountCtrl = await this.use('accountCtrl')
+      await this.busyFor(async () => {
+        await this.processEntry(({password}) =>
           accountCtrl.updatePassword(password))
       })
     }
