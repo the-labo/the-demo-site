@@ -9,7 +9,7 @@ const pon = require('pon')
 
 const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {
-  fs: {mkdir, symlink, chmod, del, cp, concat},
+  fs: {write, mkdir, symlink, chmod, del, cp, concat},
   mocha,
   command: {fork},
   coz,
@@ -109,6 +109,8 @@ module.exports = pon({
     ])
   ],
   'unless:prod': env.notFor('production'),
+  'maint:on': write('public/status/maintenance'),
+  'maint:off': del('public/status/maintenance'),
   'db:setup': setup(createDB),
   'db:cli': () => createDB().cli(),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),

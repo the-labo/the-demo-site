@@ -1,6 +1,7 @@
 'use strict'
 
 const pkg = require('../../../package')
+const {Styles} = require('@self/conf')
 
 module.exports = [
   {
@@ -13,7 +14,7 @@ module.exports = [
   },
   {
     name: 'under-maintenance',
-    title: 'Sorry! We are under maintenance',
+    title: 'We are under maintenance',
     texts: [
       'We will come back later. Please wait and try again later',
       'メンテナンス中です。時間を置いて再度お試しください'
@@ -26,7 +27,8 @@ module.exports = [
   data: {
     title,
     texts,
-    pkg
+    pkg,
+    colo: Styles.DOMINANT_COLOR
   }
 }))
 
