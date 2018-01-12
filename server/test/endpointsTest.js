@@ -4,9 +4,7 @@
  */
 'use strict'
 
-require('the-polyfill')()
-
-const endpoints = require('../endpoints')
+const routes = require('../endpoints/routes')
 const createDB = require('../db/create')
 const {ok, equal} = require('assert')
 
@@ -32,7 +30,7 @@ describe('endpoints', () => {
         redirected = url
       }
     }
-    await endpoints.aliasEndpoint(ctx)
+    await routes.aliasRoute(ctx)
     equal('http://example.com/foo/bar', redirected)
   })
 })

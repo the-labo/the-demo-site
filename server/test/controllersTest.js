@@ -9,6 +9,8 @@ require('the-polyfill')()
 const controllers = require('../controllers')
 const createDB = require('../db/create')
 const {ok, equal} = require('assert')
+const {servicesProxy} = require('the-service-base')
+const {ServiceMapping} = require('../mappings')
 
 describe('controllers', () => {
   before(() => {
@@ -18,17 +20,16 @@ describe('controllers', () => {
   })
 
   it('Sign Ctrl', async () => {
-    const {SignCtrl, AccountCtrl, QuitCtrl,PasswordCtrl} = controllers
+    const {SignCtrl, AccountCtrl, QuitCtrl} = controllers
     const session = {}
     const db = createDB({
       dialect: 'memory'
     })
-    const app = {db}
+    const app = {db, services: servicesProxy(ServiceMapping, db)}
     const client = {}
     const signCtrl = new SignCtrl({app, client, session})
     const accountCtrl = new AccountCtrl({app, client, session})
     const quitCtrl = new QuitCtrl({app, client, session})
-    const passwordCtrl = new PasswordCtrl({app, client, session})
 
     await signCtrl.signUp('foo', 'bar')
 
@@ -39,7 +40,7 @@ describe('controllers', () => {
     ok(!(await accountCtrl.getCurrentUser()))
 
     ok(await signCtrl.signIn('foo', 'bar'))
-    await passwordCtrl.update('bar2')
+    await accountCtrl.updatePassword('bar2')
     ok(await signCtrl.signIn('foo', 'bar2'))
 
     await accountCtrl.updateProfile(({

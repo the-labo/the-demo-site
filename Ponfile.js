@@ -233,7 +233,7 @@ module.exports = pon({
   struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
   ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
-  test: ['env:test', 'test:client'],
+  test: ['env:test', 'test:client', 'test:server'],
   build: ['struct', 'ui'],
   prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build'],
   watch: ['ui:*', 'ui:*/watch'],
