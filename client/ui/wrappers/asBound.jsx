@@ -1,7 +1,10 @@
 'use strict'
 
-import { inject } from 'the-handle'
-import { connect } from 'the-store'
+import theHandle from 'the-handle'
+import theStore from 'the-store'
+
+const {inject} = theHandle
+const {connect} = theStore
 
 function asBound (Component,
                   mapStateToProps = () => ({}),

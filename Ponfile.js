@@ -7,7 +7,9 @@
 
 const pon = require('pon')
 
-const {react, css, browser, map, ccjs} = require('pon-task-web')
+const {css, map, ccjs} = require('pon-task-web')
+const react = require('../pon-task-react')
+const browser = require('../pon-task-browser')
 const {
   fs: {mkdir, symlink, chmod, del, cp, concat},
   mocha,
@@ -23,7 +25,6 @@ const icon = require('pon-task-icon')
 const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
 const md = require('pon-task-md')
 const {isMacOS} = require('the-check')
-const {envify} = browser.transforms
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,
@@ -118,9 +119,11 @@ module.exports = pon({
   'db:load': load.ask(createDB),
   'db:reset': ['unless:prod', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
-    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
+    presets: [['react']],
+    pattern: ['+(*.mjs|*.js|*.jsx)', '!(shim)/**/+(*.mjs|*.jsx|*.js|*.json)'],
     extractCss: `client/shim/ui/bundle.pcss`,
-    watchTargets: 'client/ui/**/*.pcss'
+    watchTargets: 'client/ui/**/*.pcss',
+    ext: '.mjs',
   }),
   'ui:css': [
     css('client/ui', 'client/shim/ui', {
@@ -136,33 +139,27 @@ module.exports = pon({
     css('public/build', 'public/build', {pattern: '*.pcss'})
   ],
   'ui:browser': env.dynamic(({isProduction}) =>
-    browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
-      externals: UI.EXTERNAL_BUNDLES,
-      watchTargets: 'client/shim/**/*.js',
-      transforms: [envify()],
-      fullPaths: !isProduction()
+    browser('client/shim/ui/entrypoint.mjs', `public${Urls.JS_BUNDLE_URL}`, {
+      watchTargets: 'client/**/+(*.js|*.mjs|*.jsx)',
+      namedExports: {},
+      external: UI.EXTERNAL_BUNDLES,
+      importAlias: {
+        ...UI.EXTERNAL_BUNDLES.map((name) => ({
+          [name]: `./modules/${name}`
+        }))
+      }
     }), {sub: ['watch']}
   ),
-  'ui:browser-external': env.dynamic(({isProduction}) =>
-    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-      requires: UI.EXTERNAL_BUNDLES,
-      skipWatching: true,
-      watchDelay: 300,
-      transforms: [envify()],
-      fullPaths: !isProduction(),
-      ignores: [
-        // TODO Be smarter
-        ...(isProduction() ? [
-          require.resolve('react/cjs/react.development.js'),
-          require.resolve('react-dom/cjs/react-dom.development.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.development.js')
-        ] : [
-          require.resolve('react/cjs/react.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
-        ])
-      ]
-    })
+  'ui:browser-external': UI.EXTERNAL_BUNDLES.map((name) =>
+    env.dynamic(({isProduction}) =>
+      browser(require.resolve(name), `public/modules/${name}.js`, {
+        importAlias: {
+          ...UI.EXTERNAL_BUNDLES.map((name) => ({
+            [name]: `./modules/${name}`
+          }))
+        }
+      })
+    )
   ),
   'assets:install': () => theAssets().installTo('assets', {copy: true}),
   'assets:compile': md('assets/markdowns', 'assets/html/partials', {
@@ -200,7 +197,9 @@ module.exports = pon({
   'prod:db': [
     'env:prod', 'db'
   ],
-  'debug:server': ['env:debug', fork('bin/app.js')],
+  'debug:server': ['env:debug', fork('bin/app.mjs', {
+    env: {NODE_OPTIONS: '--experimental-modules'}
+  })],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',
@@ -228,11 +227,11 @@ module.exports = pon({
   // ----------------
   assets: ['assets:*'],
   struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
-  ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
+  ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client'],
   build: ['struct', 'ui'],
-  prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build'],
+  prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'ui:browser-external', 'build'],
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],

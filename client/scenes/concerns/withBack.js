@@ -7,7 +7,7 @@
 'use strict'
 
 const {Urls} = require('@self/conf')
-const {withBack} = require('the-scene-base/shim')
+const {withBack} = require('the-scene-base').concerns
 
 module.exports = (Class) => withBack(Class, {
   top: Urls.TOP_URL

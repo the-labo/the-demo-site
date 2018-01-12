@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withBusy} = require('the-scene-base/shim')
+const {withBusy} = require('the-scene-base').concerns
 
 /** @lends withBusy */
 module.exports = withBusy

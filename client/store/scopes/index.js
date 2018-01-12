@@ -51,29 +51,5 @@ module.exports = {
   userSearch,
   verifyConfirm,
   verifyNeed,
-  verifySend
+  verifySend,
 }
-
-exports.abstract = abstract
-exports.account = account
-exports.app = app
-exports.cautionDisconnected = cautionDisconnected
-exports.passwordChange = passwordChange
-exports.profileEdit = profileEdit
-exports.quit = quit
-exports.recoverReset = recoverReset
-exports.recoverSend = recoverSend
-exports.signAsk = signAsk
-exports.signIn = signIn
-exports.signOut = signOut
-exports.signUp = signUp
-exports.toast = toast
-exports.userCheck = userCheck
-exports.userCreate = userCreate
-exports.userDestroy = userDestroy
-exports.userList = userList
-exports.userPassword = userPassword
-exports.userSearch = userSearch
-exports.verifyConfirm = verifyConfirm
-exports.verifyNeed = verifyNeed
-exports.verifySend = verifySend

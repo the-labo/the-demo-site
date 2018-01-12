@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { withLoc } from 'the-loc'
-import { withClient } from 'the-client/shim'
+import { withClient } from 'the-client'
 import { withHistory, withRoute } from 'the-components'
 import withCycle from './withCycle'
 import withTitle from './withTitle'

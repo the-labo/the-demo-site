@@ -13,10 +13,5 @@ module.exports = {
   check,
   input,
   list,
-  process
+  process,
 }
-
-exports.check = check
-exports.input = input
-exports.list = list
-exports.process = process

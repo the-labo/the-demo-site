@@ -7,7 +7,5 @@
 const SceneMapping = require('./SceneMapping')
 
 module.exports = {
-  SceneMapping
+  SceneMapping,
 }
-
-exports.SceneMapping = SceneMapping

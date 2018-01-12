@@ -5,11 +5,13 @@
  */
 'use strict'
 
-require('the-polyfill')()
+import 'the-polyfill/apply'
+import server from '../server/server'
+import { theCheck } from 'the-check'
+import Local from '../Local'
 
-const {server} = require('../server')
-const {isProduction} = require('the-check')
-const {APP_PORT, NGINX_PUBLISHED_PORT} = require('../Local')
+const {isProduction} = theCheck
+const {APP_PORT, NGINX_PUBLISHED_PORT} = Local
 
 ;(async () => {
   const {port = APP_PORT} = process.env

@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withValues} = require('the-scene-base/shim')
+const {withValues} = require('the-scene-base').concerns
 
 /** @lends withValues */
 module.exports = withValues

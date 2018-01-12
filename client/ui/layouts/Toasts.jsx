@@ -5,7 +5,6 @@
 
 import React from 'react'
 import { TheToastGroup, TheToast } from 'the-components'
-import { connect, withStore } from 'the-store'
 import { UI } from '@self/conf'
 import { asPure, asBound, compose } from '../wrappers'
 

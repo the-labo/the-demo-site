@@ -39,23 +39,5 @@ module.exports = {
   tabs,
   titles,
   toasts,
-  warnings
+  warnings,
 }
-
-exports.alt = alt
-exports.app = app
-exports.buttons = buttons
-exports.captions = captions
-exports.checks = checks
-exports.errors = errors
-exports.labels = labels
-exports.leads = leads
-exports.mail = mail
-exports.messages = messages
-exports.org = org
-exports.placeholders = placeholders
-exports.roleCodes = roleCodes
-exports.tabs = tabs
-exports.titles = titles
-exports.toasts = toasts
-exports.warnings = warnings

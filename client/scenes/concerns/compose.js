@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {compose} = require('the-scene-base/shim')
+const {compose} = require('the-scene-base').concerns
 
 /** @lends compose */
 module.exports = compose

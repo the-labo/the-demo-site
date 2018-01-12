@@ -17,12 +17,5 @@ module.exports = {
   RecoverService,
   SignService,
   UserService,
-  VerifyService
+  VerifyService,
 }
-
-exports.AccountService = AccountService
-exports.QuitService = QuitService
-exports.RecoverService = RecoverService
-exports.SignService = SignService
-exports.UserService = UserService
-exports.VerifyService = VerifyService

@@ -38,7 +38,6 @@ module.exports = Object.freeze(
     ICON_URL: '/icons/favicon.png',
 
     JS_BUNDLE_URL: '/build/bundle.js',
-    JS_EXTERNAL_URL: '/build/external-bundle.js',
 
     CSS_THEME_URL: '/css/theme.css',
     CSS_FONT_URL: '/css/fontawesome-all.css',

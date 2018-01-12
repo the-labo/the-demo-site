@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withFailure} = require('the-scene-base/shim')
+const {withFailure} = require('the-scene-base').concerns
 
 /** @lends withFailure */
 module.exports = withFailure

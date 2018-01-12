@@ -7,7 +7,5 @@
 const org = require('./org')
 
 module.exports = {
-  org
+  org,
 }
-
-exports.org = org

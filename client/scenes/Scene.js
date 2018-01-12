@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheScene} = require('the-scene-base/shim')
+const {TheScene} = require('the-scene-base')
 const {resolveUrl} = require('the-site-util')
 const cn = require('./concerns')
 const {isProduction} = require('the-check')

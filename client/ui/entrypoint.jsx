@@ -1,4 +1,5 @@
 'use strict'
+
 import 'the-polyfill/apply'
 
 import React from 'react'

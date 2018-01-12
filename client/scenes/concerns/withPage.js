@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withPage} = require('the-scene-base/shim')
+const {withPage} = require('the-scene-base').concerns
 
 /** @lends withPage */
 module.exports = withPage

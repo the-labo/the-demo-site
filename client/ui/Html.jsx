@@ -26,14 +26,7 @@ const Html = ({appScope, renderingContext}) => {
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
-               js={[
-                 ...(isProduction() ? [
-                   Urls.PRODUCTION_JS_URL
-                 ] : [
-                   Urls.JS_EXTERNAL_URL,
-                   Urls.JS_BUNDLE_URL
-                 ])
-               ]}
+               js={[]}
                css={[
                  ...(isProduction() ? [
                    Urls.PRODUCTION_CSS_URL
@@ -59,6 +52,7 @@ const Html = ({appScope, renderingContext}) => {
             <App {...appProps} {...{client, store, handle}}/>
           </TheRouter.Static>
         </div>
+        <script type={'module'} src={isProduction() ? Urls.JS_BUNDLE_URL : Urls.PRODUCTION_JS_URL}/>
       </TheBody>
     </TheHtml>
   )

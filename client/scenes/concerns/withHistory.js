@@ -6,6 +6,6 @@
  */
 'use strict'
 
-const {withHistory} = require('the-scene-base/shim')
+const {withHistory} = require('the-scene-base').concerns
 
 module.exports = withHistory

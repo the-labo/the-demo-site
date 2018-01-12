@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withSort} = require('the-scene-base/shim')
+const {withSort} = require('the-scene-base').concerns
 
 /** @lends withSort */
 module.exports = withSort

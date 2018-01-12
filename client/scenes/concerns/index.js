@@ -31,19 +31,5 @@ module.exports = {
   withQuery,
   withReady,
   withSort,
-  withValues
+  withValues,
 }
-
-exports.compose = compose
-exports.withBack = withBack
-exports.withBusy = withBusy
-exports.withEntry = withEntry
-exports.withFailure = withFailure
-exports.withFilter = withFilter
-exports.withHistory = withHistory
-exports.withLocation = withLocation
-exports.withPage = withPage
-exports.withQuery = withQuery
-exports.withReady = withReady
-exports.withSort = withSort
-exports.withValues = withValues

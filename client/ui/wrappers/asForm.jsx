@@ -4,7 +4,7 @@
  */
 'use strict'
 
-import { withLoc } from 'the-loc'
+import withLoc from './withLoc'
 import { withForm } from 'the-components'
 import withCycle from './withCycle'
 import asBound from './asBound'

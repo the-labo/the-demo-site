@@ -7,7 +7,5 @@
 const aliasRoute = require('./aliasRoute')
 
 module.exports = {
-  aliasRoute
+  aliasRoute,
 }
-
-exports.aliasRoute = aliasRoute

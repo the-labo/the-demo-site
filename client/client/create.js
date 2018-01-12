@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const {TheClient} = require('the-client/shim')
+const {TheClient} = require('the-client')
 const {Events: TheClientEvents} = TheClient
 
 const ClientBase = [].reduce((Clazz, mix) => mix(Clazz), TheClient)

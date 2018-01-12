@@ -474,7 +474,7 @@
 .the-view .the-view-header .the-view-header-col:nth-child(1) { justify-content:flex-start; }
 .the-view .the-view-header .the-view-header-col:nth-child(2) { width:50%;max-width:480px;display:block;text-align:center; }
 .the-view .the-view-header .the-view-header-col:nth-child(3) { justify-content:flex-end; }
-.the-view .the-view-header .the-view-header-icon { line-height:36px;flex-shrink:0; }
+.the-view .the-view-header .the-view-header-icon { line-height:36px;vertical-align:middle;flex-shrink:0; }
 .the-view .the-view-header .the-view-header-text {  }
 .the-view .the-view-header .the-button { height:36px;line-height:36px;justify-content:center;align-items:center;padding:0 8px;min-width:2em;display:inline-flex;cursor:pointer;margin:0 4px;white-space:nowrap; }
 .the-view .the-view-header .the-button-text { font-size:smaller; }

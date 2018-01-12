@@ -6,6 +6,6 @@
  */
 'use strict'
 
-const {withFilter} = require('the-scene-base/shim')
+const {withFilter} = require('the-scene-base').concerns
 
 module.exports = withFilter

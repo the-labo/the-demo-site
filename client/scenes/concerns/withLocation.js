@@ -6,6 +6,6 @@
  */
 'use strict'
 
-const {withLocation} = require('the-scene-base/shim')
+const {withLocation} = require('the-scene-base').concerns
 
 module.exports = withLocation

@@ -6,7 +6,7 @@
  */
 'use strict'
 
-const {withEntry} = require('the-scene-base/shim')
+const {withEntry} = require('the-scene-base').concerns
 
 /** @lends withEntry */
 module.exports = withEntry
