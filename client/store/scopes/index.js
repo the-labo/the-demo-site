@@ -4,29 +4,31 @@
  */
 'use strict'
 
-const abstract = require('./abstract')
-const account = require('./account')
-const app = require('./app')
-const cautionDisconnected = require('./cautionDisconnected')
-const passwordChange = require('./passwordChange')
-const profileEdit = require('./profileEdit')
-const quit = require('./quit')
-const recoverReset = require('./recoverReset')
-const recoverSend = require('./recoverSend')
-const signAsk = require('./signAsk')
-const signIn = require('./signIn')
-const signOut = require('./signOut')
-const signUp = require('./signUp')
-const toast = require('./toast')
-const userCheck = require('./userCheck')
-const userCreate = require('./userCreate')
-const userDestroy = require('./userDestroy')
-const userList = require('./userList')
-const userPassword = require('./userPassword')
-const userSearch = require('./userSearch')
-const verifyConfirm = require('./verifyConfirm')
-const verifyNeed = require('./verifyNeed')
-const verifySend = require('./verifySend')
+const _d = (m) => 'default' in m ? m.default : m
+
+const abstract = _d(require('./abstract'))
+const account = _d(require('./account'))
+const app = _d(require('./app'))
+const cautionDisconnected = _d(require('./cautionDisconnected'))
+const passwordChange = _d(require('./passwordChange'))
+const profileEdit = _d(require('./profileEdit'))
+const quit = _d(require('./quit'))
+const recoverReset = _d(require('./recoverReset'))
+const recoverSend = _d(require('./recoverSend'))
+const signAsk = _d(require('./signAsk'))
+const signIn = _d(require('./signIn'))
+const signOut = _d(require('./signOut'))
+const signUp = _d(require('./signUp'))
+const toast = _d(require('./toast'))
+const userCheck = _d(require('./userCheck'))
+const userCreate = _d(require('./userCreate'))
+const userDestroy = _d(require('./userDestroy'))
+const userList = _d(require('./userList'))
+const userPassword = _d(require('./userPassword'))
+const userSearch = _d(require('./userSearch'))
+const verifyConfirm = _d(require('./verifyConfirm'))
+const verifyNeed = _d(require('./verifyNeed'))
+const verifySend = _d(require('./verifySend'))
 
 module.exports = {
   abstract,
@@ -51,29 +53,5 @@ module.exports = {
   userSearch,
   verifyConfirm,
   verifyNeed,
-  verifySend
+  verifySend,
 }
-
-exports.abstract = abstract
-exports.account = account
-exports.app = app
-exports.cautionDisconnected = cautionDisconnected
-exports.passwordChange = passwordChange
-exports.profileEdit = profileEdit
-exports.quit = quit
-exports.recoverReset = recoverReset
-exports.recoverSend = recoverSend
-exports.signAsk = signAsk
-exports.signIn = signIn
-exports.signOut = signOut
-exports.signUp = signUp
-exports.toast = toast
-exports.userCheck = userCheck
-exports.userCreate = userCreate
-exports.userDestroy = userDestroy
-exports.userList = userList
-exports.userPassword = userPassword
-exports.userSearch = userSearch
-exports.verifyConfirm = verifyConfirm
-exports.verifyNeed = verifyNeed
-exports.verifySend = verifySend

@@ -6,10 +6,10 @@
 
 const {TheScene} = require('the-scene-base/shim')
 const {resolveUrl} = require('the-site-util')
-const cn = require('./concerns')
+const {compose} =  require('the-scene-mixins/shim')
 const {isProduction} = require('the-check')
 
-const SceneBase = cn.compose(
+const SceneBase = compose(
 
 )(TheScene)
 

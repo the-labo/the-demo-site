@@ -4,19 +4,16 @@
  */
 'use strict'
 
-const check = require('./check')
-const input = require('./input')
-const list = require('./list')
-const process = require('./process')
+const _d = (m) => 'default' in m ? m.default : m
+
+const check = _d(require('./check'))
+const input = _d(require('./input'))
+const list = _d(require('./list'))
+const process = _d(require('./process'))
 
 module.exports = {
   check,
   input,
   list,
-  process
+  process,
 }
-
-exports.check = check
-exports.input = input
-exports.list = list
-exports.process = process

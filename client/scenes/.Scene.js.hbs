@@ -5,9 +5,9 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy} =  require('the-scene-mixins/shim')
 
-const class {{name}}Base = cn.compose(
+const class {{name}}Base = compose(
 
 )(Scene)
 

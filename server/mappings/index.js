@@ -4,16 +4,14 @@
  */
 'use strict'
 
-const ControllerMapping = require('./ControllerMapping')
-const ResourceMapping = require('./ResourceMapping')
-const ServiceMapping = require('./ServiceMapping')
+const _d = (m) => 'default' in m ? m.default : m
+
+const ControllerMapping = _d(require('./ControllerMapping'))
+const ResourceMapping = _d(require('./ResourceMapping'))
+const ServiceMapping = _d(require('./ServiceMapping'))
 
 module.exports = {
   ControllerMapping,
   ResourceMapping,
-  ServiceMapping
+  ServiceMapping,
 }
-
-exports.ControllerMapping = ControllerMapping
-exports.ResourceMapping = ResourceMapping
-exports.ServiceMapping = ServiceMapping

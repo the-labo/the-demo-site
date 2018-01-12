@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const aliasRoute = require('./aliasRoute')
+const _d = (m) => 'default' in m ? m.default : m
+
+const aliasRoute = _d(require('./aliasRoute'))
 
 module.exports = {
-  aliasRoute
+  aliasRoute,
 }
-
-exports.aliasRoute = aliasRoute

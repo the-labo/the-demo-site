@@ -5,12 +5,13 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth} = require('./concerns')
 
 /** @lends QuitCtrl */
-const QuitCtrl = cn.compose(
-  cn.withDebug,
-  cn.withAuth
+const QuitCtrl = compose(
+  withDebug,
+  withAuth
 )(
   class QuitCtrlBase extends Ctrl {
     async execute () {

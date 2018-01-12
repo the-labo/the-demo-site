@@ -4,29 +4,31 @@
  */
 'use strict'
 
-const AccountScene = require('./AccountScene')
-const AppScene = require('./AppScene')
-const CautionDisconnectedScene = require('./CautionDisconnectedScene')
-const PasswordChangeScene = require('./PasswordChangeScene')
-const ProfileEditScene = require('./ProfileEditScene')
-const QuitScene = require('./QuitScene')
-const RecoverResetScene = require('./RecoverResetScene')
-const RecoverSendScene = require('./RecoverSendScene')
-const Scene = require('./Scene')
-const SignAskScene = require('./SignAskScene')
-const SignInScene = require('./SignInScene')
-const SignOutScene = require('./SignOutScene')
-const SignUpScene = require('./SignUpScene')
-const ToastScene = require('./ToastScene')
-const UserCheckScene = require('./UserCheckScene')
-const UserCreateScene = require('./UserCreateScene')
-const UserDestroyScene = require('./UserDestroyScene')
-const UserListScene = require('./UserListScene')
-const UserPasswordScene = require('./UserPasswordScene')
-const UserSearchScene = require('./UserSearchScene')
-const VerifyConfirmScene = require('./VerifyConfirmScene')
-const VerifyNeedScene = require('./VerifyNeedScene')
-const VerifySendScene = require('./VerifySendScene')
+const _d = (m) => 'default' in m ? m.default : m
+
+const AccountScene = _d(require('./AccountScene'))
+const AppScene = _d(require('./AppScene'))
+const CautionDisconnectedScene = _d(require('./CautionDisconnectedScene'))
+const PasswordChangeScene = _d(require('./PasswordChangeScene'))
+const ProfileEditScene = _d(require('./ProfileEditScene'))
+const QuitScene = _d(require('./QuitScene'))
+const RecoverResetScene = _d(require('./RecoverResetScene'))
+const RecoverSendScene = _d(require('./RecoverSendScene'))
+const Scene = _d(require('./Scene'))
+const SignAskScene = _d(require('./SignAskScene'))
+const SignInScene = _d(require('./SignInScene'))
+const SignOutScene = _d(require('./SignOutScene'))
+const SignUpScene = _d(require('./SignUpScene'))
+const ToastScene = _d(require('./ToastScene'))
+const UserCheckScene = _d(require('./UserCheckScene'))
+const UserCreateScene = _d(require('./UserCreateScene'))
+const UserDestroyScene = _d(require('./UserDestroyScene'))
+const UserListScene = _d(require('./UserListScene'))
+const UserPasswordScene = _d(require('./UserPasswordScene'))
+const UserSearchScene = _d(require('./UserSearchScene'))
+const VerifyConfirmScene = _d(require('./VerifyConfirmScene'))
+const VerifyNeedScene = _d(require('./VerifyNeedScene'))
+const VerifySendScene = _d(require('./VerifySendScene'))
 
 module.exports = {
   AccountScene,
@@ -51,29 +53,5 @@ module.exports = {
   UserSearchScene,
   VerifyConfirmScene,
   VerifyNeedScene,
-  VerifySendScene
+  VerifySendScene,
 }
-
-exports.AccountScene = AccountScene
-exports.AppScene = AppScene
-exports.CautionDisconnectedScene = CautionDisconnectedScene
-exports.PasswordChangeScene = PasswordChangeScene
-exports.ProfileEditScene = ProfileEditScene
-exports.QuitScene = QuitScene
-exports.RecoverResetScene = RecoverResetScene
-exports.RecoverSendScene = RecoverSendScene
-exports.Scene = Scene
-exports.SignAskScene = SignAskScene
-exports.SignInScene = SignInScene
-exports.SignOutScene = SignOutScene
-exports.SignUpScene = SignUpScene
-exports.ToastScene = ToastScene
-exports.UserCheckScene = UserCheckScene
-exports.UserCreateScene = UserCreateScene
-exports.UserDestroyScene = UserDestroyScene
-exports.UserListScene = UserListScene
-exports.UserPasswordScene = UserPasswordScene
-exports.UserSearchScene = UserSearchScene
-exports.VerifyConfirmScene = VerifyConfirmScene
-exports.VerifyNeedScene = VerifyNeedScene
-exports.VerifySendScene = VerifySendScene

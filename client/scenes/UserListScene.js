@@ -5,15 +5,15 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy, withSort, withPage, withReady, withFilter, withHistory,} =  require('the-scene-mixins/shim')
 
-const UserListSceneBase = cn.compose(
-  cn.withBusy,
-  cn.withSort,
-  cn.withPage,
-  cn.withReady,
-  cn.withFilter,
-  cn.withHistory
+const UserListSceneBase = compose(
+  withBusy,
+  withSort,
+  withPage,
+  withReady,
+  withFilter,
+  withHistory
 )(Scene)
 
 /** @lends UserListScene */

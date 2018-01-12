@@ -200,7 +200,10 @@ module.exports = pon({
   'prod:db': [
     'env:prod', 'db'
   ],
-  'debug:server': ['env:debug', fork('bin/app.js')],
+  'debug:server': ['env:debug', fork('bin/app.mjs', {
+    // TODO Remove experimental flag when node 10 release
+    env: {NODE_OPTIONS: '--experimental-modules'}
+  })],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',

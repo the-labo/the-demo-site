@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const SceneMapping = require('./SceneMapping')
+const _d = (m) => 'default' in m ? m.default : m
+
+const SceneMapping = _d(require('./SceneMapping'))
 
 module.exports = {
-  SceneMapping
+  SceneMapping,
 }
-
-exports.SceneMapping = SceneMapping

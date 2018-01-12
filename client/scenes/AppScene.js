@@ -6,12 +6,12 @@
 
 const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy, withQuery, withLocation} =  require('the-scene-mixins/shim')
 
-const AppSceneBase = cn.compose(
-  cn.withBusy,
-  cn.withQuery,
-  cn.withLocation
+const AppSceneBase = compose(
+  withBusy,
+  withQuery,
+  withLocation
 )(Scene)
 
 /** @lends AppScene */

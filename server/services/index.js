@@ -4,12 +4,14 @@
  */
 'use strict'
 
-const AccountService = require('./AccountService')
-const QuitService = require('./QuitService')
-const RecoverService = require('./RecoverService')
-const SignService = require('./SignService')
-const UserService = require('./UserService')
-const VerifyService = require('./VerifyService')
+const _d = (m) => 'default' in m ? m.default : m
+
+const AccountService = _d(require('./AccountService'))
+const QuitService = _d(require('./QuitService'))
+const RecoverService = _d(require('./RecoverService'))
+const SignService = _d(require('./SignService'))
+const UserService = _d(require('./UserService'))
+const VerifyService = _d(require('./VerifyService'))
 
 module.exports = {
   AccountService,
@@ -17,12 +19,5 @@ module.exports = {
   RecoverService,
   SignService,
   UserService,
-  VerifyService
+  VerifyService,
 }
-
-exports.AccountService = AccountService
-exports.QuitService = QuitService
-exports.RecoverService = RecoverService
-exports.SignService = SignService
-exports.UserService = UserService
-exports.VerifyService = VerifyService

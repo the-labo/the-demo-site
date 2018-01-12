@@ -4,14 +4,15 @@
  */
 'use strict'
 
-const cn = require('./concerns')
 const Ctrl = require('./Ctrl')
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth, withAdmin} = require('./concerns')
 
 /** @lends UserCtrl */
-const UserCtrl = cn.compose(
-  cn.withDebug,
-  cn.withAuth,
-  cn.withAdmin
+const UserCtrl = compose(
+  withDebug,
+  withAuth,
+  withAdmin
 )(
   class UserCtrlBase extends Ctrl {
     async list ({filter, sort, page} = {}) {

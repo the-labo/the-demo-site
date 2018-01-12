@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const org = require('./org')
+const _d = (m) => 'default' in m ? m.default : m
+
+const org = _d(require('./org'))
 
 module.exports = {
-  org
+  org,
 }
-
-exports.org = org

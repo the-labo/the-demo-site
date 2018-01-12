@@ -5,7 +5,8 @@ const {dir} = require('the-templates')
 module.exports = dir({
   dirname: __dirname,
   name: 'layouts',
-  description: 'Layout Components'
+  description: 'Layout Components',
+  ext: '.jsx',
 })
 
 if (!module.parent) {

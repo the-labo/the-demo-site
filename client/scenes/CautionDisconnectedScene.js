@@ -5,11 +5,11 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy, withLocation} =  require('the-scene-mixins/shim')
 
-const CautionDisconnectedSceneBase = cn.compose(
-  cn.withBusy,
-  cn.withLocation
+const CautionDisconnectedSceneBase = compose(
+  withBusy,
+  withLocation
 )(Scene)
 
 /** @lends CautionDisconnectedScene */

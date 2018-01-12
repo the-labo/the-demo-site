@@ -1,13 +1,13 @@
 'use strict'
 
-const { dir } = require('the-templates')
+const {dir} = require('the-templates')
 
 module.exports = dir.recursive({
   dirname: __dirname,
   name: 'views',
-  description: 'View components'
+  description: 'View components',
+  ext: '.jsx',
 })
-
 
 if (!module.parent) {
   require('coz').render(__filename)

@@ -5,12 +5,14 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth} = require('./concerns')
 
 /** @lends AccountCtrl */
-const AccountCtrl = cn.compose(
-  cn.withDebug,
-  cn.withAuth
+const AccountCtrl = compose(
+  withDebug,
+  withAuth
 )(
   class AccountCtrlBase extends Ctrl {
 

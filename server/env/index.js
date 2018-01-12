@@ -1,6 +1,6 @@
 'use strict'
 
-const theEnv = require('the-env')
+const theEnv = require('the-env').default
 const Local = require('../../Local')
 
 const config = {
@@ -15,7 +15,3 @@ const vars = {Local}
 const env = theEnv(config, {vars}).forEnv()
 module.exports = env
 
-if (!module.parent) {
-  const {inspect} = require('util')
-  console.log(inspect(env))
-}

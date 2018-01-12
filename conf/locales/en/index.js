@@ -4,23 +4,25 @@
  */
 'use strict'
 
-const alt = require('./alt')
-const app = require('./app')
-const buttons = require('./buttons')
-const captions = require('./captions')
-const checks = require('./checks')
-const errors = require('./errors')
-const labels = require('./labels')
-const leads = require('./leads')
-const mail = require('./mail')
-const messages = require('./messages')
-const org = require('./org')
-const placeholders = require('./placeholders')
-const roleCodes = require('./roleCodes')
-const tabs = require('./tabs')
-const titles = require('./titles')
-const toasts = require('./toasts')
-const warnings = require('./warnings')
+const _d = (m) => 'default' in m ? m.default : m
+
+const alt = _d(require('./alt'))
+const app = _d(require('./app'))
+const buttons = _d(require('./buttons'))
+const captions = _d(require('./captions'))
+const checks = _d(require('./checks'))
+const errors = _d(require('./errors'))
+const labels = _d(require('./labels'))
+const leads = _d(require('./leads'))
+const mail = _d(require('./mail'))
+const messages = _d(require('./messages'))
+const org = _d(require('./org'))
+const placeholders = _d(require('./placeholders'))
+const roleCodes = _d(require('./roleCodes'))
+const tabs = _d(require('./tabs'))
+const titles = _d(require('./titles'))
+const toasts = _d(require('./toasts'))
+const warnings = _d(require('./warnings'))
 
 module.exports = {
   alt,
@@ -39,23 +41,5 @@ module.exports = {
   tabs,
   titles,
   toasts,
-  warnings
+  warnings,
 }
-
-exports.alt = alt
-exports.app = app
-exports.buttons = buttons
-exports.captions = captions
-exports.checks = checks
-exports.errors = errors
-exports.labels = labels
-exports.leads = leads
-exports.mail = mail
-exports.messages = messages
-exports.org = org
-exports.placeholders = placeholders
-exports.roleCodes = roleCodes
-exports.tabs = tabs
-exports.titles = titles
-exports.toasts = toasts
-exports.warnings = warnings

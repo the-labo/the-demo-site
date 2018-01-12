@@ -5,11 +5,11 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy, withEntry} =  require('the-scene-mixins/shim')
 
-const UserCreateSceneBase = cn.compose(
-  cn.withBusy,
-  cn.withEntry
+const UserCreateSceneBase = compose(
+  withBusy,
+  withEntry,
 )(Scene)
 
 /** @lends UserCreateScene */

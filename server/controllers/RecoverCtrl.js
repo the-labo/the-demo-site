@@ -5,14 +5,15 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth, withAlias} = require('./concerns')
 const {Urls, Lifetimes} = require('@self/conf')
 
 /** @lends RecoverCtrl */
-const RecoverCtrl = cn.compose(
-  cn.withAuth,
-  cn.withDebug,
-  cn.withAlias
+const RecoverCtrl = compose(
+  withAuth,
+  withDebug,
+  withAlias
 )(
   class RecoverCtrlBase extends Ctrl {
     async send (email) {

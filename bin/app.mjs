@@ -5,20 +5,19 @@
  */
 'use strict'
 
-require('the-polyfill')()
+import { server } from '../server'
 
-const {server} = require('../server')
-const {isProduction} = require('the-check')
-const {APP_PORT, NGINX_PUBLISHED_PORT} = require('../Local')
+import { isProduction } from 'the-check'
+import Local from '../Local'
 
-;(async () => {
-  const {port = APP_PORT} = process.env
+(async () => {
+  const {port = Local.APP_PORT} = process.env
 
   function onListen () {
     console.log(`
   =============================
   
-  Access to http://localhost:${NGINX_PUBLISHED_PORT} in your browser
+  Access to http://localhost:${Local.NGINX_PUBLISHED_PORT} in your browser
   
   =============================
   `)

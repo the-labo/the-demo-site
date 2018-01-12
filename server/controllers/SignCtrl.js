@@ -5,13 +5,14 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth} = require('./concerns')
 const {RoleCodes} = require('@self/conf')
 
 /** @lends SignCtrl */
-const SignCtrl = cn.compose(
-  cn.withDebug,
-  cn.withAuth
+const SignCtrl = compose(
+  withDebug,
+  withAuth
 )(
   class SignCtrlBase extends Ctrl {
     async signUp (name, password, options = {}) {

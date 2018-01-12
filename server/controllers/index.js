@@ -4,15 +4,17 @@
  */
 'use strict'
 
-const AccountCtrl = require('./AccountCtrl')
-const AdminCtrl = require('./AdminCtrl')
-const AppCtrl = require('./AppCtrl')
-const Ctrl = require('./Ctrl')
-const QuitCtrl = require('./QuitCtrl')
-const RecoverCtrl = require('./RecoverCtrl')
-const SignCtrl = require('./SignCtrl')
-const UserCtrl = require('./UserCtrl')
-const VerifyCtrl = require('./VerifyCtrl')
+const _d = (m) => 'default' in m ? m.default : m
+
+const AccountCtrl = _d(require('./AccountCtrl'))
+const AdminCtrl = _d(require('./AdminCtrl'))
+const AppCtrl = _d(require('./AppCtrl'))
+const Ctrl = _d(require('./Ctrl'))
+const QuitCtrl = _d(require('./QuitCtrl'))
+const RecoverCtrl = _d(require('./RecoverCtrl'))
+const SignCtrl = _d(require('./SignCtrl'))
+const UserCtrl = _d(require('./UserCtrl'))
+const VerifyCtrl = _d(require('./VerifyCtrl'))
 
 module.exports = {
   AccountCtrl,
@@ -23,15 +25,5 @@ module.exports = {
   RecoverCtrl,
   SignCtrl,
   UserCtrl,
-  VerifyCtrl
+  VerifyCtrl,
 }
-
-exports.AccountCtrl = AccountCtrl
-exports.AdminCtrl = AdminCtrl
-exports.AppCtrl = AppCtrl
-exports.Ctrl = Ctrl
-exports.QuitCtrl = QuitCtrl
-exports.RecoverCtrl = RecoverCtrl
-exports.SignCtrl = SignCtrl
-exports.UserCtrl = UserCtrl
-exports.VerifyCtrl = VerifyCtrl

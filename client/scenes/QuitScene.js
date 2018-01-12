@@ -5,12 +5,12 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withBusy, withEntry,} =  require('the-scene-mixins/shim')
 const {Urls} = require('@self/conf')
 
-const QuitSceneBase = cn.compose(
-  cn.withEntry,
-  cn.withBusy,
+const QuitSceneBase = compose(
+  withEntry,
+  withBusy,
 )(Scene)
 
 /** @lends QuitScene */

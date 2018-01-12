@@ -5,12 +5,12 @@
 'use strict'
 
 const Scene = require('./Scene')
-const cn = require('./concerns')
+const {compose, withEntry, withBusy, withFailure} =  require('the-scene-mixins/shim')
 
-const RecoverSendSceneBase = cn.compose(
-  cn.withEntry,
-  cn.withBusy,
-  cn.withFailure
+const RecoverSendSceneBase = compose(
+  withEntry,
+  withBusy,
+  withFailure
 )(Scene)
 
 /** @lends RecoverSendScene */

@@ -16,7 +16,7 @@ class AppCtrl extends Ctrl {
 
   async setPreference (name, value) {
     const {preferences = {}} = this.session
-    this.session.preferences = Object.assign({}, preferences, {[name]: value})
+    this.session.preferences = {...preferences, [name]: value}
   }
 }
 

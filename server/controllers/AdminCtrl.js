@@ -5,12 +5,13 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+const {compose, withDebug} = require('the-controller-mixins')
+const {withAuth} = require('./concerns')
 
 /** @lends AdminCtrl */
-const AdminCtrl = cn.compose(
-  cn.withAuth,
-  cn.withDebug
+const AdminCtrl = compose(
+  withAuth,
+  withDebug
 )(
   class AdminCtrlBase extends Ctrl {
     async confirm (password) {

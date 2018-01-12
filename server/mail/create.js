@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const theMail = require('the-mail')
+const theMail = require('the-mail').default
 const env = require('../env')
 const Templates = require('./Templates')
 const {nameOfUser, emailOfUser, localeDate} = require('./helpers')

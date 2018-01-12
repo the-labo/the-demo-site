@@ -5,16 +5,25 @@
  */
 'use strict'
 
-const theServer = require('the-server')
-const {Html} = require('@self/client/shim/ui')
-const {createClient, createStore, createHandle} = require('@self/client/shim')
-const theSeal = require('the-seal')
-const endpoints = require('../endpoints')
-const pkg = require('../../package.json')
-const {servicesProxy} = require('the-service-base')
-const env = require('../env')
-const {ControllerMapping, ServiceMapping} = require('../mappings')
-const {isProduction} = require('the-check')
+import theServer from 'the-server'
+import theSeal from 'the-seal'
+
+import client from '@self/client/shim'
+
+const {
+  createClient,
+  createStore,
+  createHandle,
+  ui: {Html}
+} = client
+import endpoints from '../endpoints'
+import pkg from '../../package.json'
+import { servicesProxy } from 'the-service-base'
+import env from '../env'
+import mappings from '../mappings'
+import { isProduction } from 'the-check'
+
+const {ControllerMapping, ServiceMapping} = mappings
 
 /** @lends create */
 function create (config) {
@@ -58,4 +67,4 @@ function create (config) {
   return server
 }
 
-module.exports = create
+export default create

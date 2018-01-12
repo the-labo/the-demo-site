@@ -6,11 +6,11 @@
 
 const Scene = require('./Scene')
 const {clone} = require('asobj')
-const cn = require('./concerns')
+const {compose, withBusy, withEntry} =  require('the-scene-mixins/shim')
 
-const ProfileEditSceneBase = cn.compose(
-  cn.withBusy,
-  cn.withEntry
+const ProfileEditSceneBase = compose(
+  withBusy,
+  withEntry
 )(Scene)
 
 /** @lends ProfileEditScene */

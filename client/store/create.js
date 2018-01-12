@@ -5,8 +5,10 @@
  */
 'use strict'
 
-const theStore = require('the-store')
-const theScope = require('the-scope')
+const theStore = require('the-store').default
+const {
+  ObjectScope, ArrayScope, BooleanScope, StringScope, ValueScope, NumberScope,
+} = require('the-scope/shim/scopes')
 
 const scopes = require('./scopes')
 
@@ -19,12 +21,12 @@ module.exports = function create () {
 
   store.loadFromDefs(scopes, {
     types: {
-      'OBJ': theScope.ObjectScope,
-      'ARR': theScope.ArrayScope,
-      'BOOL': theScope.BooleanScope,
-      'STR': theScope.StringScope,
-      'VAL': theScope.ValueScope,
-      'NUM': theScope.NumberScope
+      'OBJ': ObjectScope,
+      'ARR': ArrayScope,
+      'BOOL': BooleanScope,
+      'STR': StringScope,
+      'VAL': ValueScope,
+      'NUM': NumberScope
     }
   })
 

@@ -5,7 +5,8 @@ const {dir} = require('the-templates')
 module.exports = dir({
   dirname: __dirname,
   name: 'wrappers',
-  description: 'HOC Wrappers'
+  description: 'HOC Wrappers',
+  ext: '.jsx',
 })
 
 if (!module.parent) {

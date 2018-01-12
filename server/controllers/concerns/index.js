@@ -4,22 +4,14 @@
  */
 'use strict'
 
-const compose = require('./compose')
-const withAdmin = require('./withAdmin')
-const withAlias = require('./withAlias')
-const withAuth = require('./withAuth')
-const withDebug = require('./withDebug')
+const _d = (m) => 'default' in m ? m.default : m
+
+const withAdmin = _d(require('./withAdmin'))
+const withAlias = _d(require('./withAlias'))
+const withAuth = _d(require('./withAuth'))
 
 module.exports = {
-  compose,
   withAdmin,
   withAlias,
   withAuth,
-  withDebug
 }
-
-exports.compose = compose
-exports.withAdmin = withAdmin
-exports.withAlias = withAlias
-exports.withAuth = withAuth
-exports.withDebug = withDebug
