@@ -53,12 +53,7 @@ function Html ({appScope, renderingContext}) {
             <App {...appProps} {...{client, store, handle}}/>
           </TheRouter.Static>
         </div>
-        {
-          js.map((src) => (
-            <script key={src} src={src} defer
-            />
-          ))
-        }
+        {js.map((src) => (<script key={src} src={src} defer/>))}
       </TheBody>
     </TheHtml>
   )

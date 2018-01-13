@@ -178,7 +178,7 @@ module.exports = pon({
   'prod:js': ccjs([
     `public${Urls.JS_EXTERNAL_URL}`,
     `public${Urls.JS_BUNDLE_URL}`
-  ], `public${Urls.PRODUCTION_JS_URL}`, {memory: '512m'}),
+  ], `public${Urls.PRODUCTION_JS_URL}`),
   'prod:css': css.minify([
     `public${Urls.CSS_THEME_URL}`,
     `public${Urls.CSS_FONT_URL}`,
@@ -247,6 +247,6 @@ module.exports = pon({
   b: 'build',
   w: 'watch',
   d: 'debug',
-  p: 'production'
+  p: 'prod'
 
 })
