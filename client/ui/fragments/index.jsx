@@ -11,11 +11,6 @@ import Pager from './pager/Pager'
 export {
   UserImage,
   UserLabel,
-  Pager
+  Pager,
 }
 
-export default {
-    UserImage,
-    UserLabel,
-    Pager
-}

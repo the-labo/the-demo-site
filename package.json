@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.19.0",
+  "version": "7.20.0",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/the-labo/the-demo-site#readme",
   "dependencies": {
+    "@std/esm": "^0.19.2",
     "ape-tmpl": "^6.0.0",
     "asleep": "^1.0.3",
     "asobj": "^2.0.1",

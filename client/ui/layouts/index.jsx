@@ -13,12 +13,6 @@ export {
   Footer,
   Header,
   Main,
-  Toasts
+  Toasts,
 }
 
-export default {
-    Footer,
-    Header,
-    Main,
-    Toasts
-}

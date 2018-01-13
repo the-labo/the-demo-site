@@ -395,7 +395,7 @@
 .the-dropdown-menu.the-dropdown-menu-open .the-dropdown-menu-inner { border-color:#CCC;opacity:1;box-shadow:2px 2px 4px rgba(0,0,0,0.33); }
 .the-dropdown-menu.the-dropdown-menu-righted {  }
 .the-dropdown-menu.the-dropdown-menu-righted .the-dropdown-menu-inner { left:auto;right:0px; }
-.the-root {  }
+.the-root { min-height:100vh;display:flex;flex-direction:column;align-items:stretch; }
 .the-section { margin:16px 0;display:block;font-weight:normal;background-color:#FFF;position:relative; }
 .the-section .the-section-header { border-bottom:#AAA;font-weight:normal;margin:0;position:relative;box-sizing:border-box;padding:0 8px 8px;display:flex;justify-content:space-between;align-items:center; }
 .the-section .the-section-header.the-section-header-lined { font-size:14px;border-bottom:1px solid #F0F0F0;line-height:16px;padding:0 8px;margin-bottom:4px;color:#999; }

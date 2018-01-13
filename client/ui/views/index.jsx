@@ -39,25 +39,6 @@ export {
   SignInView,
   SignOutView,
   SignUpView,
-  VerifyConfirmView
+  VerifyConfirmView,
 }
 
-export default {
-    AboutPrivacyPolicyView,
-    AboutTermsOfUseView,
-    AdminTopView,
-    ErrorNotfoundView,
-    HomeView,
-    UserManageView,
-    MypageView,
-    PasswordChangeView,
-    ProfileEditView,
-    QuitView,
-    RecoverResetView,
-    RecoverSendView,
-    SignAskView,
-    SignInView,
-    SignOutView,
-    SignUpView,
-    VerifyConfirmView
-}

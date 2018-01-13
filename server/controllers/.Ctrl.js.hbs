@@ -5,14 +5,14 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const cn = require('./concerns')
+const {compose, withDebug} = require('the-controller-mixins')
 
 /** @lends {{name}} */
-const {{name}} = compose(
+const {{name}}Base = compose(
   withDebug
-)(
-  class {{name}}Base extends Ctrl {
-  }
-)
+)(Ctrl)
+
+class {{name}} extends {{name}}Base {
+}
 
 module.exports = {{name}}

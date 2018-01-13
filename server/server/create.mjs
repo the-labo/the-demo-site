@@ -9,6 +9,12 @@ import theServer from 'the-server'
 import theSeal from 'the-seal'
 
 import client from '@self/client/shim'
+import endpoints from '../endpoints'
+import pkg from '../../package.json'
+import { servicesProxy } from 'the-service-base'
+import env from '../env'
+import mappings from '../mappings'
+import { isProduction } from 'the-check'
 
 const {
   createClient,
@@ -16,12 +22,6 @@ const {
   createHandle,
   ui: {Html}
 } = client
-import endpoints from '../endpoints'
-import pkg from '../../package.json'
-import { servicesProxy } from 'the-service-base'
-import env from '../env'
-import mappings from '../mappings'
-import { isProduction } from 'the-check'
 
 const {ControllerMapping, ServiceMapping} = mappings
 

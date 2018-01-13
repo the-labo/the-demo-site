@@ -5,18 +5,21 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
+const {compose} = require('the-controller-mixins')
+const {withPreference} = require('./concerns')
+
+const AppCtrlBase = compose(
+  withPreference
+)(Ctrl)
 
 /** @lends AppCtrl */
-class AppCtrl extends Ctrl {
-
-  async getPreference (name) {
-    const {preferences = {}} = this.session
-    return preferences[name]
+class AppCtrl extends AppCtrlBase {
+  async get (name) {
+    await this._getSessionPreference(name)
   }
 
-  async setPreference (name, value) {
-    const {preferences = {}} = this.session
-    this.session.preferences = {...preferences, [name]: value}
+  async set (name, value) {
+    await this._setSessionPreference(name, value)
   }
 }
 

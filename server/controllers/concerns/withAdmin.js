@@ -11,13 +11,11 @@ const {RoleCodes} = require('@self/conf')
 function withAdmin (Class) {
   class WithAdmin extends Class {
     async _isAdmin () {
-      
       const user = await this._fetchAuthorizedUser()
       return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 
     async _assertAsAdmin () {
-      
       const isAdmin = await this._isAdmin()
       if (!isAdmin) {
         throw new TheForbiddenError('Needs to be an admin!')
@@ -25,12 +23,10 @@ function withAdmin (Class) {
     }
 
     async _setConfirmedAsAdmin (confirmedAsAdmin) {
-      
       this.session.confirmedAsAdmin = confirmedAsAdmin
     }
 
     async _isConfirmedAsAdmin () {
-      
       return this.session.confirmedAsAdmin
     }
   }

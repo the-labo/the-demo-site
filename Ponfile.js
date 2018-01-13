@@ -11,7 +11,7 @@ const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {
   fs: {write, mkdir, symlink, chmod, del, cp, concat},
   mocha,
-  command: {fork, spawn},
+  command: {fork, spawn: {git}},
   coz,
   fmtjson,
   env
@@ -20,25 +20,13 @@ const {mysql, redis, nginx} = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
-const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
+const db = require('pon-task-db')
 const md = require('pon-task-md')
 const {isMacOS} = require('the-check')
+const Local = require('./Local')
+
 const {envify} = browser.transforms
-const {
-  APP_PORT,
-  MYSQL_CONTAINER_NAME,
-  MYSQL_PUBLISHED_PORT,
-  REDIS_CONTAINER_NAME,
-  REDIS_PUBLISHED_PORT,
-  NGINX_CONTAINER_NAME,
-  NGINX_PUBLISHED_PORT,
-  APP_PROCESS_NAME,
-  BACKUP_PROCESS_NAME,
-  DUMP_SCHEDULE,
-  DUMP_ROTATION,
-  setting,
-  secret
-} = require('./Local')
+const {setting, secret} = Local
 
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
@@ -111,13 +99,13 @@ module.exports = pon({
   'unless:prod': env.notFor('production'),
   'maint:on': write('public/status/maintenance'),
   'maint:off': del('public/status/maintenance'),
-  'db:setup': setup(createDB),
+  'db:setup': db.setup(createDB),
   'db:cli': () => createDB().cli(),
-  'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
-  'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
-  'db:drop': ['unless:prod', drop(createDB)],
-  'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
-  'db:load': load.ask(createDB),
+  'db:seed': db.seed(createDB, 'server/db/seeds/:env/*.seed.js'),
+  'db:migrate': db.migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
+  'db:drop': ['unless:prod', db.drop(createDB)],
+  'db:dump': db.dump(createDB, 'var/backup/dump', {max: Local.DUMP_ROTATION}),
+  'db:load': db.load.ask(createDB),
   'db:reset': ['unless:prod', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
@@ -167,7 +155,7 @@ module.exports = pon({
     })
   ),
   'assets:install': () => theAssets().installTo('assets', {copy: true}),
-  'assets:compile': md('assets/markdowns', 'assets/html/partials', {
+  'assets:markdown': md('assets/markdowns', 'public/partials', {
     vars: require('./conf/locales')
   }),
   'image:generate': icon('assets/icons/favicon.png', {
@@ -207,28 +195,28 @@ module.exports = pon({
     env: {NODE_OPTIONS: '--experimental-modules'}
   })],
   'debug:watch': ['env:debug', 'ui:*/watch'],
-  'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
+  'docker:mysql': mysql(Local.MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',
-    publish: `${MYSQL_PUBLISHED_PORT}:3306`
+    publish: `${Local.MYSQL_PUBLISHED_PORT}:3306`
   }),
-  'docker:redis': redis(REDIS_CONTAINER_NAME, {
+  'docker:redis': redis(Local.REDIS_CONTAINER_NAME, {
     image: 'redis:4',
-    publish: `${REDIS_PUBLISHED_PORT}:6379`
+    publish: `${Local.REDIS_PUBLISHED_PORT}:6379`
   }),
-  'docker:nginx': nginx(NGINX_CONTAINER_NAME, {
+  'docker:nginx': nginx(Local.NGINX_CONTAINER_NAME, {
     image: 'nginx:1.13',
-    httpPublishPort: NGINX_PUBLISHED_PORT,
+    httpPublishPort: Local.NGINX_PUBLISHED_PORT,
     template: 'misc/docker/nginx.conf.template',
     env: {
       HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT
+      APP_PORT: Local.APP_PORT
     }
   }),
   'secret:encrypt': () => secret.encrypt(),
   'secret:decrypt': () => secret.decrypt(),
-  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
-  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
-  'deploy:pull': spawn.git('pull'),
+  'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME}),
+  'pm2:backup:dump': pm2.pon('db:dump', {name: `${Local.BACKUP_PROCESS_NAME}:dump`, cron: Local.DUMP_SCHEDULE}),
+  'git:catchup': [git('stash'), git('pull')],
   // ----------------
   // Main Tasks
   // ----------------
@@ -250,6 +238,7 @@ module.exports = pon({
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
   setting: () => setting.ask(),
+  deploy: ['maint:on', 'stop', 'git:catchup', 'prod', 'maint:off'],
   // ----------------
   // Aliases
   // ----------------

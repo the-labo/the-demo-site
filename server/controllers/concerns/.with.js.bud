@@ -1,0 +1,23 @@
+/**
+ * Bud file for Ctrls
+ */
+'use strict'
+
+const path = require('path')
+
+module.exports = [
+  'withPreference'
+].map((name) => ({
+  force: false,
+  mode: '644',
+  mkdirp: true,
+  path: `${name}.js`,
+  data: {
+    name: path.basename(name)
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+

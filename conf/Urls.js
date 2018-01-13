@@ -22,15 +22,14 @@ module.exports = Object.freeze(
     SIGNUP_URL: '/sign/signup',
     SIGNASK_URL: '/sign/please',
     SIGNOUT_URL: '/sign/signout',
-    QUIT_URL: '/quit',
 
     ACCOUNT_MYPAGE_URL: '/account/mypage',
     ACCOUNT_PASSWORD_URL: '/account/password',
     ACCOUNT_PROFILE_URL: '/account/profile',
-
-    VERIFY_CONFIRM_URL: '/verify/confirm',
-    RECOVER_SEND_URL: '/recover/send',
-    RECOVER_RESET_URL: '/recover/reset',
+    QUIT_URL: '/account/quit',
+    VERIFY_CONFIRM_URL: 'account/verify/confirm',
+    RECOVER_SEND_URL: '/account/recover/send',
+    RECOVER_RESET_URL: '/account/recover/reset',
 
     ADMIN_URL: '/admin',
     USER_MANAGE_URL: '/admin/users',
