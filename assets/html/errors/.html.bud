@@ -28,7 +28,7 @@ module.exports = [
     title,
     texts,
     pkg,
-    colo: Styles.DOMINANT_COLOR
+    color: Styles.DOMINANT_COLOR
   }
 }))
 

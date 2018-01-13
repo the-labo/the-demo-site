@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>[the-demo-site]We are under maintenance</title>
-    <meta class="the-head-viewport" name="viewport" content="width=device-width,initial-scale=1.0">
-    <style>
-        body {
-            padding: 50px;
-            color: #555;
-        }
+  <meta charset="UTF-8">
+  <title>We are under maintenance - the-demo-site</title>
+  <meta class="the-head-viewport" name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#3A8">
+  <style>
+    html {
+      background: #F8F8F8;
+      font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+    }
 
-        main {
-            max-width: 960px;
-            margin: 0 auto;
-        }
+    body {
+      padding: 50px;
+      color: #555;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      box-sizing: border-box;
+      margin: 0;
+    }
 
-        h1 {
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px;
+      background: white;
+      border: 1px solid #F0F0F0;
+      border-radius: 8px;
+    }
 
-        }
-    </style>
+    h1 {
+      margin: 8px 0 16px;
+    }
+
+    hr {
+      margin: 24px 0;
+      border-color: #DDD;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+    }
+
+    a {
+      color: #3A8;
+    }
+
+    .btn {
+      color: #3A8;
+      text-decoration: none;
+      padding: 4px 8px;
+      display: inline-block;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
+
+    footer {
+      padding: 8px;
+      color: #AAA;
+      font-size: smaller;
+      display: block;
+      width: 100%;
+      text-align: right;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
 <main>
-    <h1>We are under maintenance</h1>
-        <p>We will come back later. Please wait and try again later</p>
-        <p>メンテナンス中です。時間を置いて再度お試しください</p>
+  <h1>We are under maintenance</h1>
+    <p>We will come back later. Please wait and try again later</p>
+    <p>メンテナンス中です。時間を置いて再度お試しください</p>
 
-    <hr>
+  <hr>
 
-    <div>
-        <a href="/">Return to Top</a>
-    </div>
+  <div class="row">
+    <span></span>
+    <a href="/" class="btn">Return to Top</a>
+  </div>
 </main>
+<footer>
+  the-demo-site
+</footer>
 </body>
 </html>

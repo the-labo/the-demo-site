@@ -11,7 +11,7 @@ const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {
   fs: {write, mkdir, symlink, chmod, del, cp, concat},
   mocha,
-  command: {fork},
+  command: {fork, spawn},
   coz,
   fmtjson,
   env
@@ -228,6 +228,7 @@ module.exports = pon({
   'secret:decrypt': () => secret.decrypt(),
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
+  'deploy:pull': spawn.git('pull'),
   // ----------------
   // Main Tasks
   // ----------------
