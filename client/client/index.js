@@ -2,11 +2,5 @@
 
 const create = require('./create')
 const handle = require('../handle')
-const singleton = create.for('singleton', {
-  handle
-})
-Object.assign(singleton, {
-  create
-})
-
+const singleton = create.for('singleton', {handle})
 module.exports = singleton

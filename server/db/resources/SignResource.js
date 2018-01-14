@@ -10,6 +10,4 @@ const {TheSignResource} = require('the-site-resources')
 class SignResource extends TheSignResource {
 }
 
-Object.assign(SignResource, {})
-
 module.exports = SignResource

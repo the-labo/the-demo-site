@@ -5,33 +5,28 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy, withEntry, withFailure,} =  require('the-scene-mixins/shim')
+const {forScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins/shim')
 
-const VerifyConfirmSceneBase = compose(
-  withBusy,
-  withEntry,
-  withFailure
-)(Scene)
+@withBusy
+@withEntry
+@withFailure
+@forScope('verifyConfirm')
+class VerifyConfirmSceneBase extends Scene {}
 
 /** @lends VerifyConfirmScene */
 class VerifyConfirmScene extends VerifyConfirmSceneBase {
-  get scope () {
-    return this.store.verifyConfirm
-  }
-
+  @withBusy.while
   async doVerify () {
     const {l} = this
     const verifyCtrl = await this.use('verifyCtrl')
-    await this.busyFor(async () => {
-      await this.processEntry(async ({seal, envelop}) =>
-        await verifyCtrl.verify({seal, envelop}).catch((e) =>
-          this.catchFailure(e, {
-            'ExpiredError': l('errors.VERIFY_EXPIRED_ERROR'),
-            default: l('errors.VERIFY_FAILED_ERROR')
-          })
-        )
+    await this.processEntry(async ({seal, envelop}) =>
+      await verifyCtrl.verify({seal, envelop}).catch((e) =>
+        this.catchFailure(e, {
+          'ExpiredError': l('errors.VERIFY_EXPIRED_ERROR'),
+          default: l('errors.VERIFY_FAILED_ERROR')
+        })
       )
-    })
+    )
   }
 }
 

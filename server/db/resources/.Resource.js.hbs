@@ -4,11 +4,13 @@
  */
 'use strict'
 
-const { Resource, DataTypes } = require('the-db')
-const { STRING, ENTITY } = DataTypes
+const {
+  Resource,
+  DataTypes: {STRING, ENTITY},
+} = require('the-db')
 
 /** @lends {{name}} */
-class {{name}} extends Resource {
+class {{name}} extends TheResource {
   static get policy () {
     return {
       name: {
@@ -29,7 +31,5 @@ class {{name}} extends Resource {
     return {{name}}Entity
   }
 }
-
-Object.assign({{name}}, {})
 
 module.exports = {{name}}

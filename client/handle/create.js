@@ -10,11 +10,7 @@ const {SceneMapping} = require('../mappings')
 
 /** @lends create */
 module.exports = function create () {
-  const handle = theHandle({})
-
-  for (const [name, Scene] of Object.entries(SceneMapping)) {
-    handle.load(Scene, name)
-  }
-
-  return handle
+  return theHandle({
+    scenes: SceneMapping
+  })
 }

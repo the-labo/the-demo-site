@@ -49,6 +49,7 @@ const Vars = Object.freeze(
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
 
     SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`),
+    SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
 
     SEAL_SECRET: secretFor(`seal@${__dirname}`)
   }

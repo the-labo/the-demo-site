@@ -6,19 +6,16 @@
 
 const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
-const {compose, withBusy, withQuery, withLocation} =  require('the-scene-mixins/shim')
+const {forScope, withBusy, withQuery, withLocation} = require('the-scene-mixins/shim')
 
-const AppSceneBase = compose(
-  withBusy,
-  withQuery,
-  withLocation
-)(Scene)
+@withBusy
+@withQuery
+@withLocation
+@forScope('app')
+class AppSceneBase extends Scene {}
 
 /** @lends AppScene */
 class AppScene extends AppSceneBase {
-  get scope () {
-    return this.store.app
-  }
 
   setLocation ({pathname, search}) {
     this.set({pathname})

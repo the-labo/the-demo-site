@@ -5,26 +5,21 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy, withEntry, withBack} =  require('the-scene-mixins/shim')
+const {forScope, withBusy, withEntry, withBack} = require('the-scene-mixins/shim')
 
-const SignUpSceneBase = compose(
-  withBusy,
-  withEntry,
-  withBack,
-)(Scene)
+@withBusy
+@withEntry
+@withBack
+@forScope('signUp')
+class SignUpSceneBase extends Scene {}
 
 /** @lends SignUpScene */
 class SignUpScene extends SignUpSceneBase {
-  get scope () {
-    return this.store.signUp
-  }
-
+  @withBusy.while
   async doSignUp () {
     const signCtrl = await this.use('signCtrl')
-    await this.busyFor(async () =>
-      await this.processEntry(({name, password, profile}) =>
-        signCtrl.signUp(name, password, {profile})
-      )
+    await this.processEntry(({name, password, profile}) =>
+      signCtrl.signUp(name, password, {profile})
     )
   }
 

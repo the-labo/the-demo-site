@@ -13,7 +13,6 @@ import { Urls } from '@self/conf'
 const debug = require('debug')('app:ui:onlySigned')
 
 function onlySigned (Component, options = {}) {
-
   return withHistory(
     withStore(
       class OnlySigned extends React.Component {
@@ -44,7 +43,6 @@ function onlySigned (Component, options = {}) {
             }
           }
         }
-
       }
     )
   )

@@ -5,18 +5,15 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy, withLocation} =  require('the-scene-mixins/shim')
+const {forScope, withBusy, withLocation} = require('the-scene-mixins/shim')
 
-const CautionDisconnectedSceneBase = compose(
-  withBusy,
-  withLocation
-)(Scene)
+@withBusy
+@withLocation
+@forScope('cautionDisconnected')
+class CautionDisconnectedSceneBase extends Scene {}
 
 /** @lends CautionDisconnectedScene */
 class CautionDisconnectedScene extends CautionDisconnectedSceneBase {
-  get scope () {
-    return this.store.cautionDisconnected
-  }
 
   async doReload () {
     this.set({busy: true})

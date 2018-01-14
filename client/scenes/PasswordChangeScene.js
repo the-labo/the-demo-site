@@ -5,25 +5,20 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy, withEntry} =  require('the-scene-mixins/shim')
+const {withBusy, withEntry, forScope} = require('the-scene-mixins/shim')
 
-const PasswordChangeSceneBase = compose(
-  withBusy,
-  withEntry
-)(Scene)
+@withEntry
+@withBusy
+@forScope('passwordChange')
+class PasswordChangeSceneBase extends Scene {}
 
 /** @lends PasswordChangeScene */
 class PasswordChangeScene extends PasswordChangeSceneBase {
-  get scope () {
-    return this.store.passwordChange
-  }
-
+  @withBusy.while
   async doSave () {
     const accountCtrl = await this.use('accountCtrl')
-    await this.busyFor(async () => {
-      await this.processEntry(({password}) =>
-        accountCtrl.updatePassword(password))
-    })
+    await this.processEntry(({password}) =>
+      accountCtrl.updatePassword(password))
   }
 }
 

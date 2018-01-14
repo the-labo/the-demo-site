@@ -11,6 +11,4 @@ class UserResource extends TheUserResource {
 
 }
 
-Object.assign(UserResource, {})
-
 module.exports = UserResource

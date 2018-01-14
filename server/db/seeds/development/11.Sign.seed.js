@@ -2,7 +2,7 @@
 
 const Users = require('./10.User.seed')
 
-const thePassword = require('the-password')
+const thePassword = require('the-password').default
 const {generateSalt, digest: digestPassword} = thePassword()
 
 module.exports = [

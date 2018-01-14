@@ -5,24 +5,19 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy} =  require('the-scene-mixins/shim')
+const {forScope, withBusy} = require('the-scene-mixins/shim')
 
-const UserDestroySceneBase = compose(
-  withBusy
-)(Scene)
+@withBusy
+@forScope('userDestroy')
+class UserDestroySceneBase extends Scene {}
 
 /** @lends UserDestroyScene */
 class UserDestroyScene extends UserDestroySceneBase {
-  get scope () {
-    return this.store.userDestroy
-  }
-
+  @withBusy.while
   async doDestroy () {
     const userCtrl = await this.use('userCtrl')
     const userIds = this.get('targets').map(({id}) => id)
-    await this.busyFor(async () => {
-      await userCtrl.destroy(...userIds)
-    })
+    await userCtrl.destroy(...userIds)
   }
 }
 

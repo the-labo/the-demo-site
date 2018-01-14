@@ -5,6 +5,7 @@
 
 const c = require('../controllers')
 const sv = require('../services')
+const h = require('../db/hooks')
 const r = require('../db/resources')
 
 const {camelcase} = require('stringcase')
@@ -29,6 +30,16 @@ module.exports = [
     requireAs: 'r',
     mapping: Object.keys(r).map((name) => ({
       instanceName: name.replace(/Resource$/, ''),
+      className: name
+    })),
+    cjs: true
+  },
+  {
+    name: 'HookMapping',
+    requirePath: '../db/hooks',
+    requireAs: 'h',
+    mapping: Object.keys(h).map((name) => ({
+      instanceName: name.replace(/Hook$/, ''),
       className: name
     })),
     cjs: true

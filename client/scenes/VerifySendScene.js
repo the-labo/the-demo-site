@@ -5,26 +5,21 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy} =  require('the-scene-mixins/shim')
+const {forScope, withBusy} = require('the-scene-mixins/shim')
 
-const VerifySendSceneBase = compose(
-  withBusy,
-)(Scene)
+@withBusy
+@forScope('verifySend')
+class VerifySendSceneBase extends Scene {}
 
 /** @lends VerifySendScene */
 class VerifySendScene extends VerifySendSceneBase {
-  get scope () {
-    return this.store.verifySend
-  }
-
+  @withBusy.while
   async doSend () {
     const verifyCtrl = await this.use('verifyCtrl')
-    await this.busyFor(async () => {
-      const needed = await verifyCtrl.needsVerify()
-      if (needed) {
-        await verifyCtrl.send()
-      }
-    })
+    const needed = await verifyCtrl.needsVerify()
+    if (needed) {
+      await verifyCtrl.send()
+    }
   }
 }
 

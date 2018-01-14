@@ -6,6 +6,7 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
+const HistoryTypes = _d(require('./HistoryTypes'))
 const Icons = _d(require('./Icons'))
 const Lifetimes = _d(require('./Lifetimes'))
 const RoleCodes = _d(require('./RoleCodes'))
@@ -15,6 +16,7 @@ const Urls = _d(require('./Urls'))
 const locales = _d(require('./locales'))
 
 module.exports = {
+  HistoryTypes,
   Icons,
   Lifetimes,
   RoleCodes,

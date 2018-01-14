@@ -87,18 +87,18 @@ export default asView(
      quitScene,
      accountScene
    }) => ({
+    onMount: () => quitScene.init(),
     onCancel: () => quitScene.goToCancel(),
     onConfirm: () => quitScene.set({confirm: true}),
     onConfirmBack: () => quitScene.set({confirm: false}),
     onExecute: async () => {
       await quitScene.doQuit()
       quitScene.set({confirm: false, done: true})
-      quitScene.goToDone()
       await accountScene.doSync()
     }
   }),
   {
     title: ({l}) => l('titles.QUIT_VIEW_TITLE'),
-    onlySigned: true
+    onlySigned: false
   }
 )

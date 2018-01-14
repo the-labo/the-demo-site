@@ -37,7 +37,7 @@ function withAuth (Class) {
 
     async _verifyAuthorisedPassword (password) {
       const {
-        resources: Sign
+        resources: {Sign}
       } = this
       const user = await this._fetchAuthorizedUser()
       const sign = await Sign.of(user)

@@ -5,17 +5,13 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy} =  require('the-scene-mixins/shim')
+const {forScope} =  require('the-scene-mixins/shim')
 
-const class {{name}}Base = compose(
-
-)(Scene)
+@forScope('{{scopePath}}')
+class {{name}}Base extends Scene {}
 
 /** @lends {{name}} */
-class {{name}} extends Scene {
-  get scope () {
-    return this.store.{{scopePath}}
-  }
+class {{name}} extends {{name}}Base {
 }
 
 module.exports = {{name}}

@@ -12,6 +12,4 @@ class AliasResource extends TheAliasResource {
   }
 }
 
-Object.assign(AliasResource, {})
-
 module.exports = AliasResource

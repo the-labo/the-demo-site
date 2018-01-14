@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {create} = require('../store')
+const store = require('../store')
 const {ok, equal} = require('assert')
 
 describe('store', () => {
@@ -15,12 +15,7 @@ describe('store', () => {
   })
 
   it('Store test', () => {
-    const store = create({})
     ok(store)
-
-    {
-      const {app} = store
-    }
   })
 })
 

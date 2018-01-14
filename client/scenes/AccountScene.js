@@ -5,24 +5,20 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy} = require('the-scene-mixins/shim')
+const {withBusy, forScope} = require('the-scene-mixins/shim')
 
-const AccountSceneBase = compose(
-  withBusy
-)(Scene)
+@withBusy
+@forScope('account')
+class AccountSceneBase extends Scene {}
 
 /** @lends AccountScene */
 class AccountScene extends AccountSceneBase {
-  get scope () {
-    return this.store.account
-  }
 
+  @withBusy.while
   async doSync () {
     const accountCtrl = await this.use('accountCtrl')
-    await this.busyFor(async () => {
-      const user = await accountCtrl.getCurrentUser()
-      this.set({user, synced: true})
-    })
+    const user = await accountCtrl.getCurrentUser()
+    this.set({user, synced: true})
   }
 }
 

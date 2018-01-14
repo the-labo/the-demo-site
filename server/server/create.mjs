@@ -7,23 +7,22 @@
 
 import theServer from 'the-server'
 import theSeal from 'the-seal'
-
-import client from '@self/client/shim'
 import endpoints from '../endpoints'
 import pkg from '../../package.json'
 import { servicesProxy } from 'the-service-base'
 import env from '../env'
 import mappings from '../mappings'
 import { isProduction } from 'the-check'
+import client from '@self/client/shim'
+
+const {ServiceMapping, ControllerMapping,} = mappings
 
 const {
   createClient,
   createStore,
   createHandle,
-  ui: {Html}
+  ui: {Html},
 } = client
-
-const {ControllerMapping, ServiceMapping} = mappings
 
 /** @lends create */
 function create (config) {
@@ -35,6 +34,7 @@ function create (config) {
     sealConfig = env.seal
   } = config
   const seal = theSeal(sealConfig['SEAL_SECRET'])
+
   const app = {
     pkg,
     db,
@@ -44,7 +44,7 @@ function create (config) {
     services: servicesProxy(ServiceMapping, db)
   }
 
-  const server = theServer({
+  return theServer({
     static: isProduction() ? [] : ['public'],
     redis: redisConfig,
     endpoints,
@@ -57,14 +57,9 @@ function create (config) {
     },
     html: Html,
     langs: Object.keys(locales),
-    scope: app
+    scope: app,
+    controllers: ControllerMapping
   })
-
-  for (const [name, Controller] of Object.entries(ControllerMapping)) {
-    server.load(Controller, name)
-  }
-
-  return server
 }
 
 export default create

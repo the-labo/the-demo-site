@@ -11,6 +11,4 @@ class ProfileResource extends TheProfileResource {
 
 }
 
-Object.assign(ProfileResource, {})
-
 module.exports = ProfileResource

@@ -5,26 +5,21 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose, withBusy, withEntry} =  require('the-scene-mixins/shim')
+const {forScope, withBusy, withEntry} = require('the-scene-mixins/shim')
 
-const UserCreateSceneBase = compose(
-  withBusy,
-  withEntry,
-)(Scene)
+@withBusy
+@withEntry
+@forScope('userCreate')
+class UserCreateSceneBase extends Scene {}
 
 /** @lends UserCreateScene */
 class UserCreateScene extends UserCreateSceneBase {
-  get scope () {
-    return this.store.userCreate
-  }
-
+  @withBusy.while
   async doCreate () {
     const userCtrl = await this.use('userCtrl')
-    await this.busyFor(async () => {
-      await this.processEntry(async (values) => {
-        const created = await userCtrl.create(values)
-        this.set({created})
-      })
+    await this.processEntry(async (values) => {
+      const created = await userCtrl.create(values)
+      this.set({created})
     })
   }
 }

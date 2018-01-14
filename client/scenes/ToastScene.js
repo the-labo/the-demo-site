@@ -5,17 +5,13 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {compose} =  require('the-scene-mixins/shim')
+const {forScope} = require('the-scene-mixins/shim')
 
-const ToastSceneBase = compose(
-
-)(Scene)
+@forScope('toast')
+class ToastSceneBase extends Scene {}
 
 /** @lends ToastScene */
 class ToastScene extends ToastSceneBase {
-  get scope () {
-    return this.store.toast
-  }
 
   showInfo (message) {
     this.scope.info.push(message)
