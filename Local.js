@@ -51,7 +51,7 @@ const Vars = Object.freeze(
     SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`),
     SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
 
-    SEAL_SECRET: secretFor(`seal@${__dirname}`)
+    SEAL_SECRET: secretFor(`seal@${__dirname}`),
   }
 )
 

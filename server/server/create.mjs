@@ -31,7 +31,7 @@ function create (config) {
     db,
     mail,
     redisConfig = env.redis,
-    sealConfig = env.seal
+    sealConfig = env.seal,
   } = config
   const seal = theSeal(sealConfig['SEAL_SECRET'])
 
@@ -41,7 +41,7 @@ function create (config) {
     locales,
     seal,
     mail,
-    services: servicesProxy(ServiceMapping, db)
+    services: servicesProxy(ServiceMapping, db),
   }
 
   return theServer({

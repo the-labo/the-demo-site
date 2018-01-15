@@ -1,6 +1,6 @@
 {
   "name": "the-demo-site",
-  "version": "7.20.1",
+  "version": "7.22.0",
   "description": "Demo site of the-framework",
   "main": "lib",
   "scripts": {

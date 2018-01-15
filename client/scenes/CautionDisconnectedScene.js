@@ -14,9 +14,8 @@ class CautionDisconnectedSceneBase extends Scene {}
 
 /** @lends CautionDisconnectedScene */
 class CautionDisconnectedScene extends CautionDisconnectedSceneBase {
-
+  @withBusy.while
   async doReload () {
-    this.set({busy: true})
     this.reloadLocation()
   }
 }

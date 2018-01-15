@@ -22,7 +22,7 @@ create.for = (namespace, options = {}) => {
     handle: {cautionDisconnectedScene}
   } = options
   const client = Client.for(namespace, {})
-  const handleGone = () => cautionDisconnectedScene.set({active: true})
+  const handleGone = () => cautionDisconnectedScene.set({busy: false, active: true})
   client.on(TheClientEvents.SOCKET_GONE, handleGone)
   client.on(TheClientEvents.SERVER_GONE, handleGone)
   return client
