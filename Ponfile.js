@@ -62,7 +62,6 @@ module.exports = pon({
     'var'
   ]),
   'struct:symlink': symlink({
-    'package.json': 'shim/package.json',
     'shim/conf': 'node_modules/@self/conf',
     'Local.js': 'node_modules/@self/Local.js',
     'shim/utils': 'node_modules/@self/utils',
@@ -74,7 +73,7 @@ module.exports = pon({
     'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
     'assets/webfonts': 'public/webfonts',
-    'assets/icons': 'public/icons'
+    'assets/icons': 'public/icons',
   }, {force: true}),
   'struct:chmod': chmod({
     'bin/**/*.*': '577',
@@ -83,7 +82,7 @@ module.exports = pon({
   }),
   'struct:compile': [
     es('conf', 'shim/conf'),
-    es('utils', 'shim/utils')
+    es('utils', 'shim/utils'),
   ],
   'struct:json': fmtjson([
     'conf/**/*.json',
@@ -95,6 +94,13 @@ module.exports = pon({
       '+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
       '.*.bud'
     ])
+  ],
+  'struct:pkg': [
+    symlink({
+      'package.json': 'shim/package.json',
+      'conf/index.mjs': 'shim/conf/index.mjs',  // For import
+    }, {force: true}),
+    del('package-lock.json'), // Using yarn
   ],
   'unless:prod': env.notFor('production'),
   'maint:on': write('public/status/maintenance'),
@@ -172,8 +178,8 @@ module.exports = pon({
   'env:prod': env('production'),
   'env:test': env('test'),
   'env:debug': env('development', {DEBUG: 'app:*'}),
-  'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
-  'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+  'test:client': mocha('client/test/**/*.js', {timeout: 3000,}),
+  'test:server': mocha('server/test/**/*.js', {timeout: 3000,}), // TODO Use this when node 10 released
   'prod:map': del('public/**/*.map'),
   'prod:js': ccjs([
     `public${Urls.JS_EXTERNAL_URL}`,
@@ -221,7 +227,7 @@ module.exports = pon({
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
+  struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json', 'struct:pkg'],
   ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client', 'test:server'],

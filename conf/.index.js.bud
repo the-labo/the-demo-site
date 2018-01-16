@@ -1,14 +1,13 @@
 'use strict'
 
-const { dir } = require('the-templates')
+const {dir} = require('the-templates')
 
-module.exports = dir({
+module.exports = [true, false].map((cjs) => dir({
   dirname: __dirname,
-  node: true,
+  cjs,
   name: 'conf',
   description: 'Project configurations'
-})
-
+}))
 
 if (!module.parent) {
   require('coz').render(__filename)

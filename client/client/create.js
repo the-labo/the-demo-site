@@ -6,7 +6,6 @@
 'use strict'
 
 const {TheClient} = require('the-client/shim')
-const {Events: TheClientEvents} = TheClient
 
 const ClientBase = [].reduce((Clazz, mix) => mix(Clazz), TheClient)
 
@@ -19,13 +18,11 @@ function create (config = {}) {
 
 create.for = (namespace, options = {}) => {
   const {
-    handle: {cautionDisconnectedScene}
+    handle: {cautionDisconnectedScene},
   } = options
-  const client = Client.for(namespace, {})
-  const handleGone = () => cautionDisconnectedScene.set({busy: false, active: true})
-  client.on(TheClientEvents.SOCKET_GONE, handleGone)
-  client.on(TheClientEvents.SERVER_GONE, handleGone)
-  return client
+  return Client.for(namespace, {
+    onGone: () => cautionDisconnectedScene.set({busy: false, active: true})
+  })
 }
 
 module.exports = create

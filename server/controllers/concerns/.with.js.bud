@@ -6,7 +6,6 @@
 const path = require('path')
 
 module.exports = [
-  'withPreference'
 ].map((name) => ({
   force: false,
   mode: '644',

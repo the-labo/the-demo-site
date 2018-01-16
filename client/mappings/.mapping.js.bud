@@ -13,13 +13,12 @@ module.exports = [
     name: 'SceneMapping',
     requirePath: '../scenes',
     requireAs: 'sc',
-    mapping:
-      aglob.sync(`${__dirname}/../scenes/*Scene.js`)
-        .map((filename) => path.basename(filename, '.js'))
-        .map((name) => ({
-          instanceName: camelcase(name),
-          className: name
-        })),
+    mapping: aglob.sync(`${__dirname}/../scenes/*Scene.js`)
+      .map((filename) => path.basename(filename, '.js'))
+      .map((name) => ({
+        instanceName: camelcase(name),
+        className: name
+      })),
     cjs: true
   }
 ].map(mapping)

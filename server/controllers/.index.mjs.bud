@@ -4,7 +4,7 @@ const {dir} = require('the-templates')
 
 module.exports = dir.recursive({
   dirname: __dirname,
-  cjs: true,
+
   name: 'controllers',
   description: 'Server controllers',
   ignore: ['concerns/*.js']
