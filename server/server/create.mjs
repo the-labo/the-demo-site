@@ -13,16 +13,10 @@ import { servicesProxy } from 'the-service-base'
 import env from '../env'
 import mappings from '../mappings'
 import { isProduction } from 'the-check'
-import client from '@self/client/shim'
+import Local from '@self/Local'
+import { createClient, createStore, createHandle, Html } from '@self/client/shim'
 
 const {ServiceMapping, ControllerMapping,} = mappings
-
-const {
-  createClient,
-  createStore,
-  createHandle,
-  ui: {Html},
-} = client
 
 /** @lends create */
 function create (config) {
@@ -42,6 +36,7 @@ function create (config) {
     seal,
     mail,
     services: servicesProxy(ServiceMapping, db),
+    APP_CDN_URL: Local.APP_CDN_URL,
   }
 
   return theServer({

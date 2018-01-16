@@ -21,7 +21,10 @@ create.for = (namespace, options = {}) => {
     handle: {cautionDisconnectedScene},
   } = options
   return Client.for(namespace, {
-    onGone: () => cautionDisconnectedScene.set({busy: false, active: true})
+    onGone: async () => {
+      cautionDisconnectedScene.set({busy: false, active: true})
+      await cautionDisconnectedScene.watchToReload()
+    }
   })
 }
 

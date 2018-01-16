@@ -80,8 +80,9 @@ module.exports = pon({
     ])
   ],
   'struct:pkg': [
-    symlink({
+    cp({
       'package.json': 'shim/package.json',
+      'client/index.mjs': 'client/shim/index.mjs',  // For import
       'conf/index.mjs': 'shim/conf/index.mjs',  // For import
     }, {force: true}),
     del('package-lock.json'), // Using yarn
@@ -146,7 +147,7 @@ module.exports = pon({
     icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
   ],
   'ui:map': map('public', 'public', {watchDelay: 400}),
-  'clean:shim': del('client/shim/**/*.*'),
+  'clean:shim': del(['shim/**/*.*', 'client/shim/**/*.*']),
   'clean:cache': del('tmp/cache/**/*.*'),
   'clean:public': del('public/build/*.*'),
   'env:prod': env('production'),
@@ -183,7 +184,7 @@ module.exports = pon({
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:*'],
+  struct: ['struct:mkdir', 'struct:compile', 'struct:*'],
   ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client', 'test:server'],

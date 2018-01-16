@@ -3,7 +3,7 @@
 const {Scene} = require('the-templates')
 const scopes = require('../store/scopes')
 const {flatten} = require('objnest')
-const {pascalcase, camelcase} = require('stringcase')
+const {pascalcase} = require('stringcase')
 const names = Object.keys(flatten(scopes))
   .filter((name) => !/^_/.test(name))
   .filter((name) => !/^abstract/.test(name))

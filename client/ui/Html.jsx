@@ -8,11 +8,13 @@ import { TheHtml, TheHead, TheBody, TheRouter, } from 'the-components'
 import App from './App'
 import { UI, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
-import Local from '@self/Local'
 
 /** @lends Html */
 function Html ({appScope, renderingContext}) {
-  const {version} = appScope.pkg
+  const {
+    pkg: {version},
+    APP_CDN_URL,
+  } = appScope
   const {lang, client, store, handle, path} = renderingContext
   const l = locales.bind(lang)
   handle.setAttributes({store, client, l, lang})
@@ -41,7 +43,7 @@ function Html ({appScope, renderingContext}) {
                version={isProduction() ? version : String(new Date().getTime())}
                globals={{[UI.APP_PROP_NAME]: appProps}}
                color={Styles.DOMINANT_COLOR}
-               cdn={isProduction() ? Local.APP_CDN_URL : null}
+               cdn={isProduction() ? APP_CDN_URL : null}
                fallbackUnless={UI.APP_STAGE_NAME}
       >
       </TheHead>
