@@ -22,8 +22,10 @@ class VerifyConfirmScene extends VerifyConfirmSceneBase {
     await this.processEntry(async ({seal, envelop}) =>
       await verifyCtrl.verify({seal, envelop}).catch((e) =>
         this.catchFailure(e, {
-          'ExpiredError': l('errors.VERIFY_EXPIRED_ERROR'),
-          default: l('errors.VERIFY_FAILED_ERROR')
+          messages: {
+            ExpiredError: l('errors.VERIFY_EXPIRED_ERROR'),
+            default: l('errors.VERIFY_FAILED_ERROR')
+          }
         })
       )
     )

@@ -24,8 +24,10 @@ class RecoverResetScene extends RecoverResetSceneBase {
     await this.processEntry(({password, seal, envelop}) =>
       recoverCtrl.reset({password, seal, envelop}).catch((e) => {
         return this.catchFailure(e, {
-          'ExpiredError': l('errors.RECOVER_EXPIRED_ERROR'),
-          default: l('errors.RECOVER_FAILED_ERROR')
+          messages: {
+            ExpiredError: l('errors.RECOVER_EXPIRED_ERROR'),
+            default: l('errors.RECOVER_FAILED_ERROR')
+          }
         })
       })
     )
