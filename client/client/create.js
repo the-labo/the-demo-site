@@ -6,10 +6,9 @@
 'use strict'
 
 const {TheClient} = require('the-client/shim')
+const {unlessProduction} = require('the-check')
 
-const ClientBase = [].reduce((Clazz, mix) => mix(Clazz), TheClient)
-
-class Client extends ClientBase {}
+class Client extends TheClient {}
 
 /** @lends create */
 function create (config = {}) {
@@ -20,12 +19,16 @@ create.for = (namespace, options = {}) => {
   const {
     handle: {cautionDisconnectedScene},
   } = options
-  return Client.for(namespace, {
-    onGone: async () => {
+  const client = Client.for(namespace, {
+    onGone: () => {
       cautionDisconnectedScene.set({busy: false, active: true})
-      await cautionDisconnectedScene.watchToReload()
+      unlessProduction(() => client.pingPongAnd(
+        () => cautionDisconnectedScene.doReload()),
+        {}
+      )
     }
   })
+  return client
 }
 
 module.exports = create

@@ -6,12 +6,11 @@
 
 const Ctrl = require('./Ctrl')
 const {compose, withDebug} = require('the-controller-mixins')
-const {withAuth, withAlias} = require('./concerns')
+const {withAlias,} = require('./concerns')
 const {Urls, Lifetimes} = require('@self/conf')
 
 const RecoverCtrlBase = compose(
-  withAuth,
-  withDebug,
+
   withAlias
 )(Ctrl)
 
@@ -31,18 +30,16 @@ class RecoverCtrl extends RecoverCtrlBase {
     const url = await this._aliasUrlFor(Urls.RECOVER_RESET_URL, {envelop, seal, expireAt})
     this._debug(`Create recover url: ${url}`)
     await mail.sendRecover({lang, user, url, expireAt})
-    return user
   }
 
   async reset ({seal: sealString, envelop, password} = {}) {
     const {
-      services: {recoverService}
+      services: {recoverService},
     } = this
     await this._assertSeal(sealString, envelop)
     const {user, sign} = await recoverService.processReset({envelop, password})
     await this._setAuthorized({user, sign})
     await this._reloadAuthorized()
-    return this._fetchAuthorizedUser()
   }
 }
 

@@ -186,13 +186,20 @@
     "@babel/helper-remap-async-to-generator" "7.0.0-beta.37"
     "@babel/plugin-syntax-async-generators" "7.0.0-beta.37"
 
+"@babel/plugin-proposal-class-properties@^7.0.0-beta.37":
+  version "7.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-beta.37.tgz#0991e720ed24fa452b02e86183aca8e890a8d2cf"
+  dependencies:
+    "@babel/helper-function-name" "7.0.0-beta.37"
+    "@babel/plugin-syntax-class-properties" "7.0.0-beta.37"
+
 "@babel/plugin-proposal-decorators@^7.0.0-beta.37":
   version "7.0.0-beta.37"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.0.0-beta.37.tgz#8c5325ab2f2483bf35d651fe2ff8d7054f7770c8"
   dependencies:
     "@babel/plugin-syntax-decorators" "7.0.0-beta.37"
 
-"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.37":
+"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.37", "@babel/plugin-proposal-object-rest-spread@^7.0.0-beta.37":
   version "7.0.0-beta.37"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.37.tgz#627d5c17f08c8c1878ff9dd5b46cbe1868ca2305"
   dependencies:
@@ -204,6 +211,12 @@
   dependencies:
     "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.37"
 
+"@babel/plugin-proposal-optional-chaining@^7.0.0-beta.37":
+  version "7.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining/-/plugin-proposal-optional-chaining-7.0.0-beta.37.tgz#b4aa121bd1af8f56ce166278e4fe8476fe69ebe7"
+  dependencies:
+    "@babel/plugin-syntax-optional-chaining" "7.0.0-beta.37"
+
 "@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.37":
   version "7.0.0-beta.37"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.37.tgz#836f7df7571cee11cf749ed3c0e989a70570d14a"
@@ -214,6 +227,10 @@
 "@babel/plugin-syntax-async-generators@7.0.0-beta.37":
   version "7.0.0-beta.37"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0-beta.37.tgz#6c5d102534a9e7c0fa1af9b751756a1866b5d01a"
+
+"@babel/plugin-syntax-class-properties@7.0.0-beta.37":
+  version "7.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0-beta.37.tgz#5d4e4712ee57815ebe59e63fb084353a27e2671d"
 
 "@babel/plugin-syntax-decorators@7.0.0-beta.37":
   version "7.0.0-beta.37"
@@ -230,6 +247,10 @@
 "@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.37":
   version "7.0.0-beta.37"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.37.tgz#d0fe8d2d8d301eb677696eecf159a3089d57b23a"
+
+"@babel/plugin-syntax-optional-chaining@7.0.0-beta.37":
+  version "7.0.0-beta.37"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.0.0-beta.37.tgz#66a3ee225977423b01719ac5404d7fae84b4104e"
 
 "@babel/plugin-transform-arrow-functions@7.0.0-beta.37":
   version "7.0.0-beta.37"
@@ -2692,6 +2713,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-fetch@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-1.1.1.tgz#dede6865ae30f37eae62ac90ebb7bdac002b05a0"
+  dependencies:
+    node-fetch "1.7.3"
+    whatwg-fetch "2.0.3"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -3023,13 +3051,13 @@ error-inject@~1.0.0:
   resolved "https://registry.yarnpkg.com/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
 es5-ext@^0.10.12, es5-ext@^0.10.14, es5-ext@^0.10.30, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
-  version "0.10.37"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.37.tgz#0ee741d148b80069ba27d020393756af257defc3"
+  version "0.10.38"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.38.tgz#fa7d40d65bbc9bb8a67e1d3f9cc656a00530eed3"
   dependencies:
-    es6-iterator "~2.0.1"
+    es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
 
-es6-iterator@2, es6-iterator@^2.0.1, es6-iterator@~2.0.1:
+es6-iterator@2, es6-iterator@^2.0.1, es6-iterator@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.3.tgz#a7de889141a05a94b0854403b2d0a0fbfa98f3b7"
   dependencies:
@@ -4826,7 +4854,7 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-node-fetch@^1.0.1:
+node-fetch@1.7.3, node-fetch@^1.0.1:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
@@ -5358,11 +5386,14 @@ pon-task-pm2@^2.0.1:
     writeout "^2.2.1"
 
 pon-task-react@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/pon-task-react/-/pon-task-react-4.0.2.tgz#d7df33b860b55988626a06e98ec9062d57eedc86"
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/pon-task-react/-/pon-task-react-4.1.1.tgz#0ce8b5fc99e4b7927c6b600ca26348d555b79d33"
   dependencies:
     "@babel/core" "^7.0.0-beta.37"
+    "@babel/plugin-proposal-class-properties" "^7.0.0-beta.37"
     "@babel/plugin-proposal-decorators" "^7.0.0-beta.37"
+    "@babel/plugin-proposal-object-rest-spread" "^7.0.0-beta.37"
+    "@babel/plugin-proposal-optional-chaining" "^7.0.0-beta.37"
     "@babel/plugin-transform-runtime" "^7.0.0-beta.37"
     "@babel/preset-env" "^7.0.0-beta.37"
     "@babel/preset-react" "^7.0.0-beta.37"
@@ -7096,13 +7127,14 @@ the-check@^1.2.1, the-check@^1.2.2:
     hasbin "^1.2.3"
 
 the-client@^5.0.1:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-5.0.2.tgz#5cfd073e544483df130b8f7602d592694d540f21"
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-5.0.3.tgz#bfd2c1eff86573f978c60ae29420901e4a7b85a4"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
     bstorage "^2.0.1"
     bwindow "^1.1.0"
+    cross-fetch "^1.1.1"
     debug "^3.1.0"
     prop-types "^15.6.0"
     sugo-caller "^6.0.4"
@@ -7194,8 +7226,8 @@ the-container@^3.0.0, the-container@^3.0.1:
     the-style "^2.1.0"
 
 the-controller-base@^4.0.0, the-controller-base@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-4.0.2.tgz#3855a2a96b707e5fd7a901b22fe444bd6f19c961"
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/the-controller-base/-/the-controller-base-4.0.3.tgz#ee6e58aba5e6ce371024043629e4dedf29e67816"
   dependencies:
     asleep "^1.0.3"
     asobj "^2.0.2"
@@ -7206,8 +7238,8 @@ the-controller-base@^4.0.0, the-controller-base@^4.0.2:
     the-error "^1.4.4"
 
 the-controller-mixins@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/the-controller-mixins/-/the-controller-mixins-1.1.2.tgz#b72cc46f61e6b5a3f7deec59b9b6fe48f9d7150e"
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/the-controller-mixins/-/the-controller-mixins-1.1.5.tgz#184a24e20d69fa200b43062ae179d6a6aa27df55"
   dependencies:
     qs "^6.5.1"
     the-error "^1.4.4"
@@ -7392,14 +7424,14 @@ the-header@^3.0.1:
     the-window "^5.3.3"
 
 the-hoc@^1.1.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.1.2.tgz#72a56bcd8444b2527da444792fbf38f6ab003b51"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.1.3.tgz#8b36ef46749aa812916038bbc2b43ad193a3b9e0"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    the-component-util "^2.0.0"
+    the-component-util "^2.1.2"
     the-style "^2.0.0"
-    the-window "^5.3.1"
+    the-window "^5.3.3"
 
 the-html@^1.0.7:
   version "1.0.7"
@@ -7722,8 +7754,8 @@ the-seed@^1.0.1:
     pudding "^4.0.4"
 
 the-server@^4.7.0:
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.7.1.tgz#612d8e071c8e2f1e3a59179b95e1ff1d8f25b6a2"
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.11.1.tgz#f1a383dc0a2fb55d7d4704d151727f243943863e"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"
@@ -7822,8 +7854,8 @@ the-step@^1.0.3:
     the-style "^2.0.0"
 
 the-store@^5.1.3:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/the-store/-/the-store-5.2.1.tgz#c0a5289e55bd2ba1ec9ba25b944bef02f0e902df"
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/the-store/-/the-store-5.3.0.tgz#8e9def07685283b822cb71145f8496db12cfb542"
   dependencies:
     argx "^3.0.2"
     asobj "^2.0.2"
@@ -7928,7 +7960,7 @@ the-view@^3.0.0:
     the-spin "^3.0.0"
     the-style "^2.1.0"
 
-the-window@^5.3.0, the-window@^5.3.1, the-window@^5.3.3:
+the-window@^5.3.0, the-window@^5.3.3:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.3.3.tgz#12847989a376a965385dc816474a45ea35a72c03"
   dependencies:
@@ -8277,7 +8309,7 @@ weak@^1.0.1:
     bindings "^1.2.1"
     nan "^2.0.5"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@2.0.3, whatwg-fetch@>=0.10.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 

@@ -5,22 +5,20 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {compose, withDebug} = require('the-controller-mixins')
-const {withAuth} = require('./concerns')
+const {compose, } = require('the-controller-mixins')
 
 const QuitCtrlBase = compose(
-  withDebug,
-  withAuth
+
 )(Ctrl)
 
 /** @lends QuitCtrl */
 class QuitCtrl extends QuitCtrlBase {
   async execute () {
     const {
+      user,
       services: {quitService}
     } = this
     await this._reloadAuthorized()
-    const user = await this._fetchAuthorizedUser()
     if (!user) {
       return false
     }

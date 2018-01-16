@@ -49,7 +49,7 @@ export default asBound(
      cautionDisconnectedScene
    }, propsProxy) => ({
     onReload: async () => {
-      cautionDisconnectedScene.doReload()
+      await cautionDisconnectedScene.doReload()
     }
   })
 )

@@ -10,7 +10,7 @@ function withAlias (Class) {
     async _aliasUrlFor (pathname, query = {}) {
       const {
         client: {protocol, host},
-        resources: {Alias}
+        resources: {Alias},
       } = this
       const alias = await Alias.ofUrl(
         this.clientUrlFor(pathname, query)

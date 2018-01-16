@@ -184,7 +184,7 @@ module.exports = pon({
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:compile', 'struct:*'],
+  struct: ['struct:mkdir', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod', 'struct:json',],
   ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client', 'test:server'],

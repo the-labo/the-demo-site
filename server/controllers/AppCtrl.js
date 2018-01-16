@@ -20,6 +20,7 @@ class AppCtrl extends AppCtrlBase {
   async set (name, value) {
     await this._setSessionPreference(name, value)
   }
+
 }
 
 module.exports = AppCtrl

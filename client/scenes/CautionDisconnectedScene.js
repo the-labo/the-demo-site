@@ -19,16 +19,6 @@ class CautionDisconnectedScene extends CautionDisconnectedSceneBase {
   async doReload () {
     this.reloadLocation()
   }
-
-  async watchToReload () {
-    const timer = setInterval(async () => {
-      const {ok} = await fetch(Urls.STATUS_URL).catch(() => null)
-      if (ok) {
-        clearInterval(timer)
-        await this.doReload()
-      }
-    }, 3000)
-  }
 }
 
 module.exports = CautionDisconnectedScene

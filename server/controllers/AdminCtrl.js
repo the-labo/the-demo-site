@@ -5,12 +5,10 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {compose, withDebug} = require('the-controller-mixins')
-const {withAuth} = require('./concerns')
+const {compose,} = require('the-controller-mixins')
 
 const AdminCtrlBase = compose(
-  withAuth,
-  withDebug
+
 )(Ctrl)
 
 /** @lends AdminCtrl */

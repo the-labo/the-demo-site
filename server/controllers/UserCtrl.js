@@ -5,12 +5,11 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {compose, withDebug} = require('the-controller-mixins')
-const {withAuth, withAdmin} = require('./concerns')
+const {compose, } = require('the-controller-mixins')
+const {withAdmin} = require('./concerns')
 
 const UserCtrlBase = compose(
-  withDebug,
-  withAuth,
+
   withAdmin
 )(Ctrl)
 
@@ -19,7 +18,7 @@ class UserCtrl extends UserCtrlBase {
   async list ({filter, sort, page} = {}) {
     await this._assertAsAdmin()
     const {
-      services: {userService}
+      services: {userService},
     } = this
     return userService.pickList({filter, sort, page})
   }
@@ -27,7 +26,7 @@ class UserCtrl extends UserCtrlBase {
   async create ({name, role: roleCode, profile: profileAttributes}) {
     await this._assertAsAdmin()
     const {
-      services: {userService}
+      services: {userService},
     } = this
     const {user} = await userService.processCreate({name, roleCode, profileAttributes})
     return user
@@ -36,7 +35,7 @@ class UserCtrl extends UserCtrlBase {
   async resetPassword (...userIds) {
     await this._assertAsAdmin()
     const {
-      services: {userService}
+      services: {userService},
     } = this
     const {newPasswords} = await userService.processReset({userIds})
     return newPasswords
@@ -45,7 +44,7 @@ class UserCtrl extends UserCtrlBase {
   async destroy (...userIds) {
     await this._assertAsAdmin()
     const {
-      services: {userService}
+      services: {userService},
     } = this
     const {destroyed} = await userService.processDestroy({userIds})
     return destroyed.users

@@ -11,7 +11,7 @@ const {RoleCodes} = require('@self/conf')
 function withAdmin (Class) {
   class WithAdmin extends Class {
     async _isAdmin () {
-      const user = await this._fetchAuthorizedUser()
+      const {user} = this
       return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 
