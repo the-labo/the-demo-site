@@ -5,10 +5,10 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withValues} = require('the-scene-mixins/shim')
+const {bindScope, withValues} = require('the-scene-mixins/shim')
 
 @withValues
-@forScope('userCheck')
+@bindScope('userCheck')
 class UserCheckSceneBase extends Scene {}
 
 /** @lends UserCheckScene */

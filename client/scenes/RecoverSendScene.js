@@ -5,12 +5,12 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withEntry, withBusy, withFailure} = require('the-scene-mixins/shim')
+const {bindScope, withEntry, withBusy, withFailure} = require('the-scene-mixins/shim')
 
 @withEntry
 @withBusy
 @withFailure
-@forScope('recoverSend')
+@bindScope('recoverSend')
 class RecoverSendSceneBase extends Scene {}
 
 /** @lends RecoverSendScene */

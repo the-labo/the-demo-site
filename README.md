@@ -195,19 +195,18 @@ Directory structure of this project
 | conf | Configuration of project |
 | doc | Documents |
 | doc/guides | Guides for README |
-| misc | Misc scripts |
+| misc | Misc files |
 | public | Public directory to serve static files. Auto-generated |
-| server | Server side files |
+| server | Server side scripts |
 | server/controllers | Controller classes to handle RPC |
 | server/db | Database modules |
 | server/services | Database access wrappers |
 | server/env | Env dependant variables |
-| server/server | HTTP Server module |
+| server/server | HTTP Server modules |
 | server/test | Server tests |
 | test | Project tests |
 | tmp | Temporary files. Can be deleted anytime. |
 | var | Var files |
-
 
 
 <!-- Section from "doc/guides/20.Tips.md.hbs" End -->

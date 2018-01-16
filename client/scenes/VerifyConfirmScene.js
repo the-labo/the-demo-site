@@ -5,12 +5,12 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins/shim')
 
 @withBusy
 @withEntry
 @withFailure
-@forScope('verifyConfirm')
+@bindScope('verifyConfirm')
 class VerifyConfirmSceneBase extends Scene {}
 
 /** @lends VerifyConfirmScene */

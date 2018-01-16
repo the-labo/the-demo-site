@@ -6,11 +6,11 @@
 
 const Scene = require('./Scene')
 const {clone} = require('asobj')
-const {forScope, withBusy, withEntry} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
 
 @withBusy
 @withEntry
-@forScope('profileEdit')
+@bindScope('profileEdit')
 class ProfileEditSceneBase extends Scene {}
 
 /** @lends ProfileEditScene */

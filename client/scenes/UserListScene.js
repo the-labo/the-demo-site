@@ -5,7 +5,16 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withBusy, withSort, withPage, withReady, withFilter, withHistory,} = require('the-scene-mixins/shim')
+const {
+  bindScope,
+  bindDefaults,
+  withBusy,
+  withSort,
+  withPage,
+  withReady,
+  withFilter,
+  withHistory,
+} = require('the-scene-mixins/shim')
 
 @withBusy
 @withSort
@@ -13,7 +22,8 @@ const {forScope, withBusy, withSort, withPage, withReady, withFilter, withHistor
 @withReady
 @withFilter
 @withHistory
-@forScope('userList')
+@bindScope('userList')
+@bindDefaults({pageNumber: 1, pageSize: 25, filter: {},})
 class UserListSceneBase extends Scene {}
 
 /** @lends UserListScene */
@@ -22,14 +32,6 @@ class UserListScene extends UserListSceneBase {
     this.set({pageNumber: 1})
     this.setFilterByQ(q, {fields: ['name']})
     this.replaceHistoryByQuery({q})
-  }
-
-  get defaults () {
-    return {
-      pageNumber: this.defaultPageNumber,
-      pageSize: this.defaultPageSize,
-      filter: {}
-    }
   }
 
   @withBusy.while

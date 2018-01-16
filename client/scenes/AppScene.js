@@ -6,12 +6,12 @@
 
 const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
-const {forScope, withBusy, withQuery, withLocation} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withQuery, withLocation} = require('the-scene-mixins/shim')
 
 @withBusy
 @withQuery
 @withLocation
-@forScope('app')
+@bindScope('app')
 class AppSceneBase extends Scene {}
 
 /** @lends AppScene */

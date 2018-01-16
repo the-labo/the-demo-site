@@ -5,9 +5,9 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope} = require('the-scene-mixins/shim')
+const {bindScope} = require('the-scene-mixins/shim')
 
-@forScope('toast')
+@bindScope('toast')
 class ToastSceneBase extends Scene {}
 
 /** @lends ToastScene */

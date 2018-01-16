@@ -5,12 +5,12 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withBusy, withEntry,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry,} = require('the-scene-mixins/shim')
 const {Urls} = require('@self/conf')
 
 @withBusy
 @withEntry
-@forScope('quit')
+@bindScope('quit')
 class QuitSceneBase extends Scene {}
 
 /** @lends QuitScene */

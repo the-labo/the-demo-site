@@ -5,11 +5,11 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {forScope, withBusy, withLocation} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withLocation} = require('the-scene-mixins/shim')
 
 @withBusy
 @withLocation
-@forScope('cautionDisconnected')
+@bindScope('cautionDisconnected')
 class CautionDisconnectedSceneBase extends Scene {}
 
 /** @lends CautionDisconnectedScene */

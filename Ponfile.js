@@ -22,44 +22,27 @@ const es = require('pon-task-es')
 const icon = require('pon-task-icon')
 const db = require('pon-task-db')
 const md = require('pon-task-md')
-const {isMacOS} = require('the-check')
 const Local = require('./Local')
 
 const {envify} = browser.transforms
 const {setting, secret} = Local
 
 const theAssets = require('the-assets')
-const {Styles, UI, Urls} = require('./conf')
-const pkg = require('./package.json')
+const {UI, Urls} = require('./conf')
 const createDB = () => require('./server/db/create').forTask()
 const migration = require('./server/db/migration')
+
+const browserExternalIgnorePatch = require('./misc/patches/browserExternalIgnorePatch')
+const Directories = require('./misc/project/Directories')
+const Containers = require('./misc/docker/Containers')
+const Drawings = require('./misc/icon/Drawings')
 
 module.exports = pon({
   // ----------------
   // Sub Tasks
   // ----------------
   'struct:mkdir': mkdir([
-    'bin',
-    'conf',
-    'client',
-    'client/client',
-    'client/shim',
-    'client/store',
-    'client/ui',
-    'client/test',
-    'doc',
-    'misc',
-    'public',
-    'server',
-    'server/controllers',
-    'server/db',
-    'server/env',
-    'server/server',
-    'server/test',
-    'utils',
-    'tmp',
-    'test',
-    'var'
+    ...Object.keys(Directories)
   ]),
   'struct:symlink': symlink({
     'shim/conf': 'node_modules/@self/conf',
@@ -72,6 +55,7 @@ module.exports = pon({
     'assets/html/partials': 'public/partials',
     'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
+    'assets/images': 'public/images',
     'assets/webfonts': 'public/webfonts',
     'assets/icons': 'public/icons',
   }, {force: true}),
@@ -147,16 +131,8 @@ module.exports = pon({
       transforms: [envify()],
       fullPaths: !isProduction(),
       ignores: [
-        // TODO Be smarter
-        ...(isProduction() ? [
-          require.resolve('react/cjs/react.development.js'),
-          require.resolve('react-dom/cjs/react-dom.development.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.development.js')
-        ] : [
-          require.resolve('react/cjs/react.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
-        ])
+        // TODO remove patch
+        ...browserExternalIgnorePatch({isProduction}),
       ]
     })
   ),
@@ -164,17 +140,15 @@ module.exports = pon({
   'assets:markdown': md('assets/markdowns', 'public/partials', {
     vars: require('./conf/locales')
   }),
-  'image:generate': icon('assets/icons/favicon.png', {
-    text: pkg.name[0],
-    font: 'a',
-    shape: 'b',
-    color: Styles.DOMINANT_COLOR
-  }),
+  'icon:generate': [
+    icon('assets/images/app-icon.png', Drawings.appIcon),
+    icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
+    icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
+  ],
   'ui:map': map('public', 'public', {watchDelay: 400}),
   'clean:shim': del('client/shim/**/*.*'),
   'clean:cache': del('tmp/cache/**/*.*'),
   'clean:public': del('public/build/*.*'),
-  'clean': ['clean:shim', 'clean:public', 'clean:cache'],
   'env:prod': env('production'),
   'env:test': env('test'),
   'env:debug': env('development', {DEBUG: 'app:*'}),
@@ -190,34 +164,16 @@ module.exports = pon({
     `public${Urls.CSS_FONT_URL}`,
     `public${Urls.CSS_BUNDLE_URL}`,
   ], `public${Urls.PRODUCTION_CSS_URL}`),
-  'prod:compile': [
-    'env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',
-  ],
-  'prod:db': [
-    'env:prod', 'db'
-  ],
+  'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
+  'prod:db': ['env:prod', 'db'],
   'debug:server': ['env:debug', fork('bin/app.mjs', {
     // TODO Remove experimental flag when node 10 release
     env: {NODE_OPTIONS: '--experimental-modules'}
   })],
   'debug:watch': ['env:debug', 'ui:*/watch'],
-  'docker:mysql': mysql(Local.MYSQL_CONTAINER_NAME, {
-    image: 'mysql:8',
-    publish: `${Local.MYSQL_PUBLISHED_PORT}:3306`
-  }),
-  'docker:redis': redis(Local.REDIS_CONTAINER_NAME, {
-    image: 'redis:4',
-    publish: `${Local.REDIS_PUBLISHED_PORT}:6379`
-  }),
-  'docker:nginx': nginx(Local.NGINX_CONTAINER_NAME, {
-    image: 'nginx:1.13',
-    httpPublishPort: Local.NGINX_PUBLISHED_PORT,
-    template: 'misc/docker/nginx.conf.template',
-    env: {
-      HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT: Local.APP_PORT
-    }
-  }),
+  'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
+  'docker:redis': redis(Containers.redis.name, Containers.redis.options),
+  'docker:nginx': nginx(Containers.nginx.name, Containers.nginx.options),
   'secret:encrypt': () => secret.encrypt(),
   'secret:decrypt': () => secret.decrypt(),
   'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME}),
@@ -227,10 +183,11 @@ module.exports = pon({
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json', 'struct:pkg'],
+  struct: ['struct:mkdir', 'struct:*'],
   ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client', 'test:server'],
+  clean: ['clean:shim', 'clean:public', 'clean:cache'],
   build: ['struct', 'ui'],
   prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build'],
   watch: ['ui:*', 'ui:*/watch'],

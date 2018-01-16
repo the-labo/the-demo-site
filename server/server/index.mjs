@@ -4,10 +4,10 @@ import create from './create'
 import env from '../env'
 import db from '../db'
 import mail from '../mail'
-import conf from '../../conf'
+import { locales } from '../../conf'
 
 const singleton = create({
-  locales: conf.locales,
+  locales,
   db,
   mail,
   redis: env.redis,
