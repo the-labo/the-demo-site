@@ -165,7 +165,7 @@ module.exports = pon({
   ], `public${Urls.PRODUCTION_CSS_URL}`),
   'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
   'prod:db': ['env:prod', 'db'],
-  'debug:server': ['env:debug', npx('nodemon', '--inspect', './bin/app.js')],
+  'debug:server': ['env:debug', npx('nodemon', '--inspect', '--require', 'pretty-error/start', './bin/app.js')],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
   'docker:redis': redis(Containers.redis.name, Containers.redis.options),
