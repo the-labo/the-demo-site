@@ -113,14 +113,5 @@
   "engines": {
     "node": ">=8",
     "npm": ">=4"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "var",
-      "tmp",
-      "doc",
-      "example"
-    ],
-    "ext": "json,mjs,js"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "var",
+    "tmp",
+    "doc",
+    "example"
+  ],
+  "ext": "json,mjs,js",
+  "delay": 300
+}
