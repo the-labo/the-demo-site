@@ -5,12 +5,12 @@
  */
 'use strict'
 
-import { server } from '../server'
+const {server} = require('../server')
 
-import { isProduction } from 'the-check'
-import Local from '../Local'
+const {isProduction} = require('the-check')
+const Local = require('../Local')
 
-(async () => {
+void async function () {
   const {port = Local.APP_PORT} = process.env
 
   function onListen () {
@@ -28,7 +28,7 @@ import Local from '../Local'
   } else {
     await server.listen(port, onListen)
   }
-})().catch((err) => {
+}().catch((err) => {
   console.error(err)
   process.exit(1)
 })

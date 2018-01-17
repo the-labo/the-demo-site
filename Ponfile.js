@@ -11,7 +11,7 @@ const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {
   fs: {write, mkdir, symlink, chmod, del, cp, concat},
   mocha,
-  command: {fork, spawn: {git, npx}},
+  command: {spawn: {git, npx}},
   coz,
   fmtjson,
   env
@@ -82,8 +82,6 @@ module.exports = pon({
   'struct:pkg': [
     cp({
       'package.json': 'shim/package.json',
-      'client/index.mjs': 'client/shim/index.mjs',  // For import
-      'conf/index.mjs': 'shim/conf/index.mjs',  // For import
     }, {force: true}),
     del('package-lock.json'), // Using yarn
   ],
@@ -99,7 +97,7 @@ module.exports = pon({
   'db:load': db.load.ask(createDB),
   'db:reset': ['unless:prod', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
-    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
+    pattern: ['*.js', '*.jsx', '!(shim)/**/+(*.jsx|*.js|*.json)'],
     extractCss: `client/shim/ui/bundle.pcss`,
     watchTargets: 'client/ui/**/*.pcss'
   }),
@@ -167,7 +165,7 @@ module.exports = pon({
   ], `public${Urls.PRODUCTION_CSS_URL}`),
   'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
   'prod:db': ['env:prod', 'db'],
-  'debug:server': ['env:debug', env({NODE_OPTIONS: '--experimental-modules'}), npx('nodemon', 'bin/app.mjs',)],
+  'debug:server': ['env:debug', npx('nodemon', '--inspect', './bin/app.js')],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
   'docker:redis': redis(Containers.redis.name, Containers.redis.options),

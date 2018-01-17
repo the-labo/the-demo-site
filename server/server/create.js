@@ -5,16 +5,16 @@
  */
 'use strict'
 
-import theServer from 'the-server'
-import theSeal from 'the-seal'
-import endpoints from '../endpoints'
-import pkg from '../../package.json'
-import { servicesProxy } from 'the-service-base'
-import env from '../env'
-import mappings from '../mappings'
-import { isProduction } from 'the-check'
-import Local from '@self/Local'
-import { createClient, createStore, createHandle, Html } from '@self/client/shim'
+const theServer = require('the-server').default
+const theSeal = require('the-seal').default
+const endpoints = require('../endpoints')
+const pkg = require('../../package.json')
+const {servicesProxy} = require('the-service-base')
+const env = require('../env')
+const mappings = require('../mappings')
+const {isProduction} = require('the-check')
+const Local = require('@self/Local')
+const {createClient, createStore, createHandle, Html} = require('@self/client/shim')
 
 const {ServiceMapping, ControllerMapping,} = mappings
 
@@ -57,4 +57,4 @@ function create (config) {
   })
 }
 
-export default create
+module.exports = create

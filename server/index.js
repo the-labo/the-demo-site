@@ -4,6 +4,6 @@
  */
 'use strict'
 
-import server from './server'
+const server = require('./server')
 
-export { server }
+module.exports = {server}

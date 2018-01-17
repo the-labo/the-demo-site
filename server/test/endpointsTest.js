@@ -4,18 +4,36 @@
  */
 'use strict'
 
-const endpoints = require('../endpoints')
-const { ok, equal } = require('assert')
+const routes = require('../endpoints/routes')
+const createDB = require('../db/create')
+const assert = require('assert')
+
+const {ok, equal} = assert
 
 describe('endpoints', () => {
+  const db = createDB({
+    dialect: 'memory'
+  })
+  const {Alias} = db.resources
   before(() => {
   })
 
   after(() => {
   })
 
-  it('Do test', () => {
+  it('aliasEndpoint', async () => {
+    const alias = await Alias.ofUrl('http://example.com/foo/bar')
 
+    let redirected
+    const ctx = {
+      app: {db},
+      params: {key: alias.key},
+      redirect (url) {
+        redirected = url
+      }
+    }
+    await routes.aliasRoute(ctx)
+    equal('http://example.com/foo/bar', redirected)
   })
 })
 

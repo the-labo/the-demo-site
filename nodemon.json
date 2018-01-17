@@ -5,6 +5,7 @@
     "doc",
     "example"
   ],
+  "noColors": true,
   "ext": "json,mjs,js",
   "delay": 300
 }
