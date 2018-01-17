@@ -4,10 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { Urls } from '@self/conf'
 import { TheTable, TheCondition } from 'the-components'
-import { withMoment, asPure, asBound } from '../../wrappers'
-import styles from './UserList.pcss'
+import { withMoment } from '../../wrappers'
+import { asPure, asBound } from 'the-hoc'
 
 const {Row, Cell, CheckboxCell} = TheTable
 
@@ -33,8 +32,8 @@ const UserListItem = withMoment(
           />
         </TheCondition>
         <Cell>{user.name}</Cell>
-        <Cell>{profile && profile.name}</Cell>
-        <Cell>{profile && profile.email}</Cell>
+        <Cell>{profile?.name}</Cell>
+        <Cell>{profile?.email}</Cell>
         <Cell>{sign && formatDate(sign.signInAt, 'lll')}</Cell>
       </Row>
     )

@@ -4,9 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { compose, asBound, withLoc } from '../../wrappers'
+import { withLoc } from 'the-loc'
 import { TheDialog, TheInfo, TheOkDialog } from 'the-components'
 import UserCreateForm from './UserCreateForm'
+import { compose, asBound } from 'the-hoc'
 
 const UserCreateDialog = compose(
   withLoc,
@@ -31,8 +32,8 @@ const UserCreateDialog = compose(
         >
           <TheInfo data={created && {
             [l('labels.USER_NAME')]: created.name,
-            [l('labels.USER_PROFILE_NAME')]: created.profile.name,
-            [l('labels.USER_EMAIL')]: created.profile.email,
+            [l('labels.USER_PROFILE_NAME')]: created.profile?.name,
+            [l('labels.USER_EMAIL')]: created.profile?.email,
             [l('labels.USER_PASSWORD')]: created.password
           }}
           />

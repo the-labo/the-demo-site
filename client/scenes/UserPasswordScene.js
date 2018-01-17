@@ -15,7 +15,7 @@ class UserPasswordSceneBase extends Scene {}
 class UserPasswordScene extends UserPasswordSceneBase {
   @withBusy.while
   async doReset () {
-    const userCtrl = await this.use('userCtrl')
+    const {userCtrl} = this.controllers
     const userIds = this.get('targets').map(({id}) => String(id))
     const newPasswords = await userCtrl.resetPassword(...userIds)
     this.set({results: newPasswords})

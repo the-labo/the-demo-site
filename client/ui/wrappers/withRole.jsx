@@ -8,7 +8,7 @@ import React from 'react'
 import { RoleCodes } from '@self/conf'
 
 const hasRole = (user, roleCode) =>
-  user && user.role.code === roleCode
+  user?.role.code === roleCode
 
 /** @lends withRole */
 function withRole (Class) {

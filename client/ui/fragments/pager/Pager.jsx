@@ -5,7 +5,8 @@
 
 import React from 'react'
 import { ThePager, TheCondition } from 'the-components'
-import { compose, withLoc } from '../../wrappers'
+import { withLoc } from 'the-loc'
+import { compose } from 'the-hoc'
 
 const Pager = compose(
   withLoc

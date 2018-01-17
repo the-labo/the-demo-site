@@ -6,8 +6,7 @@
 
 import { withLoc } from 'the-loc'
 import { withForm } from 'the-components'
-import withCycle from './withCycle'
-import asBound from './asBound'
+import { withCycle, asBound, } from 'the-hoc'
 
 /** @lends asForm */
 function asForm (Component,

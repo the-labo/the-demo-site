@@ -9,16 +9,17 @@ import {
   TheButton,
   TheButtonGroup,
   TheDropdownMenu,
-  TheCondition
+  TheCondition,
 } from 'the-components'
 import { Urls, Icons } from '@self/conf'
-import { get } from 'the-window'
 import { UserLabel } from '../fragments'
-import { asPure, asBound, compose, withRole, withLoc } from '../wrappers'
+import { withRole } from '../wrappers'
+import { withLoc } from 'the-loc'
+import { compose, asBound } from 'the-hoc'
 
 const Header = compose(
   withRole,
-  withLoc
+  withLoc,
 )(function HeaderImpl ({
                          l,
                          isAdmin,

@@ -10,9 +10,9 @@ module.exports = Object.freeze(
     /** ID of container dom to mount React app */
     APP_CONTAINER_ID: 'app-container',
     /** Global variable name to store app stage */
-    APP_STAGE_NAME: 'appStage',
+    APP_STAGE_NAME: 'app.stage',
     /** Global variable name to store app props */
-    APP_PROP_NAME: 'appProps',
+    APP_PROP_NAME: 'app.props',
     /** NPM packages to bundle as external */
     EXTERNAL_BUNDLES: 'react,react-dom,react-dom/server,react-router-dom,react-transition-group,' +
     'redux,react-redux,prop-types,classnames,fbjs,' +

@@ -18,13 +18,13 @@ export default asForm(
   (state) => ({
     spinning: state['signIn.busy'],
     values: state['signIn.entry'],
-    errors: state['signIn.entryErrors']
+    errors: state['signIn.entryErrors'],
   }),
   ({
      l,
      accountScene,
      signInScene,
-     toastScene
+     toastScene,
    }) => ({
     onUpdate: (v) => signInScene.setEntry(v),
     onSubmit: async () => {

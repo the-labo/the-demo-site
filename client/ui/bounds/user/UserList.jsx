@@ -4,10 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { Urls } from '@self/conf'
 import c from 'classnames'
 import { TheTable } from 'the-components'
-import { withLoc, asPure, asBound, compose } from '../../wrappers'
+import { withLoc } from 'the-loc'
+import { asPure, compose, asBound, } from 'the-hoc'
 import UserListItem from './UserListItem'
 import styles from './UserList.pcss'
 

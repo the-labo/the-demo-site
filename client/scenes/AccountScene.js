@@ -16,7 +16,7 @@ class AccountScene extends AccountSceneBase {
 
   @withBusy.while
   async doSync () {
-    const accountCtrl = await this.use('accountCtrl')
+    const {accountCtrl} = this.controllers
     const user = await accountCtrl.getCurrentUser()
     this.set({user, synced: true})
   }

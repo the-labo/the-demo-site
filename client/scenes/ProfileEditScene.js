@@ -25,7 +25,7 @@ class ProfileEditScene extends ProfileEditSceneBase {
 
   @withBusy.while
   async doSave () {
-    const accountCtrl = await this.use('accountCtrl')
+    const {accountCtrl} = this.controllers
     await this.processEntry((values) => accountCtrl.updateProfile(values))
   }
 }

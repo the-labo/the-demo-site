@@ -1,6 +1,4 @@
 'use strict'
-import 'the-polyfill/apply'
-
 import React from 'react'
 import { once, get, set, mount, rescue, history as historyFor } from 'the-window'
 import App from './App'
@@ -8,18 +6,22 @@ import { UI, locales } from '@self/conf'
 import client from '../client'
 import store from '../store'
 import handle from '../handle'
+import { isProduction } from 'the-check'
 
 set(UI.APP_STAGE_NAME, 'registering')
 
 once('DOMContentLoaded', async () => {
   set(UI.APP_STAGE_NAME, 'mounting')
 
-  const [lang] = (get('appLang') || get('navigator.language') || UI.DEFAULT_LANG).split('-')
   const props = get(UI.APP_PROP_NAME)
+  const {
+    lang = (get('navigator.language') || UI.DEFAULT_LANG).split('-')[0]
+  } = props
   const history = historyFor()
   const app = (<App {...props} {...{store, client, handle}}/>)
   const l = locales.bind(lang)
-  handle.setAttributes({store, client, l, lang, history})
+  const controllers = await client.useAll({debug: !isProduction()})
+  handle.setAttributes({store, client, l, lang, history, controllers})
 
   const {appScene, toastScene} = handle
   history.listen((location) => appScene.setLocation(location))

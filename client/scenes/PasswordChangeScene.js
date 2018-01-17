@@ -16,7 +16,7 @@ class PasswordChangeSceneBase extends Scene {}
 class PasswordChangeScene extends PasswordChangeSceneBase {
   @withBusy.while
   async doSave () {
-    const accountCtrl = await this.use('accountCtrl')
+    const {accountCtrl} = this.controllers
     await this.processEntry(({password}) =>
       accountCtrl.updatePassword(password))
   }

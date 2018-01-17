@@ -16,7 +16,7 @@ class UserCreateSceneBase extends Scene {}
 class UserCreateScene extends UserCreateSceneBase {
   @withBusy.while
   async doCreate () {
-    const userCtrl = await this.use('userCtrl')
+    const {userCtrl} = this.controllers
     await this.processEntry(async (values) => {
       const created = await userCtrl.create(values)
       this.set({created})

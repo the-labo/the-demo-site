@@ -18,7 +18,7 @@ class QuitScene extends QuitSceneBase {
 
   @withBusy.while
   async doQuit () {
-    const quitCtrl = await this.use('quitCtrl')
+    const {quitCtrl} = this.controllers
     await quitCtrl.execute()
   }
 

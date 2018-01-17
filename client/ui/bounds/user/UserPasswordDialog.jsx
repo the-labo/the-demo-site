@@ -4,12 +4,12 @@
 'use strict'
 
 import React from 'react'
-import { compose, asBound, withLoc } from '../../wrappers'
+import { withLoc } from 'the-loc'
+import { compose, asBound, } from 'the-hoc'
 import {
   TheOkDialog,
   TheYesNoDialog,
-  TheCondition,
-  TheInfo
+  TheInfo,
 } from 'the-components'
 
 const UserPasswordDialog = compose(

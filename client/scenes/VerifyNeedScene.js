@@ -17,7 +17,7 @@ class VerifyNeedScene extends VerifyNeedSceneBase {
   @withBusy.while
   async doSync ({delay = 100} = {}) {
     await asleep(delay)
-    const verifyCtrl = await this.use('verifyCtrl')
+    const {verifyCtrl} = this.controllers
     const needed = await verifyCtrl.needsVerify()
     this.set({needed})
   }

@@ -36,7 +36,7 @@ class UserListScene extends UserListSceneBase {
 
   @withBusy.while
   async doSync () {
-    const userCtrl = await this.use('userCtrl')
+    const {userCtrl} = this.controllers
     const {meta: counts, entities} = await userCtrl.list({
       filter: this.getFilter(),
       page: this.getPage(),

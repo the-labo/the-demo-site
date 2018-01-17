@@ -42,8 +42,8 @@ function MypageView ({
               <TheSection.Body>
                 <TheInfo data={user && {
                   [l('labels.USER_NAME')]: user.name,
-                  [l('labels.USER_PROFILE_NAME')]: profile && profile.name,
-                  [l('labels.USER_EMAIL')]: profile && profile.email,
+                  [l('labels.USER_PROFILE_NAME')]: profile?.name,
+                  [l('labels.USER_EMAIL')]: profile?.email,
                   [l('labels.USER_IMAGE')]: <UserImage {...{user}} size={64}/>
                 }}/>
                 <br/>

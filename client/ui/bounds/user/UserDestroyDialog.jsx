@@ -5,7 +5,8 @@
 
 import React from 'react'
 import { TheConfirmDialog, } from 'the-components'
-import { withLoc, compose, asBound } from '../../wrappers'
+import { withLoc } from 'the-loc'
+import { compose, asBound } from 'the-hoc'
 
 const UserDestroyDialog = compose(
   withLoc

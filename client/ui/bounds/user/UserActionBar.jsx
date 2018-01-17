@@ -6,9 +6,12 @@
 import React from 'react'
 import { TheActionBar } from 'the-components'
 import { withLoc } from 'the-loc'
-import { asPure, asBound } from '../../wrappers'
+import { asPure, asBound, compose } from 'the-hoc'
 
-const UserActionBar = asPure(withLoc(
+const UserActionBar = compose(
+  asPure,
+  withLoc,
+)(
   function UserActionBarImpl ({
                                 l,
                                 targets,
@@ -29,7 +32,7 @@ const UserActionBar = asPure(withLoc(
       />
     )
   }
-))
+)
 
 export default asBound(
   UserActionBar,

@@ -16,18 +16,14 @@ class VerifyConfirmSceneBase extends Scene {}
 /** @lends VerifyConfirmScene */
 class VerifyConfirmScene extends VerifyConfirmSceneBase {
   @withBusy.while
+  @withFailure.for(({l}) => ({
+    ExpiredError: l('errors.VERIFY_EXPIRED_ERROR'),
+    default: l('errors.VERIFY_FAILED_ERROR')
+  }))
   async doVerify () {
-    const {l} = this
-    const verifyCtrl = await this.use('verifyCtrl')
+    const {verifyCtrl} = this.controllers
     await this.processEntry(async ({seal, envelop}) =>
-      await verifyCtrl.verify({seal, envelop}).catch((e) =>
-        this.catchFailure(e, {
-          messages: {
-            ExpiredError: l('errors.VERIFY_EXPIRED_ERROR'),
-            default: l('errors.VERIFY_FAILED_ERROR')
-          }
-        })
-      )
+      await verifyCtrl.verify({seal, envelop})
     )
   }
 }

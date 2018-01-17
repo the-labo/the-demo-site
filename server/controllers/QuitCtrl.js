@@ -23,7 +23,7 @@ class QuitCtrl extends QuitCtrlBase {
       return false
     }
     const {destroyed} = await quitService.processQuit({
-      userId: user.id
+      userId: user.id,
     })
     return destroyed
   }

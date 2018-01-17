@@ -17,8 +17,8 @@ class SignInSceneBase extends Scene {}
 class SignInScene extends SignInSceneBase {
   @withBusy.while
   async doSignIn () {
-    const signCtrl = await this.use('signCtrl')
-    this.processEntry(async ({name, password}) =>
+    const {signCtrl} = this.controllers
+    await this.processEntry(async ({name, password}) =>
       await signCtrl.signIn(name, password)
     )
   }

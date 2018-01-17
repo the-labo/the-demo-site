@@ -8,7 +8,8 @@ import {
   TheFooter
 } from 'the-components'
 import { Urls } from '@self/conf'
-import { asPure, withLoc, asBound, compose } from '../wrappers'
+import { withLoc } from 'the-loc'
+import { asPure, asBound, compose, } from 'the-hoc'
 
 const Footer = compose(
   asPure,

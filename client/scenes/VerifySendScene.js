@@ -15,7 +15,7 @@ class VerifySendSceneBase extends Scene {}
 class VerifySendScene extends VerifySendSceneBase {
   @withBusy.while
   async doSend () {
-    const verifyCtrl = await this.use('verifyCtrl')
+    const {verifyCtrl} = this.controllers
     const needed = await verifyCtrl.needsVerify()
     if (needed) {
       await verifyCtrl.send()

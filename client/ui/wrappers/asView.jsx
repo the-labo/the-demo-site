@@ -3,10 +3,8 @@
 import React from 'react'
 import { withLoc } from 'the-loc'
 import { withClient } from 'the-client/shim'
+import { withTitle, withCycle, asBound } from 'the-hoc'
 import { withHistory, withRoute } from 'the-components'
-import withCycle from './withCycle'
-import withTitle from './withTitle'
-import asBound from './asBound'
 import onlySigned from './onlySigned'
 
 function asView (Component,
@@ -24,7 +22,7 @@ function asView (Component,
   return [
     (Component) => withTitle(Component, (props) => {
       const {l} = props
-      const title = options.title && options.title(props)
+      const title = options.title?.call(null, props)
       const appName = l('app.APP_NAME')
       return title ? `${title} | ${appName}` : appName
 

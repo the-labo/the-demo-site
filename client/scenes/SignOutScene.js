@@ -17,7 +17,7 @@ class SignoutSceneBase extends Scene {}
 class SignoutScene extends SignoutSceneBase {
   @withBusy.while
   async doSignout () {
-    const signCtrl = await this.use('signCtrl')
+    const {signCtrl} = this.controllers
     await signCtrl.signOut()
   }
 }

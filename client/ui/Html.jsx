@@ -6,6 +6,7 @@
 import React from 'react'
 import { TheHtml, TheHead, TheBody, TheRouter, } from 'the-components'
 import App from './App'
+import { expand } from 'objnest'
 import { UI, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
 
@@ -41,10 +42,9 @@ function Html ({appScope, renderingContext}) {
                ]}
                icon={Urls.ICON_URL}
                version={isProduction() ? version : String(new Date().getTime())}
-               globals={{[UI.APP_PROP_NAME]: appProps}}
+               globals={expand({[UI.APP_PROP_NAME]: appProps})}
                color={Styles.DOMINANT_COLOR}
                cdn={isProduction() ? APP_CDN_URL : null}
-               fallbackUnless={UI.APP_STAGE_NAME}
       >
       </TheHead>
       <TheBody>

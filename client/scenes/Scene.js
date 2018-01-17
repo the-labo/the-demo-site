@@ -6,7 +6,6 @@
 
 const {TheScene} = require('the-scene-base/shim')
 const {resolveUrl} = require('the-site-util')
-const {isProduction} = require('the-check')
 
 class SceneBase extends TheScene {}
 
@@ -14,12 +13,6 @@ class SceneBase extends TheScene {}
 class Scene extends SceneBase {
   goTo (url, params = {}) {
     super.goTo(resolveUrl(url, params))
-  }
-
-  async use (name) {
-    return this.client.use(name, {
-      debug: !isProduction()
-    })
   }
 
   catchError (e) {

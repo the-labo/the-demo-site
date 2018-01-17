@@ -15,7 +15,7 @@ class UserDestroySceneBase extends Scene {}
 class UserDestroyScene extends UserDestroySceneBase {
   @withBusy.while
   async doDestroy () {
-    const userCtrl = await this.use('userCtrl')
+    const {userCtrl} = this.controllers
     const userIds = this.get('targets').map(({id}) => id)
     await userCtrl.destroy(...userIds)
   }

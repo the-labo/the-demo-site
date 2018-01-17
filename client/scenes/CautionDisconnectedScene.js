@@ -5,7 +5,6 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {Urls} = require('@self/conf')
 const {bindScope, withBusy, withLocation} = require('the-scene-mixins/shim')
 
 @withBusy
