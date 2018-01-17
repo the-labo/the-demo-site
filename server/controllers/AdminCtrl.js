@@ -6,9 +6,10 @@
 
 const Ctrl = require('./Ctrl')
 const {compose,} = require('the-controller-mixins')
+const {withAdmin} = require('./concerns')
 
 const AdminCtrlBase = compose(
-
+  withAdmin
 )(Ctrl)
 
 /** @lends AdminCtrl */

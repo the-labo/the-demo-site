@@ -11,7 +11,7 @@ const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {
   fs: {write, mkdir, symlink, chmod, del, cp, concat},
   mocha,
-  command: {fork, spawn: {git}},
+  command: {fork, spawn: {git, npx}},
   coz,
   fmtjson,
   env
@@ -167,10 +167,7 @@ module.exports = pon({
   ], `public${Urls.PRODUCTION_CSS_URL}`),
   'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
   'prod:db': ['env:prod', 'db'],
-  'debug:server': ['env:debug', fork('bin/app.mjs', {
-    // TODO Remove experimental flag when node 10 release
-    env: {NODE_OPTIONS: '--experimental-modules'}
-  })],
+  'debug:server': ['env:debug', env({NODE_OPTIONS: '--experimental-modules'}), npx('nodemon', 'bin/app.mjs', )],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
   'docker:redis': redis(Containers.redis.name, Containers.redis.options),
