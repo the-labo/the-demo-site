@@ -1,48 +1,25 @@
 {
   "name": "the-demo-site",
-  "version": "7.26.1",
   "description": "Demo site of the-framework",
-  "main": "lib",
-  "scripts": {
-    "build": "pon build",
-    "debug": "pon debug",
-    "prepare": "pon prepare",
-    "restart": "pon restart",
-    "share": "the-script-share",
-    "start": "pon start",
-    "stop": "pon stop",
-    "test": "pon test",
-    "update": "the-script-update",
-    "release": "the-script-release -y"
-  },
-  "repository": "the-labo/the-demo-site",
-  "keywords": [
-    "Pon"
-  ],
+  "version": "7.28.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/the-labo/the-demo-site/issues"
   },
-  "homepage": "https://github.com/the-labo/the-demo-site#readme",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.37",
-    "@std/esm": "^0.19.3",
     "ape-tmpl": "^6.0.0",
     "asleep": "^1.0.3",
     "asobj": "^2.0.1",
-    "babel-polyfill": "^6.23.0",
-    "babel-runtime": "^6.26.0",
     "classnames": "^2.2.5",
     "coz": "^6.0.20",
     "debug": "^3.1.0",
     "handlebars": "^4.0.10",
     "moment": "^2.20.1",
-    "numeral": "^2.0.6",
     "objnest": "^4.0.0",
     "pon": "^5.2.2",
     "pon-task-basic": "^3.1.8",
@@ -104,6 +81,7 @@
     "aglob": "^3.0.0",
     "akv": "^2.0.0",
     "browserify": "^15.0.0",
+    "fixpack": "^2.3.1",
     "markdown-toc": "^1.2.0",
     "nodemon": "^1.14.11",
     "pretty-error": "^2.1.1",
@@ -114,5 +92,24 @@
   "engines": {
     "node": ">=8",
     "npm": ">=4"
+  },
+  "homepage": "https://github.com/the-labo/the-demo-site#readme",
+  "keywords": [
+    "Pon"
+  ],
+  "license": "Apache-2.0",
+  "main": "lib",
+  "repository": "the-labo/the-demo-site",
+  "scripts": {
+    "build": "pon build",
+    "debug": "pon debug",
+    "prepare": "pon prepare",
+    "release": "the-script-release -y",
+    "restart": "pon restart",
+    "share": "the-script-share",
+    "start": "pon start",
+    "stop": "pon stop",
+    "test": "pon test",
+    "update": "the-script-update"
   }
 }
