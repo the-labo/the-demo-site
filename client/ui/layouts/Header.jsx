@@ -23,7 +23,7 @@ const Header = compose(
 )(function HeaderImpl ({
                          l,
                          isAdmin,
-                         synced,
+                         ready,
                          user,
                          needsVerify,
                          onVerify
@@ -42,7 +42,7 @@ const Header = compose(
           >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
         </TheCondition>
       </TheHeader.Tab>
-      <TheCondition if={Boolean(synced)}>
+      <TheCondition if={Boolean(ready)}>
         <TheHeader.RightArea>
           <TheCondition if={Boolean(user)}>
             <TheDropdownMenu righted
@@ -74,7 +74,7 @@ export default asBound(
   (state) => ({
     pathname: state['app.pathname'],
     user: state['account.user'],
-    synced: state['account.synced'],
+    ready: state['account.ready'],
     needsVerify: state['verifyNeed.needed']
   }),
   ({

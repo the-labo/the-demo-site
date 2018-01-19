@@ -28,7 +28,6 @@ function HomeView ({
 export default asView(
   HomeView,
   (state) => ({
-    busy: state['app.busy']
   })
 )
 

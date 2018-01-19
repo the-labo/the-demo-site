@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheConfirmDialog, } from 'the-components'
+import { TheDestroyDialog, } from 'the-site-components'
 import { withLoc } from 'the-loc'
 import { compose, asBound } from 'the-hoc'
 
@@ -20,30 +20,21 @@ const UserDestroyDialog = compose(
                                     done,
                                     users
                                   }) {
-    if (!active) {
-      return null
-    }
-    if (done) {
-
-    }
     return (
-      <TheConfirmDialog present
-                        title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
-                        checkText={l('checks.SURE_TO_DESTROY')}
-                        submitText={l('buttons.DO_DESTROY')}
+      <TheDestroyDialog title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
                         lead={l('leads.USER_DESTROY_CONFIRM')}
+                        entities={users}
+                        renderItem={({displayName}) => displayName}
                         {...{
+                          l,
                           onClose,
                           onSubmit,
-                          spinning
+                          spinning,
+                          active,
+                          done,
+
                         }}
-      >
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>{user.displayName}</li>
-          ))}
-        </ul>
-      </TheConfirmDialog>
+      />
     )
   }
 )

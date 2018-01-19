@@ -16,7 +16,6 @@ import UserCreateDialog from './user/UserCreateDialog'
 import UserCreateForm from './user/UserCreateForm'
 import UserDestroyDialog from './user/UserDestroyDialog'
 import UserList from './user/UserList'
-import UserListItem from './user/UserListItem'
 import UserPager from './user/UserPager'
 import UserPasswordDialog from './user/UserPasswordDialog'
 import UserSearchForm from './user/UserSearchForm'
@@ -34,7 +33,6 @@ export {
   UserCreateForm,
   UserDestroyDialog,
   UserList,
-  UserListItem,
   UserPager,
   UserPasswordDialog,
   UserSearchForm,

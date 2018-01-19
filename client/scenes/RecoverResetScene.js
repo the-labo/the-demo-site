@@ -5,7 +5,7 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {bindScope, withEntry, withBusy, withFailure} = require('the-scene-mixins/shim')
+const {bindScope, withEntry, withBusy, withFailure,} = require('the-scene-mixins/shim')
 
 @withEntry
 @withBusy
@@ -24,8 +24,7 @@ class RecoverResetScene extends RecoverResetSceneBase {
   async doReset () {
     const {recoverCtrl} = this.controllers
     await this.processEntry(({password, seal, envelop}) =>
-      recoverCtrl.reset({password, seal, envelop})
-    )
+      recoverCtrl.reset({password, seal, envelop}))
   }
 }
 

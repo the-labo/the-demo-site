@@ -7,7 +7,7 @@ import { TheRoute } from 'the-components'
 import * as v from './views'
 import { withLoc } from 'the-loc'
 
-const Routes = ({l, user}) => (
+const Routes = ({}) => (
   <TheRoute.Switch>
     <TheRoute exact path={Urls.TOP_URL} component={v.HomeView}/>
 
@@ -32,7 +32,7 @@ const Routes = ({l, user}) => (
     <TheRoute exact path={Urls.QUIT_URL} component={v.QuitView}/>
     <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
 
-      <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
+    <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
 
     <TheRoute component={v.ErrorNotfoundView}/>
   </TheRoute.Switch>

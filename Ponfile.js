@@ -14,7 +14,8 @@ const {
   command: {spawn: {git, npx}},
   coz,
   fmtjson,
-  env
+  env,
+  open,
 } = require('pon-task-basic')
 const {mysql, redis, nginx} = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
@@ -52,7 +53,6 @@ module.exports = pon({
   }, {force: true}),
   'struct:cp': cp({
     'assets/text': 'public',
-    'assets/html/partials': 'public/partials',
     'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
     'assets/images': 'public/images',
@@ -165,7 +165,7 @@ module.exports = pon({
   ], `public${Urls.PRODUCTION_CSS_URL}`),
   'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
   'prod:db': ['env:prod', 'db'],
-  'debug:server': ['env:debug', npx('nodemon', '--inspect', '--require', 'pretty-error/start', './bin/app.js')],
+  'debug:server': ['env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')],
   'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
   'docker:redis': redis(Containers.redis.name, Containers.redis.options),
@@ -175,6 +175,8 @@ module.exports = pon({
   'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME}),
   'pm2:backup:dump': pm2.pon('db:dump', {name: `${Local.BACKUP_PROCESS_NAME}:dump`, cron: Local.DUMP_SCHEDULE}),
   'git:catchup': [git('stash'), git('pull')],
+  'pkg:fix': npx('fixpack'),
+  'open:app': open(`http://localhost:${Local.NGINX_PUBLISHED_PORT}`),
   // ----------------
   // Main Tasks
   // ----------------
@@ -185,7 +187,7 @@ module.exports = pon({
   test: ['env:test', 'test:client', 'test:server'],
   clean: ['clean:shim', 'clean:public', 'clean:cache'],
   build: ['struct', 'ui'],
-  prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build'],
+  prepare: ['secret:encrypt', 'struct', 'assets', 'docker', 'db', 'pkg:fix', 'build'],
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
@@ -198,6 +200,7 @@ module.exports = pon({
   logs: ['pm2:app/logs'],
   setting: () => setting.ask(),
   deploy: ['maint:on', 'stop', 'git:catchup', 'prod', 'maint:off'],
+  open: 'open:*',
   // ----------------
   // Aliases
   // ----------------

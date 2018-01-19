@@ -14,16 +14,16 @@ import Main from './layouts/Main'
 import Toasts from './layouts/Toasts'
 import Footer from './layouts/Footer'
 import Routes from './Routes'
-import { withProvider, withStore } from 'the-store'
+import { withProvider, withStore, } from 'the-store'
 import { withLoc, } from 'the-loc'
 import { withCycle, asBound, } from 'the-hoc'
-import { withBinder } from 'the-handle'
+import { withBinder, } from 'the-handle'
 import { withClient } from 'the-client'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 
 function App ({
-                synced,
+                ready,
                 user
               }) {
   return (
@@ -31,7 +31,7 @@ function App ({
       <Header/>
       <Toasts/>
       <Main>
-        <TheCondition if={synced}>
+        <TheCondition if={ready}>
           <Routes {...{user}}/>
         </TheCondition>
       </Main>
@@ -45,7 +45,7 @@ function App ({
 const ConnectedApp = asBound(
   withCycle(withClient(withStore(App))),
   (state) => ({
-    synced: state['account.synced'],
+    ready: state['account.ready'],
     user: state['account.user']
   }),
   ({
@@ -54,7 +54,7 @@ const ConnectedApp = asBound(
      verifyNeedScene,
    }) => ({
     onMount: async () => {
-      await appScene.busyFor(async () => {
+      await appScene.busyWhile(async () => {
         await accountScene.doSync()
       })
       await verifyNeedScene.doSync({delay: 3 * 1000})

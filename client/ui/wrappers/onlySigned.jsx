@@ -30,8 +30,8 @@ function onlySigned (Component, options = {}) {
 
         makeSureSigned () {
           const {store, history} = this.props
-          const synced = store.account.get('synced')
-          if (synced) {
+          const ready = store.account.get('ready')
+          if (ready) {
             const user = store.account.get('user')
             const hasSigned = Boolean(user)
             if (!hasSigned) {

@@ -23,9 +23,7 @@ class RecoverSendScene extends RecoverSendSceneBase {
   }))
   async doSend () {
     const {recoverCtrl} = this.controllers
-    await this.processEntry(({email}) =>
-      recoverCtrl.send(email)
-    )
+    await this.processEntry(({email}) => recoverCtrl.send(email))
   }
 }
 

@@ -5,12 +5,11 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {compose, withDebug} = require('the-controller-mixins')
+const {compose,} = require('the-controller-mixins')
 const {withAlias,} = require('./concerns')
 const {Urls, Lifetimes} = require('@self/conf')
 
 const RecoverCtrlBase = compose(
-
   withAlias
 )(Ctrl)
 

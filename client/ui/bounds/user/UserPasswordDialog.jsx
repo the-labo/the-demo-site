@@ -76,7 +76,7 @@ export default asBound(
     active: state['userPassword.active'],
     done: state['userPassword.done'],
     users: state['userPassword.targets'],
-    passwords: state['userPassword.results'],
+    passwords: state['userPassword.result'],
     spinning: state['userPassword.busy'],
   }),
   ({

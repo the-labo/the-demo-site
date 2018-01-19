@@ -36,6 +36,7 @@ once('DOMContentLoaded', async () => {
 
   await mount(app, UI.APP_CONTAINER_ID, {router: true, history})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
+
   set(UI.APP_STAGE_NAME, 'mounted')
 
 })

@@ -35,6 +35,7 @@ class UserListScene extends UserListSceneBase {
   }
 
   @withBusy.while
+  @withReady.when
   async doSync () {
     const {userCtrl} = this.controllers
     const {meta: counts, entities} = await userCtrl.list({

@@ -5,53 +5,56 @@
 
 import React from 'react'
 import c from 'classnames'
-import { TheTable } from 'the-components'
+import { TheOperationList, } from 'the-site-components'
 import { withLoc } from 'the-loc'
 import { asPure, compose, asBound, } from 'the-hoc'
-import UserListItem from './UserListItem'
+import { withMoment } from '../../wrappers'
 import styles from './UserList.pcss'
-
-const {Head, Body, Row, HeaderCell, SortableHeaderCell} = TheTable
 
 const UserList = compose(
   withLoc,
-  asPure
+  asPure,
+  withMoment,
 )(function UserListImpl ({
                            users,
                            className,
                            l,
                            sort,
-                           onSort
+                           onSort,
+                           checks,
+                           formatDate,
+                           onUpdateCheck,
                          }) {
   return (
-    <div className={c('user-list', className)}>
-      <TheTable className={styles.table}
-                empty={users && users.length === 0}
-                alt={l('alt.LIST_EMPTY')}
-      >
-        <Head>
-          <Row>
-            <HeaderCell/>
-            <SortableHeaderCell name='name'
-                                {...{sort, onSort}}
-            >{l('labels.USER_NAME')}</SortableHeaderCell>
-            <HeaderCell>{l('labels.USER_PROFILE_NAME')}</HeaderCell>
-            <HeaderCell>{l('labels.USER_EMAIL')}</HeaderCell>
-            <SortableHeaderCell name='signinAt'
-                                {...{sort, onSort}}
-            >{l('labels.USER_SIGNIN_AT')}</SortableHeaderCell>
-          </Row>
-        </Head>
-        <Body>
-        {
-          users.map((user) => (
-            <UserListItem key={user.id}
-                          user={user}
-            />
-          ))
-        }
-        </Body>
-      </TheTable>
+    <div className={c(className)}>
+      <TheOperationList className={styles.table}
+                        entities={users}
+                        {...{l, sort, onSort, onUpdateCheck}}
+                        fields={{
+                          name: {
+                            label: l('labels.USER_NAME'),
+                            sortable: true,
+                          },
+                          'profile.name': {
+                            label: l('labels.USER_PROFILE_NAME'),
+                            sortable: true,
+                            render: (_, {profile}) => profile?.name,
+                          },
+                          'profile.email': {
+                            label: l('labels.USER_EMAIL'),
+                            sortable: true,
+                            render: (_, {profile}) => profile?.email,
+                          },
+                          'sign.signInAt': {
+                            label: l('labels.USER_SIGNIN_AT'),
+                            sortable: true,
+                            render: (_, {sign}) => sign && formatDate(sign.signInAt, 'lll'),
+                          },
+                        }}
+                        isChecked={({id}) => checks[id]}
+                        isFreezed={({id}) => id === 'superadmin'}
+
+      />
     </div>
   )
 })
@@ -60,12 +63,17 @@ export default asBound(
   UserList,
   (state) => ({
     users: state['userList.entities'],
-    sort: state['userList.sort']
+    sort: state['userList.sort'],
+    checks: state['userCheck.values'],
   }),
-  ({userListScene}) => ({
+  ({
+     userListScene,
+     userCheckScene,
+   }) => ({
     onSort: async (name) => {
       userListScene.setSort(name)
       await userListScene.doSync()
-    }
+    },
+    onUpdateCheck: (v) => userCheckScene.setValues(v),
   })
 )

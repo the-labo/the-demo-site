@@ -6,7 +6,7 @@
 import React from 'react'
 import { withLoc } from 'the-loc'
 import { compose, asBound } from 'the-hoc'
-import { Pager } from '../../fragments'
+import { TheOperationPager } from 'the-site-components'
 
 const UserPager = compose(
   withLoc
@@ -18,7 +18,7 @@ const UserPager = compose(
                             onPage
                           }) {
     return (
-      <Pager {...{l, showCounts, counts, onPage}}/>
+      <TheOperationPager {...{l, showCounts, counts, onPage}}/>
     )
   }
 )

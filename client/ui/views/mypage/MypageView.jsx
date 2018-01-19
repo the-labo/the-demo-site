@@ -21,10 +21,9 @@ import { Urls } from '@self/conf'
 function MypageView ({
                        l,
                        busy,
-                       synced,
+                       ready,
                        user
                      }) {
-  const ready = Boolean(synced && user)
   const {profile} = user
   return (
     <TheView className={styles.self}
@@ -75,7 +74,7 @@ export default asView(
   MypageView,
   (state) => ({
     busy: state['account.busy'],
-    synced: state['account.synced'],
+    ready: state['account.ready'],
     user: state['account.user']
   }),
   () => ({}),

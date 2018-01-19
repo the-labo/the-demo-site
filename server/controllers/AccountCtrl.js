@@ -14,6 +14,7 @@ const AccountCtrlBase = compose(
 /** @lends AccountCtrl */
 class AccountCtrl extends AccountCtrlBase {
   async getCurrentUser () {
+    await this.syncUser()
     return this.user
   }
 

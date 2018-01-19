@@ -5,8 +5,8 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {compose, } = require('the-controller-mixins')
-const {RoleCodes} = require('@self/conf')
+const {compose,} = require('the-controller-mixins')
+const {RoleCodes,} = require('@self/conf')
 
 const SignCtrlBase = compose(
 
@@ -42,8 +42,8 @@ class SignCtrl extends SignCtrlBase {
     await this._reloadAuthorized()
     if (user) {
       await signService.processSignOut({userId: user.id})
-      await this._delAuthorized()
     }
+    await this._delAuthorized()
     return !!user
   }
 }

@@ -3,7 +3,7 @@
  * @class Ctrl
  */
 const {TheCtrl} = require('the-controller-base')
-const {withClient, withDebug, withSeal, compose} = require('the-controller-mixins')
+const {withClient, withDebug, withSeal, compose,} = require('the-controller-mixins')
 const {withAuth,} = require('./concerns')
 
 const CtrBase = compose(
@@ -31,8 +31,13 @@ class Ctrl extends CtrBase {
     return this.app.services
   }
 
-  async controllerMethodWillInvoke () {
+  async syncUser () {
     this.user = (await this._fetchAuthorizedUser()) || null
+  }
+
+  async controllerMethodWillInvoke (invocation) {
+    super.controllerMethodWillInvoke(invocation)
+    await this.syncUser()
   }
 }
 

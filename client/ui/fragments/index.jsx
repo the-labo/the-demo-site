@@ -6,11 +6,9 @@
 
 import UserImage from './images/UserImage'
 import UserLabel from './labels/UserLabel'
-import Pager from './pager/Pager'
 
 export {
   UserImage,
   UserLabel,
-  Pager,
 }
 

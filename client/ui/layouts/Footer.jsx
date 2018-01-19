@@ -19,7 +19,7 @@ const Footer = compose(
                        }) {
     return (
       <TheFooter>
-        <TheFooter.CopyRight year={2017}
+        <TheFooter.CopyRight year={2018}
                              footer={l('org.ORG_NAME')}
         />
         <TheFooter.Links>

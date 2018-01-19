@@ -5,9 +5,10 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {bindScope, withBusy} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withTargets,} = require('the-scene-mixins/shim')
 
 @withBusy
+@withTargets
 @bindScope('userDestroy')
 class UserDestroySceneBase extends Scene {}
 
@@ -16,7 +17,7 @@ class UserDestroyScene extends UserDestroySceneBase {
   @withBusy.while
   async doDestroy () {
     const {userCtrl} = this.controllers
-    const userIds = this.get('targets').map(({id}) => id)
+    const userIds = this.getTargetIds()
     await userCtrl.destroy(...userIds)
   }
 }

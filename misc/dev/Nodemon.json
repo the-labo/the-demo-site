@@ -5,7 +5,10 @@
     "doc",
     "example"
   ],
+  "execMap": {
+    "js": "node --inspect --require pretty-error/start"
+  },
   "noColors": true,
   "ext": "json,mjs,js",
-  "delay": 300
+  "delay": 800
 }

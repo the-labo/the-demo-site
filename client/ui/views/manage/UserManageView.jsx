@@ -26,7 +26,7 @@ function UserManageView ({
                            l,
                            ready,
                            busy,
-                           onCreate
+                           onCreate,
                          }) {
   return (
     <TheView className={styles.self}
@@ -63,7 +63,7 @@ export default asView(
   (state) => ({
     busy: !state['userList.ready'] && state['userList.busy'],
     ready: state['userList.ready'],
-    query: state['app.query']
+    query: state['app.query'],
   }),
   ({
      userListScene,
@@ -81,9 +81,7 @@ export default asView(
       userListScene.setQ(q)
       userSearchScene.setEntry({q})
 
-      await userListScene.readyFor(async () => {
-        await userListScene.doSync()
-      })
+      await userListScene.doSync()
     },
     onTearDown: () => {},
     onCreate: () => {

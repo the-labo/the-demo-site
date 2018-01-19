@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const controllers = require('../controllers')
 const createDB = require('../db/create')
 const {ok, equal} = require('assert')
@@ -39,6 +38,7 @@ describe('controllers', () => {
     ok(!(await accountCtrl.getCurrentUser()))
 
     ok(await signCtrl.signIn('foo', 'bar'))
+    await accountCtrl.syncUser()
     await accountCtrl.updatePassword('bar2')
     ok(await signCtrl.signIn('foo', 'bar2'))
 

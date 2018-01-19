@@ -5,22 +5,21 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry, withResult,} = require('the-scene-mixins/shim')
 
 @withBusy
 @withEntry
+@withResult
 @bindScope('userCreate')
 class UserCreateSceneBase extends Scene {}
 
 /** @lends UserCreateScene */
 class UserCreateScene extends UserCreateSceneBase {
   @withBusy.while
+  @withResult.save
   async doCreate () {
     const {userCtrl} = this.controllers
-    await this.processEntry(async (values) => {
-      const created = await userCtrl.create(values)
-      this.set({created})
-    })
+    return await this.processEntry((values) => userCtrl.create(values))
   }
 }
 
