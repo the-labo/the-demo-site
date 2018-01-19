@@ -15,12 +15,16 @@ module.exports = [
       id: name,
       name,
       createdAt: new Date(),
-      role: {$$entity: true, $$as: 'Role', id: 1}
+      role: {$$entity: true, $$as: 'Role', id: 1},
     }
   }),
   ..._seed.explode({
     id: ({index}) => String(index),
     name: ({email}) => email.split('@')[0],
     createdAt: new Date()
-  }, 102)
+  }, 102).map((v) => ({
+    ...v,
+    profile: {$$entity: true, $$as: 'Profile', id: v.id},
+    sign: {$$entity: true, $$as: 'Sign', id: v.id},
+  }))
 ]

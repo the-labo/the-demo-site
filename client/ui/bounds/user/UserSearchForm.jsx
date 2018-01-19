@@ -32,7 +32,7 @@ export default asForm(
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
       userListScene.setQ(q)
-      await userSearchScene.busyFor(async () => {
+      await userSearchScene.busyWhile(async () => {
         await userListScene.doSync()
       })
     }

@@ -104,13 +104,13 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
+    "preinstall": "./misc/scripts/must_use_yarn.js",
     "prepare": "pon prepare",
     "release": "the-script-release -y",
     "restart": "pon restart",
     "share": "the-script-share",
     "start": "pon start",
     "stop": "pon stop",
-    "test": "pon test",
-    "update": "the-script-update"
+    "test": "pon test"
   }
 }

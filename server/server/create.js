@@ -36,7 +36,7 @@ function create (config) {
     seal,
     mail,
     services: servicesProxy(ServiceMapping, db),
-    APP_CDN_URL: Local.APP_CDN_URL,
+    cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
   }
 
   return theServer({

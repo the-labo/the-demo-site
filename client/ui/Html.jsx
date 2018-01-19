@@ -6,7 +6,6 @@
 import React from 'react'
 import { TheHtml, TheHead, TheBody, TheRouter, } from 'the-components'
 import App from './App'
-import { expand } from 'objnest'
 import { UI, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
 
@@ -14,7 +13,7 @@ import { isProduction, } from 'the-check'
 function Html ({appScope, renderingContext}) {
   const {
     pkg: {version},
-    APP_CDN_URL,
+    cdnUrl,
   } = appScope
   const {lang, client, store, handle, path} = renderingContext
   const l = locales.bind(lang)
@@ -42,9 +41,9 @@ function Html ({appScope, renderingContext}) {
                ]}
                icon={Urls.ICON_URL}
                version={isProduction() ? version : String(new Date().getTime())}
-               globals={expand({[UI.APP_PROP_NAME]: appProps})}
+               globals={{[UI.GLOBAL_KEY]: {}, [UI.GLOBAL_KEY_PROPS]: appProps}}
                color={Styles.DOMINANT_COLOR}
-               cdn={isProduction() ? APP_CDN_URL : null}
+               cdn={cdnUrl}
       >
       </TheHead>
       <TheBody>

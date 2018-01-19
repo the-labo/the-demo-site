@@ -6,7 +6,7 @@
     "example"
   ],
   "execMap": {
-    "js": "node --inspect --require pretty-error/start"
+    "js": "node --inspect=${INSPECT_PORT} --require pretty-error/start"
   },
   "noColors": true,
   "ext": "json,mjs,js",

@@ -17,7 +17,8 @@ function onlySigned (Component, options = {}) {
     withStore(
       class OnlySigned extends React.Component {
         render () {
-          return <Component {...this.props}/>
+          const {props} = this
+          return <Component {...props}/>
         }
 
         componentDidMount () {

@@ -119,7 +119,7 @@ module.exports = pon({
       externals: UI.EXTERNAL_BUNDLES,
       watchTargets: 'client/shim/**/*.js',
       transforms: [envify()],
-      fullPaths: !isProduction()
+      fullPaths: false,
     }), {sub: ['watch']}
   ),
   'ui:browser-external': env.dynamic(({isProduction}) =>
@@ -128,11 +128,11 @@ module.exports = pon({
       skipWatching: true,
       watchDelay: 300,
       transforms: [envify()],
-      fullPaths: !isProduction(),
+      fullPaths: false,
       ignores: [
         // TODO remove patch
         ...browserExternalIgnorePatch({isProduction}),
-      ]
+      ],
     })
   ),
   'assets:install': () => theAssets().installTo('assets', {copy: true}),
@@ -150,7 +150,7 @@ module.exports = pon({
   'clean:public': del('public/build/*.*'),
   'env:prod': env('production'),
   'env:test': env('test'),
-  'env:debug': env('development', {DEBUG: 'app:*'}),
+  'env:debug': env('development', {DEBUG: 'app:*', ...Local}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000,}),
   'test:server': mocha('server/test/**/*.js', {timeout: 3000,}), // TODO Use this when node 10 released
   'prod:map': del('public/**/*.map'),
@@ -209,6 +209,7 @@ module.exports = pon({
   b: 'build',
   w: 'watch',
   d: 'debug',
-  p: 'prod'
+  p: 'prod',
+  o: 'open',
 
 })

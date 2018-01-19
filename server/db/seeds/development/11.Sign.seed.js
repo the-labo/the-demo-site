@@ -12,7 +12,7 @@ module.exports = [
       id,
       passwordSalt: salt,
       passwordHash: digestPassword(name, salt),
-      user: {$$entity: true, $$as: 'User', id}
+      user: {$$entity: true, $$as: 'User', id},
     }
   })
 ]

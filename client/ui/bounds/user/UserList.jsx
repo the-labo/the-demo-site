@@ -38,17 +38,14 @@ const UserList = compose(
                           'profile.name': {
                             label: l('labels.USER_PROFILE_NAME'),
                             sortable: true,
-                            render: (_, {profile}) => profile?.name,
                           },
                           'profile.email': {
                             label: l('labels.USER_EMAIL'),
                             sortable: true,
-                            render: (_, {profile}) => profile?.email,
                           },
                           'sign.signInAt': {
                             label: l('labels.USER_SIGNIN_AT'),
                             sortable: true,
-                            render: (_, {sign}) => sign && formatDate(sign.signInAt, 'lll'),
                           },
                         }}
                         isChecked={({id}) => checks[id]}

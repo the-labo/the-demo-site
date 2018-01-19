@@ -444,7 +444,8 @@
 .the-table .the-table-checkbox .the-input-checkbox .the-input-checkbox-item { width:100%;justify-content:center;box-sizing:border-box;margin:0; }
 .the-table .the-table-checkbox .the-input-checkbox-label { width:100%;height:100%;display:inline-flex;justify-content:center;align-items:center;padding:4px 0; }
 .the-table .the-table-sortable-header-cell {  }
-.the-table .the-table-sortable-header-cell a { display:inline-flex;justify-content:center;align-items:center;padding:4px 8px; }
+.the-table .the-table-sortable-header-cell a { display:inline-flex;justify-content:center;align-items:center;padding:4px 8px;cursor:pointer; }
+.the-table .the-table-sortable-header-cell a:active { opacity:0.9; }
 .the-table .the-table-sortable-header-cell .the-icon { margin-right:2px; }
 .the-table .the-table-alt-cell { text-align:center; }
 .the-tag { color:#3A8;display:inline-block;font-size:11px;line-height:14px;vertical-align:middle;border:1px solid #3A8;border-radius:2px;padding:2px 4px;margin:2px 4px;text-decoration:none;background-color:rgba(51, 170, 136, 0.1); }

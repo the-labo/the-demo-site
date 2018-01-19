@@ -19,6 +19,7 @@ function HomeView ({
       />
       <TheView.Body>
         <p>
+          This is the demo of the-site!
         </p>
       </TheView.Body>
     </TheView>
@@ -27,8 +28,7 @@ function HomeView ({
 
 export default asView(
   HomeView,
-  (state) => ({
-  })
+  (state) => ({})
 )
 
 

@@ -36,6 +36,7 @@ const Vars = Object.freeze(
   /** @lends Local */
   {
     APP_PORT: portNumberFor(`app@${__dirname}`),
+    INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
 
     MYSQL_PUBLISHED_PORT: portNumberFor(`mysql@${__dirname}`),
     REDIS_PUBLISHED_PORT: portNumberFor(`redis@${__dirname}`),

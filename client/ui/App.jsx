@@ -22,18 +22,13 @@ import { withClient } from 'the-client'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 
-function App ({
-                ready,
-                user
-              }) {
+function App ({}) {
   return (
     <TheRoot>
       <Header/>
       <Toasts/>
       <Main>
-        <TheCondition if={ready}>
-          <Routes {...{user}}/>
-        </TheCondition>
+        <Routes/>
       </Main>
       <Footer/>
       <CautionDisconnectedDialog/>
@@ -44,19 +39,14 @@ function App ({
 
 const ConnectedApp = asBound(
   withCycle(withClient(withStore(App))),
-  (state) => ({
-    ready: state['account.ready'],
-    user: state['account.user']
-  }),
+  (state) => ({}),
   ({
      appScene,
      accountScene,
      verifyNeedScene,
    }) => ({
     onMount: async () => {
-      await appScene.busyWhile(async () => {
-        await accountScene.doSync()
-      })
+      await accountScene.doSync()
       await verifyNeedScene.doSync({delay: 3 * 1000})
     }
   })

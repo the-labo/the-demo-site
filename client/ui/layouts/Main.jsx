@@ -4,13 +4,12 @@
 'use strict'
 
 import React from 'react'
-import { TheMain, TheSpin } from 'the-components'
+import { TheMain } from 'the-components'
 import { asBound } from 'the-hoc'
 
 const Main = function MainImpl ({busy, children}) {
   return (
-    <TheMain>
-      <TheSpin enabled={busy} cover/>
+    <TheMain spinning={busy}>
       {children}
     </TheMain>
   )

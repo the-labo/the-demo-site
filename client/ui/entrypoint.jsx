@@ -8,12 +8,12 @@ import store from '../store'
 import handle from '../handle'
 import { isProduction } from 'the-check'
 
-set(UI.APP_STAGE_NAME, 'registering')
+set(UI.GLOBAL_KEY_STAGE, 'registering')
 
 once('DOMContentLoaded', async () => {
-  set(UI.APP_STAGE_NAME, 'mounting')
+  set(UI.GLOBAL_KEY_STAGE, 'mounting')
 
-  const props = get(UI.APP_PROP_NAME)
+  const props = get(UI.GLOBAL_KEY_PROPS)
   const {
     lang = (get('navigator.language') || UI.DEFAULT_LANG).split('-')[0]
   } = props
@@ -37,6 +37,7 @@ once('DOMContentLoaded', async () => {
   await mount(app, UI.APP_CONTAINER_ID, {router: true, history})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
 
-  set(UI.APP_STAGE_NAME, 'mounted')
-
+  set(UI.GLOBAL_KEY_STAGE, 'mounted')
+  set(UI.GLOBAL_KEY_HANDLE, handle)
+  set(UI.GLOBAL_KEY_STORE, store)
 })
