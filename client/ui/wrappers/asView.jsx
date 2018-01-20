@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { withLoc } from 'the-loc'
-import { withClient } from 'the-client/shim'
 import { withTitle, withCycle, asBound } from 'the-hoc'
 import { withHistory, withRoute } from 'the-components'
 import onlySigned from './onlySigned'
@@ -33,7 +32,6 @@ function asView (Component,
     withLoc,
     withHistory,
     withRoute,
-    withClient
   ]
     .filter(Boolean)
     .reduce(

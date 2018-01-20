@@ -84,7 +84,7 @@ Preparing
 Install CLI packages if you have not
 
 ```bash
-$ npm i yarn pon pm2 -g
+$ npm i -g yarn pon pm2 jsdoc mocha
 ```
 
 Then, install dependencies and build the project
@@ -149,7 +149,7 @@ Running Tasks
 
 This project uses [Pon][pon_url] as a task runner.
 
-Just pass task name to run
+Just pass task name to run.
 
 ```bash
 $ pon <taskName>
@@ -242,6 +242,9 @@ $ pon <taskName>
 | ui | Run all ui tasks | `pon ui` |
 | w | Shortcut for `watch` task | `pon w` |
 | watch | Run watches | `pon watch` |
+
+
+For more information, try `pon -l`
 
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
