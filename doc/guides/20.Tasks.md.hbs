@@ -12,8 +12,8 @@ $ pon <taskName>
 
 ### Available Tasks
 
-| TaskName | Description |
-| -------- | ----------- |
+| TaskName | Description | Command |
+| -------- | ----------- | -------  |
 {{#each vars.Pondoc.tasks}}
-| {{@key}} | {{{this}}} |
+| {{@key}} | {{{this}}} | `pon {{@key}}` |
 {{/each}}
