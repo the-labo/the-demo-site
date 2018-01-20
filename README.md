@@ -134,7 +134,7 @@ Production
 
 ```bash
 
-## Start production server
+# Start production server
 pon production
 ```
 
@@ -158,31 +158,90 @@ $ pon <taskName>
 
 ### Available Tasks
 
-| TaskName | Description |
-| -------- | ----------- |
-| struct:mkdir | Generate project directories |
-| struct:symlink | Generate symbolic links |
-| struct:cp | Execute file copy |
-| struct:chmod | Change file permissions |
-| struct:compile | Compile files |
-| struct:json | Format json files |
-| struct:render | Render coz templates |
-| struct:pkg | Prepare sub packages |
-| assert:not-prod | Make sure that not production |
-| maint:on | Enable maintenance mode |
-| maint:off | Disable maintenance mode |
-| db:setup | Setup database |
-| db:cli | Open database cli |
-| db:seed | Generate test data |
-| db:migrate | Migrate data |
-| db:drop | Drop database |
-| db:dump | Dump data |
-| db:load | Load data from dum |
-| db:reset | Drop and setup database again |
-| ui:react | Compile react components |
-| ui:css | Compile stylesheets |
-| ui:browser | Bundle browser script |
-| ui:browser-external | Bundle external browser script |
+| TaskName | Description | Command |
+| -------- | ----------- | -------  |
+| assert:not-prod | Make sure that not production | `pon assert:not-prod` |
+| assets:install | Install asset files | `pon assets:install` |
+| assets:markdown | Render markdown assets | `pon assets:markdown` |
+| clean:cache | Cleanup cache files | `pon clean:cache` |
+| clean:public | Cleanup public files | `pon clean:public` |
+| clean:shim | Cleanup shim files | `pon clean:shim` |
+| db:cli | Open database cli | `pon db:cli` |
+| db:drop | Drop database | `pon db:drop` |
+| db:dump | Dump data | `pon db:dump` |
+| db:load | Load data from dum | `pon db:load` |
+| db:migrate | Migrate data | `pon db:migrate` |
+| db:reset | Drop and setup database again | `pon db:reset` |
+| db:seed | Generate test data | `pon db:seed` |
+| db:setup | Setup database | `pon db:setup` |
+| debug:server | Run server for debug | `pon debug:server` |
+| debug:watch | Watch files for debug | `pon debug:watch` |
+| doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
+| docker:mysql | Prepare mysql docker container | `pon docker:mysql` |
+| docker:nginx | Prepare nginx docker container | `pon docker:nginx` |
+| docker:redis | Prepare redis docker container | `pon docker:redis` |
+| env:debug | Set env variables for debug | `pon env:debug` |
+| env:prod | Set env variables for production | `pon env:prod` |
+| env:test | Set env variables for test | `pon env:test` |
+| git:catchup | Catch up to latest git | `pon git:catchup` |
+| icon:generate | Generate icons | `pon icon:generate` |
+| maint:off | Disable maintenance mode | `pon maint:off` |
+| maint:on | Enable maintenance mode | `pon maint:on` |
+| open:app | Open app in browser | `pon open:app` |
+| pkg:fix | Fix package.json | `pon pkg:fix` |
+| pm2:app | Run app with pm2 | `pon pm2:app` |
+| pm2:backup:dump | Run backup cron with pm2 | `pon pm2:backup:dump` |
+| prod:compile | Compile files for production | `pon prod:compile` |
+| prod:css | Compile css files for production | `pon prod:css` |
+| prod:db | Prepare database for production | `pon prod:db` |
+| prod:js | Compile js files for production | `pon prod:js` |
+| prod:map | Delete source map files for production | `pon prod:map` |
+| secret:decrypt | Decrypt secret file | `pon secret:decrypt` |
+| secret:encrypt | Encrypt secret file | `pon secret:encrypt` |
+| struct:chmod | Change file permissions | `pon struct:chmod` |
+| struct:compile | Compile files | `pon struct:compile` |
+| struct:cp | Execute file copy | `pon struct:cp` |
+| struct:json | Format json files | `pon struct:json` |
+| struct:mkdir | Generate project directories | `pon struct:mkdir` |
+| struct:pkg | Prepare sub packages | `pon struct:pkg` |
+| struct:render | Render coz templates | `pon struct:render` |
+| struct:symlink | Generate symbolic links | `pon struct:symlink` |
+| test:client | Run client tests | `pon test:client` |
+| test:server | Run server tests | `pon test:server` |
+| ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
+| ui:browser | Bundle browser script | `pon ui:browser` |
+| ui:css | Compile stylesheets | `pon ui:css` |
+| ui:map | Extract map files | `pon ui:map` |
+| ui:react | Compile react components | `pon ui:react` |
+| assets | Run all assets tasks | `pon assets` |
+| b | Shortcut for `build` task | `pon b` |
+| build | Build all | `pon build` |
+| c | Shortcut for `clean` task | `pon c` |
+| clean | Clean all | `pon clean` |
+| d | Shortcut for `debug` task | `pon d` |
+| db | Prepare DB | `pon db` |
+| debug | Start debugging | `pon debug` |
+| default | Default for `pon` command | `pon default` |
+| deploy | Deploy project on production | `pon deploy` |
+| doc | Generate docs | `pon doc` |
+| docker | Setup docker infra | `pon docker` |
+| logs | Show app daemon logs | `pon logs` |
+| o | Shortcut for `open` task | `pon o` |
+| open | Open project | `pon open` |
+| p | Shortcut for `prod` task | `pon p` |
+| prepare | Prepare project | `pon prepare` |
+| prod | Prepare and start on production | `pon prod` |
+| restart | Restart app as daemon | `pon restart` |
+| setting | Update project settings with interactive shell | `pon setting` |
+| show | Show app daemon status | `pon show` |
+| start | Start app as daemon | `pon start` |
+| stop | Stop app as daemon | `pon stop` |
+| struct | Run all struct tasks | `pon struct` |
+| t | Shortcut for `test` task | `pon t` |
+| test | Run all tess | `pon test` |
+| ui | Run all ui tasks | `pon ui` |
+| w | Shortcut for `watch` task | `pon w` |
+| watch | Run watches | `pon watch` |
 
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
@@ -209,30 +268,30 @@ Directory structure of this project
 
 | Directory Path | Description |
 | ---- | ----- |
-| assets | Static file directory |
-| bin | Executable files |
-| client | Client side scripts |
-| client/client | RPC Client |
-| client/scenes | Client logic without ui |
-| client/shim | Generated shim files |
-| client/store | Client side data store |
-| client/test | Client tests |
-| client/ui | User interfaces |
-| conf | Configuration of project |
-| doc | Documents |
-| doc/guides | Guides for README |
-| misc | Misc files |
-| public | Public directory to serve static files. Auto-generated |
-| server | Server side scripts |
-| server/controllers | Controller classes to handle RPC |
-| server/db | Database modules |
-| server/services | Database access wrappers |
-| server/env | Env dependant variables |
-| server/server | HTTP Server modules |
-| server/test | Server tests |
-| test | Project tests |
-| tmp | Temporary files. Can be deleted anytime. |
-| var | Var files |
+| [assets](./assets) | Static file directory |
+| [bin](./bin) | Executable files |
+| [client](./client) | Client side scripts |
+| [client/client](./client/client) | RPC Client |
+| [client/scenes](./client/scenes) | Client logic without ui |
+| [client/shim](./client/shim) | Generated shim files |
+| [client/store](./client/store) | Client side data store |
+| [client/test](./client/test) | Client tests |
+| [client/ui](./client/ui) | User interfaces |
+| [conf](./conf) | Configuration of project |
+| [doc](./doc) | Documents |
+| [doc/guides](./doc/guides) | Guides for README |
+| [misc](./misc) | Misc files |
+| [public](./public) | Public directory to serve static files. Auto-generated |
+| [server](./server) | Server side scripts |
+| [server/controllers](./server/controllers) | Controller classes to handle RPC |
+| [server/db](./server/db) | Database modules |
+| [server/services](./server/services) | Database access wrappers |
+| [server/env](./server/env) | Env dependant variables |
+| [server/server](./server/server) | HTTP Server modules |
+| [server/test](./server/test) | Server tests |
+| [test](./test) | Project tests |
+| [tmp](./tmp) | Temporary files. Can be deleted anytime. |
+| [var](./var) | Var files |
 
 
 <!-- Section from "doc/guides/99.Misc.md.hbs" End -->
