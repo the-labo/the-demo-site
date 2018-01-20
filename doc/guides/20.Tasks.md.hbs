@@ -1,0 +1,19 @@
+Running Tasks
+-----------
+
+This project uses [Pon][pon_url] as a task runner.
+
+Just pass task name to run
+
+```bash
+$ pon <taskName>
+```
+
+
+### Available Tasks
+
+| TaskName | Description |
+| -------- | ----------- |
+{{#each vars.Pondoc.tasks}}
+| {{@key}} | {{{this}}} |
+{{/each}}

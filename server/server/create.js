@@ -30,12 +30,12 @@ function create (config) {
   const seal = theSeal(sealConfig['SEAL_SECRET'])
 
   const app = {
-    pkg,
     db,
     locales,
     seal,
     mail,
     services: servicesProxy(ServiceMapping, db),
+    version: isProduction() ? pkg.version : String(new Date().getTime()),
     cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
   }
 

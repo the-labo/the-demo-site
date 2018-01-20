@@ -6,13 +6,10 @@
 import React from 'react'
 import {
   TheRoot,
-  TheCondition
+  TheMain,
 } from 'the-components'
 
-import Header from './layouts/Header'
-import Main from './layouts/Main'
-import Toasts from './layouts/Toasts'
-import Footer from './layouts/Footer'
+import { Header, Toasts, Footer } from './layouts'
 import Routes from './Routes'
 import { withProvider, withStore, } from 'the-store'
 import { withLoc, } from 'the-loc'
@@ -22,14 +19,14 @@ import { withClient } from 'the-client'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 
-function App ({}) {
+function App ({busy}) {
   return (
     <TheRoot>
       <Header/>
       <Toasts/>
-      <Main>
+      <TheMain spinning={busy}>
         <Routes/>
-      </Main>
+      </TheMain>
       <Footer/>
       <CautionDisconnectedDialog/>
     </TheRoot>
@@ -39,7 +36,9 @@ function App ({}) {
 
 const ConnectedApp = asBound(
   withCycle(withClient(withStore(App))),
-  (state) => ({}),
+  (state) => ({
+    busy: state['app.busy'],
+  }),
   ({
      appScene,
      accountScene,

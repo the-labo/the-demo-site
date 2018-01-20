@@ -1,0 +1,16 @@
+'use strict'
+
+const {APP_DOMAIN: domain, NGINX_PUBLISHED_PORT: port} = require('../../Local')
+const {vhost} = require('the-templates')
+
+module.exports = [
+  domain,
+  ['www', domain].join('.')
+].map((domain) => vhost({
+  domain,
+  port,
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

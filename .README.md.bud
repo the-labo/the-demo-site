@@ -19,7 +19,8 @@ module.exports = readmeMdBud({
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
-    directories: require('./misc/project/Directories')
+    Directories: require('./misc/project/Directories'),
+    Pondoc: require('./misc/project/Pondoc'),
   }
 })
 

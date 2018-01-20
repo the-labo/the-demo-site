@@ -3,18 +3,13 @@
  */
 'use strict'
 
-const path = require('path')
+const {Ctrl} = require('the-templates')
 
 module.exports = [
-  'QuitCtrl'
-].map((name) => ({
-  force: false,
-  mode: '644',
-  mkdirp: true,
-  path: `${name}.js`,
-  data: {
-    name: path.basename(name)
-  }
+  'AppCtrl'
+].map((name) => Ctrl({
+  name,
+  cjs: true,
 }))
 
 if (!module.parent) {

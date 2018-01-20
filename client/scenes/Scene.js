@@ -5,45 +5,37 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
-const {resolveUrl} = require('the-site-util')
+const {rescue} = require('the-decorators')
 
 class SceneBase extends TheScene {}
 
 /** @lends Scene */
 class Scene extends SceneBase {
-  goTo (url, params = {}) {
-    super.goTo(resolveUrl(url, params))
-  }
 
+  @rescue((e, {instance}) => instance.handleError(e))
   catchError (e) {
-    const {store, l} = this
-    try {
-      return super.catchError(e)
-    } catch (e) {
-      store.toast.error.push(l('errors.UNEXPECTED_ERROR'))
-    }
+    return super.catchError(e)
   }
 
+  @rescue((e, {instance}) => instance.handleError(e))
   catchEntryError (e) {
-    try {
-      return super.catchEntryError(e)
-    } catch (e) {
-      switch (e.name) {
-        case 'NotFoundError': {
-          return this.parseAppError(e, {
-            defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'
-          })
-        }
-        case 'WrongPasswordError': {
-          return this.parseAppError(e, {})
-        }
-
-        default:
-          throw e
-      }
-    }
+    return super.catchEntryError(e)
   }
 
+  handleError (e) {
+    switch (e.name) {
+      case 'NotFoundError': {
+        return this.parseAppError(e, {
+          defaultMessageKey: 'RESOURCE_NOT_FOUND_ERROR'
+        })
+      }
+      case 'WrongPasswordError': {
+        return this.parseAppError(e, {})
+      }
+      default:
+        throw e
+    }
+  }
 }
 
 module.exports = Scene

@@ -63,10 +63,10 @@ Table of Contents
   * [Development](#development)
     + [Starting dev server](#starting-dev-server)
   * [Production](#production)
-  * [Tips](#tips)
-    + [Managing Docker Infra](#managing-docker-infra)
-    + [Restarting Server](#restarting-server)
-  * [Console to database](#console-to-database)
+  * [Running Tasks](#running-tasks)
+    + [Available Tasks](#available-tasks)
+  * [Misc](#misc)
+    + [Console to database](#console-to-database)
     + [Project Structure](#project-structure)
   * [License](#license)
   * [Links](#links)
@@ -140,41 +140,67 @@ pon production
 
 <!-- Section from "doc/guides/11.Production.md.hbs" End -->
 
-<!-- Section from "doc/guides/20.Tips.md.hbs" Start -->
+<!-- Section from "doc/guides/20.Tasks.md.hbs" Start -->
 
-<a name="section-doc-guides-20-tips-md"></a>
+<a name="section-doc-guides-20-tasks-md"></a>
 
-Tips
+Running Tasks
 -----------
 
-### Managing Docker Infra
+This project uses [Pon][pon_url] as a task runner.
 
-To show available commands,
-
-```bash
-
-pon -l | grep docker
-
-```
-
-### Restarting Server
+Just pass task name to run
 
 ```bash
-pon stop
-pon start
+$ pon <taskName>
 ```
 
-Or, just
 
-```bash
-pon restart
-```
+### Available Tasks
 
-## Console to database
+| TaskName | Description |
+| -------- | ----------- |
+| struct:mkdir | Generate project directories |
+| struct:symlink | Generate symbolic links |
+| struct:cp | Execute file copy |
+| struct:chmod | Change file permissions |
+| struct:compile | Compile files |
+| struct:json | Format json files |
+| struct:render | Render coz templates |
+| struct:pkg | Prepare sub packages |
+| assert:not-prod | Make sure that not production |
+| maint:on | Enable maintenance mode |
+| maint:off | Disable maintenance mode |
+| db:setup | Setup database |
+| db:cli | Open database cli |
+| db:seed | Generate test data |
+| db:migrate | Migrate data |
+| db:drop | Drop database |
+| db:dump | Dump data |
+| db:load | Load data from dum |
+| db:reset | Drop and setup database again |
+| ui:react | Compile react components |
+| ui:css | Compile stylesheets |
+| ui:browser | Bundle browser script |
+| ui:browser-external | Bundle external browser script |
+
+
+<!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
+
+<!-- Section from "doc/guides/99.Misc.md.hbs" Start -->
+
+<a name="section-doc-guides-99-misc-md"></a>
+
+Misc
+-----------
+
+### Console to database
 
 ```bash
 pon db:cli
 ```
+
+In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
 
 
 ### Project Structure
@@ -209,7 +235,7 @@ Directory structure of this project
 | var | Var files |
 
 
-<!-- Section from "doc/guides/20.Tips.md.hbs" End -->
+<!-- Section from "doc/guides/99.Misc.md.hbs" End -->
 
 
 <!-- Sections Start -->
@@ -233,8 +259,10 @@ Links
 
 + [Pon][pon_url]
 + [Realglobe, Inc.][realglobe,_inc__url]
++ [ClayResource API][clay_resource_a_p_i_url]
 
 [pon_url]: https://github.com/realglobe-Inc/pon
 [realglobe,_inc__url]: http://realglobe.jp
+[clay_resource_a_p_i_url]: https://github.com/realglobe-Inc/clay-resource/blob/master/doc/api/api.md#clay-resource552
 
 <!-- Links End -->

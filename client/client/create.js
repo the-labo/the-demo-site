@@ -22,9 +22,8 @@ create.for = (namespace, options = {}) => {
   const client = Client.for(namespace, {
     onGone: () => {
       cautionDisconnectedScene.set({busy: false, active: true})
-      unlessProduction(() => client.pingPongAnd(
-        () => cautionDisconnectedScene.doReload()),
-        {}
+      unlessProduction(() =>
+        client.pingPongAnd(() => cautionDisconnectedScene.doReload()),
       )
     }
   })

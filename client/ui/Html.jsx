@@ -6,13 +6,13 @@
 import React from 'react'
 import { TheHtml, TheHead, TheBody, TheRouter, } from 'the-components'
 import App from './App'
-import { UI, Urls, Styles, locales, } from '@self/conf'
+import { UI, GlobalKeys, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
 
 /** @lends Html */
 function Html ({appScope, renderingContext}) {
   const {
-    pkg: {version},
+    version,
     cdnUrl,
   } = appScope
   const {lang, client, store, handle, path} = renderingContext
@@ -27,21 +27,20 @@ function Html ({appScope, renderingContext}) {
     Urls.JS_EXTERNAL_URL,
     Urls.JS_BUNDLE_URL
   ]
+  const css = isProduction() ? [
+    Urls.PRODUCTION_CSS_URL
+  ] : [
+    Urls.CSS_THEME_URL,
+    Urls.CSS_FONT_URL,
+    Urls.CSS_BUNDLE_URL
+  ]
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
-               css={[
-                 ...(isProduction() ? [
-                   Urls.PRODUCTION_CSS_URL
-                 ] : [
-                   Urls.CSS_THEME_URL,
-                   Urls.CSS_FONT_URL,
-                   Urls.CSS_BUNDLE_URL
-                 ])
-               ]}
+               {...{css, js}}
                icon={Urls.ICON_URL}
-               version={isProduction() ? version : String(new Date().getTime())}
-               globals={{[UI.GLOBAL_KEY]: {}, [UI.GLOBAL_KEY_PROPS]: appProps}}
+               version={version}
+               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
                color={Styles.DOMINANT_COLOR}
                cdn={cdnUrl}
       >
@@ -54,7 +53,6 @@ function Html ({appScope, renderingContext}) {
             <App {...appProps} {...{client, store, handle}}/>
           </TheRouter.Static>
         </div>
-        {js.map((src) => (<script key={src} src={src} defer/>))}
       </TheBody>
     </TheHtml>
   )

@@ -4,6 +4,7 @@
  */
 'use strict'
 
+import GlobalKeys from './GlobalKeys'
 import HistoryTypes from './HistoryTypes'
 import Icons from './Icons'
 import Lifetimes from './Lifetimes'
@@ -14,6 +15,7 @@ import Urls from './Urls'
 import locales from './locales'
 
 export {
+  GlobalKeys,
   HistoryTypes,
   Icons,
   Lifetimes,

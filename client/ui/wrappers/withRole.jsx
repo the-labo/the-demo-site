@@ -12,16 +12,17 @@ const hasRole = (user, roleCode) =>
 
 /** @lends withRole */
 function withRole (Class) {
+  const methods = {
+    isAdmin (user) {
+      return hasRole(user, RoleCodes.ADMIN_ROLE)
+    }
+  }
+
   class WithRole extends React.Component {
     render () {
-
-      const ComponentProps = Object.assign({
-        isAdmin (user) {
-          return hasRole(user, RoleCodes.ADMIN_ROLE)
-        }
-      }, this.props)
       return (
-        <Class {...ComponentProps}/>
+        <Class {...methods}
+               {...this.props}/>
       )
     }
   }
