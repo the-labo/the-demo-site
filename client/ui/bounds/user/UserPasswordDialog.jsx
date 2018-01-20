@@ -7,10 +7,8 @@ import React from 'react'
 import { withLoc } from 'the-loc'
 import { compose, asBound, } from 'the-hoc'
 import {
-  TheOkDialog,
-  TheYesNoDialog,
-  TheInfo,
-} from 'the-components'
+  TheOperationDialog,
+} from 'the-site-components'
 
 const UserPasswordDialog = compose(
   withLoc
@@ -23,49 +21,29 @@ const UserPasswordDialog = compose(
                                      users,
                                      passwords,
                                      onClose,
-                                     onYes
+                                     onYes,
                                    }) {
-    if (!active) {
-      return null
-    }
-    if (done) {
-      return (
-        <TheOkDialog
-          present
-          title={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
-          lead={l('leads.RESET_PASSWORDS_RESULT')}
-          hideCloseButton
-          onClose={onClose}
-        >
-          <TheInfo data={
-            users
-              .reduce((data, user) => Object.assign(data, {
-                [user.displayName]: passwords[user.id]
-              }), {})
-          }
-          />
-        </TheOkDialog>
-      )
-    }
     return (
-      <TheYesNoDialog present
-                      title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
-                      yesText={l('buttons.DO_EXECUTE')}
-                      noText={l('buttons.DO_CANCEL')}
-                      lead={l('leads.RESET_PASSWORDS_CONFIRM')}
-                      spinning={spinning}
-                      onNo={onClose}
-                      onClose={onClose}
-                      onYes={onYes}
-      >
-        <ul>
-          {
-            users.map((user) => (
-              <li key={user.id}>{user.displayName}</li>
-            ))
-          }
-        </ul>
-      </TheYesNoDialog>
+      <TheOperationDialog title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
+                          lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+                          doneTitle={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
+                          doneLead={l('leads.RESET_PASSWORDS_RESULT')}
+                          result={users
+                            .reduce((data, user) => Object.assign(data, {
+                              [user.displayName]: passwords[user.id]
+                            }), {})
+                          }
+                          entities={users}
+                          renderItem={(user) => user.displayName}
+                          {...{
+                            l,
+                            active,
+                            done,
+                            spinning,
+                            onClose,
+                            onYes,
+                          }}
+      />
     )
   }
 )

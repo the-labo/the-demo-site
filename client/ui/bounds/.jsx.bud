@@ -3,23 +3,13 @@
  */
 'use strict'
 
-const path = require('path')
+const {Bound} = require('the-templates')
 
 module.exports = [
-  'user/UserDestroyDialog',
-  'user/UserPasswordDialog',
-  'user/UserCreateDialog',
-  'user/UserActionBar',
   'user/UserPager',
   'caution/CautionDisconnectedDialog'
-].map((name) => ({
-  force: false,
-  mkdirp: true,
-  mode: '644',
-  path: `${name}.jsx`,
-  data: {
-    name: path.basename(name)
-  }
+].map((name) => Bound({
+  name
 }))
 
 if (!module.parent) {

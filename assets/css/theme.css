@@ -432,7 +432,7 @@
 .the-tab .the-tab-button:active { box-shadow:none; }
 .the-tab .the-tab-button.the-tab-button-active { color:#3A8;opacity:1;cursor:default;overflow:visible; }
 .the-tab .the-tab-button .the-tab-button-active-bar { position:absolute;left:0;bottom:0;z-index:2;right:0;height:2px;display:block;background:#3A8;transition:transform 100ms; }
-.the-table { border-collapse:collapse; }
+.the-table { border-collapse:collapse;margin:16px auto; }
 .the-table.the-table-empty { color:#BBB;display:block;text-align:center;padding:24px 0; }
 .the-table.the-table-wide { width:100%; }
 .the-table .the-table-row-selected { border:2px solid #3A8; }

@@ -9,7 +9,6 @@ import { TheOperationList, } from 'the-site-components'
 import { withLoc } from 'the-loc'
 import { asPure, compose, asBound, } from 'the-hoc'
 import { withMoment } from '../../wrappers'
-import styles from './UserList.pcss'
 
 const UserList = compose(
   withLoc,
@@ -27,8 +26,7 @@ const UserList = compose(
                          }) {
   return (
     <div className={c(className)}>
-      <TheOperationList className={styles.table}
-                        entities={users}
+      <TheOperationList entities={users}
                         {...{l, sort, onSort, onUpdateCheck}}
                         fields={{
                           name: {
@@ -46,6 +44,7 @@ const UserList = compose(
                           'sign.signInAt': {
                             label: l('labels.USER_SIGNIN_AT'),
                             sortable: true,
+                            render: (signInAt) => signInAt && formatDate(signInAt, 'lll'),
                           },
                         }}
                         isChecked={({id}) => checks[id]}

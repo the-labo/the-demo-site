@@ -32,7 +32,6 @@ const UserDestroyDialog = compose(
                           spinning,
                           active,
                           done,
-
                         }}
       />
     )

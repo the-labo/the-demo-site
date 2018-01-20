@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheRoute } from 'the-components'
+import { TheView, TheRoute, TheLead, TheButtonGroup, TheButton, } from 'the-components'
 import { asView } from '../../wrappers'
 import styles from './ErrorNotfoundView.pcss'
 
@@ -16,10 +16,14 @@ function ErrorNotfoundView ({l}) {
       />
       <TheView.Body>
         <TheRoute.Status code={404}>
+          <br/>
+          <TheLead title={l('messages.PAGE_NOT_FOUND')}>
+          </TheLead>
+          <br/>
           <div>
-            <h3>{l('messages.PAGE_NOT_FOUND')}</h3>
-            <div>
-            </div>
+            <TheButtonGroup>
+              <TheButton href={'/'}>{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
+            </TheButtonGroup>
           </div>
         </TheRoute.Status>
       </TheView.Body>
