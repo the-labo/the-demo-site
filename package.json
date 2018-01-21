@@ -1,7 +1,7 @@
 {
   "name": "the-demo-site",
   "description": "Demo site of the-framework",
-  "version": "7.32.0",
+  "version": "7.33.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
@@ -25,7 +25,7 @@
     "pon-task-basic": "^3.3.1",
     "pon-task-db": "^2.0.1",
     "pon-task-docker": "^2.0.1",
-    "pon-task-es": "^3.0.3",
+    "pon-task-es": "^4.0.1",
     "pon-task-icon": "^1.0.1",
     "pon-task-md": "^1.0.1",
     "pon-task-pm2": "^2.0.1",
