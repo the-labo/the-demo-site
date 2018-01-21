@@ -1065,7 +1065,7 @@ asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
 
-asobj@^2.0.1, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.0.8:
+asobj@^2.0.1, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.0.8, asobj@^2.0.9:
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.9.tgz#88044134171f63c4172ca5880e6054065327ba5d"
   dependencies:
@@ -7796,8 +7796,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^5.0.16:
-  version "5.0.20"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-5.0.20.tgz#af35df56e43c9ca85108acdc9cd780e47d7a8e54"
+  version "5.0.22"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-5.0.22.tgz#bc48a4959afe9dae3ca1f619640bf96a818b5ffe"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -7812,7 +7812,7 @@ the-components@^5.0.16:
     the-done "^3.0.0"
     the-drawer "^3.0.0"
     the-flick "^4.0.2"
-    the-footer "^2.0.2"
+    the-footer "^2.0.3"
     the-form "^2.0.6"
     the-frame "^2.0.0"
     the-head "^1.0.14"
@@ -8000,9 +8000,9 @@ the-flick@^4.0.2:
     the-video "^2.0.5"
     the-window "^5.3.3"
 
-the-footer@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.0.2.tgz#7d78a9fdf2fdfd47b99c1e258728e9bde7ec0436"
+the-footer@^2.0.3:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.0.4.tgz#05a28dc49d866ac9f3c101d22bf6aa2c356edbde"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -8435,10 +8435,10 @@ the-setting@^2.0.0:
     the-file-util "^1.0.0"
 
 the-site-components@^2.1.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-2.4.0.tgz#4d6edcf8b9a6f962c23b64826fac034675beb626"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-2.4.2.tgz#59f2833dd0cbd2368f7f24ee8ed12bce7a8ac277"
   dependencies:
-    asobj "^2.0.8"
+    asobj "^2.0.9"
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-component-util "^2.1.2"
@@ -8470,15 +8470,15 @@ the-site-services@^1.0.3:
     the-service-base "^1.0.3"
 
 the-site-util@^1.5.0:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.6.1.tgz#458b8a715e892dc1bed6101507a149f3533e7c54"
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.0.tgz#43b37accff5c1671e9150ef74e2f1b8c8e161ebf"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"
     the-url "^1.0.0"
 
 "the-site-util@file:../the-site-util":
-  version "1.7.0"
+  version "1.7.1"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"

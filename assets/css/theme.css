@@ -152,6 +152,7 @@
 .the-footer .the-footer-copyright { display:inline-block;padding:0 8px; }
 .the-footer .the-footer-links { display:flex; }
 .the-footer .the-footer-link { text-decoration:none;padding:0 8px;color:#999; }
+.the-footer .the-footer-row { display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:smaller;margin:8px 0; }
 .the-form { margin:0 auto;max-width:480px;position:relative; }
 .the-form .the-form-field { display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;padding:0 8px;margin:8px 0; }
 .the-form .the-form-label { font-size:smaller;color:#BBB; }

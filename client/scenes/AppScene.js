@@ -22,11 +22,12 @@ class AppScene extends AppSceneBase {
   setLocation ({pathname, search}) {
     this.set({pathname})
     this.setQueryBySearch(search)
+    this.applyLocaleToSearch()
+  }
 
-    {
-      const locale = this.get('locale')
-      appendQueryToSearch({locale: locale})
-    }
+  applyLocaleToSearch () {
+    const locale = this.get('locale')
+    appendQueryToSearch({locale})
   }
 
   handleRejectionReason (reason) {
