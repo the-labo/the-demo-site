@@ -28,7 +28,7 @@ const UserPasswordDialog = compose(
                           lead={l('leads.RESET_PASSWORDS_CONFIRM')}
                           doneTitle={l('titles.USERS_PASSWORD_RESET_RESULT_TITLE')}
                           doneLead={l('leads.RESET_PASSWORDS_RESULT')}
-                          result={users
+                          result={passwords && users
                             .reduce((data, user) => Object.assign(data, {
                               [user.displayName]: passwords[user.id]
                             }), {})

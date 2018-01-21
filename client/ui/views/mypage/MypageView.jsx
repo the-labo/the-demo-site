@@ -24,7 +24,7 @@ function MypageView ({
                        ready,
                        user
                      }) {
-  const {profile} = user
+  const {profile} = user || {}
   return (
     <TheView className={styles.self}
              spinning={busy}>

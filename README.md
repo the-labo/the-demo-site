@@ -63,6 +63,9 @@ Table of Contents
   * [Development](#development)
     + [Starting dev server](#starting-dev-server)
   * [Production](#production)
+    + [Setup Server (Ubuntu)](#setup-server-ubuntu)
+    + [Setup App](#setup-app)
+    + [Configure Reverse Proxy](#configure-reverse-proxy)
   * [Running Tasks](#running-tasks)
     + [Available Tasks](#available-tasks)
   * [Misc](#misc)
@@ -132,11 +135,48 @@ pon d
 Production
 ----------
 
+### Setup Server (Ubuntu)
+
+Execute [./misc/setup/setup_ubuntu.sh](./misc/setup/setup_ubuntu.sh) to install softwares like *git*, *node*, *nginx*, etc.
+
+### Setup App
+
 ```bash
+
+# Setup env
+export NODE_ENV=production
+
+# Where you checkout the project
+
+cd /opt/apps/the-demo-site
+
+# Install dependencies and run prepare scripts
+yarn install
+
+
+# Interactive shell to configure local values
+pon setting
+
 
 # Start production server
 pon production
 ```
+
+### Configure Reverse Proxy
+
+```bash
+
+# Setup cert files for https
+./misc/deploy/01.cert.sh
+
+# Apply https setting for nginx
+./misc/deploy/02.vhost.sh
+
+# Configure cert renew with cron
+./misc/deploy/03.crontabs.sh
+
+```
+
 
 <!-- Section from "doc/guides/11.Production.md.hbs" End -->
 
@@ -185,6 +225,7 @@ $ pon <taskName>
 | env:test | Set env variables for test | `pon env:test` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
 | icon:generate | Generate icons | `pon icon:generate` |
+| loc:print | Print locale settings | `pon loc:print` |
 | maint:off | Disable maintenance mode | `pon maint:off` |
 | maint:on | Enable maintenance mode | `pon maint:on` |
 | open:app | Open app in browser | `pon open:app` |
@@ -211,6 +252,7 @@ $ pon <taskName>
 | ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
 | ui:browser | Bundle browser script | `pon ui:browser` |
 | ui:css | Compile stylesheets | `pon ui:css` |
+| ui:css/watch | Run css watch | `pon ui:css/watch` |
 | ui:map | Extract map files | `pon ui:map` |
 | ui:react | Compile react components | `pon ui:react` |
 | assets | Run all assets tasks | `pon assets` |

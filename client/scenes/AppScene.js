@@ -6,10 +6,12 @@
 
 const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
-const {bindScope, withBusy, withQuery, withLocation} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withQuery, withLocation, withHistory,} = require('the-scene-mixins/shim')
+const {appendQueryToSearch} = require('the-site-util')
 
 @withBusy
 @withQuery
+@withHistory
 @withLocation
 @bindScope('app')
 class AppSceneBase extends Scene {}
@@ -20,6 +22,11 @@ class AppScene extends AppSceneBase {
   setLocation ({pathname, search}) {
     this.set({pathname})
     this.setQueryBySearch(search)
+
+    {
+      const locale = this.get('locale')
+      appendQueryToSearch({locale: locale})
+    }
   }
 
   handleRejectionReason (reason) {

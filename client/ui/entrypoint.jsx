@@ -15,9 +15,17 @@ once('DOMContentLoaded', async () => {
 
   const props = get(GlobalKeys.PROPS)
   const {
-    lang = (get('navigator.language') || UI.DEFAULT_LANG).split('-')[0]
+    lang = (get('navigator.language')).split('-')[0]
   } = props
   const history = historyFor()
+  // Patch
+  {
+    const {push} = history
+    history.push((to) => {
+      console.log('to', to)
+      push.call(push, to)
+    })
+  }
   const app = (<App {...props} {...{store, client, handle}}/>)
   const l = locales.bind(lang)
   const controllers = await client.useAll({debug: !isProduction()})
@@ -25,6 +33,7 @@ once('DOMContentLoaded', async () => {
 
   const {appScene, toastScene} = handle
   history.listen((location) => appScene.setLocation(location))
+  appScene.set({locale: lang, host: get('location.host')})
   appScene.setLocation(history.location)
 
   rescue((e) => {

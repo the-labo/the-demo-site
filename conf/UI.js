@@ -11,7 +11,5 @@ module.exports = Object.freeze(
     APP_CONTAINER_ID: 'app-container',
     /** Toast duration */
     TOAST_DURATION: 2000,
-    /** Default language */
-    DEFAULT_LANG: 'en'
   }
 )

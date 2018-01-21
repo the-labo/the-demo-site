@@ -30,7 +30,7 @@ class UserListSceneBase extends Scene {}
 class UserListScene extends UserListSceneBase {
   setQ (q) {
     this.set({pageNumber: 1})
-    this.setFilterByQ(q, {fields: ['name']})
+    this.setFilterByQ(q, {fields: ['name', 'profile.name', 'profile.email']})
     this.replaceHistoryByQuery({q})
   }
 

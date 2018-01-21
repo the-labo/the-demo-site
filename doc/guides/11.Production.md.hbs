@@ -1,8 +1,44 @@
 Production
 ----------
 
+### Setup Server (Ubuntu)
+
+Execute [./misc/setup/setup_ubuntu.sh](./misc/setup/setup_ubuntu.sh) to install softwares like *git*, *node*, *nginx*, etc.
+
+### Setup App
+
 ```bash
+
+# Setup env
+export NODE_ENV=production
+
+# Where you checkout the project
+
+cd /opt/apps/{{pkg.name}}
+
+# Install dependencies and run prepare scripts
+yarn install
+
+
+# Interactive shell to configure local values
+pon setting
+
 
 # Start production server
 pon production
+```
+
+### Configure Reverse Proxy
+
+```bash
+
+# Setup cert files for https
+./misc/deploy/01.cert.sh
+
+# Apply https setting for nginx
+./misc/deploy/02.vhost.sh
+
+# Configure cert renew with cron
+./misc/deploy/03.crontabs.sh
+
 ```

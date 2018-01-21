@@ -41,6 +41,8 @@ const Pondoc = require('./misc/project/Pondoc')
 const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
 
+const locales = require('./conf/locales')
+
 module.exports = pon(
   /** @module tasks */
   {
@@ -80,8 +82,8 @@ module.exports = pon(
     }),
     /** Compile files */
     'struct:compile': [
-      es('conf', 'shim/conf'),
-      es('utils', 'shim/utils'),
+      es('conf', 'shim/conf', {sourceRoot: '../../../../conf',}),
+      es('utils', 'shim/utils', {sourceRoot: '../../../../conf',}),
     ],
     /** Format json files */
     'struct:json': fmtjson([
@@ -103,6 +105,8 @@ module.exports = pon(
       }, {force: true}),
       del('package-lock.json'), // Using yarn
     ],
+    /** Print locale settings */
+    'loc:print': () => console.log(locales.toCompound()),
     /** Make sure that not production */
     'assert:not-prod': env.notFor('production'),
     /** Enable maintenance mode */
@@ -127,9 +131,11 @@ module.exports = pon(
     'db:reset': ['assert:not-prod', 'db:drop', 'db:setup', 'db:seed'],
     /** Compile react components */
     'ui:react': react('client', 'client/shim', {
+      sourceRoot: '..',
       pattern: ['*.js', '*.jsx', '!(shim)/**/+(*.jsx|*.js|*.json)'],
       extractCss: `client/shim/ui/bundle.pcss`,
-      watchTargets: 'client/ui/**/*.pcss'
+      watchTargets: 'client/ui/**/*.pcss',
+
     }),
     /** Compile stylesheets */
     'ui:css': [
@@ -145,12 +151,15 @@ module.exports = pon(
       ], 'public/build/bundle.pcss', {}),
       css('public/build', 'public/build', {pattern: '*.pcss'})
     ],
+    /** Run css watch */
+    'ui:css/watch': 'ui:css/*/watch',
     /** Bundle browser script */
     'ui:browser': env.dynamic(({isProduction}) =>
       browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
         externals: Externals,
         watchTargets: 'client/shim/**/*.js',
         transforms: [envify()],
+        // fullPaths: !isProduction(),
         fullPaths: false,
       }), {sub: ['watch', 'deps']}
     ),
@@ -161,6 +170,7 @@ module.exports = pon(
         skipWatching: true,
         watchDelay: 300,
         transforms: [envify()],
+        // fullPaths: !isProduction(),
         fullPaths: false,
         ignores: [
           // TODO remove patch
@@ -172,7 +182,7 @@ module.exports = pon(
     'assets:install': () => theAssets().installTo('assets', {copy: true}),
     /** Render markdown assets */
     'assets:markdown': md('assets/markdowns', 'public/partials', {
-      vars: require('./conf/locales')
+      vars: {...locales}
     }),
     /** Generate icons */
     'icon:generate': [
@@ -181,7 +191,7 @@ module.exports = pon(
       icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
     ],
     /** Extract map files */
-    'ui:map': map('public', 'public', {watchDelay: 400}),
+    'ui:map': map('public', 'public', {pattern: '**/*.js', watchDelay: 400}),
     /** Cleanup shim files */
     'clean:shim': del(['shim/**/*.*', 'client/shim/**/*.*']),
     /** Cleanup cache files */
