@@ -207,6 +207,8 @@ module.exports = pon(
     'env:test': env('test'),
     /** Set env variables for debug */
     'env:debug': env('development', {DEBUG: 'app:*', ...Local}),
+    /** Check another process exists */
+    'ps:debug': () => thePS('var/app/debug.pid').acquire(),
     /** Run client tests */
     'test:client': mocha('client/test/**/*.js', {timeout: 3000,}),
     /** Run server tests */
@@ -230,9 +232,7 @@ module.exports = pon(
     'prod:db': ['env:prod', 'db'],
     /** Run server for debug */
     'debug:server': [
-      'env:debug',
-      () => thePS('var/app/dev.pid').acquire(),
-      npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')
+      'ps:debug', 'env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')
     ],
     /** Watch files for debug */
     'debug:watch': ['env:debug', 'ui:*/watch'],
@@ -287,7 +287,7 @@ module.exports = pon(
     /** Default for `pon` command */
     default: ['build'],
     /** Start debugging */
-    debug: ['env:debug', 'build', 'debug:*'],
+    debug: ['ps:debug', 'env:debug', 'build', 'debug:*'],
     /** Prepare and start on production */
     prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
     /** Setup docker infra */

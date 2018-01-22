@@ -244,6 +244,7 @@ pon <taskName>
 | prod:db | Prepare database for production | `pon prod:db` |
 | prod:js | Compile js files for production | `pon prod:js` |
 | prod:map | Delete source map files for production | `pon prod:map` |
+| ps:debug | Check another process exists | `pon ps:debug` |
 | secret:decrypt | Decrypt secret file | `pon secret:decrypt` |
 | secret:encrypt | Encrypt secret file | `pon secret:encrypt` |
 | struct:chmod | Change file permissions | `pon struct:chmod` |

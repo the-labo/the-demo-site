@@ -39,6 +39,7 @@
     "prod:db": "Prepare database for production",
     "prod:js": "Compile js files for production",
     "prod:map": "Delete source map files for production",
+    "ps:debug": "Check another process exists",
     "secret:decrypt": "Decrypt secret file",
     "secret:encrypt": "Encrypt secret file",
     "struct:chmod": "Change file permissions",
