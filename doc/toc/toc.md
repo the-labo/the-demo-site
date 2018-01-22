@@ -12,5 +12,6 @@
   * [Misc](#misc)
     + [Console to database](#console-to-database)
     + [Project Structure](#project-structure)
+    + [Trouble Shooting](#trouble-shooting)
   * [License](#license)
   * [Links](#links)

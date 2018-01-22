@@ -71,6 +71,7 @@ Table of Contents
   * [Misc](#misc)
     + [Console to database](#console-to-database)
     + [Project Structure](#project-structure)
+    + [Trouble Shooting](#trouble-shooting)
   * [License](#license)
   * [Links](#links)
 
@@ -344,6 +345,26 @@ Directory structure of this project
 | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
 | [var](./var) | Var files |
 
+
+### Trouble Shooting
+
+When something goes funny, first thing you do clean build
+
+```bash
+
+# Clean up files and build again (aka. `pon c b`)
+pon clean build
+
+```
+
+If docker containers seem to be gone, try
+
+```bash
+
+# Remove docker containers and restart again
+pon docker:*/remove docker
+
+```
 
 <!-- Section from "doc/guides/99.Misc.md.hbs" End -->
 

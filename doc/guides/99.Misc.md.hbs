@@ -19,3 +19,24 @@ Directory structure of this project
 {{#each vars.Directories}}
 | [{{@key}}](./{{@key}}) | {{{this}}} |
 {{/each}}
+
+
+### Trouble Shooting
+
+When something goes funny, first thing you do clean build
+
+```bash
+
+# Clean up files and build again (aka. `pon c b`)
+pon clean build
+
+```
+
+If docker containers seem to be gone, try
+
+```bash
+
+# Remove docker containers and restart again
+pon docker:*/remove docker
+
+```

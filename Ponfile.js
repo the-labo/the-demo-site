@@ -288,9 +288,9 @@ module.exports = pon(
     /** Setup docker infra */
     docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
     /** Start app as daemon */
-    start: ['pm2:app/start', 'pm2:backup:*/start'],
+    start: isProduction() ? ['pm2:app/start', 'pm2:backup:*/start'] : 'debug:server',
     /** Stop app as daemon */
-    stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
+    stop: isProduction() ? ['pm2:app/stop', 'pm2:backup:*/stop'] : [],
     /** Restart app as daemon */
     restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
     /** Show app daemon status */

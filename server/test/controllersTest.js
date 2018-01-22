@@ -48,6 +48,27 @@ describe('controllers', () => {
 
     await quitCtrl.execute()
   })
+
+  it('User Ctrl', async () => {
+    const {UserCtrl} = controllers
+    const session = {}
+    const db = createDB({
+      dialect: 'memory'
+    })
+    const app = {db, services: servicesProxy(ServiceMapping, db)}
+    const client = {}
+    const userCtrl = new UserCtrl({app, client, session})
+    userCtrl._assertAsAdmin = () => null
+
+    await userCtrl.create({
+      name: 'foo'
+    })
+
+    const listed = await userCtrl.list({
+      filter: [{name: 'foo'}]
+    })
+    console.log(listed)
+  })
 })
 
 /* global describe, before, after, it */
