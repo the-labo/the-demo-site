@@ -1,0 +1,12 @@
+{
+  "NEEDS_SIGN_IN": "ログインが必要です",
+  "PASSWORD_UPDATE_DID_SUCCESS": "パスワードが更新されました",
+  "PROFILE_UPDATE_DID_SUCCESS": "プロフィールが更新されました",
+  "RECOVER_EMAIL_SENT": "パスワード再設定メールが送信されました",
+  "SIGNIN_DID_SUCCESS": "ログインしました",
+  "SIGNOUT_DID_SUCCESS": "ログアウトしました",
+  "SIGNUP_DID_SUCCESS": "新規登録しました",
+  "USER_CREATE_DID_SUCCESS": "ユーザーを作成しました",
+  "USER_DESTROY_DID_SUCCESS": "ユーザーを削除しました",
+  "VERIFY_EMAIL_SENT": "確認メールを送信しました"
+}

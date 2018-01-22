@@ -1,0 +1,10 @@
+{
+  "ACTION_WITH_SELECTED_USERS": "チェックしたユーザに対する操作を選んでください",
+  "QUIT_CONFIRM": "また会える日をお待ちしております",
+  "QUIT_LEAD": "本当に退会処理を進めますか？",
+  "RECOVER_RESET": "パスワードを再設定",
+  "RECOVER_SEND": "メールアドレスを入力してください。パスワード再設定用のメールを送信します",
+  "RESET_PASSWORDS_CONFIRM": "これらのユーザーのパスワードをリセットしますか？",
+  "RESET_PASSWORDS_RESULT": "パスワードをリセットしました。それぞれのユーザーに新しいパスワードを教えてください",
+  "USER_DESTROY_CONFIRM": "これらのユーザを削除しますか？"
+}

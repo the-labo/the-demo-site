@@ -7,7 +7,6 @@
 const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
 const {bindScope, withBusy, withQuery, withLocation, withHistory,} = require('the-scene-mixins/shim')
-const {appendQueryToSearch} = require('the-site-util')
 
 @withBusy
 @withQuery
@@ -27,7 +26,7 @@ class AppScene extends AppSceneBase {
 
   applyLocaleToSearch () {
     const locale = this.get('locale')
-    appendQueryToSearch({locale})
+    this.mergeQueryToSearch({locale})
   }
 
   handleRejectionReason (reason) {
@@ -42,6 +41,11 @@ class AppScene extends AppSceneBase {
       default:
         return false
     }
+  }
+
+  @withBusy.while
+  async doReload () {
+    await this.reloadLocation()
   }
 }
 

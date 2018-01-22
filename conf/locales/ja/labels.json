@@ -1,0 +1,11 @@
+{
+  "ACTIONS": "アクション",
+  "NEW_PASSWORD": "新しいパスワード",
+  "USER_EMAIL": "メールアドレス",
+  "USER_IMAGE": "画像",
+  "USER_NAME": "ユーザー名",
+  "USER_PASSWORD": "パスワード",
+  "USER_PROFILE_NAME": "表示名",
+  "USER_ROLE": "ロール",
+  "USER_SIGNIN_AT": "最終ログイン"
+}

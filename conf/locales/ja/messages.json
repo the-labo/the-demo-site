@@ -1,0 +1,15 @@
+{
+  "CONNECTION_SEEMS_TO_BE_LOST": "インターネット接続を確認の上、再度実行してください",
+  "NEEDS_EMAIL_VERIFIED": "メールアドレスの確認が完了していません",
+  "NEEDS_SIGNIN_IN": "ログインが必要です",
+  "PAGE_NOT_FOUND": "お探しのページが見つかりません",
+  "PASSWORD_UPDATE_DONE": "パスワードが更新されました",
+  "PROFILE_UPDATE_DONE": "プロフィールが更新されました",
+  "QUIT_DONE": "退会処理が完了しました。ご利用ありがとうございました",
+  "QUIT_LEAD_NOTICE": "一度退会してしまうと、二度と復元できなくなります",
+  "RECOVER_RESET_DONE": "パスワードが再設定されました",
+  "RECOVER_SEND_DONE": "パスワード再設定メールを送信しました。メール内のリンクから再設定処理を続行してください",
+  "VERIFY_DONE": "メールアドレスの確認が完了しました",
+  "WORKING_DONE": "完了しました",
+  "WORKING_SIGNOUT": "ログアウト中..."
+}

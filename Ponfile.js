@@ -107,6 +107,8 @@ module.exports = pon(
     ],
     /** Print locale settings */
     'loc:print': () => console.log(locales.toCompound()),
+    /** Validate locales */
+    'loc:validate': () => locales.validate(),
     /** Make sure that not production */
     'assert:not-prod': env.notFor('production'),
     /** Enable maintenance mode */
@@ -268,10 +270,12 @@ module.exports = pon(
     clean: ['clean:shim', 'clean:public', 'clean:cache'],
     /** Build all */
     build: ['struct', 'ui'],
+    /** Validate all */
+    validate: ['loc:validate'],
     /** Prepare project */
     prepare: [
       'secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build',
-      ...(isProduction() ? [] : ['pkg:fix', 'doc'])
+      ...(isProduction() ? [] : ['pkg:fix', 'doc', 'validate'])
     ],
     /** Run watches */
     watch: ['ui:*', 'ui:*/watch'],

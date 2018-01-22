@@ -1066,8 +1066,8 @@ asn1@~0.2.3:
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
 
 asobj@^2.0.1, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.0.8, asobj@^2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.9.tgz#88044134171f63c4172ca5880e6054065327ba5d"
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.10.tgz#bd5a8b336045b8b792ee6528c07b3e6bf5e9d617"
   dependencies:
     deep-equal "^1.0.1"
 
@@ -8052,8 +8052,8 @@ the-head@^1.0.14:
     stringcase "^4.1.0"
 
 the-header@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/the-header/-/the-header-3.0.2.tgz#fbb54079c2b0602e58ff79055a38030ebe234a31"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/the-header/-/the-header-3.0.3.tgz#13c78027fdb4af82ef25b71328cf71413365260e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -8182,13 +8182,14 @@ the-list@^3.0.1:
     the-style "^2.1.0"
 
 the-loc@^2.0.1:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-2.1.0.tgz#7017056a1cea47f31076a64d63bf588c60f3ea82"
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-2.1.3.tgz#9cff0bd66451889cd26772ce89930dfbc2ccf5e6"
   dependencies:
     argx "^3.0.2"
     evaljson "^5.1.0"
     prop-types "^15.6.0"
     sprintf "^0.1.5"
+    the-array "^1.3.0"
 
 the-mail@^3.0.0:
   version "3.0.0"
@@ -8311,8 +8312,8 @@ the-scene-base@^2.0.0:
     the-url "^1.0.0"
 
 the-scene-mixins@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.3.tgz#f5b834025a660771038c252dd3b5c81fa9b8807f"
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.4.tgz#8e9986dcf1a2b5d527e7d395ac34066285217e32"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"

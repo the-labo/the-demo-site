@@ -1,0 +1,5 @@
+{
+  "GOODBYE_SUBJECT": "[#{app.APP_NAME}] 退会処理が完了しました",
+  "RECOVER_SUBJECT": "[#{app.APP_NAME}] パスワード再設定",
+  "VERIFY_SUBJECT": "[#{app.APP_NAME}] メールアドレスの確認"
+}

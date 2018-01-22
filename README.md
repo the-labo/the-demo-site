@@ -87,14 +87,18 @@ Preparing
 Install CLI packages if you have not
 
 ```bash
-$ npm i -g yarn pon pm2 jsdoc mocha
+# Install global dependencies
+npm i -g yarn pon pm2 jsdoc mocha
 ```
 
 Then, install dependencies and build the project
 
 ```bash
-$ yarn install
-$ yarn prepare
+# Install dependencies
+yarn install
+
+# Prepare project (Start up docker, create db, compile files, .etc)
+yarn prepare
 ```
 
 <!-- Section from "doc/guides/01.Preparing.md.hbs" End -->
@@ -125,6 +129,7 @@ Development
 # Start server and watch files to compile
 pon d
 ```
+
 
 <!-- Section from "doc/guides/10.Development.md.hbs" End -->
 
@@ -192,7 +197,7 @@ This project uses [Pon][pon_url] as a task runner.
 Just pass task name to run.
 
 ```bash
-$ pon <taskName>
+pon <taskName>
 ```
 
 
@@ -226,6 +231,7 @@ $ pon <taskName>
 | git:catchup | Catch up to latest git | `pon git:catchup` |
 | icon:generate | Generate icons | `pon icon:generate` |
 | loc:print | Print locale settings | `pon loc:print` |
+| loc:validate | Validate locales | `pon loc:validate` |
 | maint:off | Disable maintenance mode | `pon maint:off` |
 | maint:on | Enable maintenance mode | `pon maint:on` |
 | open:app | Open app in browser | `pon open:app` |
@@ -282,12 +288,12 @@ $ pon <taskName>
 | t | Shortcut for `test` task | `pon t` |
 | test | Run all tess | `pon test` |
 | ui | Run all ui tasks | `pon ui` |
+| validate | Validate all | `pon validate` |
 | w | Shortcut for `watch` task | `pon w` |
 | watch | Run watches | `pon watch` |
 
 
 For more information, try `pon -l`
-
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
 
@@ -362,11 +368,9 @@ Links
 ------
 
 + [Pon][pon_url]
-+ [Realglobe, Inc.][realglobe,_inc__url]
 + [ClayResource API][clay_resource_a_p_i_url]
 
 [pon_url]: https://github.com/realglobe-Inc/pon
-[realglobe,_inc__url]: http://realglobe.jp
 [clay_resource_a_p_i_url]: https://github.com/realglobe-Inc/clay-resource/blob/master/doc/api/api.md#clay-resource552
 
 <!-- Links End -->

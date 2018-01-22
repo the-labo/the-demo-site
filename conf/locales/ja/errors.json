@@ -1,0 +1,22 @@
+{
+  "LENGTH_OUT_OF_RANGE_ERROR": "長さが不正",
+  "MULTIPLE_NOT_ALLOWED_ERROR": "単一である必要があります",
+  "OUT_OF_RANGE_ERROR": "範囲外です",
+  "PASSWORD_WRONG": "パスワードが違います",
+  "PATTERN_NOT_MATCHED_ERROR": "不正な値です",
+  "RECOVER_EXPIRED_ERROR": "URLの期限が切れています",
+  "RECOVER_FAILED_ERROR": "パスワード再設定に失敗しました",
+  "RECOVER_SEND_FAILED_ERROR": "パスワード再設定メールの送信に失敗しました",
+  "RECOVER_UNKNOWN_EMAIL_ERROR": "登録されていないメールアドレスです",
+  "RESOURCE_NOT_FOUND_ERROR": "リソースが見つかりません",
+  "UNEXPECTED_ERROR": "予期せぬエラーが発生しました",
+  "UNEXPECTED_TYPE_ERROR": "予期せぬ型です",
+  "UNEXPECTED_VALUE_ERROR": "予期せぬ値です",
+  "UNIQUE_VIOLATION_ERROR": "既に取得されているので利用できません",
+  "USER_NOT_FOUND_ERROR": "ユーザーが見つかりません",
+  "VALIDATION_FAILED_ERROR": "入力内容に不備があります",
+  "VALUE_MISSING_ERROR": "必須です",
+  "VERIFY_EXPIRED_ERROR": "URLの期限が切れています",
+  "VERIFY_FAILED_ERROR": "確認に失敗しました",
+  "VERIFY_SEND_FAILED_ERROR": "確認メールの送信に失敗しました"
+}

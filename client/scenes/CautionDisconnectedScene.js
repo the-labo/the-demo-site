@@ -16,7 +16,7 @@ class CautionDisconnectedSceneBase extends Scene {}
 class CautionDisconnectedScene extends CautionDisconnectedSceneBase {
   @withBusy.while
   async doReload () {
-    this.reloadLocation()
+    await this.reloadLocation()
   }
 }
 

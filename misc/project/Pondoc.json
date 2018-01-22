@@ -27,6 +27,7 @@
     "git:catchup": "Catch up to latest git",
     "icon:generate": "Generate icons",
     "loc:print": "Print locale settings",
+    "loc:validate": "Validate locales",
     "maint:off": "Disable maintenance mode",
     "maint:on": "Enable maintenance mode",
     "open:app": "Open app in browser",
@@ -83,6 +84,7 @@
     "t": "Shortcut for `test` task",
     "test": "Run all tess",
     "ui": "Run all ui tasks",
+    "validate": "Validate all",
     "w": "Shortcut for `watch` task",
     "watch": "Run watches"
   }
