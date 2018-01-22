@@ -2172,13 +2172,13 @@ clay-driver-base@^4.0.1:
     clay-constants "^3.4.4"
 
 clay-driver-json@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/clay-driver-json/-/clay-driver-json-4.0.7.tgz#d6610c7013f95c02cb82f2f353f5c0b805a57510"
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/clay-driver-json/-/clay-driver-json-4.0.8.tgz#dc6500ecd35b981aa6c53881018c907d3a227cb1"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.1"
     asleep "^1.0.3"
-    clay-driver-memory "^4.1.7"
+    clay-driver-memory "^4.1.8"
     clay-serial "^2.0.1"
     writeout "^2.2.0"
 
@@ -5297,6 +5297,10 @@ notepack.io@~2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/notepack.io/-/notepack.io-2.1.2.tgz#94a47f5e4ce4ace1f3d71b27c6f83c7163393c52"
 
+npid@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/npid/-/npid-0.4.0.tgz#a1169823d3cb91b7b3d66ed62180cc338526237e"
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -7106,8 +7110,8 @@ sg-validator@^1.0.4, sg-validator@^1.1.1:
     tv4 "^1.2.7"
 
 sha.js@^2.4.0, sha.js@^2.4.8, sha.js@~2.4.4:
-  version "2.4.9"
-  resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.9.tgz#98f64880474b74f4a38b8da9d3c0f2d104633e7d"
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.10.tgz#b1fde5cd7d11a5626638a07c604ab909cfa31f9b"
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
@@ -7675,6 +7679,12 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
+terminate@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/terminate/-/terminate-2.1.0.tgz#a87ee424be01a1d28f2f301045043a5bcd679a05"
+  dependencies:
+    ps-tree "^1.1.0"
+
 terraformer-wkt-parser@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/terraformer-wkt-parser/-/terraformer-wkt-parser-1.1.2.tgz#336a0c8fc82094a5aff83288f69aedecd369bf0c"
@@ -7796,8 +7806,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^5.0.16:
-  version "5.0.22"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-5.0.22.tgz#bc48a4959afe9dae3ca1f619640bf96a818b5ffe"
+  version "5.0.23"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-5.0.23.tgz#f0f7aa9c3abe25ca7ffdedc5d566ebdb30ce359d"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -7812,11 +7822,11 @@ the-components@^5.0.16:
     the-done "^3.0.0"
     the-drawer "^3.0.0"
     the-flick "^4.0.2"
-    the-footer "^2.0.3"
+    the-footer "^2.0.4"
     the-form "^2.0.6"
     the-frame "^2.0.0"
     the-head "^1.0.14"
-    the-header "^3.0.2"
+    the-header "^3.0.4"
     the-html "^1.0.7"
     the-icon "^4.0.2"
     the-image "^2.0.1"
@@ -8000,7 +8010,7 @@ the-flick@^4.0.2:
     the-video "^2.0.5"
     the-window "^5.3.3"
 
-the-footer@^2.0.3:
+the-footer@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.0.4.tgz#05a28dc49d866ac9f3c101d22bf6aa2c356edbde"
   dependencies:
@@ -8051,7 +8061,7 @@ the-head@^1.0.14:
     prop-types "^15.6.0"
     stringcase "^4.1.0"
 
-the-header@^3.0.2:
+the-header@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/the-header/-/the-header-3.0.4.tgz#7ebbe9dd8658fc2e212eb25616a6b604d392206b"
   dependencies:
@@ -8247,6 +8257,16 @@ the-polyfill@^1.0.1:
   dependencies:
     abind "^1.0.3"
     babel-polyfill "^6.26.0"
+
+the-ps@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-ps/-/the-ps-1.0.2.tgz#a0c9b3cf351da93bbc97a4a7ae351395cbc41cac"
+  dependencies:
+    mkdirp "^0.5.1"
+    npid "^0.4.0"
+    terminate "^2.1.0"
+    the-check "^1.2.2"
+    yesno "0.0.1"
 
 the-refresher@^1.0.2:
   version "1.0.2"
@@ -8471,16 +8491,9 @@ the-site-services@^1.0.3:
     the-date "^1.4.0"
     the-service-base "^1.0.3"
 
-the-site-util@^1.5.0:
+the-site-util@^1.5.0, the-site-util@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.0.tgz#43b37accff5c1671e9150ef74e2f1b8c8e161ebf"
-  dependencies:
-    bwindow "^1.1.0"
-    qs "^6.5.1"
-    the-url "^1.0.0"
-
-"the-site-util@file:../the-site-util":
-  version "1.7.1"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"

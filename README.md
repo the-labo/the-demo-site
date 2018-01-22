@@ -274,6 +274,7 @@ pon <taskName>
 | deploy | Deploy project on production | `pon deploy` |
 | doc | Generate docs | `pon doc` |
 | docker | Setup docker infra | `pon docker` |
+| ds | Shortcut for `debug:server` task | `pon ds` |
 | logs | Show app daemon logs | `pon logs` |
 | o | Shortcut for `open` task | `pon o` |
 | open | Open project | `pon open` |
@@ -320,9 +321,9 @@ Welcome to the-db prompt!
 DB Env: { dialect: 'mysql', host: 'localhost', port: '6002', database: 'thedemosite_dev', username: 'thedemosite_dev', root_username: 'root', hooks: null }
 DB Resources: [ 'TheDBSchema', 'TheDBLog', 'Alias', 'History', 'Profile', 'Role', 'Sign', 'User' ]
 
-the-db> User.count()
+the-db> User.count()  # Evaluate One-line Javascript in the terminal
 106
-the-db> (await User.first()).name
+the-db> (await User.first()).name  # Using async interface
 'superadmin-71d5acfe'
 the-db>
 ```

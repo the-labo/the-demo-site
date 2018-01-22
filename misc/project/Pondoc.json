@@ -69,6 +69,7 @@
     "deploy": "Deploy project on production",
     "doc": "Generate docs",
     "docker": "Setup docker infra",
+    "ds": "Shortcut for `debug:server` task",
     "logs": "Show app daemon logs",
     "o": "Shortcut for `open` task",
     "open": "Open project",

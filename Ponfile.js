@@ -30,6 +30,7 @@ const {envify} = browser.transforms
 const {setting, secret} = Local
 
 const theAssets = require('the-assets')
+const thePS = require('the-ps').create
 const {Urls} = require('./conf')
 const createDB = () => require('./server/db/create').forTask()
 const migration = require('./server/db/migration')
@@ -228,7 +229,11 @@ module.exports = pon(
     /** Prepare database for production */
     'prod:db': ['env:prod', 'db'],
     /** Run server for debug */
-    'debug:server': ['env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')],
+    'debug:server': [
+      'env:debug',
+      () => thePS('var/app/dev.pid').acquire(),
+      npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')
+    ],
     /** Watch files for debug */
     'debug:watch': ['env:debug', 'ui:*/watch'],
     /** Prepare mysql docker container */
@@ -318,6 +323,8 @@ module.exports = pon(
     w: 'watch',
     /** Shortcut for `debug` task */
     d: 'debug',
+    /** Shortcut for `debug:server` task */
+    ds: 'debug:server',
     /** Shortcut for `prod` task */
     p: 'prod',
     /** Shortcut for `open` task */
