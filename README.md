@@ -314,6 +314,21 @@ pon db:cli
 In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
 
 
+**Terminal Example**
+```bash
+Welcome to the-db prompt!
+DB Env: { dialect: 'mysql', host: 'localhost', port: '6002', database: 'thedemosite_dev', username: 'thedemosite_dev', root_username: 'root', hooks: null }
+DB Resources: [ 'TheDBSchema', 'TheDBLog', 'Alias', 'History', 'Profile', 'Role', 'Sign', 'User' ]
+
+the-db> User.count()
+106
+the-db> (await User.first()).name
+'superadmin-71d5acfe'
+the-db>
+```
+
+
+
 ### Project Structure
 
 Directory structure of this project
