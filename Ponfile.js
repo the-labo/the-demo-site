@@ -69,7 +69,7 @@ module.exports = pon(
     /** Execute file copy */
     'struct:cp': cp({
       'assets/text': 'public',
-      'assets/html/errors': 'public/errors',
+      'assets/html/server-error': 'public/server-error',
       'assets/css': 'public/css',
       'assets/images': 'public/images',
       'assets/webfonts': 'public/webfonts',

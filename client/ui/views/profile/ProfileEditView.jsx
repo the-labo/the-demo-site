@@ -57,8 +57,8 @@ export default asView(
      profileEditScene
    }, propsProxy) => ({
     onMount: async () => {
+      profileEditScene.init()
       await propsProxy.onPrepareProfile()
-
     },
     onAgain: async () => {
       profileEditScene.set({done: false})

@@ -1,4 +1,5 @@
 'use strict'
+
 import React from 'react'
 import { once, get, set, mount, rescue, history as historyFor } from 'the-window'
 import App from './App'

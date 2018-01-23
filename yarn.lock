@@ -8265,10 +8265,10 @@ the-info@^2.0.1:
     the-style "^2.0.1"
 
 the-input@^3.0.3, the-input@^3.0.7, the-input@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/the-input/-/the-input-3.0.8.tgz#a05b302563511f5e177e836167cdc8f224f58f10"
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/the-input/-/the-input-3.0.10.tgz#e3572e2a330304b40f366c0d9f50d3a269e6588e"
   dependencies:
-    asobj "^2.0.2"
+    asobj "^2.0.10"
     chopcal "^3.0.1"
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -8602,7 +8602,7 @@ the-setting@^2.0.0:
     the-file-util "^1.0.0"
 
 "the-site-components@file:../the-site-components":
-  version "2.4.3"
+  version "2.4.4"
   dependencies:
     asobj "^2.0.10"
     classnames "^2.2.5"
