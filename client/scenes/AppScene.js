@@ -38,6 +38,14 @@ class AppScene extends AppSceneBase {
         this.changeLocationTo(Urls.SIGNIN_URL)
         return true
       }
+      case 'NotFoundError': {
+        this.changeLocationTo(Urls.ERROR_NOTFOUND_URL)
+        return true
+      }
+      case 'ForbiddenError': {
+        this.changeLocationTo(Urls.ERROR_FORBIDDEN_URL)
+        return true
+      }
       default:
         return false
     }

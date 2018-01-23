@@ -17,19 +17,25 @@ class SignCtrl extends SignCtrlBase {
   async signUp (name, password, options = {}) {
     const {profile: profileAttributes = {}} = options
     const {
-      services: {signService}
+      lang,
+      services: {signService},
     } = this
     const roleCode = RoleCodes.NORMAL_ROLE
-    const {user, sign} = await signService.processSignUp({name, password, profileAttributes, roleCode})
+    const {user, sign} = await signService.processSignUp({
+      name, password, profileAttributes, roleCode, lang
+    })
     await this._setAuthorized({user, sign})
     return user
   }
 
   async signIn (name, password) {
     const {
+      lang,
       services: {signService}
     } = this
-    const {sign, user} = await signService.processSignIn({name, password})
+    const {sign, user} = await signService.processSignIn({
+      name, password, lang
+    })
     await this._setAuthorized({user, sign})
     return user
   }

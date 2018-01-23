@@ -1,0 +1,25 @@
+Trouble Shooting
+-----------
+
+
+### First Things You Try
+
+When something goes funny, first thing you do clean build
+
+```bash
+
+# Clean up files and build again (aka. `pon c b`)
+pon clean build
+
+```
+
+### Docker Containers Seam to Be Dead
+
+To Re-create docker containers,
+
+```bash
+
+# Remove docker containers and restart again
+pon docker:*/remove docker
+
+```

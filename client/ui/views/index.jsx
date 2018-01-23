@@ -7,6 +7,7 @@
 import AboutPrivacyPolicyView from './about/AboutPrivacyPolicyView'
 import AboutTermsOfUseView from './about/AboutTermsOfUseView'
 import AdminTopView from './admin/AdminTopView'
+import ErrorForbiddenView from './error/ErrorForbiddenView'
 import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
 import UserManageView from './manage/UserManageView'
@@ -26,6 +27,7 @@ export {
   AboutPrivacyPolicyView,
   AboutTermsOfUseView,
   AdminTopView,
+  ErrorForbiddenView,
   ErrorNotfoundView,
   HomeView,
   UserManageView,

@@ -11,5 +11,6 @@
   "RECOVER_SEND_DONE": "パスワード再設定メールを送信しました。メール内のリンクから再設定処理を続行してください",
   "VERIFY_DONE": "メールアドレスの確認が完了しました",
   "WORKING_DONE": "完了しました",
-  "WORKING_SIGNOUT": "ログアウト中..."
+  "WORKING_SIGNOUT": "ログアウト中...",
+  "YOU_ARE_FORBIDDEN": "権限がありません"
 }

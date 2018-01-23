@@ -13,7 +13,7 @@ function withAlias (Class) {
         resources: {Alias},
       } = this
       const alias = await Alias.ofUrl(
-        this.clientUrlFor(pathname, query)
+        await this.clientUrlFor(pathname, query)
       )
       return alias.urlFor({protocol, host})
     }

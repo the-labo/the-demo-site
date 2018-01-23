@@ -11,5 +11,6 @@
   "RECOVER_SEND_DONE": "Recovery email has sent. Please check the email and follow the instruction.",
   "VERIFY_DONE": "Email address verified",
   "WORKING_DONE": "Done!",
-  "WORKING_SIGNOUT": "Signing out..."
+  "WORKING_SIGNOUT": "Signing out...",
+  "YOU_ARE_FORBIDDEN": "You do't have permission to access"
 }

@@ -36,22 +36,11 @@ Directory structure of this project
 {{/each}}
 
 
-### Trouble Shooting
 
-When something goes funny, first thing you do clean build
+### What is `.*.bud` Files?
 
-```bash
+This project contains a lot of `.*.bud` files, which is used by [coz](https://github.com/coz-labo/coz#coz) file generator.
+Bud file tells coz to how files should to generate, like path,tmpl,data,mode, etc.
 
-# Clean up files and build again (aka. `pon c b`)
-pon clean build
 
-```
 
-If docker containers seem to be gone, try
-
-```bash
-
-# Remove docker containers and restart again
-pon docker:*/remove docker
-
-```

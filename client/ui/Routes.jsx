@@ -33,6 +33,7 @@ const Routes = ({}) => (
     <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
 
     <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
+    <TheRoute exact path={Urls.ERROR_FORBIDDEN_URL} component={v.ErrorForbiddenView}/>
 
     <TheRoute component={v.ErrorNotfoundView}/>
   </TheRoute.Switch>

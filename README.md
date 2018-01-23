@@ -78,9 +78,24 @@ Table of Contents
 
 <!-- Section from "doc/guides/00.TOC.md.hbs" End -->
 
-<!-- Section from "doc/guides/01.Preparing.md.hbs" Start -->
+<!-- Section from "doc/guides/01.Requiements.md.hbs" Start -->
 
-<a name="section-doc-guides-01-preparing-md"></a>
+<a name="section-doc-guides-01-requiements-md"></a>
+
+Requirements
+----------
+
+This project requires:
+
++ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
++ [Docker](https://www.docker.com/)
+
+
+<!-- Section from "doc/guides/01.Requiements.md.hbs" End -->
+
+<!-- Section from "doc/guides/02.Preparing.md.hbs" Start -->
+
+<a name="section-doc-guides-02-preparing-md"></a>
 
 Preparing
 ----------
@@ -102,20 +117,7 @@ yarn install
 yarn prepare
 ```
 
-<!-- Section from "doc/guides/01.Preparing.md.hbs" End -->
-
-<!-- Section from "doc/guides/02.Requiements.md.hbs" Start -->
-
-<a name="section-doc-guides-02-requiements-md"></a>
-
-Requirements
-----------
-
-+ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
-+ [Docker](https://www.docker.com/)
-
-
-<!-- Section from "doc/guides/02.Requiements.md.hbs" End -->
+<!-- Section from "doc/guides/02.Preparing.md.hbs" End -->
 
 <!-- Section from "doc/guides/10.Development.md.hbs" Start -->
 
@@ -124,11 +126,18 @@ Requirements
 Development
 ----------
 
-### Starting dev server
+### Starting Development Server
 
 ```bash
 # Start server and watch files to compile
-pon d
+pon debug  # Or just `pon d`
+```
+
+### Open Project In Browser
+
+```bash
+# This will the open in your browser
+open open  # Or just `pon o`
 ```
 
 
@@ -300,6 +309,38 @@ For more information, try `pon -l`
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
 
+<!-- Section from "doc/guides/90.Trouble.md.hbs" Start -->
+
+<a name="section-doc-guides-90-trouble-md"></a>
+
+Trouble Shooting
+-----------
+
+
+### First Things You Try
+
+When something goes funny, first thing you do clean build
+
+```bash
+
+# Clean up files and build again (aka. `pon c b`)
+pon clean build
+
+```
+
+### Docker Containers Seam to Be Dead
+
+To Re-create docker containers,
+
+```bash
+
+# Remove docker containers and restart again
+pon docker:*/remove docker
+
+```
+
+<!-- Section from "doc/guides/90.Trouble.md.hbs" End -->
+
 <!-- Section from "doc/guides/99.Misc.md.hbs" Start -->
 
 <a name="section-doc-guides-99-misc-md"></a>
@@ -363,25 +404,6 @@ Directory structure of this project
 | [var](./var) | Var files |
 
 
-### Trouble Shooting
-
-When something goes funny, first thing you do clean build
-
-```bash
-
-# Clean up files and build again (aka. `pon c b`)
-pon clean build
-
-```
-
-If docker containers seem to be gone, try
-
-```bash
-
-# Remove docker containers and restart again
-pon docker:*/remove docker
-
-```
 
 <!-- Section from "doc/guides/99.Misc.md.hbs" End -->
 
