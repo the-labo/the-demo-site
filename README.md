@@ -246,6 +246,7 @@ pon <taskName>
 | icon:generate | Generate icons | `pon icon:generate` |
 | loc:print | Print locale settings | `pon loc:print` |
 | loc:validate | Validate locales | `pon loc:validate` |
+| local:print | Print local settings | `pon local:print` |
 | maint:off | Disable maintenance mode | `pon maint:off` |
 | maint:on | Enable maintenance mode | `pon maint:on` |
 | open:app | Open app in browser | `pon open:app` |

@@ -28,6 +28,7 @@
     "icon:generate": "Generate icons",
     "loc:print": "Print locale settings",
     "loc:validate": "Validate locales",
+    "local:print": "Print local settings",
     "maint:off": "Disable maintenance mode",
     "maint:on": "Enable maintenance mode",
     "open:app": "Open app in browser",
