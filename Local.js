@@ -1,6 +1,6 @@
 /**
  * Local variables
- * @file Local
+ * @namespace Local
  */
 
 'use strict'
@@ -54,12 +54,17 @@ const Vars = Object.freeze(
 
     SEAL_SECRET: secretFor(`seal@${__dirname}`),
 
-    PUBLIC_DIR: `${__dirname}/public`
+    PUBLIC_DIR: `${__dirname}/public`,
   }
 )
 
+/** @lends Local */
 const Local = {
-  __proto__: {setting, secret},
+  __proto__: {
+    setting,
+    secret,
+    print: () => console.log(inspect(Local))
+  },
   ...Vars,
   ...setting.get(),
   ...secret.get(),
@@ -68,5 +73,5 @@ const Local = {
 module.exports = Local
 
 if (!module.parent) {
-  console.log(inspect(Local))
+  Local.print()
 }
