@@ -5,47 +5,59 @@
 'use strict'
 
 import React from 'react'
-import { withStore } from 'the-store'
-import { withHistory } from 'the-components'
+import { withStore, connect } from 'the-store'
+import { withHistory, TheSpin } from 'the-components'
+import { compose } from 'the-hoc'
 import { get } from 'the-window'
 import { Urls } from '@self/conf'
 
 const debug = require('debug')('app:ui:onlySigned')
 
 function onlySigned (Component, options = {}) {
-  return withHistory(
-    withStore(
-      class OnlySigned extends React.Component {
-        render () {
-          const {props} = this
+  return compose(
+    withHistory,
+    withStore,
+    connect((state) => ({
+      signedReady: state['account.ready'],
+      hasSigned: Boolean(state['account.user']),
+    }))
+  )(
+    class OnlySigned extends React.Component {
+      render () {
+        const {props} = this
+        if (props.signedReady) {
           return <Component {...props}/>
-        }
+        } else {
+          return (
+            <div>
+              <TheSpin cover enabled size='xx-large'/>
+            </div>)
 
-        componentDidMount () {
-          this.makeSureSigned()
-        }
-
-        componentDidUpdate () {
-          this.makeSureSigned()
-        }
-
-        makeSureSigned () {
-          const {store, history} = this.props
-          const ready = store.account.get('ready')
-          if (ready) {
-            const user = store.account.get('user')
-            const hasSigned = Boolean(user)
-            if (!hasSigned) {
-              const {pathname} = get('location')
-              store.signUp.back.set(pathname)
-              store.signIn.back.set(pathname)
-              debug(`Ask sign in for: ${pathname}`)
-              history.push(Urls.SIGNASK_URL)
-            }
-          }
         }
       }
-    )
+
+      componentDidMount () {
+        this.makeSureSigned()
+      }
+
+      componentDidUpdate () {
+        this.makeSureSigned()
+      }
+
+      makeSureSigned () {
+        const {store, history, signedReady, hasSigned} = this.props
+        if (!signedReady) {
+          return
+        }
+        if (!hasSigned) {
+          const {pathname} = get('location')
+          store.signUp.back.set(pathname)
+          store.signIn.back.set(pathname)
+          debug(`Ask sign in for: ${pathname}`)
+          history.push(Urls.SIGNASK_URL)
+        }
+      }
+    }
   )
 }
 

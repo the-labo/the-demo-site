@@ -68,7 +68,7 @@
     "the-server": "^4.7.0",
     "the-service-base": "^1.0.2",
     "the-setting": "^2.0.0",
-    "the-site-components": "^2.1.0",
+    "the-site-components": "file:../the-site-components",
     "the-site-resources": "^2.1.0",
     "the-site-routes": "^1.0.0",
     "the-site-services": "^1.0.3",

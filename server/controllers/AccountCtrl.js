@@ -6,7 +6,7 @@
 
 const Ctrl = require('./Ctrl')
 const {compose,} = require('the-controller-mixins')
-
+const Local = require('@self/Local')
 const AccountCtrlBase = compose(
 
 )(Ctrl)
@@ -24,7 +24,9 @@ class AccountCtrl extends AccountCtrlBase {
       user: {id: userId,},
       services: {accountService}
     } = this
-    await accountService.processProfile({userId, profileAttributes})
+    await accountService.processProfile({
+      userId, profileAttributes, publicDir: Local.PUBLIC_DIR
+    })
     await this._reloadAuthorized()
     return true
   }

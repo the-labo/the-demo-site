@@ -717,6 +717,13 @@ aglob@^3.0.0:
   dependencies:
     glob "^7.1.1"
 
+ajax-request@^1.2.0:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/ajax-request/-/ajax-request-1.2.3.tgz#99fcbec1d6d2792f85fa949535332bd14f5f3790"
+  dependencies:
+    file-system "^2.1.1"
+    utils-extend "^1.0.7"
+
 ajv@^4.9.1:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
@@ -1061,7 +1068,7 @@ asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
 
-asobj@^2.0.1, asobj@^2.0.10, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.0.8, asobj@^2.0.9:
+asobj@^2.0.1, asobj@^2.0.10, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.0.10.tgz#bd5a8b336045b8b792ee6528c07b3e6bf5e9d617"
   dependencies:
@@ -1672,6 +1679,13 @@ balanced-match@^1.0.0:
 base64-arraybuffer@0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
+
+base64-img@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/base64-img/-/base64-img-1.0.3.tgz#a8c0284900047103421e1f9e0214011333866806"
+  dependencies:
+    ajax-request "^1.2.0"
+    file-system "^2.1.0"
 
 base64-js@^1.0.2:
   version "1.2.1"
@@ -3485,6 +3499,19 @@ fd-slicer@~1.0.1:
   resolved "https://registry.yarnpkg.com/fd-slicer/-/fd-slicer-1.0.1.tgz#8b5bcbd9ec327c5041bf9ab023fd6750f1177e65"
   dependencies:
     pend "~1.2.0"
+
+file-match@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/file-match/-/file-match-1.0.2.tgz#c9cad265d2c8adf3a81475b0df475859069faef7"
+  dependencies:
+    utils-extend "^1.0.6"
+
+file-system@^2.1.0, file-system@^2.1.1:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/file-system/-/file-system-2.2.2.tgz#7d65833e3a2347dcd956a813c677153ed3edd987"
+  dependencies:
+    file-match "^1.0.1"
+    utils-extend "^1.0.4"
 
 filecopy@^3.0.0:
   version "3.0.1"
@@ -8574,11 +8601,10 @@ the-setting@^2.0.0:
     mkdirp "^0.5.1"
     the-file-util "^1.0.0"
 
-the-site-components@^2.1.0:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-2.4.2.tgz#59f2833dd0cbd2368f7f24ee8ed12bce7a8ac277"
+"the-site-components@file:../the-site-components":
+  version "2.4.3"
   dependencies:
-    asobj "^2.0.9"
+    asobj "^2.0.10"
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-component-util "^2.1.2"
@@ -8596,8 +8622,8 @@ the-site-resources@^2.1.0:
     uuid "^3.2.1"
 
 the-site-routes@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/the-site-routes/-/the-site-routes-1.0.1.tgz#069c5cc3e67eae17c7f1dce7fdf712f2825b77e0"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-site-routes/-/the-site-routes-1.0.2.tgz#a07464d2dfe178063fc4763c1d5882614b0e445f"
   dependencies:
     async-busboy "^0.6.2"
     debug "^3.1.0"
@@ -8605,9 +8631,11 @@ the-site-routes@^1.0.0:
     the-cache "^1.0.0"
 
 the-site-services@^1.0.3:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/the-site-services/-/the-site-services-1.0.8.tgz#8c706034d32935b058c9e4f85ca8abc6a6b4b9f6"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-site-services/-/the-site-services-1.1.0.tgz#d343df8867c27c1fac46dadf7858c2648c7e97c7"
   dependencies:
+    amkdirp "^2.0.0"
+    base64-img "^1.0.3"
     the-date "^1.4.0"
     the-service-base "^1.0.3"
 
@@ -9062,6 +9090,10 @@ util@0.10.3, util@~0.10.1:
   resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
+
+utils-extend@^1.0.4, utils-extend@^1.0.6, utils-extend@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/utils-extend/-/utils-extend-1.0.8.tgz#ccfd7b64540f8e90ee21eec57769d0651cab8a5f"
 
 uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"

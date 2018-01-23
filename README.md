@@ -58,20 +58,24 @@ Table of Contents
 ----------------
 
 - [the-demo-site](#the-demo-site)
-  * [Preparing](#preparing)
   * [Requirements](#requirements)
+  * [Preparing](#preparing)
   * [Development](#development)
-    + [Starting dev server](#starting-dev-server)
+    + [Starting Development Server](#starting-development-server)
+    + [Open Project In Browser](#open-project-in-browser)
   * [Production](#production)
     + [Setup Server (Ubuntu)](#setup-server-ubuntu)
     + [Setup App](#setup-app)
     + [Configure Reverse Proxy](#configure-reverse-proxy)
   * [Running Tasks](#running-tasks)
     + [Available Tasks](#available-tasks)
+  * [Trouble Shooting](#trouble-shooting)
+    + [First Things You Try](#first-things-you-try)
+    + [Docker Containers Seam to Be Dead](#docker-containers-seam-to-be-dead)
   * [Misc](#misc)
     + [Console to database](#console-to-database)
     + [Project Structure](#project-structure)
-    + [Trouble Shooting](#trouble-shooting)
+    + [What is `.*.bud` Files?](#what-is-bud-files)
   * [License](#license)
   * [Links](#links)
 
@@ -152,7 +156,7 @@ Production
 
 ### Setup Server (Ubuntu)
 
-Execute [./misc/setup/setup_ubuntu.sh](./misc/setup/setup_ubuntu.sh) to install softwares like *git*, *node*, *nginx*, etc.
+Execute [./misc/setup/setup_ubuntu.sh](./misc/setup/setup_ubuntu.sh) to install softwares like git, node, nginx, etc.
 
 ### Setup App
 
@@ -402,6 +406,15 @@ Directory structure of this project
 | [test](./test) | Project tests |
 | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
 | [var](./var) | Var files |
+
+
+
+### What is `.*.bud` Files?
+
+This project contains a lot of `.*.bud` files, which is used by [coz](https://github.com/coz-labo/coz#coz) file generator.
+Bud file tells coz to how files should to generate, like path,tmpl,data,mode, etc.
+
+
 
 
 
