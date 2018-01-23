@@ -53,6 +53,8 @@ const Vars = Object.freeze(
     SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
 
     SEAL_SECRET: secretFor(`seal@${__dirname}`),
+
+    PUBLIC_DIR: `${__dirname}/public`
   }
 )
 

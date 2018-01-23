@@ -13,7 +13,6 @@ async function aliasRoute (ctx) {
     params: {key}
   } = ctx
   const {Alias} = db.resources
-
   const route = theAliasRouteFor({Alias, key})
   await route(ctx)
 }

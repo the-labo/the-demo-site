@@ -21,19 +21,29 @@ describe('endpoints', () => {
   after(() => {
   })
 
-  it('aliasEndpoint', async () => {
-    const alias = await Alias.ofUrl('http://example.com/foo/bar')
+  it('aliasRoute', async () => {
+    const alias = await Alias.ofUrl('http://example.com/foo/bar.json')
 
     let redirected
     const ctx = {
-      app: {db},
       params: {key: alias.key},
+      app: {db},
       redirect (url) {
         redirected = url
       }
     }
     await routes.aliasRoute(ctx)
-    equal('http://example.com/foo/bar', redirected)
+    ok(/\.json$/.test(alias.key))
+    equal('http://example.com/foo/bar.json', redirected)
+  })
+
+  it('uploadRoute', async () => {
+    const ctx = {
+      app: {db},
+      req: {
+        headers: {}
+      }
+    }
   })
 })
 

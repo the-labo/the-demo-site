@@ -40,7 +40,7 @@ function create (config) {
   }
 
   return theServer({
-    static: isProduction() ? [] : ['public'],
+    static: isProduction() ? [] : [Local.PUBLIC_DIR],
     redis: redisConfig,
     endpoints,
     cacheDir: 'tmp/cache',
