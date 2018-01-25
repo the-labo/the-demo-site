@@ -242,6 +242,8 @@ pon <taskName>
 | env:debug | Set env variables for debug | `pon env:debug` |
 | env:prod | Set env variables for production | `pon env:prod` |
 | env:test | Set env variables for test | `pon env:test` |
+| format:conf | Format conf files | `pon format:conf` |
+| format:json | Format json files | `pon format:json` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
 | icon:generate | Generate icons | `pon icon:generate` |
 | loc:print | Print locale settings | `pon loc:print` |
@@ -264,7 +266,6 @@ pon <taskName>
 | struct:chmod | Change file permissions | `pon struct:chmod` |
 | struct:compile | Compile files | `pon struct:compile` |
 | struct:cp | Execute file copy | `pon struct:cp` |
-| struct:json | Format json files | `pon struct:json` |
 | struct:mkdir | Generate project directories | `pon struct:mkdir` |
 | struct:pkg | Prepare sub packages | `pon struct:pkg` |
 | struct:render | Render coz templates | `pon struct:render` |
@@ -290,6 +291,7 @@ pon <taskName>
 | doc | Generate docs | `pon doc` |
 | docker | Setup docker infra | `pon docker` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
+| format | Format source codes | `pon format` |
 | logs | Show app daemon logs | `pon logs` |
 | o | Shortcut for `open` task | `pon o` |
 | open | Open project | `pon open` |

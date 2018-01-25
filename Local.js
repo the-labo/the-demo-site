@@ -36,38 +36,39 @@ const Vars = Object.freeze(
   /** @lends Local */
   {
     APP_PORT: portNumberFor(`app@${__dirname}`),
-    INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
-
-    MYSQL_PUBLISHED_PORT: portNumberFor(`mysql@${__dirname}`),
-    REDIS_PUBLISHED_PORT: portNumberFor(`redis@${__dirname}`),
-    NGINX_PUBLISHED_PORT: portNumberFor(`nginx@${__dirname}`),
-
-    MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
-    REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
-    NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
-
     APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
+
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
 
-    SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`),
-    SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
+    INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
+
+    MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
+
+    MYSQL_PUBLISHED_PORT: portNumberFor(`mysql@${__dirname}`),
+    NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
+    NGINX_PUBLISHED_PORT: portNumberFor(`nginx@${__dirname}`),
+
+    PUBLIC_DIR: `${__dirname}/public`,
+    REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
+    REDIS_PUBLISHED_PORT: portNumberFor(`redis@${__dirname}`),
 
     SEAL_SECRET: secretFor(`seal@${__dirname}`),
 
-    PUBLIC_DIR: `${__dirname}/public`,
+    SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`),
+    SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
   }
 )
 
 /** @lends Local */
 const Local = {
   __proto__: {
-    setting,
+    print: () => console.log(inspect(Local)),
     secret,
-    print: () => console.log(inspect(Local))
+    setting,
   },
-  ...Vars,
-  ...setting.get(),
   ...secret.get(),
+  ...setting.get(),
+  ...Vars,
 }
 
 module.exports = Local

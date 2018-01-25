@@ -80,5 +80,6 @@ module.exports = Object.freeze(
     // Top
     //-------------
     TOP_URL: '/',
+
   }
 )

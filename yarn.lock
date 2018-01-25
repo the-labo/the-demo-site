@@ -7935,8 +7935,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.0.1.tgz#ea98c9112d3b77768bb2e1313e34a9d46ab36523"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.0.4.tgz#9fd564f9d84acf6621a0124cc744b3471203efbe"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.1"
