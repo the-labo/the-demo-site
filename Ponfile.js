@@ -30,6 +30,7 @@ const {envify} = browser.transforms
 const {setting, secret} = Local
 
 const theAssets = require('the-assets')
+const theCode = require('the-code/pon')
 const thePS = require('the-ps').create
 const {Urls} = require('./conf')
 const createDB = () => require('./server/db/create').forTask()
@@ -141,6 +142,16 @@ module.exports = pon(
     /** Set env variables for debug */
     'env:debug': env('development', {DEBUG: 'app:*', ...Local}),
 
+    // ----------------
+    // Sub Tasks for Format
+    // ----------------
+    /** Format json files */
+    'format:json': fmtjson([
+      'conf/**/*.json',
+      'client/**/*.json'
+    ], {sort: true}),
+    /** Format conf files */
+    'format:conf': theCode('conf/*.js', {ignore: 'index.js'}),
     // ----------------
     // Sub Tasks for Git
     // ----------------
@@ -269,11 +280,6 @@ module.exports = pon(
       es('conf', 'shim/conf', {sourceRoot: '../../../../conf',}),
       es('utils', 'shim/utils', {sourceRoot: '../../../../conf',}),
     ],
-    /** Format json files */
-    'struct:json': fmtjson([
-      'conf/**/*.json',
-      'client/**/*.json'
-    ], {sort: true}),
     /** Render coz templates */
     'struct:render': [
       coz([
@@ -350,8 +356,10 @@ module.exports = pon(
     // ----------------
     /** Run all assets tasks */
     assets: ['assets:*'],
+    /** Format source codes */
+    format: ['format:*'],
     /** Build all */
-    build: ['struct', 'ui'],
+    build: ['struct', 'format', 'ui'],
     /** Clean all */
     clean: ['clean:shim', 'clean:public', 'clean:cache'],
     /** Prepare DB */

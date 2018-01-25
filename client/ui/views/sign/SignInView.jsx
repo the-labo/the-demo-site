@@ -23,7 +23,7 @@ function SignInView ({
 
         <TheButtonGroup collapsed>
           <TheButton to={Urls.SIGNUP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
-          <TheButton to={Urls.RECOVER_SEND_URL}
+          <TheButton to={Urls.ACCOUNT_RECOVER_URL}
           >{l('buttons.SHOW_RECOVER_SEND')}</TheButton>
         </TheButtonGroup>
       </TheView.Body>

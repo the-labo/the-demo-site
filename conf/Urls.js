@@ -9,44 +9,76 @@ const pkg = require('../package.json')
 module.exports = Object.freeze(
   /** @lends Urls */
   {
-
-    TOP_URL: '/',
-
-    ALIAS_URL: '/a/:key',
-
+    //-------------
+    // About
+    //-------------
     ABOUT_APP_URL: '/about/app',
     ABOUT_PRIVACY_POLICY_URL: '/about/privacy-policy',
     ABOUT_TERMS_OF_USE_URL: '/about/terms-of-use',
 
-    SIGNIN_URL: '/sign/signin',
-    SIGNUP_URL: '/sign/signup',
-    SIGNASK_URL: '/sign/please',
-    SIGNOUT_URL: '/sign/signout',
-
+    //-------------
+    // Account
+    //-------------
     ACCOUNT_MYPAGE_URL: '/account/mypage',
     ACCOUNT_PASSWORD_URL: '/account/password',
     ACCOUNT_PROFILE_URL: '/account/profile',
-    QUIT_URL: '/account/quit',
-    VERIFY_CONFIRM_URL: 'account/verify/confirm',
-    RECOVER_SEND_URL: '/account/recover/send',
-    RECOVER_RESET_URL: '/account/recover/reset',
+    ACCOUNT_QUIT_URL: '/account/quit',
+    ACCOUNT_RECOVER_RESET_URL: '/account/recover/reset',
+    ACCOUNT_RECOVER_URL: '/account/recover/send',
+    ACCOUNT_VERIFY_URL: 'account/verify/confirm',
 
+    //-------------
+    // Admin
+    //-------------
     ADMIN_URL: '/admin',
-    USER_MANAGE_URL: '/admin/users',
+    ADMIN_USER_MANAGE_URL: '/admin/users',
 
+    //-------------
+    // Alias
+    //-------------
+    ALIAS_URL: '/a/:key',
+
+    //-------------
+    // Css
+    //-------------
+    CSS_BUNDLE_URL: '/build/bundle.css',
+    CSS_FONT_URL: '/css/fontawesome-all.css',
+    CSS_THEME_URL: '/css/theme.css',
+
+    //-------------
+    // Error
+    //-------------
+    ERROR_FORBIDDEN_URL: '/errors/forbidden',
+    ERROR_NOTFOUND_URL: '/errors/not-found',
+
+    //-------------
+    // Icon
+    //-------------
     ICON_URL: '/images/app-icon.png',
 
+    //-------------
+    // JS
+    //-------------
     JS_BUNDLE_URL: '/build/bundle.js',
     JS_EXTERNAL_URL: '/build/external-bundle.js',
 
-    CSS_THEME_URL: '/css/theme.css',
-    CSS_FONT_URL: '/css/fontawesome-all.css',
-    CSS_BUNDLE_URL: '/build/bundle.css',
-
-    PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
+    //-------------
+    // Production
+    //-------------
     PRODUCTION_CSS_URL: `/${pkg.name}-${pkg.version}.css`,
+    PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
 
-    ERROR_NOTFOUND_URL: '/errors/not-found',
-    ERROR_FORBIDDEN_URL: '/errors/forbidden'
+    //-------------
+    // Sign
+    //-------------
+    SIGNASK_URL: '/sign/please',
+    SIGNIN_URL: '/sign/signin',
+    SIGNOUT_URL: '/sign/signout',
+    SIGNUP_URL: '/sign/signup',
+
+    //-------------
+    // Top
+    //-------------
+    TOP_URL: '/',
   }
 )

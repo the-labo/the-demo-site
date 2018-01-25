@@ -6,30 +6,22 @@
 module.exports = Object.freeze(
   /** @lends Icons */
   {
-    BACK_ICON: 'fas fa-angle-left',
+
+    ACCOUNT_ICON: 'fas fa-user',
     ADD_ICON: 'fas fa-plus',
-    REMOVE_ICON: 'fas fa-close',
+    ADMIN_ICON: 'fas fa-cogs',
+    BACK_ICON: 'fas fa-angle-left',
     CLOSE_ICON: 'fas fa-times',
-
-    EDIT_ICON: 'fas fa-edit',
     DESTROY_ICON: 'fas fa-trash',
-
+    EDIT_ICON: 'fas fa-edit',
+    PROFILE_ICON: 'far fa-id-card',
+    RELOAD_ICON: 'fas fa-sync',
+    REMOVE_ICON: 'fas fa-close',
     SETTING_ICON: 'fas fa-cog',
-
     SIGNIN_ICON: 'fas fa-sign-in-alt',
     SIGNOUT_ICON: 'fas fa-sign-out-alt',
     SIGNUP_ICON: 'fas fa-user-plus',
-
-    ADMIN_ICON: 'fas fa-cogs',
-
     USERS_ICON: 'fas fa-users',
-
-    ACCOUNT_ICON: 'fas fa-user',
-    PROFILE_ICON: 'far fa-id-card',
-
     WARNING_ICON: 'fas fa-exclamation-triangle',
-
-    RELOAD_ICON: 'fas fa-sync'
-
   }
 )

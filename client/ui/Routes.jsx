@@ -16,11 +16,11 @@ const Routes = ({}) => (
 
 
     <TheRoute exact path={Urls.ADMIN_URL} component={v.AdminTopView}/>
-    <TheRoute exact path={Urls.USER_MANAGE_URL} component={v.UserManageView}/>
+    <TheRoute exact path={Urls.ADMIN_USER_MANAGE_URL} component={v.UserManageView}/>
 
-    <TheRoute exact path={Urls.VERIFY_CONFIRM_URL} component={v.VerifyConfirmView}/>
-    <TheRoute exact path={Urls.RECOVER_SEND_URL} component={v.RecoverSendView}/>
-    <TheRoute exact path={Urls.RECOVER_RESET_URL} component={v.RecoverResetView}/>
+    <TheRoute exact path={Urls.ACCOUNT_VERIFY_URL} component={v.VerifyConfirmView}/>
+    <TheRoute exact path={Urls.ACCOUNT_RECOVER_URL} component={v.RecoverSendView}/>
+    <TheRoute exact path={Urls.ACCOUNT_RECOVER_RESET_URL} component={v.RecoverResetView}/>
 
     <TheRoute exact path={Urls.ACCOUNT_MYPAGE_URL} component={v.MypageView}/>
     <TheRoute exact path={Urls.ACCOUNT_PASSWORD_URL} component={v.PasswordChangeView}/>
@@ -29,7 +29,7 @@ const Routes = ({}) => (
     <TheRoute exact path={Urls.SIGNIN_URL} component={v.SignInView}/>
     <TheRoute exact path={Urls.SIGNUP_URL} component={v.SignUpView}/>
     <TheRoute exact path={Urls.SIGNOUT_URL} component={v.SignOutView}/>
-    <TheRoute exact path={Urls.QUIT_URL} component={v.QuitView}/>
+    <TheRoute exact path={Urls.ACCOUNT_QUIT_URL} component={v.QuitView}/>
     <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
 
     <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>

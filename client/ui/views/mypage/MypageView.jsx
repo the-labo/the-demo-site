@@ -59,7 +59,7 @@ function MypageView ({
                 <hr/>
                 <br/>
                 <div className={styles.links}>
-                  <TheLink to={Urls.QUIT_URL}>{l('buttons.SHOW_QUIT')}</TheLink>
+                  <TheLink to={Urls.ACCOUNT_QUIT_URL}>{l('buttons.SHOW_QUIT')}</TheLink>
                 </div>
               </TheSection.Body>
             </TheSection>

@@ -26,7 +26,7 @@ class RecoverCtrl extends RecoverCtrlBase {
       expireIn: Lifetimes.RECOVER_EMAIL_LIFETIME
     })
     const seal = await this._sealFor(envelop)
-    const url = await this._aliasUrlFor(Urls.RECOVER_RESET_URL, {envelop, seal, expireAt})
+    const url = await this._aliasUrlFor(Urls.ACCOUNT_RECOVER_RESET_URL, {envelop, seal, expireAt})
     this._debug(`Create recover url: ${url}`)
     await mail.sendRecover({lang, user, url, expireAt})
   }

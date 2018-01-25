@@ -42,7 +42,7 @@ class VerifyCtrl extends VerifyCtrlBase {
     })
 
     const seal = await this._sealFor(envelop)
-    const url = await this._aliasUrlFor(Urls.VERIFY_CONFIRM_URL, {envelop, seal, expireAt})
+    const url = await this._aliasUrlFor(Urls.ACCOUNT_VERIFY_URL, {envelop, seal, expireAt})
     this._debug(`Create verify url: ${url}`)
     await mail.sendVerify({lang, user, url, expireAt})
   }
