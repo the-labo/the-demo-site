@@ -6,7 +6,7 @@
 
 const controllers = require('../controllers')
 const createDB = require('../db/create')
-const {ok, equal} = require('assert')
+const {equal, ok,} = require('assert')
 const {servicesProxy} = require('the-service-base')
 const {ServiceMapping} = require('../mappings')
 
@@ -18,7 +18,7 @@ describe('controllers', () => {
   })
 
   it('Sign Ctrl', async () => {
-    const {SignCtrl, AccountCtrl, QuitCtrl} = controllers
+    const {AccountCtrl, QuitCtrl, SignCtrl,} = controllers
     const session = {}
     const db = createDB({
       dialect: 'memory'

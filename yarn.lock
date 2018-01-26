@@ -3914,8 +3914,8 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.1.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.1.0.tgz#632644457f5f0e3ae711807183700ebf2e4633e4"
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.2.0.tgz#aa2ece052a787563ba70a3dcd9dc2eb8a9a0488c"
 
 globals@^9.18.0:
   version "9.18.0"
@@ -7935,8 +7935,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.0.4.tgz#9fd564f9d84acf6621a0124cc744b3471203efbe"
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.0.14.tgz#db7894340c353eec42ac7b8398eb9ec8fb54a775"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.1"

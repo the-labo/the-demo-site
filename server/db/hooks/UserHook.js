@@ -9,13 +9,13 @@ const {HistoryTypes} = require('@self/conf')
 function UserHook (db) {
   const {History, User} = db.resources
   return {
-    async onDestroy ({id, gone}) {
+    async onDestroy ({gone, id,}) {
       const key = User.refOf(id)
       debug('User Destroy', key)
       await History.create({
-        type: HistoryTypes.GONE_USER,
         data: gone.toObject(),
         key,
+        type: HistoryTypes.GONE_USER,
       })
     }
   }

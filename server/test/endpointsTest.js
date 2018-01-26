@@ -8,7 +8,7 @@ const routes = require('../endpoints/routes')
 const createDB = require('../db/create')
 const assert = require('assert')
 
-const {ok, equal} = assert
+const {equal, ok,} = assert
 
 describe('endpoints', () => {
   const db = createDB({
@@ -26,11 +26,11 @@ describe('endpoints', () => {
 
     let redirected
     const ctx = {
-      params: {key: alias.key},
       app: {db},
+      params: {key: alias.key},
       redirect (url) {
         redirected = url
-      }
+      },
     }
     await routes.aliasRoute(ctx)
     ok(/\.json$/.test(alias.key))

@@ -7,8 +7,8 @@ const mail = require('../mail')
 const {locales} = require('../../conf')
 
 const singleton = create({
-  locales,
   db,
+  locales,
   mail,
   redis: env.redis,
 })

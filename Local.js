@@ -10,16 +10,16 @@ const theSetting = require('the-setting').default
 const theSecret = require('the-secret').default
 const pkg = require('./package.json')
 const {inspect} = require('util')
-const {seatAccess, envOf} = require('the-site-util')
+const {envOf, seatAccess,} = require('the-site-util')
 
 const secret = theSecret(`${__dirname}/secrets.json`, envOf('DEMO_SITE_MASTER_PASSWORD', {strict: true}))
 const seat = theSeat()
 const {
-  portNumberFor,
   containerNameFor,
+  portNumberFor,
   processNameFor,
-  userNameFor,
   secretFor,
+  userNameFor,
 } = seatAccess(seat)
 
 const setting = theSetting(`${__dirname}/var/app/setting.json`,

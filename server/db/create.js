@@ -7,7 +7,7 @@
 
 const theDB = require('the-db').default
 const env = require('../env')
-const {ResourceMapping, HookMapping} = require('../mappings')
+const {HookMapping, ResourceMapping,} = require('../mappings')
 const cluster = require('cluster')
 
 /** @lends create */
@@ -17,9 +17,9 @@ function create (config = env.database, options = {}) {
   } = options
 
   return theDB({
-    ...config,
+    hooks: enableHooks ? HookMapping : null,
     resources: ResourceMapping,
-    hooks: enableHooks ? HookMapping : null
+    ...config,
   }).unref()
 }
 

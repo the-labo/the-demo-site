@@ -15,8 +15,8 @@ const QuitCtrlBase = compose(
 class QuitCtrl extends QuitCtrlBase {
   async execute () {
     const {
+      services: {quitService},
       user,
-      services: {quitService}
     } = this
     await this._reloadAuthorized()
     if (!user) {

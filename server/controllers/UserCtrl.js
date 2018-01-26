@@ -15,16 +15,16 @@ const UserCtrlBase = compose(
 /** @lends UserCtrl */
 class UserCtrl extends UserCtrlBase {
 
-  async list ({filter, sort, page} = {}) {
+  async list ({filter, page, sort,} = {}) {
     await this._assertAsAdmin()
     const {services: {userService},} = this
-    return userService.pickList({filter, sort, page})
+    return userService.pickList({filter, page, sort,})
   }
 
-  async create ({name, role: roleCode, profile: profileAttributes}) {
+  async create ({name, profile: profileAttributes, role: roleCode,}) {
     await this._assertAsAdmin()
     const {services: {userService},} = this
-    const {user} = await userService.processCreate({name, roleCode, profileAttributes})
+    const {user} = await userService.processCreate({name, profileAttributes, roleCode,})
     return user
   }
 

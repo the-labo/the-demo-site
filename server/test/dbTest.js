@@ -5,7 +5,7 @@
 'use strict'
 
 const createDB = require('../db/create')
-const {ok, equal} = require('assert')
+const {equal, ok,} = require('assert')
 const {SUPER_ADMIN_NAME} = require('@self/Local')
 
 describe('db', () => {
@@ -22,7 +22,7 @@ describe('db', () => {
     ok(db)
 
     {
-      const {User, Profile} = db.resources
+      const {Profile, User,} = db.resources
       const user01 = await User.create({name: 'foo'})
       await user01.update({name: 'bar'})
 

@@ -6,18 +6,18 @@
 'use strict'
 
 const pon = require('pon')
-const {react, css, browser, map, ccjs} = require('pon-task-web')
+const {browser, ccjs, css, map, react,} = require('pon-task-web')
 const {
-  fs: {chmod, concat, cp, del, mkdir, symlink, write,},
-  mocha,
   command: {spawn: {git, npx}},
   coz,
-  fmtjson,
   env,
+  fmtjson,
+  fs: {chmod, concat, cp, del, mkdir, symlink, write,},
+  mocha,
   open,
   pondoc,
 } = require('pon-task-basic')
-const {mysql, redis, nginx} = require('pon-task-docker')
+const {mysql, nginx, redis,} = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
@@ -26,12 +26,12 @@ const md = require('pon-task-md')
 const Local = require('./Local')
 const {isProduction} = require('the-check')
 const {envify} = browser.transforms
-const {setting, secret} = Local
+const {secret, setting,} = Local
 
 const theAssets = require('the-assets')
 const theCode = require('the-code/pon')
 const thePS = require('the-ps').create
-const {Urls} = require('./conf')
+const {Urls, locales,} = require('./conf')
 const createDB = () => require('./server/db/create').forTask()
 const migration = require('./server/db/migration')
 
@@ -41,8 +41,6 @@ const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
-
-const locales = require('./conf/locales')
 
 module.exports = pon(
   /** @module tasks */
@@ -146,6 +144,7 @@ module.exports = pon(
     ], {sort: true}),
     'format:local': theCode('Local.js', {}),
     'format:ponfile': theCode('Ponfile.js', {}),
+    'format:server': theCode('server/**/*.js', {}),
 
     // ----------------
     // Sub Tasks for Git
@@ -301,8 +300,7 @@ module.exports = pon(
     /** Bundle external browser script */
     'ui:browser-external': env.dynamic(({isProduction}) =>
       browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-        // fullPaths: !isProduction(),
-        fullPaths: false,
+        fullPaths: !isProduction(),
         ignores: [
           // TODO remove patch
           ...ExternalIgnorePatch({isProduction}),
@@ -317,8 +315,7 @@ module.exports = pon(
     'ui:browser': env.dynamic(({isProduction}) =>
       browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
         externals: Externals,
-        // fullPaths: !isProduction(),
-        fullPaths: false,
+        fullPaths: !isProduction(),
         transforms: [envify()],
         watchTargets: 'client/shim/**/*.js',
       }), {sub: ['watch', 'deps']}
@@ -425,6 +422,8 @@ module.exports = pon(
       d: 'debug',
       /** Shortcut for `debug:server` task */
       ds: 'debug:server',
+      /** Shortcut for `format` task */
+      f: 'format',
       /** Shortcut for `open` task */
       o: 'open',
       /** Shortcut for `prod` task */

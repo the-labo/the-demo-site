@@ -5,9 +5,9 @@ const {pascalcase} = require('stringcase')
 
 module.exports = [
   ...Users.map(({id, name}) => ({
-    id,
     email: `${name}@example.com`,
+    id,
     name: `[Test] ${pascalcase(name)}`,
-    user: {$$entity: true, $$as: 'User', id},
+    user: {$$as: 'User', $$entity: true, id,},
   }))
 ]

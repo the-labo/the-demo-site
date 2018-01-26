@@ -29,7 +29,7 @@ function withAuth (Class) {
       const user = await this._fetchAuthorizedUser()
       if (user) {
         const sign = await Sign.ofUser(user)
-        await this._setAuthorized({user, sign})
+        await this._setAuthorized({sign, user,})
       } else {
         await this._delAuthorized()
       }

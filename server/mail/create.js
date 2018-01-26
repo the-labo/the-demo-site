@@ -8,7 +8,7 @@
 const theMail = require('the-mail').default
 const env = require('../env')
 const Templates = require('./Templates')
-const {nameOfUser, emailOfUser, localeDate} = require('./helpers')
+const {emailOfUser, localeDate, nameOfUser,} = require('./helpers')
 const {locales} = require('@self/conf')
 
 /** @lends create */
@@ -28,41 +28,41 @@ function create (config = env.mail) {
     async sendGoodby ({lang, user}) {
       const l = locales.bind(lang)
       return mail.send({
-        from: SENDER_ADDRESS,
-        to: emailOfUser(user),
-        subject: l('mail.GOODBYE_SUBJECT'),
         content: _render(lang, 'goodby.mail', {
           name: nameOfUser(user),
           by: l('app.APP_NAME')
-        })
+        }),
+        from: SENDER_ADDRESS,
+        subject: l('mail.GOODBYE_SUBJECT'),
+        to: emailOfUser(user),
       })
     },
-    async sendRecover ({lang, user, url, expireAt}) {
+    async sendRecover ({expireAt, lang, url, user,}) {
       const l = locales.bind(lang)
       return mail.send({
-        from: SENDER_ADDRESS,
-        to: emailOfUser(user),
-        subject: l('mail.RECOVER_SUBJECT'),
         content: _render(lang, 'recover.mail', {
           key: user.name,
           url,
           expireAt: localeDate(lang, expireAt),
           by: l('app.APP_NAME')
-        })
+        }),
+        from: SENDER_ADDRESS,
+        subject: l('mail.RECOVER_SUBJECT'),
+        to: emailOfUser(user),
       })
     },
-    async sendVerify ({lang, user, url, expireAt}) {
+    async sendVerify ({expireAt, lang, url, user,}) {
       const l = locales.bind(lang)
       return mail.send({
-        from: SENDER_ADDRESS,
-        to: emailOfUser(user),
-        subject: l('mail.VERIFY_SUBJECT'),
         content: _render(lang, 'verify.mail', {
           key: user.name,
           url,
           expireAt: localeDate(lang, expireAt),
           by: l('app.APP_NAME')
-        })
+        }),
+        from: SENDER_ADDRESS,
+        subject: l('mail.VERIFY_SUBJECT'),
+        to: emailOfUser(user),
       })
     }
   })

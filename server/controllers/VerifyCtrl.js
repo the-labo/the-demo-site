@@ -5,7 +5,7 @@
 'use strict'
 
 const Ctrl = require('./Ctrl')
-const {Urls, Lifetimes} = require('@self/conf')
+const {Lifetimes, Urls,} = require('@self/conf')
 const {compose,} = require('the-controller-mixins')
 const {withAlias,} = require('./concerns')
 
@@ -18,8 +18,8 @@ class VerifyCtrl extends VerifyCtrlBase {
 
   async needsVerify () {
     const {
-      user,
       services: {verifyService},
+      user,
     } = this
     if (!user) {
       return false
@@ -31,29 +31,29 @@ class VerifyCtrl extends VerifyCtrlBase {
     await this._assertAuthorized()
 
     const {
-      mail,
       lang,
-      user,
+      mail,
       services: {verifyService},
+      user,
     } = this
     const {envelop, expireAt} = await verifyService.processPrepare({
+      expireIn: Lifetimes.VERIFY_EMAIL_LIFETIME,
       userId: user.id,
-      expireIn: Lifetimes.VERIFY_EMAIL_LIFETIME
     })
 
     const seal = await this._sealFor(envelop)
     const url = await this._aliasUrlFor(Urls.ACCOUNT_VERIFY_URL, {envelop, seal, expireAt})
     this._debug(`Create verify url: ${url}`)
-    await mail.sendVerify({lang, user, url, expireAt})
+    await mail.sendVerify({expireAt, lang, url, user,})
   }
 
-  async verify ({seal: sealString, envelop} = {}) {
+  async verify ({envelop, seal: sealString,} = {}) {
     const {
       services: {verifyService},
     } = this
     await this._assertSeal(sealString, envelop)
     const {sign, user} = await verifyService.processVerify({envelop})
-    await this._setAuthorized({user, sign})
+    await this._setAuthorized({sign, user,})
     await this._reloadAuthorized()
   }
 }

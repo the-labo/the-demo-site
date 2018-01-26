@@ -14,15 +14,15 @@ const env = require('../env')
 const mappings = require('../mappings')
 const {isProduction} = require('the-check')
 const Local = require('@self/Local')
-const {createClient, createStore, createHandle, Html} = require('@self/client/shim')
+const {Html, createClient, createHandle, createStore,} = require('@self/client/shim')
 
-const {ServiceMapping, ControllerMapping,} = mappings
+const {ControllerMapping, ServiceMapping,} = mappings
 
 /** @lends create */
 function create (config) {
   const {
-    locales,
     db,
+    locales,
     mail,
     redisConfig = env.redis,
     sealConfig = env.seal,
@@ -30,30 +30,30 @@ function create (config) {
   const seal = theSeal(sealConfig['SEAL_SECRET'])
 
   const app = {
+    cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
-    seal,
     mail,
+    seal,
     services: servicesProxy(ServiceMapping, db),
     version: isProduction() ? pkg.version : String(new Date().getTime()),
-    cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
   }
 
   return theServer({
-    static: isProduction() ? [] : [Local.PUBLIC_DIR],
-    redis: redisConfig,
-    endpoints,
     cacheDir: 'tmp/cache',
+    controllers: ControllerMapping,
+    endpoints,
+    html: Html,
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),
+      handle: (ctx) => createHandle(),
       store: (ctx) => createStore(),
-      handle: (ctx) => createHandle()
     },
-    html: Html,
     langs: Object.keys(locales),
+    redis: redisConfig,
     scope: app,
-    controllers: ControllerMapping
+    static: isProduction() ? [] : [Local.PUBLIC_DIR],
   })
 }
 

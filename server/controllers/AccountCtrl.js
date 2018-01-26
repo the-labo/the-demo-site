@@ -21,11 +21,11 @@ class AccountCtrl extends AccountCtrlBase {
   async updateProfile (profileAttributes) {
     await this._assertAuthorized()
     const {
+      services: {accountService},
       user: {id: userId,},
-      services: {accountService}
     } = this
     await accountService.processProfile({
-      userId, profileAttributes, publicDir: Local.PUBLIC_DIR
+      profileAttributes, publicDir: Local.PUBLIC_DIR, userId,
     })
     await this._reloadAuthorized()
     return true
@@ -34,10 +34,10 @@ class AccountCtrl extends AccountCtrlBase {
   async updatePassword (newPassword) {
     await this._assertAuthorized()
     const {
+      services: {accountService},
       user: {id: userId},
-      services: {accountService}
     } = this
-    await accountService.processPassword({userId, newPassword})
+    await accountService.processPassword({newPassword, userId,})
     await this._reloadAuthorized()
     return true
   }

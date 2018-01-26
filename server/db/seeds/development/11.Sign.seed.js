@@ -3,7 +3,7 @@
 const Users = require('./10.User.seed')
 
 const thePassword = require('the-password').default
-const {generateSalt, digest: digestPassword} = thePassword()
+const {digest: digestPassword, generateSalt,} = thePassword()
 
 module.exports = [
   ...Users.map(({id, name}) => {
@@ -12,7 +12,7 @@ module.exports = [
       id,
       passwordSalt: salt,
       passwordHash: digestPassword(name, salt),
-      user: {$$entity: true, $$as: 'User', id},
+      user: {$$as: 'User', $$entity: true, id,},
     }
   })
 ]

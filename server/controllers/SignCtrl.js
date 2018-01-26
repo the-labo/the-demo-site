@@ -21,10 +21,10 @@ class SignCtrl extends SignCtrlBase {
       services: {signService},
     } = this
     const roleCode = RoleCodes.NORMAL_ROLE
-    const {user, sign} = await signService.processSignUp({
-      name, password, profileAttributes, roleCode, lang
+    const {sign, user,} = await signService.processSignUp({
+      lang, name, password, profileAttributes, roleCode,
     })
-    await this._setAuthorized({user, sign})
+    await this._setAuthorized({sign, user,})
     return user
   }
 
@@ -34,16 +34,16 @@ class SignCtrl extends SignCtrlBase {
       services: {signService}
     } = this
     const {sign, user} = await signService.processSignIn({
-      name, password, lang
+      lang, name, password,
     })
-    await this._setAuthorized({user, sign})
+    await this._setAuthorized({sign, user,})
     return user
   }
 
   async signOut () {
     const {
+      services: {signService},
       user,
-      services: {signService}
     } = this
     await this._reloadAuthorized()
     if (user) {
