@@ -12,13 +12,13 @@ const UserDestroyDialog = compose(
   withLoc
 )(
   function UserDestroyDialogImpl ({
-                                    l,
-                                    spinning,
-                                    onClose,
-                                    onSubmit,
                                     active,
                                     done,
-                                    users
+                                    l,
+                                    onClose,
+                                    onSubmit,
+                                    spinning,
+                                    users,
                                   }) {
     return (
       <TheDestroyDialog title={l('titles.USERS_DESTROY_CONFIRM_TITLE')}
@@ -26,12 +26,12 @@ const UserDestroyDialog = compose(
                         entities={users}
                         renderItem={({displayName}) => displayName}
                         {...{
+                          active,
+                          done,
                           l,
                           onClose,
                           onSubmit,
                           spinning,
-                          active,
-                          done,
                         }}
       />
     )
@@ -41,27 +41,27 @@ const UserDestroyDialog = compose(
 export default asBound(
   UserDestroyDialog,
   (state) => ({
-    spinning: state['userDestroy.busy'],
     active: state['userDestroy.active'],
     done: state['userDestroy.done'],
+    spinning: state['userDestroy.busy'],
     users: state['userDestroy.targets'],
   }),
   ({
      l,
-     userDestroyScene,
+     toastScene,
      userCheckScene,
+     userDestroyScene,
      userListScene,
-     toastScene
    }, propsProxy) => ({
     onClose: () => userDestroyScene.set({
+      active: false,
       done: false,
-      active: false
     }),
     onSubmit: async () => {
       await userDestroyScene.doDestroy()
       userDestroyScene.set({
+        active: false,
         done: true,
-        active: false
       })
       userCheckScene.init()
       toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))

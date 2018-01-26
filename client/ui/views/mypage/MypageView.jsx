@@ -19,10 +19,10 @@ import { UserImage } from '../../fragments'
 import { Urls } from '@self/conf'
 
 function MypageView ({
-                       l,
                        busy,
+                       l,
                        ready,
-                       user
+                       user,
                      }) {
   const {profile} = user || {}
   return (

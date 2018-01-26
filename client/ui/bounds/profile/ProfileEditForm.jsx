@@ -16,23 +16,23 @@ function ProfileEditForm (props) {
 export default asForm(
   ProfileEditForm,
   (state) => ({
+    errors: state['profileEdit.entryErrors'],
     spinning: state['profileEdit.busy'],
     values: state['profileEdit.entry'],
-    errors: state['profileEdit.entryErrors']
   }),
   ({
+     accountScene,
      l,
      profileEditScene,
      toastScene,
-     accountScene
    }) => ({
-    onUpdate: (v) => profileEditScene.setEntry(v),
     onSubmit: async () => {
       await profileEditScene.doSave()
       profileEditScene.set({done: true})
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))
-    }
+    },
+    onUpdate: (v) => profileEditScene.setEntry(v),
   })
 )
 

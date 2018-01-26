@@ -6,14 +6,14 @@
 
 const Scene = require('./Scene')
 const {
-  bindScope,
   bindDefaults,
+  bindScope,
   withBusy,
-  withSort,
-  withPage,
-  withReady,
   withFilter,
   withHistory,
+  withPage,
+  withReady,
+  withSort,
 } = require('the-scene-mixins/shim')
 
 @withBusy
@@ -23,7 +23,7 @@ const {
 @withFilter
 @withHistory
 @bindScope('userList')
-@bindDefaults({pageNumber: 1, pageSize: 25, filter: {},})
+@bindDefaults({filter: {}, pageNumber: 1, pageSize: 25,})
 class UserListSceneBase extends Scene {}
 
 /** @lends UserListScene */
@@ -38,7 +38,7 @@ class UserListScene extends UserListSceneBase {
   @withReady.when
   async doSync () {
     const {userCtrl} = this.controllers
-    const {meta: counts, entities} = await userCtrl.list({
+    const {entities, meta: counts,} = await userCtrl.list({
       filter: this.getFilter(),
       page: this.getPage(),
       sort: this.getSort()

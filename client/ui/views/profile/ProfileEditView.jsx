@@ -11,11 +11,11 @@ import styles from './ProfileEditView.pcss'
 import { Urls, Icons } from '@self/conf'
 
 function ProfileEditView ({
-                            l,
                             busy,
-                            user,
                             done,
-                            onAgain
+                            l,
+                            onAgain,
+                            user,
                           }) {
   return (
     <TheView className={styles.self}
@@ -49,26 +49,26 @@ export default asView(
   ProfileEditView,
   (state) => ({
     busy: state['account.busy'],
+    done: state['profileEdit.done'],
     user: state['account.user'],
-    done: state['profileEdit.done']
   }),
   ({
      accountScene,
      profileEditScene
    }, propsProxy) => ({
-    onMount: async () => {
-      profileEditScene.init()
-      await propsProxy.onPrepareProfile()
-    },
     onAgain: async () => {
       profileEditScene.set({done: false})
+      await propsProxy.onPrepareProfile()
+    },
+    onMount: async () => {
+      profileEditScene.init()
       await propsProxy.onPrepareProfile()
     },
     onPrepareProfile: async () => {
       await accountScene.doSync()
       const {profile} = accountScene.get('user')
       profileEditScene.setEntryFromEntity(profile)
-    }
+    },
   }),
   {
     title: ({l}) => l('titles.PROFILE_EDIT_TITLE'),

@@ -10,9 +10,9 @@ import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
 
 function SignOutView ({
-                        l,
                         busy,
-                        done
+                        done,
+                        l,
                       }) {
   return (
     <TheView className={styles.self}>
@@ -32,13 +32,13 @@ function SignOutView ({
 export default asView(
   SignOutView,
   (state) => ({
-    user: state['account.user'],
     busy: state['signOut.busy'],
     done: state['signOut.done'],
+    user: state['account.user'],
   }),
   ({
+     accountScene,
      signOutScene,
-     accountScene
    }) => ({
     onMount: async () => {
       signOutScene.init()

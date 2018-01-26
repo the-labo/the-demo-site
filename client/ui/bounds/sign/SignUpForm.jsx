@@ -18,18 +18,17 @@ function SignUpForm (props) {
 export default asForm(
   SignUpForm,
   (state) => ({
-    spinning: state['signUp.busy'],
-    values: state['signUp.entry'],
-    step: state['signUp.step'],
     errors: state['signUp.entryErrors'],
+    spinning: state['signUp.busy'],
+    step: state['signUp.step'],
+    values: state['signUp.entry'],
   }),
   ({
-     l,
      accountScene,
+     l,
      signUpScene,
-     toastScene
+     toastScene,
    }, ownProps) => ({
-    onUpdate: (v) => signUpScene.setEntry(v),
     onStep: (step) => {
       signUpScene.setStep(step)
     },
@@ -38,6 +37,7 @@ export default asForm(
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGNUP_DID_SUCCESS'))
       signUpScene.goBack()
-    }
+    },
+    onUpdate: (v) => signUpScene.setEntry(v),
   })
 )

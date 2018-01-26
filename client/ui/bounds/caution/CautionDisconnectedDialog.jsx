@@ -13,13 +13,13 @@ const CautionDisconnectedDialog = compose(
   withLoc
 )(
   function CautionDisconnectedDialogImpl ({
-                                            l,
                                             active,
                                             busy,
-                                            onReload
+                                            l,
+                                            onReload,
                                           }) {
     return (
-      <TheCautionDisconnectedDialog {...{l, active, busy, onReload}}
+      <TheCautionDisconnectedDialog {...{active, busy, l, onReload,}}
                                     warningIcon={Icons.WARNING_ICON}
                                     reloadIcon={Icons.RELOAD_ICON}
       />

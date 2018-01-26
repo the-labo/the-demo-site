@@ -14,14 +14,14 @@ const UserPasswordDialog = compose(
   withLoc
 )(
   function UserPasswordDialogImpl ({
-                                     l,
                                      active,
                                      done,
-                                     spinning,
-                                     users,
-                                     passwords,
+                                     l,
                                      onClose,
                                      onYes,
+                                     passwords,
+                                     spinning,
+                                     users,
                                    }) {
     return (
       <TheOperationDialog title={l('titles.USERS_PASSWORD_RESET_CONFIRM_TITLE')}
@@ -36,12 +36,12 @@ const UserPasswordDialog = compose(
                           entities={users}
                           renderItem={(user) => user.displayName}
                           {...{
-                            l,
                             active,
                             done,
-                            spinning,
+                            l,
                             onClose,
                             onYes,
+                            spinning,
                           }}
       />
     )
@@ -53,13 +53,13 @@ export default asBound(
   (state) => ({
     active: state['userPassword.active'],
     done: state['userPassword.done'],
-    users: state['userPassword.targets'],
     passwords: state['userPassword.result'],
     spinning: state['userPassword.busy'],
+    users: state['userPassword.targets'],
   }),
   ({
+     userCheckScene,
      userPasswordScene,
-     userCheckScene
    }, propsProxy) => ({
     onClose: () => userPasswordScene.set({
       active: false,

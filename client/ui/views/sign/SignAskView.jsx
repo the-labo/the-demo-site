@@ -10,8 +10,8 @@ import { Urls, Icons } from '@self/conf'
 import styles from './SignAskView.pcss'
 
 function SignAskView ({
+                        back,
                         l,
-                        back
                       }) {
   return (
     <TheView className={styles.self}>
@@ -39,8 +39,8 @@ function SignAskView ({
 export default asView(
   SignAskView,
   (state) => ({
-    user: state['account.user'],
     back: state['signAsk.back'] || '/',
+    user: state['account.user'],
   }),
   ({
      signAskScene

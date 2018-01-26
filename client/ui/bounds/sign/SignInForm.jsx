@@ -16,22 +16,22 @@ function SignInForm (props) {
 export default asForm(
   SignInForm,
   (state) => ({
+    errors: state['signIn.entryErrors'],
     spinning: state['signIn.busy'],
     values: state['signIn.entry'],
-    errors: state['signIn.entryErrors'],
   }),
   ({
-     l,
      accountScene,
+     l,
      signInScene,
      toastScene,
    }) => ({
-    onUpdate: (v) => signInScene.setEntry(v),
     onSubmit: async () => {
       await signInScene.doSignIn()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGNIN_DID_SUCCESS'))
       signInScene.goBack()
-    }
+    },
+    onUpdate: (v) => signInScene.setEntry(v),
   })
 )

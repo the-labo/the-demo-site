@@ -13,16 +13,16 @@ const UserCreateDialog = compose(
   withLoc,
 )(
   function UserCreateDialogImpl ({
-                                   l,
                                    active,
-                                   spinning,
-                                   done,
                                    created,
-                                   onClose
+                                   done,
+                                   l,
+                                   onClose,
+                                   spinning,
                                  }) {
 
     return (
-      <TheCreateDialog {...{l, active, spinning, done, onClose}}
+      <TheCreateDialog {...{active, done, l, onClose, spinning,}}
                        title={l('titles.USER_CREATE_INPUT_TITLE')}
                        doneTitle={l('titles.USER_CREATE_RESULT_TITLE')}
                        result={created && {
@@ -41,10 +41,10 @@ const UserCreateDialog = compose(
 export default asBound(
   UserCreateDialog,
   (state) => ({
-    spinning: state['userCreate.busy'],
     active: state['userCreate.active'],
+    created: state['userCreate.result'],
     done: state['userCreate.done'],
-    created: state['userCreate.result']
+    spinning: state['userCreate.busy'],
   }),
   ({userCreateScene}, propsProxy) => ({
     onClose: () => userCreateScene.set({

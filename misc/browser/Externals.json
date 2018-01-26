@@ -8,7 +8,6 @@
   "core-js/library",
   "core-js/shim",
   "fbjs",
-  "moment",
   "objnest",
   "prop-types",
   "qs",

@@ -40,8 +40,8 @@ const ConnectedApp = asBound(
     busy: state['app.busy'],
   }),
   ({
-     appScene,
      accountScene,
+     appScene,
      verifyNeedScene,
    }) => ({
     onMount: async () => {

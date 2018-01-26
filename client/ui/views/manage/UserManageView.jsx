@@ -23,10 +23,10 @@ import { Icons, Urls } from '@self/conf'
 import { RoleCodes } from '@self/conf'
 
 function UserManageView ({
-                           l,
-                           ready,
                            busy,
+                           l,
                            onCreate,
+                           ready,
                          }) {
   return (
     <TheView className={styles.self}
@@ -62,15 +62,22 @@ export default asView(
   UserManageView,
   (state) => ({
     busy: !state['userList.ready'] && state['userList.busy'],
-    ready: state['userList.ready'],
     query: state['app.query'],
+    ready: state['userList.ready'],
   }),
   ({
+     userCheckScene,
+     userCreateScene,
      userListScene,
      userSearchScene,
-     userCheckScene,
-     userCreateScene
    }, ownProps) => ({
+    onCreate: () => {
+      userCreateScene.init()
+      userCreateScene.set({
+        active: true,
+        entry: {role: RoleCodes.NORMAL_ROLE}
+      })
+    },
     onMount: async () => {
       userListScene.init()
       userSearchScene.init()
@@ -84,13 +91,6 @@ export default asView(
       await userListScene.doSync()
     },
     onTearDown: () => {},
-    onCreate: () => {
-      userCreateScene.init()
-      userCreateScene.set({
-        active: true,
-        entry: {role: RoleCodes.NORMAL_ROLE}
-      })
-    }
   }),
   {
     title: ({l}) => l('titles.USER_MANAGE_TITLE'),

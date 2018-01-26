@@ -21,12 +21,12 @@ const Header = compose(
   withRole,
   withLoc,
 )(function HeaderImpl ({
-                         l,
                          isAdmin,
+                         l,
+                         needsVerify,
+                         onVerify,
                          ready,
                          user,
-                         needsVerify,
-                         onVerify
                        }) {
   const notices = user && needsVerify && {
     [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify}
@@ -72,16 +72,16 @@ const Header = compose(
 export default asBound(
   Header,
   (state) => ({
+    needsVerify: state['verifyNeed.needed'],
     pathname: state['app.pathname'],
-    user: state['account.user'],
     ready: state['account.ready'],
-    needsVerify: state['verifyNeed.needed']
+    user: state['account.user'],
   }),
   ({
      l,
-     verifySendScene,
+     toastScene,
      verifyNeedScene,
-     toastScene
+     verifySendScene,
    }) => ({
     onVerify: async () => {
       await verifySendScene.doSend()

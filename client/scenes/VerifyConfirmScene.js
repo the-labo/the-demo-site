@@ -22,7 +22,7 @@ class VerifyConfirmScene extends VerifyConfirmSceneBase {
   }))
   async doVerify () {
     const {verifyCtrl} = this.controllers
-    await this.processEntry(({seal, envelop}) => verifyCtrl.verify({seal, envelop}))
+    await this.processEntry(({envelop, seal,}) => verifyCtrl.verify({envelop, seal,}))
   }
 }
 

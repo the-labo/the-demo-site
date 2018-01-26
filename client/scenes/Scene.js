@@ -16,7 +16,7 @@ class Scene extends SceneBase {
   }
 
   catchError (e) {
-    const {store, l} = this
+    const {l, store,} = this
     try {
       return super.catchError(e)
     } catch (e) {

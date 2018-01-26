@@ -11,13 +11,13 @@ import { compose, asBound, } from 'the-hoc'
 const Toasts = compose(
 )(
   function ToastsImpl ({
-                         info,
-                         warn,
                          error,
+                         info,
                          onReset,
+                         warn,
                        }) {
     return (
-      <TheSiteToasts {...{info, warn, error, onReset}}
+      <TheSiteToasts {...{error, info, onReset, warn,}}
                      duration={UI.TOAST_DURATION}
       />
     )
@@ -27,9 +27,9 @@ const Toasts = compose(
 export default asBound(
   Toasts,
   (state) => ({
+    error: state['toast.error'],
     info: state['toast.info'],
     warn: state['toast.warn'],
-    error: state['toast.error']
   }),
   ({
      toastScene

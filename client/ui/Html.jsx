@@ -12,12 +12,12 @@ import { isProduction, } from 'the-check'
 /** @lends Html */
 function Html ({appScope, renderingContext}) {
   const {
-    version,
     cdnUrl,
+    version,
   } = appScope
-  const {lang, client, store, handle, path} = renderingContext
+  const {client, handle, lang, path, store,} = renderingContext
   const l = locales.bind(lang)
-  handle.setAttributes({store, client, l, lang})
+  handle.setAttributes({client, l, lang, store,})
   const appProps = {
     lang
   }
@@ -50,7 +50,7 @@ function Html ({appScope, renderingContext}) {
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
-            <App {...appProps} {...{client, store, handle}}/>
+            <App {...appProps} {...{client, handle, store,}}/>
           </TheRouter.Static>
         </div>
       </TheBody>

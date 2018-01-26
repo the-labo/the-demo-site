@@ -18,8 +18,8 @@ function onlySigned (Component, options = {}) {
     withHistory,
     withStore,
     connect((state) => ({
-      signedReady: state['account.ready'],
       hasSigned: Boolean(state['account.user']),
+      signedReady: state['account.ready'],
     }))
   )(
     class OnlySigned extends React.Component {
@@ -45,7 +45,7 @@ function onlySigned (Component, options = {}) {
       }
 
       makeSureSigned () {
-        const {store, history, signedReady, hasSigned} = this.props
+        const {hasSigned, history, signedReady, store,} = this.props
         if (!signedReady) {
           return
         }

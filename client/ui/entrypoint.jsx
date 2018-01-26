@@ -27,14 +27,14 @@ once('DOMContentLoaded', async () => {
       push.call(push, to)
     })
   }
-  const app = (<App {...props} {...{store, client, handle}}/>)
+  const app = (<App {...props} {...{client, handle, store,}}/>)
   const l = locales.bind(lang)
   const controllers = await client.useAll({debug: !isProduction()})
-  handle.setAttributes({store, client, l, lang, history, controllers})
+  handle.setAttributes({client, controllers, history, l, lang, store,})
 
   const {appScene, toastScene} = handle
   history.listen((location) => appScene.setLocation(location))
-  appScene.set({locale: lang, host: get('location.host')})
+  appScene.set({host: get('location.host'), locale: lang,})
   appScene.setLocation(history.location)
 
   rescue((e) => {

@@ -131,9 +131,10 @@ module.exports = pon(
     'env:prod': env('production'),
     /** Set env variables for test */
     'env:test': env('test'),
+    'format:client': theCode(['client/+(client|handle|scenes)/*.js', 'client/ui/**/*.jsx'], {}),
+
     /** Format conf files */
     'format:conf': theCode('conf/*.js', {ignore: 'conf/index.js'}),
-
     // ----------------
     // Sub Tasks for Format
     // ----------------

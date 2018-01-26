@@ -11,10 +11,10 @@ import { PasswordChangeForm } from '../../bounds'
 import { Urls, Icons } from '@self/conf'
 
 function PasswordChangeView ({
-                               l,
-                               user,
                                done,
-                               onAgain
+                               l,
+                               onAgain,
+                               user,
                              }) {
   return (
     <TheView className={styles.self}>
@@ -46,14 +46,14 @@ function PasswordChangeView ({
 export default asView(
   PasswordChangeView,
   (state) => ({
+    done: state['passwordChange.done'],
     user: state['account.user'],
-    done: state['passwordChange.done']
   }),
   ({passwordChangeScene}) => ({
-    onMount: () => passwordChangeScene.init(),
     onAgain: async () => {
       passwordChangeScene.set({done: false})
-    }
+    },
+    onMount: () => passwordChangeScene.init(),
   }),
   {
     title: ({l}) => l('titles.PASSWORD_CHANGE_TITLE'),

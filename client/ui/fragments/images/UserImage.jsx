@@ -10,12 +10,12 @@ import styles from './UserImage.pcss'
 
 const UserImage = function UserImageImpl ({
                                             className,
+                                            size = 48,
                                             user,
-                                            size = 48
                                           }) {
   return (
     <TheUserImage className={c(styles.self, className)}
-                  {...{user, size}}
+                  {...{size, user,}}
     />
   )
 }

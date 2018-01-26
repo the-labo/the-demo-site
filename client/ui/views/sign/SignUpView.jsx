@@ -42,8 +42,8 @@ export default asView(
     user: state['account.user']
   }),
   ({
+     signAskScene,
      signUpScene,
-     signAskScene
    }, propsProxy) => ({
     onMount: () => {
       signAskScene.init()

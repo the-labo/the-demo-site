@@ -11,9 +11,9 @@ import { RecoverResetForm } from '../../bounds'
 import styles from './RecoverResetView.pcss'
 
 function RecoverResetView ({
-                             l,
+                             done,
                              failure,
-                             done
+                             l,
                            }) {
   return (
     <TheView className={styles.self}>
@@ -40,16 +40,16 @@ function RecoverResetView ({
 export default asView(
   RecoverResetView,
   (state) => ({
-    query: state['app.query'],
-    failure: state['recoverReset.failure'],
     busy: state['recoverReset.busy'],
     done: state['recoverReset.done'],
+    failure: state['recoverReset.failure'],
+    query: state['app.query'],
   }),
-  ({recoverResetScene, propsProxy}) => ({
+  ({propsProxy, recoverResetScene,}) => ({
     onMount: () => {
       recoverResetScene.init()
-      const {seal, envelop} = propsProxy.query
-      recoverResetScene.setEntry({seal, envelop})
+      const {envelop, seal,} = propsProxy.query
+      recoverResetScene.setEntry({envelop, seal,})
     }
   })
 )

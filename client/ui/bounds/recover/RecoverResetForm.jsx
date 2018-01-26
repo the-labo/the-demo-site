@@ -16,22 +16,22 @@ function RecoverResetForm (props) {
 export default asForm(
   RecoverResetForm,
   (state) => ({
+    errors: state['recoverReset.entryErrors'],
     spinning: state['recoverReset.busy'],
     values: state['recoverReset.entry'],
-    errors: state['recoverReset.entryErrors']
   }),
   ({
+     accountScene,
      l,
      recoverResetScene,
-     accountScene,
-     toastScene
+     toastScene,
    }) => ({
-    onUpdate: (v) => recoverResetScene.setEntry(v),
     onSubmit: async () => {
       await recoverResetScene.doReset()
       await accountScene.doSync()
       recoverResetScene.set({done: true})
-    }
+    },
+    onUpdate: (v) => recoverResetScene.setEntry(v),
   })
 )
 

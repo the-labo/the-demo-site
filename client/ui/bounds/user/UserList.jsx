@@ -15,19 +15,19 @@ const UserList = compose(
   asPure,
   withMoment,
 )(function UserListImpl ({
-                           users,
-                           className,
-                           l,
-                           sort,
-                           onSort,
                            checks,
+                           className,
                            formatDate,
+                           l,
+                           onSort,
                            onUpdateCheck,
+                           sort,
+                           users,
                          }) {
   return (
     <div className={c(className)}>
       <TheOperationList entities={users}
-                        {...{l, sort, onSort, onUpdateCheck}}
+                        {...{l, onSort, onUpdateCheck, sort,}}
                         fields={{
                           name: {
                             label: l('labels.USER_NAME'),
@@ -43,8 +43,8 @@ const UserList = compose(
                           },
                           'sign.signInAt': {
                             label: l('labels.USER_SIGNIN_AT'),
-                            sortable: true,
                             render: (signInAt) => signInAt && formatDate(signInAt, 'lll'),
+                            sortable: true,
                           },
                         }}
                         isChecked={({id}) => checks[id]}
@@ -58,13 +58,13 @@ const UserList = compose(
 export default asBound(
   UserList,
   (state) => ({
-    users: state['userList.entities'],
-    sort: state['userList.sort'],
     checks: state['userCheck.values'],
+    sort: state['userList.sort'],
+    users: state['userList.entities'],
   }),
   ({
-     userListScene,
      userCheckScene,
+     userListScene,
    }) => ({
     onSort: async (name) => {
       userListScene.setSort(name)

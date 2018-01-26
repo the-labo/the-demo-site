@@ -12,13 +12,13 @@ const UserPager = compose(
   withLoc
 )(
   function UserPagerImpl ({
-                            l,
-                            showCounts,
                             counts,
-                            onPage
+                            l,
+                            onPage,
+                            showCounts,
                           }) {
     return (
-      <TheOperationPager {...{l, showCounts, counts, onPage}}/>
+      <TheOperationPager {...{counts, l, onPage, showCounts,}}/>
     )
   }
 )

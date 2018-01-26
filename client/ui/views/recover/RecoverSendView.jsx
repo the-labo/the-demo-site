@@ -10,9 +10,9 @@ import { RecoverSendForm } from '../../bounds'
 import styles from './RecoverSendView.pcss'
 
 function RecoverSendView ({
-                            l,
+                            done,
                             failure,
-                            done
+                            l,
                           }) {
   return (
     <TheView className={styles.self}>
@@ -42,8 +42,8 @@ function RecoverSendView ({
 export default asView(
   RecoverSendView,
   (state) => ({
+    done: state['recoverSend.done'],
     failure: state['recoverSend.failure'],
-    done: state['recoverSend.done']
   }),
   ({recoverSendScene}) => ({
     onMount: () => recoverSendScene.init()

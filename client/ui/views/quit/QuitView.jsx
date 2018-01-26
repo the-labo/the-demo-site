@@ -16,14 +16,14 @@ import { asView } from '../../wrappers'
 import styles from './QuitView.pcss'
 
 function QuitView ({
-                     l,
                      busy,
                      confirm,
                      done,
+                     l,
                      onCancel,
                      onConfirm,
                      onConfirmBack,
-                     onExecute
+                     onExecute,
                    }) {
   return (
     <TheView className={styles.self}
@@ -84,10 +84,9 @@ export default asView(
     done: state['quit.done'],
   }),
   ({
+     accountScene,
      quitScene,
-     accountScene
    }) => ({
-    onMount: () => quitScene.init(),
     onCancel: () => quitScene.goToCancel(),
     onConfirm: () => quitScene.set({confirm: true}),
     onConfirmBack: () => quitScene.set({confirm: false}),
@@ -95,7 +94,8 @@ export default asView(
       await quitScene.doQuit()
       quitScene.set({confirm: false, done: true})
       await accountScene.doSync()
-    }
+    },
+    onMount: () => quitScene.init(),
   }),
   {
     title: ({l}) => l('titles.QUIT_VIEW_TITLE'),

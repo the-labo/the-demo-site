@@ -9,10 +9,10 @@ import { asView } from '../../wrappers'
 import styles from './VerifyConfirmView.pcss'
 
 function VerifyConfirmView ({
-                              l,
                               busy,
                               done,
-                              failure
+                              failure,
+                              l,
                             }) {
   return (
     <TheView className={styles.self}
@@ -42,16 +42,16 @@ function VerifyConfirmView ({
 export default asView(
   VerifyConfirmView,
   (state) => ({
-    query: state['app.query'],
     busy: state['verifyConfirm.busy'],
     done: state['verifyConfirm.done'],
     failure: state['verifyConfirm.failure'],
+    query: state['app.query'],
   }),
   ({verifyConfirmScene}, propsProxy) => (({
     onMount: async () => {
       verifyConfirmScene.init()
-      const {seal, envelop} = propsProxy.query
-      verifyConfirmScene.setEntry({seal, envelop})
+      const {envelop, seal,} = propsProxy.query
+      verifyConfirmScene.setEntry({envelop, seal,})
       await verifyConfirmScene.doVerify()
       verifyConfirmScene.set({done: true})
     },

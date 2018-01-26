@@ -17,21 +17,21 @@ function PasswordChangeForm (props) {
 export default asForm(
   PasswordChangeForm,
   (state) => ({
-    user: state['account.user'],
+    errors: state['passwordChange.entryErrors'],
     spinning: state['passwordChange.busy'],
+    user: state['account.user'],
     values: state['passwordChange.entry'],
-    errors: state['passwordChange.entryErrors']
   }),
   ({
      l,
      passwordChangeScene,
      toastScene
    }) => ({
-    onUpdate: (v) => passwordChangeScene.setEntry(v),
     onSubmit: async () => {
       await passwordChangeScene.doSave()
       passwordChangeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
-    }
+    },
+    onUpdate: (v) => passwordChangeScene.setEntry(v),
   })
 )

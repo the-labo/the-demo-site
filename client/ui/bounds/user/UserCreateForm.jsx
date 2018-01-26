@@ -23,9 +23,9 @@ function UserCreateForm (props) {
 export default asForm(
   UserCreateForm,
   (state) => ({
+    errors: state['userCreate.entryErrors'],
     spinning: state['userCreate.busy'],
     values: state['userCreate.entry'],
-    errors: state['userCreate.entryErrors'],
   }),
   ({
      l,
@@ -33,12 +33,12 @@ export default asForm(
      userCreateScene,
      userListScene
    }) => ({
-    onUpdate: (v) => userCreateScene.setEntry(v),
     onSubmit: async () => {
       await userCreateScene.doCreate()
       userCreateScene.set({done: true})
       toastScene.showInfo(l('toasts.USER_CREATE_DID_SUCCESS'))
       await userListScene.doSync()
-    }
+    },
+    onUpdate: (v) => userCreateScene.setEntry(v),
   })
 )

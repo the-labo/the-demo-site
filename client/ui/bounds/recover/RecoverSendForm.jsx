@@ -16,20 +16,20 @@ function RecoverSendForm (props) {
 export default asForm(
   RecoverSendForm,
   (state) => ({
+    errors: state['recoverSend.entryErrors'],
     spinning: state['recoverSend.busy'],
     values: state['recoverSend.entry'],
-    errors: state['recoverSend.entryErrors'],
   }),
   ({
      l,
      recoverSendScene,
      toastScene
    }) => ({
-    onUpdate: (v) => recoverSendScene.setEntry(v),
     onSubmit: async () => {
       await recoverSendScene.doSend()
       recoverSendScene.set({done: true})
       await toastScene.showInfo(l('toasts.RECOVER_EMAIL_SENT'))
-    }
+    },
+    onUpdate: (v) => recoverSendScene.setEntry(v),
   })
 )

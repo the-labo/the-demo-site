@@ -5,7 +5,7 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {bindScope, withEntry, withBusy, withFailure} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins/shim')
 
 @withEntry
 @withBusy

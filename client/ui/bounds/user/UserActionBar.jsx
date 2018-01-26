@@ -14,9 +14,9 @@ const UserActionBar = compose(
 )(
   function UserActionBarImpl ({
                                 l,
-                                targets,
+                                onDestroy,
                                 onPasswordReset,
-                                onDestroy
+                                targets,
                               }) {
     return (
       <TheActionBar hidden={targets.length === 0}
@@ -41,20 +41,20 @@ export default asBound(
   }),
   ({
      l,
+     userDestroyScene,
      userPasswordScene,
-     userDestroyScene
    }, propsProxy) => ({
+    onDestroy: () => {
+      userDestroyScene.set({
+        active: true,
+        targets: propsProxy.targets
+      })
+    },
     onPasswordReset: () => {
       userPasswordScene.set({
         active: true,
         targets: propsProxy.targets
       })
     },
-    onDestroy: () => {
-      userDestroyScene.set({
-        active: true,
-        targets: propsProxy.targets
-      })
-    }
   })
 )

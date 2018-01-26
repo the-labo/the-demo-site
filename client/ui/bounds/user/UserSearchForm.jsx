@@ -20,21 +20,21 @@ function UserSearchForm (props) {
 export default asForm(
   UserSearchForm,
   (state) => ({
+    errors: state['userSearch.entryErrors'],
     spinning: state['userSearch.busy'],
     values: state['userSearch.entry'],
-    errors: state['userSearch.entryErrors']
   }),
   ({
+     userListScene,
      userSearchScene,
-     userListScene
    }, propsProxy) => ({
-    onUpdate: (v) => userSearchScene.setEntry(v),
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
       userListScene.setQ(q)
       await userSearchScene.busyWhile(async () => {
         await userListScene.doSync()
       })
-    }
+    },
+    onUpdate: (v) => userSearchScene.setEntry(v),
   })
 )
