@@ -131,20 +131,20 @@ module.exports = pon(
     'env:prod': env('production'),
     /** Set env variables for test */
     'env:test': env('test'),
-    'format:client': theCode(['client/+(client|handle|scenes)/*.js', 'client/ui/**/*.jsx'], {}),
 
-    /** Format conf files */
-    'format:conf': theCode('conf/*.js', {ignore: 'conf/index.js'}),
     // ----------------
     // Sub Tasks for Format
     // ----------------
+    /** Format client files */
+    'format:client': theCode(['client/+(client|handle|scenes)/*.js', 'client/ui/**/*.jsx'], {}),
+    /** Format conf files */
+    'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
     /** Format json files */
     'format:json': fmtjson([
       'conf/**/*.json',
       'client/**/*.json'
     ], {sort: true}),
-    'format:local': theCode('Local.js', {}),
-    'format:ponfile': theCode('Ponfile.js', {}),
+    /** Format server files */
     'format:server': theCode('server/**/*.js', {}),
 
     // ----------------
@@ -170,12 +170,12 @@ module.exports = pon(
     'loc:print': () => console.log(locales.toCompound()),
     /** Validate locales */
     'loc:validate': () => locales.validate(),
+
     // ----------------
     // Sub Tasks for Local Config
     // ----------------
     /** Print local settings */
     'local:print': () => Local.print(),
-
     /** Disable maintenance mode */
     'maint:off': del('public/status/maintenance'),
 
@@ -363,7 +363,6 @@ module.exports = pon(
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
-
       /** Start debugging */
       debug: ['ps:debug', 'env:debug', 'build', 'debug:*'],
       /** Default for `pon` command */
@@ -372,12 +371,10 @@ module.exports = pon(
       deploy: ['maint:on', 'stop', 'git:catchup', 'prod', 'maint:off'],
       /** Generate docs */
       doc: 'doc:*',
-
       /** Setup docker infra */
       docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
       format: ['format:*'],
-
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Open project */

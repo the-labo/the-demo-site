@@ -73,6 +73,7 @@
     "doc": "Generate docs",
     "docker": "Setup docker infra",
     "ds": "Shortcut for `debug:server` task",
+    "f": "Shortcut for `format` task",
     "format": "Format source codes",
     "logs": "Show app daemon logs",
     "o": "Shortcut for `open` task",

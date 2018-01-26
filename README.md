@@ -291,6 +291,7 @@ pon <taskName>
 | doc | Generate docs | `pon doc` |
 | docker | Setup docker infra | `pon docker` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
+| f | Shortcut for `format` task | `pon f` |
 | format | Format source codes | `pon format` |
 | logs | Show app daemon logs | `pon logs` |
 | o | Shortcut for `open` task | `pon o` |
