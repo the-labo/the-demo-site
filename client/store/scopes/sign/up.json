@@ -1,5 +1,0 @@
-{
-  "$ref": "abstract/input",
-  "back": "VAL",
-  "step": "NUM"
-}

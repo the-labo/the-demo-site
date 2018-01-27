@@ -8500,8 +8500,8 @@ the-scene-base@^2.0.0, the-scene-base@^2.0.2:
     the-url "^1.0.0"
 
 the-scene-mixins@^1.5.3:
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.9.tgz#13c903e0b805602c4aa0b40f965f25441b6f88c5"
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.10.tgz#22246bd619dce2d60565a48a7a26c92fe95aa8cd"
   dependencies:
     asleep "^1.0.3"
     bwindow "^1.1.0"

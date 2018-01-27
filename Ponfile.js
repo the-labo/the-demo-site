@@ -142,7 +142,9 @@ module.exports = pon(
     /** Format json files */
     'format:json': fmtjson([
       'conf/**/*.json',
-      'client/**/*.json'
+      'client/**/*.json',
+      'server/**/*.json',
+      'secrets.json',
     ], {sort: true}),
     /** Format server files */
     'format:server': theCode('server/**/*.js', {}),
@@ -374,7 +376,7 @@ module.exports = pon(
       /** Setup docker infra */
       docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
-      format: ['format:*'],
+      format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Open project */

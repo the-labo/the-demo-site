@@ -4,8 +4,8 @@
     "SENDER_ADDRESS": "support@#{Local.APP_DOMAIN}"
   },
   "production": {
+    "key": "#{Local.SEND_GRID_API_KEY}",
     "MOCK": false,
-    "SERVICE": "sendgrid",
-    "key": "#{Local.SEND_GRID_API_KEY}"
+    "SERVICE": "sendgrid"
   }
 }
