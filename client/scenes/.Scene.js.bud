@@ -1,7 +1,7 @@
 'use strict'
 
 const {Scene} = require('the-templates')
-const scopes = require('../store/scopes')
+const scopes = require('../scopes')
 const {flatten} = require('objnest')
 const {pascalcase} = require('stringcase')
 const names = Object.keys(flatten(scopes))

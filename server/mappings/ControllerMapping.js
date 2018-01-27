@@ -8,11 +8,11 @@ const c = require('../controllers')
 
 module.exports = Object.freeze({
   'accountCtrl': c.AccountCtrl,
+  'adminUserCtrl': c.AdminUserCtrl,
   'adminCtrl': c.AdminCtrl,
   'appCtrl': c.AppCtrl,
   'quitCtrl': c.QuitCtrl,
   'recoverCtrl': c.RecoverCtrl,
   'signCtrl': c.SignCtrl,
-  'userCtrl': c.UserCtrl,
   'verifyCtrl': c.VerifyCtrl,
 })

@@ -6,18 +6,11 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const AliasResource = _d(require('./AliasResource'))
-const HistoryResource = _d(require('./HistoryResource'))
-const ProfileResource = _d(require('./ProfileResource'))
-const RoleResource = _d(require('./RoleResource'))
-const SignResource = _d(require('./SignResource'))
-const UserResource = _d(require('./UserResource'))
-
 module.exports = {
-  AliasResource,
-  HistoryResource,
-  ProfileResource,
-  RoleResource,
-  SignResource,
-  UserResource,
+  get AliasResource () { return _d(require('./AliasResource')) },
+  get HistoryResource () { return _d(require('./HistoryResource')) },
+  get ProfileResource () { return _d(require('./ProfileResource')) },
+  get RoleResource () { return _d(require('./RoleResource')) },
+  get SignResource () { return _d(require('./SignResource')) },
+  get UserResource () { return _d(require('./UserResource')) },
 }

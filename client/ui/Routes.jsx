@@ -16,7 +16,7 @@ const Routes = ({}) => (
 
 
     <TheRoute exact path={Urls.ADMIN_URL} component={v.AdminTopView}/>
-    <TheRoute exact path={Urls.ADMIN_USER_MANAGE_URL} component={v.UserManageView}/>
+    <TheRoute exact path={Urls.ADMIN_USER_MANAGE_URL} component={v.AdminUserManageView}/>
 
     <TheRoute exact path={Urls.ACCOUNT_VERIFY_URL} component={v.VerifyConfirmView}/>
     <TheRoute exact path={Urls.ACCOUNT_RECOVER_URL} component={v.RecoverSendView}/>

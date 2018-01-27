@@ -6,10 +6,7 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const aliasRoute = _d(require('./aliasRoute'))
-const uploadRoute = _d(require('./uploadRoute'))
-
 module.exports = {
-  aliasRoute,
-  uploadRoute,
+  get aliasRoute () { return _d(require('./aliasRoute')) },
+  get uploadRoute () { return _d(require('./uploadRoute')) },
 }

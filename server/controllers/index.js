@@ -6,24 +6,14 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const AccountCtrl = _d(require('./AccountCtrl'))
-const AdminCtrl = _d(require('./AdminCtrl'))
-const AppCtrl = _d(require('./AppCtrl'))
-const Ctrl = _d(require('./Ctrl'))
-const QuitCtrl = _d(require('./QuitCtrl'))
-const RecoverCtrl = _d(require('./RecoverCtrl'))
-const SignCtrl = _d(require('./SignCtrl'))
-const UserCtrl = _d(require('./UserCtrl'))
-const VerifyCtrl = _d(require('./VerifyCtrl'))
-
 module.exports = {
-  AccountCtrl,
-  AdminCtrl,
-  AppCtrl,
-  Ctrl,
-  QuitCtrl,
-  RecoverCtrl,
-  SignCtrl,
-  UserCtrl,
-  VerifyCtrl,
+  get AccountCtrl () { return _d(require('./AccountCtrl')) },
+  get AdminUserCtrl () { return _d(require('./admin/AdminUserCtrl')) },
+  get AdminCtrl () { return _d(require('./AdminCtrl')) },
+  get AppCtrl () { return _d(require('./AppCtrl')) },
+  get Ctrl () { return _d(require('./Ctrl')) },
+  get QuitCtrl () { return _d(require('./QuitCtrl')) },
+  get RecoverCtrl () { return _d(require('./RecoverCtrl')) },
+  get SignCtrl () { return _d(require('./SignCtrl')) },
+  get VerifyCtrl () { return _d(require('./VerifyCtrl')) },
 }

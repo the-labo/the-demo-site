@@ -242,8 +242,10 @@ pon <taskName>
 | env:debug | Set env variables for debug | `pon env:debug` |
 | env:prod | Set env variables for production | `pon env:prod` |
 | env:test | Set env variables for test | `pon env:test` |
+| format:client | Format client files | `pon format:client` |
 | format:conf | Format conf files | `pon format:conf` |
 | format:json | Format json files | `pon format:json` |
+| format:server | Format server files | `pon format:server` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
 | icon:generate | Generate icons | `pon icon:generate` |
 | loc:print | Print locale settings | `pon loc:print` |

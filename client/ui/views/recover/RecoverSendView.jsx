@@ -42,8 +42,8 @@ function RecoverSendView ({
 export default asView(
   RecoverSendView,
   (state) => ({
-    done: state['recoverSend.done'],
-    failure: state['recoverSend.failure'],
+    done: state['recover.send.done'],
+    failure: state['recover.send.failure'],
   }),
   ({recoverSendScene}) => ({
     onMount: () => recoverSendScene.init()

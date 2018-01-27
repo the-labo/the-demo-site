@@ -39,7 +39,7 @@ function SignAskView ({
 export default asView(
   SignAskView,
   (state) => ({
-    back: state['signAsk.back'] || '/',
+    back: state['sign.ask.back'] || '/',
     user: state['account.user'],
   }),
   ({

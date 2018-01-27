@@ -32,8 +32,8 @@ function SignOutView ({
 export default asView(
   SignOutView,
   (state) => ({
-    busy: state['signOut.busy'],
-    done: state['signOut.done'],
+    busy: state['sign.out.busy'],
+    done: state['sign.out.done'],
     user: state['account.user'],
   }),
   ({

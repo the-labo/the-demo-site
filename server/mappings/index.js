@@ -6,14 +6,9 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const ControllerMapping = _d(require('./ControllerMapping'))
-const HookMapping = _d(require('./HookMapping'))
-const ResourceMapping = _d(require('./ResourceMapping'))
-const ServiceMapping = _d(require('./ServiceMapping'))
-
 module.exports = {
-  ControllerMapping,
-  HookMapping,
-  ResourceMapping,
-  ServiceMapping,
+  get ControllerMapping () { return _d(require('./ControllerMapping')) },
+  get HookMapping () { return _d(require('./HookMapping')) },
+  get ResourceMapping () { return _d(require('./ResourceMapping')) },
+  get ServiceMapping () { return _d(require('./ServiceMapping')) },
 }

@@ -6,52 +6,28 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const AccountScene = _d(require('./AccountScene'))
-const AppScene = _d(require('./AppScene'))
-const CautionDisconnectedScene = _d(require('./CautionDisconnectedScene'))
-const PasswordChangeScene = _d(require('./PasswordChangeScene'))
-const ProfileEditScene = _d(require('./ProfileEditScene'))
-const QuitScene = _d(require('./QuitScene'))
-const RecoverResetScene = _d(require('./RecoverResetScene'))
-const RecoverSendScene = _d(require('./RecoverSendScene'))
-const Scene = _d(require('./Scene'))
-const SignAskScene = _d(require('./SignAskScene'))
-const SignInScene = _d(require('./SignInScene'))
-const SignOutScene = _d(require('./SignOutScene'))
-const SignUpScene = _d(require('./SignUpScene'))
-const ToastScene = _d(require('./ToastScene'))
-const UserCheckScene = _d(require('./UserCheckScene'))
-const UserCreateScene = _d(require('./UserCreateScene'))
-const UserDestroyScene = _d(require('./UserDestroyScene'))
-const UserListScene = _d(require('./UserListScene'))
-const UserPasswordScene = _d(require('./UserPasswordScene'))
-const UserSearchScene = _d(require('./UserSearchScene'))
-const VerifyConfirmScene = _d(require('./VerifyConfirmScene'))
-const VerifyNeedScene = _d(require('./VerifyNeedScene'))
-const VerifySendScene = _d(require('./VerifySendScene'))
-
 module.exports = {
-  AccountScene,
-  AppScene,
-  CautionDisconnectedScene,
-  PasswordChangeScene,
-  ProfileEditScene,
-  QuitScene,
-  RecoverResetScene,
-  RecoverSendScene,
-  Scene,
-  SignAskScene,
-  SignInScene,
-  SignOutScene,
-  SignUpScene,
-  ToastScene,
-  UserCheckScene,
-  UserCreateScene,
-  UserDestroyScene,
-  UserListScene,
-  UserPasswordScene,
-  UserSearchScene,
-  VerifyConfirmScene,
-  VerifyNeedScene,
-  VerifySendScene,
+  get AccountScene () { return _d(require('./AccountScene')) },
+  get AdminUserCheckScene () { return _d(require('./AdminUserCheckScene')) },
+  get AdminUserCreateScene () { return _d(require('./AdminUserCreateScene')) },
+  get AdminUserDestroyScene () { return _d(require('./AdminUserDestroyScene')) },
+  get AdminUserListScene () { return _d(require('./AdminUserListScene')) },
+  get AdminUserPasswordScene () { return _d(require('./AdminUserPasswordScene')) },
+  get AdminUserSearchScene () { return _d(require('./AdminUserSearchScene')) },
+  get AppScene () { return _d(require('./AppScene')) },
+  get CautionDisconnectedScene () { return _d(require('./CautionDisconnectedScene')) },
+  get PasswordChangeScene () { return _d(require('./PasswordChangeScene')) },
+  get ProfileEditScene () { return _d(require('./ProfileEditScene')) },
+  get QuitScene () { return _d(require('./QuitScene')) },
+  get RecoverResetScene () { return _d(require('./RecoverResetScene')) },
+  get RecoverSendScene () { return _d(require('./RecoverSendScene')) },
+  get Scene () { return _d(require('./Scene')) },
+  get SignAskScene () { return _d(require('./SignAskScene')) },
+  get SignInScene () { return _d(require('./SignInScene')) },
+  get SignOutScene () { return _d(require('./SignOutScene')) },
+  get SignUpScene () { return _d(require('./SignUpScene')) },
+  get ToastScene () { return _d(require('./ToastScene')) },
+  get VerifyConfirmScene () { return _d(require('./VerifyConfirmScene')) },
+  get VerifyNeedScene () { return _d(require('./VerifyNeedScene')) },
+  get VerifySendScene () { return _d(require('./VerifySendScene')) },
 }

@@ -40,9 +40,9 @@ function RecoverResetView ({
 export default asView(
   RecoverResetView,
   (state) => ({
-    busy: state['recoverReset.busy'],
-    done: state['recoverReset.done'],
-    failure: state['recoverReset.failure'],
+    busy: state['recover.reset.busy'],
+    done: state['recover.reset.done'],
+    failure: state['recover.reset.failure'],
     query: state['app.query'],
   }),
   ({propsProxy, recoverResetScene,}) => ({

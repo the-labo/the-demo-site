@@ -9,7 +9,7 @@ const {bindScope, withBusy} = require('the-scene-mixins/shim')
 const asleep = require('asleep')
 
 @withBusy
-@bindScope('verifyNeed')
+@bindScope('verify.need')
 class VerifyNeedSceneBase extends Scene {}
 
 /** @lends VerifyNeedScene */

@@ -16,9 +16,9 @@ function RecoverSendForm (props) {
 export default asForm(
   RecoverSendForm,
   (state) => ({
-    errors: state['recoverSend.entryErrors'],
-    spinning: state['recoverSend.busy'],
-    values: state['recoverSend.entry'],
+    errors: state['recover.send.entryErrors'],
+    spinning: state['recover.send.busy'],
+    values: state['recover.send.entry'],
   }),
   ({
      l,

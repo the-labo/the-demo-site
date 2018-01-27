@@ -9,7 +9,7 @@ const {bindScope, withBusy, withEntry,} = require('the-scene-mixins/shim')
 
 @withEntry
 @withBusy
-@bindScope('passwordChange')
+@bindScope('password.change')
 class PasswordChangeSceneBase extends Scene {}
 
 /** @lends PasswordChangeScene */

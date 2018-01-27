@@ -8,7 +8,7 @@ const Scene = require('./Scene')
 const {bindScope, withBusy} = require('the-scene-mixins/shim')
 
 @withBusy
-@bindScope('verifySend')
+@bindScope('verify.send')
 class VerifySendSceneBase extends Scene {}
 
 /** @lends VerifySendScene */

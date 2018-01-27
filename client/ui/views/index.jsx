@@ -7,10 +7,10 @@
 import AboutPrivacyPolicyView from './about/AboutPrivacyPolicyView'
 import AboutTermsOfUseView from './about/AboutTermsOfUseView'
 import AdminTopView from './admin/AdminTopView'
+import AdminUserManageView from './admin/AdminUserManageView'
 import ErrorForbiddenView from './error/ErrorForbiddenView'
 import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
-import UserManageView from './manage/UserManageView'
 import MypageView from './mypage/MypageView'
 import PasswordChangeView from './password/PasswordChangeView'
 import ProfileEditView from './profile/ProfileEditView'
@@ -27,10 +27,10 @@ export {
   AboutPrivacyPolicyView,
   AboutTermsOfUseView,
   AdminTopView,
+  AdminUserManageView,
   ErrorForbiddenView,
   ErrorNotfoundView,
   HomeView,
-  UserManageView,
   MypageView,
   PasswordChangeView,
   ProfileEditView,

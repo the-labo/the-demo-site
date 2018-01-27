@@ -18,10 +18,10 @@ function SignUpForm (props) {
 export default asForm(
   SignUpForm,
   (state) => ({
-    errors: state['signUp.entryErrors'],
-    spinning: state['signUp.busy'],
-    step: state['signUp.step'],
-    values: state['signUp.entry'],
+    errors: state['sign.up.entryErrors'],
+    spinning: state['sign.up.busy'],
+    step: state['sign.up.step'],
+    values: state['sign.up.entry'],
   }),
   ({
      accountScene,

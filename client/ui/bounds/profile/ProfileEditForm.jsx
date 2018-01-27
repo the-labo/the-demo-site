@@ -16,9 +16,9 @@ function ProfileEditForm (props) {
 export default asForm(
   ProfileEditForm,
   (state) => ({
-    errors: state['profileEdit.entryErrors'],
-    spinning: state['profileEdit.busy'],
-    values: state['profileEdit.entry'],
+    errors: state['profile.edit.entryErrors'],
+    spinning: state['profile.edit.busy'],
+    values: state['profile.edit.entry'],
   }),
   ({
      accountScene,

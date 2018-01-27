@@ -6,12 +6,8 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const withAdmin = _d(require('./withAdmin'))
-const withAlias = _d(require('./withAlias'))
-const withAuth = _d(require('./withAuth'))
-
 module.exports = {
-  withAdmin,
-  withAlias,
-  withAuth,
+  get withAdmin () { return _d(require('./withAdmin')) },
+  get withAlias () { return _d(require('./withAlias')) },
+  get withAuth () { return _d(require('./withAuth')) },
 }

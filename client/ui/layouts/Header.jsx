@@ -72,7 +72,7 @@ const Header = compose(
 export default asBound(
   Header,
   (state) => ({
-    needsVerify: state['verifyNeed.needed'],
+    needsVerify: state['verify.need.needed'],
     pathname: state['app.pathname'],
     ready: state['account.ready'],
     user: state['account.user'],

@@ -17,10 +17,10 @@ function PasswordChangeForm (props) {
 export default asForm(
   PasswordChangeForm,
   (state) => ({
-    errors: state['passwordChange.entryErrors'],
-    spinning: state['passwordChange.busy'],
+    errors: state['password.change.entryErrors'],
+    spinning: state['password.change.busy'],
     user: state['account.user'],
-    values: state['passwordChange.entry'],
+    values: state['password.change.entry'],
   }),
   ({
      l,

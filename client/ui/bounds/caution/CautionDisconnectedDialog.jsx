@@ -30,8 +30,8 @@ const CautionDisconnectedDialog = compose(
 export default asBound(
   CautionDisconnectedDialog,
   (state) => ({
-    active: state['cautionDisconnected.active'],
-    busy: state['cautionDisconnected.busy']
+    active: state['caution.disconnected.active'],
+    busy: state['caution.disconnected.busy']
   }),
   ({
      cautionDisconnectedScene

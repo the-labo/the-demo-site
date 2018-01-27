@@ -6,18 +6,11 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const AccountService = _d(require('./AccountService'))
-const QuitService = _d(require('./QuitService'))
-const RecoverService = _d(require('./RecoverService'))
-const SignService = _d(require('./SignService'))
-const UserService = _d(require('./UserService'))
-const VerifyService = _d(require('./VerifyService'))
-
 module.exports = {
-  AccountService,
-  QuitService,
-  RecoverService,
-  SignService,
-  UserService,
-  VerifyService,
+  get AccountService () { return _d(require('./AccountService')) },
+  get QuitService () { return _d(require('./QuitService')) },
+  get RecoverService () { return _d(require('./RecoverService')) },
+  get SignService () { return _d(require('./SignService')) },
+  get UserService () { return _d(require('./UserService')) },
+  get VerifyService () { return _d(require('./VerifyService')) },
 }

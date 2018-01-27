@@ -10,7 +10,7 @@ const {bindScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins
 @withEntry
 @withBusy
 @withFailure
-@bindScope('recoverSend')
+@bindScope('recover.send')
 class RecoverSendSceneBase extends Scene {}
 
 /** @lends RecoverSendScene */

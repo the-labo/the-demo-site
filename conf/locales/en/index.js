@@ -6,40 +6,22 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const alt = _d(require('./alt'))
-const app = _d(require('./app'))
-const buttons = _d(require('./buttons'))
-const captions = _d(require('./captions'))
-const checks = _d(require('./checks'))
-const errors = _d(require('./errors'))
-const labels = _d(require('./labels'))
-const leads = _d(require('./leads'))
-const mail = _d(require('./mail'))
-const messages = _d(require('./messages'))
-const org = _d(require('./org'))
-const placeholders = _d(require('./placeholders'))
-const roleCodes = _d(require('./roleCodes'))
-const tabs = _d(require('./tabs'))
-const titles = _d(require('./titles'))
-const toasts = _d(require('./toasts'))
-const warnings = _d(require('./warnings'))
-
 module.exports = {
-  alt,
-  app,
-  buttons,
-  captions,
-  checks,
-  errors,
-  labels,
-  leads,
-  mail,
-  messages,
-  org,
-  placeholders,
-  roleCodes,
-  tabs,
-  titles,
-  toasts,
-  warnings,
+  get alt () { return _d(require('./alt')) },
+  get app () { return _d(require('./app')) },
+  get buttons () { return _d(require('./buttons')) },
+  get captions () { return _d(require('./captions')) },
+  get checks () { return _d(require('./checks')) },
+  get errors () { return _d(require('./errors')) },
+  get labels () { return _d(require('./labels')) },
+  get leads () { return _d(require('./leads')) },
+  get mail () { return _d(require('./mail')) },
+  get messages () { return _d(require('./messages')) },
+  get org () { return _d(require('./org')) },
+  get placeholders () { return _d(require('./placeholders')) },
+  get roleCodes () { return _d(require('./roleCodes')) },
+  get tabs () { return _d(require('./tabs')) },
+  get titles () { return _d(require('./titles')) },
+  get toasts () { return _d(require('./toasts')) },
+  get warnings () { return _d(require('./warnings')) },
 }

@@ -46,7 +46,7 @@ function PasswordChangeView ({
 export default asView(
   PasswordChangeView,
   (state) => ({
-    done: state['passwordChange.done'],
+    done: state['password.change.done'],
     user: state['account.user'],
   }),
   ({passwordChangeScene}) => ({

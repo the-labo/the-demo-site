@@ -16,9 +16,9 @@ function SignInForm (props) {
 export default asForm(
   SignInForm,
   (state) => ({
-    errors: state['signIn.entryErrors'],
-    spinning: state['signIn.busy'],
-    values: state['signIn.entry'],
+    errors: state['sign.in.entryErrors'],
+    spinning: state['sign.in.busy'],
+    values: state['sign.in.entry'],
   }),
   ({
      accountScene,

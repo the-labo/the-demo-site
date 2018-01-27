@@ -10,7 +10,7 @@ const {bindScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins
 @withBusy
 @withEntry
 @withFailure
-@bindScope('verifyConfirm')
+@bindScope('verify.confirm')
 class VerifyConfirmSceneBase extends Scene {}
 
 /** @lends VerifyConfirmScene */

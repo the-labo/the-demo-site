@@ -10,7 +10,7 @@ const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
 
 @withBusy
 @withEntry
-@bindScope('profileEdit')
+@bindScope('profile.edit')
 class ProfileEditSceneBase extends Scene {}
 
 /** @lends ProfileEditScene */

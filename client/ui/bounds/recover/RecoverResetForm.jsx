@@ -16,9 +16,9 @@ function RecoverResetForm (props) {
 export default asForm(
   RecoverResetForm,
   (state) => ({
-    errors: state['recoverReset.entryErrors'],
-    spinning: state['recoverReset.busy'],
-    values: state['recoverReset.entry'],
+    errors: state['recover.reset.entryErrors'],
+    spinning: state['recover.reset.busy'],
+    values: state['recover.reset.entry'],
   }),
   ({
      accountScene,

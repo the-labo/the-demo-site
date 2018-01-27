@@ -6,8 +6,6 @@
 
 const _d = (m) => 'default' in m ? m.default : m
 
-const UserHook = _d(require('./UserHook'))
-
 module.exports = {
-  UserHook,
+  get UserHook () { return _d(require('./UserHook')) },
 }

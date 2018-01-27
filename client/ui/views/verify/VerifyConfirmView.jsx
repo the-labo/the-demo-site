@@ -42,9 +42,9 @@ function VerifyConfirmView ({
 export default asView(
   VerifyConfirmView,
   (state) => ({
-    busy: state['verifyConfirm.busy'],
-    done: state['verifyConfirm.done'],
-    failure: state['verifyConfirm.failure'],
+    busy: state['verify.confirm.busy'],
+    done: state['verify.confirm.done'],
+    failure: state['verify.confirm.failure'],
     query: state['app.query'],
   }),
   ({verifyConfirmScene}, propsProxy) => (({

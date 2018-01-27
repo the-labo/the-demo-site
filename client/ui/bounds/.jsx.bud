@@ -6,8 +6,6 @@
 const {Bound} = require('the-templates')
 
 module.exports = [
-  'user/UserPager',
-  'caution/CautionDisconnectedDialog',
 ].map((name) => Bound({
   name
 }))

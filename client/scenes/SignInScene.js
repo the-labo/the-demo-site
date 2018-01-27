@@ -10,7 +10,7 @@ const {bindScope, withBack, withBusy, withEntry,} = require('the-scene-mixins/sh
 @withBusy
 @withEntry
 @withBack
-@bindScope('signIn')
+@bindScope('sign.in')
 class SignInSceneBase extends Scene {}
 
 /** @lends SignInScene */

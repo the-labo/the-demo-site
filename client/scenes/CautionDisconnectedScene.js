@@ -9,7 +9,7 @@ const {bindScope, withBusy, withLocation} = require('the-scene-mixins/shim')
 
 @withBusy
 @withLocation
-@bindScope('cautionDisconnected')
+@bindScope('caution.disconnected')
 class CautionDisconnectedSceneBase extends Scene {}
 
 /** @lends CautionDisconnectedScene */

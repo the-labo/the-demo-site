@@ -9,7 +9,7 @@ const {bindScope, withBack, withBusy,} = require('the-scene-mixins/shim')
 
 @withBusy
 @withBack
-@bindScope('signAsk')
+@bindScope('sign.ask')
 class SignaskSceneBase extends Scene {}
 
 /** @lends SignaskScene */

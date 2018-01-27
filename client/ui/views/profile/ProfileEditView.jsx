@@ -49,7 +49,7 @@ export default asView(
   ProfileEditView,
   (state) => ({
     busy: state['account.busy'],
-    done: state['profileEdit.done'],
+    done: state['profile.edit.done'],
     user: state['account.user'],
   }),
   ({
