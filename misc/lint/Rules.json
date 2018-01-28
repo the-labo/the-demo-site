@@ -23,5 +23,20 @@
     "filenameRule": {
       "endsWith": "Ctrl.js"
     }
+  },
+  "server/db/hooks/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Hook.js"
+    }
+  },
+  "server/db/resources/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Resource.js"
+    }
+  },
+  "server/db/seeds/**/!(index|_*).js": {
+    "filenameRule": {
+      "endsWith": ".seed.js"
+    }
   }
 }

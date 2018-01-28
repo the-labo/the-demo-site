@@ -4,8 +4,12 @@ import React from 'react'
 import { Urls } from '@self/conf'
 import { TheRoute } from 'the-components'
 
-import * as v from './views'
 import { withLoc } from 'the-loc'
+import * as views from './views'
+import { hashProxy } from 'the-site-util'
+import { isProduction } from 'the-check'
+
+const v = isProduction() ? views : hashProxy(views, {unknownCheck: true})
 
 const Routes = ({}) => (
   <TheRoute.Switch>

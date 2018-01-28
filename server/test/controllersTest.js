@@ -50,21 +50,21 @@ describe('controllers', () => {
   })
 
   it('User Ctrl', async () => {
-    const {UserCtrl} = controllers
+    const {AdminUserCtrl} = controllers
     const session = {}
     const db = createDB({
       dialect: 'memory'
     })
     const app = {db, services: servicesProxy(ServiceMapping, db)}
     const client = {}
-    const userCtrl = new UserCtrl({app, client, session})
-    userCtrl._assertAsAdmin = () => null
+    const adminUserCtrl = new AdminUserCtrl({app, client, session})
+    adminUserCtrl._assertAsAdmin = () => null
 
-    await userCtrl.create({
+    await adminUserCtrl.create({
       name: 'foo'
     })
 
-    const listed = await userCtrl.list({
+    const listed = await adminUserCtrl.list({
       filter: [{name: 'foo'}]
     })
     console.log(listed)

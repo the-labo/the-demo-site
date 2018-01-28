@@ -7939,8 +7939,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^1.0.1:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.1.8.tgz#487598651b8d5afcb6242646d44057300acc14c4"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.2.0.tgz#39ac31d9ce685a300d1853d4807c530df9a6face"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -8674,8 +8674,8 @@ the-site-services@^1.0.3:
     the-service-base "^1.0.3"
 
 the-site-util@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.0.tgz#43b37accff5c1671e9150ef74e2f1b8c8e161ebf"
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.1.tgz#619809ca6a86f8a32869d37fe4019b804697de9c"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"
@@ -8930,8 +8930,8 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
 tty-browserify@~0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.1.tgz#3f05251ee17904dfd0677546670db9651682b811"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
