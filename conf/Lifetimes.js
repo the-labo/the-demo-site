@@ -13,4 +13,3 @@ module.exports = Object.freeze(
     VERIFY_EMAIL_LIFETIME: hours(48),
   }
 )
-

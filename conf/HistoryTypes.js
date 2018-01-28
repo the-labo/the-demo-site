@@ -10,4 +10,3 @@ module.exports = Object.freeze(
     GONE_USER: 'gone:user'
   }
 )
-

@@ -30,5 +30,3 @@ export default asView(
   HomeView,
   (state) => ({})
 )
-
-

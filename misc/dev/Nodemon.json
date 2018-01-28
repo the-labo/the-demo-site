@@ -1,14 +1,14 @@
 {
+  "delay": 800,
+  "execMap": {
+    "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
+  },
+  "ext": "json,mjs,js",
   "ignore": [
     "var",
     "tmp",
     "doc",
     "example"
   ],
-  "execMap": {
-    "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
-  },
-  "noColors": true,
-  "ext": "json,mjs,js",
-  "delay": 800
+  "noColors": true
 }

@@ -14,4 +14,3 @@ const vars = {Local}
 
 const env = theEnv(config, {vars}).forEnv()
 module.exports = env
-

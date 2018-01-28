@@ -27,19 +27,19 @@ const Local = require('./Local')
 const {isProduction} = require('the-check')
 const {envify} = browser.transforms
 const {secret, setting,} = Local
-
 const theAssets = require('the-assets')
 const theCode = require('the-code/pon')
+const theLint = require('the-lint/pon')
 const thePS = require('the-ps').create
 const {Urls, locales,} = require('./conf')
 const createDB = () => require('./server/db/create').forTask()
 const migration = require('./server/db/migration')
-
 const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
 const Externals = require('./misc/browser/Externals')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const Containers = require('./misc/docker/Containers')
+const Rules = require('./misc/lint/Rules')
 const Drawings = require('./misc/icon/Drawings')
 
 module.exports = pon(
@@ -144,6 +144,7 @@ module.exports = pon(
       'conf/**/*.json',
       'client/**/*.json',
       'server/**/*.json',
+      'misc/**/*.json',
       'secrets.json',
     ], {sort: true}),
     /** Format server files */
@@ -164,14 +165,18 @@ module.exports = pon(
       icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
       icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
     ],
+    // ---------------------------------
+    // Sub Tasks for Lint
+    // ---------------------------------
+    'lint:rules': theLint(Rules),
+    /** Validate locales */
+    'loc:lint': () => locales.validate(),
 
     // ---------------------------------
     // Sub Tasks for Locales
     // ---------------------------------
     /** Print locale settings */
     'loc:print': () => console.log(locales.toCompound()),
-    /** Validate locales */
-    'loc:validate': () => locales.validate(),
 
     // ---------------------------------
     // Sub Tasks for Local Config
@@ -377,6 +382,8 @@ module.exports = pon(
       docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
+      /** Lint all */
+      lint: ['loc:lint', 'lint:rules'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Open project */
@@ -384,7 +391,7 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         'secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build',
-        ...(isProduction() ? [] : ['pkg:fix', 'doc', 'validate'])
+        ...(isProduction() ? [] : ['pkg:fix', 'doc', 'lint'])
       ],
       /** Prepare and start on production */
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
@@ -404,8 +411,6 @@ module.exports = pon(
       test: ['env:test', 'test:client', 'test:server'],
       /** Run all ui tasks */
       ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
-      /** Validate all */
-      validate: ['loc:validate'],
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
     },
@@ -424,6 +429,8 @@ module.exports = pon(
       ds: 'debug:server',
       /** Shortcut for `format` task */
       f: 'format',
+      /** Shortcut for `lint` task */
+      l: 'lint',
       /** Shortcut for `open` task */
       o: 'open',
       /** Shortcut for `prod` task */

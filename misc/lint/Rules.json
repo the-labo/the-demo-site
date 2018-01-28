@@ -1,0 +1,27 @@
+{
+  "client/scenes/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Scene.js"
+    }
+  },
+  "client/ui/admin/**/*.jsx": {
+    "filenameRule": {
+      "startsWith": "Admin"
+    }
+  },
+  "client/ui/views/**/!(index).jsx": {
+    "filenameRule": {
+      "endsWith": "View.jsx"
+    }
+  },
+  "server/**/*.js": {
+    "contentRule": {
+      "endsWithNewLine": true
+    }
+  },
+  "server/controllers/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Ctrl.js"
+    }
+  }
+}

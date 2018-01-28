@@ -14,4 +14,3 @@ const singleton = create({
 })
 
 module.exports = singleton
-

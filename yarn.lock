@@ -7939,11 +7939,11 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^1.0.1:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.0.18.tgz#39a314a2da13cefa4c4f12de7bb1d012b3da10df"
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-1.1.8.tgz#487598651b8d5afcb6242646d44057300acc14c4"
   dependencies:
     aglob "^3.0.0"
-    asfs "^2.0.1"
+    asfs "^2.0.2"
     debug "^3.1.0"
     writeout "^2.2.1"
 
@@ -8336,6 +8336,14 @@ the-link@^3.0.4, the-link@^3.0.6:
     the-component-util "^2.1.0"
     the-icon "^4.0.1"
     the-style "^2.1.0"
+
+the-lint@^1.0.5:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.0.10.tgz#9bdf1023d3cab67def607d9f87cf682b0bc04907"
+  dependencies:
+    aglob "^3.0.0"
+    asfs "^2.0.2"
+    colorprint "^4.1.0"
 
 the-list@^3.0.1:
   version "3.0.1"
@@ -8756,8 +8764,8 @@ the-tag@^2.0.2:
     the-style "^2.1.0"
 
 the-templates@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.0.tgz#fc3674d304a6b2f62238392b7ab6fd0b4978e16d"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.1.tgz#556f5dcd35c0ae8894c59d4308b9dc0d4f25f36a"
   dependencies:
     aglob "^3.0.0"
     ape-tmpl "^6.0.8"
