@@ -45,8 +45,10 @@
     "format:server": "Format server files",
     "git:catchup": "Catch up to latest git",
     "icon:generate": "Generate icons",
+    "l": "Shortcut for `lint` task",
+    "lint": "Lint all",
+    "loc:lint": "Validate locales",
     "loc:print": "Print locale settings",
-    "loc:validate": "Validate locales",
     "local:print": "Print local settings",
     "logs": "Show app daemon logs",
     "maint:off": "Disable maintenance mode",
@@ -92,7 +94,6 @@
     "ui:css/watch": "Run css watch",
     "ui:map": "Extract map files",
     "ui:react": "Compile react components",
-    "validate": "Validate all",
     "w": "Shortcut for `watch` task",
     "watch": "Run watches"
   }

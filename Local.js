@@ -2,7 +2,6 @@
  * Local variables
  * @namespace Local
  */
-
 'use strict'
 
 const {envOf, seatAccess,} = require('the-site-util')
@@ -37,23 +36,16 @@ const Vars = Object.freeze(
   {
     APP_PORT: portNumberFor(`app@${__dirname}`),
     APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
-
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
-
     INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
-
     MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
-
     MYSQL_PUBLISHED_PORT: portNumberFor(`mysql@${__dirname}`),
     NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
     NGINX_PUBLISHED_PORT: portNumberFor(`nginx@${__dirname}`),
-
     PUBLIC_DIR: `${__dirname}/public`,
     REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
     REDIS_PUBLISHED_PORT: portNumberFor(`redis@${__dirname}`),
-
     SEAL_SECRET: secretFor(`seal@${__dirname}`),
-
     SUPER_ADMIN_NAME: userNameFor(`superadmin@${__dirname}`),
     SUPER_ADMIN_PASSWORD: secretFor(`superadmin@${__dirname}`),
   }

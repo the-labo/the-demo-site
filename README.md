@@ -263,8 +263,10 @@ pon <taskName>
 | format:server | Format server files | `pon format:server` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
 | icon:generate | Generate icons | `pon icon:generate` |
+| l | Shortcut for `lint` task | `pon l` |
+| lint | Lint all | `pon lint` |
+| loc:lint | Validate locales | `pon loc:lint` |
 | loc:print | Print locale settings | `pon loc:print` |
-| loc:validate | Validate locales | `pon loc:validate` |
 | local:print | Print local settings | `pon local:print` |
 | logs | Show app daemon logs | `pon logs` |
 | maint:off | Disable maintenance mode | `pon maint:off` |
@@ -310,7 +312,6 @@ pon <taskName>
 | ui:css/watch | Run css watch | `pon ui:css/watch` |
 | ui:map | Extract map files | `pon ui:map` |
 | ui:react | Compile react components | `pon ui:react` |
-| validate | Validate all | `pon validate` |
 | w | Shortcut for `watch` task | `pon w` |
 | watch | Run watches | `pon watch` |
 

@@ -4000,8 +4000,8 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.1.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.2.0.tgz#aa2ece052a787563ba70a3dcd9dc2eb8a9a0488c"
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.3.0.tgz#e04fdb7b9796d8adac9c8f64c14837b2313378b0"
 
 globals@^9.18.0:
   version "9.18.0"
@@ -5949,14 +5949,15 @@ pon-task-css@^5.0.6:
     postcss-modules "^1.1.0"
 
 pon-task-db@^2.0.1:
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/pon-task-db/-/pon-task-db-2.3.9.tgz#5419348466c44c6ad53d7b7630e20abc559fd86c"
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/pon-task-db/-/pon-task-db-2.3.10.tgz#4c8ef2c9d8372f7b5d9d6879e9b320c9d0eff106"
   dependencies:
     aglob "^3.0.0"
     akv "^2.0.0"
     asfs "^2.0.1"
     askconfig "^4.0.0"
     asleep "^1.0.3"
+    execcli "^5.0.2"
     pon-task-seed "^2.0.5"
 
 pon-task-docker@^2.0.1:
@@ -8025,8 +8026,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^2.0.3:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.2.1.tgz#88c97e43d5c506dccb8325d75ae9eae8abbe59e3"
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.3.0.tgz#b421927c86ffe6ed789f55dd615c5826d7451b21"
   dependencies:
     acorn "^5.3.0"
     acorn-jsx "^4.1.1"
@@ -8693,8 +8694,8 @@ the-seed@^1.0.1:
     pudding "^4.0.4"
 
 the-server@^4.7.0:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.12.0.tgz#3f54ddfbb7e99a4b49e15c9e30f1beb3aebdc370"
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.12.1.tgz#e914363722614ae14d7efd545b2708a7e11d517c"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"

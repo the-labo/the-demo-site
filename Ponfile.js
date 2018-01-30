@@ -46,18 +46,22 @@ module.exports = pon(
   /** @module tasks */
   {
 
-    //----------------------------------- 
+    // -----------------------------------
+    // Meta info
+    // -----------------------------------
+    $doc: Pondoc,
+
+    // -----------------------------------
     // Sub Tasks for Assert
-    //----------------------------------- 
+    // -----------------------------------
     /** Make sure that not production */
     'assert:not-prod': env.notFor('production'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Assets
-    //----------------------------------- 
+    // -----------------------------------
     /** Install asset files */
     'assets:install': () => theAssets().installTo('assets', {copy: true,}),
-
     /** Render markdown assets */
     'assets:markdown': md('assets/markdowns', 'public/partials', {
       vars: {...locales,},
@@ -67,12 +71,11 @@ module.exports = pon(
     /** Cleanup public files */
     'clean:public': del('public/build/*.*'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Clean Up
-    //----------------------------------- 
+    // -----------------------------------
     /** Cleanup shim files */
     'clean:shim': del(['shim/**/*.*', 'client/shim/**/*.*']),
-
     /** Open database cli */
     'db:cli': () => createDB().cli(),
     /** Drop database */
@@ -88,35 +91,33 @@ module.exports = pon(
     /** Generate test data */
     'db:seed': db.seed(createDB, 'server/db/seeds/:env/*.seed.js'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Database
-    //----------------------------------- 
+    // -----------------------------------
     /** Setup database */
     'db:setup': db.setup(createDB),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Debug
-    //----------------------------------- 
+    // -----------------------------------
     /** Run server for debug */
     'debug:server': [
       'ps:debug', 'env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')
     ],
-
     /** Watch files for debug */
     'debug:watch': ['env:debug', 'ui:*/watch'],
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Document
-    //----------------------------------- 
+    // -----------------------------------
     /** Generate pondoc file */
     'doc:pondoc': pondoc(__filename, 'misc/project/Pondoc.json'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Docker
-    //----------------------------------- 
+    // -----------------------------------
     /** Prepare mysql docker container */
     'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
-
     /** Prepare nginx docker container */
     'docker:nginx': nginx(Containers.nginx.name, Containers.nginx.options),
     /** Prepare redis docker container */
@@ -124,24 +125,23 @@ module.exports = pon(
     /** Set env variables for debug */
     'env:debug': env('development', {DEBUG: 'app:*', ...Local,}),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Environment
-    //----------------------------------- 
+    // -----------------------------------
     /** Set env variables for production */
     'env:prod': env('production'),
-
     /** Set env variables for test */
     'env:test': env('test'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Format
-    //----------------------------------- 
+    // -----------------------------------
     /** Format client files */
     'format:client': theCode([], {}),
-
     // TODO Decorator throws error now
     /** Format conf files */
-    'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js',}), /** Format json files */
+    'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js',}),
+    /** Format json files */
     'format:json': fmtjson([
       'conf/**/*.json',
       'client/**/*.json',
@@ -152,69 +152,66 @@ module.exports = pon(
     /** Format server files */
     'format:server': theCode('server/**/*.js', {}),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Git
-    //----------------------------------- 
+    // -----------------------------------
     /** Catch up to latest git */
     'git:catchup': [git('stash'), git('pull')],
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Icon
-    //----------------------------------- 
+    // -----------------------------------
     /** Generate icons */
     'icon:generate': [
-      icon('assets/images/app-icon.png', Drawings.appIcon),
-      icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
-      icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
-    ],
+      Drawings.appIcon && icon('assets/images/app-icon.png', Drawings.appIcon),
+      Drawings.fbAppIcon && icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
+      Drawings.officialAccountIcon && icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
+    ].filter(Boolean),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Lint
-    //----------------------------------- 
+    // -----------------------------------
     'lint:rules': theLint(Rules),
-
     /** Validate locales */
     'loc:lint': () => locales.validate(),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Locales
-    //----------------------------------- 
+    // -----------------------------------
     /** Print locale settings */
     'loc:print': () => console.log(locales.toCompound()),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Local Config
-    //----------------------------------- 
+    // -----------------------------------
     /** Print local settings */
     'local:print': () => Local.print(),
-
     /** Disable maintenance mode */
     'maint:off': del('public/status/maintenance'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Maintenance
-    //----------------------------------- 
+    // -----------------------------------
     /** Enable maintenance mode */
     'maint:on': write('public/status/maintenance'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Open
-    //----------------------------------- 
+    // -----------------------------------
     /** Open app in browser */
     'open:app': open(`http://localhost:${Local.NGINX_PUBLISHED_PORT}`),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Package
-    //----------------------------------- 
+    // -----------------------------------
     /** Fix package.json */
     'pkg:fix': npx('fixpack'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for PM2
-    //----------------------------------- 
+    // -----------------------------------
     /** Run app with pm2 */
     'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME,}),
-
     /** Run backup cron with pm2 */
     'pm2:backup:dump': pm2.pon('db:dump', {cron: Local.DUMP_SCHEDULE, name: `${Local.BACKUP_PROCESS_NAME}:dump`,}),
     /** Compile files for production */
@@ -233,27 +230,25 @@ module.exports = pon(
       `public${Urls.JS_BUNDLE_URL}`
     ], `public${Urls.PRODUCTION_JS_URL}`),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Production
-    //----------------------------------- 
+    // -----------------------------------
     /** Delete source map files for production */
     'prod:map': del('public/**/*.map'),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Process
-    //----------------------------------- 
+    // -----------------------------------
     /** Check another process exists */
     'ps:debug': () => thePS('var/app/debug.pid').acquire(),
-
     /** Decrypt secret file */
     'secret:decrypt': () => secret.decrypt(),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Secret
-    //----------------------------------- 
+    // -----------------------------------
     /** Encrypt secret file */
     'secret:encrypt': () => secret.encrypt(),
-
     /** Change file permissions */
     'struct:chmod': chmod({
       'bin/**/*.*': '577',
@@ -275,14 +270,13 @@ module.exports = pon(
       'assets/webfonts': 'public/webfonts',
     }, {force: true,}),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Structure
-    //----------------------------------- 
+    // -----------------------------------
     /** Generate project directories */
     'struct:mkdir': mkdir([
       ...Object.keys(Directories)
     ]),
-
     /** Prepare sub packages */
     'struct:pkg': [
       cp({
@@ -307,12 +301,11 @@ module.exports = pon(
       'shim/utils': 'node_modules/@self/utils',
     }, {force: true,}),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for Test
-    //----------------------------------- 
+    // -----------------------------------
     /** Run client tests */
     'test:client': mocha('client/test/**/*.js', {timeout: 3000,}),
-
     /** Run server tests */
     'test:server': mocha('server/test/**/*.js', {timeout: 3000,}),
     /** Bundle browser script */
@@ -339,9 +332,9 @@ module.exports = pon(
       }), {sub: ['deps'],}
     ),
 
-    //----------------------------------- 
+    // -----------------------------------
     // Sub Tasks for UI
-    //----------------------------------- 
+    // -----------------------------------
     /** Compile stylesheets */
     'ui:css': [
       css('client/ui', 'client/shim/ui', {
@@ -356,7 +349,6 @@ module.exports = pon(
       ], 'public/build/bundle.pcss', {}),
       css('public/build', 'public/build', {pattern: '*.pcss',})
     ],
-
     /** Run css watch */
     'ui:css/watch': 'ui:css/*/watch',
     /** Extract map files */
@@ -369,14 +361,9 @@ module.exports = pon(
       watchTargets: 'client/ui/**/*.pcss',
     }),
 
-    //----------------------------------- 
-    // Meta info
-    //----------------------------------- 
-    $doc: Pondoc,
-
-    //----------------------------------- 
+    // -----------------------------------
     // Main Tasks
-    //----------------------------------- 
+    // -----------------------------------
     ...{
       /** Run all assets tasks */
       assets: ['assets:*'],
@@ -431,9 +418,9 @@ module.exports = pon(
       watch: ['ui:*', 'ui:*/watch'],
     },
 
-    //----------------------------------- 
+    // -----------------------------------
     // Aliases
-    //----------------------------------- 
+    // -----------------------------------
     ...{
       /** Shortcut for `build` task */
       b: 'build',
