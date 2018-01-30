@@ -4,7 +4,7 @@
     "DIALECT": "mysql",
     "HOST": "localhost",
     "PASSWORD": "thedemosite_dev",
-    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
     "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
     "USERNAME": "thedemosite_dev"
@@ -14,7 +14,7 @@
     "DIALECT": "mysql",
     "HOST": "localhost",
     "PASSWORD": "thedemosite",
-    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
     "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
     "USERNAME": "thedemosite"

@@ -199,7 +199,7 @@ module.exports = pon(
     // Sub Tasks for Open
     // -----------------------------------
     /** Open app in browser */
-    'open:app': open(`http://localhost:${Local.NGINX_PUBLISHED_PORT}`),
+    'open:app': open(`http://localhost:${Local.NGINX_CONTAINER_PORT}`),
 
     // -----------------------------------
     // Sub Tasks for Package

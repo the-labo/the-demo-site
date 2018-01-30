@@ -15,21 +15,21 @@ module.exports = Object.freeze(
       name: Local.MYSQL_CONTAINER_NAME,
       options: {
         image: 'mysql:8',
-        publish: `${Local.MYSQL_PUBLISHED_PORT}:3306`
+        publish: `${Local.MYSQL_CONTAINER_PORT}:3306`
       }
     },
     redis: {
       name: Local.REDIS_CONTAINER_NAME,
       options: {
         image: 'redis:4',
-        publish: `${Local.REDIS_PUBLISHED_PORT}:6379`
+        publish: `${Local.REDIS_CONTAINER_PORT}:6379`
       }
     },
     nginx: {
       name: Local.NGINX_CONTAINER_NAME,
       options: {
         image: 'nginx:1.13',
-        httpPublishPort: Local.NGINX_PUBLISHED_PORT,
+        httpPublishPort: Local.NGINX_CONTAINER_PORT,
         template: path.resolve(__dirname, 'nginx.conf.template'),
         env: {
           HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
