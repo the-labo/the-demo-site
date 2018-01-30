@@ -7,6 +7,6 @@
 module.exports = Object.freeze(
   /** @lends HistoryTypes */
   {
-    GONE_USER: 'gone:user'
+    GONE_USER: 'gone:user',
   }
 )

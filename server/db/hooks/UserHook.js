@@ -3,11 +3,11 @@
  */
 'use strict'
 
+const {HistoryTypes,} = require('@self/conf')
 const debug = require('debug')('app:hook:userHook')
-const {HistoryTypes} = require('@self/conf')
 
 function UserHook (db) {
-  const {History, User} = db.resources
+  const {History, User,} = db.resources
   return {
     async onDestroy ({gone, id,}) {
       const key = User.refOf(id)
@@ -17,7 +17,7 @@ function UserHook (db) {
         key,
         type: HistoryTypes.GONE_USER,
       })
-    }
+    },
   }
 }
 

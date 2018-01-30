@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {TheHistoryResource} = require('the-site-resources')
-const {HistoryTypes} = require('@self/conf')
+const {HistoryTypes,} = require('@self/conf')
+const {TheHistoryResource,} = require('the-site-resources')
 
 /** @lends HistoryResource */
 class HistoryResource extends TheHistoryResource {

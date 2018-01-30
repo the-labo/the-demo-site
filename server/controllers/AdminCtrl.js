@@ -4,9 +4,9 @@
  */
 'use strict'
 
-const Ctrl = require('./Ctrl')
 const {compose,} = require('the-controller-mixins')
-const {withAdmin} = require('./concerns')
+const {withAdmin,} = require('./concerns')
+const Ctrl = require('./Ctrl')
 
 const AdminCtrlBase = compose(
   withAdmin

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheSignService} = require('the-site-services')
+const {TheSignService,} = require('the-site-services')
 
 /** @lends SignService */
 class SignService extends TheSignService {

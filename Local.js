@@ -5,14 +5,14 @@
 
 'use strict'
 
+const {envOf, seatAccess,} = require('the-site-util')
+const {inspect,} = require('util')
+const pkg = require('./package.json')
 const theSeat = require('the-seat').default
 const theSetting = require('the-setting').default
 const theSecret = require('the-secret').default
-const pkg = require('./package.json')
-const {inspect} = require('util')
-const {envOf, seatAccess,} = require('the-site-util')
 
-const secret = theSecret(`${__dirname}/secrets.json`, envOf('DEMO_SITE_MASTER_PASSWORD', {strict: true}))
+const secret = theSecret(`${__dirname}/secrets.json`, envOf('DEMO_SITE_MASTER_PASSWORD', {strict: true,}))
 const seat = theSeat()
 const {
   containerNameFor,
@@ -25,10 +25,10 @@ const {
 const setting = theSetting(`${__dirname}/var/app/setting.json`,
   /** @lends Local */
   {
-    APP_DOMAIN: 'the-demo-site.work',
     APP_CDN_URL: '',
+    APP_DOMAIN: 'the-demo-site.work',
+    DUMP_ROTATION: 3,
     DUMP_SCHEDULE: '00 00 * * 3',
-    DUMP_ROTATION: 3
   }
 )
 

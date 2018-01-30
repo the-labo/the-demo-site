@@ -1,7 +1,7 @@
 'use strict'
 
-const theEnv = require('the-env').default
 const Local = require('../../Local')
+const theEnv = require('the-env').default
 
 const config = {
   database: require('./database'),
@@ -10,7 +10,7 @@ const config = {
   seal: require('./seal'),
 }
 
-const vars = {Local}
+const vars = {Local,}
 
-const env = theEnv(config, {vars}).forEnv()
+const env = theEnv(config, {vars,}).forEnv()
 module.exports = env

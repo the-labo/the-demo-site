@@ -5,16 +5,16 @@
  */
 'use strict'
 
-const theServer = require('the-server').default
-const theSeal = require('the-seal').default
+const {Html, createClient, createHandle, createStore,} = require('@self/client/shim')
+const Local = require('@self/Local')
+const {isProduction,} = require('the-check')
+const {servicesProxy,} = require('the-service-base')
 const endpoints = require('../endpoints')
-const pkg = require('../../package.json')
-const {servicesProxy} = require('the-service-base')
 const env = require('../env')
 const mappings = require('../mappings')
-const {isProduction} = require('the-check')
-const Local = require('@self/Local')
-const {Html, createClient, createHandle, createStore,} = require('@self/client/shim')
+const pkg = require('../../package.json')
+const theServer = require('the-server').default
+const theSeal = require('the-seal').default
 
 const {ControllerMapping, ServiceMapping,} = mappings
 

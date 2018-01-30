@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheRecoverService} = require('the-site-services')
+const {TheRecoverService,} = require('the-site-services')
 
 /** @lends RecoverService */
 class RecoverService extends TheRecoverService {

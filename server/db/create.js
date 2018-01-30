@@ -5,15 +5,15 @@
  */
 'use strict'
 
-const theDB = require('the-db').default
+const cluster = require('cluster')
 const env = require('../env')
 const {HookMapping, ResourceMapping,} = require('../mappings')
-const cluster = require('cluster')
+const theDB = require('the-db').default
 
 /** @lends create */
 function create (config = env.database, options = {}) {
   const {
-    enableHooks = cluster.isMaster
+    enableHooks = cluster.isMaster,
   } = options
 
   return theDB({
@@ -23,6 +23,6 @@ function create (config = env.database, options = {}) {
   }).unref()
 }
 
-create.forTask = () => create(env.database, {enableHooks: false})
+create.forTask = () => create(env.database, {enableHooks: false,})
 
 module.exports = create

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {withAuthorized} = require('the-controller-mixins')
+const {withAuthorized,} = require('the-controller-mixins')
 
 /** @lends withAuth */
 function withAuth (Class) {
@@ -15,7 +15,7 @@ function withAuth (Class) {
       const {
         resources: {User,},
       } = this
-      const {user} = (await this._getAuthorized()) || {}
+      const {user,} = (await this._getAuthorized()) || {}
       if (!user) {
         return null
       }

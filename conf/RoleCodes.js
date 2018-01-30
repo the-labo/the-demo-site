@@ -8,6 +8,6 @@ module.exports = Object.freeze(
   /** @lends RoleCodes */
   {
     ADMIN_ROLE: 'ADMIN',
-    NORMAL_ROLE: 'NORMAL'
+    NORMAL_ROLE: 'NORMAL',
   }
 )

@@ -1,8 +1,8 @@
 'use strict'
 
-const thePassword = require('the-password').default
-const {digest: digestPassword} = thePassword()
 const Local = require('@self/Local')
+const thePassword = require('the-password').default
+const {digest: digestPassword,} = thePassword()
 
 module.exports = [
   {

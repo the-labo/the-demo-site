@@ -9,7 +9,7 @@ const create = require('./create')
 
 const singleton = create(env.mail)
 Object.assign(singleton, {
-  create
+  create,
 })
 
 module.exports = singleton

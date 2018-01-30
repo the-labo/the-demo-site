@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheQuitService} = require('the-site-services')
+const {TheQuitService,} = require('the-site-services')
 
 /** @lends QuitService */
 class QuitService extends TheQuitService {

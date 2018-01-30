@@ -4,9 +4,9 @@
  */
 'use strict'
 
-const Ctrl = require('./Ctrl')
-const {compose,} = require('the-controller-mixins')
 const {RoleCodes,} = require('@self/conf')
+const {compose,} = require('the-controller-mixins')
+const Ctrl = require('./Ctrl')
 
 const SignCtrlBase = compose(
 
@@ -15,10 +15,10 @@ const SignCtrlBase = compose(
 /** @lends SignCtrl */
 class SignCtrl extends SignCtrlBase {
   async signUp (name, password, options = {}) {
-    const {profile: profileAttributes = {}} = options
+    const {profile: profileAttributes = {},} = options
     const {
       lang,
-      services: {signService},
+      services: {signService,},
     } = this
     const roleCode = RoleCodes.NORMAL_ROLE
     const {sign, user,} = await signService.processSignUp({
@@ -31,9 +31,9 @@ class SignCtrl extends SignCtrlBase {
   async signIn (name, password) {
     const {
       lang,
-      services: {signService}
+      services: {signService,},
     } = this
-    const {sign, user} = await signService.processSignIn({
+    const {sign, user,} = await signService.processSignIn({
       lang, name, password,
     })
     await this._setAuthorized({sign, user,})
@@ -42,12 +42,12 @@ class SignCtrl extends SignCtrlBase {
 
   async signOut () {
     const {
-      services: {signService},
+      services: {signService,},
       user,
     } = this
     await this._reloadAuthorized()
     if (user) {
-      await signService.processSignOut({userId: user.id})
+      await signService.processSignOut({userId: user.id,})
     }
     await this._delAuthorized()
     return !!user

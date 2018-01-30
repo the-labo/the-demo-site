@@ -4,8 +4,8 @@
  */
 'use strict'
 
+const {compose, withPreference,} = require('the-controller-mixins')
 const Ctrl = require('./Ctrl')
-const {compose, withPreference} = require('the-controller-mixins')
 
 const AppCtrlBase = compose(
   withPreference

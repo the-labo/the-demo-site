@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const Ctrl = require('./Ctrl')
+const {Lifetimes, Urls,} = require('@self/conf')
 const {compose,} = require('the-controller-mixins')
 const {withAlias,} = require('./concerns')
-const {Lifetimes, Urls,} = require('@self/conf')
+const Ctrl = require('./Ctrl')
 
 const RecoverCtrlBase = compose(
   withAlias
@@ -19,24 +19,24 @@ class RecoverCtrl extends RecoverCtrlBase {
     const {
       lang,
       mail,
-      services: {recoverService},
+      services: {recoverService,},
     } = this
-    const {envelop, expireAt, user} = await recoverService.processPrepare({
+    const {envelop, expireAt, user,} = await recoverService.processPrepare({
       email,
-      expireIn: Lifetimes.RECOVER_EMAIL_LIFETIME
+      expireIn: Lifetimes.RECOVER_EMAIL_LIFETIME,
     })
     const seal = await this._sealFor(envelop)
-    const url = await this._aliasUrlFor(Urls.ACCOUNT_RECOVER_RESET_URL, {envelop, seal, expireAt})
+    const url = await this._aliasUrlFor(Urls.ACCOUNT_RECOVER_RESET_URL, {envelop, expireAt, seal,})
     this._debug(`Create recover url: ${url}`)
     await mail.sendRecover({expireAt, lang, url, user,})
   }
 
   async reset ({envelop, password, seal: sealString,} = {}) {
     const {
-      services: {recoverService},
+      services: {recoverService,},
     } = this
     await this._assertSeal(sealString, envelop)
-    const {sign, user,} = await recoverService.processReset({envelop, password})
+    const {sign, user,} = await recoverService.processReset({envelop, password,})
     await this._setAuthorized({sign, user,})
     await this._reloadAuthorized()
   }

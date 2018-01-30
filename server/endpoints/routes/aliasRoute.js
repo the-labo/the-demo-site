@@ -4,16 +4,16 @@
  */
 'use strict'
 
-const {theAliasRouteFor} = require('the-site-routes')
+const {theAliasRouteFor,} = require('the-site-routes')
 
 /** @lends aliasRoute */
 async function aliasRoute (ctx) {
   const {
-    app: {db},
-    params: {key}
+    app: {db,},
+    params: {key,},
   } = ctx
-  const {Alias} = db.resources
-  const route = theAliasRouteFor({Alias, key})
+  const {Alias,} = db.resources
+  const route = theAliasRouteFor({Alias, key,})
   await route(ctx)
 }
 

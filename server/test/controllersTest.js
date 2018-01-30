@@ -4,11 +4,11 @@
  */
 'use strict'
 
+const {equal, ok,} = require('assert')
+const {servicesProxy,} = require('the-service-base')
 const controllers = require('../controllers')
 const createDB = require('../db/create')
-const {equal, ok,} = require('assert')
-const {servicesProxy} = require('the-service-base')
-const {ServiceMapping} = require('../mappings')
+const {ServiceMapping,} = require('../mappings')
 
 describe('controllers', () => {
   before(() => {
@@ -21,13 +21,13 @@ describe('controllers', () => {
     const {AccountCtrl, QuitCtrl, SignCtrl,} = controllers
     const session = {}
     const db = createDB({
-      dialect: 'memory'
+      dialect: 'memory',
     })
-    const app = {db, services: servicesProxy(ServiceMapping, db)}
+    const app = {db, services: servicesProxy(ServiceMapping, db),}
     const client = {}
-    const signCtrl = new SignCtrl({app, client, session})
-    const accountCtrl = new AccountCtrl({app, client, session})
-    const quitCtrl = new QuitCtrl({app, client, session})
+    const signCtrl = new SignCtrl({app, client, session,})
+    const accountCtrl = new AccountCtrl({app, client, session,})
+    const quitCtrl = new QuitCtrl({app, client, session,})
 
     await signCtrl.signUp('foo', 'bar')
 
@@ -43,29 +43,29 @@ describe('controllers', () => {
     ok(await signCtrl.signIn('foo', 'bar2'))
 
     await accountCtrl.updateProfile(({
-      email: 'foo@example.com'
+      email: 'foo@example.com',
     }))
 
     await quitCtrl.execute()
   })
 
   it('User Ctrl', async () => {
-    const {AdminUserCtrl} = controllers
+    const {AdminUserCtrl,} = controllers
     const session = {}
     const db = createDB({
-      dialect: 'memory'
+      dialect: 'memory',
     })
-    const app = {db, services: servicesProxy(ServiceMapping, db)}
+    const app = {db, services: servicesProxy(ServiceMapping, db),}
     const client = {}
-    const adminUserCtrl = new AdminUserCtrl({app, client, session})
+    const adminUserCtrl = new AdminUserCtrl({app, client, session,})
     adminUserCtrl._assertAsAdmin = () => null
 
     await adminUserCtrl.create({
-      name: 'foo'
+      name: 'foo',
     })
 
     const listed = await adminUserCtrl.list({
-      filter: [{name: 'foo'}]
+      filter: [{name: 'foo',}],
     })
     console.log(listed)
   })

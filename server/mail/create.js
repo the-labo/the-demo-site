@@ -5,16 +5,16 @@
  */
 'use strict'
 
-const theMail = require('the-mail').default
+const {locales,} = require('@self/conf')
 const env = require('../env')
-const Templates = require('./Templates')
 const {emailOfUser, localeDate, nameOfUser,} = require('./helpers')
-const {locales} = require('@self/conf')
+const Templates = require('./Templates')
+const theMail = require('the-mail').default
 
 /** @lends create */
 function create (config = env.mail) {
   const mail = theMail(config)
-  const {SENDER_ADDRESS} = config
+  const {SENDER_ADDRESS,} = config
 
   function _render (lang, filename, vars) {
     const template = Templates[`${lang}/${filename}`] || Templates[`en/${filename}`]
@@ -25,12 +25,12 @@ function create (config = env.mail) {
   }
 
   Object.assign(mail, {
-    async sendGoodby ({lang, user}) {
+    async sendGoodby ({lang, user,}) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'goodby.mail', {
+          by: l('app.APP_NAME'),
           name: nameOfUser(user),
-          by: l('app.APP_NAME')
         }),
         from: SENDER_ADDRESS,
         subject: l('mail.GOODBYE_SUBJECT'),
@@ -41,10 +41,10 @@ function create (config = env.mail) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'recover.mail', {
+          by: l('app.APP_NAME'),
+          expireAt: localeDate(lang, expireAt),
           key: user.name,
           url,
-          expireAt: localeDate(lang, expireAt),
-          by: l('app.APP_NAME')
         }),
         from: SENDER_ADDRESS,
         subject: l('mail.RECOVER_SUBJECT'),
@@ -55,16 +55,16 @@ function create (config = env.mail) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'verify.mail', {
+          by: l('app.APP_NAME'),
+          expireAt: localeDate(lang, expireAt),
           key: user.name,
           url,
-          expireAt: localeDate(lang, expireAt),
-          by: l('app.APP_NAME')
         }),
         from: SENDER_ADDRESS,
         subject: l('mail.VERIFY_SUBJECT'),
         to: emailOfUser(user),
       })
-    }
+    },
   })
 
   return mail
