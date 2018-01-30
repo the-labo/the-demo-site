@@ -14,20 +14,6 @@ const SignCtrlBase = compose(
 
 /** @lends SignCtrl */
 class SignCtrl extends SignCtrlBase {
-  async signUp (name, password, options = {}) {
-    const {profile: profileAttributes = {},} = options
-    const {
-      lang,
-      services: {signService,},
-    } = this
-    const roleCode = RoleCodes.NORMAL_ROLE
-    const {sign, user,} = await signService.processSignUp({
-      lang, name, password, profileAttributes, roleCode,
-    })
-    await this._setAuthorized({sign, user,})
-    return user
-  }
-
   async signIn (name, password) {
     const {
       lang,
@@ -51,6 +37,20 @@ class SignCtrl extends SignCtrlBase {
     }
     await this._delAuthorized()
     return !!user
+  }
+
+  async signUp (name, password, options = {}) {
+    const {profile: profileAttributes = {},} = options
+    const {
+      lang,
+      services: {signService,},
+    } = this
+    const roleCode = RoleCodes.NORMAL_ROLE
+    const {sign, user,} = await signService.processSignUp({
+      lang, name, password, profileAttributes, roleCode,
+    })
+    await this._setAuthorized({sign, user,})
+    return user
   }
 }
 

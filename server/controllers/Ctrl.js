@@ -15,10 +15,6 @@ const CtrBase = compose(
 
 /** @lends Ctrl */
 class Ctrl extends CtrBase {
-  get resources () {
-    return this.app.db.resources
-  }
-
   get lang () {
     return this.client.lang
   }
@@ -27,17 +23,21 @@ class Ctrl extends CtrBase {
     return this.app.mail
   }
 
-  get services () {
-    return this.app.services
+  get resources () {
+    return this.app.db.resources
   }
 
-  async syncUser () {
-    this.user = (await this._fetchAuthorizedUser()) || null
+  get services () {
+    return this.app.services
   }
 
   async controllerMethodWillInvoke (invocation) {
     super.controllerMethodWillInvoke(invocation)
     await this.syncUser()
+  }
+
+  async syncUser () {
+    this.user = (await this._fetchAuthorizedUser()) || null
   }
 }
 

@@ -15,6 +15,16 @@ const RecoverCtrlBase = compose(
 
 /** @lends RecoverCtrl */
 class RecoverCtrl extends RecoverCtrlBase {
+  async reset ({envelop, password, seal: sealString,} = {}) {
+    const {
+      services: {recoverService,},
+    } = this
+    await this._assertSeal(sealString, envelop)
+    const {sign, user,} = await recoverService.processReset({envelop, password,})
+    await this._setAuthorized({sign, user,})
+    await this._reloadAuthorized()
+  }
+
   async send (email) {
     const {
       lang,
@@ -29,16 +39,6 @@ class RecoverCtrl extends RecoverCtrlBase {
     const url = await this._aliasUrlFor(Urls.ACCOUNT_RECOVER_RESET_URL, {envelop, expireAt, seal,})
     this._debug(`Create recover url: ${url}`)
     await mail.sendRecover({expireAt, lang, url, user,})
-  }
-
-  async reset ({envelop, password, seal: sealString,} = {}) {
-    const {
-      services: {recoverService,},
-    } = this
-    await this._assertSeal(sealString, envelop)
-    const {sign, user,} = await recoverService.processReset({envelop, password,})
-    await this._setAuthorized({sign, user,})
-    await this._reloadAuthorized()
   }
 }
 

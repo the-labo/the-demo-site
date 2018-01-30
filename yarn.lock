@@ -8025,8 +8025,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^2.0.3:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.2.0.tgz#421e60cd58c3a51ec0374aa22ef5235944461e0c"
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.2.1.tgz#88c97e43d5c506dccb8325d75ae9eae8abbe59e3"
   dependencies:
     acorn "^5.3.0"
     acorn-jsx "^4.1.1"
