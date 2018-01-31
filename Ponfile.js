@@ -173,7 +173,9 @@ module.exports = pon(
     // -----------------------------------
     'lint:rules': theLint(Rules),
     /** Validate locales */
-    'loc:lint': () => locales.validate(),
+    'lint:loc': () => locales.validate(),
+    /** Validate conf */
+    'lint:conf': () => Urls.validate(),
 
     // -----------------------------------
     // Sub Tasks for Locales
@@ -386,7 +388,7 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Lint all */
-      lint: ['loc:lint', 'lint:rules'],
+      lint: ['lint:loc', 'lint:rules', 'lint:conf'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Open project */
@@ -409,7 +411,7 @@ module.exports = pon(
       /** Stop app as daemon */
       stop: isProduction() ? ['pm2:app/stop', 'pm2:backup:*/stop'] : [],
       /** Run all struct tasks */
-      struct: ['struct:mkdir', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod', 'struct:json',],
+      struct: ['struct:mkdir', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all tess */
       test: ['env:test', 'test:client', 'test:server'],
       /** Run all ui tasks */

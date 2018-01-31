@@ -15,6 +15,7 @@ void async function () {
     '*.js',
     'misc/**/*.js',
     'misc/**/*.json',
+    'misc/**/.*.bud',
     'server/**/*.js',
     'server/**/*.json',
   ], {

@@ -26,7 +26,7 @@ module.exports = Object.freeze(
     ACCOUNT_QUIT_URL: '/account/quit',
     ACCOUNT_RECOVER_RESET_URL: '/account/recover/reset',
     ACCOUNT_RECOVER_URL: '/account/recover/send',
-    ACCOUNT_VERIFY_URL: 'account/verify/confirm',
+    ACCOUNT_VERIFY_URL: '/account/verify/confirm',
 
     // -----------------------------------
     // Admin
@@ -81,5 +81,16 @@ module.exports = Object.freeze(
     // Top
     // -----------------------------------
     TOP_URL: '/',
+
+    // abstract
+    __proto__: {
+      validate () {
+        for (const [key, pathname] of Object.entries(this)) {
+          if (!pathname.startsWith('/')) {
+            console.warn(`Value of ${key} ("${pathname}") is invalid. It must be start with "/"`)
+          }
+        }
+      }
+    }
   }
 )

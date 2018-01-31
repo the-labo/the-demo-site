@@ -1,0 +1,11 @@
+'use strict'
+
+const {ResourceMapping} = require('../../server/mappings')
+const {Resources} = require('the-templates')
+
+module.exports = Resources({ResourceMapping})
+
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

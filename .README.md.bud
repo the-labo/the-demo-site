@@ -6,6 +6,8 @@
 
 const {readmeMdBud} = require('ape-tmpl')
 const pkg = require('./package.json')
+const {ResourceMapping} = require('./server/mappings')
+const {Urls} = require('@self/conf')
 
 module.exports = readmeMdBud({
   pkg,
@@ -21,6 +23,8 @@ module.exports = readmeMdBud({
   vars: {
     Directories: require('./misc/project/Directories'),
     Pondoc: require('./misc/project/Pondoc'),
+    ResourceMapping,
+    Urls,
   }
 })
 

@@ -1,6 +1,6 @@
 'use strict'
 
-const {APP_DOMAIN: domain, NGINX_PUBLISHED_PORT: port} = require('../../Local')
+const {APP_DOMAIN: domain, NGINX_CONTAINER_PORT: port} = require('../../Local')
 const {vhost} = require('the-templates')
 
 module.exports = [

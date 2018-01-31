@@ -69,11 +69,14 @@ Table of Contents
     + [Configure Reverse Proxy](#configure-reverse-proxy)
   * [Running Tasks](#running-tasks)
     + [Available Tasks](#available-tasks)
+  * [Database](#database)
+    + [Database Resource](#database-resource)
+    + [Console to database](#console-to-database)
   * [Trouble Shooting](#trouble-shooting)
     + [First Things You Try](#first-things-you-try)
     + [Docker Containers Seam to Be Dead](#docker-containers-seam-to-be-dead)
   * [Misc](#misc)
-    + [Console to database](#console-to-database)
+    + [Urls](#urls)
     + [Project Structure](#project-structure)
     + [What is `.*.bud` Files?](#what-is-bud-files)
   * [License](#license)
@@ -320,6 +323,48 @@ For more information, try `pon -l`
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
 
+<!-- Section from "doc/guides/21.Database.md.hbs" Start -->
+
+<a name="section-doc-guides-21-database-md"></a>
+
+Database
+-----------
+
+### Database Resource
+
+* [Alias Resource](./doc/database/Resources.md#Alias-Resource)
+* [History Resource](./doc/database/Resources.md#History-Resource)
+* [Profile Resource](./doc/database/Resources.md#Profile-Resource)
+* [Role Resource](./doc/database/Resources.md#Role-Resource)
+* [Sign Resource](./doc/database/Resources.md#Sign-Resource)
+* [User Resource](./doc/database/Resources.md#User-Resource)
+
+
+### Console to database
+
+```bash
+pon db:cli
+```
+
+In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
+
+
+**Terminal Example**
+```bash
+Welcome to the-db prompt!
+DB Env: { dialect: 'mysql', host: 'localhost', port: '6002', database: 'thedemosite_dev', username: 'thedemosite_dev', root_username: 'root', hooks: null }
+DB Resources: [ 'TheDBSchema', 'TheDBLog', 'Alias', 'History', 'Profile', 'Role', 'Sign', 'User' ]
+
+the-db> User.count()  # Evaluate One-line Javascript in the terminal
+106
+the-db> (await User.first()).name  # Using async interface
+'superadmin-71d5acfe'
+the-db>
+```
+
+
+<!-- Section from "doc/guides/21.Database.md.hbs" End -->
+
 <!-- Section from "doc/guides/90.Trouble.md.hbs" Start -->
 
 <a name="section-doc-guides-90-trouble-md"></a>
@@ -359,28 +404,36 @@ pon docker:*/remove docker
 Misc
 -----------
 
-### Console to database
+### Provided Urls
 
-```bash
-pon db:cli
-```
-
-In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
-
-
-**Terminal Example**
-```bash
-Welcome to the-db prompt!
-DB Env: { dialect: 'mysql', host: 'localhost', port: '6002', database: 'thedemosite_dev', username: 'thedemosite_dev', root_username: 'root', hooks: null }
-DB Resources: [ 'TheDBSchema', 'TheDBLog', 'Alias', 'History', 'Profile', 'Role', 'Sign', 'User' ]
-
-the-db> User.count()  # Evaluate One-line Javascript in the terminal
-106
-the-db> (await User.first()).name  # Using async interface
-'superadmin-71d5acfe'
-the-db>
-```
-
+* `/about/app
+* `/about/privacy-policy
+* `/about/terms-of-use
+* `/account/mypage
+* `/account/password
+* `/account/profile
+* `/account/quit
+* `/account/recover/reset
+* `/account/recover/send
+* `account/verify/confirm
+* `/admin
+* `/admin/users
+* `/a/:key
+* `/build/bundle.css
+* `/css/fontawesome-all.css
+* `/css/theme.css
+* `/errors/forbidden
+* `/errors/not-found
+* `/images/app-icon.png
+* `/build/bundle.js
+* `/build/external-bundle.js
+* `/the-demo-site-7.51.0.css
+* `/the-demo-site-7.51.0.js
+* `/sign/please
+* `/sign/signin
+* `/sign/signout
+* `/sign/signup
+* `/
 
 
 ### Project Structure
