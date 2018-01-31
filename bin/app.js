@@ -17,7 +17,7 @@ void async function () {
     console.log(`
   =============================
   
-  Access to http://localhost:${Local.NGINX_PUBLISHED_PORT} in your browser
+  Access to http://localhost:${Local.NGINX_CONTAINER_PORT} in your browser
   
   =============================
   `)

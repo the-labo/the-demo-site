@@ -167,15 +167,13 @@ module.exports = pon(
       Drawings.fbAppIcon && icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
       Drawings.officialAccountIcon && icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
     ].filter(Boolean),
+    /** Validate locales */
+    'lint:loc': () => locales.validate(),
 
     // -----------------------------------
     // Sub Tasks for Lint
     // -----------------------------------
     'lint:rules': theLint(Rules),
-    /** Validate locales */
-    'lint:loc': () => locales.validate(),
-    /** Validate conf */
-    'lint:conf': () => Urls.validate(),
 
     // -----------------------------------
     // Sub Tasks for Locales
@@ -388,7 +386,7 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Lint all */
-      lint: ['lint:loc', 'lint:rules', 'lint:conf'],
+      lint: ['lint:loc', 'lint:rules'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Open project */

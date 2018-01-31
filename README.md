@@ -76,7 +76,7 @@ Table of Contents
     + [First Things You Try](#first-things-you-try)
     + [Docker Containers Seam to Be Dead](#docker-containers-seam-to-be-dead)
   * [Misc](#misc)
-    + [Urls](#urls)
+    + [Provided Urls](#provided-urls)
     + [Project Structure](#project-structure)
     + [What is `.*.bud` Files?](#what-is-bud-files)
   * [License](#license)
@@ -268,7 +268,8 @@ pon <taskName>
 | icon:generate | Generate icons | `pon icon:generate` |
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |
-| loc:lint | Validate locales | `pon loc:lint` |
+| lint:conf | Validate conf | `pon lint:conf` |
+| lint:loc | Validate locales | `pon lint:loc` |
 | loc:print | Print locale settings | `pon loc:print` |
 | local:print | Print local settings | `pon local:print` |
 | logs | Show app daemon logs | `pon logs` |
@@ -406,34 +407,34 @@ Misc
 
 ### Provided Urls
 
-* `/about/app
-* `/about/privacy-policy
-* `/about/terms-of-use
-* `/account/mypage
-* `/account/password
-* `/account/profile
-* `/account/quit
-* `/account/recover/reset
-* `/account/recover/send
-* `account/verify/confirm
-* `/admin
-* `/admin/users
-* `/a/:key
-* `/build/bundle.css
-* `/css/fontawesome-all.css
-* `/css/theme.css
-* `/errors/forbidden
-* `/errors/not-found
-* `/images/app-icon.png
-* `/build/bundle.js
-* `/build/external-bundle.js
-* `/the-demo-site-7.51.0.css
-* `/the-demo-site-7.51.0.js
-* `/sign/please
-* `/sign/signin
-* `/sign/signout
-* `/sign/signup
-* `/
+* `/about/app`
+* `/about/privacy-policy`
+* `/about/terms-of-use`
+* `/account/mypage`
+* `/account/password`
+* `/account/profile`
+* `/account/quit`
+* `/account/recover/reset`
+* `/account/recover/send`
+* `/account/verify/confirm`
+* `/admin`
+* `/admin/users`
+* `/a/:key`
+* `/build/bundle.css`
+* `/css/fontawesome-all.css`
+* `/css/theme.css`
+* `/errors/forbidden`
+* `/errors/not-found`
+* `/images/app-icon.png`
+* `/build/bundle.js`
+* `/build/external-bundle.js`
+* `/the-demo-site-7.51.0.css`
+* `/the-demo-site-7.51.0.js`
+* `/sign/please`
+* `/sign/signin`
+* `/sign/signout`
+* `/sign/signup`
+* `/`
 
 
 ### Project Structure

@@ -13,6 +13,7 @@ void async function () {
 
   await refactor.rewrite([
     '*.js',
+    'bin/*.js',
     'misc/**/*.js',
     'misc/**/*.json',
     'misc/**/.*.bud',

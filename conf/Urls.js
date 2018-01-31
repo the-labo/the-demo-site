@@ -81,16 +81,5 @@ module.exports = Object.freeze(
     // Top
     // -----------------------------------
     TOP_URL: '/',
-
-    // abstract
-    __proto__: {
-      validate () {
-        for (const [key, pathname] of Object.entries(this)) {
-          if (!pathname.startsWith('/')) {
-            console.warn(`Value of ${key} ("${pathname}") is invalid. It must be start with "/"`)
-          }
-        }
-      }
-    }
   }
 )
