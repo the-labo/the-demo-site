@@ -30,11 +30,11 @@ const Routes = ({}) => (
     <TheRoute exact path={Urls.ACCOUNT_PASSWORD_URL} component={v.PasswordChangeView}/>
     <TheRoute exact path={Urls.ACCOUNT_PROFILE_URL} component={v.ProfileEditView}/>
 
-    <TheRoute exact path={Urls.SIGNIN_URL} component={v.SignInView}/>
-    <TheRoute exact path={Urls.SIGNUP_URL} component={v.SignUpView}/>
-    <TheRoute exact path={Urls.SIGNOUT_URL} component={v.SignOutView}/>
+    <TheRoute exact path={Urls.SIGN_IN_URL} component={v.SignInView}/>
+    <TheRoute exact path={Urls.SIGN_UP_URL} component={v.SignUpView}/>
+    <TheRoute exact path={Urls.SIGN_OUT_URL} component={v.SignOutView}/>
     <TheRoute exact path={Urls.ACCOUNT_QUIT_URL} component={v.QuitView}/>
-    <TheRoute exact path={Urls.SIGNASK_URL} component={v.SignAskView}/>
+    <TheRoute exact path={Urls.SIGN_ASK_URL} component={v.SignAskView}/>
 
     <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
     <TheRoute exact path={Urls.ERROR_FORBIDDEN_URL} component={v.ErrorForbiddenView}/>

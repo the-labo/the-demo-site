@@ -15,14 +15,14 @@ function SignInView ({
                      }) {
   return (
     <TheView className={styles.self}>
-      <TheView.Header icon={Icons.SIGNIN_ICON}
-                      text={l('titles.SIGNIN_VIEW_TITLE')}
+      <TheView.Header icon={Icons.SIGN_IN_ICON}
+                      text={l('titles.SIGN_IN_VIEW_TITLE')}
       />
       <TheView.Body narrow>
         <SignInForm/>
 
         <TheButtonGroup collapsed>
-          <TheButton to={Urls.SIGNUP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
+          <TheButton to={Urls.SIGN_UP_URL}>{l('buttons.SHOW_NEW_ACCOUNT')}</TheButton>
           <TheButton to={Urls.ACCOUNT_RECOVER_URL}
           >{l('buttons.SHOW_RECOVER_SEND')}</TheButton>
         </TheButtonGroup>
@@ -46,6 +46,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGNIN_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_IN_VIEW_TITLE')
   }
 )

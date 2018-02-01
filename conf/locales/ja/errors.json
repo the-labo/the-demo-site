@@ -1,4 +1,5 @@
 {
+  "ADMIN_USER_NOT_FOUND_ERROR": "ユーザーが見つかりません",
   "LENGTH_OUT_OF_RANGE_ERROR": "長さが不正",
   "MULTIPLE_NOT_ALLOWED_ERROR": "単一である必要があります",
   "OUT_OF_RANGE_ERROR": "範囲外です",
@@ -13,7 +14,6 @@
   "UNEXPECTED_TYPE_ERROR": "予期せぬ型です",
   "UNEXPECTED_VALUE_ERROR": "予期せぬ値です",
   "UNIQUE_VIOLATION_ERROR": "既に取得されているので利用できません",
-  "USER_NOT_FOUND_ERROR": "ユーザーが見つかりません",
   "VALIDATION_FAILED_ERROR": "入力内容に不備があります",
   "VALUE_MISSING_ERROR": "必須です",
   "VERIFY_EXPIRED_ERROR": "URLの期限が切れています",

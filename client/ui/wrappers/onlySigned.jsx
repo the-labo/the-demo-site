@@ -54,7 +54,7 @@ function onlySigned (Component, options = {}) {
           store.signUp.back.set(pathname)
           store.signIn.back.set(pathname)
           debug(`Ask sign in for: ${pathname}`)
-          history.push(Urls.SIGNASK_URL)
+          history.push(Urls.SIGN_ASK_URL)
         }
       }
     }

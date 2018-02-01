@@ -31,7 +31,7 @@ function withAdmin (Class) {
     }
 
     async controllerMethodWillInvoke (invocation) {
-      super.controllerMethodWillInvoke(invocation)
+      await super.controllerMethodWillInvoke(invocation)
       await this._assertAsAdmin()
     }
   }

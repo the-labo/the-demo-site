@@ -18,18 +18,18 @@ function SignAskView ({
       <TheView.Header leftIcon={Icons.BACK_ICON}
                       leftTo={back}
                       icon={null}
-                      text={l('titles.SIGNASK_VIEW_TITLE')}
+                      text={l('titles.SIGN_ASK_VIEW_TITLE')}
 
       />
       <TheView.Body>
-        <TheLead text={l('messages.NEEDS_SIGNIN_IN')}/>
+        <TheLead text={l('messages.NEEDS_SIGN_IN_IN')}/>
 
         <br/>
 
         <TheButtonGroup>
-          <TheButton to={Urls.SIGNIN_URL}>{l('buttons.SHOW_SIGNIN')}</TheButton>
-          <TheButton to={Urls.SIGNUP_URL}
-                     primary>{l('buttons.SHOW_SIGNUP')}</TheButton>
+          <TheButton to={Urls.SIGN_IN_URL}>{l('buttons.SHOW_SIGN_IN')}</TheButton>
+          <TheButton to={Urls.SIGN_UP_URL}
+                     primary>{l('buttons.SHOW_SIGN_UP')}</TheButton>
         </TheButtonGroup>
       </TheView.Body>
     </TheView>
@@ -52,6 +52,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGNASK_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_ASK_VIEW_TITLE')
   }
 )

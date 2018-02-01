@@ -8,10 +8,10 @@ import AdminUserActionBar from './admin/user/AdminUserActionBar'
 import AdminUserCreateDialog from './admin/user/AdminUserCreateDialog'
 import AdminUserCreateForm from './admin/user/AdminUserCreateForm'
 import AdminUserDestroyDialog from './admin/user/AdminUserDestroyDialog'
+import AdminUserFilterForm from './admin/user/AdminUserFilterForm'
 import AdminUserList from './admin/user/AdminUserList'
 import AdminUserPager from './admin/user/AdminUserPager'
 import AdminUserPasswordDialog from './admin/user/AdminUserPasswordDialog'
-import AdminUserSearchForm from './admin/user/AdminUserSearchForm'
 import CautionDisconnectedDialog from './caution/CautionDisconnectedDialog'
 import LocaleForm from './locale/LocaleForm'
 import PasswordChangeForm from './password/PasswordChangeForm'
@@ -26,10 +26,10 @@ export {
   AdminUserCreateDialog,
   AdminUserCreateForm,
   AdminUserDestroyDialog,
+  AdminUserFilterForm,
   AdminUserList,
   AdminUserPager,
   AdminUserPasswordDialog,
-  AdminUserSearchForm,
   CautionDisconnectedDialog,
   LocaleForm,
   PasswordChangeForm,

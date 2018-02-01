@@ -13,7 +13,7 @@
     "DATABASE": "#{Local.DB_SCHEMA}",
     "DIALECT": "mysql",
     "HOST": "#{Local.DB_HOST}",
-    "PASSWORD": "#{DB_PASSWORD}",
+    "PASSWORD": "#{Local.DB_PASSWORD}",
     "PORT": "#{Local.DB_PORT}",
     "ROOT_PASSWORD": "#{Local.DB_ROOT_USER}",
     "ROOT_USERNAME": "#{Local.DB_ROOT_USER}",

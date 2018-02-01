@@ -11,9 +11,7 @@ const {envOf, seatAccess,} = require('the-site-util')
 const {inspect,} = require('util')
 const pkg = require('./package.json')
 
-const MASTER_PASSWORD_ENV = 'THE_DEMO_SITE_MASTER_PASSWORD'
-
-const secret = theSecret(`${__dirname}/secrets.json`, envOf(MASTER_PASSWORD_ENV, {strict: true,}))
+const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', {strict: true,}))
 const seat = theSeat()
 const {
   containerNameFor,

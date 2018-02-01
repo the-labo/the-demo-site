@@ -290,8 +290,8 @@ pon <taskName>
 | prod:map | Delete source map files for production | `pon prod:map` |
 | ps:debug | Check another process exists | `pon ps:debug` |
 | restart | Restart app as daemon | `pon restart` |
-| secret:decrypt | Decrypt secret file | `pon secret:decrypt` |
-| secret:encrypt | Encrypt secret file | `pon secret:encrypt` |
+| secret:dec | Decrypt secret file | `pon secret:dec` |
+| secret:enc | Encrypt secret file | `pon secret:enc` |
 | setting | Update project settings with interactive shell | `pon setting` |
 | show | Show app daemon status | `pon show` |
 | start | Start app as daemon | `pon start` |
@@ -300,7 +300,6 @@ pon <taskName>
 | struct:chmod | Change file permissions | `pon struct:chmod` |
 | struct:compile | Compile files | `pon struct:compile` |
 | struct:cp | Execute file copy | `pon struct:cp` |
-| struct:mkdir | Generate project directories | `pon struct:mkdir` |
 | struct:pkg | Prepare sub packages | `pon struct:pkg` |
 | struct:render | Render coz templates | `pon struct:render` |
 | struct:symlink | Generate symbolic links | `pon struct:symlink` |

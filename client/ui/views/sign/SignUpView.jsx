@@ -16,8 +16,8 @@ function SignUpView ({
 
   return (
     <TheView className={styles.self}>
-      <TheView.Header icon={Icons.SIGNUP_ICON}
-                      text={l('titles.SIGNUP_VIEW_TITLE')}
+      <TheView.Header icon={Icons.SIGN_UP_ICON}
+                      text={l('titles.SIGN_UP_VIEW_TITLE')}
       />
       <TheView.Body narrow>
         <SignUpForm/>
@@ -26,8 +26,8 @@ function SignUpView ({
         <TheButtonGroup>
           <TheButton simple
                      small
-                     to={Urls.SIGNIN_URL}>
-            {l('buttons.SHOW_SIGNIN_WITH_EXISTING')}
+                     to={Urls.SIGN_IN_URL}>
+            {l('buttons.SHOW_SIGN_IN_WITH_EXISTING')}
           </TheButton>
         </TheButtonGroup>
         <br/>
@@ -56,6 +56,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGNUP_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_UP_VIEW_TITLE')
   }
 )

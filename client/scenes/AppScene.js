@@ -35,7 +35,7 @@ class AppScene extends AppSceneBase {
     }
     switch (reason.name) {
       case 'UnauthorizedError': {
-        this.changeLocationTo(Urls.SIGNIN_URL)
+        this.changeLocationTo(Urls.SIGN_IN_URL)
         return true
       }
       case 'NotFoundError': {

@@ -1,12 +1,12 @@
 {
+  "ADMIN_USER_CREATE_DID_SUCCESS": "User created",
   "NEEDS_SIGN_IN": "You need Sign In",
   "PASSWORD_UPDATE_DID_SUCCESS": "Password did updated",
   "PROFILE_UPDATE_DID_SUCCESS": "Profile did updated",
   "RECOVER_EMAIL_SENT": "Recovery email has sent.",
-  "SIGNIN_DID_SUCCESS": "Sign in done",
-  "SIGNOUT_DID_SUCCESS": "Sign out done",
-  "SIGNUP_DID_SUCCESS": "Sign up succeeded!",
-  "USER_CREATE_DID_SUCCESS": "User created",
+  "SIGN_IN_DID_SUCCESS": "Sign in done",
+  "SIGN_OUT_DID_SUCCESS": "Sign out done",
+  "SIGN_UP_DID_SUCCESS": "Sign up succeeded!",
   "USER_DESTROY_DID_SUCCESS": "User destroyed",
   "VERIFY_EMAIL_SENT": "Verify email has sent."
 }

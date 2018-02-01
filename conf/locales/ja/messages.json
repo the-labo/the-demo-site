@@ -1,7 +1,7 @@
 {
   "CONNECTION_SEEMS_TO_BE_LOST": "インターネット接続を確認の上、再度実行してください",
   "NEEDS_EMAIL_VERIFIED": "メールアドレスの確認が完了していません",
-  "NEEDS_SIGNIN_IN": "ログインが必要です",
+  "NEEDS_SIGN_IN_IN": "ログインが必要です",
   "PAGE_NOT_FOUND": "お探しのページが見つかりません",
   "PASSWORD_UPDATE_DONE": "パスワードが更新されました",
   "PROFILE_UPDATE_DONE": "プロフィールが更新されました",
@@ -11,6 +11,6 @@
   "RECOVER_SEND_DONE": "パスワード再設定メールを送信しました。メール内のリンクから再設定処理を続行してください",
   "VERIFY_DONE": "メールアドレスの確認が完了しました",
   "WORKING_DONE": "完了しました",
-  "WORKING_SIGNOUT": "ログアウト中...",
+  "WORKING_SIGN_OUT": "ログアウト中...",
   "YOU_ARE_FORBIDDEN": "権限がありません"
 }

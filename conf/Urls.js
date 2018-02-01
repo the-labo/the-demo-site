@@ -72,10 +72,10 @@ module.exports = Object.freeze(
     // -----------------------------------
     // Sign
     // -----------------------------------
-    SIGNASK_URL: '/sign/please',
-    SIGNIN_URL: '/sign/signin',
-    SIGNOUT_URL: '/sign/signout',
-    SIGNUP_URL: '/sign/signup',
+    SIGN_ASK_URL: '/sign/please',
+    SIGN_IN_URL: '/sign/signin',
+    SIGN_OUT_URL: '/sign/signout',
+    SIGN_UP_URL: '/sign/signup',
 
     // -----------------------------------
     // Top

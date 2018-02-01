@@ -174,10 +174,10 @@ void async function () {
     'function User': 'function AdminUser',
     'leads.USER': 'leads.ADMIN_USER',
     'adminUsers,': 'users,',
-    'titles.SIGNUP':'titles.SIGN_UP',
-    'titles.SIGNIN':'titles.SIGN_IN',
-    'titles.SIGNOUT':'titles.SIGN_OUT',
-    'titles.SIGNASK':'titles.SIGN_ASK',
+    'titles.SIGNUP': 'titles.SIGN_UP',
+    'titles.SIGNIN': 'titles.SIGN_IN',
+    'titles.SIGN_OUT': 'titles.SIGN_OUT',
+    'titles.SIGNASK': 'titles.SIGN_ASK',
   })
 
   await refactor.rewrite('client/ui/**/*.jsx', {
@@ -211,7 +211,7 @@ void async function () {
     '"USER_': '"ADMIN_USER_',
     '"SIGNIN': '"SIGN_IN',
     '"SIGNASK': '"SIGN_ASK',
-    '"SIGNOUT': '"SIGN_OUT',
+    '"SIGN_OUT': '"SIGN_OUT',
     '"SIGNUP': '"SIGN_UP',
   })
   await refactor.rewrite('conf/locales/*/leads.json', {
@@ -219,7 +219,13 @@ void async function () {
     '"USER_': '"ADMIN_USER_',
     '"SIGNIN': '"SIGN_IN',
     '"SIGNASK': '"SIGN_ASK',
-    '"SIGNOUT': '"SIGN_OUT',
+    '"SIGN_OUT': '"SIGN_OUT',
     '"SIGNUP': '"SIGN_UP',
+  })
+  await refactor.rewrite('+(server|client|conf)/**/*.*', {
+    'SIGNIN': 'SIGN_IN',
+    'SIGNASK': 'SIGN_ASK',
+    'SIGNOUT': 'SIGN_OUT',
+    'SIGNUP': 'SIGN_UP',
   })
 }()

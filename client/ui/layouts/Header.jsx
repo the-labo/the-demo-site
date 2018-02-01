@@ -52,15 +52,15 @@ const Header = compose(
               <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
                                     to={Urls.ACCOUNT_MYPAGE_URL}
                                     text={l('buttons.SHOW_MYPAGE')}/>
-              <TheDropdownMenu.Item to={Urls.SIGNOUT_URL}
-                                    icon={Icons.SIGNOUT_ICON}
-                                    text={l('buttons.DO_SIGNOUT')}/>
+              <TheDropdownMenu.Item to={Urls.SIGN_OUT_URL}
+                                    icon={Icons.SIGN_OUT_ICON}
+                                    text={l('buttons.DO_SIGN_OUT')}/>
             </TheDropdownMenu>
           </TheCondition>
           <TheCondition unless={Boolean(user)}>
             <TheButtonGroup>
-              <TheButton to={Urls.SIGNIN_URL}>{l('buttons.SHOW_SIGNIN')}</TheButton>
-              <TheButton primary to={Urls.SIGNUP_URL}>{l('buttons.SHOW_SIGNUP')}</TheButton>
+              <TheButton to={Urls.SIGN_IN_URL}>{l('buttons.SHOW_SIGN_IN')}</TheButton>
+              <TheButton primary to={Urls.SIGN_UP_URL}>{l('buttons.SHOW_SIGN_UP')}</TheButton>
             </TheButtonGroup>
           </TheCondition>
         </TheHeader.RightArea>

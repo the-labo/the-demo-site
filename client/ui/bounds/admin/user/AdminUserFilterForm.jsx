@@ -1,5 +1,5 @@
 /**
- * AdminUserSearchForm component
+ * AdminUserFilterForm component
  */
 'use strict'
 
@@ -8,7 +8,7 @@ import { asForm } from '../../../wrappers'
 import { TheSearchForm } from 'the-site-components'
 import { get } from 'the-window'
 
-function AdminUserSearchForm (props) {
+function AdminUserFilterForm (props) {
   const {l} = props
   return (
     <TheSearchForm {...props}
@@ -18,23 +18,23 @@ function AdminUserSearchForm (props) {
 }
 
 export default asForm(
-  AdminUserSearchForm,
+  AdminUserFilterForm,
   (state) => ({
-    errors: state['admin.user.search.entryErrors'],
-    spinning: state['admin.user.search.busy'],
-    values: state['admin.user.search.entry'],
+    errors: state['admin.user.filter.entryErrors'],
+    spinning: state['admin.user.filter.busy'],
+    values: state['admin.user.filter.entry'],
   }),
   ({
      adminUserListScene,
-     adminUserSearchScene,
+     adminUserFilterScene,
    }, propsProxy) => ({
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
       adminUserListScene.setQ(q)
-      await adminUserSearchScene.busyWhile(async () => {
+      await adminUserFilterScene.busyWhile(async () => {
         await adminUserListScene.doSync()
       })
     },
-    onUpdate: (v) => adminUserSearchScene.setEntry(v),
+    onUpdate: (v) => adminUserFilterScene.setEntry(v),
   })
 )

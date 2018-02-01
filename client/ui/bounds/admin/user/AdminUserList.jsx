@@ -42,7 +42,7 @@ const AdminUserList = compose(
                             sortable: true,
                           },
                           'sign.signInAt': {
-                            label: l('labels.USER_SIGNIN_AT'),
+                            label: l('labels.USER_SIGN_IN_AT'),
                             render: (signInAt) => signInAt && formatDate(signInAt, 'lll'),
                             sortable: true,
                           },

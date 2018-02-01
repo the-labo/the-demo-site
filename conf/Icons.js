@@ -18,9 +18,9 @@ module.exports = Object.freeze(
     RELOAD_ICON: 'fas fa-sync',
     REMOVE_ICON: 'fas fa-close',
     SETTING_ICON: 'fas fa-cog',
-    SIGNIN_ICON: 'fas fa-sign-in-alt',
-    SIGNOUT_ICON: 'fas fa-sign-out-alt',
-    SIGNUP_ICON: 'fas fa-user-plus',
+    SIGN_IN_ICON: 'fas fa-sign-in-alt',
+    SIGN_OUT_ICON: 'fas fa-sign-out-alt',
+    SIGN_UP_ICON: 'fas fa-user-plus',
     USERS_ICON: 'fas fa-users',
     WARNING_ICON: 'fas fa-exclamation-triangle',
   }

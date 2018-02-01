@@ -11,7 +11,7 @@ import {
 import { asView } from '../../wrappers'
 import styles from './AdminUserManageView.pcss'
 import {
-  AdminUserSearchForm,
+  AdminUserFilterForm,
   AdminUserActionBar,
   AdminUserPager,
   AdminUserCreateDialog,
@@ -40,7 +40,7 @@ function AdminUserManageView ({
       />
       <TheView.Body>
         <div className={styles.searchRow}>
-          <AdminUserSearchForm/>
+          <AdminUserFilterForm/>
         </div>
         <TheCondition if={ready}>
           <div>
@@ -69,7 +69,7 @@ export default asView(
      adminUserCheckScene,
      adminUserCreateScene,
      adminUserListScene,
-     adminUserSearchScene,
+     adminUserFilterScene,
    }, ownProps) => ({
     onCreate: () => {
       adminUserCreateScene.init()
@@ -80,13 +80,13 @@ export default asView(
     },
     onMount: async () => {
       adminUserListScene.init()
-      adminUserSearchScene.init()
+      adminUserFilterScene.init()
       adminUserCheckScene.init()
       adminUserCreateScene.init()
 
       const {q = null} = ownProps.query
       adminUserListScene.setQ(q)
-      adminUserSearchScene.setEntry({q})
+      adminUserFilterScene.setEntry({q})
 
       await adminUserListScene.doSync()
     },

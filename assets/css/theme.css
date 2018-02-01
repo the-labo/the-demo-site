@@ -143,7 +143,7 @@
 .the-repeatable.the-repeatable-horizontal .the-repeatable-item { flex-shrink:0; }
 .the-repeatable .the-repeatable-list { display:flex;flex-wrap:wrap;align-items:center;padding:0;margin:0;list-style:none; }
 .the-repeatable .the-repeatable-item { display:inline-block;margin:0px;padding:0px;flex-grow:1; }
-.the-repeatable .the-repeatable-alt { color:#BBB;width:100%;padding:8px 16px;text-align:center;font-size:1.25em; }
+.the-repeatable .the-repeatable-alt { color:#E0E0E0;width:100%;padding:32px 16px;text-align:center;font-size:1.25em; }
 .the-aside { display:block;flex-grow:1;width:216px;min-height:1px; }
 .the-aside-for { display:block;flex-grow:4;min-width:280px; }
 .the-aside-container { display:flex;width:100%;flex-wrap:wrap; }

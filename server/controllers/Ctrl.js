@@ -32,7 +32,7 @@ class Ctrl extends CtrBase {
   }
 
   async controllerMethodWillInvoke (invocation) {
-    super.controllerMethodWillInvoke(invocation)
+    await super.controllerMethodWillInvoke(invocation)
     await this.syncUser()
   }
 

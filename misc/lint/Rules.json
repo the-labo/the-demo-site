@@ -9,6 +9,16 @@
       "startsWith": "Admin"
     }
   },
+  "client/ui/bounds/admin/**/*.jsx": {
+    "filenameRule": {
+      "startsWith": "Admin"
+    }
+  },
+  "client/ui/bounds/sign/*.jsx": {
+    "filenameRule": {
+      "startsWith": "Sign"
+    }
+  },
   "client/ui/views/**/!(index).jsx": {
     "filenameRule": {
       "endsWith": "View.jsx"
@@ -16,6 +26,7 @@
   },
   "conf/Urls.js": {
     "moduleRule": {
+      "type": "object",
       "valuePattern": "/^//",
       "valueUnique": true
     }
@@ -28,11 +39,17 @@
   "server/controllers/!(index).js": {
     "filenameRule": {
       "endsWith": "Ctrl.js"
+    },
+    "moduleRule": {
+      "type": "function"
     }
   },
   "server/db/hooks/!(index).js": {
     "filenameRule": {
       "endsWith": "Hook.js"
+    },
+    "moduleRule": {
+      "type": "function"
     }
   },
   "server/db/resources/!(index).js": {

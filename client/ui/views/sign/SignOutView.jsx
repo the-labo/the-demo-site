@@ -16,12 +16,12 @@ function SignOutView ({
                       }) {
   return (
     <TheView className={styles.self}>
-      <TheView.Header icon={Icons.SIGNOUT_ICON}
-                      text={l('titles.SIGNOUT_VIEW_TITLE')}
+      <TheView.Header icon={Icons.SIGN_OUT_ICON}
+                      text={l('titles.SIGN_OUT_VIEW_TITLE')}
       />
       <TheView.Body>
         <TheView.Message>
-          {busy && l('messages.WORKING_SIGNOUT')}
+          {busy && l('messages.WORKING_SIGN_OUT')}
           {done && l('messages.WORKING_DONE')}
         </TheView.Message>
       </TheView.Body>
@@ -49,6 +49,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGNOUT_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_OUT_VIEW_TITLE')
   }
 )

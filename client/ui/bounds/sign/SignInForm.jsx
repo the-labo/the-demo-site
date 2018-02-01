@@ -29,7 +29,7 @@ export default asForm(
     onSubmit: async () => {
       await signInScene.doSignIn()
       await accountScene.doSync()
-      toastScene.showInfo(l('toasts.SIGNIN_DID_SUCCESS'))
+      toastScene.showInfo(l('toasts.SIGN_IN_DID_SUCCESS'))
       signInScene.goBack()
     },
     onUpdate: (v) => signInScene.setEntry(v),

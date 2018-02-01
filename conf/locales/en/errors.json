@@ -1,4 +1,5 @@
 {
+  "ADMIN_USER_NOT_FOUND_ERROR": "User not found",
   "LENGTH_OUT_OF_RANGE_ERROR": "Invalid length",
   "MULTIPLE_NOT_ALLOWED_ERROR": "Cannot be multiple",
   "OUT_OF_RANGE_ERROR": "Out of range",
@@ -13,7 +14,6 @@
   "UNEXPECTED_TYPE_ERROR": "Unexpected type",
   "UNEXPECTED_VALUE_ERROR": "Unexpected value",
   "UNIQUE_VIOLATION_ERROR": "Already taken",
-  "USER_NOT_FOUND_ERROR": "User not found",
   "VALIDATION_FAILED_ERROR": "There is input deficiencies",
   "VALUE_MISSING_ERROR": "Required",
   "VERIFY_EXPIRED_ERROR": "This url is already expired",
