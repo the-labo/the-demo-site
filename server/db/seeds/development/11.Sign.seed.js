@@ -1,8 +1,7 @@
 'use strict'
 
-const Users = require('./10.User.seed')
-
 const thePassword = require('the-password').default
+const Users = require('./10.User.seed')
 const {digest: digestPassword, generateSalt,} = thePassword()
 
 module.exports = [

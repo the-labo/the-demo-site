@@ -4,7 +4,7 @@ Misc
 ### Provided Urls
 
 {{#each vars.Urls}}
-* `{{{this}}}`
+  * `{{{this}}}`
 {{/each}}
 
 
@@ -15,7 +15,7 @@ Directory structure of this project
 | Directory Path | Description |
 | ---- | ----- |
 {{#each vars.Directories}}
-| [{{@key}}](./{{@key}}) | {{{this}}} |
+  | [{{@key}}](./{{@key}}) | {{{this}}} |
 {{/each}}
 
 
@@ -25,5 +25,20 @@ Directory structure of this project
 This project contains a lot of `.*.bud` files, which is used by [coz](https://github.com/coz-labo/coz#coz) file generator.
 Bud file tells coz to how files should to generate, like path,tmpl,data,mode, etc.
 
+
+### Configuring Secret Values
+
+Secret values are stored in [secrets.json](./secrets.json)
+These values can be encoded/decoded by pon tasks
+
+```bash
+# Decode values inside secrets.json
+pon secret:dec
+```
+
+```bash
+# Encode values inside secrets.json
+pon secret:enc
+```
 
 

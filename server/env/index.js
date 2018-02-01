@@ -1,7 +1,7 @@
 'use strict'
 
-const Local = require('../../Local')
 const theEnv = require('the-env').default
+const Local = require('../../Local')
 
 const config = {
   database: require('./database'),

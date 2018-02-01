@@ -20,5 +20,6 @@
     + [Provided Urls](#provided-urls)
     + [Project Structure](#project-structure)
     + [What is `.*.bud` Files?](#what-is-bud-files)
+    + [Configuring Secret Values](#configuring-secret-values)
   * [License](#license)
   * [Links](#links)

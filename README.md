@@ -79,6 +79,7 @@ Table of Contents
     + [Provided Urls](#provided-urls)
     + [Project Structure](#project-structure)
     + [What is `.*.bud` Files?](#what-is-bud-files)
+    + [Configuring Secret Values](#configuring-secret-values)
   * [License](#license)
   * [Links](#links)
 
@@ -169,7 +170,6 @@ Execute [./misc/setup/setup_ubuntu.sh](./misc/setup/setup_ubuntu.sh) to install 
 export NODE_ENV=production
 
 # Where you checkout the project
-
 cd /opt/apps/the-demo-site
 
 # Install dependencies and run prepare scripts
@@ -268,7 +268,6 @@ pon <taskName>
 | icon:generate | Generate icons | `pon icon:generate` |
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |
-| lint:conf | Validate conf | `pon lint:conf` |
 | lint:loc | Validate locales | `pon lint:loc` |
 | loc:print | Print locale settings | `pon loc:print` |
 | local:print | Print local settings | `pon local:print` |
@@ -407,34 +406,34 @@ Misc
 
 ### Provided Urls
 
-* `/about/app`
-* `/about/privacy-policy`
-* `/about/terms-of-use`
-* `/account/mypage`
-* `/account/password`
-* `/account/profile`
-* `/account/quit`
-* `/account/recover/reset`
-* `/account/recover/send`
-* `/account/verify/confirm`
-* `/admin`
-* `/admin/users`
-* `/a/:key`
-* `/build/bundle.css`
-* `/css/fontawesome-all.css`
-* `/css/theme.css`
-* `/errors/forbidden`
-* `/errors/not-found`
-* `/images/app-icon.png`
-* `/build/bundle.js`
-* `/build/external-bundle.js`
-* `/the-demo-site-7.51.0.css`
-* `/the-demo-site-7.51.0.js`
-* `/sign/please`
-* `/sign/signin`
-* `/sign/signout`
-* `/sign/signup`
-* `/`
+  * `/about/app`
+  * `/about/privacy-policy`
+  * `/about/terms-of-use`
+  * `/account/mypage`
+  * `/account/password`
+  * `/account/profile`
+  * `/account/quit`
+  * `/account/recover/reset`
+  * `/account/recover/send`
+  * `/account/verify/confirm`
+  * `/admin`
+  * `/admin/users`
+  * `/a/:key`
+  * `/build/bundle.css`
+  * `/css/fontawesome-all.css`
+  * `/css/theme.css`
+  * `/errors/forbidden`
+  * `/errors/not-found`
+  * `/images/app-icon.png`
+  * `/build/bundle.js`
+  * `/build/external-bundle.js`
+  * `/the-demo-site-7.51.0.css`
+  * `/the-demo-site-7.51.0.js`
+  * `/sign/please`
+  * `/sign/signin`
+  * `/sign/signout`
+  * `/sign/signup`
+  * `/`
 
 
 ### Project Structure
@@ -443,30 +442,30 @@ Directory structure of this project
 
 | Directory Path | Description |
 | ---- | ----- |
-| [assets](./assets) | Static file directory |
-| [bin](./bin) | Executable files |
-| [client](./client) | Client side scripts |
-| [client/client](./client/client) | RPC Client |
-| [client/scenes](./client/scenes) | Client logic without ui |
-| [client/shim](./client/shim) | Generated shim files |
-| [client/store](./client/store) | Client side data store |
-| [client/test](./client/test) | Client tests |
-| [client/ui](./client/ui) | User interfaces |
-| [conf](./conf) | Configuration of project |
-| [doc](./doc) | Documents |
-| [doc/guides](./doc/guides) | Guides for README |
-| [misc](./misc) | Misc files |
-| [public](./public) | Public directory to serve static files. Auto-generated |
-| [server](./server) | Server side scripts |
-| [server/controllers](./server/controllers) | Controller classes to handle RPC |
-| [server/db](./server/db) | Database modules |
-| [server/env](./server/env) | Env dependant variables |
-| [server/server](./server/server) | HTTP Server modules |
-| [server/services](./server/services) | Database access wrappers |
-| [server/test](./server/test) | Server tests |
-| [test](./test) | Project tests |
-| [tmp](./tmp) | Temporary files. Can be deleted anytime. |
-| [var](./var) | Var files |
+  | [assets](./assets) | Static file directory |
+  | [bin](./bin) | Executable files |
+  | [client](./client) | Client side scripts |
+  | [client/client](./client/client) | RPC Client |
+  | [client/scenes](./client/scenes) | Client logic without ui |
+  | [client/shim](./client/shim) | Generated shim files |
+  | [client/store](./client/store) | Client side data store |
+  | [client/test](./client/test) | Client tests |
+  | [client/ui](./client/ui) | User interfaces |
+  | [conf](./conf) | Configuration of project |
+  | [doc](./doc) | Documents |
+  | [doc/guides](./doc/guides) | Guides for README |
+  | [misc](./misc) | Misc files |
+  | [public](./public) | Public directory to serve static files. Auto-generated |
+  | [server](./server) | Server side scripts |
+  | [server/controllers](./server/controllers) | Controller classes to handle RPC |
+  | [server/db](./server/db) | Database modules |
+  | [server/env](./server/env) | Env dependant variables |
+  | [server/server](./server/server) | HTTP Server modules |
+  | [server/services](./server/services) | Database access wrappers |
+  | [server/test](./server/test) | Server tests |
+  | [test](./test) | Project tests |
+  | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
+  | [var](./var) | Var files |
 
 
 
@@ -475,6 +474,21 @@ Directory structure of this project
 This project contains a lot of `.*.bud` files, which is used by [coz](https://github.com/coz-labo/coz#coz) file generator.
 Bud file tells coz to how files should to generate, like path,tmpl,data,mode, etc.
 
+
+### Configuring Secret Values
+
+Secret values are stored in [secrets.json](./secrets.json)
+These values can be encoded/decoded by pon tasks
+
+```bash
+# Decode values inside secrets.json
+pon secret:dec
+```
+
+```bash
+# Encode values inside secrets.json
+pon secret:enc
+```
 
 
 

@@ -6,9 +6,9 @@
 'use strict'
 
 const cluster = require('cluster')
+const theDB = require('the-db').default
 const env = require('../env')
 const {HookMapping, ResourceMapping,} = require('../mappings')
-const theDB = require('the-db').default
 
 /** @lends create */
 function create (config = env.database, options = {}) {

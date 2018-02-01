@@ -27,6 +27,7 @@ const theAssets = require('the-assets')
 const {isProduction,} = require('the-check')
 const theCode = require('the-code/pon')
 const theLint = require('the-lint/pon')
+const thePS = require('the-ps/pon')
 const {Urls, locales,} = require('./conf')
 const Local = require('./Local')
 const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
@@ -39,7 +40,6 @@ const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
 const {envify,} = browser.transforms
 const {secret, setting,} = Local
-const thePS = require('the-ps').create
 const createDB = () => require('./server/db/create').forTask()
 
 module.exports = pon(
@@ -240,15 +240,20 @@ module.exports = pon(
     // Sub Tasks for Process
     // -----------------------------------
     /** Check another process exists */
-    'ps:debug': () => thePS('var/app/debug.pid').acquire(),
-    /** Decrypt secret file */
-    'secret:decrypt': () => secret.decrypt(),
+    'ps:debug': thePS('var/app/debug.pid'),
 
     // -----------------------------------
     // Sub Tasks for Secret
     // -----------------------------------
+    /** Decrypt secret file */
+    'secret:dec': () => secret.decrypt(),
     /** Encrypt secret file */
-    'secret:encrypt': () => secret.encrypt(),
+    'secret:enc': () => secret.encrypt(),
+
+    // -----------------------------------
+    // Sub Tasks for Structure
+    // -----------------------------------
+    /** Generate project directories */
     /** Change file permissions */
     'struct:chmod': chmod({
       'bin/**/*.*': '577',
@@ -269,11 +274,6 @@ module.exports = pon(
       'assets/text': 'public',
       'assets/webfonts': 'public/webfonts',
     }, {force: true,}),
-
-    // -----------------------------------
-    // Sub Tasks for Structure
-    // -----------------------------------
-    /** Generate project directories */
     'struct:mkdir': mkdir([
       ...Object.keys(Directories)
     ]),
@@ -393,7 +393,7 @@ module.exports = pon(
       open: 'open:*',
       /** Prepare project */
       prepare: [
-        'secret:encrypt', 'struct', 'assets', 'docker', 'db', 'build',
+        'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
         ...(isProduction() ? [] : ['pkg:fix', 'doc', 'lint'])
       ],
       /** Prepare and start on production */
