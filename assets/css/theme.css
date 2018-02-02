@@ -54,7 +54,7 @@
 .the-dialog .the-dialog-back-inner { width:100%;height:100%;box-sizing:border-box;display:block; }
 .the-dialog.the-dialog-present { display:block; }
 .the-dialog .the-dialog-inner { height:100%;width:100%;box-sizing:border-box;position:relative;padding:36px 24px;z-index:4;justify-content:center;flex-direction:column; }
-.the-dialog .the-dialog-content { overflow:auto;z-index:8;margin:0 auto;height:auto;background-color:#FFF;border:1px solid #DDD;border-radius:8px;min-height:240px;max-width:480px;width:100%;box-sizing:border-box;position:relative;box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+.the-dialog .the-dialog-content { overflow:auto;z-index:8;margin:0 auto;height:auto;background-color:#FFF;border:1px solid #DDD;border-radius:8px;min-height:124px;max-width:480px;width:100%;box-sizing:border-box;position:relative;box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
 .the-dialog .the-dialog-title { line-height:44px;margin:0;padding:0;font-weight:normal; }
 .the-dialog .the-dialog-lead {  }
 .the-dialog .the-dialog-close-button { position:absolute;top:0;right:0;padding:0 16px;font-size:16px;line-height:44px;display:inline-flex;bottom:0;justify-content:center;align-items:center;cursor:pointer;z-index:44; }
@@ -345,7 +345,8 @@
 .the-jumbotron .the-jumbotron-center { text-align:center; }
 .the-link { color:#3A8;display:inline-block;padding:0px 4px; }
 .the-link-active { text-decoration:none; }
-.the-list { margin:0;padding:0;background-color:#FFF; }
+.the-list { margin:0;padding:0;background-color:#FFF;position:relative; }
+.the-list .the-list-alt { display:block;list-style:none;text-align:center;font-size:1.33em;color:#CCC;padding:32px 8px; }
 .the-list .the-list-item { list-style:none;padding:0;margin:0;min-height:36px;border-bottom:1px solid #EEE; }
 .the-list .the-list-item.the-list-item-borderless { border:none; }
 .the-list .the-list-item-inner { display:flex;align-items:center;justify-content:flex-start;color:#999;text-decoration:none;padding:4px 8px;margin:0; }
