@@ -18,7 +18,7 @@ function SignAskView ({
       <TheView.Header leftIcon={Icons.BACK_ICON}
                       leftTo={back}
                       icon={null}
-                      text={l('titles.SIGN_ASK_VIEW_TITLE')}
+                      text={l('titles.SIGN_ASK_TITLE')}
 
       />
       <TheView.Body>
@@ -52,6 +52,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGN_ASK_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_ASK_TITLE')
   }
 )

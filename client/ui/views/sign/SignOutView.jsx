@@ -17,7 +17,7 @@ function SignOutView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGN_OUT_ICON}
-                      text={l('titles.SIGN_OUT_VIEW_TITLE')}
+                      text={l('titles.SIGN_OUT_TITLE')}
       />
       <TheView.Body>
         <TheView.Message>
@@ -49,6 +49,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGN_OUT_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_OUT_TITLE')
   }
 )

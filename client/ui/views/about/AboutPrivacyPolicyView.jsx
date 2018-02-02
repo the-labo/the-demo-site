@@ -15,7 +15,7 @@ function AboutPrivacyPolicyView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
-                      text={l('titles.PRIVACY_POLICY_VIEW_TITLE')}
+                      text={l('titles.PRIVACY_POLICY_TITLE')}
       />
       <TheView.Body>
         <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>

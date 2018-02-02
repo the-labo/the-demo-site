@@ -8429,8 +8429,8 @@ the-link@^3.0.4, the-link@^3.0.6:
     the-style "^2.1.0"
 
 the-lint@^1.1.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.1.4.tgz#a8a7a1f543a6b717ce5835aac9a9f798f333adbc"
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.1.5.tgz#0fe4724b6c380215b980f9050b3bf34c024a11f5"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"

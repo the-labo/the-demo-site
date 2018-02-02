@@ -36,6 +36,6 @@ export default asView(
   (state) => ({}),
   ({}) => ({}),
   {
-    title: ({l}) => l('titles.ERROR_NOTFOUND_VIEW_TITLE')
+    title: ({l}) => l('titles.ERROR_NOTFOUND_TITLE')
   }
 )

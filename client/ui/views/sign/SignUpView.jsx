@@ -17,7 +17,7 @@ function SignUpView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGN_UP_ICON}
-                      text={l('titles.SIGN_UP_VIEW_TITLE')}
+                      text={l('titles.SIGN_UP_TITLE')}
       />
       <TheView.Body narrow>
         <SignUpForm/>
@@ -56,6 +56,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGN_UP_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_UP_TITLE')
   }
 )

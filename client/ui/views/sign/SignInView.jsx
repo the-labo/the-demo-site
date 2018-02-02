@@ -16,7 +16,7 @@ function SignInView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGN_IN_ICON}
-                      text={l('titles.SIGN_IN_VIEW_TITLE')}
+                      text={l('titles.SIGN_IN_TITLE')}
       />
       <TheView.Body narrow>
         <SignInForm/>
@@ -46,6 +46,6 @@ export default asView(
     }
   }),
   {
-    title: ({l}) => l('titles.SIGN_IN_VIEW_TITLE')
+    title: ({l}) => l('titles.SIGN_IN_TITLE')
   }
 )

@@ -15,7 +15,7 @@ function AboutTermsOfUseView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
-                      text={l('titles.TERMS_OF_USE_VIEW_TITLE')}
+                      text={l('titles.TERMS_OF_USE_TITLE')}
       />
       <TheView.Body>
         <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>

@@ -4,7 +4,7 @@
       "endsWith": "Scene.js"
     }
   },
-  "client/ui/admin/**/*.jsx": {
+  "client/ui/views/admin/**/*.jsx": {
     "filenameRule": {
       "startsWith": "Admin"
     }
@@ -26,6 +26,7 @@
   },
   "conf/Urls.js": {
     "moduleRule": {
+      "keyPattern": "/^[A-Z_]+_URL$/",
       "type": "object",
       "valuePattern": "/^//",
       "valueUnique": true
@@ -55,6 +56,25 @@
   "server/db/resources/!(index).js": {
     "filenameRule": {
       "endsWith": "Resource.js"
+    },
+    "moduleRule": {
+      "type": "function"
+    }
+  },
+  "server/endpoints/routes/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Route.js"
+    },
+    "moduleRule": {
+      "type": "function"
+    }
+  },
+  "server/services/!(index).js": {
+    "filenameRule": {
+      "endsWith": "Service.js"
+    },
+    "moduleRule": {
+      "type": "function"
     }
   },
   "server/db/seeds/**/!(index|_*).js": {

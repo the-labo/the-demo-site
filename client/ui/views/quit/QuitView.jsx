@@ -29,7 +29,7 @@ function QuitView ({
     <TheView className={styles.self}
              spinning={busy}>
       <TheView.Header icon={null}
-                      text={l('titles.QUIT_VIEW_TITLE')}
+                      text={l('titles.QUIT_TITLE')}
       />
       <TheView.Body>
         <TheCondition if={Boolean(!done && !confirm)}>
@@ -98,7 +98,7 @@ export default asView(
     onMount: () => quitScene.init(),
   }),
   {
-    title: ({l}) => l('titles.QUIT_VIEW_TITLE'),
+    title: ({l}) => l('titles.QUIT_TITLE'),
     onlySigned: false
   }
 )
