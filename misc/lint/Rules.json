@@ -4,11 +4,6 @@
       "endsWith": "Scene.js"
     }
   },
-  "client/ui/views/admin/**/*.jsx": {
-    "filenameRule": {
-      "startsWith": "Admin"
-    }
-  },
   "client/ui/bounds/admin/**/*.jsx": {
     "filenameRule": {
       "startsWith": "Admin"
@@ -22,6 +17,11 @@
   "client/ui/views/**/!(index).jsx": {
     "filenameRule": {
       "endsWith": "View.jsx"
+    }
+  },
+  "client/ui/views/admin/**/*.jsx": {
+    "filenameRule": {
+      "startsWith": "Admin"
     }
   },
   "conf/Urls.js": {
@@ -61,6 +61,11 @@
       "type": "function"
     }
   },
+  "server/db/seeds/**/!(index|_*).js": {
+    "filenameRule": {
+      "endsWith": ".seed.js"
+    }
+  },
   "server/endpoints/routes/!(index).js": {
     "filenameRule": {
       "endsWith": "Route.js"
@@ -75,11 +80,6 @@
     },
     "moduleRule": {
       "type": "function"
-    }
-  },
-  "server/db/seeds/**/!(index|_*).js": {
-    "filenameRule": {
-      "endsWith": ".seed.js"
     }
   }
 }

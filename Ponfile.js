@@ -137,8 +137,9 @@ module.exports = pon(
     // Sub Tasks for Format
     // -----------------------------------
     /** Format client files */
-    'format:client': theCode([], {}),
-    // TODO Decorator throws error now
+    'format:client': theCode([
+      'client/ui/**/*.pcss'
+    ], {}),
     /** Format conf files */
     'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js',}),
     /** Format json files */

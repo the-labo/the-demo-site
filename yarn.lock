@@ -709,8 +709,8 @@ acorn-stage3@^0.4.0:
     acorn5-object-spread "^5.1.0"
 
 acorn5-object-spread@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-5.1.1.tgz#633d8464131ba53302a90edb17e7d0ded64decd5"
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/acorn5-object-spread/-/acorn5-object-spread-5.1.2.tgz#fbd6c8f483867bd859f479c1396aa495c9b07458"
   dependencies:
     acorn "^5.2.1"
 
@@ -6426,7 +6426,7 @@ postcss@6.0.1:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.16, postcss@^6.0.5, postcss@^6.0.6:
+postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.16, postcss@^6.0.17, postcss@^6.0.5, postcss@^6.0.6:
   version "6.0.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.17.tgz#e259a051ca513f81e9afd0c21f7f82eda50c65c5"
   dependencies:
@@ -8021,8 +8021,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^2.3.2:
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.3.9.tgz#4a6f6aff35f81bcf2b21508879db02b711447f1a"
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-2.4.0.tgz#d2e98b8a09a7fbbfcee4ee0c9347c1b51fe9c510"
   dependencies:
     acorn "^5.4.1"
     acorn-jsx "^4.1.1"
@@ -8031,6 +8031,7 @@ the-code@^2.3.2:
     aglob "^3.0.0"
     asfs "^2.0.2"
     debug "^3.1.0"
+    postcss "^6.0.17"
     the-interpreter "^3.0.0"
     writeout "^2.2.1"
 
