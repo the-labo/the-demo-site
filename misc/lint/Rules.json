@@ -24,6 +24,12 @@
       "startsWith": "Admin"
     }
   },
+  "conf/Icons.js": {
+    "moduleRule": {
+      "keyPattern": "/^[A-Z_]+_ICON/",
+      "type": "object"
+    }
+  },
   "conf/Urls.js": {
     "moduleRule": {
       "keyPattern": "/^[A-Z_]+_URL$/",

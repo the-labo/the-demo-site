@@ -1,7 +1,11 @@
 /**
+ * Site icons
  * @enum {string} Icons
  */
 'use strict'
+
+const {isProduction,} = require('the-check')
+const {hashProxy,} = require('the-site-util')
 
 module.exports = Object.freeze(
   /** @lends Icons */
@@ -25,3 +29,7 @@ module.exports = Object.freeze(
     WARNING_ICON: 'fas fa-exclamation-triangle',
   }
 )
+
+if (!isProduction()) {
+  module.exports = hashProxy(module.exports, {name: 'Icons', unknownCheck: true,})
+}

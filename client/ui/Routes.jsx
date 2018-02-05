@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Urls } from '@self/conf'
-import { TheRoute } from 'the-components'
+import { TheRoute, TheRouteStack, } from 'the-components'
 
 import { withLoc } from 'the-loc'
 import * as views from './views'
@@ -19,8 +19,10 @@ const Routes = ({}) => (
     <TheRoute scrollToTop exact path={Urls.ABOUT_PRIVACY_POLICY_URL} component={v.AboutPrivacyPolicyView}/>
 
 
-    <TheRoute exact path={Urls.ADMIN_URL} component={v.AdminTopView}/>
-    <TheRoute exact path={Urls.ADMIN_USER_MANAGE_URL} component={v.AdminUserManageView}/>
+    <TheRouteStack path={Urls.ADMIN_URL}>
+      <TheRoute path={Urls.ADMIN_URL} component={v.AdminTopView}/>
+      <TheRoute exact path={Urls.ADMIN_USER_MANAGE_URL} component={v.AdminUserManageView}/>
+    </TheRouteStack>
 
     <TheRoute exact path={Urls.ACCOUNT_VERIFY_URL} component={v.VerifyConfirmView}/>
     <TheRoute exact path={Urls.ACCOUNT_RECOVER_URL} component={v.RecoverSendView}/>
