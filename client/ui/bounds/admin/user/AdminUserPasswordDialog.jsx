@@ -14,15 +14,15 @@ const AdminUserPasswordDialog = compose(
   withLoc
 )(
   function AdminUserPasswordDialogImpl ({
-                                     active,
-                                     done,
-                                     l,
-                                     onClose,
-                                     onYes,
-                                     passwords,
-                                     spinning,
-                                     users,
-                                   }) {
+                                          active,
+                                          done,
+                                          l,
+                                          onClose,
+                                          onYes,
+                                          passwords,
+                                          spinning,
+                                          users,
+                                        }) {
     return (
       <TheOperationDialog title={l('titles.ADMIN_USER_PASSWORD_RESET_CONFIRM_TITLE')}
                           lead={l('leads.RESET_PASSWORDS_CONFIRM')}
@@ -34,7 +34,7 @@ const AdminUserPasswordDialog = compose(
                             }), {})
                           }
                           entities={users}
-                          renderItem={(user) => adminUser.displayName}
+                          renderItem={(user) => user.displayName}
                           {...{
                             active,
                             done,

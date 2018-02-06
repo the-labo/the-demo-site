@@ -31,7 +31,7 @@ class AdminUserListScene extends AdminUserListSceneBase {
   setQ (q) {
     this.set({pageNumber: 1})
     this.setFilterByQ(q, {fields: ['name', 'profile.name', 'profile.email']})
-    this.replaceHistoryByQuery({q})
+    // this.replaceHistoryByQuery({q})
   }
 
   @withBusy.while

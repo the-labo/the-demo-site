@@ -5,15 +5,27 @@ import { withLoc } from 'the-loc'
 import { withTitle, withCycle, asBound } from 'the-hoc'
 import { withHistory, withRoute } from 'the-components'
 import onlySigned from './onlySigned'
+import Debug from 'debug'
+
+const debug = Debug('app:view')
 
 function asView (Component,
                  mapStateToProps,
                  mapHandleToProps,
                  options = {}) {
+  const name = Component.displayName || Component.name
 
   class ViewWrap extends React.Component {
     render () {
       return <Component {...this.props} />
+    }
+
+    componentDidMount () {
+      debug('mount', name)
+    }
+
+    componentWillUnmount () {
+      debug('unmount', name)
     }
 
   }

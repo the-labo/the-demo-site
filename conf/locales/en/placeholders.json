@@ -1,5 +1,5 @@
 {
-  "ADMIN_USER_EMAIL": "Email address",
+  "USER_EMAIL": "Email address",
   "NEW_PASSWORD": "New Password",
   "USER_NAME": "e.g. john_do",
   "USER_PASSWORD": "Password",

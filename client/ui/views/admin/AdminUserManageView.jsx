@@ -25,6 +25,7 @@ import { RoleCodes } from '@self/conf'
 function AdminUserManageView ({
                                 busy,
                                 l,
+                                pop,
                                 onCreate,
                                 ready,
                               }) {
@@ -32,7 +33,8 @@ function AdminUserManageView ({
     <TheView className={styles.self}
              spinning={busy}
     >
-      <TheView.Header leftTo={Urls.ADMIN_URL}
+      <TheView.Header onLeftClick={pop}
+                      leftIcon={Icons.BACK_ICON}
                       icon={Icons.USERS_ICON}
                       text={l('titles.ADMIN_USER_MANAGE_TITLE')}
                       rightText={l('buttons.SHOW_USER_CREATE')}

@@ -1,5 +1,5 @@
 {
-  "ADMIN_USER_EMAIL": "メールアドレス",
+  "USER_EMAIL": "メールアドレス",
   "NEW_PASSWORD": "新しいパスワード",
   "USER_NAME": "例: taro_yamada",
   "USER_PASSWORD": "パスワード",

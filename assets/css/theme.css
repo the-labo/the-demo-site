@@ -400,11 +400,19 @@
 .the-dropdown-menu.the-dropdown-menu-righted .the-dropdown-menu-inner { left:auto;right:0px; }
 .the-root { min-height:100vh;display:flex;flex-direction:column;align-items:stretch; }
 .the-route {  }
-.the-route-stack {  }
-.the-route-stack .the-route-stack-inner { position:relative;width:100%;overflow:hidden;display:block; }
-.the-route-stack .the-route-stack-inner .the-route { position:absolute;left:100%;top:0;right:0;width:100%;transition:left 300ms; }
-.the-route-stack .the-route-stack-inner .the-route:first-child { left:0; }
-.the-route-stack .the-route-stack-inner .the-route-ready { left:0; }
+.the-route-stack { overflow:hidden; }
+.the-route-stack .the-route-stack-inner { overflow:hidden;display:flex; }
+.the-route-stack .the-route { flex-shrink:0;width:100%;transition:margin 400ms; }
+.the-route-stack.the-route-stack-horizontal { flex-direction:row; }
+.the-route-stack.the-route-stack-horizontal .the-route { margin-left:0; }
+.the-route-stack.the-route-stack-horizontal .the-route.the-route-active { margin-left:-100%; }
+.the-route-stack.the-route-stack-horizontal .the-route.the-route-active:first-child { margin-left:0; }
+.the-route-stack.the-route-stack-horizontal .the-route.the-route-active.the-route-gone { margin-left:0; }
+.the-route-stack.the-route-stack-vertical { flex-direction:column; }
+.the-route-stack.the-route-stack-vertical .the-route { margin-top:0; }
+.the-route-stack.the-route-stack-vertical .the-route.the-route-active { margin-top:-100%; }
+.the-route-stack.the-route-stack-vertical .the-route.the-route-active:first-child { margin-top:0; }
+.the-route-stack.the-route-stack-vertical .the-route.the-route-active.the-route-gone { margin-top:0; }
 .the-section { margin:16px 0;display:block;font-weight:normal;background-color:#FFF;position:relative; }
 .the-section .the-section-header { border-bottom:#AAA;font-weight:normal;margin:0;position:relative;box-sizing:border-box;padding:0 8px 8px;display:flex;justify-content:space-between;align-items:center; }
 .the-section .the-section-header.the-section-header-lined { font-size:14px;border-bottom:1px solid #F0F0F0;line-height:16px;padding:0 8px;margin-bottom:4px;color:#999; }
