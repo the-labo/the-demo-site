@@ -21,7 +21,7 @@ class AppScene extends AppSceneBase {
   setLocation ({pathname, search}) {
     this.set({pathname})
     this.setQueryBySearch(search)
-    // this.applyLocaleToSearch()
+    this.applyLocaleToSearch()
   }
 
   applyLocaleToSearch () {

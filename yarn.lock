@@ -7998,8 +7998,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.1.tgz#e1782f63122e5ba95000f4a60442b1ff09305db0"
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.2.tgz#fccdbfb92335fca4f13834578d95e03d41559099"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.39"
     classnames "^2.2.5"
@@ -8035,7 +8035,7 @@ the-components@^6.0.0:
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
-    the-route "^3.0.3"
+    the-route "^3.0.10"
     the-router "^2.0.6"
     the-section "^2.0.1"
     the-spin "^3.1.0"
@@ -8520,9 +8520,9 @@ the-root@^2.0.3:
     the-component-util "^2.1.2"
     the-style "^2.1.0"
 
-the-route@^3.0.3:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.7.tgz#a56f16014849803dc1d86e7d989823869a7b3fe6"
+the-route@^3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.10.tgz#5d98b8e1586728b315498df56e11e9a0d86c2499"
   dependencies:
     bwindow "^1.1.0"
     classnames "^2.2.5"
@@ -8550,8 +8550,8 @@ the-scene-base@^2.0.0, the-scene-base@^2.0.2:
     the-url "^1.0.0"
 
 the-scene-mixins@^1.5.3:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.10.tgz#22246bd619dce2d60565a48a7a26c92fe95aa8cd"
+  version "1.5.13"
+  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.13.tgz#cbc308f2e6726eb07aeb973627309a27e2a4e941"
   dependencies:
     asleep "^1.0.3"
     bwindow "^1.1.0"

@@ -1,6 +1,6 @@
 {
-  "USER_EMAIL": "メールアドレス",
   "NEW_PASSWORD": "新しいパスワード",
+  "USER_EMAIL": "メールアドレス",
   "USER_NAME": "例: taro_yamada",
   "USER_PASSWORD": "パスワード",
   "USER_PROFILE_NAME": "e.g. 山田太郎",
