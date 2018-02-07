@@ -122,7 +122,7 @@ Then, install dependencies and build the project
 yarn install
 
 # Prepare project (Start up docker, create db, compile files, .etc)
-yarn prepare
+pon prepare
 ```
 
 <!-- Section from "doc/guides/02.Preparing.md.hbs" End -->

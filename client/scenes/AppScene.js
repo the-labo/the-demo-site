@@ -4,9 +4,9 @@
  */
 'use strict'
 
-const {Urls} = require('@self/conf')
-const Scene = require('./Scene')
+const {Urls,} = require('@self/conf')
 const {bindScope, withBusy, withHistory, withLocation, withQuery,} = require('the-scene-mixins/shim')
+const Scene = require('./Scene')
 
 @withBusy
 @withQuery
@@ -18,15 +18,9 @@ class AppSceneBase extends Scene {}
 /** @lends AppScene */
 class AppScene extends AppSceneBase {
 
-  setLocation ({pathname, search}) {
-    this.set({pathname})
-    this.setQueryBySearch(search)
-    this.applyLocaleToSearch()
-  }
-
   applyLocaleToSearch () {
     const locale = this.get('locale')
-    this.mergeQueryToSearch({locale})
+    this.mergeQueryToSearch({locale,})
   }
 
   handleRejectionReason (reason) {
@@ -49,6 +43,12 @@ class AppScene extends AppSceneBase {
       default:
         return false
     }
+  }
+
+  setLocation ({pathname, search,}) {
+    this.set({pathname,})
+    this.setQueryBySearch(search)
+    this.applyLocaleToSearch()
   }
 
   @withBusy.while

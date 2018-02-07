@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const Scene = require('./Scene')
 const {bindScope, withBusy, withReady,} = require('the-scene-mixins/shim')
+const Scene = require('./Scene')
 
 @withBusy
 @withReady
@@ -17,9 +17,9 @@ class AccountScene extends AccountSceneBase {
   @withBusy.while
   @withReady.when
   async doSync () {
-    const {accountCtrl} = this.controllers
+    const {accountCtrl,} = this.controllers
     const user = await accountCtrl.getCurrentUser()
-    this.set({user})
+    this.set({user,})
   }
 }
 

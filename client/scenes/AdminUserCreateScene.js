@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const Scene = require('./Scene')
 const {bindScope, withBusy, withEntry, withResult,} = require('the-scene-mixins/shim')
+const Scene = require('./Scene')
 
 @withBusy
 @withEntry
@@ -18,7 +18,7 @@ class AdminUserCreateScene extends AdminUserCreateSceneBase {
   @withBusy.while
   @withResult.save
   async doCreate () {
-    const {adminUserCtrl} = this.controllers
+    const {adminUserCtrl,} = this.controllers
     return await this.processEntry((values) => adminUserCtrl.create(values))
   }
 }

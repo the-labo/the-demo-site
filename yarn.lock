@@ -6090,8 +6090,8 @@ pon-task-pm2@^2.0.1:
     writeout "^2.2.1"
 
 pon-task-pondoc@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/pon-task-pondoc/-/pon-task-pondoc-1.0.3.tgz#9f72c6b9e5a645e75dfc17ab63f7122b26fed0fa"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/pon-task-pondoc/-/pon-task-pondoc-1.0.4.tgz#f403f7fdddfb8310df2ab878fd9fc129f4d8529d"
   dependencies:
     writeout "^2.2.1"
 
@@ -8453,8 +8453,8 @@ the-link@^3.0.4, the-link@^3.0.6:
     the-style "^2.1.0"
 
 the-lint@^1.1.1:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.1.5.tgz#0fe4724b6c380215b980f9050b3bf34c024a11f5"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.1.6.tgz#342deab6d385b22d9eea038c2a3f69f28b19f1d6"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"

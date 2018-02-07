@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const Scene = require('./Scene')
 const {bindScope, siteToast,} = require('the-scene-mixins/shim')
+const Scene = require('./Scene')
 
 @bindScope('toast')
 @siteToast

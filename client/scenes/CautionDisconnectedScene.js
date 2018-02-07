@@ -4,8 +4,8 @@
  */
 'use strict'
 
+const {bindScope, withBusy, withLocation,} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
-const {bindScope, withBusy, withLocation} = require('the-scene-mixins/shim')
 
 @withBusy
 @withLocation
