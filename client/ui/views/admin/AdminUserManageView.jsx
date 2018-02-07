@@ -25,8 +25,8 @@ import { RoleCodes } from '@self/conf'
 function AdminUserManageView ({
                                 busy,
                                 l,
-                                pop,
                                 onCreate,
+                                pop,
                                 ready,
                               }) {
   return (
@@ -70,14 +70,14 @@ export default asView(
   ({
      adminUserCheckScene,
      adminUserCreateScene,
-     adminUserListScene,
      adminUserFilterScene,
+     adminUserListScene,
    }, ownProps) => ({
     onCreate: () => {
       adminUserCreateScene.init()
       adminUserCreateScene.set({
         active: true,
-        entry: {role: RoleCodes.NORMAL_ROLE}
+        entry: {role: RoleCodes.NORMAL_ROLE,},
       })
     },
     onMount: async () => {
@@ -86,16 +86,16 @@ export default asView(
       adminUserCheckScene.init()
       adminUserCreateScene.init()
 
-      const {q = null} = ownProps.query
+      const {q = null,} = ownProps.query
       adminUserListScene.setQ(q)
-      adminUserFilterScene.setEntry({q})
+      adminUserFilterScene.setEntry({q,})
 
       await adminUserListScene.doSync()
     },
     onTearDown: () => {},
   }),
   {
-    title: ({l}) => l('titles.ADMIN_USER_MANAGE_TITLE'),
-    onlySigned: true
+    onlySigned: true,
+    title: ({l,}) => l('titles.ADMIN_USER_MANAGE_TITLE'),
   }
 )

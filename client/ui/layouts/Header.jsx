@@ -29,7 +29,7 @@ const Header = compose(
                          user,
                        }) {
   const notices = user && needsVerify && {
-    [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify}
+    [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify,},
   } || {}
   return (
     <TheHeader notices={notices}>
@@ -46,7 +46,7 @@ const Header = compose(
         <TheHeader.RightArea>
           <TheCondition if={Boolean(user)}>
             <TheDropdownMenu righted
-                             label={<UserLabel {...{user}} />}
+                             label={<UserLabel {...{user,}} />}
 
             >
               <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
@@ -87,7 +87,7 @@ export default asBound(
       await verifySendScene.doSend()
       await verifyNeedScene.doSync()
       toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
-      verifyNeedScene.set({needed: false})
-    }
+      verifyNeedScene.set({needed: false,})
+    },
   })
 )

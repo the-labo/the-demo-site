@@ -10,11 +10,11 @@ import styles from './UserLabel.pcss'
 
 const UserLabel = function UserLabelImpl ({
                                             className,
-                                            user
+                                            user,
                                           }) {
   return (
     <div className={c(styles.self, className)}>
-      <UserImage {...{user}}
+      <UserImage {...{user,}}
                  className={styles.image}
                  size={24}
       />

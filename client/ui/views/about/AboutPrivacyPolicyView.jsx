@@ -10,7 +10,7 @@ import styles from './AboutPrivacyPolicyView.pcss'
 
 function AboutPrivacyPolicyView ({
                                    l,
-                                   lang
+                                   lang,
                                  }) {
   return (
     <TheView className={styles.self}>

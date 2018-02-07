@@ -10,7 +10,7 @@ import { UI, GlobalKeys, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
 
 /** @lends Html */
-function Html ({appScope, renderingContext}) {
+function Html ({appScope, renderingContext,}) {
   const {
     cdnUrl,
     version,
@@ -19,7 +19,7 @@ function Html ({appScope, renderingContext}) {
   const l = locales.bind(lang)
   handle.setAttributes({client, l, lang, store,})
   const appProps = {
-    lang
+    lang,
   }
   const js = isProduction() ? [
     Urls.PRODUCTION_JS_URL
@@ -37,10 +37,10 @@ function Html ({appScope, renderingContext}) {
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
-               {...{css, js}}
+               {...{css, js,}}
                icon={Urls.ICON_URL}
                version={version}
-               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
+               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps,}}
                color={Styles.DOMINANT_COLOR}
                cdn={cdnUrl}
       >

@@ -9,7 +9,7 @@ const {withAdmin,} = require('./concerns')
 const Ctrl = require('./Ctrl')
 
 const AdminCtrlBase = compose(
-  withAdmin
+  withAdmin,
 )(Ctrl)
 
 /** @lends AdminCtrl */

@@ -43,15 +43,15 @@ export default asView(
     user: state['account.user'],
   }),
   ({
-     signAskScene
+     signAskScene,
    }) => ({
-    onReceive: async ({user}) => {
+    onReceive: async ({user,}) => {
       if (user) {
         signAskScene.goBack()
       }
-    }
+    },
   }),
   {
-    title: ({l}) => l('titles.SIGN_ASK_TITLE')
+    title: ({l,}) => l('titles.SIGN_ASK_TITLE'),
   }
 )

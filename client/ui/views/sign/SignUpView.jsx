@@ -11,7 +11,7 @@ import { Icons, Urls } from '@self/conf'
 import styles from './SignUpView.pcss'
 
 function SignUpView ({
-                       l
+                       l,
                      }) {
 
   return (
@@ -39,7 +39,7 @@ function SignUpView ({
 export default asView(
   SignUpView,
   (state) => ({
-    user: state['account.user']
+    user: state['account.user'],
   }),
   ({
      signAskScene,
@@ -47,15 +47,15 @@ export default asView(
    }, propsProxy) => ({
     onMount: () => {
       signAskScene.init()
-      const {user} = propsProxy
+      const {user,} = propsProxy
       if (user) {
         signUpScene.goBack()
       } else {
         signUpScene.init()
       }
-    }
+    },
   }),
   {
-    title: ({l}) => l('titles.SIGN_UP_TITLE')
+    title: ({l,}) => l('titles.SIGN_UP_TITLE'),
   }
 )

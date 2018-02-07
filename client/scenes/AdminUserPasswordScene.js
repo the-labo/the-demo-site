@@ -5,10 +5,11 @@
 'use strict'
 
 const Scene = require('./Scene')
-const {bindScope, withBusy, withResult,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withResult,withTargets} = require('the-scene-mixins/shim')
 
 @withBusy
 @withResult
+@withTargets
 @bindScope('admin.user.password')
 class AdminUserPasswordSceneBase extends Scene {}
 

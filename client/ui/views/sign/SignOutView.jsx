@@ -44,11 +44,11 @@ export default asView(
       signOutScene.init()
       await signOutScene.doSignout()
       await accountScene.doSync()
-      signOutScene.set({done: true})
+      signOutScene.set({done: true,})
       signOutScene.goBack()
-    }
+    },
   }),
   {
-    title: ({l}) => l('titles.SIGN_OUT_TITLE')
+    title: ({l,}) => l('titles.SIGN_OUT_TITLE'),
   }
 )

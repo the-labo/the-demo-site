@@ -13,13 +13,13 @@ const AdminUserCreateDialog = compose(
   withLoc,
 )(
   function AdminUserCreateDialogImpl ({
-                                   active,
-                                   created,
-                                   done,
-                                   l,
-                                   onClose,
-                                   spinning,
-                                 }) {
+                                        active,
+                                        created,
+                                        done,
+                                        l,
+                                        onClose,
+                                        spinning,
+                                      }) {
 
     return (
       <TheCreateDialog {...{active, done, l, onClose, spinning,}}
@@ -27,9 +27,9 @@ const AdminUserCreateDialog = compose(
                        doneTitle={l('titles.ADMIN_USER_CREATE_RESULT_TITLE')}
                        result={created && {
                          [l('labels.USER_NAME')]: created.name,
-                         [l('labels.USER_PROFILE_NAME')]: created.profile?.name,
-                         [l('labels.USER_EMAIL')]: created.profile?.email,
-                         [l('labels.USER_PASSWORD')]: created.password
+                         [l('labels.USER_PROFILE_NAME')]: created.profile && created.profile.name,
+                         [l('labels.USER_EMAIL')]: created.profile && created.profile.email,
+                         [l('labels.USER_PASSWORD')]: created.password,
                        }}
       >
         <AdminUserCreateForm/>
@@ -46,10 +46,10 @@ export default asBound(
     done: state['admin.user.create.done'],
     spinning: state['admin.user.create.busy'],
   }),
-  ({adminUserCreateScene}, propsProxy) => ({
+  ({adminUserCreateScene,}, propsProxy) => ({
     onClose: () => adminUserCreateScene.set({
       active: false,
-      done: false
-    })
+      done: false,
+    }),
   })
 )

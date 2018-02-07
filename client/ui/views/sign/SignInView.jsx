@@ -11,7 +11,7 @@ import { Icons, Urls } from '@self/conf'
 import styles from './SignInView.pcss'
 
 function SignInView ({
-                       l
+                       l,
                      }) {
   return (
     <TheView className={styles.self}>
@@ -34,18 +34,18 @@ function SignInView ({
 export default asView(
   SignInView,
   (state) => ({
-    user: state['account.user']
+    user: state['account.user'],
   }),
-  ({signInScene}) => ({
+  ({signInScene,}) => ({
     onMount: () => signInScene.init(),
-    onReceive: ({user}) => {
+    onReceive: ({user,}) => {
       if (user) {
         console.warn('[SigninView] Already signed')
         signInScene.goBack()
       }
-    }
+    },
   }),
   {
-    title: ({l}) => l('titles.SIGN_IN_TITLE')
+    title: ({l,}) => l('titles.SIGN_IN_TITLE'),
   }
 )

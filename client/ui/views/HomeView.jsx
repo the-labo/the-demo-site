@@ -9,7 +9,7 @@ import { asView } from '../wrappers'
 import styles from './HomeView.pcss'
 
 function HomeView ({
-                     busy
+                     busy,
                    }) {
   return (
     <TheView className={styles.self}

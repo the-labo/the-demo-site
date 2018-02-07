@@ -17,7 +17,7 @@ const Footer = compose(
   asPure,
   withLoc
 )(function FooterImpl ({
-                         l
+                         l,
                        }) {
     return (
       <TheFooter className={styles.self}>

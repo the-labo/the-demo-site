@@ -7,7 +7,7 @@ import 'moment/locale/ja'
 function withMoment (Component, options = {}) {
   return class WithMoment extends React.Component {
     render () {
-      const {lang} = this.props
+      const {lang,} = this.props
       const toMoment = (date) => {
         if (!date) {
           return null
@@ -25,13 +25,12 @@ function withMoment (Component, options = {}) {
             }
             return toMoment(date).fromNow()
           },
-
           formatDate (date, format) {
             if (!date) {
               return null
             }
             return toMoment(date).format(format)
-          }
+          },
         }
       )
       return <Component {...innerProps} />

@@ -8,14 +8,14 @@ import React from 'react'
 import { RoleCodes } from '@self/conf'
 
 const hasRole = (user, roleCode) =>
-  user?.role?.code === roleCode
+  user && user.role && user.role.code === roleCode
 
 /** @lends withRole */
 function withRole (Class) {
   const methods = {
     isAdmin (user) {
       return hasRole(user, RoleCodes.ADMIN_ROLE)
-    }
+    },
   }
 
   class WithRole extends React.Component {

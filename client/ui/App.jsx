@@ -19,7 +19,7 @@ import { withClient } from 'the-client'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 
-function App ({busy}) {
+function App ({busy,}) {
   return (
     <TheRoot>
       <Header/>
@@ -46,8 +46,8 @@ const ConnectedApp = asBound(
    }) => ({
     onMount: async () => {
       await accountScene.doSync()
-      await verifyNeedScene.doSync({delay: 3 * 1000})
-    }
+      await verifyNeedScene.doSync({delay: 3 * 1000,})
+    },
   })
 )
 

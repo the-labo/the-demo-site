@@ -138,8 +138,9 @@ module.exports = pon(
     // -----------------------------------
     /** Format client files */
     'format:client': theCode([
-      'client/ui/**/*.pcss'
-    ], {}),
+      'client/ui/**/*.pcss',
+      'client/ui/**/*.jsx',
+    ], {ignore: 'client/**/index.js',}),
     /** Format conf files */
     'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js',}),
     /** Format json files */
@@ -270,7 +271,6 @@ module.exports = pon(
     'struct:cp': cp({
       'assets/css': 'public/css',
       'assets/html/server-error': 'public/server-error',
-      'assets/icons': 'public/icons',
       'assets/images': 'public/images',
       'assets/text': 'public',
       'assets/webfonts': 'public/webfonts',

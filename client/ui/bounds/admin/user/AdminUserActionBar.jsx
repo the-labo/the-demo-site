@@ -21,13 +21,13 @@ const AdminUserActionBar = compose(
     return (
       <TheActionBar hidden={targets.length === 0}
                     buttons={{
+                      destroy: l('buttons.SHOW_DESTROY_USERS'),
                       passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
-                      destroy: l('buttons.SHOW_DESTROY_USERS')
                     }}
-                    danger={{destroy: true}}
+                    danger={{destroy: true,}}
                     handlers={{
+                      destroy: onDestroy,
                       passwordReset: onPasswordReset,
-                      destroy: onDestroy
                     }}
       />
     )
@@ -37,7 +37,7 @@ const AdminUserActionBar = compose(
 export default asBound(
   AdminUserActionBar,
   (state) => ({
-    targets: state['admin.user.list.entities'].filter(({id}) => state['admin.user.check.values'][id])
+    targets: state['admin.user.list.entities'].filter(({id,}) => state['admin.user.check.values'][id]),
   }),
   ({
      adminUserDestroyScene,
@@ -47,13 +47,13 @@ export default asBound(
     onDestroy: () => {
       adminUserDestroyScene.set({
         active: true,
-        targets: propsProxy.targets
+        targets: propsProxy.targets,
       })
     },
     onPasswordReset: () => {
       adminUserPasswordScene.set({
         active: true,
-        targets: propsProxy.targets
+        targets: propsProxy.targets,
       })
     },
   })

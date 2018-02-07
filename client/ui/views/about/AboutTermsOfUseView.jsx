@@ -10,7 +10,7 @@ import styles from './AboutTermsOfUseView.pcss'
 
 function AboutTermsOfUseView ({
                                 l,
-                                lang
+                                lang,
                               }) {
   return (
     <TheView className={styles.self}>

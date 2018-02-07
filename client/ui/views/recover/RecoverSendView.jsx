@@ -27,7 +27,7 @@ function RecoverSendView ({
           />
         </TheCondition>
         <TheCondition unless={done}>
-          <div style={{textAlign: 'center'}}>
+          <div style={{textAlign: 'center',}}>
             <TheLead text={l('leads.RECOVER_SEND')}
                      error={failure}
             />
@@ -45,10 +45,10 @@ export default asView(
     done: state['recover.send.done'],
     failure: state['recover.send.failure'],
   }),
-  ({recoverSendScene}) => ({
-    onMount: () => recoverSendScene.init()
+  ({recoverSendScene,}) => ({
+    onMount: () => recoverSendScene.init(),
   }),
   {
-    title: ({l}) => l('titles.RECOVER_SEND_TITLE')
+    title: ({l,}) => l('titles.RECOVER_SEND_TITLE'),
   }
 )

@@ -9,12 +9,12 @@ import { asForm } from '../../../wrappers'
 import { RoleCodes } from '@self/conf'
 
 function AdminUserCreateForm (props) {
-  const {l} = props
+  const {l,} = props
   return (
     <TheUserCreateForm {...props}
                        roles={{
                          [RoleCodes.ADMIN_ROLE]: l('roleCodes.ADMIN_ROLE'),
-                         [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE')
+                         [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE'),
                        }}
     />
   )
@@ -35,7 +35,7 @@ export default asForm(
    }) => ({
     onSubmit: async () => {
       await adminUserCreateScene.doCreate()
-      adminUserCreateScene.set({done: true})
+      adminUserCreateScene.set({done: true,})
       toastScene.showInfo(l('toasts.ADMIN_USER_CREATE_DID_SUCCESS'))
       await adminUserListScene.doSync()
     },

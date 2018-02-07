@@ -37,7 +37,7 @@ function ProfileEditView ({
         </TheCondition>
         <TheCondition unless={done}>
           <div>
-            <ProfileEditForm {...{user}} />
+            <ProfileEditForm {...{user,}} />
           </div>
         </TheCondition>
       </TheView.Body>
@@ -54,10 +54,10 @@ export default asView(
   }),
   ({
      accountScene,
-     profileEditScene
+     profileEditScene,
    }, propsProxy) => ({
     onAgain: async () => {
-      profileEditScene.set({done: false})
+      profileEditScene.set({done: false,})
       await propsProxy.onPrepareProfile()
     },
     onMount: async () => {
@@ -66,12 +66,12 @@ export default asView(
     },
     onPrepareProfile: async () => {
       await accountScene.doSync()
-      const {profile} = accountScene.get('user')
+      const {profile,} = accountScene.get('user')
       profileEditScene.setEntryFromEntity(profile)
     },
   }),
   {
-    title: ({l}) => l('titles.PROFILE_EDIT_TITLE'),
-    onlySigned: true
+    onlySigned: true,
+    title: ({l,}) => l('titles.PROFILE_EDIT_TITLE'),
   }
 )

@@ -24,7 +24,7 @@ function MypageView ({
                        ready,
                        user,
                      }) {
-  const {profile} = user || {}
+  const {profile,} = user || {}
   return (
     <TheView className={styles.self}
              spinning={busy}>
@@ -41,9 +41,9 @@ function MypageView ({
               <TheSection.Body>
                 <TheInfo data={user && {
                   [l('labels.USER_NAME')]: user.name,
-                  [l('labels.USER_PROFILE_NAME')]: profile?.name,
-                  [l('labels.USER_EMAIL')]: profile?.email,
-                  [l('labels.USER_IMAGE')]: <UserImage {...{user}} size={64}/>
+                  [l('labels.USER_PROFILE_NAME')]: profile && profile.name,
+                  [l('labels.USER_EMAIL')]: profile && profile.email,
+                  [l('labels.USER_IMAGE')]: <UserImage {...{user,}} size={64}/>,
                 }}/>
                 <br/>
                 <TheButtonGroup>
@@ -75,11 +75,11 @@ export default asView(
   (state) => ({
     busy: state['account.busy'],
     ready: state['account.ready'],
-    user: state['account.user']
+    user: state['account.user'],
   }),
   () => ({}),
   {
-    title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
-    onlySigned: true
+    onlySigned: true,
+    title: ({l,}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
   }
 )

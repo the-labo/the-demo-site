@@ -30,7 +30,7 @@ const AdminUserPasswordDialog = compose(
                           doneLead={l('leads.RESET_PASSWORDS_RESULT')}
                           result={passwords && users
                             .reduce((data, user) => Object.assign(data, {
-                              [user.displayName]: passwords[user.id]
+                              [user.displayName]: passwords[user.id],
                             }), {})
                           }
                           entities={users}
@@ -63,12 +63,12 @@ export default asBound(
    }, propsProxy) => ({
     onClose: () => adminUserPasswordScene.set({
       active: false,
-      done: false
+      done: false,
     }),
     onYes: async () => {
       await adminUserPasswordScene.doReset()
-      adminUserPasswordScene.set({done: true})
+      adminUserPasswordScene.set({done: true,})
       adminUserCheckScene.init()
-    }
+    },
   })
 )

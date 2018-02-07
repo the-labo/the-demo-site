@@ -50,6 +50,6 @@ export default asView(
       recoverResetScene.init()
       const {envelop, seal,} = propsProxy.query
       recoverResetScene.setEntry({envelop, seal,})
-    }
+    },
   })
 )

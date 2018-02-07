@@ -16,10 +16,6 @@ function asView (Component,
   const name = Component.displayName || Component.name
 
   class ViewWrap extends React.Component {
-    render () {
-      return <Component {...this.props} />
-    }
-
     componentDidMount () {
       debug('mount', name)
     }
@@ -28,12 +24,16 @@ function asView (Component,
       debug('unmount', name)
     }
 
+    render () {
+      return <Component {...this.props} />
+    }
+
   }
 
   return [
     (Component) => withTitle(Component, (props) => {
-      const {l} = props
-      const title = options.title?.call(null, props)
+      const {l,} = props
+      const title = options.title && options.title.call(null, props)
       const appName = l('app.APP_NAME')
       return title ? `${title} | ${appName}` : appName
 

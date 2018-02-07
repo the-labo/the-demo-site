@@ -29,16 +29,12 @@ const AdminUserList = compose(
       <TheOperationList entities={users}
                         {...{l, onSort, onUpdateCheck, sort,}}
                         fields={{
-                          name: {
-                            label: l('labels.USER_NAME'),
+                          'profile.email': {
+                            label: l('labels.USER_EMAIL'),
                             sortable: true,
                           },
                           'profile.name': {
                             label: l('labels.USER_PROFILE_NAME'),
-                            sortable: true,
-                          },
-                          'profile.email': {
-                            label: l('labels.USER_EMAIL'),
                             sortable: true,
                           },
                           'sign.signInAt': {
@@ -46,9 +42,13 @@ const AdminUserList = compose(
                             render: (signInAt) => signInAt && formatDate(signInAt, 'lll'),
                             sortable: true,
                           },
+                          name: {
+                            label: l('labels.USER_NAME'),
+                            sortable: true,
+                          },
                         }}
-                        isChecked={({id}) => checks[id]}
-                        isFreezed={({id}) => id === 'superadmin'}
+                        isChecked={({id,}) => checks[id]}
+                        isFreezed={({id,}) => id === 'superadmin'}
 
       />
     </div>
@@ -67,7 +67,7 @@ export default asBound(
      adminUserListScene,
    }) => ({
     onSort: async (name) => {
-      adminUserListScene.set({pageNumber: 1})
+      adminUserListScene.set({pageNumber: 1,})
       adminUserListScene.setSort(name)
       await adminUserListScene.doSync()
     },

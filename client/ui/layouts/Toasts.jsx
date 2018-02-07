@@ -32,8 +32,8 @@ export default asBound(
     warn: state['toast.warn'],
   }),
   ({
-     toastScene
+     toastScene,
    }) => ({
-    onReset: (queues) => toastScene.reset(queues)
+    onReset: (queues) => toastScene.reset(queues),
   })
 )

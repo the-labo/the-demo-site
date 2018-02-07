@@ -29,7 +29,7 @@ export default asForm(
     onSubmit: async () => {
       await recoverResetScene.doReset()
       await accountScene.doSync()
-      recoverResetScene.set({done: true})
+      recoverResetScene.set({done: true,})
     },
     onUpdate: (v) => recoverResetScene.setEntry(v),
   })

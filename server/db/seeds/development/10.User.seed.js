@@ -25,5 +25,3 @@ module.exports = [
     ...v,
   }))
 ]
-
-console.log(module.exports[11])

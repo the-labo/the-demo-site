@@ -35,7 +35,7 @@ function PasswordChangeView ({
         </TheCondition>
         <TheCondition unless={done}>
           <div>
-            <PasswordChangeForm {...{user}} />
+            <PasswordChangeForm {...{user,}} />
           </div>
         </TheCondition>
       </TheView.Body>
@@ -49,14 +49,14 @@ export default asView(
     done: state['password.change.done'],
     user: state['account.user'],
   }),
-  ({passwordChangeScene}) => ({
+  ({passwordChangeScene,}) => ({
     onAgain: async () => {
-      passwordChangeScene.set({done: false})
+      passwordChangeScene.set({done: false,})
     },
     onMount: () => passwordChangeScene.init(),
   }),
   {
-    title: ({l}) => l('titles.PASSWORD_CHANGE_TITLE'),
-    onlySigned: true
+    onlySigned: true,
+    title: ({l,}) => l('titles.PASSWORD_CHANGE_TITLE'),
   }
 )

@@ -31,13 +31,13 @@ export default asBound(
   CautionDisconnectedDialog,
   (state) => ({
     active: state['caution.disconnected.active'],
-    busy: state['caution.disconnected.busy']
+    busy: state['caution.disconnected.busy'],
   }),
   ({
-     cautionDisconnectedScene
+     cautionDisconnectedScene,
    }, propsProxy) => ({
     onReload: async () => {
       await cautionDisconnectedScene.doReload()
-    }
+    },
   })
 )

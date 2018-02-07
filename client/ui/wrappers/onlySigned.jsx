@@ -24,7 +24,7 @@ function onlySigned (Component, options = {}) {
   )(
     class OnlySigned extends React.Component {
       render () {
-        const {props} = this
+        const {props,} = this
         if (props.signedReady) {
           return <Component {...props}/>
         } else {
@@ -50,9 +50,9 @@ function onlySigned (Component, options = {}) {
           return
         }
         if (!hasSigned) {
-          const {pathname} = get('location')
-          store.signUp.back.set(pathname)
-          store.signIn.back.set(pathname)
+          const {pathname,} = get('location')
+          store.sign.up.back.set(pathname)
+          store.sign.in.back.set(pathname)
           debug(`Ask sign in for: ${pathname}`)
           history.push(Urls.SIGN_ASK_URL)
         }
