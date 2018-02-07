@@ -46,6 +46,8 @@ module.exports = pon(
   /** @module tasks */
   {
 
+    $cwd: __dirname,
+
     // -----------------------------------
     // Meta info
     // -----------------------------------
@@ -209,6 +211,8 @@ module.exports = pon(
     // -----------------------------------
     /** Fix package.json */
     'pkg:fix': npx('fixpack'),
+    /** Install packages */
+    'pkg:install': npx('yarn', 'install', '--ignore-scripts'),
 
     // -----------------------------------
     // Sub Tasks for PM2
@@ -256,9 +260,9 @@ module.exports = pon(
     // -----------------------------------
     // Sub Tasks for Structure
     // -----------------------------------
-    /** Generate project directories */
     /** Change file permissions */
     'struct:chmod': chmod({
+      '.githooks/**/*.js': '577',
       'bin/**/*.*': '577',
       'misc/**/*.sh': '577',
       'misc/scripts/*.*': '577',
@@ -276,6 +280,7 @@ module.exports = pon(
       'assets/text': 'public',
       'assets/webfonts': 'public/webfonts',
     }, {force: true,}),
+    /** Generate project directories */
     'struct:mkdir': mkdir([
       ...Object.keys(Directories)
     ]),

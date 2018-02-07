@@ -8,21 +8,19 @@ import React from 'react'
 import { RoleCodes } from '@self/conf'
 
 const hasRole = (user, roleCode) =>
-  user && user.role && user.role.code === roleCode
+  user?.role?.code === roleCode
 
 /** @lends withRole */
 function withRole (Class) {
-  const methods = {
-    isAdmin (user) {
-      return hasRole(user, RoleCodes.ADMIN_ROLE)
-    },
-  }
-
   class WithRole extends React.Component {
     render () {
+      const ComponentProps = Object.assign({
+        isAdmin (user) {
+          return hasRole(user, RoleCodes.ADMIN_ROLE)
+        },
+      }, this.props)
       return (
-        <Class {...methods}
-               {...this.props}/>
+        <Class {...ComponentProps}/>
       )
     }
   }

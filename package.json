@@ -87,7 +87,7 @@
     "akv": "^2.0.0",
     "browserify": "^15.0.0",
     "fixpack": "^2.3.1",
-    "husky": "^0.15.0-rc.6",
+    "git-hooks": "^1.1.9",
     "nodemon": "^1.14.11",
     "pretty-exceptions": "^1.2.0",
     "the-refactor": "^1.0.3",
@@ -109,7 +109,6 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
-    "precommit": "pon l f",
     "preinstall": "./misc/scripts/must_use_yarn.js",
     "prepare": "pon prepare",
     "release": "the-script-release -y",
