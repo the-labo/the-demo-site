@@ -32,7 +32,7 @@ function asView (Component,
 
   return [
     (Component) => withTitle(Component, (props) => {
-      const {l,} = props
+      const {l} = props
       const title = options.title && options.title.call(null, props)
       const appName = l('app.APP_NAME')
       return title ? `${title} | ${appName}` : appName

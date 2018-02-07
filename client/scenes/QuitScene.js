@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {Urls,} = require('@self/conf')
-const {bindScope, withBusy, withEntry,} = require('the-scene-mixins/shim')
+const {Urls} = require('@self/conf')
+const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -22,7 +22,7 @@ class QuitScene extends QuitSceneBase {
 
   @withBusy.while
   async doQuit () {
-    const {quitCtrl,} = this.controllers
+    const {quitCtrl} = this.controllers
     await quitCtrl.execute()
   }
 

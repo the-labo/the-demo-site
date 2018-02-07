@@ -19,15 +19,15 @@ once('DOMContentLoaded', async () => {
     lang = (get('navigator.language')).split('-')[0],
   } = props
   const history = historyFor()
-  const app = (<App {...props} {...{client, handle, store,}}/>)
+  const app = (<App {...props} {...{client, handle, store}}/>)
   const l = locales.bind(lang)
-  const controllers = await client.useAll({debug: !isProduction(),})
-  handle.setAttributes({client, controllers, history, l, lang, store,})
+  const controllers = await client.useAll({debug: !isProduction()})
+  handle.setAttributes({client, controllers, history, l, lang, store})
   handle.initAll()
 
-  const {appScene, toastScene,} = handle
+  const {appScene, toastScene} = handle
   history.listen((location) => appScene.setLocation(location))
-  appScene.set({host: get('location.host'), locale: lang,})
+  appScene.set({host: get('location.host'), locale: lang})
   appScene.setLocation(history.location)
 
   rescue((e) => {
@@ -37,7 +37,7 @@ once('DOMContentLoaded', async () => {
     }
   })
 
-  await mount(app, UI.APP_CONTAINER_ID, {history, router: true,})
+  await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
 
   set(GlobalKeys.STAGE, 'mounted')

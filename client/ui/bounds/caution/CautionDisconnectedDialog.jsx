@@ -19,7 +19,7 @@ const CautionDisconnectedDialog = compose(
                                             onReload,
                                           }) {
     return (
-      <TheCautionDisconnectedDialog {...{active, busy, l, onReload,}}
+      <TheCautionDisconnectedDialog {...{active, busy, l, onReload}}
                                     warningIcon={Icons.WARNING_ICON}
                                     reloadIcon={Icons.RELOAD_ICON}
       />

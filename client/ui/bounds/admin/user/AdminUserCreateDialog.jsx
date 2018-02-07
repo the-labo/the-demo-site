@@ -22,7 +22,7 @@ const AdminUserCreateDialog = compose(
                                       }) {
 
     return (
-      <TheCreateDialog {...{active, done, l, onClose, spinning,}}
+      <TheCreateDialog {...{active, done, l, onClose, spinning}}
                        title={l('titles.ADMIN_USER_CREATE_INPUT_TITLE')}
                        doneTitle={l('titles.ADMIN_USER_CREATE_RESULT_TITLE')}
                        result={created && {
@@ -46,7 +46,7 @@ export default asBound(
     done: state['admin.user.create.done'],
     spinning: state['admin.user.create.busy'],
   }),
-  ({adminUserCreateScene,}, propsProxy) => ({
+  ({adminUserCreateScene}, propsProxy) => ({
     onClose: () => adminUserCreateScene.set({
       active: false,
       done: false,

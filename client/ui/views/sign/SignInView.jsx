@@ -36,9 +36,9 @@ export default asView(
   (state) => ({
     user: state['account.user'],
   }),
-  ({signInScene,}) => ({
+  ({signInScene}) => ({
     onMount: () => signInScene.init(),
-    onReceive: ({user,}) => {
+    onReceive: ({user}) => {
       if (user) {
         console.warn('[SigninView] Already signed')
         signInScene.goBack()
@@ -46,6 +46,6 @@ export default asView(
     },
   }),
   {
-    title: ({l,}) => l('titles.SIGN_IN_TITLE'),
+    title: ({l}) => l('titles.SIGN_IN_TITLE'),
   }
 )

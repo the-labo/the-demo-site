@@ -8,7 +8,7 @@ import { TheView, TheRoute, TheLead, TheButtonGroup, TheButton, } from 'the-comp
 import { asView } from '../../wrappers'
 import styles from './ErrorNotfoundView.pcss'
 
-function ErrorNotfoundView ({l,}) {
+function ErrorNotfoundView ({l}) {
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -36,6 +36,6 @@ export default asView(
   (state) => ({}),
   ({}) => ({}),
   {
-    title: ({l,}) => l('titles.ERROR_NOTFOUND_TITLE'),
+    title: ({l}) => l('titles.ERROR_NOTFOUND_TITLE'),
   }
 )

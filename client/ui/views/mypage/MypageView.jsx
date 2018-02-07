@@ -24,7 +24,7 @@ function MypageView ({
                        ready,
                        user,
                      }) {
-  const {profile,} = user || {}
+  const {profile} = user || {}
   return (
     <TheView className={styles.self}
              spinning={busy}>
@@ -43,7 +43,7 @@ function MypageView ({
                   [l('labels.USER_NAME')]: user.name,
                   [l('labels.USER_PROFILE_NAME')]: profile?.name,
                   [l('labels.USER_EMAIL')]: profile?.email,
-                  [l('labels.USER_IMAGE')]: <UserImage {...{user,}} size={64}/>,
+                  [l('labels.USER_IMAGE')]: <UserImage {...{user}} size={64}/>,
                 }}/>
                 <br/>
                 <TheButtonGroup>
@@ -80,6 +80,6 @@ export default asView(
   () => ({}),
   {
     onlySigned: true,
-    title: ({l,}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
+    title: ({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'),
   }
 )

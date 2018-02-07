@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheAccountService,} = require('the-site-services')
+const {TheAccountService} = require('the-site-services')
 
 /** @lends AccountService */
 class AccountService extends TheAccountService {

@@ -9,7 +9,7 @@ import { asView } from '../../wrappers'
 import styles from './AdminTopView.pcss'
 import { Urls, Icons } from '@self/conf'
 
-function AdminTopView ({l,}) {
+function AdminTopView ({l}) {
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -35,6 +35,6 @@ export default asView(
   () => ({}),
   {
     onlySigned: true,
-    title: ({l,}) => l('titles.ADMIN_TOP_TITLE'),
+    title: ({l}) => l('titles.ADMIN_TOP_TITLE'),
   }
 )

@@ -24,7 +24,7 @@ const AdminUserDestroyDialog = compose(
       <TheDestroyDialog title={l('titles.ADMIN_USER_DESTROY_CONFIRM_TITLE')}
                         lead={l('leads.ADMIN_USER_DESTROY_CONFIRM')}
                         entities={users}
-                        renderItem={({displayName,}) => displayName}
+                        renderItem={({displayName}) => displayName}
                         {...{
                           active,
                           done,

@@ -2,9 +2,9 @@
  * @abstract
  * @class Ctrl
  */
-const {TheCtrl,} = require('the-controller-base')
-const {compose, withClient, withDebug, withSeal,} = require('the-controller-mixins')
-const {withAuth,} = require('./concerns')
+const {TheCtrl} = require('the-controller-base')
+const {compose, withClient, withDebug, withSeal} = require('the-controller-mixins')
+const {withAuth} = require('./concerns')
 
 const CtrBase = compose(
   withClient,

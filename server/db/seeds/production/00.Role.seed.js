@@ -1,6 +1,6 @@
 'use strict'
 
-const {RoleCodes,} = require('@self/conf')
+const {RoleCodes} = require('@self/conf')
 
 module.exports = [
   {

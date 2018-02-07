@@ -10,14 +10,14 @@ import { UI, GlobalKeys, Urls, Styles, locales, } from '@self/conf'
 import { isProduction, } from 'the-check'
 
 /** @lends Html */
-function Html ({appScope, renderingContext,}) {
+function Html ({appScope, renderingContext}) {
   const {
     cdnUrl,
     version,
   } = appScope
-  const {client, handle, lang, path, store,} = renderingContext
+  const {client, handle, lang, path, store} = renderingContext
   const l = locales.bind(lang)
-  handle.setAttributes({client, l, lang, store,})
+  handle.setAttributes({client, l, lang, store})
   const appProps = {
     lang,
   }
@@ -37,10 +37,10 @@ function Html ({appScope, renderingContext,}) {
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
-               {...{css, js,}}
+               {...{css, js}}
                icon={Urls.ICON_URL}
                version={version}
-               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps,}}
+               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
                color={Styles.DOMINANT_COLOR}
                cdn={cdnUrl}
       >
@@ -50,7 +50,7 @@ function Html ({appScope, renderingContext,}) {
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
-            <App {...appProps} {...{client, handle, store,}}/>
+            <App {...appProps} {...{client, handle, store}}/>
           </TheRouter.Static>
         </div>
       </TheBody>

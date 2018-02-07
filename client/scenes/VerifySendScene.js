@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBusy,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -15,7 +15,7 @@ class VerifySendSceneBase extends Scene {}
 class VerifySendScene extends VerifySendSceneBase {
   @withBusy.while
   async doSend () {
-    const {verifyCtrl,} = this.controllers
+    const {verifyCtrl} = this.controllers
     const needed = await verifyCtrl.needsVerify()
     if (needed) {
       await verifyCtrl.send()

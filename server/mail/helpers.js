@@ -8,12 +8,12 @@ const moment = require('moment')
 require('moment/locale/ja')
 
 exports.emailOfUser = (user) => {
-  const {profile,} = user
+  const {profile} = user
   return (profile && profile.email) || user.email
 }
 
 exports.nameOfUser = (user) => {
-  const {profile,} = user
+  const {profile} = user
   return (profile && profile.name) || user.name
 }
 

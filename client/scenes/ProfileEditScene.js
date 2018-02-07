@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {clone,} = require('asobj')
-const {bindScope, withBusy, withEntry,} = require('the-scene-mixins/shim')
+const {clone} = require('asobj')
+const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -25,7 +25,7 @@ class ProfileEditScene extends ProfileEditSceneBase {
 
   @withBusy.while
   async doSave () {
-    const {accountCtrl,} = this.controllers
+    const {accountCtrl} = this.controllers
     await this.processEntry((values) => accountCtrl.updateProfile(values))
   }
 }

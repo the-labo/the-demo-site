@@ -17,7 +17,7 @@ const Toasts = compose(
                          warn,
                        }) {
     return (
-      <TheSiteToasts {...{error, info, onReset, warn,}}
+      <TheSiteToasts {...{error, info, onReset, warn}}
                      duration={UI.TOAST_DURATION}
       />
     )

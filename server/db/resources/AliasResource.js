@@ -3,8 +3,8 @@
  */
 'use strict'
 
-const {Urls,} = require('@self/conf')
-const {TheAliasResource,} = require('the-site-resources')
+const {Urls} = require('@self/conf')
+const {TheAliasResource} = require('the-site-resources')
 
 class AliasResource extends TheAliasResource {
   get pathnameFormat () {

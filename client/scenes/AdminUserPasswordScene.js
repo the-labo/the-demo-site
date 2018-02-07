@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withResult, withTargets,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withResult, withTargets} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -18,7 +18,7 @@ class AdminUserPasswordScene extends AdminUserPasswordSceneBase {
   @withBusy.while
   @withResult.save
   async doReset () {
-    const {adminUserCtrl,} = this.controllers
+    const {adminUserCtrl} = this.controllers
     const userIds = this.getTargetIds()
     return await adminUserCtrl.resetPassword(...userIds)
   }

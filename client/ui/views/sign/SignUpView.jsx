@@ -47,7 +47,7 @@ export default asView(
    }, propsProxy) => ({
     onMount: () => {
       signAskScene.init()
-      const {user,} = propsProxy
+      const {user} = propsProxy
       if (user) {
         signUpScene.goBack()
       } else {
@@ -56,6 +56,6 @@ export default asView(
     },
   }),
   {
-    title: ({l,}) => l('titles.SIGN_UP_TITLE'),
+    title: ({l}) => l('titles.SIGN_UP_TITLE'),
   }
 )

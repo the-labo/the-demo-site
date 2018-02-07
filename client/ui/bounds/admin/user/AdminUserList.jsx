@@ -27,7 +27,7 @@ const AdminUserList = compose(
   return (
     <div className={c(className)}>
       <TheOperationList entities={users}
-                        {...{l, onSort, onUpdateCheck, sort,}}
+                        {...{l, onSort, onUpdateCheck, sort}}
                         fields={{
                           'profile.email': {
                             label: l('labels.USER_EMAIL'),
@@ -47,8 +47,8 @@ const AdminUserList = compose(
                             sortable: true,
                           },
                         }}
-                        isChecked={({id,}) => checks[id]}
-                        isFreezed={({id,}) => id === 'superadmin'}
+                        isChecked={({id}) => checks[id]}
+                        isFreezed={({id}) => id === 'superadmin'}
 
       />
     </div>
@@ -67,7 +67,7 @@ export default asBound(
      adminUserListScene,
    }) => ({
     onSort: async (name) => {
-      adminUserListScene.set({pageNumber: 1,})
+      adminUserListScene.set({pageNumber: 1})
       adminUserListScene.setSort(name)
       await adminUserListScene.doSync()
     },

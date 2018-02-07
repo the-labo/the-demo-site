@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withTargets,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withTargets} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -16,7 +16,7 @@ class AdminUserDestroySceneBase extends Scene {}
 class AdminUserDestroyScene extends AdminUserDestroySceneBase {
   @withBusy.while
   async doDestroy () {
-    const {adminUserCtrl,} = this.controllers
+    const {adminUserCtrl} = this.controllers
     const userIds = this.getTargetIds()
     await adminUserCtrl.destroy(...userIds)
   }

@@ -8,13 +8,13 @@ const assert = require('assert')
 const createDB = require('../db/create')
 const routes = require('../endpoints/routes')
 
-const {equal, ok,} = assert
+const {equal, ok} = assert
 
 describe('endpoints', () => {
   const db = createDB({
     dialect: 'memory',
   })
-  const {Alias,} = db.resources
+  const {Alias} = db.resources
   before(() => {
   })
 
@@ -26,8 +26,8 @@ describe('endpoints', () => {
 
     let redirected
     const ctx = {
-      app: {db,},
-      params: {key: alias.key,},
+      app: {db},
+      params: {key: alias.key},
       redirect (url) {
         redirected = url
       },
@@ -39,7 +39,7 @@ describe('endpoints', () => {
 
   it('uploadRoute', async () => {
     const ctx = {
-      app: {db,},
+      app: {db},
       req: {
         headers: {},
       },

@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {TheScene,} = require('the-scene-base/shim')
-const {resolveUrl,} = require('the-site-util')
+const {TheScene} = require('the-scene-base/shim')
+const {resolveUrl} = require('the-site-util')
 
 class SceneBase extends TheScene {}
 
@@ -32,7 +32,7 @@ class Scene extends SceneBase {
   }
 
   catchError (e) {
-    const {l, store,} = this
+    const {l, store} = this
     try {
       return super.catchError(e)
     } catch (e) {

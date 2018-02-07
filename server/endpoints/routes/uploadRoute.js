@@ -7,14 +7,14 @@
 const Local = require('@self/Local')
 const moment = require('moment')
 const path = require('path')
-const {theUploadRouteFor,} = require('the-site-routes')
+const {theUploadRouteFor} = require('the-site-routes')
 
 /** @lends uploadRoute */
 async function uploadRoute (ctx) {
   const {
-    app: {db,},
+    app: {db},
   } = ctx
-  const {Alias,} = db.resources
+  const {Alias} = db.resources
 
   const route = theUploadRouteFor({
     saveTo: path.resolve(Local.PUBLIC_DIR, 'uploaded', moment(new Date()).format('YYYY/MM')),

@@ -27,7 +27,7 @@ export default asForm(
    }) => ({
     onSubmit: async () => {
       await recoverSendScene.doSend()
-      recoverSendScene.set({done: true,})
+      recoverSendScene.set({done: true})
       await toastScene.showInfo(l('toasts.RECOVER_EMAIL_SENT'))
     },
     onUpdate: (v) => recoverSendScene.setEntry(v),

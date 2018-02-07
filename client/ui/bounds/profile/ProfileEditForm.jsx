@@ -28,7 +28,7 @@ export default asForm(
    }) => ({
     onSubmit: async () => {
       await profileEditScene.doSave()
-      profileEditScene.set({done: true,})
+      profileEditScene.set({done: true})
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))
     },

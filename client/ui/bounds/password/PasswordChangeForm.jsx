@@ -29,7 +29,7 @@ export default asForm(
    }) => ({
     onSubmit: async () => {
       await passwordChangeScene.doSave()
-      passwordChangeScene.set({done: true,})
+      passwordChangeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
     },
     onUpdate: (v) => passwordChangeScene.setEntry(v),

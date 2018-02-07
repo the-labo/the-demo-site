@@ -32,8 +32,8 @@ export default asForm(
   ({
      appScene,
    }, propsProxy) => ({
-    onUpdate: async ({locale,}) => {
-      appScene.set({locale,})
+    onUpdate: async ({locale}) => {
+      appScene.set({locale})
       appScene.applyLocaleToSearch()
       await appScene.doReload()
     },

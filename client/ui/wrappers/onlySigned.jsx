@@ -24,7 +24,7 @@ function onlySigned (Component, options = {}) {
   )(
     class OnlySigned extends React.Component {
       render () {
-        const {props,} = this
+        const {props} = this
         if (props.signedReady) {
           return <Component {...props}/>
         } else {
@@ -45,12 +45,12 @@ function onlySigned (Component, options = {}) {
       }
 
       makeSureSigned () {
-        const {hasSigned, history, signedReady, store,} = this.props
+        const {hasSigned, history, signedReady, store} = this.props
         if (!signedReady) {
           return
         }
         if (!hasSigned) {
-          const {pathname,} = get('location')
+          const {pathname} = get('location')
           store.sign.up.back.set(pathname)
           store.sign.in.back.set(pathname)
           debug(`Ask sign in for: ${pathname}`)

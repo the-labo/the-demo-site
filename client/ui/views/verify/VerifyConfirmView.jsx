@@ -47,16 +47,16 @@ export default asView(
     failure: state['verify.confirm.failure'],
     query: state['app.query'],
   }),
-  ({verifyConfirmScene,}, propsProxy) => (({
+  ({verifyConfirmScene}, propsProxy) => (({
     onMount: async () => {
       verifyConfirmScene.init()
-      const {envelop, seal,} = propsProxy.query
-      verifyConfirmScene.setEntry({envelop, seal,})
+      const {envelop, seal} = propsProxy.query
+      verifyConfirmScene.setEntry({envelop, seal})
       await verifyConfirmScene.doVerify()
-      verifyConfirmScene.set({done: true,})
+      verifyConfirmScene.set({done: true})
     },
   })),
   {
-    title: ({l,}) => l('titles.ACCOUNT_VERIFY_TITLE'),
+    title: ({l}) => l('titles.ACCOUNT_VERIFY_TITLE'),
   }
 )

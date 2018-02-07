@@ -45,11 +45,11 @@ export default asView(
     failure: state['recover.reset.failure'],
     query: state['app.query'],
   }),
-  ({propsProxy, recoverResetScene,}) => ({
+  ({propsProxy, recoverResetScene}) => ({
     onMount: () => {
       recoverResetScene.init()
-      const {envelop, seal,} = propsProxy.query
-      recoverResetScene.setEntry({envelop, seal,})
+      const {envelop, seal} = propsProxy.query
+      recoverResetScene.setEntry({envelop, seal})
     },
   })
 )

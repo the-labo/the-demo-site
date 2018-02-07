@@ -77,7 +77,7 @@ export default asView(
       adminUserCreateScene.init()
       adminUserCreateScene.set({
         active: true,
-        entry: {role: RoleCodes.NORMAL_ROLE,},
+        entry: {role: RoleCodes.NORMAL_ROLE},
       })
     },
     onMount: async () => {
@@ -86,9 +86,9 @@ export default asView(
       adminUserCheckScene.init()
       adminUserCreateScene.init()
 
-      const {q = null,} = ownProps.query
+      const {q = null} = ownProps.query
       adminUserListScene.setQ(q)
-      adminUserFilterScene.setEntry({q,})
+      adminUserFilterScene.setEntry({q})
 
       await adminUserListScene.doSync()
     },
@@ -96,6 +96,6 @@ export default asView(
   }),
   {
     onlySigned: true,
-    title: ({l,}) => l('titles.ADMIN_USER_MANAGE_TITLE'),
+    title: ({l}) => l('titles.ADMIN_USER_MANAGE_TITLE'),
   }
 )

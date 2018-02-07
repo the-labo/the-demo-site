@@ -67,7 +67,7 @@ export default asBound(
     }),
     onYes: async () => {
       await adminUserPasswordScene.doReset()
-      adminUserPasswordScene.set({done: true,})
+      adminUserPasswordScene.set({done: true})
       adminUserCheckScene.init()
     },
   })

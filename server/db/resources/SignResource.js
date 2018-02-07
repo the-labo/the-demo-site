@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {TheSignResource,} = require('the-site-resources')
+const {TheSignResource} = require('the-site-resources')
 
 /** @lends SignResource */
 class SignResource extends TheSignResource {

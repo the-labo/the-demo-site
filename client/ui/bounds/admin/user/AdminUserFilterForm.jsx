@@ -9,7 +9,7 @@ import { TheSearchForm } from 'the-site-components'
 import { get } from 'the-window'
 
 function AdminUserFilterForm (props) {
-  const {l,} = props
+  const {l} = props
   return (
     <TheSearchForm {...props}
                    placeholder={l('placeholders.USER_SEARCH')}
@@ -29,7 +29,7 @@ export default asForm(
      adminUserListScene,
    }, propsProxy) => ({
     onSubmit: async () => {
-      const {q,} = propsProxy.values || {}
+      const {q} = propsProxy.values || {}
       adminUserListScene.setQ(q)
       await adminUserFilterScene.busyWhile(async () => {
         await adminUserListScene.doSync()

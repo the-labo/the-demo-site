@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBack, withBusy, withEntry,} = require('the-scene-mixins/shim')
+const {bindScope, withBack, withBusy, withEntry} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -17,8 +17,8 @@ class SignInSceneBase extends Scene {}
 class SignInScene extends SignInSceneBase {
   @withBusy.while
   async doSignIn () {
-    const {signCtrl,} = this.controllers
-    await this.processEntry(({name, password,}) => signCtrl.signIn(name, password))
+    const {signCtrl} = this.controllers
+    await this.processEntry(({name, password}) => signCtrl.signIn(name, password))
   }
 }
 

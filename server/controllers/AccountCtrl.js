@@ -5,7 +5,7 @@
 'use strict'
 
 const Local = require('@self/Local')
-const {compose,} = require('the-controller-mixins')
+const {compose} = require('the-controller-mixins')
 const Ctrl = require('./Ctrl')
 const AccountCtrlBase = compose(
 
@@ -21,10 +21,10 @@ class AccountCtrl extends AccountCtrlBase {
   async updatePassword (newPassword) {
     await this._assertAuthorized()
     const {
-      services: {accountService,},
-      user: {id: userId,},
+      services: {accountService},
+      user: {id: userId},
     } = this
-    await accountService.processPassword({newPassword, userId,})
+    await accountService.processPassword({newPassword, userId})
     await this._reloadAuthorized()
     return true
   }
@@ -32,8 +32,8 @@ class AccountCtrl extends AccountCtrlBase {
   async updateProfile (profileAttributes) {
     await this._assertAuthorized()
     const {
-      services: {accountService,},
-      user: {id: userId,},
+      services: {accountService},
+      user: {id: userId},
     } = this
     await accountService.processProfile({
       profileAttributes, publicDir: Local.PUBLIC_DIR, userId,

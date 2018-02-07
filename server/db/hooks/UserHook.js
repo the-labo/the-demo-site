@@ -3,13 +3,13 @@
  */
 'use strict'
 
-const {HistoryTypes,} = require('@self/conf')
+const {HistoryTypes} = require('@self/conf')
 const debug = require('debug')('app:hook:userHook')
 
 function UserHook (db) {
-  const {History, User,} = db.resources
+  const {History, User} = db.resources
   return {
-    async onDestroy ({gone, id,}) {
+    async onDestroy ({gone, id}) {
       const key = User.refOf(id)
       debug('User Destroy', key)
       await History.create({

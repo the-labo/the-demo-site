@@ -18,7 +18,7 @@ const AdminUserPager = compose(
                             showCounts,
                           }) {
     return (
-      <TheOperationPager {...{counts, l, onPage, showCounts,}}/>
+      <TheOperationPager {...{counts, l, onPage, showCounts}}/>
     )
   }
 )
@@ -31,8 +31,8 @@ export default asBound(
   ({
      adminUserListScene,
    }, propsProxy) => ({
-    onPage: async ({pageNumber,}) => {
-      await adminUserListScene.set({pageNumber,})
+    onPage: async ({pageNumber}) => {
+      await adminUserListScene.set({pageNumber})
       await adminUserListScene.doSync()
     },
   })

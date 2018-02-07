@@ -1,6 +1,6 @@
 'use strict'
 
-const {Urls,} = require('@self/conf')
+const {Urls} = require('@self/conf')
 const mw = require('./middlewares')
 const rt = require('./routes')
 

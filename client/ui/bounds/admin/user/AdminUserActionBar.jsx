@@ -24,7 +24,7 @@ const AdminUserActionBar = compose(
                       destroy: l('buttons.SHOW_DESTROY_USERS'),
                       passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
                     }}
-                    danger={{destroy: true,}}
+                    danger={{destroy: true}}
                     handlers={{
                       destroy: onDestroy,
                       passwordReset: onPasswordReset,
@@ -37,7 +37,7 @@ const AdminUserActionBar = compose(
 export default asBound(
   AdminUserActionBar,
   (state) => ({
-    targets: state['admin.user.list.entities'].filter(({id,}) => state['admin.user.check.values'][id]),
+    targets: state['admin.user.list.entities'].filter(({id}) => state['admin.user.check.values'][id]),
   }),
   ({
      adminUserDestroyScene,

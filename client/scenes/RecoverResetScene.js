@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withEntry, withFailure,} = require('the-scene-mixins/shim')
+const {bindScope, withBusy, withEntry, withFailure} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withEntry
@@ -17,14 +17,14 @@ class RecoverResetSceneBase extends Scene {}
 class RecoverResetScene extends RecoverResetSceneBase {
 
   @withBusy.while
-  @withFailure.for(({l,}) => ({
+  @withFailure.for(({l}) => ({
     ExpiredError: l('errors.RECOVER_EXPIRED_ERROR'),
     default: l('errors.RECOVER_FAILED_ERROR'),
   }))
   async doReset () {
-    const {recoverCtrl,} = this.controllers
-    await this.processEntry(({envelop, password, seal,}) =>
-      recoverCtrl.reset({envelop, password, seal,}))
+    const {recoverCtrl} = this.controllers
+    await this.processEntry(({envelop, password, seal}) =>
+      recoverCtrl.reset({envelop, password, seal}))
   }
 }
 

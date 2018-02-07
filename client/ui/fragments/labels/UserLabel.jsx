@@ -14,7 +14,7 @@ const UserLabel = function UserLabelImpl ({
                                           }) {
   return (
     <div className={c(styles.self, className)}>
-      <UserImage {...{user,}}
+      <UserImage {...{user}}
                  className={styles.image}
                  size={24}
       />

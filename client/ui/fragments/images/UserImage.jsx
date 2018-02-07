@@ -15,7 +15,7 @@ const UserImage = function UserImageImpl ({
                                           }) {
   return (
     <TheUserImage className={c(styles.self, className)}
-                  {...{size, user,}}
+                  {...{size, user}}
     />
   )
 }
