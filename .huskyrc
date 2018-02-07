@@ -1,0 +1,5 @@
+{
+  "pre-commit": "pon test",
+  "post-checkout": "yarn install --ignore-scripts;pon build",
+  "post-merge": "yarn install --ignore-scripts;pon build"
+}
