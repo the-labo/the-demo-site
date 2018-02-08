@@ -21,15 +21,15 @@ function RecoverSendView ({
       />
       <TheView.Body>
         <TheCondition if={done}>
-          <TheDone linkTo='/'
-                   linkText={l('buttons.SHOW_TOP_AGAIN')}
+          <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
+                   linkTo='/'
                    message={l('messages.RECOVER_SEND_DONE')}
           />
         </TheCondition>
         <TheCondition unless={done}>
           <div style={{textAlign: 'center'}}>
-            <TheLead text={l('leads.RECOVER_SEND')}
-                     error={failure}
+            <TheLead error={failure}
+                     text={l('leads.RECOVER_SEND')}
             />
             <RecoverSendForm/>
           </div>

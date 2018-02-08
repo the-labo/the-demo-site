@@ -24,17 +24,17 @@ const AdminUserPasswordDialog = compose(
                                           users,
                                         }) {
     return (
-      <TheOperationDialog title={l('titles.ADMIN_USER_PASSWORD_RESET_CONFIRM_TITLE')}
-                          lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+      <TheOperationDialog doneLead={l('leads.RESET_PASSWORDS_RESULT')}
                           doneTitle={l('titles.ADMIN_USER_PASSWORD_RESET_RESULT_TITLE')}
-                          doneLead={l('leads.RESET_PASSWORDS_RESULT')}
+                          entities={users}
+                          lead={l('leads.RESET_PASSWORDS_CONFIRM')}
+                          renderItem={(user) => user.displayName}
                           result={passwords && users
                             .reduce((data, user) => Object.assign(data, {
                               [user.displayName]: passwords[user.id],
                             }), {})
                           }
-                          entities={users}
-                          renderItem={(user) => user.displayName}
+                          title={l('titles.ADMIN_USER_PASSWORD_RESET_CONFIRM_TITLE')}
                           {...{
                             active,
                             done,

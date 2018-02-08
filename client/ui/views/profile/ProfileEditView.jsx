@@ -21,17 +21,17 @@ function ProfileEditView ({
     <TheView className={styles.self}
              spinning={busy}>
       <TheView.Header icon={Icons.PROFILE_ICON}
-                      text={l('titles.PROFILE_EDIT_TITLE')}
                       leftIcon={Icons.BACK_ICON}
                       leftTo={Urls.ACCOUNT_MYPAGE_URL}
+                      text={l('titles.PROFILE_EDIT_TITLE')}
       />
       <TheView.Body>
         <TheCondition if={done}>
           <div>
-            <TheDone message={l('messages.PROFILE_UPDATE_DONE')}
-                     onLinkClick={onAgain}
+            <TheDone linkText={l('buttons.SHOW_PROFILE_EDIT_AGAIN')}
                      linkTo={Urls.ACCOUNT_PROFILE_URL}
-                     linkText={l('buttons.SHOW_PROFILE_EDIT_AGAIN')}
+                     message={l('messages.PROFILE_UPDATE_DONE')}
+                     onLinkClick={onAgain}
             />
           </div>
         </TheCondition>

@@ -19,17 +19,17 @@ function PasswordChangeView ({
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
-                      text={l('titles.PASSWORD_CHANGE_TITLE')}
                       leftIcon={Icons.BACK_ICON}
                       leftTo={Urls.ACCOUNT_MYPAGE_URL}
+                      text={l('titles.PASSWORD_CHANGE_TITLE')}
       />
       <TheView.Body>
         <TheCondition if={done}>
           <div>
-            <TheDone message={l('messages.PASSWORD_UPDATE_DONE')}
-                     onLinkClick={onAgain}
+            <TheDone linkText={l('buttons.SHOW_PASSWORD_EDIT_AGAIN')}
                      linkTo={Urls.ACCOUNT_PASSWORD_URL}
-                     linkText={l('buttons.SHOW_PASSWORD_EDIT_AGAIN')}
+                     message={l('messages.PASSWORD_UPDATE_DONE')}
+                     onLinkClick={onAgain}
             />
           </div>
         </TheCondition>

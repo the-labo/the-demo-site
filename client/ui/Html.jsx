@@ -38,11 +38,11 @@ function Html ({appScope, renderingContext}) {
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
                {...{css, js}}
+               cdn={cdnUrl}
+               color={Styles.DOMINANT_COLOR}
+               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
                icon={Urls.ICON_URL}
                version={version}
-               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
-               color={Styles.DOMINANT_COLOR}
-               cdn={cdnUrl}
       >
       </TheHead>
       <TheBody>

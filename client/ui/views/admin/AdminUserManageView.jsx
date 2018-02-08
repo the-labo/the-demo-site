@@ -33,12 +33,12 @@ function AdminUserManageView ({
     <TheView className={styles.self}
              spinning={busy}
     >
-      <TheView.Header onLeftClick={pop}
+      <TheView.Header icon={Icons.USERS_ICON}
                       leftIcon={Icons.BACK_ICON}
-                      icon={Icons.USERS_ICON}
-                      text={l('titles.ADMIN_USER_MANAGE_TITLE')}
-                      rightText={l('buttons.SHOW_USER_CREATE')}
+                      onLeftClick={pop}
                       onRightClick={onCreate}
+                      rightText={l('buttons.SHOW_USER_CREATE')}
+                      text={l('titles.ADMIN_USER_MANAGE_TITLE')}
       />
       <TheView.Body>
         <div className={styles.searchRow}>

@@ -19,9 +19,9 @@ function AdminTopView ({l}) {
         <div className={styles.buttonContainer}>
           <div className={styles.buttonRow}>
             <TheButton className={styles.button}
-                       to={Urls.ADMIN_USER_MANAGE_URL}
                        icon={Icons.USERS_ICON}
-                       text={l('buttons.SHOW_ADMIN_USERS')}/>
+                       text={l('buttons.SHOW_ADMIN_USERS')}
+                       to={Urls.ADMIN_USER_MANAGE_URL}/>
           </div>
         </div>
       </TheView.Body>

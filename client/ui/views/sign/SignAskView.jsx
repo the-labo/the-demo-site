@@ -15,9 +15,9 @@ function SignAskView ({
                       }) {
   return (
     <TheView className={styles.self}>
-      <TheView.Header leftIcon={Icons.BACK_ICON}
+      <TheView.Header icon={null}
+                      leftIcon={Icons.BACK_ICON}
                       leftTo={back}
-                      icon={null}
                       text={l('titles.SIGN_ASK_TITLE')}
 
       />
@@ -28,8 +28,8 @@ function SignAskView ({
 
         <TheButtonGroup>
           <TheButton to={Urls.SIGN_IN_URL}>{l('buttons.SHOW_SIGN_IN')}</TheButton>
-          <TheButton to={Urls.SIGN_UP_URL}
-                     primary>{l('buttons.SHOW_SIGN_UP')}</TheButton>
+          <TheButton primary
+                     to={Urls.SIGN_UP_URL}>{l('buttons.SHOW_SIGN_UP')}</TheButton>
         </TheButtonGroup>
       </TheView.Body>
     </TheView>

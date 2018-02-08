@@ -19,8 +19,7 @@ const AdminUserActionBar = compose(
                                 targets,
                               }) {
     return (
-      <TheActionBar hidden={targets.length === 0}
-                    buttons={{
+      <TheActionBar buttons={{
                       destroy: l('buttons.SHOW_DESTROY_USERS'),
                       passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
                     }}
@@ -29,6 +28,7 @@ const AdminUserActionBar = compose(
                       destroy: onDestroy,
                       passwordReset: onPasswordReset,
                     }}
+                    hidden={targets.length === 0}
       />
     )
   }

@@ -30,8 +30,8 @@ const Footer = compose(
             </div>
           </TheFooter.Row>
           <TheFooter.Row>
-            <TheFooter.CopyRight year={2018}
-                                 holder={l('org.ORG_NAME')}
+            <TheFooter.CopyRight holder={l('org.ORG_NAME')}
+                                 year={2018}
             />
             <TheFooter.Links>
               <TheFooter.Link to={Urls.ABOUT_PRIVACY_POLICY_URL}>

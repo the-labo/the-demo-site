@@ -21,10 +21,10 @@ const AdminUserDestroyDialog = compose(
                                     users,
                                   }) {
     return (
-      <TheDestroyDialog title={l('titles.ADMIN_USER_DESTROY_CONFIRM_TITLE')}
+      <TheDestroyDialog entities={users}
                         lead={l('leads.ADMIN_USER_DESTROY_CONFIRM')}
-                        entities={users}
                         renderItem={({displayName}) => displayName}
+                        title={l('titles.ADMIN_USER_DESTROY_CONFIRM_TITLE')}
                         {...{
                           active,
                           done,

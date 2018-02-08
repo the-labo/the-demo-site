@@ -21,13 +21,13 @@ function RecoverResetView ({
                       text={null}
       />
       <TheView.Body>
-        <TheLead title={l('leads.RECOVER_RESET')}
-                 error={failure}
+        <TheLead error={failure}
+                 title={l('leads.RECOVER_RESET')}
         />
         <TheCondition if={done}>
-          <TheDone message={l('messages.RECOVER_RESET_DONE')}
+          <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
                    linkTo='/'
-                   linkText={l('buttons.SHOW_TOP_AGAIN')}/>
+                   message={l('messages.RECOVER_RESET_DONE')}/>
         </TheCondition>
         <TheCondition unless={done}>
           <RecoverResetForm/>

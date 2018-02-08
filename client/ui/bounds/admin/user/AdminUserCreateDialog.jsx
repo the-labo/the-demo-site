@@ -23,7 +23,6 @@ const AdminUserCreateDialog = compose(
 
     return (
       <TheCreateDialog {...{active, done, l, onClose, spinning}}
-                       title={l('titles.ADMIN_USER_CREATE_INPUT_TITLE')}
                        doneTitle={l('titles.ADMIN_USER_CREATE_RESULT_TITLE')}
                        result={created && {
                          [l('labels.USER_NAME')]: created.name,
@@ -31,6 +30,7 @@ const AdminUserCreateDialog = compose(
                          [l('labels.USER_EMAIL')]: created.profile && created.profile.email,
                          [l('labels.USER_PASSWORD')]: created.password,
                        }}
+                       title={l('titles.ADMIN_USER_CREATE_INPUT_TITLE')}
       >
         <AdminUserCreateForm/>
       </TheCreateDialog>

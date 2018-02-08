@@ -23,9 +23,9 @@ function VerifyConfirmView ({
       <TheView.Body>
         <TheCondition if={done}>
           <div>
-            <TheDone message={l('messages.VERIFY_DONE')}
+            <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
                      linkTo='/'
-                     linkText={l('buttons.SHOW_TOP_AGAIN')}
+                     message={l('messages.VERIFY_DONE')}
             />
           </div>
         </TheCondition>

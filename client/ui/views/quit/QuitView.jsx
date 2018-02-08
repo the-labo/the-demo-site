@@ -35,8 +35,8 @@ function QuitView ({
         <TheCondition if={Boolean(!done && !confirm)}>
           <div>
             <div>
-              <TheLead title={l('leads.QUIT_LEAD')}
-                       text={l('messages.QUIT_LEAD_NOTICE')}
+              <TheLead text={l('messages.QUIT_LEAD_NOTICE')}
+                       title={l('leads.QUIT_LEAD')}
               />
             </div>
             <br/>
@@ -57,17 +57,17 @@ function QuitView ({
             <TheButtonGroup>
               <TheButton.Prev onClick={onConfirmBack}
               >{l('buttons.DO_BACK')}</TheButton.Prev>
-              <TheButton primary
-                         onClick={onExecute}>{l('buttons.DO_QUIT')}</TheButton>
+              <TheButton onClick={onExecute}
+                         primary>{l('buttons.DO_QUIT')}</TheButton>
             </TheButtonGroup>
           </div>
         </TheCondition>
         <TheCondition if={Boolean(done)}>
           <div>
             <br/>
-            <TheDone message={l('messages.QUIT_DONE')}
+            <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
                      linkTo='/'
-                     linkText={l('buttons.SHOW_TOP_AGAIN')}
+                     message={l('messages.QUIT_DONE')}
             />
           </div>
         </TheCondition>

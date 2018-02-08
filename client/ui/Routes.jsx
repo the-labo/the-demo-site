@@ -13,10 +13,10 @@ const v = isProduction() ? views : hashProxy(views, {unknownCheck: true})
 
 const Routes = ({}) => (
   <TheRoute.Switch>
-    <TheRoute exact path={Urls.TOP_URL} component={v.HomeView}/>
+    <TheRoute component={v.HomeView} exact path={Urls.TOP_URL}/>
 
-    <TheRoute scrollToTop exact path={Urls.ABOUT_TERMS_OF_USE_URL} component={v.AboutTermsOfUseView}/>
-    <TheRoute scrollToTop exact path={Urls.ABOUT_PRIVACY_POLICY_URL} component={v.AboutPrivacyPolicyView}/>
+    <TheRoute component={v.AboutTermsOfUseView} exact path={Urls.ABOUT_TERMS_OF_USE_URL} scrollToTop/>
+    <TheRoute component={v.AboutPrivacyPolicyView} exact path={Urls.ABOUT_PRIVACY_POLICY_URL} scrollToTop/>
 
 
     <TheRoute path={Urls.ADMIN_URL}>
@@ -26,22 +26,22 @@ const Routes = ({}) => (
       ]}/>
     </TheRoute>
 
-    <TheRoute exact path={Urls.ACCOUNT_VERIFY_URL} component={v.VerifyConfirmView}/>
-    <TheRoute exact path={Urls.ACCOUNT_RECOVER_URL} component={v.RecoverSendView}/>
-    <TheRoute exact path={Urls.ACCOUNT_RECOVER_RESET_URL} component={v.RecoverResetView}/>
+    <TheRoute component={v.VerifyConfirmView} exact path={Urls.ACCOUNT_VERIFY_URL}/>
+    <TheRoute component={v.RecoverSendView} exact path={Urls.ACCOUNT_RECOVER_URL}/>
+    <TheRoute component={v.RecoverResetView} exact path={Urls.ACCOUNT_RECOVER_RESET_URL}/>
 
-    <TheRoute exact path={Urls.ACCOUNT_MYPAGE_URL} component={v.MypageView}/>
-    <TheRoute exact path={Urls.ACCOUNT_PASSWORD_URL} component={v.PasswordChangeView}/>
-    <TheRoute exact path={Urls.ACCOUNT_PROFILE_URL} component={v.ProfileEditView}/>
+    <TheRoute component={v.MypageView} exact path={Urls.ACCOUNT_MYPAGE_URL}/>
+    <TheRoute component={v.PasswordChangeView} exact path={Urls.ACCOUNT_PASSWORD_URL}/>
+    <TheRoute component={v.ProfileEditView} exact path={Urls.ACCOUNT_PROFILE_URL}/>
 
-    <TheRoute exact path={Urls.SIGN_IN_URL} component={v.SignInView}/>
-    <TheRoute exact path={Urls.SIGN_UP_URL} component={v.SignUpView}/>
-    <TheRoute exact path={Urls.SIGN_OUT_URL} component={v.SignOutView}/>
-    <TheRoute exact path={Urls.ACCOUNT_QUIT_URL} component={v.QuitView}/>
-    <TheRoute exact path={Urls.SIGN_ASK_URL} component={v.SignAskView}/>
+    <TheRoute component={v.SignInView} exact path={Urls.SIGN_IN_URL}/>
+    <TheRoute component={v.SignUpView} exact path={Urls.SIGN_UP_URL}/>
+    <TheRoute component={v.SignOutView} exact path={Urls.SIGN_OUT_URL}/>
+    <TheRoute component={v.QuitView} exact path={Urls.ACCOUNT_QUIT_URL}/>
+    <TheRoute component={v.SignAskView} exact path={Urls.SIGN_ASK_URL}/>
 
-    <TheRoute exact path={Urls.ERROR_NOTFOUND_URL} component={v.ErrorNotfoundView}/>
-    <TheRoute exact path={Urls.ERROR_FORBIDDEN_URL} component={v.ErrorForbiddenView}/>
+    <TheRoute component={v.ErrorNotfoundView} exact path={Urls.ERROR_NOTFOUND_URL}/>
+    <TheRoute component={v.ErrorForbiddenView} exact path={Urls.ERROR_FORBIDDEN_URL}/>
 
     <TheRoute component={v.ErrorNotfoundView}/>
   </TheRoute.Switch>

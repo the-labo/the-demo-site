@@ -37,24 +37,24 @@ const Header = compose(
 
       <TheHeader.Tab>
         <TheCondition if={Boolean(user && isAdmin(user))}>
-          <TheHeader.TabItem to={Urls.ADMIN_URL}
-                             icon={Icons.ADMIN_ICON}
+          <TheHeader.TabItem icon={Icons.ADMIN_ICON}
+                             to={Urls.ADMIN_URL}
           >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
         </TheCondition>
       </TheHeader.Tab>
       <TheCondition if={Boolean(ready)}>
         <TheHeader.RightArea>
           <TheCondition if={Boolean(user)}>
-            <TheDropdownMenu righted
-                             label={<UserLabel {...{user}} />}
+            <TheDropdownMenu label={<UserLabel {...{user}} />}
+                             righted
 
             >
               <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
-                                    to={Urls.ACCOUNT_MYPAGE_URL}
-                                    text={l('buttons.SHOW_MYPAGE')}/>
-              <TheDropdownMenu.Item to={Urls.SIGN_OUT_URL}
-                                    icon={Icons.SIGN_OUT_ICON}
-                                    text={l('buttons.DO_SIGN_OUT')}/>
+                                    text={l('buttons.SHOW_MYPAGE')}
+                                    to={Urls.ACCOUNT_MYPAGE_URL}/>
+              <TheDropdownMenu.Item icon={Icons.SIGN_OUT_ICON}
+                                    text={l('buttons.DO_SIGN_OUT')}
+                                    to={Urls.SIGN_OUT_URL}/>
             </TheDropdownMenu>
           </TheCondition>
           <TheCondition unless={Boolean(user)}>
