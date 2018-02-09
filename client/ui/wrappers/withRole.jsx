@@ -4,8 +4,8 @@
  */
 'use strict'
 
-import React from 'react'
 import { RoleCodes } from '@self/conf'
+import React from 'react'
 
 const hasRole = (user, roleCode) =>
   user?.role?.code === roleCode

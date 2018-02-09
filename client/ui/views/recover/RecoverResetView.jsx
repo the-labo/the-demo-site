@@ -4,11 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone, TheLead, TheCondition } from 'the-components'
-import { asView } from '../../wrappers'
-import { RecoverResetForm } from '../../bounds'
-
+import { TheCondition, TheDone, TheLead, TheView } from 'the-components'
 import styles from './RecoverResetView.pcss'
+import { RecoverResetForm } from '../../bounds'
+import { asView } from '../../wrappers'
 
 function RecoverResetView ({
                              done,

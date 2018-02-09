@@ -3,11 +3,11 @@
  */
 'use strict'
 
-import React from 'react'
-import { withLoc } from 'the-loc'
-import { compose, asBound } from 'the-hoc'
-import { TheCautionDisconnectedDialog } from 'the-site-components'
 import { Icons } from '@self/conf'
+import React from 'react'
+import { asBound, compose } from 'the-hoc'
+import { withLoc } from 'the-loc'
+import { TheCautionDisconnectedDialog } from 'the-site-components'
 
 const CautionDisconnectedDialog = compose(
   withLoc

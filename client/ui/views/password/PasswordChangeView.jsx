@@ -3,12 +3,12 @@
  */
 'use strict'
 
+import { Icons, Urls } from '@self/conf'
 import React from 'react'
-import { TheView, TheDone, TheCondition } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheCondition, TheDone, TheView } from 'the-components'
 import styles from './PasswordChangeView.pcss'
 import { PasswordChangeForm } from '../../bounds'
-import { Urls, Icons } from '@self/conf'
+import { asView } from '../../wrappers'
 
 function PasswordChangeView ({
                                done,

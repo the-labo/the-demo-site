@@ -3,16 +3,16 @@
  */
 'use strict'
 
+import { Icons, Urls } from '@self/conf'
 import React from 'react'
-import { TheView, TheButton } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheButton, TheView } from 'the-components'
 import styles from './AdminTopView.pcss'
-import { Urls, Icons } from '@self/conf'
+import { asView } from '../../wrappers'
 
 function AdminTopView ({l}) {
   return (
     <TheView className={styles.self}>
-      <TheView.Header icon={null}
+      <TheView.Header icon={Icons.ADMIN_ICON}
                       text={l('titles.ADMIN_TOP_TITLE')}
       />
       <TheView.Body>

@@ -1,13 +1,12 @@
 'use strict'
 
-import React from 'react'
 import { Urls } from '@self/conf'
-import { TheRoute, TheRouteStack, } from 'the-components'
-
-import { withLoc } from 'the-loc'
-import * as views from './views'
-import { hashProxy } from 'the-site-util'
+import React from 'react'
 import { isProduction } from 'the-check'
+import { TheRoute, TheRouteStack } from 'the-components'
+import { withLoc } from 'the-loc'
+import { hashProxy } from 'the-site-util'
+import * as views from './views'
 
 const v = isProduction() ? views : hashProxy(views, {unknownCheck: true})
 

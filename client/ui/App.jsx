@@ -3,21 +3,20 @@
  */
 'use strict'
 
-import React from 'react'
-import {
-  TheRoot,
-  TheMain,
-} from 'the-components'
-
-import { Header, Toasts, Footer } from './layouts'
-import Routes from './Routes'
-import { withProvider, withStore, } from 'the-store'
-import { withLoc, } from 'the-loc'
-import { withCycle, asBound, } from 'the-hoc'
-import { withBinder, } from 'the-handle'
-import { withClient } from 'the-client'
 import { locales } from '@self/conf'
+import React from 'react'
+import { withClient } from 'the-client'
+import {
+  TheMain,
+  TheRoot,
+} from 'the-components'
+import { withBinder } from 'the-handle'
+import { asBound, withCycle } from 'the-hoc'
+import { withLoc } from 'the-loc'
+import { withProvider, withStore } from 'the-store'
 import { CautionDisconnectedDialog } from './bounds'
+import { Footer, Header, Toasts } from './layouts'
+import Routes from './Routes'
 
 function App ({busy}) {
   return (

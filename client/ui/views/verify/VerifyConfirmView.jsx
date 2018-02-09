@@ -4,9 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheDone, TheCondition } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheCondition, TheDone, TheView } from 'the-components'
 import styles from './VerifyConfirmView.pcss'
+import { asView } from '../../wrappers'
 
 function VerifyConfirmView ({
                               busy,

@@ -4,10 +4,10 @@
 'use strict'
 
 import React from 'react'
+import { asBound, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
-import { TheCreateDialog, } from 'the-site-components'
+import { TheCreateDialog } from 'the-site-components'
 import AdminUserCreateForm from './AdminUserCreateForm'
-import { compose, asBound } from 'the-hoc'
 
 const AdminUserCreateDialog = compose(
   withLoc,

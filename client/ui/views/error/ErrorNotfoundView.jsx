@@ -4,9 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheRoute, TheLead, TheButtonGroup, TheButton, } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-components'
 import styles from './ErrorNotfoundView.pcss'
+import { asView } from '../../wrappers'
 
 function ErrorNotfoundView ({l}) {
   return (
@@ -22,7 +22,7 @@ function ErrorNotfoundView ({l}) {
           <br/>
           <div>
             <TheButtonGroup>
-              <TheButton href={'/'}>{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
+              <TheButton href='/'>{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
             </TheButtonGroup>
           </div>
         </TheRoute.Status>

@@ -3,12 +3,12 @@
  */
 'use strict'
 
-import React from 'react'
-import { TheView, TheButton, TheButtonGroup } from 'the-components'
-import { asView } from '../../wrappers'
-import { SignInForm } from '../../bounds'
 import { Icons, Urls } from '@self/conf'
+import React from 'react'
+import { TheButton, TheButtonGroup, TheView } from 'the-components'
 import styles from './SignInView.pcss'
+import { SignInForm } from '../../bounds'
+import { asView } from '../../wrappers'
 
 function SignInView ({
                        l,

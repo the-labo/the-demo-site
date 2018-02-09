@@ -3,12 +3,12 @@
  */
 'use strict'
 
+import { Icons, Urls } from '@self/conf'
 import React from 'react'
-import { TheView, TheDone, TheCondition } from 'the-components'
-import { asView } from '../../wrappers'
-import { ProfileEditForm } from '../../bounds'
+import { TheCondition, TheDone, TheView } from 'the-components'
 import styles from './ProfileEditView.pcss'
-import { Urls, Icons } from '@self/conf'
+import { ProfileEditForm } from '../../bounds'
+import { asView } from '../../wrappers'
 
 function ProfileEditView ({
                             busy,

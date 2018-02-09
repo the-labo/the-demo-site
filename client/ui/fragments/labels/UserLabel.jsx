@@ -3,8 +3,8 @@
  */
 'use strict'
 
-import React from 'react'
 import c from 'classnames'
+import React from 'react'
 import UserImage from '../images/UserImage'
 import styles from './UserLabel.pcss'
 

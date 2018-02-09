@@ -579,8 +579,8 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
 "@types/node@*":
-  version "9.4.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.2.tgz#b109a6c4f64147ccf9476d9e1a6fbf69a10faeb8"
+  version "8.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.9.1.tgz#5a329d73a97f3c5a626dfe0ed8c0b831fee5357a"
 
 "@types/request@^2.0.3":
   version "2.47.0"
@@ -2145,8 +2145,8 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0:
     supports-color "^4.0.0"
 
 chokidar@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.0.tgz#6686313c541d3274b2a5c01233342037948c911b"
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.1.tgz#6e67e9998fe10e8f651e975ca62460456ff8e297"
   dependencies:
     anymatch "^2.0.0"
     async-each "^1.0.0"
@@ -2158,6 +2158,7 @@ chokidar@^2.0.0:
     normalize-path "^2.1.1"
     path-is-absolute "^1.0.0"
     readdirp "^2.0.0"
+    upath "1.0.0"
   optionalDependencies:
     fsevents "^1.0.0"
 
@@ -4943,7 +4944,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^3.8.0:
+lodash@3.x, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -7050,8 +7051,8 @@ seq-queue@0.0.5:
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
 sequelize@^4.31.2, sequelize@^4.32.2:
-  version "4.33.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.33.0.tgz#8721819438bba5b3c1ee1bb336803c59587e6f92"
+  version "4.33.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.33.1.tgz#b679443f46b2872ceb9b0664294c99b88e5c0055"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -7888,8 +7889,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^3.0.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.2.1.tgz#1ceffff7edecbf387fe2b6ff249813d2d8244d63"
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.4.3.tgz#76630441e0672df6da87d2379412c1228d925070"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -8121,8 +8122,8 @@ the-flick@^4.0.2:
     the-window "^5.3.3"
 
 the-footer@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.0.4.tgz#05a28dc49d866ac9f3c101d22bf6aa2c356edbde"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.1.0.tgz#c5b89920e854b5db365361839f49a5b2ac2828a2"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -8954,6 +8955,10 @@ undefsafe@^2.0.1:
   dependencies:
     debug "^2.2.0"
 
+underscore.string@2.3.x:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-2.3.3.tgz#71c08bf6b428b1133f37e78fa3a21c82f7329b0d"
+
 underscore.string@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-2.4.0.tgz#8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b"
@@ -9025,6 +9030,13 @@ unset-value@^1.0.0:
 unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
+
+upath@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.0.tgz#b4706b9461ca8473adf89133d235689ca17f3656"
+  dependencies:
+    lodash "3.x"
+    underscore.string "2.3.x"
 
 update-notifier@^2.3.0:
   version "2.3.0"

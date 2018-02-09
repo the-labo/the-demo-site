@@ -5,15 +5,15 @@
 
 import React from 'react'
 import {
-  TheView,
   TheButton,
-  TheLead,
-  TheDone,
   TheButtonGroup,
-  TheCondition
+  TheCondition,
+  TheDone,
+  TheLead,
+  TheView,
 } from 'the-components'
-import { asView } from '../../wrappers'
 import styles from './QuitView.pcss'
+import { asView } from '../../wrappers'
 
 function QuitView ({
                      busy,

@@ -5,8 +5,8 @@
 
 import React from 'react'
 import { TheActionBar } from 'the-components'
+import { asBound, asPure, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
-import { asPure, asBound, compose } from 'the-hoc'
 
 const AdminUserActionBar = compose(
   asPure,

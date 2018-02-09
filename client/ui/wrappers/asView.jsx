@@ -1,11 +1,11 @@
 'use strict'
 
-import React from 'react'
-import { withLoc } from 'the-loc'
-import { withTitle, withCycle, asBound } from 'the-hoc'
-import { withHistory, withRoute } from 'the-components'
-import onlySigned from './onlySigned'
 import Debug from 'debug'
+import React from 'react'
+import { withHistory, withRoute } from 'the-components'
+import { asBound, withCycle, withTitle } from 'the-hoc'
+import { withLoc } from 'the-loc'
+import onlySigned from './onlySigned'
 
 const debug = Debug('app:view')
 

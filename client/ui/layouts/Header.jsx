@@ -3,19 +3,19 @@
  */
 'use strict'
 
+import { Icons, Urls } from '@self/conf'
 import React from 'react'
 import {
-  TheHeader,
   TheButton,
   TheButtonGroup,
-  TheDropdownMenu,
   TheCondition,
+  TheDropdownMenu,
+  TheHeader,
 } from 'the-components'
-import { Urls, Icons } from '@self/conf'
+import { asBound, compose } from 'the-hoc'
+import { withLoc } from 'the-loc'
 import { UserLabel } from '../fragments'
 import { withRole } from '../wrappers'
-import { withLoc } from 'the-loc'
-import { compose, asBound } from 'the-hoc'
 
 const Header = compose(
   withRole,
@@ -37,7 +37,7 @@ const Header = compose(
 
       <TheHeader.Tab>
         <TheCondition if={Boolean(user && isAdmin(user))}>
-          <TheHeader.TabItem icon={Icons.ADMIN_ICON}
+          <TheHeader.TabItem icon={Icons.TAB_ADMIN_ICON}
                              to={Urls.ADMIN_URL}
           >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
         </TheCondition>

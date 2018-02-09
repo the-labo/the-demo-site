@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheButton } from 'the-components'
+import { TheButton, TheView } from 'the-components'
 import { asView } from '../wrappers'
 import styles from './HomeView.pcss'
 

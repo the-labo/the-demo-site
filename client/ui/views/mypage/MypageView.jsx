@@ -3,20 +3,20 @@
  */
 'use strict'
 
+import { Urls } from '@self/conf'
 import React from 'react'
 import {
-  TheView,
-  TheSection,
-  TheInfo,
-  TheLink,
   TheButton,
   TheButtonGroup,
-  TheCondition
+  TheCondition,
+  TheInfo,
+  TheLink,
+  TheSection,
+  TheView,
 } from 'the-components'
-import { asView } from '../../wrappers'
 import styles from './MypageView.pcss'
 import { UserImage } from '../../fragments'
-import { Urls } from '@self/conf'
+import { asView } from '../../wrappers'
 
 function MypageView ({
                        busy,

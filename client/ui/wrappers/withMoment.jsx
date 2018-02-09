@@ -1,8 +1,8 @@
 'use strict'
 
-import React from 'react'
 import moment from 'moment'
 import 'moment/locale/ja'
+import React from 'react'
 
 function withMoment (Component, options = {}) {
   return class WithMoment extends React.Component {

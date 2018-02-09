@@ -25,6 +25,7 @@ module.exports = Object.freeze(
     SIGN_IN_ICON: 'fas fa-sign-in-alt',
     SIGN_OUT_ICON: 'fas fa-sign-out-alt',
     SIGN_UP_ICON: 'fas fa-user-plus',
+    TAB_ADMIN_ICON: 'fas fa-cogs',
     USERS_ICON: 'fas fa-users',
     WARNING_ICON: 'fas fa-exclamation-triangle',
   }

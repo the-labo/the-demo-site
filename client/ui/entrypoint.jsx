@@ -1,13 +1,13 @@
 'use strict'
 
+import { GlobalKeys, locales, UI } from '@self/conf'
 import React from 'react'
-import { once, get, set, mount, rescue, history as historyFor } from 'the-window'
-import App from './App'
-import { UI, GlobalKeys, locales } from '@self/conf'
-import client from '../client'
-import store from '../store'
-import handle from '../handle'
 import { isProduction } from 'the-check'
+import { get, history as historyFor, mount, once, rescue, set } from 'the-window'
+import client from '../client'
+import handle from '../handle'
+import store from '../store'
+import App from './App'
 
 set(GlobalKeys.STAGE, 'registering')
 

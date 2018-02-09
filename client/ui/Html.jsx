@@ -3,11 +3,11 @@
  */
 'use strict'
 
+import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
 import React from 'react'
-import { TheHtml, TheHead, TheBody, TheRouter, } from 'the-components'
+import { isProduction } from 'the-check'
+import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
 import App from './App'
-import { UI, GlobalKeys, Urls, Styles, locales, } from '@self/conf'
-import { isProduction, } from 'the-check'
 
 /** @lends Html */
 function Html ({appScope, renderingContext}) {

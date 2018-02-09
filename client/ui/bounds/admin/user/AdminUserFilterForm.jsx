@@ -4,9 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { asForm } from '../../../wrappers'
 import { TheSearchForm } from 'the-site-components'
 import { get } from 'the-window'
+import { asForm } from '../../../wrappers'
 
 function AdminUserFilterForm (props) {
   const {l} = props

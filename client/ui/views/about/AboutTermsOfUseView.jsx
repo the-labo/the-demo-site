@@ -4,9 +4,9 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheFrame } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheFrame, TheView } from 'the-components'
 import styles from './AboutTermsOfUseView.pcss'
+import { asView } from '../../wrappers'
 
 function AboutTermsOfUseView ({
                                 l,

@@ -3,24 +3,24 @@
  */
 'use strict'
 
-import React from 'react'
-import {
-  TheView,
-  TheCondition
-} from 'the-components'
-import { asView } from '../../wrappers'
-import styles from './AdminUserManageView.pcss'
-import {
-  AdminUserFilterForm,
-  AdminUserActionBar,
-  AdminUserPager,
-  AdminUserCreateDialog,
-  AdminUserDestroyDialog,
-  AdminUserPasswordDialog,
-  AdminUserList
-} from '../../bounds'
 import { Icons, Urls } from '@self/conf'
 import { RoleCodes } from '@self/conf'
+import React from 'react'
+import {
+  TheCondition,
+  TheView,
+} from 'the-components'
+import styles from './AdminUserManageView.pcss'
+import {
+  AdminUserActionBar,
+  AdminUserCreateDialog,
+  AdminUserDestroyDialog,
+  AdminUserFilterForm,
+  AdminUserList,
+  AdminUserPager,
+  AdminUserPasswordDialog,
+} from '../../bounds'
+import { asView } from '../../wrappers'
 
 function AdminUserManageView ({
                                 busy,

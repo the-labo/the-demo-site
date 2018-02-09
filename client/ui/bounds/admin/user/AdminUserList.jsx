@@ -3,11 +3,11 @@
  */
 'use strict'
 
-import React from 'react'
 import c from 'classnames'
-import { TheOperationList, } from 'the-site-components'
+import React from 'react'
+import { asBound, asPure, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
-import { asPure, compose, asBound, } from 'the-hoc'
+import { TheOperationList } from 'the-site-components'
 import { withMoment } from '../../../wrappers'
 
 const AdminUserList = compose(

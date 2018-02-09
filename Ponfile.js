@@ -213,6 +213,14 @@ module.exports = pon(
     'pkg:fix': npx('fixpack'),
     /** Install packages */
     'pkg:install': npx('yarn', 'install', '--ignore-scripts'),
+    /** Link self packages */
+    'pkg:link': symlink({
+      'Local.js': 'node_modules/@self/Local.js',
+      'assets/data': 'node_modules/@self/data',
+      'client': 'node_modules/@self/client',
+      'shim/conf': 'node_modules/@self/conf',
+      'shim/utils': 'node_modules/@self/utils',
+    }, {force: true}),
 
     // -----------------------------------
     // Sub Tasks for PM2
@@ -299,14 +307,6 @@ module.exports = pon(
         '.*.bud'
       ])
     ],
-    /** Generate symbolic links */
-    'struct:symlink': symlink({
-      'Local.js': 'node_modules/@self/Local.js',
-      'assets/data': 'node_modules/@self/data',
-      'client': 'node_modules/@self/client',
-      'shim/conf': 'node_modules/@self/conf',
-      'shim/utils': 'node_modules/@self/utils',
-    }, {force: true}),
 
     // -----------------------------------
     // Sub Tasks for Test
@@ -375,7 +375,7 @@ module.exports = pon(
       /** Run all assets tasks */
       assets: ['assets:*'],
       /** Build all */
-      build: ['struct', 'format', 'ui'],
+      build: ['pkg:link', 'struct', 'format', 'ui'],
       /** Clean all */
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Prepare DB */
@@ -400,7 +400,7 @@ module.exports = pon(
       open: 'open:*',
       /** Prepare project */
       prepare: [
-        'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
+        'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
         ...(isProduction() ? [] : ['pkg:fix', 'doc', 'lint'])
       ],
       /** Prepare and start on production */
