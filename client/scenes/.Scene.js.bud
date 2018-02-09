@@ -14,7 +14,7 @@ const names = Object.keys(flatten(scopes))
     )
   }).filter((v, i, arr) => arr.indexOf(v) === i)
 
-module.exports = names.map((name) => Scene({name}))
+module.exports = names.map((name) => Scene({cjs: true, name}))
 
 if (!module.parent) {
   require('coz').render(__filename)
