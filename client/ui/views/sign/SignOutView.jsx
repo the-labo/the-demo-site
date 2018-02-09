@@ -4,38 +4,41 @@
 'use strict'
 
 import React from 'react'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheView } from 'the-components'
 import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
-import { asView } from '../../wrappers'
 
+@localized
+@cycled
+@titled(({l}) => l('titles.SIGN_OUT_TITLE'))
 class SignOutView extends React.Component {
   render () {
     const {
-                        busy,
-                        done,
-                        l,
+      busy,
+      done,
+      l,
+      title,
     } = this.props
-    
-  return (
-    <TheView className={styles.self}>
-      <TheView.Header icon={Icons.SIGN_OUT_ICON}
-                      text={l('titles.SIGN_OUT_TITLE')}
-      />
-      <TheView.Body>
-        <TheView.Message>
-          {busy && l('messages.WORKING_SIGN_OUT')}
-          {done && l('messages.WORKING_DONE')}
-        </TheView.Message>
-      </TheView.Body>
-    </TheView>
-  )
+
+    return (
+      <TheView className={styles.self}>
+        <TheView.Header icon={Icons.SIGN_OUT_ICON}
+                        text={title}
+        />
+        <TheView.Body>
+          <TheView.Message>
+            {busy && l('messages.WORKING_SIGN_OUT')}
+            {done && l('messages.WORKING_DONE')}
+          </TheView.Message>
+        </TheView.Body>
+      </TheView>
+    )
 
   }
 }
 
-export default asView(
-  SignOutView,
+export default stateful(
   (state) => ({
     busy: state['sign.out.busy'],
     done: state['sign.out.done'],
@@ -53,7 +56,4 @@ export default asView(
       signOutScene.goBack()
     },
   }),
-  {
-    title: ({l}) => l('titles.SIGN_OUT_TITLE'),
-  }
-)
+)(SignOutView)

@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { titled } from 'the-component-mixins'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import {
   TheButton,
   TheButtonGroup,
@@ -17,9 +17,11 @@ import {
 import { Urls } from '@self/conf'
 import styles from './MypageView.pcss'
 import { UserImage } from '../../fragments'
-import { asView, onlySigned } from '../../wrappers'
+import { onlySigned } from '../../wrappers'
 
 @onlySigned
+@localized
+@cycled
 @titled(({l}) => l('titles.ACCOUNT_MYPAGE_TITLE'))
 class MypageView extends React.Component {
   render () {
@@ -27,6 +29,7 @@ class MypageView extends React.Component {
       busy,
       l,
       ready,
+      title,
       user,
     } = this.props
     const {profile} = user || {}
@@ -34,7 +37,7 @@ class MypageView extends React.Component {
       <TheView className={styles.self}
                spinning={busy}>
         <TheView.Header icon={null}
-                        text={l('titles.ACCOUNT_MYPAGE_TITLE')}
+                        text={title}
         />
         <TheView.Body narrow>
           <TheCondition if={ready}>
@@ -76,12 +79,11 @@ class MypageView extends React.Component {
   }
 }
 
-export default asView(
-  MypageView,
+export default stateful(
   (state) => ({
     busy: state['account.busy'],
     ready: state['account.ready'],
     user: state['account.user'],
   }),
   () => ({}),
-)
+)(MypageView)

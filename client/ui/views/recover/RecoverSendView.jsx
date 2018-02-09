@@ -4,48 +4,51 @@
 'use strict'
 
 import React from 'react'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheCondition, TheDone, TheLead, TheView } from 'the-components'
 import styles from './RecoverSendView.pcss'
 import { RecoverSendForm } from '../../bounds'
-import { asView } from '../../wrappers'
 
+@localized
+@cycled
+@titled(({l}) => l('titles.RECOVER_SEND_TITLE'))
 class RecoverSendView extends React.Component {
   render () {
     const {
-                            done,
-                            failure,
-                            l,
+      done,
+      failure,
+      l,
+      title,
     } = this.props
-    
-  return (
-    <TheView className={styles.self}>
-      <TheView.Header icon={null}
-                      text={l('titles.RECOVER_SEND_TITLE')}
-      />
-      <TheView.Body>
-        <TheCondition if={done}>
-          <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
-                   linkTo='/'
-                   message={l('messages.RECOVER_SEND_DONE')}
-          />
-        </TheCondition>
-        <TheCondition unless={done}>
-          <div style={{textAlign: 'center'}}>
-            <TheLead error={failure}
-                     text={l('leads.RECOVER_SEND')}
+
+    return (
+      <TheView className={styles.self}>
+        <TheView.Header icon={null}
+                        text={title}
+        />
+        <TheView.Body>
+          <TheCondition if={done}>
+            <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
+                     linkTo='/'
+                     message={l('messages.RECOVER_SEND_DONE')}
             />
-            <RecoverSendForm/>
-          </div>
-        </TheCondition>
-      </TheView.Body>
-    </TheView>
-  )
+          </TheCondition>
+          <TheCondition unless={done}>
+            <div style={{textAlign: 'center'}}>
+              <TheLead error={failure}
+                       text={l('leads.RECOVER_SEND')}
+              />
+              <RecoverSendForm/>
+            </div>
+          </TheCondition>
+        </TheView.Body>
+      </TheView>
+    )
 
   }
 }
 
-export default asView(
-  RecoverSendView,
+export default stateful(
   (state) => ({
     done: state['recover.send.done'],
     failure: state['recover.send.failure'],
@@ -53,7 +56,4 @@ export default asView(
   ({recoverSendScene}) => ({
     onMount: () => recoverSendScene.init(),
   }),
-  {
-    title: ({l}) => l('titles.RECOVER_SEND_TITLE'),
-  }
-)
+)(RecoverSendView)

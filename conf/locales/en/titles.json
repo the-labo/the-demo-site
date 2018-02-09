@@ -10,6 +10,7 @@
   "ADMIN_USER_PASSWORD_RESET_CONFIRM_TITLE": "Password Reset",
   "ADMIN_USER_PASSWORD_RESET_RESULT_TITLE": "New Passwords",
   "CAUTION_DISCONNECTED_TITLE": "Connection Lost",
+  "ERROR_FORBIDDEN_TITLE": "Your are forbidden",
   "ERROR_NOTFOUND_TITLE": "Page not found",
   "PASSWORD_CHANGE_TITLE": "Password Change",
   "PASSWORD_RESET_TITLE": "Password Reset",

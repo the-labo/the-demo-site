@@ -4,13 +4,14 @@
 'use strict'
 
 import React from 'react'
-import { titled } from 'the-component-mixins'
+import { localized, stateful, titled } from 'the-component-mixins'
 import { TheButton, TheView } from 'the-components'
 import { Icons, Urls } from '@self/conf'
 import styles from './AdminTopView.pcss'
-import { asView, onlySigned } from '../../wrappers'
+import { onlySigned } from '../../wrappers'
 
 @onlySigned
+@localized
 @titled(({l}) => l('titles.ADMIN_TOP_TITLE'))
 class AdminTopView extends React.Component {
   render () {
@@ -35,4 +36,6 @@ class AdminTopView extends React.Component {
   }
 }
 
-export default asView(AdminTopView)
+export default stateful(
+
+)(AdminTopView)

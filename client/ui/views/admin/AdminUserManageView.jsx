@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { titled } from 'the-component-mixins'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import {
   TheCondition,
   TheView,
@@ -21,9 +21,11 @@ import {
   AdminUserPager,
   AdminUserPasswordDialog,
 } from '../../bounds'
-import { asView, onlySigned } from '../../wrappers'
+import { onlySigned } from '../../wrappers'
 
 @onlySigned
+@cycled
+@localized
 @titled(({l}) => l('titles.ADMIN_USER_MANAGE_TITLE'))
 class AdminUserManageView extends React.Component {
   render () {
@@ -67,8 +69,7 @@ class AdminUserManageView extends React.Component {
   }
 }
 
-export default asView(
-  AdminUserManageView,
+export default stateful(
   (state) => ({
     busy: !state['admin.user.list.ready'] && state['admin.user.list.busy'],
     query: state['app.query'],
@@ -101,4 +102,4 @@ export default asView(
     },
     onTearDown: () => {},
   })
-)
+)(AdminUserManageView)

@@ -26,8 +26,8 @@ const AdminUserList = compose(
                               }) {
   return (
     <div className={c(className)}>
-      <TheOperationList entities={users}
-                        {...{l, onSort, onUpdateCheck, sort}}
+      <TheOperationList {...{l, onSort, onUpdateCheck, sort}}
+                        entities={users}
                         fields={{
                           'profile.email': {
                             label: l('labels.USER_EMAIL'),
@@ -49,6 +49,7 @@ const AdminUserList = compose(
                         }}
                         isChecked={({id}) => checks[id]}
                         isFreezed={({id}) => id === 'superadmin'}
+                        keys={['name', 'profile.email', 'profile.name', 'sign.signInAt']}
 
       />
     </div>

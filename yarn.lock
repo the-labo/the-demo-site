@@ -7058,8 +7058,8 @@ seq-queue@0.0.5:
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
 sequelize@^4.31.2, sequelize@^4.32.2:
-  version "4.33.1"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.33.1.tgz#b679443f46b2872ceb9b0664294c99b88e5c0055"
+  version "4.33.2"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.33.2.tgz#1d4a090f629fb96949736baa5bbcdcbd84dc8b7c"
   dependencies:
     bluebird "^3.4.6"
     cls-bluebird "^2.0.1"
@@ -7912,8 +7912,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.0.3.tgz#2f6f53894880567254830927d79b2b48cd45d251"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.0.4.tgz#e7510935971ba320b6bd5b6c63f467c59d76a661"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"

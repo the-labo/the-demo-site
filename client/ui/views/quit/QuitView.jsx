@@ -4,6 +4,7 @@
 'use strict'
 
 import React from 'react'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import {
   TheButton,
   TheButtonGroup,
@@ -13,8 +14,10 @@ import {
   TheView,
 } from 'the-components'
 import styles from './QuitView.pcss'
-import { asView } from '../../wrappers'
 
+@localized
+@cycled
+@titled(({l}) => l('titles.QUIT_TITLE'))
 class QuitView extends React.Component {
   render () {
     const {
@@ -26,13 +29,14 @@ class QuitView extends React.Component {
       onConfirm,
       onConfirmBack,
       onExecute,
+      title,
     } = this.props
 
     return (
       <TheView className={styles.self}
                spinning={busy}>
         <TheView.Header icon={null}
-                        text={l('titles.QUIT_TITLE')}
+                        text={title}
         />
         <TheView.Body>
           <TheCondition if={Boolean(!done && !confirm)}>
@@ -81,8 +85,7 @@ class QuitView extends React.Component {
   }
 }
 
-export default asView(
-  QuitView,
+export default stateful(
   (state) => ({
     busy: state['quit.busy'],
     confirm: state['quit.confirm'],
@@ -102,7 +105,4 @@ export default asView(
     },
     onMount: () => quitScene.init(),
   }),
-  {
-    title: ({l}) => l('titles.QUIT_TITLE'),
-  }
-)
+)(QuitView)
