@@ -3,15 +3,15 @@
  */
 'use strict'
 
-import { Urls } from '@self/conf'
 import React from 'react'
 import {
   TheFooter,
 } from 'the-components'
 import { asBound, asPure, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
-import { LocaleForm } from '../bounds'
+import { Urls } from '@self/conf'
 import styles from './Footer.pcss'
+import { LocaleForm } from '../bounds'
 
 const Footer = compose(
   asPure,

@@ -280,6 +280,7 @@ pon <taskName>
 | p | Shortcut for `prod` task | `pon p` |
 | pkg:fix | Fix package.json | `pon pkg:fix` |
 | pkg:install | Install packages | `pon pkg:install` |
+| pkg:link | Link self packages | `pon pkg:link` |
 | pm2:app | Run app with pm2 | `pon pm2:app` |
 | pm2:backup:dump | Run backup cron with pm2 | `pon pm2:backup:dump` |
 | prepare | Prepare project | `pon prepare` |
@@ -304,7 +305,6 @@ pon <taskName>
 | struct:mkdir | Generate project directories | `pon struct:mkdir` |
 | struct:pkg | Prepare sub packages | `pon struct:pkg` |
 | struct:render | Render coz templates | `pon struct:render` |
-| struct:symlink | Generate symbolic links | `pon struct:symlink` |
 | t | Shortcut for `test` task | `pon t` |
 | test | Run all tess | `pon test` |
 | test:client | Run client tests | `pon test:client` |
@@ -428,8 +428,8 @@ Misc
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-7.75.0.css`
-  * `/the-demo-site-7.75.0.js`
+  * `/the-demo-site-7.76.0.css`
+  * `/the-demo-site-7.76.0.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`

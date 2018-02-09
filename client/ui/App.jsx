@@ -3,7 +3,6 @@
  */
 'use strict'
 
-import { locales } from '@self/conf'
 import React from 'react'
 import { withClient } from 'the-client'
 import {
@@ -14,6 +13,7 @@ import { withBinder } from 'the-handle'
 import { asBound, withCycle } from 'the-hoc'
 import { withLoc } from 'the-loc'
 import { withProvider, withStore } from 'the-store'
+import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 import { Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'

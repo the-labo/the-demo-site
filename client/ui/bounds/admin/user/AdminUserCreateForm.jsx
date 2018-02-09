@@ -3,9 +3,9 @@
  */
 'use strict'
 
-import { RoleCodes } from '@self/conf'
 import React from 'react'
 import { TheUserCreateForm } from 'the-site-components'
+import { RoleCodes } from '@self/conf'
 import { asForm } from '../../../wrappers'
 
 function AdminUserCreateForm (props) {

@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {RoleCodes} = require('@self/conf')
 const {compose} = require('the-controller-mixins')
+const {RoleCodes} = require('@self/conf')
 const Ctrl = require('./Ctrl')
 
 const SignCtrlBase = compose(

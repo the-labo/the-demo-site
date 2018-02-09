@@ -3,7 +3,6 @@
  */
 'use strict'
 
-import { Icons, Urls } from '@self/conf'
 import React from 'react'
 import {
   TheButton,
@@ -14,6 +13,7 @@ import {
 } from 'the-components'
 import { asBound, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
+import { Icons, Urls } from '@self/conf'
 import { UserLabel } from '../fragments'
 import { withRole } from '../wrappers'
 

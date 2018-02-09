@@ -3,11 +3,11 @@
  */
 'use strict'
 
-import { Icons } from '@self/conf'
 import React from 'react'
 import { asBound, compose } from 'the-hoc'
 import { withLoc } from 'the-loc'
 import { TheCautionDisconnectedDialog } from 'the-site-components'
+import { Icons } from '@self/conf'
 
 const CautionDisconnectedDialog = compose(
   withLoc

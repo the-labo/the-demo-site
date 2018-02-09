@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const env = require('../env')
 const create = require('./create')
+const env = require('../env')
 
 const singleton = create(env.mail)
 Object.assign(singleton, {

@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {Lifetimes, Urls} = require('@self/conf')
 const {compose} = require('the-controller-mixins')
+const {Lifetimes, Urls} = require('@self/conf')
 const {withAlias} = require('./concerns')
 const Ctrl = require('./Ctrl')
 

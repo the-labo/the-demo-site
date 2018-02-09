@@ -3,10 +3,10 @@
  */
 'use strict'
 
-import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
 import React from 'react'
 import { isProduction } from 'the-check'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
+import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 
 /** @lends Html */

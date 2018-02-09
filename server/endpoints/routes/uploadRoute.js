@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const Local = require('@self/Local')
 const moment = require('moment')
 const path = require('path')
 const {theUploadRouteFor} = require('the-site-routes')
+const Local = require('@self/Local')
 
 /** @lends uploadRoute */
 async function uploadRoute (ctx) {

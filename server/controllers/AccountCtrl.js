@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const Local = require('@self/Local')
 const {compose} = require('the-controller-mixins')
+const Local = require('@self/Local')
 const Ctrl = require('./Ctrl')
 const AccountCtrlBase = compose(
 

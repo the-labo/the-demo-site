@@ -3,9 +3,9 @@
  */
 'use strict'
 
-import { Icons, Urls } from '@self/conf'
 import React from 'react'
 import { TheButton, TheButtonGroup, TheView } from 'the-components'
+import { Icons, Urls } from '@self/conf'
 import styles from './SignUpView.pcss'
 import { SignUpForm } from '../../bounds'
 import { asView } from '../../wrappers'

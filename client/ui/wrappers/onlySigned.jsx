@@ -4,12 +4,12 @@
  */
 'use strict'
 
-import { Urls } from '@self/conf'
 import React from 'react'
 import { TheSpin, withHistory } from 'the-components'
 import { compose } from 'the-hoc'
 import { connect, withStore } from 'the-store'
 import { get } from 'the-window'
+import { Urls } from '@self/conf'
 
 const debug = require('debug')('app:ui:onlySigned')
 

@@ -3,9 +3,9 @@
  */
 'use strict'
 
-import { Icons } from '@self/conf'
 import React from 'react'
 import { TheView } from 'the-components'
+import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
 import { asView } from '../../wrappers'
 

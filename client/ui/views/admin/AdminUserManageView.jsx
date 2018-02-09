@@ -3,13 +3,13 @@
  */
 'use strict'
 
-import { Icons, Urls } from '@self/conf'
-import { RoleCodes } from '@self/conf'
 import React from 'react'
 import {
   TheCondition,
   TheView,
 } from 'the-components'
+import { Icons, Urls } from '@self/conf'
+import { RoleCodes } from '@self/conf'
 import styles from './AdminUserManageView.pcss'
 import {
   AdminUserActionBar,

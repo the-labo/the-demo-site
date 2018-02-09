@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {SUPER_ADMIN_NAME} = require('@self/Local')
 const {equal, ok} = require('assert')
+const {SUPER_ADMIN_NAME} = require('@self/Local')
 const createDB = require('../db/create')
 
 describe('db', () => {

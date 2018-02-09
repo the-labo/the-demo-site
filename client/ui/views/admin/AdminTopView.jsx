@@ -3,9 +3,9 @@
  */
 'use strict'
 
-import { Icons, Urls } from '@self/conf'
 import React from 'react'
 import { TheButton, TheView } from 'the-components'
+import { Icons, Urls } from '@self/conf'
 import styles from './AdminTopView.pcss'
 import { asView } from '../../wrappers'
 

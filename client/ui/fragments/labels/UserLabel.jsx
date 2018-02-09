@@ -5,8 +5,8 @@
 
 import c from 'classnames'
 import React from 'react'
-import UserImage from '../images/UserImage'
 import styles from './UserLabel.pcss'
+import UserImage from '../images/UserImage'
 
 const UserLabel = function UserLabelImpl ({
                                             className,

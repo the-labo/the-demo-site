@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {Urls} = require('@self/conf')
 const {bindScope, withBusy, withHistory, withLocation, withQuery} = require('the-scene-mixins/shim')
+const {Urls} = require('@self/conf')
 const Scene = require('./Scene')
 
 @withBusy

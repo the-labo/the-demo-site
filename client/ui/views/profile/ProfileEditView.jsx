@@ -3,9 +3,9 @@
  */
 'use strict'
 
-import { Icons, Urls } from '@self/conf'
 import React from 'react'
 import { TheCondition, TheDone, TheView } from 'the-components'
+import { Icons, Urls } from '@self/conf'
 import styles from './ProfileEditView.pcss'
 import { ProfileEditForm } from '../../bounds'
 import { asView } from '../../wrappers'

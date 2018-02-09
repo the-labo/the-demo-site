@@ -3,7 +3,6 @@
  */
 'use strict'
 
-import { Urls } from '@self/conf'
 import React from 'react'
 import {
   TheButton,
@@ -14,6 +13,7 @@ import {
   TheSection,
   TheView,
 } from 'the-components'
+import { Urls } from '@self/conf'
 import styles from './MypageView.pcss'
 import { UserImage } from '../../fragments'
 import { asView } from '../../wrappers'

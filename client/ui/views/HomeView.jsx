@@ -5,8 +5,8 @@
 
 import React from 'react'
 import { TheButton, TheView } from 'the-components'
-import { asView } from '../wrappers'
 import styles from './HomeView.pcss'
+import { asView } from '../wrappers'
 
 function HomeView ({
                      busy,

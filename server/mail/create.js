@@ -5,11 +5,11 @@
  */
 'use strict'
 
-const {locales} = require('@self/conf')
 const theMail = require('the-mail').default
-const env = require('../env')
+const {locales} = require('@self/conf')
 const {emailOfUser, localeDate, nameOfUser} = require('./helpers')
 const Templates = require('./Templates')
+const env = require('../env')
 
 /** @lends create */
 function create (config = env.mail) {

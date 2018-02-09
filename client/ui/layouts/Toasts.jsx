@@ -3,10 +3,10 @@
  */
 'use strict'
 
-import { UI } from '@self/conf'
 import React from 'react'
 import { asBound, compose } from 'the-hoc'
 import { TheSiteToasts } from 'the-site-components'
+import { UI } from '@self/conf'
 
 const Toasts = compose(
 )(

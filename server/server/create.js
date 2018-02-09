@@ -5,12 +5,12 @@
  */
 'use strict'
 
-const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
-const Local = require('@self/Local')
 const {isProduction} = require('the-check')
 const theSeal = require('the-seal').default
 const theServer = require('the-server').default
 const {servicesProxy} = require('the-service-base')
+const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
+const Local = require('@self/Local')
 const endpoints = require('../endpoints')
 const env = require('../env')
 const mappings = require('../mappings')

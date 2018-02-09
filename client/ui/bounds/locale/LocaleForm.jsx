@@ -3,10 +3,10 @@
  */
 'use strict'
 
-import { LocaleNames } from '@self/conf'
 import React from 'react'
 import { compose } from 'the-hoc'
 import { TheLocaleForm } from 'the-site-components'
+import { LocaleNames } from '@self/conf'
 import styles from './LocaleForm.pcss'
 import { asForm } from '../../wrappers'
 

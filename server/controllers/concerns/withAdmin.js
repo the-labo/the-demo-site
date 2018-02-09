@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {RoleCodes} = require('@self/conf')
 const {TheForbiddenError} = require('the-error')
+const {RoleCodes} = require('@self/conf')
 
 /** @lends withAdmin */
 function withAdmin (Class) {
