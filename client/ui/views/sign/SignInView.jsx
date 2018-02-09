@@ -10,9 +10,12 @@ import styles from './SignInView.pcss'
 import { SignInForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function SignInView ({
+class SignInView extends React.Component {
+  render () {
+    const {
                        l,
-                     }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGN_IN_ICON}
@@ -29,6 +32,8 @@ function SignInView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

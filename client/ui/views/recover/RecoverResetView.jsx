@@ -9,11 +9,14 @@ import styles from './RecoverResetView.pcss'
 import { RecoverResetForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function RecoverResetView ({
+class RecoverResetView extends React.Component {
+  render () {
+    const {
                              done,
                              failure,
                              l,
-                           }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -34,6 +37,8 @@ function RecoverResetView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

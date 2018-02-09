@@ -15,65 +15,70 @@ import {
 import styles from './QuitView.pcss'
 import { asView } from '../../wrappers'
 
-function QuitView ({
-                     busy,
-                     confirm,
-                     done,
-                     l,
-                     onCancel,
-                     onConfirm,
-                     onConfirmBack,
-                     onExecute,
-                   }) {
-  return (
-    <TheView className={styles.self}
-             spinning={busy}>
-      <TheView.Header icon={null}
-                      text={l('titles.QUIT_TITLE')}
-      />
-      <TheView.Body>
-        <TheCondition if={Boolean(!done && !confirm)}>
-          <div>
+class QuitView extends React.Component {
+  render () {
+    const {
+      busy,
+      confirm,
+      done,
+      l,
+      onCancel,
+      onConfirm,
+      onConfirmBack,
+      onExecute,
+    } = this.props
+
+    return (
+      <TheView className={styles.self}
+               spinning={busy}>
+        <TheView.Header icon={null}
+                        text={l('titles.QUIT_TITLE')}
+        />
+        <TheView.Body>
+          <TheCondition if={Boolean(!done && !confirm)}>
             <div>
-              <TheLead text={l('messages.QUIT_LEAD_NOTICE')}
-                       title={l('leads.QUIT_LEAD')}
+              <div>
+                <TheLead text={l('messages.QUIT_LEAD_NOTICE')}
+                         title={l('leads.QUIT_LEAD')}
+                />
+              </div>
+              <br/>
+              <TheButtonGroup>
+                <TheButton onClick={onCancel}>{l('buttons.DO_CANCEL')}</TheButton>
+                <TheButton.Next onClick={onConfirm}
+                >{l('buttons.SHOW_QUIT_CONFIRM')}</TheButton.Next>
+              </TheButtonGroup>
+            </div>
+          </TheCondition>
+          <TheCondition if={Boolean(!done && confirm)}>
+            <div>
+              <div>
+                <TheLead title={l('leads.QUIT_CONFIRM')}
+                />
+              </div>
+              <br/>
+              <TheButtonGroup>
+                <TheButton.Prev onClick={onConfirmBack}
+                >{l('buttons.DO_BACK')}</TheButton.Prev>
+                <TheButton onClick={onExecute}
+                           primary>{l('buttons.DO_QUIT')}</TheButton>
+              </TheButtonGroup>
+            </div>
+          </TheCondition>
+          <TheCondition if={Boolean(done)}>
+            <div>
+              <br/>
+              <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
+                       linkTo='/'
+                       message={l('messages.QUIT_DONE')}
               />
             </div>
-            <br/>
-            <TheButtonGroup>
-              <TheButton onClick={onCancel}>{l('buttons.DO_CANCEL')}</TheButton>
-              <TheButton.Next onClick={onConfirm}
-              >{l('buttons.SHOW_QUIT_CONFIRM')}</TheButton.Next>
-            </TheButtonGroup>
-          </div>
-        </TheCondition>
-        <TheCondition if={Boolean(!done && confirm)}>
-          <div>
-            <div>
-              <TheLead title={l('leads.QUIT_CONFIRM')}
-              />
-            </div>
-            <br/>
-            <TheButtonGroup>
-              <TheButton.Prev onClick={onConfirmBack}
-              >{l('buttons.DO_BACK')}</TheButton.Prev>
-              <TheButton onClick={onExecute}
-                         primary>{l('buttons.DO_QUIT')}</TheButton>
-            </TheButtonGroup>
-          </div>
-        </TheCondition>
-        <TheCondition if={Boolean(done)}>
-          <div>
-            <br/>
-            <TheDone linkText={l('buttons.SHOW_TOP_AGAIN')}
-                     linkTo='/'
-                     message={l('messages.QUIT_DONE')}
-            />
-          </div>
-        </TheCondition>
-      </TheView.Body>
-    </TheView>
-  )
+          </TheCondition>
+        </TheView.Body>
+      </TheView>
+    )
+
+  }
 }
 
 export default asView(
@@ -98,7 +103,6 @@ export default asView(
     onMount: () => quitScene.init(),
   }),
   {
-    onlySigned: false,
     title: ({l}) => l('titles.QUIT_TITLE'),
   }
 )

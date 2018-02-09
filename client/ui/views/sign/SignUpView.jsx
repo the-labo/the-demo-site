@@ -10,9 +10,12 @@ import styles from './SignUpView.pcss'
 import { SignUpForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function SignUpView ({
+class SignUpView extends React.Component {
+  render () {
+    const {
                        l,
-                     }) {
+    } = this.props
+    
 
   return (
     <TheView className={styles.self}>
@@ -34,6 +37,8 @@ function SignUpView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

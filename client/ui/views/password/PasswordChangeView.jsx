@@ -10,12 +10,15 @@ import styles from './PasswordChangeView.pcss'
 import { PasswordChangeForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function PasswordChangeView ({
+class PasswordChangeView extends React.Component {
+  render () {
+    const {
                                done,
                                l,
                                onAgain,
                                user,
-                             }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -41,6 +44,8 @@ function PasswordChangeView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

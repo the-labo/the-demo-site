@@ -8,10 +8,13 @@ import { TheFrame, TheView } from 'the-components'
 import styles from './AboutPrivacyPolicyView.pcss'
 import { asView } from '../../wrappers'
 
-function AboutPrivacyPolicyView ({
+class AboutPrivacyPolicyView extends React.Component {
+  render () {
+    const {
                                    l,
                                    lang,
-                                 }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -22,6 +25,8 @@ function AboutPrivacyPolicyView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

@@ -9,11 +9,14 @@ import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
 import { asView } from '../../wrappers'
 
-function SignOutView ({
+class SignOutView extends React.Component {
+  render () {
+    const {
                         busy,
                         done,
                         l,
-                      }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={Icons.SIGN_OUT_ICON}
@@ -27,6 +30,8 @@ function SignOutView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

@@ -8,12 +8,15 @@ import { TheCondition, TheDone, TheView } from 'the-components'
 import styles from './VerifyConfirmView.pcss'
 import { asView } from '../../wrappers'
 
-function VerifyConfirmView ({
+class VerifyConfirmView extends React.Component {
+  render () {
+    const {
                               busy,
                               done,
                               failure,
                               l,
-                            }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}
              spinning={busy}>
@@ -37,6 +40,8 @@ function VerifyConfirmView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

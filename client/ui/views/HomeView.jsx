@@ -8,9 +8,12 @@ import { TheButton, TheView } from 'the-components'
 import styles from './HomeView.pcss'
 import { asView } from '../wrappers'
 
-function HomeView ({
+class HomeView extends React.Component {
+  render () {
+    const {
                      busy,
-                   }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}
              spinning={busy}>
@@ -24,6 +27,8 @@ function HomeView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

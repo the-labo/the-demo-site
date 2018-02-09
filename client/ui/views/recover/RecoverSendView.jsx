@@ -9,11 +9,14 @@ import styles from './RecoverSendView.pcss'
 import { RecoverSendForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function RecoverSendView ({
+class RecoverSendView extends React.Component {
+  render () {
+    const {
                             done,
                             failure,
                             l,
-                          }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -37,6 +40,8 @@ function RecoverSendView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

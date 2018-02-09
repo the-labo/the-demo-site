@@ -4,13 +4,13 @@
 'use strict'
 
 import React from 'react'
-import { cycled, localized, stateful } from 'the-component-mixins'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import {
   TheMain,
   TheRoot,
 } from 'the-components'
 import { withBinder } from 'the-handle'
-import { withProvider, withStore } from 'the-store'
+import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
 import { CautionDisconnectedDialog } from './bounds'
 import { Footer, Header, Toasts } from './layouts'
@@ -20,6 +20,7 @@ import Routes from './Routes'
 @withBinder
 @cycled
 @localized.with(locales)
+@titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {
   render () {
     const {busy} = this.props
@@ -40,6 +41,7 @@ class App extends React.Component {
 export default stateful(
   (state) => ({
     busy: state['app.busy'],
+    pathname: state['app.pathname'],
   }),
   ({
      accountScene,

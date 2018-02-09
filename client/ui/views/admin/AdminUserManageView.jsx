@@ -4,12 +4,13 @@
 'use strict'
 
 import React from 'react'
+import { titled } from 'the-component-mixins'
 import {
   TheCondition,
   TheView,
 } from 'the-components'
-import { Icons, Urls } from '@self/conf'
 import { RoleCodes } from '@self/conf'
+import { Icons, Urls } from '@self/conf'
 import styles from './AdminUserManageView.pcss'
 import {
   AdminUserActionBar,
@@ -20,44 +21,50 @@ import {
   AdminUserPager,
   AdminUserPasswordDialog,
 } from '../../bounds'
-import { asView } from '../../wrappers'
+import { asView, onlySigned } from '../../wrappers'
 
-function AdminUserManageView ({
-                                busy,
-                                l,
-                                onCreate,
-                                pop,
-                                ready,
-                              }) {
-  return (
-    <TheView className={styles.self}
-             spinning={busy}
-    >
-      <TheView.Header icon={Icons.USERS_ICON}
-                      leftIcon={Icons.BACK_ICON}
-                      onLeftClick={pop}
-                      onRightClick={onCreate}
-                      rightText={l('buttons.SHOW_USER_CREATE')}
-                      text={l('titles.ADMIN_USER_MANAGE_TITLE')}
-      />
-      <TheView.Body>
-        <div className={styles.searchRow}>
-          <AdminUserFilterForm/>
-        </div>
-        <TheCondition if={ready}>
-          <div>
-            <AdminUserPager showCounts/>
-            <AdminUserList className={styles.list}/>
-            <AdminUserPager/>
-            <AdminUserActionBar/>
-            <AdminUserCreateDialog/>
-            <AdminUserDestroyDialog/>
-            <AdminUserPasswordDialog/>
+@onlySigned
+@titled(({l}) => l('titles.ADMIN_USER_MANAGE_TITLE'))
+class AdminUserManageView extends React.Component {
+  render () {
+    const {
+      busy,
+      l,
+      onCreate,
+      pop,
+      ready,
+      title,
+    } = this.props
+    return (
+      <TheView className={styles.self}
+               spinning={busy}
+      >
+        <TheView.Header icon={Icons.USERS_ICON}
+                        leftIcon={Icons.BACK_ICON}
+                        onLeftClick={pop}
+                        onRightClick={onCreate}
+                        rightText={l('buttons.SHOW_USER_CREATE')}
+                        text={title}
+        />
+        <TheView.Body>
+          <div className={styles.searchRow}>
+            <AdminUserFilterForm/>
           </div>
-        </TheCondition>
-      </TheView.Body>
-    </TheView>
-  )
+          <TheCondition if={ready}>
+            <div>
+              <AdminUserPager showCounts/>
+              <AdminUserList className={styles.list}/>
+              <AdminUserPager/>
+              <AdminUserActionBar/>
+              <AdminUserCreateDialog/>
+              <AdminUserDestroyDialog/>
+              <AdminUserPasswordDialog/>
+            </div>
+          </TheCondition>
+        </TheView.Body>
+      </TheView>
+    )
+  }
 }
 
 export default asView(
@@ -93,9 +100,5 @@ export default asView(
       await adminUserListScene.doSync()
     },
     onTearDown: () => {},
-  }),
-  {
-    onlySigned: true,
-    title: ({l}) => l('titles.ADMIN_USER_MANAGE_TITLE'),
-  }
+  })
 )

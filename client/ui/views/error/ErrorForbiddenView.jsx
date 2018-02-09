@@ -8,7 +8,10 @@ import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-compo
 import styles from './ErrorForbiddenView.pcss'
 import { asView } from '../../wrappers'
 
-function ErrorForbiddenView ({l}) {
+class ErrorForbiddenView extends React.Component {
+  render () {
+    const {l} = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -29,6 +32,8 @@ function ErrorForbiddenView ({l}) {
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

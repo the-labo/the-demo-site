@@ -10,13 +10,16 @@ import styles from './ProfileEditView.pcss'
 import { ProfileEditForm } from '../../bounds'
 import { asView } from '../../wrappers'
 
-function ProfileEditView ({
+class ProfileEditView extends React.Component {
+  render () {
+    const {
                             busy,
                             done,
                             l,
                             onAgain,
                             user,
-                          }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}
              spinning={busy}>
@@ -43,6 +46,8 @@ function ProfileEditView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

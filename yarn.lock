@@ -7895,7 +7895,7 @@ the-client@^5.0.1:
     the-error "^1.4.4"
     uuid "^3.2.1"
 
-the-code@^3.0.0:
+the-code@^3.0.0, the-code@^3.4.6:
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.4.6.tgz#eecea15b3a62073753caa9a00986167e5783faf0"
   dependencies:
@@ -7912,8 +7912,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.0.0.tgz#52c8db87f1c21b04f7fde3adde48e2c36774cfa8"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.0.3.tgz#2f6f53894880567254830927d79b2b48cd45d251"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"
@@ -8406,13 +8406,15 @@ the-ps@^1.0.8:
     yesno "0.0.1"
 
 the-refactor@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/the-refactor/-/the-refactor-1.1.0.tgz#4d7be635972975899e0579781597dc77b93972ed"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/the-refactor/-/the-refactor-1.1.2.tgz#8def444da5a812411f6f208caf0298dffae0f9f0"
   dependencies:
     abind "^1.0.3"
     aglob "^3.0.0"
     asfs "^2.0.2"
+    babylon-walk "^1.0.2"
     filecopy "^4.0.0"
+    the-code "^3.4.6"
 
 the-refresher@^1.0.2:
   version "1.0.2"

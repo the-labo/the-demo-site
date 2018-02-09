@@ -8,7 +8,10 @@ import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-compo
 import styles from './ErrorNotfoundView.pcss'
 import { asView } from '../../wrappers'
 
-function ErrorNotfoundView ({l}) {
+class ErrorNotfoundView extends React.Component {
+  render () {
+    const {l} = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -29,6 +32,8 @@ function ErrorNotfoundView ({l}) {
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(

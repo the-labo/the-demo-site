@@ -9,10 +9,13 @@ import { Icons, Urls } from '@self/conf'
 import styles from './SignAskView.pcss'
 import { asView } from '../../wrappers'
 
-function SignAskView ({
+class SignAskView extends React.Component {
+  render () {
+    const {
                         back,
                         l,
-                      }) {
+    } = this.props
+    
   return (
     <TheView className={styles.self}>
       <TheView.Header icon={null}
@@ -34,6 +37,8 @@ function SignAskView ({
       </TheView.Body>
     </TheView>
   )
+
+  }
 }
 
 export default asView(
