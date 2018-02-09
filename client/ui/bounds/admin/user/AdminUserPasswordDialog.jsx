@@ -4,14 +4,14 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { asBound, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import {
   TheOperationDialog,
 } from 'the-site-components'
 
 const AdminUserPasswordDialog = compose(
-  withLoc
+  localized
 )(
   function AdminUserPasswordDialogImpl ({
                                           active,

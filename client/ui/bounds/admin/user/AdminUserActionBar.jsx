@@ -4,13 +4,13 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { TheActionBar } from 'the-components'
 import { asBound, asPure, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 
 const AdminUserActionBar = compose(
   asPure,
-  withLoc,
+  localized,
 )(
   function AdminUserActionBarImpl ({
                                 l,

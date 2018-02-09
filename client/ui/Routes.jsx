@@ -3,7 +3,6 @@
 import React from 'react'
 import { isProduction } from 'the-check'
 import { TheRoute, TheRouteStack } from 'the-components'
-import { withLoc } from 'the-loc'
 import { hashProxy } from 'the-site-util'
 import { Urls } from '@self/conf'
 import * as views from './views'
@@ -46,4 +45,4 @@ const Routes = ({}) => (
   </TheRoute.Switch>
 )
 
-export default withLoc(Routes)
+export default Routes

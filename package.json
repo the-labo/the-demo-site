@@ -42,6 +42,7 @@
     "the-check": "^1.2.1",
     "the-client": "^5.0.1",
     "the-code": "^3.0.0",
+    "the-component-mixins": "^1.0.0",
     "the-components": "^6.0.0",
     "the-controller-base": "^4.0.0",
     "the-controller-mixins": "^1.1.2",

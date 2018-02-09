@@ -4,16 +4,16 @@
  */
 'use strict'
 
+import { localized } from 'the-component-mixins'
 import { withForm } from 'the-components'
 import { asBound, withCycle } from 'the-hoc'
-import { withLoc } from 'the-loc'
 
 /** @lends asForm */
 function asForm (Component,
                  mapStateToProps,
                  mapHandleToProps) {
   return [
-    withLoc,
+    localized,
     withCycle,
     withForm,
     (Component) => asBound(Component, mapStateToProps, mapHandleToProps)

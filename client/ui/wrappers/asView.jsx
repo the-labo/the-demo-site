@@ -2,9 +2,9 @@
 
 import Debug from 'debug'
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { withHistory, withRoute } from 'the-components'
 import { asBound, withCycle, withTitle } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import onlySigned from './onlySigned'
 
 const debug = Debug('app:view')
@@ -41,7 +41,7 @@ function asView (Component,
     withCycle,
     (Component) => asBound(Component, mapStateToProps, mapHandleToProps),
     options.onlySigned && onlySigned,
-    withLoc,
+    localized,
     withHistory,
     withRoute,
   ]

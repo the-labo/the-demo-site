@@ -4,6 +4,7 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import {
   TheButton,
   TheButtonGroup,
@@ -12,14 +13,13 @@ import {
   TheHeader,
 } from 'the-components'
 import { asBound, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import { Icons, Urls } from '@self/conf'
 import { UserLabel } from '../fragments'
 import { withRole } from '../wrappers'
 
 const Header = compose(
   withRole,
-  withLoc,
+  localized,
 )(function HeaderImpl ({
                          isAdmin,
                          l,

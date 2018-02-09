@@ -4,18 +4,18 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import {
   TheFooter,
 } from 'the-components'
 import { asBound, asPure, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import { Urls } from '@self/conf'
 import styles from './Footer.pcss'
 import { LocaleForm } from '../bounds'
 
 const Footer = compose(
   asPure,
-  withLoc
+  localized
 )(function FooterImpl ({
                          l,
                        }) {

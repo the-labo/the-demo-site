@@ -4,12 +4,12 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { asBound, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import { TheDestroyDialog } from 'the-site-components'
 
 const AdminUserDestroyDialog = compose(
-  withLoc
+  localized
 )(
   function AdminUserDestroyDialogImpl ({
                                     active,

@@ -4,13 +4,13 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { asBound, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import { TheCreateDialog } from 'the-site-components'
 import AdminUserCreateForm from './AdminUserCreateForm'
 
 const AdminUserCreateDialog = compose(
-  withLoc,
+  localized,
 )(
   function AdminUserCreateDialogImpl ({
                                         active,

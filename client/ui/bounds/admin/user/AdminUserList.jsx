@@ -5,13 +5,13 @@
 
 import c from 'classnames'
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import { asBound, asPure, compose } from 'the-hoc'
-import { withLoc } from 'the-loc'
 import { TheOperationList } from 'the-site-components'
 import { withMoment } from '../../../wrappers'
 
 const AdminUserList = compose(
-  withLoc,
+  localized,
   asPure,
   withMoment,
 )(function AdminUserListImpl ({

@@ -653,11 +653,18 @@ acolor@^2.0.1:
   dependencies:
     color "^2.0.0"
 
+acorn-node@^1.2.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/acorn-node/-/acorn-node-1.3.0.tgz#5f86d73346743810ef1269b901dbcbded020861b"
+  dependencies:
+    acorn "^5.4.1"
+    xtend "^4.0.1"
+
 acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
-acorn@^5.2.1:
+acorn@^5.2.1, acorn@^5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.4.1.tgz#fdc58d9d17f4a4e98d102ded826a9b9759125102"
 
@@ -1814,8 +1821,8 @@ boxen@^1.2.1:
     widest-line "^2.0.0"
 
 brace-expansion@^1.1.7:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.9.tgz#acdc7dde0e939fb3b32fe933336573e2a7dc2b7c"
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
@@ -2097,8 +2104,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000791, caniuse-lite@^1.0.30000792:
-  version "1.0.30000804"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000804.tgz#8729a143d65378e8936adbb161f550e9c49fc09d"
+  version "1.0.30000805"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000805.tgz#83a5f21ead01486e67bccca6fae5dca7cde496de"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2355,13 +2362,13 @@ clay-lump@^4.2.29:
     debug "^3.1.0"
 
 clay-policy@^2.1.5, clay-policy@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/clay-policy/-/clay-policy-2.1.6.tgz#d84bfdd9bdf9c739cb9456d5aa74a19ba16df431"
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/clay-policy/-/clay-policy-2.1.7.tgz#f2695daf511a49a58603c40ef19a3ae1baf60ade"
   dependencies:
     adigest "^3.0.0"
-    asobj "^2.0.2"
+    asobj "^2.0.10"
     clay-constants "^3.4.4"
-    clay-entity "^2.1.3"
+    clay-entity "^2.1.4"
     clay-errors "^3.0.1"
     clay-schemas "^4.1.1"
     clay-serial "^2.0.3"
@@ -7727,10 +7734,10 @@ symbol-observable@^1.0.3:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
 syntax-error@^1.1.1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/syntax-error/-/syntax-error-1.3.0.tgz#1ed9266c4d40be75dc55bf9bb1cb77062bb96ca1"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/syntax-error/-/syntax-error-1.4.0.tgz#2d9d4ff5c064acb711594a3e3b95054ad51d907c"
   dependencies:
-    acorn "^4.0.3"
+    acorn-node "^1.2.0"
 
 taggit@^2.0.1:
   version "2.0.2"
@@ -7889,8 +7896,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^3.0.0:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.4.5.tgz#d3df1fafc4181c8d1c06b0feefdd4729568d5f9f"
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.4.6.tgz#eecea15b3a62073753caa9a00986167e5783faf0"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -7904,6 +7911,14 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
+the-component-mixins@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.0.0.tgz#52c8db87f1c21b04f7fde3adde48e2c36774cfa8"
+  dependencies:
+    bwindow "^1.1.0"
+    prop-types "^15.6.0"
+    the-check "^1.2.2"
+
 the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/the-component-util/-/the-component-util-2.1.2.tgz#8fc6fc221ff911a1dcf8f36833a6ba1de85af287"
@@ -7916,8 +7931,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.3.tgz#b01c1472376e68254ce8c8ec624c176301bb190c"
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.4.tgz#76d640116934f5deff8710cb495a7174df45b6c8"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.39"
     classnames "^2.2.5"
@@ -7929,11 +7944,11 @@ the-components@^6.0.0:
     the-card "^2.0.1"
     the-condition "^2.0.1"
     the-container "^3.0.1"
-    the-dialog "^2.0.1"
+    the-dialog "^2.0.3"
     the-done "^3.0.0"
     the-drawer "^3.0.0"
     the-flick "^4.0.2"
-    the-footer "^2.0.4"
+    the-footer "^2.1.0"
     the-form "^2.0.6"
     the-frame "^2.0.0"
     the-head "^1.0.14"
@@ -7941,7 +7956,7 @@ the-components@^6.0.0:
     the-html "^1.0.7"
     the-icon "^4.0.2"
     the-image "^2.0.1"
-    the-info "^2.0.1"
+    the-info "^2.0.2"
     the-input "^3.0.10"
     the-jumbotron "^3.0.0"
     the-lead "^1.1.2"
@@ -7953,7 +7968,7 @@ the-components@^6.0.0:
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
-    the-route "^3.0.10"
+    the-route "^3.0.15"
     the-router "^2.0.6"
     the-section "^2.0.1"
     the-spin "^3.1.0"
@@ -8048,7 +8063,7 @@ the-decorators@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/the-decorators/-/the-decorators-1.0.0.tgz#39ad7cd2e61fa204a65f01cad4238980bac7b03b"
 
-the-dialog@^2.0.1:
+the-dialog@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/the-dialog/-/the-dialog-2.0.3.tgz#672c3919b6df18614d599551405a67335bf550ab"
   dependencies:
@@ -8121,7 +8136,7 @@ the-flick@^4.0.2:
     the-video "^2.0.5"
     the-window "^5.3.3"
 
-the-footer@^2.0.4:
+the-footer@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/the-footer/-/the-footer-2.1.0.tgz#c5b89920e854b5db365361839f49a5b2ac2828a2"
   dependencies:
@@ -8187,8 +8202,8 @@ the-header@^3.0.4:
     the-window "^5.3.3"
 
 the-hoc@^1.1.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.2.2.tgz#84fd9ac6e54f3ccf2bac8a968d4301ad0f2ff47e"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.2.3.tgz#8bab8c3175c7165090fb2c4a374768a1befc53d7"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -8222,7 +8237,7 @@ the-image@^2.0.1:
     the-icon "^4.0.1"
     the-style "^2.1.0"
 
-the-info@^2.0.1:
+the-info@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/the-info/-/the-info-2.0.2.tgz#65d5fa007ef8d97ae46abc3917b5d02775525585"
   dependencies:
@@ -8313,8 +8328,8 @@ the-list@^3.1.0:
     the-style "^2.1.0"
 
 the-loc@^2.0.1:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-2.1.4.tgz#44bd60f2a36be0606ced1529d5865ad0be40ec60"
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/the-loc/-/the-loc-2.1.5.tgz#40ecefb249640cb2bceb45c6a58d23fd902b8487"
   dependencies:
     argx "^3.0.2"
     evaljson "^5.1.0"
@@ -8343,14 +8358,14 @@ the-main@^3.0.5:
     the-style "^2.1.0"
 
 the-menu@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.6.tgz#b29df0faa6e3f0e4f49d5000dca8bed501bf9b7f"
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.7.tgz#882a462b9eb09b68e96963efb517db1a06398b1e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     react-click-outside "^3.0.0"
     the-component-util "^2.1.2"
-    the-icon "^4.0.1"
+    the-icon "^4.0.2"
     the-link "^3.0.6"
     the-style "^2.1.0"
     the-window "^5.3.3"
@@ -8434,9 +8449,9 @@ the-root@^2.0.3:
     the-component-util "^2.1.2"
     the-style "^2.1.0"
 
-the-route@^3.0.10:
-  version "3.0.14"
-  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.14.tgz#7b4f630fbedbdfc6fa4b55cbbfcf1bd2019fd7a7"
+the-route@^3.0.15:
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.15.tgz#47fcecdf6cf0af48a9041cd1f7b5b62361a8d9af"
   dependencies:
     bwindow "^1.1.0"
     classnames "^2.2.5"
@@ -8592,8 +8607,8 @@ the-setting@^2.0.0:
     the-file-util "^1.0.0"
 
 the-site-components@^2.4.5:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-2.5.0.tgz#6f797eb31a96edb9dab73b6fbf4843c6b757c2dd"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-2.5.1.tgz#4f4a94f0d79364a4a8d998a076fb067cf8fbade0"
   dependencies:
     asobj "^2.0.10"
     classnames "^2.2.5"
@@ -9291,7 +9306,7 @@ xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
 
-xtend@^4.0.0, xtend@~4.0.1:
+xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
