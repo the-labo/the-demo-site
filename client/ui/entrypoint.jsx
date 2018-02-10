@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { isProduction } from 'the-check'
-import { get, history as historyFor, mount, once, rescue, set } from 'the-window'
+import {history as historyFor, mount} from 'the-entrypoint'
+import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI } from '@self/conf'
 import App from './App'
 import client from '../client'
@@ -18,10 +19,11 @@ once('DOMContentLoaded', async () => {
   const {
     lang = (get('navigator.language')).split('-')[0],
   } = props
-  const history = historyFor()
   const app = (<App {...props} {...{client, handle, store}}/>)
   const l = locales.bind(lang)
   const controllers = await client.useAll({debug: !isProduction()})
+
+  const history = historyFor()
   handle.setAttributes({client, controllers, history, l, lang, store})
   handle.initAll()
 

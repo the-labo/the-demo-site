@@ -8106,6 +8106,14 @@ the-drawer@^3.0.0:
     the-style "^2.1.0"
     the-window "^5.3.3"
 
+the-entrypoint@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/the-entrypoint/-/the-entrypoint-1.0.1.tgz#f591024a4023a9203957496ac065344c820e5513"
+  dependencies:
+    history "^4.7.2"
+    the-router "^2.0.6"
+    the-window "^6.0.1"
+
 the-env@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/the-env/-/the-env-2.0.3.tgz#c2e7a9857311632b5d9e5cd496ee4787b22df60e"
@@ -8791,13 +8799,19 @@ the-view@^3.0.1:
     the-spin "^3.1.0"
     the-style "^2.1.0"
 
-the-window@^5.3.0, the-window@^5.3.3:
+the-window@^5.3.3:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/the-window/-/the-window-5.3.3.tgz#12847989a376a965385dc816474a45ea35a72c03"
   dependencies:
     bwindow "^1.1.0"
     history "^4.7.2"
     the-router "^2.0.6"
+
+the-window@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/the-window/-/the-window-6.0.1.tgz#d32ea004001168a6831f306f9e5370800b1dbd6b"
+  dependencies:
+    bwindow "^1.1.0"
 
 thenify-all@^1.0.0:
   version "1.6.0"
