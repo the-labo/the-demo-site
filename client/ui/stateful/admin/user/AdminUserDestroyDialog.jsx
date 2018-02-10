@@ -64,7 +64,7 @@ export default stateful(
         done: true,
       })
       adminUserCheckScene.init()
-      toastScene.showInfo(l('toasts.ADMIN_USER_DESTROY_DID_SUCCESS'))
+      toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
       await adminUserListScene.doSync()
     },
   })

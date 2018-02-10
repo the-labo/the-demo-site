@@ -4,12 +4,19 @@
       "endsWith": "Scene.js"
     }
   },
-  "client/ui/bounds/admin/**/*.jsx": {
+  "client/ui/**/*.jsx": {
+    "callRule": {
+      "keypathArguments": {
+        "l": "conf/locales/en"
+      }
+    }
+  },
+  "client/ui/stateful/admin/**/*.jsx": {
     "filenameRule": {
       "startsWith": "Admin"
     }
   },
-  "client/ui/bounds/sign/*.jsx": {
+  "client/ui/stateful/sign/*.jsx": {
     "filenameRule": {
       "startsWith": "Sign"
     }
