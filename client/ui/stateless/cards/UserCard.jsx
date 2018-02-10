@@ -1,14 +1,14 @@
 /**
- * UserLabel component
+ * UserCard component
  */
 'use strict'
 
 import c from 'classnames'
 import React from 'react'
-import styles from './UserLabel.pcss'
+import styles from './UserCard.pcss'
 import UserImage from '../images/UserImage'
 
-function UserLabel ({
+function UserCard ({
                       className,
                       user,
                     }) {
@@ -23,4 +23,4 @@ function UserLabel ({
   )
 }
 
-export default UserLabel
+export default UserCard
