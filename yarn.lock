@@ -8308,8 +8308,8 @@ the-link@^3.0.4, the-link@^3.0.6:
     the-style "^2.1.0"
 
 the-lint@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.2.0.tgz#c4c56d87629d5faf51233b9d8863f62a1bd00edc"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.2.1.tgz#2f4d54948f070abbe8d3c0d3ae0be13e84896856"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"

@@ -67,7 +67,7 @@ describe('controllers', () => {
     const listed = await adminUserCtrl.list({
       filter: [{name: 'foo'}],
     })
-    console.log(listed)
+    // console.log(listed)
   })
 })
 

@@ -4,6 +4,13 @@
       "endsWith": "Scene.js"
     }
   },
+  "client/scenes/*Scene.js": {
+    "callRule": {
+      "keypathArguments": {
+        "bindScope": "client/scopes"
+      }
+    }
+  },
   "client/ui/**/*.jsx": {
     "callRule": {
       "keypathArguments": {
