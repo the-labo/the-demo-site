@@ -4,22 +4,22 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
-import { asBound, compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
 import { TheDestroyDialog } from 'the-site-components'
 
-const AdminUserDestroyDialog = compose(
-  localized
-)(
-  function AdminUserDestroyDialogImpl ({
-                                    active,
-                                    done,
-                                    l,
-                                    onClose,
-                                    onSubmit,
-                                    spinning,
-                                    users,
-                                  }) {
+@localized
+class AdminUserDestroyDialog extends React.Component {
+  render () {
+    const {
+      active,
+      done,
+      l,
+      onClose,
+      onSubmit,
+      spinning,
+      users,
+    } = this.props
+
     return (
       <TheDestroyDialog entities={users}
                         lead={l('leads.ADMIN_USER_DESTROY_CONFIRM')}
@@ -35,11 +35,11 @@ const AdminUserDestroyDialog = compose(
                         }}
       />
     )
-  }
-)
 
-export default asBound(
-  AdminUserDestroyDialog,
+  }
+}
+
+export default stateful(
   (state) => ({
     active: state['admin.user.destroy.active'],
     done: state['admin.user.destroy.done'],
@@ -68,4 +68,4 @@ export default asBound(
       await adminUserListScene.doSync()
     },
   })
-)
+)(AdminUserDestroyDialog)

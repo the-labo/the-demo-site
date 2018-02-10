@@ -4,17 +4,22 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheRecoverResetForm } from 'the-site-components'
-import { asForm } from '../../wrappers'
 
-function RecoverResetForm (props) {
-  return (
-    <TheRecoverResetForm {...props}/>
-  )
+@withForm
+@localized
+class RecoverResetForm extends React.Component {
+  render () {
+    return (
+      <TheRecoverResetForm {...this.props}/>
+    )
+
+  }
 }
 
-export default asForm(
-  RecoverResetForm,
+export default stateful(
   (state) => ({
     errors: state['recover.reset.entryErrors'],
     spinning: state['recover.reset.busy'],
@@ -33,4 +38,4 @@ export default asForm(
     },
     onUpdate: (v) => recoverResetScene.setEntry(v),
   })
-)
+)(RecoverResetForm)

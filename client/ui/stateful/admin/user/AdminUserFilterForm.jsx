@@ -4,21 +4,25 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheSearchForm } from 'the-site-components'
-import { get } from 'the-window'
-import { asForm } from '../../../wrappers'
 
-function AdminUserFilterForm (props) {
-  const {l} = props
-  return (
-    <TheSearchForm {...props}
-                   placeholder={l('placeholders.USER_SEARCH')}
-    />
-  )
+@withForm
+@localized
+class AdminUserFilterForm extends React.Component {
+  render () {
+    const {l} = this.props
+    return (
+      <TheSearchForm {...this.props}
+                     placeholder={l('placeholders.USER_SEARCH')}
+      />
+    )
+
+  }
 }
 
-export default asForm(
-  AdminUserFilterForm,
+export default stateful(
   (state) => ({
     errors: state['admin.user.filter.entryErrors'],
     spinning: state['admin.user.filter.busy'],
@@ -37,4 +41,4 @@ export default asForm(
     },
     onUpdate: (v) => adminUserFilterScene.setEntry(v),
   })
-)
+)(AdminUserFilterForm)

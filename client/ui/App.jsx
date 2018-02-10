@@ -12,9 +12,9 @@ import {
 import { withBinder } from 'the-handle'
 import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
-import { CautionDisconnectedDialog } from './bounds'
 import { Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
+import { CautionDisconnectedDialog } from './stateful'
 
 @withProvider
 @withBinder

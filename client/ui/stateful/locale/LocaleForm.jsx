@@ -4,27 +4,29 @@
 'use strict'
 
 import React from 'react'
-import { compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheLocaleForm } from 'the-site-components'
 import { LocaleNames } from '@self/conf'
 import styles from './LocaleForm.pcss'
-import { asForm } from '../../wrappers'
 
-const LocaleForm = compose(
+@localized
+@withForm
+class LocaleForm extends React.Component {
+  render () {
+    const props = this.props
 
-)(
-  function LocaleFormImpl (props) {
     return (
       <TheLocaleForm {...props}
                      className={styles.self}
                      options={LocaleNames}
       />
     )
-  }
-)
 
-export default asForm(
-  LocaleForm,
+  }
+}
+
+export default stateful(
   (state) => ({
     spinning: state['app.busy'],
     value: state['app.locale'],
@@ -39,4 +41,4 @@ export default asForm(
     },
 
   })
-)
+)(LocaleForm)

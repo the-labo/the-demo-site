@@ -4,17 +4,22 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheProfileEditForm } from 'the-site-components'
-import { asForm } from '../../wrappers'
 
-function ProfileEditForm (props) {
-  return (
-    <TheProfileEditForm {...props}/>
-  )
+@withForm
+@localized
+class ProfileEditForm extends React.Component {
+  render () {
+    return (
+      <TheProfileEditForm {...this.props}/>
+    )
+
+  }
 }
 
-export default asForm(
-  ProfileEditForm,
+export default stateful(
   (state) => ({
     errors: state['profile.edit.entryErrors'],
     spinning: state['profile.edit.busy'],
@@ -34,4 +39,4 @@ export default asForm(
     },
     onUpdate: (v) => profileEditScene.setEntry(v),
   })
-)
+)(ProfileEditForm)

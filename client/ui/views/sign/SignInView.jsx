@@ -8,7 +8,7 @@ import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheButton, TheButtonGroup, TheView } from 'the-components'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignInView.pcss'
-import { SignInForm } from '../../bounds'
+import { SignInForm } from '../../stateful'
 
 @localized
 @cycled

@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
+import { localized, stateful } from 'the-component-mixins'
 import {
   TheButton,
   TheButtonGroup,
@@ -12,65 +12,67 @@ import {
   TheDropdownMenu,
   TheHeader,
 } from 'the-components'
-import { asBound, compose } from 'the-hoc'
 import { Icons, Urls } from '@self/conf'
 import { UserLabel } from '../fragments'
 import { withRole } from '../wrappers'
 
-const Header = compose(
-  withRole,
-  localized,
-)(function HeaderImpl ({
-                         isAdmin,
-                         l,
-                         needsVerify,
-                         onVerify,
-                         ready,
-                         user,
-                       }) {
-  const notices = user && needsVerify && {
-    [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify},
-  } || {}
-  return (
-    <TheHeader notices={notices}>
-      <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
+@withRole
+@localized
+class Header extends React.Component {
+  render () {
+    const {
+      isAdmin,
+      l,
+      needsVerify,
+      onVerify,
+      ready,
+      user,
+    } = this.props
 
-      <TheHeader.Tab>
-        <TheCondition if={Boolean(user && isAdmin(user))}>
-          <TheHeader.TabItem icon={Icons.TAB_ADMIN_ICON}
-                             to={Urls.ADMIN_URL}
-          >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
+    const notices = user && needsVerify && {
+      [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify},
+    } || {}
+    return (
+      <TheHeader notices={notices}>
+        <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
+
+        <TheHeader.Tab>
+          <TheCondition if={Boolean(user && isAdmin(user))}>
+            <TheHeader.TabItem icon={Icons.TAB_ADMIN_ICON}
+                               to={Urls.ADMIN_URL}
+            >{l('tabs.ADMIN_TAB')}</TheHeader.TabItem>
+          </TheCondition>
+        </TheHeader.Tab>
+        <TheCondition if={Boolean(ready)}>
+          <TheHeader.RightArea>
+            <TheCondition if={Boolean(user)}>
+              <TheDropdownMenu label={<UserLabel {...{user}} />}
+                               righted
+
+              >
+                <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
+                                      text={l('buttons.SHOW_MYPAGE')}
+                                      to={Urls.ACCOUNT_MYPAGE_URL}/>
+                <TheDropdownMenu.Item icon={Icons.SIGN_OUT_ICON}
+                                      text={l('buttons.DO_SIGN_OUT')}
+                                      to={Urls.SIGN_OUT_URL}/>
+              </TheDropdownMenu>
+            </TheCondition>
+            <TheCondition unless={Boolean(user)}>
+              <TheButtonGroup>
+                <TheButton to={Urls.SIGN_IN_URL}>{l('buttons.SHOW_SIGN_IN')}</TheButton>
+                <TheButton primary to={Urls.SIGN_UP_URL}>{l('buttons.SHOW_SIGN_UP')}</TheButton>
+              </TheButtonGroup>
+            </TheCondition>
+          </TheHeader.RightArea>
         </TheCondition>
-      </TheHeader.Tab>
-      <TheCondition if={Boolean(ready)}>
-        <TheHeader.RightArea>
-          <TheCondition if={Boolean(user)}>
-            <TheDropdownMenu label={<UserLabel {...{user}} />}
-                             righted
+      </TheHeader>
+    )
 
-            >
-              <TheDropdownMenu.Item icon={Icons.ACCOUNT_ICON}
-                                    text={l('buttons.SHOW_MYPAGE')}
-                                    to={Urls.ACCOUNT_MYPAGE_URL}/>
-              <TheDropdownMenu.Item icon={Icons.SIGN_OUT_ICON}
-                                    text={l('buttons.DO_SIGN_OUT')}
-                                    to={Urls.SIGN_OUT_URL}/>
-            </TheDropdownMenu>
-          </TheCondition>
-          <TheCondition unless={Boolean(user)}>
-            <TheButtonGroup>
-              <TheButton to={Urls.SIGN_IN_URL}>{l('buttons.SHOW_SIGN_IN')}</TheButton>
-              <TheButton primary to={Urls.SIGN_UP_URL}>{l('buttons.SHOW_SIGN_UP')}</TheButton>
-            </TheButtonGroup>
-          </TheCondition>
-        </TheHeader.RightArea>
-      </TheCondition>
-    </TheHeader>
-  )
-})
+  }
+}
 
-export default asBound(
-  Header,
+export default stateful(
   (state) => ({
     needsVerify: state['verify.need.needed'],
     pathname: state['app.pathname'],
@@ -90,4 +92,4 @@ export default asBound(
       verifyNeedScene.set({needed: false})
     },
   })
-)
+)(Header)

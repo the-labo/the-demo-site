@@ -7,7 +7,7 @@ import React from 'react'
 import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheCondition, TheDone, TheLead, TheView } from 'the-components'
 import styles from './RecoverSendView.pcss'
-import { RecoverSendForm } from '../../bounds'
+import { RecoverSendForm } from '../../stateful'
 
 @localized
 @cycled

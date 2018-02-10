@@ -4,24 +4,29 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheUserCreateForm } from 'the-site-components'
 import { RoleCodes } from '@self/conf'
-import { asForm } from '../../../wrappers'
 
-function AdminUserCreateForm (props) {
-  const {l} = props
-  return (
-    <TheUserCreateForm {...props}
-                       roles={{
-                         [RoleCodes.ADMIN_ROLE]: l('roleCodes.ADMIN_ROLE'),
-                         [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE'),
-                       }}
-    />
-  )
+@withForm
+@localized
+class AdminUserCreateForm extends React.Component {
+  render () {
+    const {l} = this.props
+    return (
+      <TheUserCreateForm {...this.props}
+                         roles={{
+                           [RoleCodes.ADMIN_ROLE]: l('roleCodes.ADMIN_ROLE'),
+                           [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE'),
+                         }}
+      />
+    )
+
+  }
 }
 
-export default asForm(
-  AdminUserCreateForm,
+export default stateful(
   (state) => ({
     errors: state['admin.user.create.entryErrors'],
     spinning: state['admin.user.create.busy'],
@@ -41,4 +46,4 @@ export default asForm(
     },
     onUpdate: (v) => adminUserCreateScene.setEntry(v),
   })
-)
+)(AdminUserCreateForm)

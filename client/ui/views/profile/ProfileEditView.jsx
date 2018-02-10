@@ -8,7 +8,7 @@ import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheCondition, TheDone, TheView } from 'the-components'
 import { Icons, Urls } from '@self/conf'
 import styles from './ProfileEditView.pcss'
-import { ProfileEditForm } from '../../bounds'
+import { ProfileEditForm } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
 @onlySigned

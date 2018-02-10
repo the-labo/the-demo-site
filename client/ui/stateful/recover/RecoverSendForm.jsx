@@ -4,17 +4,22 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheRecoverSendForm } from 'the-site-components'
-import { asForm } from '../../wrappers'
 
-function RecoverSendForm (props) {
-  return (
-    <TheRecoverSendForm {...props}/>
-  )
+@withForm
+@localized
+class RecoverSendForm extends React.Component {
+  render () {
+    return (
+      <TheRecoverSendForm {...this.props}/>
+    )
+
+  }
 }
 
-export default asForm(
-  RecoverSendForm,
+export default stateful(
   (state) => ({
     errors: state['recover.send.entryErrors'],
     spinning: state['recover.send.busy'],
@@ -32,4 +37,4 @@ export default asForm(
     },
     onUpdate: (v) => recoverSendScene.setEntry(v),
   })
-)
+)(RecoverSendForm)

@@ -4,25 +4,24 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
+import { localized, stateful } from 'the-component-mixins'
 import { TheActionBar } from 'the-components'
-import { asBound, asPure, compose } from 'the-hoc'
 
-const AdminUserActionBar = compose(
-  asPure,
-  localized,
-)(
-  function AdminUserActionBarImpl ({
-                                l,
-                                onDestroy,
-                                onPasswordReset,
-                                targets,
-                              }) {
+@localized
+class AdminUserActionBar extends React.Component {
+  render () {
+    const {
+      l,
+      onDestroy,
+      onPasswordReset,
+      targets,
+    } = this.props
+
     return (
       <TheActionBar buttons={{
-                      destroy: l('buttons.SHOW_DESTROY_USERS'),
-                      passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
-                    }}
+        destroy: l('buttons.SHOW_DESTROY_USERS'),
+        passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
+      }}
                     danger={{destroy: true}}
                     handlers={{
                       destroy: onDestroy,
@@ -31,11 +30,11 @@ const AdminUserActionBar = compose(
                     hidden={targets.length === 0}
       />
     )
-  }
-)
 
-export default asBound(
-  AdminUserActionBar,
+  }
+}
+
+export default stateful(
   (state) => ({
     targets: state['admin.user.list.entities'].filter(({id}) => state['admin.user.check.values'][id]),
   }),
@@ -57,4 +56,4 @@ export default asBound(
       })
     },
   })
-)
+)(AdminUserActionBar)

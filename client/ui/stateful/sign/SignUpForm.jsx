@@ -4,19 +4,22 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { TheSignUpForm } from 'the-site-components'
-import { asForm } from '../../wrappers'
 
-function SignUpForm (props) {
-  return (
-    <TheSignUpForm {...props}
-    >
-    </TheSignUpForm>
-  )
+@withForm
+@localized
+class SignUpForm extends React.Component {
+  render () {
+    return (
+      <TheSignUpForm {...this.props}/>
+    )
+
+  }
 }
 
-export default asForm(
-  SignUpForm,
+export default stateful(
   (state) => ({
     errors: state['sign.up.entryErrors'],
     spinning: state['sign.up.busy'],
@@ -40,4 +43,4 @@ export default asForm(
     },
     onUpdate: (v) => signUpScene.setEntry(v),
   })
-)
+)(SignUpForm)

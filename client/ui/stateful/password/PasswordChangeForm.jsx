@@ -4,18 +4,23 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
+import { withForm } from 'the-components'
 import { ThePasswordChangeForm } from 'the-site-components'
-import { asForm } from '../../wrappers'
 
-function PasswordChangeForm (props) {
-  return (
-    <ThePasswordChangeForm {...props}>
-    </ThePasswordChangeForm>
-  )
+@withForm
+@localized
+class PasswordChangeForm extends React.Component {
+  render () {
+    return (
+      <ThePasswordChangeForm {...this.props}>
+      </ThePasswordChangeForm>
+    )
+
+  }
 }
 
-export default asForm(
-  PasswordChangeForm,
+export default stateful(
   (state) => ({
     errors: state['password.change.entryErrors'],
     spinning: state['password.change.busy'],
@@ -34,4 +39,4 @@ export default asForm(
     },
     onUpdate: (v) => passwordChangeScene.setEntry(v),
   })
-)
+)(PasswordChangeForm)

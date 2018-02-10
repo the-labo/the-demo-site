@@ -4,21 +4,20 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
+import { localized, stateful } from 'the-component-mixins'
 import {
   TheFooter,
 } from 'the-components'
-import { asBound, asPure, compose } from 'the-hoc'
 import { Urls } from '@self/conf'
 import styles from './Footer.pcss'
-import { LocaleForm } from '../bounds'
+import { LocaleForm } from '../stateful'
 
-const Footer = compose(
-  asPure,
-  localized
-)(function FooterImpl ({
-                         l,
-                       }) {
+@localized
+class Footer extends React.Component {
+  render () {
+    const {
+      l,
+    } = this.props
     return (
       <TheFooter className={styles.self}>
         <div className={styles.inner}>
@@ -31,7 +30,7 @@ const Footer = compose(
           </TheFooter.Row>
           <TheFooter.Row>
             <TheFooter.CopyRight holder={l('org.ORG_NAME')}
-                                 year={2018}
+                                 year={new Date().getFullYear()}
             />
             <TheFooter.Links>
               <TheFooter.Link to={Urls.ABOUT_PRIVACY_POLICY_URL}>
@@ -45,9 +44,10 @@ const Footer = compose(
         </div>
       </TheFooter>
     )
-  }
-)
 
-export default asBound(
-  Footer
-)
+  }
+}
+
+export default stateful(
+
+)(Footer)

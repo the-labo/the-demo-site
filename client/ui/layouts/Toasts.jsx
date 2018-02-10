@@ -4,28 +4,29 @@
 'use strict'
 
 import React from 'react'
-import { asBound, compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
 import { TheSiteToasts } from 'the-site-components'
 import { UI } from '@self/conf'
 
-const Toasts = compose(
-)(
-  function ToastsImpl ({
-                         error,
-                         info,
-                         onReset,
-                         warn,
-                       }) {
+@localized
+class Toasts extends React.Component {
+  render () {
+    const {
+      error,
+      info,
+      onReset,
+      warn,
+    } = this.props
     return (
       <TheSiteToasts {...{error, info, onReset, warn}}
                      duration={UI.TOAST_DURATION}
       />
     )
-  }
-)
 
-export default asBound(
-  Toasts,
+  }
+}
+
+export default stateful(
   (state) => ({
     error: state['toast.error'],
     info: state['toast.info'],
@@ -36,4 +37,4 @@ export default asBound(
    }) => ({
     onReset: (queues) => toastScene.reset(queues),
   })
-)
+)(Toasts)

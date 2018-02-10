@@ -4,27 +4,26 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
-import { asBound, compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
 import { TheOperationPager } from 'the-site-components'
 
-const AdminUserPager = compose(
-  localized
-)(
-  function AdminUserPagerImpl ({
-                            counts,
-                            l,
-                            onPage,
-                            showCounts,
-                          }) {
+@localized
+class AdminUserPager extends React.Component {
+  render () {
+    const {
+      counts,
+      l,
+      onPage,
+      showCounts,
+    } = this.props
+
     return (
       <TheOperationPager {...{counts, l, onPage, showCounts}}/>
     )
   }
-)
+}
 
-export default asBound(
-  AdminUserPager,
+export default stateful(
   (state) => ({
     counts: state['admin.user.list.counts'],
   }),
@@ -36,4 +35,4 @@ export default asBound(
       await adminUserListScene.doSync()
     },
   })
-)
+)(AdminUserPager)

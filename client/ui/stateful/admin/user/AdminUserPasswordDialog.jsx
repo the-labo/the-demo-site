@@ -4,25 +4,25 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
-import { asBound, compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
 import {
   TheOperationDialog,
 } from 'the-site-components'
 
-const AdminUserPasswordDialog = compose(
-  localized
-)(
-  function AdminUserPasswordDialogImpl ({
-                                          active,
-                                          done,
-                                          l,
-                                          onClose,
-                                          onYes,
-                                          passwords,
-                                          spinning,
-                                          users,
-                                        }) {
+@localized
+class AdminUserPasswordDialog extends React.Component {
+  render () {
+    const {
+      active,
+      done,
+      l,
+      onClose,
+      onYes,
+      passwords,
+      spinning,
+      users,
+    } = this.props
+
     return (
       <TheOperationDialog doneLead={l('leads.RESET_PASSWORDS_RESULT')}
                           doneTitle={l('titles.ADMIN_USER_PASSWORD_RESET_RESULT_TITLE')}
@@ -45,11 +45,11 @@ const AdminUserPasswordDialog = compose(
                           }}
       />
     )
-  }
-)
 
-export default asBound(
-  AdminUserPasswordDialog,
+  }
+}
+
+export default stateful(
   (state) => ({
     active: state['admin.user.password.active'],
     done: state['admin.user.password.done'],
@@ -71,4 +71,4 @@ export default asBound(
       adminUserCheckScene.init()
     },
   })
-)
+)(AdminUserPasswordDialog)

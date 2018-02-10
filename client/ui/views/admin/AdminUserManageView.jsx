@@ -20,7 +20,7 @@ import {
   AdminUserList,
   AdminUserPager,
   AdminUserPasswordDialog,
-} from '../../bounds'
+} from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
 @onlySigned

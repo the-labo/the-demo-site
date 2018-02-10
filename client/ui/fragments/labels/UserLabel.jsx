@@ -8,10 +8,10 @@ import React from 'react'
 import styles from './UserLabel.pcss'
 import UserImage from '../images/UserImage'
 
-const UserLabel = function UserLabelImpl ({
-                                            className,
-                                            user,
-                                          }) {
+function UserLabel ({
+                      className,
+                      user,
+                    }) {
   return (
     <div className={c(styles.self, className)}>
       <UserImage {...{user}}

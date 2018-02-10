@@ -4,22 +4,21 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
-import { asBound, compose } from 'the-hoc'
+import { localized, stateful } from 'the-component-mixins'
 import { TheCreateDialog } from 'the-site-components'
 import AdminUserCreateForm from './AdminUserCreateForm'
 
-const AdminUserCreateDialog = compose(
-  localized,
-)(
-  function AdminUserCreateDialogImpl ({
-                                        active,
-                                        created,
-                                        done,
-                                        l,
-                                        onClose,
-                                        spinning,
-                                      }) {
+@localized
+class AdminUserCreateDialog extends React.Component {
+  render () {
+    const {
+      active,
+      created,
+      done,
+      l,
+      onClose,
+      spinning,
+    } = this.props
 
     return (
       <TheCreateDialog {...{active, done, l, onClose, spinning}}
@@ -35,11 +34,11 @@ const AdminUserCreateDialog = compose(
         <AdminUserCreateForm/>
       </TheCreateDialog>
     )
-  }
-)
 
-export default asBound(
-  AdminUserCreateDialog,
+  }
+}
+
+export default stateful(
   (state) => ({
     active: state['admin.user.create.active'],
     created: state['admin.user.create.result'],
@@ -52,4 +51,4 @@ export default asBound(
       done: false,
     }),
   })
-)
+)(AdminUserCreateDialog)

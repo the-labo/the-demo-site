@@ -8,11 +8,11 @@ import React from 'react'
 import { TheUserImage } from 'the-site-components'
 import styles from './UserImage.pcss'
 
-const UserImage = function UserImageImpl ({
-                                            className,
-                                            size = 48,
-                                            user,
-                                          }) {
+function UserImage ({
+                      className,
+                      size = 48,
+                      user,
+                    }) {
   return (
     <TheUserImage className={c(styles.self, className)}
                   {...{size, user}}

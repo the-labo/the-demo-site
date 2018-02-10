@@ -347,7 +347,7 @@ module.exports = pon(
       css('client/ui', 'client/shim/ui', {
         inlineMap: true,
         modules: true,
-        pattern: ['*.pcss', '+(bounds|views|fragments|layouts|wrappers|components)/**/*.pcss'],
+        pattern: ['*.pcss', '+(stateful|views|fragments|layouts|wrappers|components)/**/*.pcss'],
       }),
       concat([
         'client/shim/ui/**/*.css',
