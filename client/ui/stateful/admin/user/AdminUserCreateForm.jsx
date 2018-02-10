@@ -22,7 +22,6 @@ class AdminUserCreateForm extends React.Component {
                          }}
       />
     )
-
   }
 }
 
