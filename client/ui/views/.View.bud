@@ -1,26 +1,26 @@
 'use strict'
 
 const path = require('path')
+const {View} = require('the-templates')
 
 module.exports = [
-
 ].reduce((buds, fullName) => {
   const name = path.basename(fullName)
   return [
     ...buds,
+    View({name}),
     {
       force: false,
       mode: '644',
       mkdirp: true,
-      tmpl: `.View.jsx.hbs`,
-      path: `${fullName}.jsx`,
-      data: {name}
-    },
-    {
-      force: false,
-      mode: '644',
-      mkdirp: true,
-      tmpl: `.View.pcss.hbs`,
+      tmpl: `/*********************
+ * Style for {{name}}
+ *********************/
+ 
+ 
+.self {
+
+}`,
       path: `${fullName}.pcss`,
       data: {name}
     }

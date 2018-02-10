@@ -16,7 +16,7 @@ import {
 } from 'the-components'
 import { Urls } from '@self/conf'
 import styles from './MypageView.pcss'
-import { UserImage } from '../../fragments'
+import { UserImage } from '../../stateless'
 import { onlySigned } from '../../wrappers'
 
 @onlySigned

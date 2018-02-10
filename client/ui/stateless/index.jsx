@@ -1,14 +1,14 @@
 /**
  * Fragment components
- * @module fragments
+ * @module stateless
  */
 'use strict'
 
+import UserCard from './cards/UserCard'
 import UserImage from './images/UserImage'
-import UserLabel from './labels/UserLabel'
 
 export {
+  UserCard,
   UserImage,
-  UserLabel,
 }
 

@@ -4,6 +4,7 @@
 
 process.chdir(`${__dirname}/../..`)
 
+const path = require('path')
 const theRefactor = require('the-refactor').create
 const functionToReactComponentClass = require('the-refactor/lib/converters/functionToReactComponentClass')
 
@@ -53,6 +54,19 @@ void async function () {
     {
       'bounds': 'stateful'
     }
+  )
+
+  await refactor.renameDir(
+    'client/ui/fragments',
+    'client/ui/stateless',
+  )
+
+  await refactor.rename(
+    'client/ui/stateless/labels/UserLabel.*',
+    ({dirname, basename}) => ({
+      dirname: path.resolve(dirname, '../cards'),
+      basename: basename.replace('Label', 'Card')
+    })
   )
 }()
 

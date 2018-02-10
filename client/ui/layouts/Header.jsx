@@ -13,7 +13,7 @@ import {
   TheHeader,
 } from 'the-components'
 import { Icons, Urls } from '@self/conf'
-import { UserLabel } from '../fragments'
+import { UserCard } from '../stateless'
 import { withRole } from '../wrappers'
 
 @withRole
@@ -46,7 +46,7 @@ class Header extends React.Component {
         <TheCondition if={Boolean(ready)}>
           <TheHeader.RightArea>
             <TheCondition if={Boolean(user)}>
-              <TheDropdownMenu label={<UserLabel {...{user}} />}
+              <TheDropdownMenu label={<UserCard {...{user}} />}
                                righted
 
               >

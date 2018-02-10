@@ -1821,8 +1821,8 @@ boxen@^1.2.1:
     widest-line "^2.0.0"
 
 brace-expansion@^1.1.7:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.10.tgz#5205cdf64c9798c180dc74b7bfc670c3974e6300"
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
@@ -2104,8 +2104,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805:
-  version "1.0.30000805"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000805.tgz#83a5f21ead01486e67bccca6fae5dca7cde496de"
+  version "1.0.30000807"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000807.tgz#51ea478d07269e9dd4d8c639509df61d2516fa92"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -7537,7 +7537,7 @@ stringcase@^3.0.1, stringcase@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/stringcase/-/stringcase-3.2.1.tgz#89345163049764cf76abcf5ce02b64bfb6472e56"
 
-stringcase@^4.0.0, stringcase@^4.1.0:
+stringcase@^4.0.0, stringcase@^4.1.0, stringcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/stringcase/-/stringcase-4.1.1.tgz#0e7d9fee18e31603b37e9ead7a995a57d2e55353"
 
@@ -8213,16 +8213,6 @@ the-header@^3.0.4:
     the-style "^2.1.0"
     the-window "^5.3.3"
 
-the-hoc@^1.1.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/the-hoc/-/the-hoc-1.2.3.tgz#8bab8c3175c7165090fb2c4a374768a1befc53d7"
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-    the-check "^1.2.2"
-    the-component-util "^2.1.2"
-    the-window "^5.3.3"
-
 the-html@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/the-html/-/the-html-1.0.7.tgz#79c58a2f6374daffc427358851814bc09a72c01e"
@@ -8751,14 +8741,14 @@ the-tag@^2.0.2:
     the-style "^2.1.0"
 
 the-templates@^2.5.0:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.5.tgz#e09b269c5a58c052930812d619cc49f329e0ad8f"
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.6.tgz#9f3f63049535978185f52ae01ed6c312af855667"
   dependencies:
     aglob "^3.0.0"
     ape-tmpl "^6.0.8"
     markdown-toc "^1.2.0"
     selfsigned "^1.10.2"
-    stringcase "^4.1.0"
+    stringcase "^4.1.1"
 
 the-toast@^2.0.4:
   version "2.0.4"

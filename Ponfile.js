@@ -143,7 +143,7 @@ module.exports = pon(
       'client/ui/**/*.pcss',
       'client/ui/**/*.jsx',
       'client/scenes/**/*.js',
-    ], {ignore: 'client/**/index.js'}),
+    ], {ignore: 'client/**/index.*'}),
     /** Format conf files */
     'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
     /** Format json files */
@@ -347,7 +347,7 @@ module.exports = pon(
       css('client/ui', 'client/shim/ui', {
         inlineMap: true,
         modules: true,
-        pattern: ['*.pcss', '+(stateful|views|fragments|layouts|wrappers|components)/**/*.pcss'],
+        pattern: ['*.pcss', '+(stateful|stateless|views|layouts|wrappers|components)/**/*.pcss'],
       }),
       concat([
         'client/shim/ui/**/*.css',
