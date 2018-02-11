@@ -7,6 +7,11 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
+  get DetailScene () { return _d(require('./abstract/DetailScene')) },
+  get InputScene () { return _d(require('./abstract/InputScene')) },
+  get ListScene () { return _d(require('./abstract/ListScene')) },
+  get ProcessScene () { return _d(require('./abstract/ProcessScene')) },
+  get Scene () { return _d(require('./abstract/Scene')) },
   get AccountScene () { return _d(require('./AccountScene')) },
   get AdminUserCheckScene () { return _d(require('./AdminUserCheckScene')) },
   get AdminUserCreateScene () { return _d(require('./AdminUserCreateScene')) },
@@ -21,7 +26,6 @@ module.exports = {
   get QuitScene () { return _d(require('./QuitScene')) },
   get RecoverResetScene () { return _d(require('./RecoverResetScene')) },
   get RecoverSendScene () { return _d(require('./RecoverSendScene')) },
-  get Scene () { return _d(require('./Scene')) },
   get SignAskScene () { return _d(require('./SignAskScene')) },
   get SignInScene () { return _d(require('./SignInScene')) },
   get SignOutScene () { return _d(require('./SignOutScene')) },

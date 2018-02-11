@@ -16,7 +16,7 @@ function onlySigned (Component) {
   @withHistory
   @withStore
   @connect((state) => ({
-    hasSigned: Boolean(state['account.user']),
+    hasSigned: Boolean(state['account.entity']),
     signedReady: state['account.ready'],
   }))
   class OnlySigned extends React.Component {

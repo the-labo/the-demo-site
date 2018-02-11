@@ -6,7 +6,7 @@
 
 const {bindScope, withBusy, withHistory, withLocation, withQuery} = require('the-scene-mixins/shim')
 const {Urls} = require('@self/conf')
-const Scene = require('./Scene')
+const Scene = require('./abstract/Scene')
 
 @withBusy
 @withQuery

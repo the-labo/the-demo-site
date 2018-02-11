@@ -3,10 +3,12 @@
  */
 'use strict'
 
-const {Bound} = require('the-templates')
+const {Stateful} = require('the-templates')
 
 module.exports = [
-].map((name) => Bound({
+  'home/HomePanel',
+  'intro/Intro',
+].map((name) => Stateful({
   name
 }))
 

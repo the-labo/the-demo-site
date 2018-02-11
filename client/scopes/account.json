@@ -1,5 +1,3 @@
 {
-  "busy": "BOOL",
-  "ready": "BOOL",
-  "user": "VAL"
+  "$ref": "abstract/detail"
 }

@@ -42,7 +42,7 @@ class SignInView extends React.Component {
 
 export default stateful(
   (state) => ({
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({signInScene}) => ({
     onMount: () => signInScene.init(),

@@ -60,7 +60,7 @@ export default stateful(
       verifyConfirmScene.init()
       const {envelop, seal} = propsProxy.query
       verifyConfirmScene.setEntry({envelop, seal})
-      await verifyConfirmScene.doVerify()
+      await verifyConfirmScene.doExec()
       verifyConfirmScene.set({done: true})
     },
   })),

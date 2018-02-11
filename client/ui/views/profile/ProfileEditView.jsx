@@ -60,7 +60,7 @@ export default stateful(
   (state) => ({
     busy: state['account.busy'],
     done: state['profile.edit.done'],
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({
      accountScene,

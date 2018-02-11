@@ -2,5 +2,6 @@
   "busy": "BOOL",
   "done": "BOOL",
   "entry": "OBJ",
-  "entryErrors": "OBJ"
+  "entryErrors": "OBJ",
+  "result": "VAL"
 }

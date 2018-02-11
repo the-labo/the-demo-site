@@ -4,22 +4,17 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withReady} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
+const {bindScope} = require('the-scene-mixins/shim')
+const DetailScene = require('./abstract/DetailScene')
 
-@withBusy
-@withReady
 @bindScope('account')
-class AccountSceneBase extends Scene {}
+class AccountSceneBase extends DetailScene {}
 
 /** @lends AccountScene */
 class AccountScene extends AccountSceneBase {
-  @withBusy.while
-  @withReady.when
-  async doSync () {
+  async dealWith (id) {
     const {accountCtrl} = this.controllers
-    const user = await accountCtrl.getCurrentUser()
-    this.set({user})
+    return await accountCtrl.getCurrentUser()
   }
 }
 

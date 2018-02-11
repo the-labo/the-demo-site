@@ -32,7 +32,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await recoverResetScene.doReset()
+      await recoverResetScene.doExec()
       await accountScene.doSync()
       recoverResetScene.set({done: true})
     },

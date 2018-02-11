@@ -57,7 +57,7 @@ class PasswordChangeView extends React.Component {
 export default stateful(
   (state) => ({
     done: state['password.change.done'],
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({passwordChangeScene}) => ({
     onAgain: async () => {

@@ -24,7 +24,7 @@ export default stateful(
   (state) => ({
     errors: state['password.change.entryErrors'],
     spinning: state['password.change.busy'],
-    user: state['account.user'],
+    user: state['account.entity'],
     values: state['password.change.entry'],
   }),
   ({
@@ -33,7 +33,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await passwordChangeScene.doSave()
+      await passwordChangeScene.doExec()
       passwordChangeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
     },

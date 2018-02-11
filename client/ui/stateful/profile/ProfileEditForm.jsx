@@ -32,7 +32,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await profileEditScene.doSave()
+      await profileEditScene.doExec()
       profileEditScene.set({done: true})
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))

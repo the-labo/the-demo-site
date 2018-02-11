@@ -66,7 +66,7 @@ export default stateful(
       done: false,
     }),
     onYes: async () => {
-      await adminUserPasswordScene.doReset()
+      await adminUserPasswordScene.doExec()
       adminUserPasswordScene.set({done: true})
       adminUserCheckScene.init()
     },

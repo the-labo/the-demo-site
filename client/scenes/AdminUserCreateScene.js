@@ -4,22 +4,18 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withEntry, withResult} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
+const {bindScope} = require('the-scene-mixins/shim')
+const InputScene = require('./abstract/InputScene')
 
-@withBusy
-@withEntry
-@withResult
 @bindScope('admin.user.create')
-class AdminUserCreateSceneBase extends Scene {}
+class AdminUserCreateSceneBase extends InputScene {}
 
 /** @lends AdminUserCreateScene */
 class AdminUserCreateScene extends AdminUserCreateSceneBase {
-  @withBusy.while
-  @withResult.save
-  async doCreate () {
+
+  async dealWith (values) {
     const {adminUserCtrl} = this.controllers
-    return await this.processEntry((values) => adminUserCtrl.create(values))
+    return adminUserCtrl.create(values)
   }
 }
 

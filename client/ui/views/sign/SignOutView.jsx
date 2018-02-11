@@ -42,7 +42,7 @@ export default stateful(
   (state) => ({
     busy: state['sign.out.busy'],
     done: state['sign.out.done'],
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({
      accountScene,
@@ -50,7 +50,7 @@ export default stateful(
    }) => ({
     onMount: async () => {
       signOutScene.init()
-      await signOutScene.doSignout()
+      await signOutScene.doExec()
       await accountScene.doSync()
       signOutScene.set({done: true})
       signOutScene.goBack()

@@ -1,4 +1,5 @@
 /**
+ * Base scene
  * @abstract
  * @class Scene
  */

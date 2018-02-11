@@ -4,52 +4,21 @@
  */
 'use strict'
 
-const {
-  bindDefaults,
-  bindScope,
-  withBusy,
-  withFilter,
-  withHistory,
-  withPage,
-  withReady,
-  withSort,
-} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
 
-@withBusy
-@withSort
-@withPage
-@withReady
-@withFilter
-@withHistory
+const {bindScope} = require('the-scene-mixins/shim')
+const ListScene = require('./abstract/ListScene')
+
 @bindScope('admin.user.list')
-@bindDefaults({filter: {}, pageNumber: 1, pageSize: 25})
-class AdminUserListSceneBase extends Scene {}
+class AdminUserListSceneBase extends ListScene {}
 
 /** @lends AdminUserListScene */
 class AdminUserListScene extends AdminUserListSceneBase {
-  getCondition () {
-    return {
-      filter: this.getFilter(),
-      page: this.getPage(),
-      sort: this.getSort(),
-    }
-  }
 
-  setQ (q) {
-    this.set({pageNumber: 1})
-    this.setFilterByQ(q, {fields: ['name', 'profile.name', 'profile.email']})
-    this.replaceHistoryByQuery({q})
-  }
-
-  @withBusy.while
-  @withReady.when
-  async doSync () {
+  async detailWith (condition) {
     const {adminUserCtrl} = this.controllers
-    const condition = this.getCondition()
-    const {entities, meta: counts} = await adminUserCtrl.list(condition)
-    this.set({counts, entities})
+    return await adminUserCtrl.list(condition)
   }
+
 }
 
 module.exports = AdminUserListScene

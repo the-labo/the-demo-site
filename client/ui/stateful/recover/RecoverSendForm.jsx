@@ -31,7 +31,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await recoverSendScene.doSend()
+      await recoverSendScene.doExec()
       recoverSendScene.set({done: true})
       await toastScene.showInfo(l('toasts.RECOVER_EMAIL_SENT'))
     },

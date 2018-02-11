@@ -58,7 +58,7 @@ export default stateful(
       done: false,
     }),
     onSubmit: async () => {
-      await adminUserDestroyScene.doDestroy()
+      await adminUserDestroyScene.doExec()
       adminUserDestroyScene.set({
         active: false,
         done: true,

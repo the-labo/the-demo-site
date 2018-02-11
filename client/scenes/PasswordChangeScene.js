@@ -4,20 +4,19 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
 
-@withEntry
-@withBusy
+const {bindScope} = require('the-scene-mixins/shim')
+const InputScene = require('./abstract/InputScene')
+
 @bindScope('password.change')
-class PasswordChangeSceneBase extends Scene {}
+class PasswordChangeSceneBase extends InputScene {}
 
 /** @lends PasswordChangeScene */
 class PasswordChangeScene extends PasswordChangeSceneBase {
-  @withBusy.while
-  async doSave () {
+
+  async dealWith ({password}) {
     const {accountCtrl} = this.controllers
-    await this.processEntry(({password}) => accountCtrl.updatePassword(password))
+    return accountCtrl.updatePassword(password)
   }
 }
 

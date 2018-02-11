@@ -99,7 +99,7 @@ export default stateful(
     onConfirm: () => quitScene.set({confirm: true}),
     onConfirmBack: () => quitScene.set({confirm: false}),
     onExecute: async () => {
-      await quitScene.doQuit()
+      await quitScene.doExec()
       quitScene.set({confirm: false, done: true})
       await accountScene.doSync()
     },

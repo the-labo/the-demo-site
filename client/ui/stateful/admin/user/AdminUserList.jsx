@@ -14,6 +14,7 @@ import { withMoment } from '../../../wrappers'
 class AdminUserList extends React.Component {
   render () {
     const {
+      busy,
       checks,
       className,
       formatDate,
@@ -26,7 +27,7 @@ class AdminUserList extends React.Component {
 
     return (
       <div className={c(className)}>
-        <TheOperationList {...{l, onSort, onUpdateCheck, sort}}
+        <TheOperationList {...{busy, l, onSort, onUpdateCheck, sort}}
                           entities={users}
                           fields={{
                             'profile.email': {
@@ -60,6 +61,7 @@ class AdminUserList extends React.Component {
 
 export default stateful(
   (state) => ({
+    busy: state['admin.user.list.busy'],
     checks: state['admin.user.check.values'],
     sort: state['admin.user.list.sort'],
     users: state['admin.user.list.entities'],

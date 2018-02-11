@@ -4,30 +4,22 @@
  */
 'use strict'
 
-const {clone} = require('asobj')
-const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
 
-@withBusy
-@withEntry
+const {bindScope} = require('the-scene-mixins/shim')
+const InputScene = require('./abstract/InputScene')
+
 @bindScope('profile.edit')
-class ProfileEditSceneBase extends Scene {}
+class ProfileEditSceneBase extends InputScene {}
 
 /** @lends ProfileEditScene */
 class ProfileEditScene extends ProfileEditSceneBase {
 
-  setEntryFromEntity (entity) {
-    const values = clone(entity || {}, {
-      without: ['user', 'id', 'sign', /^\$/],
-    })
-    this.setEntry(values)
+  async detailWith (values) {
+    const {accountCtrl} = this.controllers
+    return accountCtrl.updateProfile(values)
   }
 
-  @withBusy.while
-  async doSave () {
-    const {accountCtrl} = this.controllers
-    await this.processEntry((values) => accountCtrl.updateProfile(values))
-  }
+  static entitySkipFields = ['user', 'id', 'sign', /^\$/]
 }
 
 module.exports = ProfileEditScene

@@ -1,0 +1,6 @@
+{
+  "busy": "BOOL",
+  "entity": "VAL",
+  "id": "STR",
+  "ready": "BOOL"
+}

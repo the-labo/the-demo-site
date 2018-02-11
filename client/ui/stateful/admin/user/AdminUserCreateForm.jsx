@@ -38,7 +38,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await adminUserCreateScene.doCreate()
+      await adminUserCreateScene.doExec()
       adminUserCreateScene.set({done: true})
       toastScene.showInfo(l('toasts.ADMIN_USER_CREATE_DID_SUCCESS'))
       await adminUserListScene.doSync()

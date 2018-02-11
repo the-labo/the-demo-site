@@ -4,26 +4,25 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withEntry, withFailure} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
 
-@withEntry
-@withBusy
+const {bindScope, withFailure} = require('the-scene-mixins/shim')
+const InputScene = require('./abstract/InputScene')
+
 @withFailure
 @bindScope('recover.send')
-class RecoverSendSceneBase extends Scene {}
+class RecoverSendSceneBase extends InputScene {}
 
 /** @lends RecoverSendScene */
 class RecoverSendScene extends RecoverSendSceneBase {
 
-  @withBusy.while
+
   @withFailure.for(({l}) => ({
     UnknownEmailError: l('errors.RECOVER_UNKNOWN_EMAIL_ERROR'),
     default: l('errors.RECOVER_SEND_FAILED_ERROR'),
   }))
-  async doSend () {
+  async dealWith ({email}) {
     const {recoverCtrl} = this.controllers
-    await this.processEntry(({email}) => recoverCtrl.send(email))
+    return await recoverCtrl.send(email)
   }
 }
 

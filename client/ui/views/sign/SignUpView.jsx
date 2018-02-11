@@ -46,7 +46,7 @@ class SignUpView extends React.Component {
 
 export default stateful(
   (state) => ({
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({
      signAskScene,

@@ -4,21 +4,19 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withTargets} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
 
-@withBusy
-@withTargets
+const {bindScope} = require('the-scene-mixins/shim')
+const ProcessScene = require('./abstract/ProcessScene')
+
 @bindScope('admin.user.destroy')
-class AdminUserDestroySceneBase extends Scene {}
+class AdminUserDestroySceneBase extends ProcessScene {}
 
 /** @lends AdminUserDestroyScene */
 class AdminUserDestroyScene extends AdminUserDestroySceneBase {
-  @withBusy.while
-  async doDestroy () {
+
+  async dealWith (targetIds) {
     const {adminUserCtrl} = this.controllers
-    const userIds = this.getTargetIds()
-    await adminUserCtrl.destroy(...userIds)
+    await adminUserCtrl.destroy(...targetIds)
   }
 }
 

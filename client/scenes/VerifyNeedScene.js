@@ -6,7 +6,7 @@
 
 const asleep = require('asleep')
 const {bindScope, withBusy} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
+const Scene = require('./abstract/Scene')
 
 @withBusy
 @bindScope('verify.need')

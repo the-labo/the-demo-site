@@ -31,7 +31,7 @@ export default stateful(
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await signInScene.doSignIn()
+      await signInScene.doExec()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGN_IN_DID_SUCCESS'))
       signInScene.goBack()

@@ -47,7 +47,7 @@ class SignAskView extends React.Component {
 export default stateful(
   (state) => ({
     back: state['sign.ask.back'] || '/',
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({
      signAskScene,

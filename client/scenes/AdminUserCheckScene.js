@@ -5,7 +5,7 @@
 'use strict'
 
 const {bindScope, withValues} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
+const Scene = require('./abstract/Scene')
 
 @withValues
 @bindScope('admin.user.check')

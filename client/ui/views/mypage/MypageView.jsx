@@ -83,7 +83,7 @@ export default stateful(
   (state) => ({
     busy: state['account.busy'],
     ready: state['account.ready'],
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   () => ({}),
 )(MypageView)

@@ -13,6 +13,8 @@ import AdminUserList from './admin/user/AdminUserList'
 import AdminUserPager from './admin/user/AdminUserPager'
 import AdminUserPasswordDialog from './admin/user/AdminUserPasswordDialog'
 import CautionDisconnectedDialog from './caution/CautionDisconnectedDialog'
+import HomePanel from './home/HomePanel'
+import Intro from './intro/Intro'
 import LocaleForm from './locale/LocaleForm'
 import PasswordChangeForm from './password/PasswordChangeForm'
 import ProfileEditForm from './profile/ProfileEditForm'
@@ -31,6 +33,8 @@ export {
   AdminUserPager,
   AdminUserPasswordDialog,
   CautionDisconnectedDialog,
+  HomePanel,
+  Intro,
   LocaleForm,
   PasswordChangeForm,
   ProfileEditForm,

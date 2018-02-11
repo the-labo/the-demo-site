@@ -1,24 +1,24 @@
 /**
- * SignoutScene
- * @class SignoutScene
+ * SignOutScene
+ * @class SignOutScene
  */
 'use strict'
 
 const {bindScope, withBack, withBusy} = require('the-scene-mixins/shim')
-const Scene = require('./Scene')
+const Scene = require('./abstract/Scene')
 
 @withBusy
 @withBack
 @bindScope('sign.out')
-class SignoutSceneBase extends Scene {}
+class SignOutSceneBase extends Scene {}
 
-/** @lends SignoutScene */
-class SignoutScene extends SignoutSceneBase {
+/** @lends SignOutScene */
+class SignOutScene extends SignOutSceneBase {
   @withBusy.while
-  async doSignout () {
+  async doExec () {
     const {signCtrl} = this.controllers
     await signCtrl.signOut()
   }
 }
 
-module.exports = SignoutScene
+module.exports = SignOutScene

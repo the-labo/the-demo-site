@@ -36,7 +36,7 @@ export default stateful(
       signUpScene.setStep(step)
     },
     onSubmit: async () => {
-      await signUpScene.doSignUp()
+      await signUpScene.doExec()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGN_UP_DID_SUCCESS'))
       signUpScene.goBack()

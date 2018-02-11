@@ -21,7 +21,6 @@ module.exports = Object.freeze({
   'quitScene': sc.QuitScene,
   'recoverResetScene': sc.RecoverResetScene,
   'recoverSendScene': sc.RecoverSendScene,
-  'scene': sc.Scene,
   'signAskScene': sc.SignAskScene,
   'signInScene': sc.SignInScene,
   'signOutScene': sc.SignOutScene,

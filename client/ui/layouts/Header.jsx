@@ -77,7 +77,7 @@ export default stateful(
     needsVerify: state['verify.need.needed'],
     pathname: state['app.pathname'],
     ready: state['account.ready'],
-    user: state['account.user'],
+    user: state['account.entity'],
   }),
   ({
      l,
@@ -86,7 +86,7 @@ export default stateful(
      verifySendScene,
    }) => ({
     onVerify: async () => {
-      await verifySendScene.doSend()
+      await verifySendScene.doExec()
       await verifyNeedScene.doSync()
       toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
       verifyNeedScene.set({needed: false})
