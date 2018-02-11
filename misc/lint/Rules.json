@@ -16,6 +16,11 @@
       "keypathArguments": {
         "l": "conf/locales/en"
       }
+    },
+    "propRule": {
+      "keypathAccess": {
+        "state": "client/store/scopes"
+      }
     }
   },
   "client/ui/stateful/admin/**/*.jsx": {

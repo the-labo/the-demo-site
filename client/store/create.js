@@ -9,7 +9,7 @@ const theStore = require('the-store').default
 const {
   ObjectScope, ArrayScope, BooleanScope, StringScope, ValueScope, NumberScope,
 } = require('the-scope/shim/scopes')
-const scopes = require('../scopes')
+const scopes = require('./scopes')
 
 /** @lends create */
 module.exports = function create () {
