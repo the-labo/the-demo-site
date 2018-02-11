@@ -15,7 +15,6 @@ class SignInForm extends React.Component {
     return (
       <TheSignInForm  {...this.props}/>
     )
-
   }
 }
 

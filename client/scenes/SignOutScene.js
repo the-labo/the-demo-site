@@ -4,11 +4,10 @@
  */
 'use strict'
 
-const {bindScope, withBack, withBusy, withEntry} = require('the-scene-mixins/shim')
+const {bindScope, withBack, withBusy} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
-@withEntry
 @withBack
 @bindScope('sign.out')
 class SignoutSceneBase extends Scene {}

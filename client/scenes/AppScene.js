@@ -24,25 +24,16 @@ class AppScene extends AppSceneBase {
   }
 
   handleRejectionReason (reason) {
-    if (!reason) {
-      return false
+    const href = {
+      'ForbiddenError': Urls.ERROR_FORBIDDEN_URL,
+      'NotFoundError': Urls.ERROR_NOTFOUND_URL,
+      'UnauthorizedError': Urls.SIGN_IN_URL,
+    }[reason?.name]
+    if (href) {
+      this.changeLocationTo(href)
+      return true
     }
-    switch (reason.name) {
-      case 'UnauthorizedError': {
-        this.changeLocationTo(Urls.SIGN_IN_URL)
-        return true
-      }
-      case 'NotFoundError': {
-        this.changeLocationTo(Urls.ERROR_NOTFOUND_URL)
-        return true
-      }
-      case 'ForbiddenError': {
-        this.changeLocationTo(Urls.ERROR_FORBIDDEN_URL)
-        return true
-      }
-      default:
-        return false
-    }
+    return false
   }
 
   setLocation ({pathname, search}) {

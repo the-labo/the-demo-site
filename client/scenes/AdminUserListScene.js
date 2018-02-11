@@ -28,6 +28,14 @@ class AdminUserListSceneBase extends Scene {}
 
 /** @lends AdminUserListScene */
 class AdminUserListScene extends AdminUserListSceneBase {
+  getCondition () {
+    return {
+      filter: this.getFilter(),
+      page: this.getPage(),
+      sort: this.getSort(),
+    }
+  }
+
   setQ (q) {
     this.set({pageNumber: 1})
     this.setFilterByQ(q, {fields: ['name', 'profile.name', 'profile.email']})
@@ -38,11 +46,8 @@ class AdminUserListScene extends AdminUserListSceneBase {
   @withReady.when
   async doSync () {
     const {adminUserCtrl} = this.controllers
-    const {entities, meta: counts} = await adminUserCtrl.list({
-      filter: this.getFilter(),
-      page: this.getPage(),
-      sort: this.getSort(),
-    })
+    const condition = this.getCondition()
+    const {entities, meta: counts} = await adminUserCtrl.list(condition)
     this.set({counts, entities})
   }
 }
