@@ -1,7 +1,7 @@
 {
   "name": "the-demo-site",
   "description": "Demo site of the-framework",
-  "version": "7.77.0",
+  "version": "7.78.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
@@ -111,7 +111,6 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
-    "preinstall": "./misc/scripts/must_use_yarn.js",
     "prepare": "pon prepare",
     "release": "the-script-release -y",
     "restart": "pon restart",
