@@ -381,7 +381,7 @@ module.exports = pon(
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
       /** Start debugging */
-      debug: ['ps:debug', 'env:debug', 'build', 'debug:*'],
+      debug: ['ps:debug', 'env:debug', 'build', 'lint', 'debug:*'],
       /** Default for `pon` command */
       default: ['build'],
       /** Deploy project on production */

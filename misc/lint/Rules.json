@@ -17,6 +17,19 @@
         "l": "conf/locales/en"
       }
     },
+    "depsRule": {
+      "importFrom": [
+        ".mjs",
+        ".js",
+        ".jsx",
+        ".json",
+        ".pcss"
+      ],
+      "requireFrom": [
+        ".js",
+        ".json"
+      ]
+    },
     "propRule": {
       "keypathAccess": {
         "state": "client/store/scopes"
@@ -60,6 +73,17 @@
   "server/**/*.js": {
     "contentRule": {
       "endsWithNewLine": true
+    },
+    "depsRule": {
+      "importFrom": [
+        ".mjs",
+        ".js",
+        ".json"
+      ],
+      "requireFrom": [
+        ".js",
+        ".json"
+      ]
     }
   },
   "server/controllers/!(index).js": {

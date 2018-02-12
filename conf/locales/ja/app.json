@@ -1,3 +1,4 @@
 {
+  "APP_DESC": "#{en.app.APP_DESC}",
   "APP_NAME": "the-demo-site"
 }
