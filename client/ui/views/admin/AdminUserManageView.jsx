@@ -32,8 +32,8 @@ class AdminUserManageView extends React.Component {
     const {
       busy,
       l,
+      onBack,
       onCreate,
-      pop,
       ready,
       title,
     } = this.props
@@ -43,7 +43,7 @@ class AdminUserManageView extends React.Component {
       >
         <TheView.Header icon={Icons.USERS_ICON}
                         leftIcon={Icons.BACK_ICON}
-                        onLeftClick={pop}
+                        onLeftClick={onBack}
                         onRightClick={onCreate}
                         rightText={l('buttons.SHOW_USER_CREATE')}
                         text={title}
@@ -80,7 +80,8 @@ export default stateful(
      adminUserCreateScene,
      adminUserFilterScene,
      adminUserListScene,
-   }, ownProps) => ({
+   }, propsProxy) => ({
+    onBack: () => propsProxy.popTo(Urls.ADMIN_URL),
     onCreate: () => {
       adminUserCreateScene.init()
       adminUserCreateScene.set({
@@ -94,7 +95,7 @@ export default stateful(
       adminUserCheckScene.init()
       adminUserCreateScene.init()
 
-      const {q = null} = ownProps.query
+      const {q = null} = propsProxy.query
       adminUserListScene.setQ(q)
       adminUserFilterScene.setEntry({q})
 

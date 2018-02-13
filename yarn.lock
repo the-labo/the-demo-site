@@ -505,7 +505,7 @@
     "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.40"
     "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.40"
 
-"@babel/runtime@^7.0.0-beta.38", "@babel/runtime@^7.0.0-beta.39":
+"@babel/runtime@^7.0.0-beta.38", "@babel/runtime@^7.0.0-beta.40":
   version "7.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.40.tgz#8e3b8f1d2d8639d010e991a7e99c1d9ef578f886"
   dependencies:
@@ -7915,14 +7915,15 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^3.0.0, the-code@^3.4.6, the-code@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.5.2.tgz#ea8e045ee0bec4470ae5a53e158b917fa6869fa5"
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.5.3.tgz#d185b39a69abd52010f17f12369608efc7e30834"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
     babylon "^7.0.0-beta.39"
     babylon-walk "^1.0.2"
     debug "^3.1.0"
+    fmtjson "^4.0.0"
     postcss "^6.0.17"
     writeout "^2.2.1"
 
@@ -7950,10 +7951,10 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.4.tgz#76d640116934f5deff8710cb495a7174df45b6c8"
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.7.tgz#8dafb189f3d3e1c62078147b9ea72ad94c741126"
   dependencies:
-    "@babel/runtime" "^7.0.0-beta.39"
+    "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-aside "^1.1.1"
@@ -7983,11 +7984,11 @@ the-components@^6.0.0:
     the-link "^3.0.6"
     the-list "^3.1.0"
     the-main "^3.0.5"
-    the-menu "^2.0.6"
+    the-menu "^2.0.7"
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
-    the-route "^3.0.15"
+    the-route "^3.0.18"
     the-router "^2.0.6"
     the-section "^2.0.1"
     the-spin "^3.1.0"
@@ -8376,7 +8377,7 @@ the-main@^3.0.5:
     the-spin "^3.1.0"
     the-style "^2.1.0"
 
-the-menu@^2.0.6:
+the-menu@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.7.tgz#882a462b9eb09b68e96963efb517db1a06398b1e"
   dependencies:
@@ -8470,24 +8471,25 @@ the-root@^2.0.3:
     the-component-util "^2.1.2"
     the-style "^2.1.0"
 
-the-route@^3.0.15:
-  version "3.0.15"
-  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.15.tgz#47fcecdf6cf0af48a9041cd1f7b5b62361a8d9af"
+the-route@^3.0.18:
+  version "3.0.24"
+  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.0.24.tgz#be0388b64acb5451c40f6a2f773bec45d6fb2831"
   dependencies:
     bwindow "^1.1.0"
     classnames "^2.2.5"
+    debug "^3.1.0"
     prop-types "^15.6.0"
     the-component-util "^2.1.2"
     the-spin "^3.1.0"
 
 the-router@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/the-router/-/the-router-2.0.6.tgz#cd5cecd87e33c8a8b8a0a1a12a6f56b682e0091f"
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/the-router/-/the-router-2.0.7.tgz#c85c52bece06cb468307c1419968a3ba8368dec9"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    the-component-util "^2.1.0"
-    the-style "^2.0.1"
+    the-component-util "^2.1.2"
+    the-style "^2.1.0"
 
 the-scene-base@^2.0.0, the-scene-base@^2.0.2:
   version "2.1.0"
@@ -8714,7 +8716,7 @@ the-store@^5.1.3:
     the-check "^1.2.2"
     the-scope "^2.0.2"
 
-the-style@^2.0.0, the-style@^2.0.1, the-style@^2.1.0:
+the-style@^2.0.0, the-style@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/the-style/-/the-style-2.1.0.tgz#701e5eecd700c28c149a11d47a44a9d449d7f817"
   dependencies:
