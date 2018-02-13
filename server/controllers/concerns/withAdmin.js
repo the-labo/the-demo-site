@@ -10,6 +10,11 @@ const {RoleCodes} = require('@self/conf')
 /** @lends withAdmin */
 function withAdmin (Class) {
   class WithAdmin extends Class {
+    async controllerMethodWillInvoke (invocation) {
+      await super.controllerMethodWillInvoke(invocation)
+      await this._assertAsAdmin()
+    }
+
     async _assertAsAdmin () {
       const isAdmin = await this._isAdmin()
       if (!isAdmin) {
@@ -28,11 +33,6 @@ function withAdmin (Class) {
 
     async _setConfirmedAsAdmin (confirmedAsAdmin) {
       this.session.confirmedAsAdmin = confirmedAsAdmin
-    }
-
-    async controllerMethodWillInvoke (invocation) {
-      await super.controllerMethodWillInvoke(invocation)
-      await this._assertAsAdmin()
     }
   }
 

@@ -76,7 +76,7 @@ export default stateful(
     },
     onPrepareProfile: async () => {
       await accountScene.doSync()
-      const {profile} = accountScene.get('user')
+      const {profile} = accountScene.get('entity')
       profileEditScene.setEntryFromEntity(profile)
     },
   }),
