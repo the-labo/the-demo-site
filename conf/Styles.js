@@ -9,5 +9,6 @@ module.exports = Object.freeze(
   {
     DOMINANT_COLOR: '#3A8',
     LIGHT_TEXT_COLOR: '#CCC',
-    TEXT_COLOR: '#555', }
+    TEXT_COLOR: '#555',
+  }
 )

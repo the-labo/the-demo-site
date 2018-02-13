@@ -3,8 +3,7 @@
 const path = require('path')
 const {View} = require('the-templates')
 
-module.exports = [
-].reduce((buds, fullName) => {
+module.exports = [].reduce((buds, fullName) => {
   const name = path.basename(fullName)
   return [
     ...buds,

@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope} = require('the-scene-mixins/shim')
 const ListScene = require('./abstract/ListScene')
 

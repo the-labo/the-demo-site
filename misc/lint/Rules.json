@@ -9,6 +9,9 @@
       "keypathArguments": {
         "bindScope": "client/scopes"
       }
+    },
+    "decorateRule": {
+      "declared": true
     }
   },
   "client/ui/**/*.jsx": {
@@ -16,6 +19,9 @@
       "keypathArguments": {
         "l": "conf/locales/en"
       }
+    },
+    "decorateRule": {
+      "declared": true
     },
     "depsRule": {
       "importFrom": [

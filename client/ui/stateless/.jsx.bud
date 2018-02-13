@@ -3,17 +3,9 @@
  */
 'use strict'
 
-const path = require('path')
+const {Stateless} = require('the-templates')
 
-module.exports = [].map((name) => ({
-  force: false,
-  mkdirp: true,
-  mode: '644',
-  path: `${name}.jsx`,
-  data: {
-    name: path.basename(name)
-  }
-}))
+module.exports = [].map((name) => Stateless({name}))
 
 if (!module.parent) {
   require('coz').render(__filename)

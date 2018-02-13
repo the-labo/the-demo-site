@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope, withFailure} = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 

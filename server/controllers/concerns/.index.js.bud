@@ -1,6 +1,6 @@
 'use strict'
 
-const { dir } = require('the-templates')
+const {dir} = require('the-templates')
 
 module.exports = dir({
   dirname: __dirname,
@@ -8,7 +8,6 @@ module.exports = dir({
   name: 'concerns',
   description: 'Controller concerns'
 })
-
 
 if (!module.parent) {
   require('coz').render(__filename)

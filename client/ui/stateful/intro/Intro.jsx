@@ -18,9 +18,6 @@ class Intro extends React.Component {
 }
 
 export default stateful(
-  (state) => ({
-
-  }),
-  ({}) => ({
-  }),
+  (state) => ({}),
+  ({}) => ({}),
 )(Intro)

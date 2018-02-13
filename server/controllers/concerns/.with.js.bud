@@ -5,8 +5,7 @@
 
 const path = require('path')
 
-module.exports = [
-].map((name) => ({
+module.exports = [].map((name) => ({
   force: false,
   mode: '644',
   mkdirp: true,

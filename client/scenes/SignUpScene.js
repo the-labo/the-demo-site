@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope, withBack} = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
@@ -29,7 +28,6 @@ class SignUpScene extends SignUpSceneBase {
     }
     this.set({step})
   }
-
 
   async dealWith ({name, password, profile}) {
     const {signCtrl} = this.controllers

@@ -22,7 +22,7 @@ class DetailScene extends DetailSceneBase {
   async doSync () {
     const id = this.get('id')
     const entity = await this.dealWith(id)
-    this.set({entity})
+    this.set({entity, missing: !entity})
   }
 }
 

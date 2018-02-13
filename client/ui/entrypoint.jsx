@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { isProduction } from 'the-check'
-import {history as historyFor, mount} from 'the-entrypoint'
+import { history as historyFor, mount } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI } from '@self/conf'
 import App from './App'

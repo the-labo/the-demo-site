@@ -7914,7 +7914,7 @@ the-client@^5.0.1:
     the-error "^1.4.4"
     uuid "^3.2.1"
 
-the-code@^3.0.0, the-code@^3.4.13, the-code@^3.4.6:
+the-code@^3.0.0, the-code@^3.4.6, the-code@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.5.2.tgz#ea8e045ee0bec4470ae5a53e158b917fa6869fa5"
   dependencies:
@@ -8323,14 +8323,14 @@ the-link@^3.0.4, the-link@^3.0.6:
     the-style "^2.1.0"
 
 the-lint@^1.1.1:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.4.4.tgz#a927a82f719f790d7e15786c78df9f0b985f177b"
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/the-lint/-/the-lint-1.6.1.tgz#e0ad796c74089286f383f5b7ec119be485f07437"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
     colorprint "^4.1.0"
     json-pointer "^0.6.0"
-    the-code "^3.4.13"
+    the-code "^3.5.2"
 
 the-list@^3.1.0:
   version "3.1.0"
@@ -8758,9 +8758,9 @@ the-tag@^2.0.2:
     the-link "^3.0.6"
     the-style "^2.1.0"
 
-the-templates@^2.5.7:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.7.tgz#56596fb77d5e3d0d73f98fca36d140ba2f0631fa"
+the-templates@^2.5.8:
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.8.tgz#c16eada7e8e1491988224fc9b7a3310883a0c55a"
   dependencies:
     aglob "^3.0.0"
     ape-tmpl "^6.0.8"

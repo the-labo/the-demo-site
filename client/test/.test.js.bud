@@ -4,7 +4,7 @@
 
 'use strict'
 
-const { test } = require('the-templates')
+const {test} = require('the-templates')
 
 module.exports = test.dir({
   src: [

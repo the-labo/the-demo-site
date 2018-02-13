@@ -9,9 +9,9 @@ import styles from './UserCard.pcss'
 import UserImage from '../images/UserImage'
 
 function UserCard ({
-                      className,
-                      user,
-                    }) {
+                     className,
+                     user,
+                   }) {
   return (
     <div className={c(styles.self, className)}>
       <UserImage {...{user}}

@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope, withFailure} = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
@@ -14,7 +13,6 @@ class RecoverSendSceneBase extends InputScene {}
 
 /** @lends RecoverSendScene */
 class RecoverSendScene extends RecoverSendSceneBase {
-
 
   @withFailure.for(({l}) => ({
     UnknownEmailError: l('errors.RECOVER_UNKNOWN_EMAIL_ERROR'),
