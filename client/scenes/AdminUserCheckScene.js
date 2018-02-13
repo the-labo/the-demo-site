@@ -4,12 +4,12 @@
  */
 'use strict'
 
-const {bindScope, withValues} = require('the-scene-mixins/shim')
-const Scene = require('./abstract/Scene')
+const {bindDefaults, bindScope} = require('the-scene-mixins/shim')
+const HashScene = require('./abstract/HashScene')
 
-@withValues
 @bindScope('admin.user.check')
-class AdminUserCheckSceneBase extends Scene {}
+@bindDefaults({ready: true})
+class AdminUserCheckSceneBase extends HashScene {}
 
 /** @lends AdminUserCheckScene */
 class AdminUserCheckScene extends AdminUserCheckSceneBase {

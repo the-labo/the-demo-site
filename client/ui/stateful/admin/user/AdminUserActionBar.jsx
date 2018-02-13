@@ -45,12 +45,14 @@ export default stateful(
     onDestroy: () => {
       adminUserDestroyScene.set({
         active: true,
+        done: false,
         targets: propsProxy.targets,
       })
     },
     onPasswordReset: () => {
       adminUserPasswordScene.set({
         active: true,
+        done: false,
         targets: propsProxy.targets,
       })
     },
