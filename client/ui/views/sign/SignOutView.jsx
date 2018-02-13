@@ -34,7 +34,6 @@ class SignOutView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

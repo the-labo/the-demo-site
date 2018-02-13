@@ -33,7 +33,6 @@ class HomeView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

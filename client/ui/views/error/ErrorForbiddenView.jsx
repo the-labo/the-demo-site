@@ -31,7 +31,6 @@ class ErrorForbiddenView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

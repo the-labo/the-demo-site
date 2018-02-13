@@ -15,7 +15,6 @@ class RecoverSendForm extends React.Component {
     return (
       <TheRecoverSendForm {...this.props}/>
     )
-
   }
 }
 

@@ -15,7 +15,6 @@ class SignUpForm extends React.Component {
     return (
       <TheSignUpForm {...this.props}/>
     )
-
   }
 }
 

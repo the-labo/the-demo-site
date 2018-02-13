@@ -81,7 +81,6 @@ class QuitView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

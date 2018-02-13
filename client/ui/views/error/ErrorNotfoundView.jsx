@@ -31,7 +31,6 @@ class ErrorNotfoundView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

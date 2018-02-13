@@ -24,7 +24,6 @@ class CautionDisconnectedDialog extends React.Component {
                                     warningIcon={Icons.WARNING_ICON}
       />
     )
-
   }
 }
 

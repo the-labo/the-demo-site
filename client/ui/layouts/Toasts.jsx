@@ -22,7 +22,6 @@ class Toasts extends React.Component {
                      duration={UI.TOAST_DURATION}
       />
     )
-
   }
 }
 

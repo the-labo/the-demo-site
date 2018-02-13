@@ -34,7 +34,6 @@ class AdminUserCreateDialog extends React.Component {
         <AdminUserCreateForm/>
       </TheCreateDialog>
     )
-
   }
 }
 

@@ -28,7 +28,6 @@ class AboutPrivacyPolicyView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

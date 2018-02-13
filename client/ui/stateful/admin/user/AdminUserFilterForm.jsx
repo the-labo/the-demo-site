@@ -18,7 +18,6 @@ class AdminUserFilterForm extends React.Component {
                      placeholder={l('placeholders.USER_SEARCH')}
       />
     )
-
   }
 }
 

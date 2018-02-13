@@ -44,7 +44,6 @@ class VerifyConfirmView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

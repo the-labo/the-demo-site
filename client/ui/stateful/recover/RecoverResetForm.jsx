@@ -15,7 +15,6 @@ class RecoverResetForm extends React.Component {
     return (
       <TheRecoverResetForm {...this.props}/>
     )
-
   }
 }
 

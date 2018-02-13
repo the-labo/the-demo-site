@@ -15,7 +15,6 @@ class ProfileEditForm extends React.Component {
     return (
       <TheProfileEditForm {...this.props}/>
     )
-
   }
 }
 

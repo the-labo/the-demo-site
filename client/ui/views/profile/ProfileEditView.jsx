@@ -52,7 +52,6 @@ class ProfileEditView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

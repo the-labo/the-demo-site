@@ -44,7 +44,6 @@ class Footer extends React.Component {
         </div>
       </TheFooter>
     )
-
   }
 }
 

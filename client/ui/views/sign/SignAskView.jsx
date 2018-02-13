@@ -40,7 +40,6 @@ class SignAskView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

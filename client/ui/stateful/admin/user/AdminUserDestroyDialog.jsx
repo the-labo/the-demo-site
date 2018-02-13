@@ -35,7 +35,6 @@ class AdminUserDestroyDialog extends React.Component {
                         }}
       />
     )
-
   }
 }
 

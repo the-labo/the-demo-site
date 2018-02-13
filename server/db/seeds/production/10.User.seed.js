@@ -1,7 +1,6 @@
 'use strict'
 
 const {SUPER_ADMIN_NAME} = require('@self/Local')
-const _seed = require('./_seed')
 
 module.exports = [
   {

@@ -30,7 +30,6 @@ class AdminUserActionBar extends React.Component {
                     hidden={targets.length === 0}
       />
     )
-
   }
 }
 

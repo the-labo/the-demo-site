@@ -68,7 +68,6 @@ class Header extends React.Component {
         </TheCondition>
       </TheHeader>
     )
-
   }
 }
 

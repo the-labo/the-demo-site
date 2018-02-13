@@ -16,7 +16,6 @@ class PasswordChangeForm extends React.Component {
       <ThePasswordChangeForm {...this.props}>
       </ThePasswordChangeForm>
     )
-
   }
 }
 

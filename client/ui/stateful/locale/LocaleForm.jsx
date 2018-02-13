@@ -22,7 +22,6 @@ class LocaleForm extends React.Component {
                      options={LocaleNames}
       />
     )
-
   }
 }
 

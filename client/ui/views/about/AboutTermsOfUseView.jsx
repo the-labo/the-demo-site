@@ -28,7 +28,6 @@ class AboutTermsOfUseView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

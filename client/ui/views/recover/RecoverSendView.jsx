@@ -44,7 +44,6 @@ class RecoverSendView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

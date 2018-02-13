@@ -50,7 +50,6 @@ class PasswordChangeView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 

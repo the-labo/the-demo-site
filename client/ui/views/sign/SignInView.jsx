@@ -36,7 +36,6 @@ class SignInView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-
   }
 }
 
