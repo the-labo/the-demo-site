@@ -21,7 +21,7 @@ class VerifyConfirmScene extends VerifyConfirmSceneBase {
   }))
   async dealWith ({envelop, seal}) {
     const {verifyCtrl} = this.controllers
-    return verifyCtrl.verify({envelop, seal})
+    return await verifyCtrl.verify({envelop, seal})
   }
 }
 

@@ -15,7 +15,7 @@ class AdminUserCreateScene extends AdminUserCreateSceneBase {
 
   async dealWith (values) {
     const {adminUserCtrl} = this.controllers
-    return adminUserCtrl.create(values)
+    return await adminUserCtrl.create(values)
   }
 }
 

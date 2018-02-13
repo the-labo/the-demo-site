@@ -40,7 +40,7 @@ export default stateful(
     onSubmit: async () => {
       await adminUserCreateScene.doExec()
       adminUserCreateScene.set({done: true})
-      toastScene.showInfo(l('toasts.ADMIN_USER_CREATE_DID_SUCCESS'))
+      toastScene.showInfo(l('toasts.USER_CREATE_DID_SUCCESS'))
       await adminUserListScene.doSync()
     },
     onUpdate: (v) => adminUserCreateScene.setEntry(v),

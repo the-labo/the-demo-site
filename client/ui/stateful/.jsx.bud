@@ -1,5 +1,5 @@
 /**
- * Bud file for fragment components
+ * Bud file for stateless components
  */
 'use strict'
 

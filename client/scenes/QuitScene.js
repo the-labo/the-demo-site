@@ -6,11 +6,10 @@
 
 const {bindScope, withBusy} = require('the-scene-mixins/shim')
 const {Urls} = require('@self/conf')
-const Scene = require('./abstract/Scene')
+const CallScene = require('./abstract/CallScene')
 
-@withBusy
 @bindScope('quit')
-class QuitSceneBase extends Scene {}
+class QuitSceneBase extends CallScene {}
 
 /** @lends QuitScene */
 class QuitScene extends QuitSceneBase {
@@ -19,10 +18,9 @@ class QuitScene extends QuitSceneBase {
     this.goTo(Urls.TOP_URL)
   }
 
-  @withBusy.while
-  async doExec () {
+  async dealWith () {
     const {quitCtrl} = this.controllers
-    await quitCtrl.execute()
+    return await quitCtrl.execute()
   }
 
 }

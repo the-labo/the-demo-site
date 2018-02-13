@@ -7,6 +7,7 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
+  get CallScene () { return _d(require('./abstract/CallScene')) },
   get DetailScene () { return _d(require('./abstract/DetailScene')) },
   get InputScene () { return _d(require('./abstract/InputScene')) },
   get ListScene () { return _d(require('./abstract/ListScene')) },

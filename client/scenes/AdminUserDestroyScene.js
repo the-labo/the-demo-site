@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope} = require('the-scene-mixins/shim')
 const ProcessScene = require('./abstract/ProcessScene')
 
@@ -16,7 +15,7 @@ class AdminUserDestroyScene extends AdminUserDestroySceneBase {
 
   async dealWith (targetIds) {
     const {adminUserCtrl} = this.controllers
-    await adminUserCtrl.destroy(...targetIds)
+    return await adminUserCtrl.destroy(...targetIds)
   }
 }
 

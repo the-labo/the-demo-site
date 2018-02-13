@@ -4,7 +4,6 @@
  */
 'use strict'
 
-
 const {bindScope} = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
@@ -16,7 +15,7 @@ class PasswordChangeScene extends PasswordChangeSceneBase {
 
   async dealWith ({password}) {
     const {accountCtrl} = this.controllers
-    return accountCtrl.updatePassword(password)
+    return await accountCtrl.updatePassword(password)
   }
 }
 
