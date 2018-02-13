@@ -429,8 +429,8 @@ Misc
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-8.0.0.css`
-  * `/the-demo-site-8.0.0.js`
+  * `/the-demo-site-8.0.1.css`
+  * `/the-demo-site-8.0.1.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`
