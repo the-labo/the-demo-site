@@ -6,6 +6,7 @@
 import c from 'classnames'
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
+import { TheImage } from 'the-components'
 import { TheOperationList } from 'the-site-components'
 import { withMoment } from '../../../wrappers'
 import { withRole } from '../../../wrappers'
@@ -41,6 +42,11 @@ class AdminUserList extends React.Component {
                               label: l('labels.USER_EMAIL'),
                               sortable: true,
                             },
+                            'profile.image': {
+                              label: l('labels.USER_IMAGE'),
+                              render: (image) => image && <TheImage height={40} scale='fit' src={image} width={40}/>,
+                              sortable: false,
+                            },
                             'profile.name': {
                               label: l('labels.USER_PROFILE_NAME'),
                               sortable: true,
@@ -58,7 +64,7 @@ class AdminUserList extends React.Component {
                           }}
                           isChecked={({id}) => checks[id]}
                           isFreezed={({id}) => id === 'superadmin'}
-                          keys={['name', 'profile.email', 'profile.name', 'role.code', 'sign.signInAt']}
+                          keys={['name', 'profile.email', 'profile.name', 'profile.image', 'role.code', 'sign.signInAt']}
 
         />
       </div>

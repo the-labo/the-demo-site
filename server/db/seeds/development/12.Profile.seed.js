@@ -8,7 +8,7 @@ module.exports = [
   ...Users.map(({id, name}) => seed.apply({
     email: `${name}@example.com`,
     id,
-    image: '#{image.avatar}',
+    image: '#{image.avatar()}',
     name: `[Test] ${pascalcase(name)}`,
     user: {$$as: 'User', $$entity: true, id},
   }))
