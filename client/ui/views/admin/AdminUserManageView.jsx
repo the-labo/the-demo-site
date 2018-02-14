@@ -20,6 +20,7 @@ import {
   AdminUserList,
   AdminUserPager,
   AdminUserPasswordDialog,
+  AdminUserRoleDialog,
 } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
@@ -61,6 +62,7 @@ class AdminUserManageView extends React.Component {
               <AdminUserCreateDialog/>
               <AdminUserDestroyDialog/>
               <AdminUserPasswordDialog/>
+              <AdminUserRoleDialog/>
             </div>
           </TheCondition>
         </TheView.Body>

@@ -49,7 +49,7 @@ describe('controllers', () => {
     await quitCtrl.execute()
   })
 
-  it('User Ctrl', async () => {
+  it('Admin User Ctrl', async () => {
     const {AdminUserCtrl} = controllers
     const session = {}
     const db = createDB({

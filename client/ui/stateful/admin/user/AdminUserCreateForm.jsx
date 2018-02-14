@@ -7,19 +7,17 @@ import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
 import { withForm } from 'the-components'
 import { TheUserCreateForm } from 'the-site-components'
-import { RoleCodes } from '@self/conf'
+import { withRole } from '../../../wrappers'
 
+@withRole
 @withForm
 @localized
 class AdminUserCreateForm extends React.Component {
   render () {
-    const {l} = this.props
+    const {roles} = this.props
     return (
       <TheUserCreateForm {...this.props}
-                         roles={{
-                           [RoleCodes.ADMIN_ROLE]: l('roleCodes.ADMIN_ROLE'),
-                           [RoleCodes.NORMAL_ROLE]: l('roleCodes.NORMAL_ROLE'),
-                         }}
+                         roles={roles}
       />
     )
   }

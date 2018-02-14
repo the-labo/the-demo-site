@@ -38,6 +38,7 @@
   "SHOW_QUIT_CONFIRM": "退会処理を続行する",
   "SHOW_RECOVER_SEND": "パスワード忘れ",
   "SHOW_RESET_PASSWORD": "パスワードをリセット",
+  "SHOW_ROLE_CHANGE": "ロール変更",
   "SHOW_SIGN_IN": "ログイン",
   "SHOW_SIGN_IN_WITH_EXISTING": "既存のアカウントでログイン",
   "SHOW_SIGN_UP": "新規登録",

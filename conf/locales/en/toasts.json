@@ -3,6 +3,7 @@
   "PASSWORD_UPDATE_DID_SUCCESS": "Password did updated",
   "PROFILE_UPDATE_DID_SUCCESS": "Profile did updated",
   "RECOVER_EMAIL_SENT": "Recovery email has sent.",
+  "ROLE_UPDATE_DID_SUCCESS": "Role updated",
   "SIGN_IN_DID_SUCCESS": "Sign in done",
   "SIGN_OUT_DID_SUCCESS": "Sign out done",
   "SIGN_UP_DID_SUCCESS": "Sign up succeeded!",

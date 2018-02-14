@@ -12,6 +12,8 @@ import AdminUserFilterForm from './admin/user/AdminUserFilterForm'
 import AdminUserList from './admin/user/AdminUserList'
 import AdminUserPager from './admin/user/AdminUserPager'
 import AdminUserPasswordDialog from './admin/user/AdminUserPasswordDialog'
+import AdminUserRoleDialog from './admin/user/AdminUserRoleDialog'
+import AdminUserRoleForm from './admin/user/AdminUserRoleForm'
 import CautionDisconnectedDialog from './caution/CautionDisconnectedDialog'
 import HomePanel from './home/HomePanel'
 import Intro from './intro/Intro'
@@ -32,6 +34,8 @@ export {
   AdminUserList,
   AdminUserPager,
   AdminUserPasswordDialog,
+  AdminUserRoleDialog,
+  AdminUserRoleForm,
   CautionDisconnectedDialog,
   HomePanel,
   Intro,

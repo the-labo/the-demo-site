@@ -63,6 +63,7 @@ export default stateful(
     onClose: () => adminUserPasswordScene.set({
       active: false,
       done: false,
+      targets: [],
     }),
     onYes: async () => {
       await adminUserPasswordScene.doExec()

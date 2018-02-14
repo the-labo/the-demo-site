@@ -21,6 +21,7 @@ module.exports = {
   get AdminUserFilterScene () { return _d(require('./AdminUserFilterScene')) },
   get AdminUserListScene () { return _d(require('./AdminUserListScene')) },
   get AdminUserPasswordScene () { return _d(require('./AdminUserPasswordScene')) },
+  get AdminUserRoleScene () { return _d(require('./AdminUserRoleScene')) },
   get AppScene () { return _d(require('./AppScene')) },
   get CautionDisconnectedScene () { return _d(require('./CautionDisconnectedScene')) },
   get PasswordChangeScene () { return _d(require('./PasswordChangeScene')) },

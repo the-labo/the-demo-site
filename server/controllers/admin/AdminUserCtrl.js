@@ -38,6 +38,12 @@ class AdminUserCtrl extends AdminUserCtrlBase {
     return newPasswords
   }
 
+  async updateRole (roleCode, ...userIds) {
+    const {services: {userService}} = this
+    const {newRoles} = await userService.processRole({roleCode, userIds})
+    return newRoles
+  }
+
 }
 
 module.exports = AdminUserCtrl

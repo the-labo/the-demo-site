@@ -13,4 +13,5 @@ module.exports = {
   get filter () { return _d(require('./filter')) },
   get list () { return _d(require('./list')) },
   get password () { return _d(require('./password')) },
+  get role () { return _d(require('./role')) },
 }

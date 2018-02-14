@@ -8,7 +8,9 @@ import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
 import { TheOperationList } from 'the-site-components'
 import { withMoment } from '../../../wrappers'
+import { withRole } from '../../../wrappers'
 
+@withRole
 @withMoment
 @localized
 class AdminUserList extends React.Component {
@@ -21,6 +23,7 @@ class AdminUserList extends React.Component {
       l,
       onSort,
       onUpdateCheck,
+      roles,
       sort,
       users,
     } = this.props
@@ -30,6 +33,10 @@ class AdminUserList extends React.Component {
         <TheOperationList {...{busy, l, onSort, onUpdateCheck, sort}}
                           entities={users}
                           fields={{
+                            'name': {
+                              label: l('labels.USER_NAME'),
+                              sortable: true,
+                            },
                             'profile.email': {
                               label: l('labels.USER_EMAIL'),
                               sortable: true,
@@ -38,19 +45,20 @@ class AdminUserList extends React.Component {
                               label: l('labels.USER_PROFILE_NAME'),
                               sortable: true,
                             },
+                            'role.code': {
+                              label: l('labels.USER_ROLE'),
+                              render: (code) => roles[code] || code,
+                              sortable: true,
+                            },
                             'sign.signInAt': {
                               label: l('labels.USER_SIGN_IN_AT'),
                               render: (signInAt) => signInAt && formatDate(signInAt, 'lll'),
                               sortable: true,
                             },
-                            name: {
-                              label: l('labels.USER_NAME'),
-                              sortable: true,
-                            },
                           }}
                           isChecked={({id}) => checks[id]}
                           isFreezed={({id}) => id === 'superadmin'}
-                          keys={['name', 'profile.email', 'profile.name', 'sign.signInAt']}
+                          keys={['name', 'profile.email', 'profile.name', 'role.code', 'sign.signInAt']}
 
         />
       </div>

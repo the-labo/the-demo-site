@@ -29,10 +29,10 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 
 | Property | Description | Type | Required | Unique |
 | ---- | ---- | ---- | --- | --- |
-| type | History type | cly:string | true |  |
+| createdAt | Created date | cly:date |  |  |
 | data | History data | cly:object |  |  |
 | key | History key | cly:string | true |  |
-| createdAt | Created date | cly:date |  |  |
+| type | History type | cly:string | true |  |
 
 
 <a name="Profile-Resource" ></a>
@@ -42,10 +42,10 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 
 | Property | Description | Type | Required | Unique |
 | ---- | ---- | ---- | --- | --- |
-| name | Display Name | cly:string |  |  |
 | email | Email of user | cly:string |  | true |
 | emailVerified | Email has verified or not | cly:boolean |  |  |
 | image | Profile image | cly:string |  |  |
+| name | Display Name | cly:string |  |  |
 | user | User | cly:entity,cly:ref | true | true |
 
 
@@ -66,11 +66,11 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 
 | Property | Description | Type | Required | Unique |
 | ---- | ---- | ---- | --- | --- |
-| passwordSalt | Password salt | cly:string | true |  |
 | passwordHash | Password hash of user | cly:string | true |  |
-| signUpAt | Date of signing up | cly:date |  |  |
+| passwordSalt | Password salt | cly:string | true |  |
 | signInAt | Last time signed in | cly:date |  |  |
 | signOutAt | Last time signed out | cly:date |  |  |
+| signUpAt | Date of signing up | cly:date |  |  |
 | user | User | cly:entity,cly:ref | true | true |
 
 
@@ -81,10 +81,10 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 
 | Property | Description | Type | Required | Unique |
 | ---- | ---- | ---- | --- | --- |
+| createdAt | Created date | cly:date |  |  |
+| lang | User language | cly:string |  |  |
 | name | Name of resource | cly:string | true | true |
 | profile | User profile | cly:entity,cly:ref |  |  |
-| sign | User sign | cly:entity,cly:ref |  |  |
 | role | User Role | cly:entity,cly:ref |  |  |
-| lang | User language | cly:string |  |  |
-| createdAt | Created date | cly:date |  |  |
+| sign | User sign | cly:entity,cly:ref |  |  |
 

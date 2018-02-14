@@ -14,6 +14,7 @@ class AdminUserActionBar extends React.Component {
       l,
       onDestroy,
       onPasswordReset,
+      onRoleChange,
       targets,
     } = this.props
 
@@ -21,11 +22,13 @@ class AdminUserActionBar extends React.Component {
       <TheActionBar buttons={{
         destroy: l('buttons.SHOW_DESTROY_USERS'),
         passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
+        roleChange: l('buttons.SHOW_ROLE_CHANGE'),
       }}
                     danger={{destroy: true}}
                     handlers={{
                       destroy: onDestroy,
                       passwordReset: onPasswordReset,
+                      roleChange: onRoleChange,
                     }}
                     hidden={targets.length === 0}
       />
@@ -40,6 +43,7 @@ export default stateful(
   ({
      adminUserDestroyScene,
      adminUserPasswordScene,
+     adminUserRoleScene,
      l,
    }, propsProxy) => ({
     onDestroy: () => {
@@ -53,6 +57,12 @@ export default stateful(
       adminUserPasswordScene.set({
         active: true,
         done: false,
+        targets: propsProxy.targets,
+      })
+    },
+    onRoleChange: () => {
+      adminUserRoleScene.set({
+        active: true,
         targets: propsProxy.targets,
       })
     },

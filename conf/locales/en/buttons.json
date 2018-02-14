@@ -38,6 +38,7 @@
   "SHOW_QUIT_CONFIRM": "Proceed the deletion",
   "SHOW_RECOVER_SEND": "Forgot Password?",
   "SHOW_RESET_PASSWORD": "Password Reset",
+  "SHOW_ROLE_CHANGE": "Change Role",
   "SHOW_SIGN_IN": "Sign In",
   "SHOW_SIGN_IN_WITH_EXISTING": "Sign In with your Account",
   "SHOW_SIGN_UP": "Sign Up",

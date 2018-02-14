@@ -3,6 +3,7 @@
   "PASSWORD_UPDATE_DID_SUCCESS": "パスワードが更新されました",
   "PROFILE_UPDATE_DID_SUCCESS": "プロフィールが更新されました",
   "RECOVER_EMAIL_SENT": "パスワード再設定メールが送信されました",
+  "ROLE_UPDATE_DID_SUCCESS": "ロールを更新しました",
   "SIGN_IN_DID_SUCCESS": "ログインしました",
   "SIGN_OUT_DID_SUCCESS": "ログアウトしました",
   "SIGN_UP_DID_SUCCESS": "新規登録しました",

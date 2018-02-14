@@ -14,6 +14,7 @@ module.exports = Object.freeze({
   'adminUserFilterScene': sc.AdminUserFilterScene,
   'adminUserListScene': sc.AdminUserListScene,
   'adminUserPasswordScene': sc.AdminUserPasswordScene,
+  'adminUserRoleScene': sc.AdminUserRoleScene,
   'appScene': sc.AppScene,
   'cautionDisconnectedScene': sc.CautionDisconnectedScene,
   'passwordChangeScene': sc.PasswordChangeScene,
