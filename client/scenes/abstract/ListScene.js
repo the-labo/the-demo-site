@@ -5,7 +5,6 @@
  */
 'use strict'
 
-const {} = require('the-array')
 const {uniqueFilter} = require('the-array')
 const {
   bindDefaults,

@@ -7,19 +7,13 @@
 const {withBusy, withId, withReady} = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
+@withId
 @withBusy
 @withReady
 class DetailSceneBase extends Scene {}
 
 /** @lends DetailScene */
 class DetailScene extends DetailSceneBase {
-  isKnownId (id) {
-    if (!id) {
-      return false
-    }
-    return this.get('id') === String(id)
-  }
-
   async dealWith (id) {
     throw new Error(`Not implemented`)
   }
@@ -27,7 +21,7 @@ class DetailScene extends DetailSceneBase {
   @withBusy.while
   @withReady.when
   async doSync () {
-    const id = this.get('id')
+    const id = this.getId()
     const entity = await this.dealWith(id)
     this.set({entity, missing: !entity})
   }
