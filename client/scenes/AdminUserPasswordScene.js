@@ -12,7 +12,6 @@ class AdminUserPasswordSceneBase extends ProcessScene {}
 
 /** @lends AdminUserPasswordScene */
 class AdminUserPasswordScene extends AdminUserPasswordSceneBase {
-
   async dealWith (targetIds) {
     const {adminUserCtrl} = this.controllers
     return await adminUserCtrl.resetPassword(...targetIds)

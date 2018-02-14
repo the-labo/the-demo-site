@@ -5,9 +5,10 @@
  */
 'use strict'
 
+const {} = require('the-array')
+const {uniqueFilter} = require('the-array')
 const {
   bindDefaults,
-  bindScope,
   withBusy,
   withFilter,
   withHistory,
@@ -16,6 +17,14 @@ const {
   withSort,
 } = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
+
+const hasMoreFor = (counts) => {
+  if (!counts) {
+    return false
+  }
+  const {length, offset, total} = counts
+  return offset + length < total
+}
 
 @withBusy
 @withSort
@@ -50,7 +59,18 @@ class ListScene extends ListSceneBase {
   @withReady.when
   async doSync () {
     const {entities, meta: counts} = await this.detailWith(this.getCondition())
-    this.set({counts, entities})
+    this.set({counts, entities, hasMore: hasMoreFor(counts)})
+  }
+
+  async doSyncMore () {
+    const pageNumber = this.get('pageNumber')
+    this.set({pageNumber: pageNumber + 1})
+    const {counts, entities} = await this.detailWith(this.getCondition())
+    this.set({
+      counts: counts,
+      entities: [...this.get('entities'), ...entities].filter(uniqueFilter.by('id')),
+      hasMore: hasMoreFor(counts),
+    })
   }
 
   static qField = ['name']

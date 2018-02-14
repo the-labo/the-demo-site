@@ -4,10 +4,14 @@
  */
 'use strict'
 
-const {bindScope} = require('the-scene-mixins/shim')
+const {
+  bindDefaults,
+  bindScope,
+} = require('the-scene-mixins/shim')
 const DetailScene = require('./abstract/DetailScene')
 
 @bindScope('account')
+@bindDefaults({id: '_'})
 class AccountSceneBase extends DetailScene {}
 
 /** @lends AccountScene */

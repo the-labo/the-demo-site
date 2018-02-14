@@ -4569,8 +4569,8 @@ is-typedarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
 
 is-windows@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.1.tgz#310db70f742d259a16a369202b51af84233310d9"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
 
 is-wsl@^1.1.0:
   version "1.1.0"
@@ -7831,7 +7831,7 @@ the-assets@^2.0.1:
     filecopy "^4.0.0"
     filelink "^3.0.6"
 
-the-bar@^2.0.1:
+the-bar@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/the-bar/-/the-bar-2.0.2.tgz#8cba78ab70f6e3eee03e1eb04f0b8bb1ea6fc60b"
   dependencies:
@@ -7939,14 +7939,14 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.8"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.8.tgz#8b23a50e6861ad5ab86aed169b3a6dbfd68ac861"
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.9.tgz#7c7c7ef456c3df4c95224bdbd992d52488be8d20"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-aside "^1.1.1"
-    the-bar "^2.0.1"
+    the-bar "^2.0.2"
     the-body "^3.0.1"
     the-button "^3.0.7"
     the-card "^2.0.1"
@@ -7977,7 +7977,7 @@ the-components@^6.0.0:
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
     the-route "^3.0.24"
-    the-router "^2.0.6"
+    the-router "^2.0.7"
     the-section "^2.0.1"
     the-spin "^3.1.0"
     the-step "^1.0.3"
@@ -8322,8 +8322,8 @@ the-lint@^1.1.1:
     the-code "^3.5.3"
 
 the-list@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/the-list/-/the-list-3.1.0.tgz#b9b27a7f31bb63bce11bf977b0306321e4a97aa0"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/the-list/-/the-list-3.1.1.tgz#bcc7a7716b62460d01c20aa6ea260b8ef385a00e"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -8470,7 +8470,7 @@ the-route@^3.0.24:
     the-component-util "^2.1.2"
     the-spin "^3.1.0"
 
-the-router@^2.0.6:
+the-router@^2.0.6, the-router@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/the-router/-/the-router-2.0.7.tgz#c85c52bece06cb468307c1419968a3ba8368dec9"
   dependencies:
@@ -8784,8 +8784,8 @@ the-video@^2.0.5:
     the-style "^2.1.0"
 
 the-view@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/the-view/-/the-view-3.0.1.tgz#01ac61d9f3e2d8049b22b5ec3f55e8e84852fd58"
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/the-view/-/the-view-3.0.2.tgz#b8108437a05c2a2a92a207072cb484dfeaf588b9"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

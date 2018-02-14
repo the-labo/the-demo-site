@@ -3,6 +3,7 @@
   "counts": "OBJ",
   "entities": "ARR",
   "filter": "OBJ",
+  "hasMore": "BOOL",
   "pageNumber": "NUM",
   "pageSize": "NUM",
   "ready": "BOOL",

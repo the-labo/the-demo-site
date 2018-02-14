@@ -214,114 +214,114 @@ This project uses [Pon][pon_url] as a task runner.
 Just pass task name to run.
 
 ```bash
-pon
-<taskName>
-  ```
+pon <taskName>
+```
 
 
-  ### Available Tasks
+### Available Tasks
 
-  | TaskName | Description | Command |
-  | -------- | ----------- | ------- |
-    | assert:not-prod | Make sure that not production | `pon assert:not-prod` |
-    | assets | Run all assets tasks | `pon assets` |
-    | assets:install | Install asset files | `pon assets:install` |
-    | assets:markdown | Render markdown assets | `pon assets:markdown` |
-    | b | Shortcut for `build` task | `pon b` |
-    | build | Build all | `pon build` |
-    | c | Shortcut for `clean` task | `pon c` |
-    | clean | Clean all | `pon clean` |
-    | clean:cache | Cleanup cache files | `pon clean:cache` |
-    | clean:public | Cleanup public files | `pon clean:public` |
-    | clean:shim | Cleanup shim files | `pon clean:shim` |
-    | d | Shortcut for `debug` task | `pon d` |
-    | db | Prepare DB | `pon db` |
-    | db:cli | Open database cli | `pon db:cli` |
-    | db:drop | Drop database | `pon db:drop` |
-    | db:dump | Dump data | `pon db:dump` |
-    | db:load | Load data from dum | `pon db:load` |
-    | db:migrate | Migrate data | `pon db:migrate` |
-    | db:reset | Drop and setup database again | `pon db:reset` |
-    | db:seed | Generate test data | `pon db:seed` |
-    | db:setup | Setup database | `pon db:setup` |
-    | debug | Start debugging | `pon debug` |
-    | debug:server | Run server for debug | `pon debug:server` |
-    | debug:watch | Watch files for debug | `pon debug:watch` |
-    | default | Default for `pon` command | `pon default` |
-    | deploy | Deploy project on production | `pon deploy` |
-    | doc | Generate docs | `pon doc` |
-    | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
-    | docker | Setup docker infra | `pon docker` |
-    | docker:mysql | Prepare mysql docker container | `pon docker:mysql` |
-    | docker:nginx | Prepare nginx docker container | `pon docker:nginx` |
-    | docker:redis | Prepare redis docker container | `pon docker:redis` |
-    | ds | Shortcut for `debug:server` task | `pon ds` |
-    | env:debug | Set env variables for debug | `pon env:debug` |
-    | env:prod | Set env variables for production | `pon env:prod` |
-    | env:test | Set env variables for test | `pon env:test` |
-    | f | Shortcut for `format` task | `pon f` |
-    | format | Format source codes | `pon format` |
-    | format:client | Format client files | `pon format:client` |
-    | format:conf | Format conf files | `pon format:conf` |
-    | format:json | Format json files | `pon format:json` |
-    | format:server | Format server files | `pon format:server` |
-    | git:catchup | Catch up to latest git | `pon git:catchup` |
-    | icon:generate | Generate icons | `pon icon:generate` |
-    | l | Shortcut for `lint` task | `pon l` |
-    | lint | Lint all | `pon lint` |
-    | lint:loc | Validate locales | `pon lint:loc` |
-    | loc:print | Print locale settings | `pon loc:print` |
-    | local:print | Print local settings | `pon local:print` |
-    | logs | Show app daemon logs | `pon logs` |
-    | maint:off | Disable maintenance mode | `pon maint:off` |
-    | maint:on | Enable maintenance mode | `pon maint:on` |
-    | o | Shortcut for `open` task | `pon o` |
-    | open | Open project | `pon open` |
-    | open:app | Open app in browser | `pon open:app` |
-    | p | Shortcut for `prod` task | `pon p` |
-    | pkg:fix | Fix package.json | `pon pkg:fix` |
-    | pkg:install | Install packages | `pon pkg:install` |
-    | pkg:link | Link self packages | `pon pkg:link` |
-    | pm2:app | Run app with pm2 | `pon pm2:app` |
-    | pm2:backup:dump | Run backup cron with pm2 | `pon pm2:backup:dump` |
-    | prepare | Prepare project | `pon prepare` |
-    | prod | Prepare and start on production | `pon prod` |
-    | prod:compile | Compile files for production | `pon prod:compile` |
-    | prod:css | Compile css files for production | `pon prod:css` |
-    | prod:db | Prepare database for production | `pon prod:db` |
-    | prod:js | Compile js files for production | `pon prod:js` |
-    | prod:map | Delete source map files for production | `pon prod:map` |
-    | ps:debug | Check another process exists | `pon ps:debug` |
-    | restart | Restart app as daemon | `pon restart` |
-    | secret:dec | Decrypt secret file | `pon secret:dec` |
-    | secret:enc | Encrypt secret file | `pon secret:enc` |
-    | setting | Update project settings with interactive shell | `pon setting` |
-    | show | Show app daemon status | `pon show` |
-    | start | Start app as daemon | `pon start` |
-    | stop | Stop app as daemon | `pon stop` |
-    | struct | Run all struct tasks | `pon struct` |
-    | struct:chmod | Change file permissions | `pon struct:chmod` |
-    | struct:compile | Compile files | `pon struct:compile` |
-    | struct:cp | Execute file copy | `pon struct:cp` |
-    | struct:mkdir | Generate project directories | `pon struct:mkdir` |
-    | struct:pkg | Prepare sub packages | `pon struct:pkg` |
-    | struct:render | Render coz templates | `pon struct:render` |
-    | t | Shortcut for `test` task | `pon t` |
-    | test | Run all tess | `pon test` |
-    | test:client | Run client tests | `pon test:client` |
-    | test:server | Run server tests | `pon test:server` |
-    | ui | Run all ui tasks | `pon ui` |
-    | ui:browser | Bundle browser script | `pon ui:browser` |
-    | ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
-    | ui:css | Compile stylesheets | `pon ui:css` |
-    | ui:css/watch | Run css watch | `pon ui:css/watch` |
-    | ui:map | Extract map files | `pon ui:map` |
-    | ui:react | Compile react components | `pon ui:react` |
-    | w | Shortcut for `watch` task | `pon w` |
-    | watch | Run watches | `pon watch` |
+| TaskName | Description | Command |
+| -------- | ----------- | ------- |
+| assert:not-prod | Make sure that not production | `pon assert:not-prod` |
+| assets | Run all assets tasks | `pon assets` |
+| assets:install | Install asset files | `pon assets:install` |
+| assets:markdown | Render markdown assets | `pon assets:markdown` |
+| b | Shortcut for `build` task | `pon b` |
+| build | Build all | `pon build` |
+| c | Shortcut for `clean` task | `pon c` |
+| clean | Clean all | `pon clean` |
+| clean:cache | Cleanup cache files | `pon clean:cache` |
+| clean:public | Cleanup public files | `pon clean:public` |
+| clean:shim | Cleanup shim files | `pon clean:shim` |
+| d | Shortcut for `debug` task | `pon d` |
+| db | Prepare DB | `pon db` |
+| db:cli | Open database cli | `pon db:cli` |
+| db:drop | Drop database | `pon db:drop` |
+| db:dump | Dump data | `pon db:dump` |
+| db:load | Load data from dum | `pon db:load` |
+| db:migrate | Migrate data | `pon db:migrate` |
+| db:reset | Drop and setup database again | `pon db:reset` |
+| db:seed | Generate test data | `pon db:seed` |
+| db:setup | Setup database | `pon db:setup` |
+| debug | Start debugging | `pon debug` |
+| debug:server | Run server for debug | `pon debug:server` |
+| debug:watch | Watch files for debug | `pon debug:watch` |
+| default | Default for `pon` command | `pon default` |
+| deploy | Deploy project on production | `pon deploy` |
+| doc | Generate docs | `pon doc` |
+| doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
+| docker | Setup docker infra | `pon docker` |
+| docker:mysql | Prepare mysql docker container | `pon docker:mysql` |
+| docker:nginx | Prepare nginx docker container | `pon docker:nginx` |
+| docker:redis | Prepare redis docker container | `pon docker:redis` |
+| ds | Shortcut for `debug:server` task | `pon ds` |
+| env:debug | Set env variables for debug | `pon env:debug` |
+| env:prod | Set env variables for production | `pon env:prod` |
+| env:test | Set env variables for test | `pon env:test` |
+| f | Shortcut for `format` task | `pon f` |
+| format | Format source codes | `pon format` |
+| format:client | Format client files | `pon format:client` |
+| format:conf | Format conf files | `pon format:conf` |
+| format:json | Format json files | `pon format:json` |
+| format:server | Format server files | `pon format:server` |
+| git:catchup | Catch up to latest git | `pon git:catchup` |
+| icon:generate | Generate icons | `pon icon:generate` |
+| l | Shortcut for `lint` task | `pon l` |
+| lint | Lint all | `pon lint` |
+| lint:loc | Validate locales | `pon lint:loc` |
+| loc:print | Print locale settings | `pon loc:print` |
+| local:print | Print local settings | `pon local:print` |
+| logs | Show app daemon logs | `pon logs` |
+| maint:off | Disable maintenance mode | `pon maint:off` |
+| maint:on | Enable maintenance mode | `pon maint:on` |
+| o | Shortcut for `open` task | `pon o` |
+| open | Open project | `pon open` |
+| open:app | Open app in browser | `pon open:app` |
+| p | Shortcut for `prod` task | `pon p` |
+| pkg:fix | Fix package.json | `pon pkg:fix` |
+| pkg:install | Install packages | `pon pkg:install` |
+| pkg:link | Link self packages | `pon pkg:link` |
+| pm2:app | Run app with pm2 | `pon pm2:app` |
+| pm2:backup:dump | Run backup cron with pm2 | `pon pm2:backup:dump` |
+| prepare | Prepare project | `pon prepare` |
+| prod | Prepare and start on production | `pon prod` |
+| prod:compile | Compile files for production | `pon prod:compile` |
+| prod:css | Compile css files for production | `pon prod:css` |
+| prod:db | Prepare database for production | `pon prod:db` |
+| prod:js | Compile js files for production | `pon prod:js` |
+| prod:map | Delete source map files for production | `pon prod:map` |
+| ps:debug | Check another process exists | `pon ps:debug` |
+| restart | Restart app as daemon | `pon restart` |
+| secret:dec | Decrypt secret file | `pon secret:dec` |
+| secret:enc | Encrypt secret file | `pon secret:enc` |
+| setting | Update project settings with interactive shell | `pon setting` |
+| show | Show app daemon status | `pon show` |
+| start | Start app as daemon | `pon start` |
+| stop | Stop app as daemon | `pon stop` |
+| struct | Run all struct tasks | `pon struct` |
+| struct:chmod | Change file permissions | `pon struct:chmod` |
+| struct:compile | Compile files | `pon struct:compile` |
+| struct:cp | Execute file copy | `pon struct:cp` |
+| struct:mkdir | Generate project directories | `pon struct:mkdir` |
+| struct:pkg | Prepare sub packages | `pon struct:pkg` |
+| struct:render | Render coz templates | `pon struct:render` |
+| t | Shortcut for `test` task | `pon t` |
+| test | Run all tess | `pon test` |
+| test:client | Run client tests | `pon test:client` |
+| test:server | Run server tests | `pon test:server` |
+| ui | Run all ui tasks | `pon ui` |
+| ui:browser | Bundle browser script | `pon ui:browser` |
+| ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
+| ui:css | Compile stylesheets | `pon ui:css` |
+| ui:css/watch | Run css watch | `pon ui:css/watch` |
+| ui:map | Extract map files | `pon ui:map` |
+| ui:react | Compile react components | `pon ui:react` |
+| w | Shortcut for `watch` task | `pon w` |
+| watch | Run watches | `pon watch` |
 
 
-  For more information, try `pon -l`
+For more information, try `pon -l`
+
 
 <!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
 
@@ -334,12 +334,12 @@ Database
 
 ### Database Resource
 
-  * [Alias Resource](./doc/database/Resources.md#Alias-Resource)
-  * [History Resource](./doc/database/Resources.md#History-Resource)
-  * [Profile Resource](./doc/database/Resources.md#Profile-Resource)
-  * [Role Resource](./doc/database/Resources.md#Role-Resource)
-  * [Sign Resource](./doc/database/Resources.md#Sign-Resource)
-  * [User Resource](./doc/database/Resources.md#User-Resource)
+* [Alias Resource](./doc/database/Resources.md#Alias-Resource)
+* [History Resource](./doc/database/Resources.md#History-Resource)
+* [Profile Resource](./doc/database/Resources.md#Profile-Resource)
+* [Role Resource](./doc/database/Resources.md#Role-Resource)
+* [Sign Resource](./doc/database/Resources.md#Sign-Resource)
+* [User Resource](./doc/database/Resources.md#User-Resource)
 
 
 ### Console to database
@@ -429,8 +429,8 @@ Misc
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-8.0.2.css`
-  * `/the-demo-site-8.0.2.js`
+  * `/the-demo-site-8.0.3.css`
+  * `/the-demo-site-8.0.3.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`
