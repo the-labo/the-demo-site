@@ -233,6 +233,7 @@ module.exports = pon(
     'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
     /** Compile css files for production */
     'prod:css': css.minify([
+      `public${Urls.CSS_NORMALIZE_URL}`,
       `public${Urls.CSS_THEME_URL}`,
       `public${Urls.CSS_FONT_URL}`,
       `public${Urls.CSS_BUNDLE_URL}`,

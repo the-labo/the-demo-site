@@ -7842,11 +7842,11 @@ the-aside@^1.1.1:
     the-style "^2.0.0"
 
 the-assets@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-2.0.1.tgz#ad97b6e223fc8f00aa68c96a857428715bd84f6e"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-2.1.0.tgz#d46f66c3f369b86774411a2eed812452b4c6e5c0"
   dependencies:
     aglob "^3.0.0"
-    filecopy "^4.0.0"
+    filecopy "^4.0.1"
     filelink "^3.0.6"
 
 the-bar@^2.0.2:
@@ -7957,8 +7957,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.10.tgz#fd7420883efb239e36ec051e56c9f472bf50fdf2"
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.11.tgz#d7297a762ca8c5a9709013ff2ea2088aae2998df"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"

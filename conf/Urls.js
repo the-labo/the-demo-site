@@ -46,6 +46,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     CSS_BUNDLE_URL: '/build/bundle.css',
     CSS_FONT_URL: '/css/fontawesome-all.css',
+    CSS_NORMALIZE_URL: '/css/normalize.css',
     CSS_THEME_URL: '/css/theme.css',
 
     // -----------------------------------

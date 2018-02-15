@@ -30,6 +30,7 @@ function Html ({appScope, renderingContext}) {
   const css = isProduction() ? [
     Urls.PRODUCTION_CSS_URL
   ] : [
+    Urls.CSS_NORMALIZE_URL,
     Urls.CSS_THEME_URL,
     Urls.CSS_FONT_URL,
     Urls.CSS_BUNDLE_URL

@@ -423,14 +423,15 @@ Misc
   * `/a/:key`
   * `/build/bundle.css`
   * `/css/fontawesome-all.css`
+  * `/css/normalize.css`
   * `/css/theme.css`
   * `/errors/forbidden`
   * `/errors/not-found`
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-8.0.4.css`
-  * `/the-demo-site-8.0.4.js`
+  * `/the-demo-site-8.1.0.css`
+  * `/the-demo-site-8.1.0.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`
