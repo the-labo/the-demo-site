@@ -11,15 +11,11 @@ module.exports = [].reduce((buds, name) => {
       force: false,
       mode: '644',
       mkdirp: true,
-      tmpl: `/*********************
- * Style for {{name}}
- *********************/
- 
- 
+      tmpl: `
 .self {
 
 }`,
-      path: `${fullName}.pcss`,
+      path: `${name}.pcss`,
       data: {name}
     }
   ]

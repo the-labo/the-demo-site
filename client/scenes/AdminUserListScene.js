@@ -18,6 +18,7 @@ class AdminUserListScene extends AdminUserListSceneBase {
     return await adminUserCtrl.list(condition)
   }
 
+  static qField = ['name', 'profile.name', 'profile.email', 'role.code']
 }
 
 module.exports = AdminUserListScene

@@ -4,13 +4,11 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withEntry} = require('the-scene-mixins/shim')
-const Scene = require('./abstract/Scene')
+const {bindScope} = require('the-scene-mixins/shim')
+const FilterScene = require('./abstract/FilterScene')
 
-@withBusy
-@withEntry
 @bindScope('admin.user.filter')
-class AdminUserFilterSceneBase extends Scene {}
+class AdminUserFilterSceneBase extends FilterScene {}
 
 /** @lends AdminUserFilterScene */
 class AdminUserFilterScene extends AdminUserFilterSceneBase {
