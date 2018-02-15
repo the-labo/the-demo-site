@@ -430,8 +430,8 @@ Misc
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-8.1.0.css`
-  * `/the-demo-site-8.1.0.js`
+  * `/the-demo-site-8.1.1.css`
+  * `/the-demo-site-8.1.1.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`
