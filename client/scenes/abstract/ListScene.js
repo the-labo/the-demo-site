@@ -50,21 +50,21 @@ class ListScene extends ListSceneBase {
     this.replaceHistoryByQuery({q})
   }
 
-  async detailWith (condition) {
+  async dealWith (condition) {
     throw new Error(`Not implemented`)
   }
 
   @withBusy.while
   @withReady.when
   async doSync () {
-    const {entities, meta: counts} = await this.detailWith(this.getCondition())
+    const {entities, meta: counts} = await this.dealWith(this.getCondition())
     this.set({counts, entities, hasMore: hasMoreFor(counts)})
   }
 
   async doSyncMore () {
     const pageNumber = this.get('pageNumber')
     this.set({pageNumber: pageNumber + 1})
-    const {counts, entities} = await this.detailWith(this.getCondition())
+    const {counts, entities} = await this.dealWith(this.getCondition())
     this.set({
       counts: counts,
       entities: [...this.get('entities'), ...entities].filter(uniqueFilter.by('id')),

@@ -2257,8 +2257,8 @@ clay-driver-localstorage@^2.0.1:
     co "^4.6.0"
 
 clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.7, clay-driver-memory@^4.1.8:
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/clay-driver-memory/-/clay-driver-memory-4.1.8.tgz#0ee68db90bdf100380c2a55dcc3dc8d3c817cd92"
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/clay-driver-memory/-/clay-driver-memory-4.1.9.tgz#a230114f1580b635a54d1dd72ade8b3e0b6e110d"
   dependencies:
     amkdirp "^2.0.0"
     clay-collection "^3.1.3"
@@ -2266,7 +2266,7 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.7, clay-driver-memory@^4.1.8:
     clay-driver-base "^4.0.1"
     clay-entity "^2.1.4"
     clay-id "^3.0.2"
-    clay-list-filter "^2.1.7"
+    clay-list-filter "^2.1.8"
     clay-list-pager "^2.1.1"
     clay-list-sorter "^2.0.1"
     clay-resource-name "^4.0.3"
@@ -2342,7 +2342,7 @@ clay-id@^3.0.1, clay-id@^3.0.2:
     co "^4.6.0"
     uuid "^3.0.1"
 
-clay-list-filter@^2.1.7:
+clay-list-filter@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/clay-list-filter/-/clay-list-filter-2.1.8.tgz#0b8455cc525057f3fe8f96059cf82a3b972ec94d"
   dependencies:
@@ -6567,8 +6567,8 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     strip-json-comments "~2.0.1"
 
 react-click-outside@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-click-outside/-/react-click-outside-3.0.0.tgz#7a69a90d31b99204ef5d509cae91f52460d6fd69"
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
   dependencies:
     hoist-non-react-statics "^2.1.1"
 
@@ -7957,8 +7957,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.9"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.9.tgz#7c7c7ef456c3df4c95224bdbd992d52488be8d20"
+  version "6.0.10"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.10.tgz#fd7420883efb239e36ec051e56c9f472bf50fdf2"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"
@@ -7988,24 +7988,24 @@ the-components@^6.0.0:
     the-lead "^1.1.2"
     the-line "^1.0.3"
     the-link "^3.0.6"
-    the-list "^3.1.0"
+    the-list "^3.1.2"
     the-main "^3.0.5"
     the-menu "^2.0.7"
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
-    the-route "^3.0.24"
+    the-route "^3.1.0"
     the-router "^2.0.7"
     the-section "^2.0.1"
     the-spin "^3.1.0"
     the-step "^1.0.3"
     the-style "^2.1.0"
     the-tab "^3.0.5"
-    the-table "^3.0.6"
+    the-table "^3.0.7"
     the-tag "^2.0.2"
     the-toast "^2.0.4"
     the-video "^2.0.5"
-    the-view "^3.0.1"
+    the-view "^3.0.2"
 
 the-condition@^2.0.1:
   version "2.0.1"
@@ -8339,9 +8339,9 @@ the-lint@^1.1.1:
     json-pointer "^0.6.0"
     the-code "^3.5.3"
 
-the-list@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/the-list/-/the-list-3.1.1.tgz#bcc7a7716b62460d01c20aa6ea260b8ef385a00e"
+the-list@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/the-list/-/the-list-3.1.2.tgz#b432598c345b4a62b6abe3a63b8d0d4c6c6ab876"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
@@ -8477,7 +8477,7 @@ the-root@^2.0.3:
     the-component-util "^2.1.2"
     the-style "^2.1.0"
 
-the-route@^3.0.24:
+the-route@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.1.0.tgz#ec66e71f79b7c38d5f9d408fc9135864d49c1fb2"
   dependencies:
@@ -8743,7 +8743,7 @@ the-tab@^3.0.5:
     the-spin "^3.0.0"
     the-style "^2.1.0"
 
-the-table@^3.0.6:
+the-table@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/the-table/-/the-table-3.0.7.tgz#6f06574fbdbafbb0d9eff9bc620947740ba4e217"
   dependencies:
@@ -8801,7 +8801,7 @@ the-video@^2.0.5:
     the-spin "^3.0.0"
     the-style "^2.1.0"
 
-the-view@^3.0.1:
+the-view@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/the-view/-/the-view-3.0.2.tgz#b8108437a05c2a2a92a207072cb484dfeaf588b9"
   dependencies:
@@ -9001,8 +9001,8 @@ umd@^3.0.0:
   resolved "https://registry.yarnpkg.com/umd/-/umd-3.0.1.tgz#8ae556e11011f63c2596708a8837259f01b3d60e"
 
 undefsafe@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.1.tgz#03b2f2a16c94556e14b2edef326cd66aaf82707a"
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.2.tgz#225f6b9e0337663e0d8e7cfd686fc2836ccace76"
   dependencies:
     debug "^2.2.0"
 

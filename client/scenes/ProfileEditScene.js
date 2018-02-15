@@ -13,7 +13,7 @@ class ProfileEditSceneBase extends InputScene {}
 /** @lends ProfileEditScene */
 class ProfileEditScene extends ProfileEditSceneBase {
 
-  async detailWith (values) {
+  async dealWith (values) {
     const {accountCtrl} = this.controllers
     return await accountCtrl.updateProfile(values)
   }

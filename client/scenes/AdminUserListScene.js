@@ -13,7 +13,7 @@ class AdminUserListSceneBase extends ListScene {}
 /** @lends AdminUserListScene */
 class AdminUserListScene extends AdminUserListSceneBase {
 
-  async detailWith (condition) {
+  async dealWith (condition) {
     const {adminUserCtrl} = this.controllers
     return await adminUserCtrl.list(condition)
   }

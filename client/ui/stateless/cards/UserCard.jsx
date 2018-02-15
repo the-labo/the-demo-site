@@ -18,7 +18,7 @@ function UserCard ({
                  className={styles.image}
                  size={24}
       />
-      <span>{user.displayName}</span>
+      <span className={styles.text}>{user.displayName}</span>
     </div>
   )
 }

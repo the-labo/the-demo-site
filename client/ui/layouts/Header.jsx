@@ -13,6 +13,7 @@ import {
   TheHeader,
 } from 'the-components'
 import { Icons, Urls } from '@self/conf'
+import styles from './Header.pcss'
 import { UserCard } from '../stateless'
 import { withRole } from '../wrappers'
 
@@ -33,7 +34,9 @@ class Header extends React.Component {
       [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify},
     } || {}
     return (
-      <TheHeader notices={notices}>
+      <TheHeader className={styles.self}
+                 notices={notices}
+      >
         <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
 
         <TheHeader.Tab>
