@@ -16,13 +16,8 @@ const Routes = ({}) => (
     <TheRoute component={v.AboutTermsOfUseView} exact path={Urls.ABOUT_TERMS_OF_USE_URL} scrollToTop/>
     <TheRoute component={v.AboutPrivacyPolicyView} exact path={Urls.ABOUT_PRIVACY_POLICY_URL} scrollToTop/>
 
-
-    <TheRoute path={Urls.ADMIN_URL}>
-      <TheRouteStack stack={[
-        [Urls.ADMIN_URL, v.AdminTopView,],
-        [Urls.ADMIN_USER_MANAGE_URL, v.AdminUserManageView,],
-      ]}/>
-    </TheRoute>
+    <TheRoute component={v.AdminTopView} exact path={Urls.ADMIN_URL}/>
+    <TheRoute component={v.AdminUserManageView} exact path={Urls.ADMIN_USER_MANAGE_URL}/>
 
     <TheRoute component={v.VerifyConfirmView} exact path={Urls.ACCOUNT_VERIFY_URL}/>
     <TheRoute component={v.RecoverSendView} exact path={Urls.ACCOUNT_RECOVER_URL}/>
