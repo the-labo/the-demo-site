@@ -417,7 +417,7 @@ module.exports = pon(
       /** Stop app as daemon */
       stop: isProduction() ? ['pm2:app/stop', 'pm2:backup:*/stop'] : [],
       /** Run all struct tasks */
-      struct: ['struct:mkdir', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
+      struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all tess */
       test: ['env:test', 'test:client', 'test:server'],
       /** Run all ui tasks */

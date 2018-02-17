@@ -30,7 +30,7 @@ http {
       add_header Access-Control-Allow-Origin '*';
       root ${STATIC_DIR};
     }
-    error_page 502 /errors/server-error.html;
-    error_page 503 /errors/under-maintenance.html;
+    error_page 502 /server-error/server-error.html;
+    error_page 503 /server-error/under-maintenance.html;
   }
 }
