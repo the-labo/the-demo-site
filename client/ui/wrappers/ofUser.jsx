@@ -3,8 +3,7 @@
 import React from 'react'
 import { cycled, stateful } from 'the-component-mixins'
 
-function ofUser (Component,
-                 options = {}) {
+function ofUser (Component) {
 
   @cycled
   class OfUser extends React.Component {
@@ -24,13 +23,10 @@ function ofUser (Component,
     (handle, propsProxy) => {
       return {
         onReceive ({user}) {
-          if (user) {
-            propsProxy.onUser?.(user)
-          }
+          user && propsProxy.onUser?.(user)
         },
       }
-    },
-    options
+    }
   )(OfUser)
 }
 

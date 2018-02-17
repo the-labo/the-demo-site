@@ -7,6 +7,7 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 * [Profile Resource](#Profile-Resource)
 * [Role Resource](#Role-Resource)
 * [Sign Resource](#Sign-Resource)
+* [Token Resource](#Token-Resource)
 * [User Resource](#User-Resource)
 
 
@@ -72,6 +73,19 @@ Database resources for [The DB](https://github.com/the-labo/the-db)
 | signOutAt | Last time signed out | cly:date |  |  |
 | signUpAt | Date of signing up | cly:date |  |  |
 | user | User | cly:entity,cly:ref | true | true |
+
+
+<a name="Token-Resource" ></a>
+**Token Resource**
+
+* [server/db/resources/TokenResource.js](server/db/resources/TokenResource.js)
+
+| Property | Description | Type | Required | Unique |
+| ---- | ---- | ---- | --- | --- |
+| createdAt | Created date | cly:date |  |  |
+| info | Additional info | cly:object |  |  |
+| key | Key of resource | cly:string | true |  |
+| token | Token value | cly:string | true | true |
 
 
 <a name="User-Resource" ></a>

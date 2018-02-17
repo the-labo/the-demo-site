@@ -38,7 +38,8 @@
     },
     "propRule": {
       "keypathAccess": {
-        "state": "client/store/scopes"
+        "state": "client/store/scopes",
+        "Urls": "conf/Urls"
       }
     }
   },

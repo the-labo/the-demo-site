@@ -21,12 +21,13 @@ class DetailScene extends DetailSceneBase {
   @withBusy.while
   @withReady.when
   async doSync () {
-    const id = this.getId()
+    const id = this.get('id')
     const entity = await this.dealWith(id)
     this.set({entity, missing: !entity})
   }
 
   async requestToSyncFor (id) {
+    await this.waitWhileBusy()
     if (this.isKnownId(id)) {
       return null
     }

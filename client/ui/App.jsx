@@ -4,6 +4,7 @@
 'use strict'
 
 import React from 'react'
+import { withClient } from 'the-client'
 import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import {
   TheMain,
@@ -15,10 +16,12 @@ import { locales } from '@self/conf'
 import { Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 import { CautionDisconnectedDialog } from './stateful'
+import { ofUser } from './wrappers'
 
+@ofUser
 @withProvider
 @withBinder
-@cycled
+@withClient.root
 @localized.with(locales)
 @titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {

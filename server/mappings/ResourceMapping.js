@@ -12,5 +12,6 @@ module.exports = Object.freeze({
   'Profile': r.ProfileResource,
   'Role': r.RoleResource,
   'Sign': r.SignResource,
+  'Token': r.TokenResource,
   'User': r.UserResource,
 })

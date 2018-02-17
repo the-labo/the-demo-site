@@ -12,5 +12,6 @@ module.exports = {
   get ProfileResource () { return _d(require('./ProfileResource')) },
   get RoleResource () { return _d(require('./RoleResource')) },
   get SignResource () { return _d(require('./SignResource')) },
+  get TokenResource () { return _d(require('./TokenResource')) },
   get UserResource () { return _d(require('./UserResource')) },
 }

@@ -339,6 +339,7 @@ Database
 * [Profile Resource](./doc/database/Resources.md#Profile-Resource)
 * [Role Resource](./doc/database/Resources.md#Role-Resource)
 * [Sign Resource](./doc/database/Resources.md#Sign-Resource)
+* [Token Resource](./doc/database/Resources.md#Token-Resource)
 * [User Resource](./doc/database/Resources.md#User-Resource)
 
 

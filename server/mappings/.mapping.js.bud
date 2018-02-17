@@ -6,6 +6,7 @@
 const c = require('../controllers')
 const sv = require('../services')
 const h = require('../db/hooks')
+const pl = require('../db/plugins')
 const r = require('../db/resources')
 
 const {camelcase} = require('stringcase')
@@ -40,6 +41,16 @@ module.exports = [
     requireAs: 'h',
     mapping: Object.keys(h).map((name) => ({
       instanceName: name.replace(/Hook$/, ''),
+      className: name
+    })),
+    cjs: true
+  },
+  {
+    name: 'PluginMapping',
+    requirePath: '../db/plugins',
+    requireAs: 'pl',
+    mapping: Object.keys(pl).map((name) => ({
+      instanceName: name.replace(/Plugin$/, ''),
       className: name
     })),
     cjs: true
