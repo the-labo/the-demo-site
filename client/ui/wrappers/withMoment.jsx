@@ -3,9 +3,10 @@
 import moment from 'moment'
 import 'moment/locale/ja'
 import React from 'react'
+import { wrapStack } from 'the-component-mixins/helpers'
 
 function withMoment (Component, options = {}) {
-  return class WithMoment extends React.Component {
+  class WithMoment extends React.Component {
     render () {
       const {lang} = this.props
       const toMoment = (date) => {
@@ -15,27 +16,28 @@ function withMoment (Component, options = {}) {
         moment.locale(lang)
         return moment(new Date(date))
       }
-      const innerProps = Object.assign(
-        {},
-        this.props,
-        {
-          dateFromNow (date) {
-            if (!date) {
-              return null
-            }
-            return toMoment(date).fromNow()
-          },
-          formatDate (date, format) {
-            if (!date) {
-              return null
-            }
-            return toMoment(date).format(format)
-          },
-        }
-      )
+      const innerProps = {
+        ...this.props,
+        dateFromNow (date) {
+          if (!date) {
+            return null
+          }
+          return toMoment(date).fromNow()
+        },
+        formatDate (date, format) {
+          if (!date) {
+            return null
+          }
+          return toMoment(date).format(format)
+        },
+      }
       return <Component {...innerProps} />
     }
   }
+
+  WithMoment.wrapStack = wrapStack(WithMoment, Component)
+
+  return WithMoment
 }
 
 export default withMoment

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { cycled, stateful } from 'the-component-mixins'
+import { wrapStack } from 'the-component-mixins/helpers'
 
 function ofUser (Component) {
 
@@ -13,6 +14,8 @@ function ofUser (Component) {
       )
     }
   }
+
+  OfUser.wrapStack = wrapStack(OfUser, Component)
 
   return stateful(
     (state, ownProps) => {

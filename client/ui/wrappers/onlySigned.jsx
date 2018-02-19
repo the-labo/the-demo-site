@@ -5,6 +5,7 @@
 'use strict'
 
 import React from 'react'
+import { wrapStack } from 'the-component-mixins/helpers'
 import { TheSpin, withHistory } from 'the-components'
 import { connect, withStore } from 'the-store'
 import { get } from 'the-window'
@@ -55,6 +56,8 @@ function onlySigned (Component) {
       }
     }
   }
+
+  OnlySigned.wrapStack = wrapStack(OnlySigned, Component)
 
   return OnlySigned
 }

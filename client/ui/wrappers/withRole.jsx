@@ -6,13 +6,13 @@
 
 import React from 'react'
 import { localized } from 'the-component-mixins'
+import { wrapStack } from 'the-component-mixins/helpers'
 import { RoleCodes } from '@self/conf'
 
-const hasRole = (user, roleCode) =>
-  user?.role?.code === roleCode
+const hasRole = (user, roleCode) => user?.role?.code === roleCode
 
 /** @lends withRole */
-function withRole (Class) {
+function withRole (Component) {
   @localized
   class WithRole extends React.Component {
     render () {
@@ -28,10 +28,12 @@ function withRole (Class) {
         ...this.props,
       }
       return (
-        <Class {...ComponentProps}/>
+        <Component {...ComponentProps}/>
       )
     }
   }
+
+  WithRole.wrapStack = wrapStack(WithRole, Component)
 
   return WithRole
 }
