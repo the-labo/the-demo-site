@@ -8,7 +8,7 @@
   dependencies:
     "@babel/highlight" "7.0.0-beta.40"
 
-"@babel/core@^7.0.0-beta.38", "@babel/core@^7.0.0-beta.39":
+"@babel/core@^7.0.0-beta.38", "@babel/core@^7.0.0-beta.39", "@babel/core@^7.0.0-beta.40":
   version "7.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.0.0-beta.40.tgz#455464dd81d499fd97d32b473f0331f74379a33f"
   dependencies:
@@ -505,7 +505,7 @@
     "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.40"
     "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.40"
 
-"@babel/runtime@^7.0.0-beta.38", "@babel/runtime@^7.0.0-beta.40":
+"@babel/runtime@^7.0.0-beta.40":
   version "7.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.40.tgz#8e3b8f1d2d8639d010e991a7e99c1d9ef578f886"
   dependencies:
@@ -5031,8 +5031,8 @@ lru-queue@0.1:
     es5-ext "~0.10.2"
 
 make-dir@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.1.0.tgz#19b4369fe48c116f53c2af95ad102c0e39e85d51"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.2.0.tgz#6d6a49eead4aae296c53bbf3a1a008bd6c89469b"
   dependencies:
     pify "^3.0.0"
 
@@ -7950,8 +7950,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.2.9.tgz#7f5423ec3c9c54896317539b97a56e664c9b4710"
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.1.tgz#a0a21c718f6fa73fb0fa9ce5754d1217a8d12f99"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"
@@ -7969,8 +7969,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.12.tgz#b33cfcbe69a903f98b13e39f55dd2e4d1d84d1cb"
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.13.tgz#fbc272ef57ff44bf22c2746adb680301594b4c75"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"
@@ -8006,7 +8006,7 @@ the-components@^6.0.0:
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
-    the-route "^3.1.2"
+    the-route "^3.1.5"
     the-router "^2.0.7"
     the-section "^2.0.1"
     the-spin "^3.1.0"
@@ -8069,8 +8069,8 @@ the-db-util@^1.1.0:
   resolved "https://registry.yarnpkg.com/the-db-util/-/the-db-util-1.1.0.tgz#7713ea7cdd47a52901142b0ed8b3da830e8206dd"
 
 the-db@^9.0.5:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.1.0.tgz#607a6fb0239d370c83b9f22cb54ab127e1fd887b"
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.1.3.tgz#0cc3414018707cd7e651efd80f346528c01fe93a"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.2"
@@ -8093,6 +8093,7 @@ the-db@^9.0.5:
     sequelize "^4.33.4"
     the-check "^1.2.2"
     the-db-util "^1.1.0"
+    the-hash "^1.0.1"
     the-refresher "^1.0.2"
     the-resource-base "^1.2.5"
     uuid "^3.2.1"
@@ -8228,6 +8229,10 @@ the-handle@^2.0.3:
     asobj "^2.0.10"
     the-check "^1.2.2"
     the-scene-base "^2.0.2"
+
+the-hash@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/the-hash/-/the-hash-1.0.3.tgz#2ab408d90a227a807ca2eda3f985f76a125f56fd"
 
 the-head@^1.0.14:
   version "1.0.14"
@@ -8494,9 +8499,9 @@ the-root@^2.0.3:
     the-component-util "^2.1.2"
     the-style "^2.1.0"
 
-the-route@^3.1.2:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.1.4.tgz#c8c617313ff7213c0233a8a64416edd17b35149f"
+the-route@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/the-route/-/the-route-3.1.5.tgz#20c139226ad73665ae2368bdc1f3b24e62957540"
   dependencies:
     bwindow "^1.1.0"
     classnames "^2.2.5"
@@ -8525,8 +8530,8 @@ the-scene-base@^2.0.0, the-scene-base@^2.0.2:
     the-url "^1.0.0"
 
 the-scene-mixins@^1.5.3:
-  version "1.5.16"
-  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.16.tgz#d3b41ef25f29f3a0da41a2496c19adae11d600bb"
+  version "1.5.18"
+  resolved "https://registry.yarnpkg.com/the-scene-mixins/-/the-scene-mixins-1.5.18.tgz#f58c1082a0bb735647c7bc685dfcd17bca0a1251"
   dependencies:
     asleep "^1.0.3"
     bwindow "^1.1.0"
@@ -8703,11 +8708,12 @@ the-site-services@^1.0.3:
     the-service-base "^1.0.3"
 
 the-site-util@^1.7.0, the-site-util@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.3.tgz#14293d08847ca9cb2e6951e0e0c70ed3f51fcfb8"
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.7.4.tgz#8457a172e6cd94f388dc037d884dae26f249ac31"
   dependencies:
     bwindow "^1.1.0"
     qs "^6.5.1"
+    the-hash "^1.0.1"
     the-url "^1.0.0"
 
 the-spin@^3.0.0, the-spin@^3.1.0:
