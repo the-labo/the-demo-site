@@ -15,15 +15,8 @@ const {
   withReady,
   withSort,
 } = require('the-scene-mixins/shim')
+const {hasMoreFor} = require('the-site-util')
 const Scene = require('./Scene')
-
-const hasMoreFor = (counts) => {
-  if (!counts) {
-    return false
-  }
-  const {length, offset, total} = counts
-  return offset + length < total
-}
 
 @withBusy
 @withSort
@@ -31,7 +24,7 @@ const hasMoreFor = (counts) => {
 @withReady
 @withFilter
 @withHistory
-@bindDefaults({filter: {}, pageNumber: 1, pageSize: 50})
+@bindDefaults({filter: {}, pageNumber: 1, pageSize: 25})
 class ListSceneBase extends Scene {}
 
 /** @lends ListScene */
@@ -48,6 +41,13 @@ class ListScene extends ListSceneBase {
     this.set({pageNumber: 1})
     this.setFilterByQ(q, {fields: this.constructor.qField})
     this.replaceHistoryByQuery({q})
+  }
+
+  updateEntity (entity) {
+    const entities = this.get('entities').map((mapping) =>
+      String(entity.id) === String(mapping.id) ? entity : mapping
+    )
+    this.set({entities})
   }
 
   async dealWith (condition) {
@@ -70,6 +70,16 @@ class ListScene extends ListSceneBase {
       entities: [...this.get('entities'), ...entities].filter(uniqueFilter.by('id')),
       hasMore: hasMoreFor(counts),
     })
+  }
+
+  async doSyncOne (id) {
+    const {entities: [one]} = await this.dealWith({
+      filter: {id},
+      page: {number: 1, size: 1},
+    })
+    if (one) {
+      this.updateEntity(one)
+    }
   }
 
   static qField = ['name']

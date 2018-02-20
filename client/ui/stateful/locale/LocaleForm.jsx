@@ -36,7 +36,7 @@ export default stateful(
     onUpdate: async ({locale}) => {
       appScene.set({locale})
       appScene.applyLocaleToSearch()
-      await appScene.doReload()
+      await appScene.doExec()
     },
 
   })

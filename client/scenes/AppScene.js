@@ -43,7 +43,7 @@ class AppScene extends AppSceneBase {
   }
 
   @withBusy.while
-  async doReload () {
+  async doExec () {
     await this.reloadLocation()
   }
 }

@@ -14,13 +14,9 @@ import { Icons, Urls } from '@self/conf'
 import styles from './AdminUserManageView.pcss'
 import {
   AdminUserActionBar,
-  AdminUserCreateDialog,
-  AdminUserDestroyDialog,
   AdminUserFilterForm,
   AdminUserList,
   AdminUserPager,
-  AdminUserPasswordDialog,
-  AdminUserRoleDialog,
 } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
@@ -33,7 +29,6 @@ class AdminUserManageView extends React.Component {
     const {
       busy,
       l,
-      onBack,
       onCreate,
       ready,
       title,
@@ -44,7 +39,7 @@ class AdminUserManageView extends React.Component {
       >
         <TheView.Header icon={Icons.USERS_ICON}
                         leftIcon={Icons.BACK_ICON}
-                        onLeftClick={onBack}
+                        leftTo={Urls.ADMIN_URL}
                         onRightClick={onCreate}
                         rightText={l('buttons.SHOW_USER_CREATE')}
                         text={title}
@@ -59,10 +54,6 @@ class AdminUserManageView extends React.Component {
               <AdminUserList className={styles.list}/>
               <AdminUserPager/>
               <AdminUserActionBar/>
-              <AdminUserCreateDialog/>
-              <AdminUserDestroyDialog/>
-              <AdminUserPasswordDialog/>
-              <AdminUserRoleDialog/>
             </div>
           </TheCondition>
         </TheView.Body>
@@ -83,7 +74,6 @@ export default stateful(
      adminUserFilterScene,
      adminUserListScene,
    }, propsProxy) => ({
-    onBack: () => propsProxy.popTo(Urls.ADMIN_URL),
     onCreate: () => {
       adminUserCreateScene.init()
       adminUserCreateScene.set({

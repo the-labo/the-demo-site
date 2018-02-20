@@ -7,5 +7,5 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
-  get disconnected () { return _d(require('./disconnected')) },
+  get retry () { return _d(require('./retry')) },
 }

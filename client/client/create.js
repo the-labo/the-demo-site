@@ -17,13 +17,13 @@ function create (config = {}) {
 
 create.for = (namespace, options = {}) => {
   const {
-    handle: {cautionDisconnectedScene},
+    handle: {connectionRetryScene},
   } = options
   const client = Client.for(namespace, {
     onGone: () => {
-      cautionDisconnectedScene.set({active: true, busy: false,})
+      connectionRetryScene.set({active: true, busy: false,})
       unlessProduction(() =>
-        client.pingPongAnd(() => cautionDisconnectedScene.doReload()),
+        client.pingPongAnd(() => connectionRetryScene.doExec()),
       )
     }
   })

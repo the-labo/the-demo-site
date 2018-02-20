@@ -24,7 +24,7 @@ module.exports = {
   get AdminUserPasswordScene () { return _d(require('./AdminUserPasswordScene')) },
   get AdminUserRoleScene () { return _d(require('./AdminUserRoleScene')) },
   get AppScene () { return _d(require('./AppScene')) },
-  get CautionDisconnectedScene () { return _d(require('./CautionDisconnectedScene')) },
+  get ConnectionRetryScene () { return _d(require('./ConnectionRetryScene')) },
   get PasswordChangeScene () { return _d(require('./PasswordChangeScene')) },
   get ProfileEditScene () { return _d(require('./ProfileEditScene')) },
   get QuitScene () { return _d(require('./QuitScene')) },

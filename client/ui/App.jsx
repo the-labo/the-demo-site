@@ -13,9 +13,8 @@ import {
 import { withBinder } from 'the-handle'
 import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
-import { Footer, Header, Toasts } from './layouts'
+import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
-import { CautionDisconnectedDialog } from './stateful'
 import { ofUser } from './wrappers'
 
 @ofUser
@@ -35,7 +34,7 @@ class App extends React.Component {
           <Routes/>
         </TheMain>
         <Footer/>
-        <CautionDisconnectedDialog/>
+        <Dialogs/>
       </TheRoot>
     )
   }
