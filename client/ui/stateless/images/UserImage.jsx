@@ -5,6 +5,7 @@
 
 import c from 'classnames'
 import React from 'react'
+import { stateless } from 'the-component-mixins'
 import { TheUserImage } from 'the-site-components'
 import styles from './UserImage.pcss'
 
@@ -20,4 +21,8 @@ function UserImage ({
   )
 }
 
-export default UserImage
+export default stateless({
+  onlyIf: ['user'],
+})(
+  UserImage
+)

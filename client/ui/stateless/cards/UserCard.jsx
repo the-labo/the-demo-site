@@ -5,6 +5,7 @@
 
 import c from 'classnames'
 import React from 'react'
+import { stateless } from 'the-component-mixins'
 import styles from './UserCard.pcss'
 import UserImage from '../images/UserImage'
 
@@ -23,4 +24,6 @@ function UserCard ({
   )
 }
 
-export default UserCard
+export default stateless({
+  onlyIf: 'user',
+})(UserCard)

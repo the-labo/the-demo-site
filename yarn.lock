@@ -2111,8 +2111,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000809:
-  version "1.0.30000809"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000809.tgz#1e12c1344b8f74d56737ee2614bcedb648943479"
+  version "1.0.30000810"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000810.tgz#47585fffce0e9f3593a6feea4673b945424351d9"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -4357,8 +4357,8 @@ into-stream@^2.0.0:
     from2 "^2.1.1"
 
 invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.3.tgz#1a827dfde7dcbd7c323f0ca826be8fa7c5e9d688"
   dependencies:
     loose-envify "^1.0.0"
 
@@ -5403,8 +5403,8 @@ nodemailer@^4.4.1:
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.4.2.tgz#f215fb88e8a1052f9f93083909e116d2b79fc8de"
 
 nodemon@^1.14.11:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.15.0.tgz#ddec01eeb9c33d53dfbf7eddb2fa32f723474c1e"
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.15.1.tgz#54daa72443d8d5a548f130866b92e65cded0ed58"
   dependencies:
     chokidar "^2.0.2"
     debug "^3.1.0"
@@ -6090,7 +6090,7 @@ pon-writer@^1.0.4:
     co "^4.6.0"
     writeout "^2.2.0"
 
-pon@^5.2.2:
+pon@^5.2.6:
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.6.tgz#71e9c422ec93e7eeb0c458d043c40e18f3a3fec9"
   dependencies:
@@ -7950,8 +7950,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.1.tgz#a0a21c718f6fa73fb0fa9ce5754d1217a8d12f99"
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.4.tgz#c3c0ef82a62016620e5078be68a4c1d5aae506c9"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"

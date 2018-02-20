@@ -1,0 +1,16 @@
+/**
+ * Bud file for Hooks
+ */
+'use strict'
+
+const {Hook} = require('the-templates')
+
+module.exports = [].map((name) => Hook({
+  name,
+  cjs: true,
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+

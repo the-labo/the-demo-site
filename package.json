@@ -22,7 +22,7 @@
     "handlebars": "^4.0.10",
     "moment": "^2.20.1",
     "objnest": "^4.0.0",
-    "pon": "^5.2.2",
+    "pon": "^5.2.6",
     "pon-task-basic": "^3.3.1",
     "pon-task-db": "^2.0.1",
     "pon-task-docker": "^2.0.1",
