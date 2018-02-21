@@ -44,8 +44,10 @@ export default stateful(
     done: state['admin.user.create.done'],
     spinning: state['admin.user.create.busy'],
   }),
-  ({adminUserCreateScene}, propsProxy) => ({
-    onClose: () => adminUserCreateScene.set({
+  ({
+     adminUserCreateScene: createScene,
+   }, propsProxy) => ({
+    onClose: () => createScene.set({
       active: false,
       done: false,
     }),

@@ -69,29 +69,29 @@ export default stateful(
     ready: state['admin.user.list.ready'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserCreateScene,
-     adminUserFilterScene,
-     adminUserListScene,
+     adminUserCheckScene: checkScene,
+     adminUserCreateScene: createScene,
+     adminUserFilterScene: filterScene,
+     adminUserListScene: listScene,
    }, propsProxy) => ({
     onCreate: () => {
-      adminUserCreateScene.init()
-      adminUserCreateScene.set({
+      createScene.init()
+      createScene.set({
         active: true,
         entry: {role: RoleCodes.NORMAL_ROLE},
       })
     },
     onMount: async () => {
-      adminUserListScene.init()
-      adminUserFilterScene.init()
-      adminUserCheckScene.init()
-      adminUserCreateScene.init()
+      listScene.init()
+      filterScene.init()
+      checkScene.init()
+      createScene.init()
 
       const {q = null} = propsProxy.query
-      adminUserListScene.setQ(q)
-      adminUserFilterScene.setEntry({q})
+      listScene.setQ(q)
+      filterScene.setEntry({q})
 
-      await adminUserListScene.doSync()
+      await listScene.doSync()
     },
     onTearDown: () => {},
   })

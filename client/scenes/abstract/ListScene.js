@@ -5,10 +5,10 @@
  */
 'use strict'
 
-const {uniqueFilter} = require('the-array')
 const {
   bindDefaults,
   withBusy,
+  withEntities,
   withFilter,
   withHistory,
   withPage,
@@ -20,6 +20,7 @@ const Scene = require('./Scene')
 
 @withBusy
 @withSort
+@withEntities
 @withPage
 @withReady
 @withFilter
@@ -43,13 +44,6 @@ class ListScene extends ListSceneBase {
     this.replaceHistoryByQuery({q})
   }
 
-  updateEntity (entity) {
-    const entities = this.get('entities').map((mapping) =>
-      String(entity.id) === String(mapping.id) ? entity : mapping
-    )
-    this.set({entities})
-  }
-
   async dealWith (condition) {
     throw new Error(`Not implemented`)
   }
@@ -61,15 +55,17 @@ class ListScene extends ListSceneBase {
     this.set({counts, entities, hasMore: hasMoreFor(counts)})
   }
 
+  /**
+   * Do sync for more
+   * @returns {Promise<void>}
+   */
   async doSyncMore () {
     const pageNumber = this.get('pageNumber')
     this.set({pageNumber: pageNumber + 1})
+
     const {counts, entities} = await this.dealWith(this.getCondition())
-    this.set({
-      counts: counts,
-      entities: [...this.get('entities'), ...entities].filter(uniqueFilter.by('id')),
-      hasMore: hasMoreFor(counts),
-    })
+    this.set({counts: counts, hasMore: hasMoreFor(counts)})
+    this.addEntities(entities)
   }
 
   async doSyncOne (id) {

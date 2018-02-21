@@ -14,6 +14,7 @@ const Local = require('@self/Local')
 const endpoints = require('../endpoints')
 const env = require('../env')
 const mappings = require('../mappings')
+const conf = require('../../conf')
 const pkg = require('../../package.json')
 
 const {ControllerMapping, ServiceMapping} = mappings
@@ -22,7 +23,7 @@ const {ControllerMapping, ServiceMapping} = mappings
 function create (config) {
   const {
     db,
-    locales,
+    locales = conf.locales,
     mail,
     redisConfig = env.redis,
     sealConfig = env.seal,

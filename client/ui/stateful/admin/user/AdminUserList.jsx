@@ -80,14 +80,14 @@ export default stateful(
     users: state['admin.user.list.entities'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserListScene,
+     adminUserCheckScene: checkScene,
+     adminUserListScene: listScene,
    }) => ({
     onSort: async (name) => {
-      adminUserListScene.set({pageNumber: 1})
-      adminUserListScene.setSort(name)
-      await adminUserListScene.doSync()
+      listScene.set({pageNumber: 1})
+      listScene.setSort(name)
+      await listScene.doSync()
     },
-    onUpdateCheck: (v) => adminUserCheckScene.setValues(v),
+    onUpdateCheck: (v) => checkScene.setValues(v),
   })
 )(AdminUserList)

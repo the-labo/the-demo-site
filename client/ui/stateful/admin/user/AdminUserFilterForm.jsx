@@ -28,16 +28,16 @@ export default stateful(
     values: state['admin.user.filter.entry'],
   }),
   ({
-     adminUserFilterScene,
-     adminUserListScene,
+     adminUserFilterScene: filterScene,
+     adminUserListScene: listScene,
    }, propsProxy) => ({
     onSubmit: async () => {
       const {q} = propsProxy.values || {}
-      adminUserListScene.setQ(q)
-      await adminUserFilterScene.busyWhile(async () => {
-        await adminUserListScene.doSync()
+      listScene.setQ(q)
+      await filterScene.busyWhile(async () => {
+        await listScene.doSync()
       })
     },
-    onUpdate: (v) => adminUserFilterScene.setEntry(v),
+    onUpdate: (v) => filterScene.setEntry(v),
   })
 )(AdminUserFilterForm)

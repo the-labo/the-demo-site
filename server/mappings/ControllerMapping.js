@@ -11,6 +11,7 @@ module.exports = Object.freeze({
   'adminUserCtrl': c.AdminUserCtrl,
   'adminCtrl': c.AdminCtrl,
   'appCtrl': c.AppCtrl,
+  'listenCtrl': c.ListenCtrl,
   'quitCtrl': c.QuitCtrl,
   'recoverCtrl': c.RecoverCtrl,
   'signCtrl': c.SignCtrl,

@@ -30,17 +30,17 @@ export default stateful(
     values: state['admin.user.create.entry'],
   }),
   ({
-     adminUserCreateScene,
-     adminUserListScene,
+     adminUserCreateScene: createScene,
+     adminUserListScene: listScene,
      l,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await adminUserCreateScene.doExec()
-      adminUserCreateScene.set({done: true})
+      await createScene.doExec()
+      createScene.set({done: true})
       toastScene.showInfo(l('toasts.USER_CREATE_DID_SUCCESS'))
-      await adminUserListScene.doSync()
+      await listScene.doSync()
     },
-    onUpdate: (v) => adminUserCreateScene.setEntry(v),
+    onUpdate: (v) => createScene.setEntry(v),
   })
 )(AdminUserCreateForm)

@@ -28,11 +28,11 @@ export default stateful(
     counts: state['admin.user.list.counts'],
   }),
   ({
-     adminUserListScene,
+     adminUserListScene: listScene,
    }, propsProxy) => ({
     onPage: async ({pageNumber}) => {
-      await adminUserListScene.set({pageNumber})
-      await adminUserListScene.doSync()
+      await listScene.set({pageNumber})
+      await listScene.doSync()
     },
   })
 )(AdminUserPager)

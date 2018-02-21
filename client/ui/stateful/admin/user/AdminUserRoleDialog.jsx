@@ -42,10 +42,9 @@ export default stateful(
     users: state['admin.user.role.targets'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserRoleScene,
+     adminUserRoleScene: roleScene,
    }, propsProxy) => ({
-    onClose: () => adminUserRoleScene.set({
+    onClose: () => roleScene.set({
       active: false,
       targets: [],
     }),

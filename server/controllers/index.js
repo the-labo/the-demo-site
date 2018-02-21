@@ -12,6 +12,7 @@ module.exports = {
   get AdminCtrl () { return _d(require('./AdminCtrl')) },
   get AppCtrl () { return _d(require('./AppCtrl')) },
   get Ctrl () { return _d(require('./Ctrl')) },
+  get ListenCtrl () { return _d(require('./ListenCtrl')) },
   get QuitCtrl () { return _d(require('./QuitCtrl')) },
   get RecoverCtrl () { return _d(require('./RecoverCtrl')) },
   get SignCtrl () { return _d(require('./SignCtrl')) },

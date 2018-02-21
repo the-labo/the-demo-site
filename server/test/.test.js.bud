@@ -8,6 +8,7 @@ const {test} = require('the-templates')
 
 module.exports = test.dir({
   src: [
+    `${__dirname}/../server`,
     `${__dirname}/../controllers`,
     `${__dirname}/../db`,
     `${__dirname}/../endpoints`

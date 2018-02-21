@@ -57,18 +57,18 @@ export default stateful(
     users: state['admin.user.password.targets'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserPasswordScene,
+     adminUserCheckScene: checkScene,
+     adminUserPasswordScene: passwordScene,
    }, propsProxy) => ({
-    onClose: () => adminUserPasswordScene.set({
+    onClose: () => passwordScene.set({
       active: false,
       done: false,
       targets: [],
     }),
     onYes: async () => {
-      await adminUserPasswordScene.doExec()
-      adminUserPasswordScene.set({done: true})
-      adminUserCheckScene.init()
+      await passwordScene.doExec()
+      passwordScene.set({done: true})
+      checkScene.init()
     },
   })
 )(AdminUserPasswordDialog)

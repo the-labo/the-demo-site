@@ -46,25 +46,25 @@ export default stateful(
     users: state['admin.user.destroy.targets'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserDestroyScene,
-     adminUserListScene,
+     adminUserCheckScene: checkScene,
+     adminUserDestroyScene: destroyScene,
+     adminUserListScene: listScene,
      l,
      toastScene,
    }, propsProxy) => ({
-    onClose: () => adminUserDestroyScene.set({
+    onClose: () => destroyScene.set({
       active: false,
       done: false,
     }),
     onSubmit: async () => {
-      await adminUserDestroyScene.doExec()
-      adminUserDestroyScene.set({
+      await destroyScene.doExec()
+      destroyScene.set({
         active: false,
         done: true,
       })
-      adminUserCheckScene.init()
+      checkScene.init()
       toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
-      await adminUserListScene.doSync()
+      await listScene.doSync()
     },
   })
 )(AdminUserDestroyDialog)

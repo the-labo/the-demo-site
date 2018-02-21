@@ -30,19 +30,19 @@ export default stateful(
     values: state['admin.user.role.entry'],
   }),
   ({
-     adminUserCheckScene,
-     adminUserListScene,
-     adminUserRoleScene,
+     adminUserCheckScene: checkScene,
+     adminUserListScene: listScene,
+     adminUserRoleScene: roleScene,
      l,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await adminUserRoleScene.doExec()
-      adminUserRoleScene.set({active: false})
+      await roleScene.doExec()
+      roleScene.set({active: false})
       toastScene.showInfo(l('toasts.ROLE_UPDATE_DID_SUCCESS'))
-      adminUserCheckScene.init()
-      await adminUserListScene.doSync()
+      checkScene.init()
+      await listScene.doSync()
     },
-    onUpdate: (v) => adminUserRoleScene.setEntry(v),
+    onUpdate: (v) => roleScene.setEntry(v),
   }),
 )(AdminUserRoleForm)

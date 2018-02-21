@@ -41,27 +41,27 @@ export default stateful(
     targets: state['admin.user.list.entities'].filter(({id}) => state['admin.user.check.values'][id]),
   }),
   ({
-     adminUserDestroyScene,
-     adminUserPasswordScene,
-     adminUserRoleScene,
+     adminUserDestroyScene: destroyScene,
+     adminUserPasswordScene: passwordScene,
+     adminUserRoleScene: roleScene,
      l,
    }, propsProxy) => ({
     onDestroy: () => {
-      adminUserDestroyScene.set({
+      destroyScene.set({
         active: true,
         done: false,
         targets: propsProxy.targets,
       })
     },
     onPasswordReset: () => {
-      adminUserPasswordScene.set({
+      passwordScene.set({
         active: true,
         done: false,
         targets: propsProxy.targets,
       })
     },
     onRoleChange: () => {
-      adminUserRoleScene.set({
+      roleScene.set({
         active: true,
         targets: propsProxy.targets,
       })

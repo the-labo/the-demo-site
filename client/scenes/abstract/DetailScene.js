@@ -31,7 +31,7 @@ class DetailScene extends DetailSceneBase {
     if (this.isKnownId(id)) {
       return null
     }
-    this.set({id})
+    this.set({entity: null, id, missing: false})
     await this.doSync()
     return this.get('entity')
   }

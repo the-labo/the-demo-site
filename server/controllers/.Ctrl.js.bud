@@ -6,7 +6,8 @@
 const {Ctrl} = require('the-templates')
 
 module.exports = [
-  'AppCtrl'
+  'AppCtrl',
+  'ListenCtrl'
 ].map((name) => Ctrl({
   name,
   cjs: true,
