@@ -20,6 +20,7 @@ const db = require('pon-task-db')
 const {mysql, nginx, redis} = require('pon-task-docker')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
+const changelog = require('pon-task-changelog')
 const md = require('pon-task-md')
 const pm2 = require('pon-task-pm2')
 const {browser, ccjs, css, map, react} = require('pon-task-web')
@@ -114,6 +115,9 @@ module.exports = pon(
     // -----------------------------------
     /** Generate pondoc file */
     'doc:pondoc': pondoc(__filename, 'misc/project/Pondoc.json'),
+
+    /** Generate changelog file */
+    'doc:changelog': changelog(),
 
     // -----------------------------------
     // Sub Tasks for Docker

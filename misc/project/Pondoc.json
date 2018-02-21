@@ -28,6 +28,7 @@
     "default": "Default for `pon` command",
     "deploy": "Deploy project on production",
     "doc": "Generate docs",
+    "doc:changelog": "Generate changelog file",
     "doc:pondoc": "Generate pondoc file",
     "docker": "Setup docker infra",
     "docker:mysql": "Prepare mysql docker container",

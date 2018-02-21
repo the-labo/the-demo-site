@@ -522,7 +522,8 @@
 .the-view .the-view-header .the-view-header-col:nth-child(3) { justify-content:flex-end; }
 .the-view .the-view-header .the-view-header-icon { flex-shrink:0;line-height:36px;vertical-align:middle; }
 .the-view .the-view-header .the-view-header-inner { display:flex;justify-content:space-between;line-height:36px; }
-.the-view .the-view-header .the-view-header-text { vertical-align:middle; }
+.the-view .the-view-header .the-view-header-text { overflow:hidden;text-overflow:ellipsis;vertical-align:middle;white-space:nowrap; }
+.the-view .the-view-header .the-view-header-title { align-items:center;display:flex;justify-content:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
 .the-view .the-view-header-narrow { max-width:480px; }
 .the-view .the-view-message { color:#BBB;margin:16px 0;text-align:center; }
 .the-view { background-color:#FFF;min-height:50vh;position:relative; }  

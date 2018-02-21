@@ -1,0 +1,58 @@
+<a name="8.1.6"></a>
+## <small>8.1.6 (2018-02-21)</small>
+
+* Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
+* refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
+* refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
+* refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
+* refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
+* update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))
+
+
+
+<a name="8.1.2"></a>
+## <small>8.1.2 (2018-02-17)</small>
+
+* add normalize css ([517465b](https://github.com/the-labo/the-demo-site/commit/517465b))
+* add normalize css ([5bff44b](https://github.com/the-labo/the-demo-site/commit/5bff44b))
+* add url check ([6e15f21](https://github.com/the-labo/the-demo-site/commit/6e15f21))
+* Releasing new package ([5ced65a](https://github.com/the-labo/the-demo-site/commit/5ced65a))
+
+
+
+<a name="8.0.4"></a>
+## <small>8.0.4 (2018-02-15)</small>
+
+* Add image on admin manage view ([3984ae0](https://github.com/the-labo/the-demo-site/commit/3984ae0))
+* add search filter ([2ec84a1](https://github.com/the-labo/the-demo-site/commit/2ec84a1))
+* better test data ([cfa2ede](https://github.com/the-labo/the-demo-site/commit/cfa2ede))
+* Fix header menu ([62e1d2d](https://github.com/the-labo/the-demo-site/commit/62e1d2d))
+* Releasing new package ([5097c87](https://github.com/the-labo/the-demo-site/commit/5097c87))
+
+
+
+<a name="8.0.3"></a>
+## <small>8.0.3 (2018-02-14)</small>
+
+* add role change ([15930c6](https://github.com/the-labo/the-demo-site/commit/15930c6))
+* Releasing new package ([73a8e3b](https://github.com/the-labo/the-demo-site/commit/73a8e3b))
+* Releasing new package ([6bbdeea](https://github.com/the-labo/the-demo-site/commit/6bbdeea))
+* Version incremented to 8.0.2 ([e5fb149](https://github.com/the-labo/the-demo-site/commit/e5fb149))
+
+
+
+<a name="8.0.1"></a>
+## <small>8.0.1 (2018-02-13)</small>
+
+* add rules ([b42cd98](https://github.com/the-labo/the-demo-site/commit/b42cd98))
+* Add rules ([5431d08](https://github.com/the-labo/the-demo-site/commit/5431d08))
+* better formatter ([6beddc9](https://github.com/the-labo/the-demo-site/commit/6beddc9))
+* bug fix ([a664d0c](https://github.com/the-labo/the-demo-site/commit/a664d0c))
+* bugfix ([5a158af](https://github.com/the-labo/the-demo-site/commit/5a158af))
+* fix popping ([2ad4902](https://github.com/the-labo/the-demo-site/commit/2ad4902))
+* fix publishing ([813f6ca](https://github.com/the-labo/the-demo-site/commit/813f6ca))
+* Refactoring ([278bce0](https://github.com/the-labo/the-demo-site/commit/278bce0))
+* Releasing new package ([d132fbe](https://github.com/the-labo/the-demo-site/commit/d132fbe))
+
+
+
