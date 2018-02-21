@@ -249,6 +249,7 @@ pon <taskName>
 | default | Default for `pon` command | `pon default` |
 | deploy | Deploy project on production | `pon deploy` |
 | doc | Generate docs | `pon doc` |
+| doc:changelog | Generate changelog file | `pon doc:changelog` |
 | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
 | docker | Setup docker infra | `pon docker` |
 | docker:mysql | Prepare mysql docker container | `pon docker:mysql` |
@@ -409,35 +410,35 @@ Misc
 
 ### Provided Urls
 
-  * `/about/app`
-  * `/about/privacy-policy`
-  * `/about/terms-of-use`
-  * `/account/mypage`
-  * `/account/password`
-  * `/account/profile`
-  * `/account/quit`
-  * `/account/recover/reset`
-  * `/account/recover/send`
-  * `/account/verify/confirm`
-  * `/admin`
-  * `/admin/users`
-  * `/a/:key`
-  * `/build/bundle.css`
-  * `/css/fontawesome-all.css`
-  * `/css/normalize.css`
-  * `/css/theme.css`
-  * `/errors/forbidden`
-  * `/errors/not-found`
-  * `/images/app-icon.png`
-  * `/build/bundle.js`
-  * `/build/external-bundle.js`
-  * `/the-demo-site-8.1.6.css`
-  * `/the-demo-site-8.1.6.js`
-  * `/sign/please`
-  * `/sign/signin`
-  * `/sign/signout`
-  * `/sign/signup`
-  * `/`
+* `/about/app`
+* `/about/privacy-policy`
+* `/about/terms-of-use`
+* `/account/mypage`
+* `/account/password`
+* `/account/profile`
+* `/account/quit`
+* `/account/recover/reset`
+* `/account/recover/send`
+* `/account/verify/confirm`
+* `/admin`
+* `/admin/users`
+* `/a/:key`
+* `/build/bundle.css`
+* `/css/fontawesome-all.css`
+* `/css/normalize.css`
+* `/css/theme.css`
+* `/errors/forbidden`
+* `/errors/not-found`
+* `/images/app-icon.png`
+* `/build/bundle.js`
+* `/build/external-bundle.js`
+* `/the-demo-site-8.2.0.css`
+* `/the-demo-site-8.2.0.js`
+* `/sign/please`
+* `/sign/signin`
+* `/sign/signout`
+* `/sign/signup`
+* `/`
 
 
 ### Project Structure
@@ -446,30 +447,30 @@ Directory structure of this project
 
 | Directory Path | Description |
 | ---- | ----- |
-  | [assets](./assets) | Static file directory |
-  | [bin](./bin) | Executable files |
-  | [client](./client) | Client side scripts |
-  | [client/client](./client/client) | RPC Client |
-  | [client/scenes](./client/scenes) | Client logic without ui |
-  | [client/shim](./client/shim) | Generated shim files |
-  | [client/store](./client/store) | Client side data store |
-  | [client/test](./client/test) | Client tests |
-  | [client/ui](./client/ui) | User interfaces |
-  | [conf](./conf) | Configuration of project |
-  | [doc](./doc) | Documents |
-  | [doc/guides](./doc/guides) | Guides for README |
-  | [misc](./misc) | Misc files |
-  | [public](./public) | Public directory to serve static files. Auto-generated |
-  | [server](./server) | Server side scripts |
-  | [server/controllers](./server/controllers) | Controller classes to handle RPC |
-  | [server/db](./server/db) | Database modules |
-  | [server/env](./server/env) | Env dependant variables |
-  | [server/server](./server/server) | HTTP Server modules |
-  | [server/services](./server/services) | Database access wrappers |
-  | [server/test](./server/test) | Server tests |
-  | [test](./test) | Project tests |
-  | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
-  | [var](./var) | Var files |
+| [assets](./assets) | Static file directory |
+| [bin](./bin) | Executable files |
+| [client](./client) | Client side scripts |
+| [client/client](./client/client) | RPC Client |
+| [client/scenes](./client/scenes) | Client logic without ui |
+| [client/shim](./client/shim) | Generated shim files |
+| [client/store](./client/store) | Client side data store |
+| [client/test](./client/test) | Client tests |
+| [client/ui](./client/ui) | User interfaces |
+| [conf](./conf) | Configuration of project |
+| [doc](./doc) | Documents |
+| [doc/guides](./doc/guides) | Guides for README |
+| [misc](./misc) | Misc files |
+| [public](./public) | Public directory to serve static files. Auto-generated |
+| [server](./server) | Server side scripts |
+| [server/controllers](./server/controllers) | Controller classes to handle RPC |
+| [server/db](./server/db) | Database modules |
+| [server/env](./server/env) | Env dependant variables |
+| [server/server](./server/server) | HTTP Server modules |
+| [server/services](./server/services) | Database access wrappers |
+| [server/test](./server/test) | Server tests |
+| [test](./test) | Project tests |
+| [tmp](./tmp) | Temporary files. Can be deleted anytime. |
+| [var](./var) | Var files |
 
 
 
@@ -523,6 +524,6 @@ Links
 + [ClayResource API][clay_resource_a_p_i_url]
 
 [pon_url]: https://github.com/realglobe-Inc/pon
-[clay_resource_a_p_i_url]: https://github.com/realglobe-Inc/clay-resource/blob/master/doc/api/api.md#clay-resource552
+[clay_resource_a_p_i_url]: https://github.com/realglobe-Inc/clay-resource/blob/master/doc/api/api.md#clay-resource
 
 <!-- Links End -->
