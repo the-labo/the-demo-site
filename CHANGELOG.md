@@ -1,6 +1,8 @@
-<a name="8.1.6"></a>
-## <small>8.1.6 (2018-02-21)</small>
+<a name="8.2.0"></a>
+## 8.2.0 (2018-02-22)
 
+* add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
+* Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
 * refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
 * refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))

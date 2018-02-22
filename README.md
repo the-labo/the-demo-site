@@ -228,12 +228,6 @@ pon <taskName>
 | assets:markdown | Render markdown assets | `pon assets:markdown` |
 | b | Shortcut for `build` task | `pon b` |
 | build | Build all | `pon build` |
-| c | Shortcut for `clean` task | `pon c` |
-| clean | Clean all | `pon clean` |
-| clean:cache | Cleanup cache files | `pon clean:cache` |
-| clean:public | Cleanup public files | `pon clean:public` |
-| clean:shim | Cleanup shim files | `pon clean:shim` |
-| d | Shortcut for `debug` task | `pon d` |
 | db | Prepare DB | `pon db` |
 | db:cli | Open database cli | `pon db:cli` |
 | db:drop | Drop database | `pon db:drop` |
@@ -243,41 +237,22 @@ pon <taskName>
 | db:reset | Drop and setup database again | `pon db:reset` |
 | db:seed | Generate test data | `pon db:seed` |
 | db:setup | Setup database | `pon db:setup` |
-| debug | Start debugging | `pon debug` |
-| debug:server | Run server for debug | `pon debug:server` |
-| debug:watch | Watch files for debug | `pon debug:watch` |
 | default | Default for `pon` command | `pon default` |
 | deploy | Deploy project on production | `pon deploy` |
 | doc | Generate docs | `pon doc` |
-| doc:changelog | Generate changelog file | `pon doc:changelog` |
-| doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
 | docker | Setup docker infra | `pon docker` |
 | docker:mysql | Prepare mysql docker container | `pon docker:mysql` |
 | docker:nginx | Prepare nginx docker container | `pon docker:nginx` |
 | docker:redis | Prepare redis docker container | `pon docker:redis` |
-| ds | Shortcut for `debug:server` task | `pon ds` |
 | env:debug | Set env variables for debug | `pon env:debug` |
 | env:prod | Set env variables for production | `pon env:prod` |
 | env:test | Set env variables for test | `pon env:test` |
-| f | Shortcut for `format` task | `pon f` |
-| format | Format source codes | `pon format` |
-| format:client | Format client files | `pon format:client` |
-| format:conf | Format conf files | `pon format:conf` |
-| format:json | Format json files | `pon format:json` |
-| format:server | Format server files | `pon format:server` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
-| icon:generate | Generate icons | `pon icon:generate` |
-| l | Shortcut for `lint` task | `pon l` |
-| lint | Lint all | `pon lint` |
-| lint:loc | Validate locales | `pon lint:loc` |
 | loc:print | Print locale settings | `pon loc:print` |
 | local:print | Print local settings | `pon local:print` |
 | logs | Show app daemon logs | `pon logs` |
 | maint:off | Disable maintenance mode | `pon maint:off` |
 | maint:on | Enable maintenance mode | `pon maint:on` |
-| o | Shortcut for `open` task | `pon o` |
-| open | Open project | `pon open` |
-| open:app | Open app in browser | `pon open:app` |
 | p | Shortcut for `prod` task | `pon p` |
 | pkg:fix | Fix package.json | `pon pkg:fix` |
 | pkg:install | Install packages | `pon pkg:install` |
@@ -306,10 +281,6 @@ pon <taskName>
 | struct:mkdir | Generate project directories | `pon struct:mkdir` |
 | struct:pkg | Prepare sub packages | `pon struct:pkg` |
 | struct:render | Render coz templates | `pon struct:render` |
-| t | Shortcut for `test` task | `pon t` |
-| test | Run all tess | `pon test` |
-| test:client | Run client tests | `pon test:client` |
-| test:server | Run server tests | `pon test:server` |
 | ui | Run all ui tasks | `pon ui` |
 | ui:browser | Bundle browser script | `pon ui:browser` |
 | ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
@@ -317,8 +288,6 @@ pon <taskName>
 | ui:css/watch | Run css watch | `pon ui:css/watch` |
 | ui:map | Extract map files | `pon ui:map` |
 | ui:react | Compile react components | `pon ui:react` |
-| w | Shortcut for `watch` task | `pon w` |
-| watch | Run watches | `pon watch` |
 
 
 For more information, try `pon -l`
@@ -410,35 +379,35 @@ Misc
 
 ### Provided Urls
 
-* `/about/app`
-* `/about/privacy-policy`
-* `/about/terms-of-use`
-* `/account/mypage`
-* `/account/password`
-* `/account/profile`
-* `/account/quit`
-* `/account/recover/reset`
-* `/account/recover/send`
-* `/account/verify/confirm`
-* `/admin`
-* `/admin/users`
-* `/a/:key`
-* `/build/bundle.css`
-* `/css/fontawesome-all.css`
-* `/css/normalize.css`
-* `/css/theme.css`
-* `/errors/forbidden`
-* `/errors/not-found`
-* `/images/app-icon.png`
-* `/build/bundle.js`
-* `/build/external-bundle.js`
-* `/the-demo-site-8.2.0.css`
-* `/the-demo-site-8.2.0.js`
-* `/sign/please`
-* `/sign/signin`
-* `/sign/signout`
-* `/sign/signup`
-* `/`
+  * `/about/app`
+  * `/about/privacy-policy`
+  * `/about/terms-of-use`
+  * `/account/mypage`
+  * `/account/password`
+  * `/account/profile`
+  * `/account/quit`
+  * `/account/recover/reset`
+  * `/account/recover/send`
+  * `/account/verify/confirm`
+  * `/admin`
+  * `/admin/users`
+  * `/a/:key`
+  * `/build/bundle.css`
+  * `/css/fontawesome-all.css`
+  * `/css/normalize.css`
+  * `/css/theme.css`
+  * `/errors/forbidden`
+  * `/errors/not-found`
+  * `/images/app-icon.png`
+  * `/build/bundle.js`
+  * `/build/external-bundle.js`
+  * `/the-demo-site-8.2.0.css`
+  * `/the-demo-site-8.2.0.js`
+  * `/sign/please`
+  * `/sign/signin`
+  * `/sign/signout`
+  * `/sign/signup`
+  * `/`
 
 
 ### Project Structure
@@ -447,30 +416,30 @@ Directory structure of this project
 
 | Directory Path | Description |
 | ---- | ----- |
-| [assets](./assets) | Static file directory |
-| [bin](./bin) | Executable files |
-| [client](./client) | Client side scripts |
-| [client/client](./client/client) | RPC Client |
-| [client/scenes](./client/scenes) | Client logic without ui |
-| [client/shim](./client/shim) | Generated shim files |
-| [client/store](./client/store) | Client side data store |
-| [client/test](./client/test) | Client tests |
-| [client/ui](./client/ui) | User interfaces |
-| [conf](./conf) | Configuration of project |
-| [doc](./doc) | Documents |
-| [doc/guides](./doc/guides) | Guides for README |
-| [misc](./misc) | Misc files |
-| [public](./public) | Public directory to serve static files. Auto-generated |
-| [server](./server) | Server side scripts |
-| [server/controllers](./server/controllers) | Controller classes to handle RPC |
-| [server/db](./server/db) | Database modules |
-| [server/env](./server/env) | Env dependant variables |
-| [server/server](./server/server) | HTTP Server modules |
-| [server/services](./server/services) | Database access wrappers |
-| [server/test](./server/test) | Server tests |
-| [test](./test) | Project tests |
-| [tmp](./tmp) | Temporary files. Can be deleted anytime. |
-| [var](./var) | Var files |
+  | [assets](./assets) | Static file directory |
+  | [bin](./bin) | Executable files |
+  | [client](./client) | Client side scripts |
+  | [client/client](./client/client) | RPC Client |
+  | [client/scenes](./client/scenes) | Client logic without ui |
+  | [client/shim](./client/shim) | Generated shim files |
+  | [client/store](./client/store) | Client side data store |
+  | [client/test](./client/test) | Client tests |
+  | [client/ui](./client/ui) | User interfaces |
+  | [conf](./conf) | Configuration of project |
+  | [doc](./doc) | Documents |
+  | [doc/guides](./doc/guides) | Guides for README |
+  | [misc](./misc) | Misc files |
+  | [public](./public) | Public directory to serve static files. Auto-generated |
+  | [server](./server) | Server side scripts |
+  | [server/controllers](./server/controllers) | Controller classes to handle RPC |
+  | [server/db](./server/db) | Database modules |
+  | [server/env](./server/env) | Env dependant variables |
+  | [server/server](./server/server) | HTTP Server modules |
+  | [server/services](./server/services) | Database access wrappers |
+  | [server/test](./server/test) | Server tests |
+  | [test](./test) | Project tests |
+  | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
+  | [var](./var) | Var files |
 
 
 
