@@ -8205,7 +8205,7 @@ the-aside@^1.1.1:
     the-container "^3.0.0"
     the-style "^2.0.0"
 
-the-assets@^2.0.1:
+the-assets@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-2.1.0.tgz#d46f66c3f369b86774411a2eed812452b4c6e5c0"
   dependencies:

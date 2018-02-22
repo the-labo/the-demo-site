@@ -1,5 +1,5 @@
-<a name="8.2.0"></a>
-## 8.2.0 (2018-02-22)
+<a name="9.0.0"></a>
+## 9.0.0 (2018-02-22)
 
 * add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
@@ -8,6 +8,7 @@
 * refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
 * refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
 * refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
+* split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))
 
 

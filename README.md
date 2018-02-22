@@ -218,7 +218,7 @@ pon <taskName>
 ```
 
 
-### Available Tasks
+### Common Tasks
 
 | TaskName | Description | Command |
 | -------- | ----------- | ------- |
@@ -290,6 +290,43 @@ pon <taskName>
 | ui:react | Compile react components | `pon ui:react` |
 
 
+### Dev Only Tasks
+
+| TaskName | Description | Command |
+| -------- | ----------- | ------- |
+| c | Shortcut for `clean` task | `pon c` |
+| clean | Clean all | `pon clean` |
+| clean:cache | Cleanup cache files | `pon clean:cache` |
+| clean:public | Cleanup public files | `pon clean:public` |
+| clean:shim | Cleanup shim files | `pon clean:shim` |
+| d | Shortcut for `debug` task | `pon d` |
+| debug | Start debugging | `pon debug` |
+| debug:server | Run server for debug | `pon debug:server` |
+| debug:watch | Watch files for debug | `pon debug:watch` |
+| doc:changelog | Generate changelog file | `pon doc:changelog` |
+| doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
+| ds | Shortcut for `debug:server` task | `pon ds` |
+| f | Shortcut for `format` task | `pon f` |
+| format | Format source codes | `pon format` |
+| format:client | Format client files | `pon format:client` |
+| format:conf | Format conf files | `pon format:conf` |
+| format:json | Format json files | `pon format:json` |
+| format:server | Format server files | `pon format:server` |
+| icon:generate | Generate icons | `pon icon:generate` |
+| l | Shortcut for `lint` task | `pon l` |
+| lint | Lint all | `pon lint` |
+| lint:loc | Validate locales | `pon lint:loc` |
+| o | Shortcut for `open` task | `pon o` |
+| open | Open project | `pon open` |
+| open:app | Open app in browser | `pon open:app` |
+| prepare | Prepare project | `pon prepare` |
+| t | Shortcut for `test` task | `pon t` |
+| test | Run all tess | `pon test` |
+| test:client | Run client tests | `pon test:client` |
+| test:server | Run server tests | `pon test:server` |
+| w | Shortcut for `watch` task | `pon w` |
+| watch | Run watches | `pon watch` |
+
 For more information, try `pon -l`
 
 
@@ -322,7 +359,11 @@ pon db:cli
 In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
 
 
+<details>
+<summary>
 **Terminal Example**
+</summary>
+
 ```bash
 Welcome to the-db prompt!
 DB Env: { dialect: 'mysql', host: 'localhost', port: '6002', database: 'thedemosite_dev', username: 'thedemosite_dev', root_username: 'root', hooks: null }
@@ -335,6 +376,7 @@ the-db> (await User.first()).name  # Using async interface
 the-db>
 ```
 
+</details>
 
 <!-- Section from "doc/guides/21.Database.md.hbs" End -->
 
@@ -401,8 +443,8 @@ Misc
   * `/images/app-icon.png`
   * `/build/bundle.js`
   * `/build/external-bundle.js`
-  * `/the-demo-site-8.2.0.css`
-  * `/the-demo-site-8.2.0.js`
+  * `/the-demo-site-9.0.0.css`
+  * `/the-demo-site-9.0.0.js`
   * `/sign/please`
   * `/sign/signin`
   * `/sign/signout`
@@ -410,36 +452,41 @@ Misc
   * `/`
 
 
+<details>
+<summary>
 ### Project Structure
+</summary>
 
 Directory structure of this project
 
 | Directory Path | Description |
 | ---- | ----- |
-  | [assets](./assets) | Static file directory |
-  | [bin](./bin) | Executable files |
-  | [client](./client) | Client side scripts |
-  | [client/client](./client/client) | RPC Client |
-  | [client/scenes](./client/scenes) | Client logic without ui |
-  | [client/shim](./client/shim) | Generated shim files |
-  | [client/store](./client/store) | Client side data store |
-  | [client/test](./client/test) | Client tests |
-  | [client/ui](./client/ui) | User interfaces |
-  | [conf](./conf) | Configuration of project |
-  | [doc](./doc) | Documents |
-  | [doc/guides](./doc/guides) | Guides for README |
-  | [misc](./misc) | Misc files |
-  | [public](./public) | Public directory to serve static files. Auto-generated |
-  | [server](./server) | Server side scripts |
-  | [server/controllers](./server/controllers) | Controller classes to handle RPC |
-  | [server/db](./server/db) | Database modules |
-  | [server/env](./server/env) | Env dependant variables |
-  | [server/server](./server/server) | HTTP Server modules |
-  | [server/services](./server/services) | Database access wrappers |
-  | [server/test](./server/test) | Server tests |
-  | [test](./test) | Project tests |
-  | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
-  | [var](./var) | Var files |
+| [assets](./assets) | Static file directory |
+| [bin](./bin) | Executable files |
+| [client](./client) | Client side scripts |
+| [client/client](./client/client) | RPC Client |
+| [client/scenes](./client/scenes) | Client logic without ui |
+| [client/shim](./client/shim) | Generated shim files |
+| [client/store](./client/store) | Client side data store |
+| [client/test](./client/test) | Client tests |
+| [client/ui](./client/ui) | User interfaces |
+| [conf](./conf) | Configuration of project |
+| [doc](./doc) | Documents |
+| [doc/guides](./doc/guides) | Guides for README |
+| [misc](./misc) | Misc files |
+| [public](./public) | Public directory to serve static files. Auto-generated |
+| [server](./server) | Server side scripts |
+| [server/controllers](./server/controllers) | Controller classes to handle RPC |
+| [server/db](./server/db) | Database modules |
+| [server/env](./server/env) | Env dependant variables |
+| [server/server](./server/server) | HTTP Server modules |
+| [server/services](./server/services) | Database access wrappers |
+| [server/test](./server/test) | Server tests |
+| [test](./test) | Project tests |
+| [tmp](./tmp) | Temporary files. Can be deleted anytime. |
+| [var](./var) | Var files |
+
+</details>
 
 
 

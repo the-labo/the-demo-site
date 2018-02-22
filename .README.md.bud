@@ -23,6 +23,7 @@ module.exports = readmeMdBud({
   vars: {
     Directories: require('./misc/project/Directories'),
     Pondoc: require('./misc/project/Pondoc'),
+    PondocDev: require('./misc/project/Pondoc.dev'),
     ResourceMapping,
     Urls,
   }
