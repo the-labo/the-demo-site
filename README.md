@@ -68,7 +68,8 @@ Table of Contents
     + [Setup App](#setup-app)
     + [Configure Reverse Proxy](#configure-reverse-proxy)
   * [Running Tasks](#running-tasks)
-    + [Available Tasks](#available-tasks)
+    + [Common Tasks](#common-tasks)
+    + [Dev Only Tasks](#dev-only-tasks)
   * [Database](#database)
     + [Database Resource](#database-resource)
     + [Console to database](#console-to-database)
@@ -359,10 +360,7 @@ pon db:cli
 In the console, you can access database resources via [ClayResource][clay_resource_a_p_i_url] class
 
 
-<details>
-<summary>
 **Terminal Example**
-</summary>
 
 ```bash
 Welcome to the-db prompt!
@@ -376,7 +374,6 @@ the-db> (await User.first()).name  # Using async interface
 the-db>
 ```
 
-</details>
 
 <!-- Section from "doc/guides/21.Database.md.hbs" End -->
 
@@ -421,41 +418,38 @@ Misc
 
 ### Provided Urls
 
-  * `/about/app`
-  * `/about/privacy-policy`
-  * `/about/terms-of-use`
-  * `/account/mypage`
-  * `/account/password`
-  * `/account/profile`
-  * `/account/quit`
-  * `/account/recover/reset`
-  * `/account/recover/send`
-  * `/account/verify/confirm`
-  * `/admin`
-  * `/admin/users`
-  * `/a/:key`
-  * `/build/bundle.css`
-  * `/css/fontawesome-all.css`
-  * `/css/normalize.css`
-  * `/css/theme.css`
-  * `/errors/forbidden`
-  * `/errors/not-found`
-  * `/images/app-icon.png`
-  * `/build/bundle.js`
-  * `/build/external-bundle.js`
-  * `/the-demo-site-9.0.0.css`
-  * `/the-demo-site-9.0.0.js`
-  * `/sign/please`
-  * `/sign/signin`
-  * `/sign/signout`
-  * `/sign/signup`
-  * `/`
+* `/about/app`
+* `/about/privacy-policy`
+* `/about/terms-of-use`
+* `/account/mypage`
+* `/account/password`
+* `/account/profile`
+* `/account/quit`
+* `/account/recover/reset`
+* `/account/recover/send`
+* `/account/verify/confirm`
+* `/admin`
+* `/admin/users`
+* `/a/:key`
+* `/build/bundle.css`
+* `/css/fontawesome-all.css`
+* `/css/normalize.css`
+* `/css/theme.css`
+* `/errors/forbidden`
+* `/errors/not-found`
+* `/images/app-icon.png`
+* `/build/bundle.js`
+* `/build/external-bundle.js`
+* `/the-demo-site-9.0.0.css`
+* `/the-demo-site-9.0.0.js`
+* `/sign/please`
+* `/sign/signin`
+* `/sign/signout`
+* `/sign/signup`
+* `/`
 
 
-<details>
-<summary>
 ### Project Structure
-</summary>
 
 Directory structure of this project
 
@@ -486,7 +480,6 @@ Directory structure of this project
 | [tmp](./tmp) | Temporary files. Can be deleted anytime. |
 | [var](./var) | Var files |
 
-</details>
 
 
 

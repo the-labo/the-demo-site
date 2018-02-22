@@ -10,7 +10,7 @@ pon <taskName>
 ```
 
 
-  ### Common Tasks
+### Common Tasks
 
 | TaskName | Description | Command |
 | -------- | ----------- | ------- |
@@ -19,12 +19,12 @@ pon <taskName>
 {{/each}}
 
 
-  ### Dev Only Tasks
+### Dev Only Tasks
 
-  | TaskName | Description | Command |
-  | -------- | ----------- | ------- |
-  {{#each vars.PondocDev.tasks}}
-    | {{@key}} | {{{this}}} | `pon {{@key}}` |
-  {{/each}}
+| TaskName | Description | Command |
+| -------- | ----------- | ------- |
+{{#each vars.PondocDev.tasks}}
+| {{@key}} | {{{this}}} | `pon {{@key}}` |
+{{/each}}
 
 For more information, try `pon -l`
