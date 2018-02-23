@@ -1,15 +1,17 @@
 <a name="9.0.0"></a>
-## 9.0.0 (2018-02-22)
+## 9.0.0 (2018-02-23)
 
 * add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
 * refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
-* refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
-* refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
 * refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
+* refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
+* refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
 * split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))
+* update docs ([0d3141c](https://github.com/the-labo/the-demo-site/commit/0d3141c))
+* update docs ([fca2a6a](https://github.com/the-labo/the-demo-site/commit/fca2a6a))
 
 
 

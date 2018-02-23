@@ -50,9 +50,9 @@ Demo site of the-framework
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
+<!-- Section from "doc/guides/00.TOC.md" Start -->
 
-<a name="section-doc-guides-00-t-o-c-md"></a>
+<a name="section-doc-guides-00-t-o-c"></a>
 
 Table of Contents
 ----------------
@@ -85,11 +85,11 @@ Table of Contents
   * [Links](#links)
 
 
-<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+<!-- Section from "doc/guides/00.TOC.md" End -->
 
-<!-- Section from "doc/guides/01.Requiements.md.hbs" Start -->
+<!-- Section from "doc/guides/01.Requiements.md" Start -->
 
-<a name="section-doc-guides-01-requiements-md"></a>
+<a name="section-doc-guides-01-requiements"></a>
 
 Requirements
 ----------
@@ -100,11 +100,11 @@ This project requires:
 + [Docker](https://www.docker.com/)
 
 
-<!-- Section from "doc/guides/01.Requiements.md.hbs" End -->
+<!-- Section from "doc/guides/01.Requiements.md" End -->
 
-<!-- Section from "doc/guides/02.Preparing.md.hbs" Start -->
+<!-- Section from "doc/guides/02.Preparing.md" Start -->
 
-<a name="section-doc-guides-02-preparing-md"></a>
+<a name="section-doc-guides-02-preparing"></a>
 
 Preparing
 ----------
@@ -126,11 +126,11 @@ yarn install
 pon prepare
 ```
 
-<!-- Section from "doc/guides/02.Preparing.md.hbs" End -->
+<!-- Section from "doc/guides/02.Preparing.md" End -->
 
-<!-- Section from "doc/guides/10.Development.md.hbs" Start -->
+<!-- Section from "doc/guides/10.Development.md" Start -->
 
-<a name="section-doc-guides-10-development-md"></a>
+<a name="section-doc-guides-10-development"></a>
 
 Development
 ----------
@@ -150,11 +150,11 @@ open open  # Or just `pon o`
 ```
 
 
-<!-- Section from "doc/guides/10.Development.md.hbs" End -->
+<!-- Section from "doc/guides/10.Development.md" End -->
 
-<!-- Section from "doc/guides/11.Production.md.hbs" Start -->
+<!-- Section from "doc/guides/11.Production.md" Start -->
 
-<a name="section-doc-guides-11-production-md"></a>
+<a name="section-doc-guides-11-production"></a>
 
 Production
 ----------
@@ -201,11 +201,11 @@ pon production
 ```
 
 
-<!-- Section from "doc/guides/11.Production.md.hbs" End -->
+<!-- Section from "doc/guides/11.Production.md" End -->
 
-<!-- Section from "doc/guides/20.Tasks.md.hbs" Start -->
+<!-- Section from "doc/guides/20.Tasks.md" Start -->
 
-<a name="section-doc-guides-20-tasks-md"></a>
+<a name="section-doc-guides-20-tasks"></a>
 
 Running Tasks
 -----------
@@ -219,7 +219,9 @@ pon <taskName>
 ```
 
 
-### Common Tasks
+### Core Tasks
+
+Tasks defined in [Ponfile.js]('./Ponfile.js')
 
 | TaskName | Description | Command |
 | -------- | ----------- | ------- |
@@ -293,6 +295,8 @@ pon <taskName>
 
 ### Dev Only Tasks
 
+Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
+
 | TaskName | Description | Command |
 | -------- | ----------- | ------- |
 | c | Shortcut for `clean` task | `pon c` |
@@ -331,11 +335,11 @@ pon <taskName>
 For more information, try `pon -l`
 
 
-<!-- Section from "doc/guides/20.Tasks.md.hbs" End -->
+<!-- Section from "doc/guides/20.Tasks.md" End -->
 
-<!-- Section from "doc/guides/21.Database.md.hbs" Start -->
+<!-- Section from "doc/guides/21.Database.md" Start -->
 
-<a name="section-doc-guides-21-database-md"></a>
+<a name="section-doc-guides-21-database"></a>
 
 Database
 -----------
@@ -375,11 +379,11 @@ the-db>
 ```
 
 
-<!-- Section from "doc/guides/21.Database.md.hbs" End -->
+<!-- Section from "doc/guides/21.Database.md" End -->
 
-<!-- Section from "doc/guides/90.Trouble.md.hbs" Start -->
+<!-- Section from "doc/guides/90.Trouble.md" Start -->
 
-<a name="section-doc-guides-90-trouble-md"></a>
+<a name="section-doc-guides-90-trouble"></a>
 
 Trouble Shooting
 -----------
@@ -407,11 +411,11 @@ pon docker:*/remove docker
 
 ```
 
-<!-- Section from "doc/guides/90.Trouble.md.hbs" End -->
+<!-- Section from "doc/guides/90.Trouble.md" End -->
 
-<!-- Section from "doc/guides/99.Misc.md.hbs" Start -->
+<!-- Section from "doc/guides/99.Misc.md" Start -->
 
-<a name="section-doc-guides-99-misc-md"></a>
+<a name="section-doc-guides-99-misc"></a>
 
 Misc
 -----------
@@ -507,7 +511,7 @@ pon secret:enc
 
 
 
-<!-- Section from "doc/guides/99.Misc.md.hbs" End -->
+<!-- Section from "doc/guides/99.Misc.md" End -->
 
 
 <!-- Sections Start -->

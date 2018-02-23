@@ -12,7 +12,7 @@ const {Urls} = require('@self/conf')
 module.exports = readmeMdBud({
   pkg,
   repo: pkg.repository,
-  sections: 'doc/guides/*.md.hbs',
+  sections: 'doc/guides/*.md',
   badges: {
     travis: true,
     npm: true,

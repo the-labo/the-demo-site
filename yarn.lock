@@ -3303,8 +3303,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.33:
-  version "1.3.33"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.33.tgz#bf00703d62a7c65238136578c352d6c5c042a545"
+  version "1.3.34"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.34.tgz#d93498f40391bb0c16a603d8241b9951404157ed"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -5558,8 +5558,8 @@ named-placeholders@1.1.1:
     lru-cache "2.5.0"
 
 nan@^2.0.5, nan@^2.0.9, nan@^2.3.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
 
 nanomatch@^1.2.9:
   version "1.2.9"
@@ -5635,8 +5635,8 @@ node-pre-gyp@^0.6.39:
     tar-pack "^3.4.0"
 
 nodemailer@^4.4.1:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.5.0.tgz#f041b5d545671f97a12e973a8fc48a3113122a5f"
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.6.0.tgz#b99391435aabbd34b74a1283112fbdfd34f7eb8f"
 
 nodemon@^1.14.11:
   version "1.15.1"
@@ -6065,7 +6065,7 @@ pon-cache@^1.0.1:
   dependencies:
     co "^4.6.0"
 
-pon-cli@^4.1.11:
+pon-cli@^4.1.12:
   version "4.1.13"
   resolved "https://registry.yarnpkg.com/pon-cli/-/pon-cli-4.1.13.tgz#53b3b65fcdeb8b8f9584da248ec6840b5d438b9b"
   dependencies:
@@ -6092,7 +6092,7 @@ pon-logger@^2.0.2:
     co "^4.6.0"
     colorprint "^4.1.0"
 
-pon-runner@^3.4.6, pon-runner@^3.4.9:
+pon-runner@^3.4.9:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.4.10.tgz#ab183951919ece2049b65c518318367c10fe91e1"
   dependencies:
@@ -6303,8 +6303,8 @@ pon-task-pm2@^2.0.1:
     writeout "^2.2.1"
 
 pon-task-pondoc@^1.0.2, pon-task-pondoc@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/pon-task-pondoc/-/pon-task-pondoc-1.0.5.tgz#b184b76ed78439d0b782bc0f148f60f23b4afc8d"
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/pon-task-pondoc/-/pon-task-pondoc-1.0.7.tgz#5fa7b2bd99cc0d855f1cd20551b16d6251939c01"
   dependencies:
     fmtjson "^4.0.0"
     writeout "^2.2.1"
@@ -6376,18 +6376,18 @@ pon-writer@^1.0.4:
     writeout "^2.2.0"
 
 pon@^5.2.6:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.7.tgz#6cbd4a537a8586fa7195b66feb3d3977648ad903"
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.8.tgz#c3b88ad515fb49b24024b9fc2e8bbbfe70c86f87"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
     minimatch "^3.0.4"
-    pon-cli "^4.1.11"
+    pon-cli "^4.1.12"
     pon-context "^2.0.2"
-    pon-runner "^3.4.6"
-    ponfile "^4.2.1"
+    pon-runner "^3.4.9"
+    ponfile "^4.2.3"
 
-ponfile@^4.2.1, ponfile@^4.2.2:
+ponfile@^4.2.2, ponfile@^4.2.3:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/ponfile/-/ponfile-4.2.4.tgz#94d53b7b69766a6663345263c9fcc1014827556d"
   dependencies:
