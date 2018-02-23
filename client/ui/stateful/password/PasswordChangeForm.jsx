@@ -28,14 +28,14 @@ export default stateful(
   }),
   ({
      l,
-     passwordChangeScene,
+     passwordChangeScene: changeScene,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await passwordChangeScene.doExec()
-      passwordChangeScene.set({done: true})
+      await changeScene.doExec()
+      changeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
     },
-    onUpdate: (v) => passwordChangeScene.setEntry(v),
+    onUpdate: (v) => changeScene.setEntry(v),
   })
 )(PasswordChangeForm)

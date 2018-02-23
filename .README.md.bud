@@ -14,7 +14,7 @@ module.exports = readmeMdBud({
   repo: pkg.repository,
   sections: 'doc/guides/*.md',
   badges: {
-    travis: true,
+    travis: false,
     npm: true,
     standard: true
   },

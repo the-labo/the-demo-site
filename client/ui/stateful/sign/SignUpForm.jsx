@@ -28,18 +28,18 @@ export default stateful(
   ({
      accountScene,
      l,
-     signUpScene,
+     signUpScene: upScene,
      toastScene,
    }, ownProps) => ({
     onStep: (step) => {
-      signUpScene.setStep(step)
+      upScene.setStep(step)
     },
     onSubmit: async () => {
-      await signUpScene.doExec()
+      await upScene.doExec()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGN_UP_DID_SUCCESS'))
-      signUpScene.goBack()
+      upScene.goBack()
     },
-    onUpdate: (v) => signUpScene.setEntry(v),
+    onUpdate: (v) => upScene.setEntry(v),
   })
 )(SignUpForm)

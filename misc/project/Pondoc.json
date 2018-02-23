@@ -38,6 +38,7 @@
     "pkg:link": "Link self packages",
     "pm2:app": "Run app with pm2",
     "pm2:backup:dump": "Run backup cron with pm2",
+    "pre": "Shortcut for 'prepare` task",
     "prepare": "Prepare project",
     "prod": "Prepare and start on production",
     "prod:compile": "Compile files for production",

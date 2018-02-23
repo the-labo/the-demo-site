@@ -27,15 +27,15 @@ export default stateful(
   ({
      accountScene,
      l,
-     signInScene,
+     signInScene: inScene,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await signInScene.doExec()
+      await inScene.doExec()
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.SIGN_IN_DID_SUCCESS'))
-      signInScene.goBack()
+      inScene.goBack()
     },
-    onUpdate: (v) => signInScene.setEntry(v),
+    onUpdate: (v) => inScene.setEntry(v),
   })
 )(SignInForm)

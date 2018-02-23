@@ -363,6 +363,8 @@ module.exports = pon(
       b: 'build',
       /** Shortcut for `prod` task */
       p: 'prod',
+      /** Shortcut for 'prepare` task */
+      pre: 'prepare',
     },
   }
 )

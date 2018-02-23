@@ -9,7 +9,7 @@
     + [Setup App](#setup-app)
     + [Configure Reverse Proxy](#configure-reverse-proxy)
   * [Running Tasks](#running-tasks)
-    + [Common Tasks](#common-tasks)
+    + [Core Tasks](#core-tasks)
     + [Dev Only Tasks](#dev-only-tasks)
   * [Database](#database)
     + [Database Resource](#database-resource)

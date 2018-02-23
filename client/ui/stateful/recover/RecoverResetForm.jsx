@@ -27,14 +27,14 @@ export default stateful(
   ({
      accountScene,
      l,
-     recoverResetScene,
+     recoverResetScene: resetScene,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await recoverResetScene.doExec()
+      await resetScene.doExec()
       await accountScene.doSync()
-      recoverResetScene.set({done: true})
+      resetScene.set({done: true})
     },
-    onUpdate: (v) => recoverResetScene.setEntry(v),
+    onUpdate: (v) => resetScene.setEntry(v),
   })
 )(RecoverResetForm)

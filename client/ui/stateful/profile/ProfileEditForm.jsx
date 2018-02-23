@@ -27,15 +27,15 @@ export default stateful(
   ({
      accountScene,
      l,
-     profileEditScene,
+     profileEditScene: editScene,
      toastScene,
    }) => ({
     onSubmit: async () => {
-      await profileEditScene.doExec()
-      profileEditScene.set({done: true})
+      await editScene.doExec()
+      editScene.set({done: true})
       await accountScene.doSync()
       toastScene.showInfo(l('toasts.PROFILE_UPDATE_DID_SUCCESS'))
     },
-    onUpdate: (v) => profileEditScene.setEntry(v),
+    onUpdate: (v) => editScene.setEntry(v),
   })
 )(ProfileEditForm)

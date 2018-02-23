@@ -33,10 +33,10 @@ export default stateful(
     busy: state['connection.retry.busy'],
   }),
   ({
-     connectionRetryScene,
+     connectionRetryScene: retryScene,
    }, propsProxy) => ({
     onReload: async () => {
-      await connectionRetryScene.doExec()
+      await retryScene.doExec()
     },
   })
 )(ConnectionRetryDialog)
