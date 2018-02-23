@@ -63,7 +63,7 @@ class ListScene extends ListSceneBase {
     const pageNumber = this.get('pageNumber')
     this.set({pageNumber: pageNumber + 1})
 
-    const {counts, entities} = await this.dealWith(this.getCondition())
+    const {entities, meta: counts} = await this.dealWith(this.getCondition())
     this.set({counts: counts, hasMore: hasMoreFor(counts)})
     this.addEntities(entities)
   }

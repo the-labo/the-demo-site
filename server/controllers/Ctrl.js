@@ -24,6 +24,10 @@ class Ctrl extends CtrBase {
     return this.app.mail
   }
 
+  get plugins () {
+    return this.app.db.plugins
+  }
+
   get resources () {
     return this.app.db.resources
   }

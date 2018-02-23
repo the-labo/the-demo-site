@@ -8308,8 +8308,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.6.tgz#306a1239ff15da6365ce43ef08178f512eb87bca"
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.7.tgz#d9d0096bde7526799846b0dbec769ee26ac65a8a"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"
@@ -8764,8 +8764,8 @@ the-main@^3.0.5:
     the-style "^2.1.0"
 
 the-menu@^2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.9.tgz#74f5b5f55579cc38b07acff2b8e8e188baaa57ce"
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.10.tgz#64bbd1d95abe3f62973003c7bfc9adb8da02f8f4"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
