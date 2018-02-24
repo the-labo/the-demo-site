@@ -891,7 +891,7 @@ ape-releasing@^4.0.4:
     taggit "^2.0.1"
     versionup "^2.0.1"
 
-ape-tmpl@^6.0.0, ape-tmpl@^6.0.8:
+ape-tmpl@^6.0.0, ape-tmpl@^6.0.10:
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/ape-tmpl/-/ape-tmpl-6.0.10.tgz#9ddb1129e914b3eb9c02e80ce36906ff554e09b5"
   dependencies:
@@ -2446,7 +2446,7 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^5.4.16, clay-resource@^5.5.4:
+clay-resource@^5.5.4:
   version "5.5.4"
   resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.5.4.tgz#827cf51e7b6239ff85db37fadc22eeb3bee0eaa3"
   dependencies:
@@ -5310,8 +5310,8 @@ mem@^1.1.0:
     mimic-fn "^1.0.0"
 
 memoizee@^0.4.3:
-  version "0.4.11"
-  resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.11.tgz#bde9817663c9e40fdb2a4ea1c367296087ae8c8f"
+  version "0.4.12"
+  resolved "https://registry.yarnpkg.com/memoizee/-/memoizee-0.4.12.tgz#780e99a219c50c549be6d0fc61765080975c58fb"
   dependencies:
     d "1"
     es5-ext "^0.10.30"
@@ -8291,8 +8291,8 @@ the-client@^5.0.1:
     uuid "^3.2.1"
 
 the-code@^3.4.6, the-code@^3.5.4, the-code@^3.5.7:
-  version "3.5.7"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.5.7.tgz#ab328dbbc3f0e9367a026bcd832758f9deda52cf"
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.6.0.tgz#92ba1a21c0ef63dd6e1d8955db610adf563e0a3b"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -8308,12 +8308,13 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^1.0.0:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.7.tgz#d9d0096bde7526799846b0dbec769ee26ac65a8a"
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-1.3.8.tgz#c20f4daef94b14e17d49e2200ee95c57aeac7e96"
   dependencies:
     bwindow "^1.1.0"
     prop-types "^15.6.0"
     the-check "^1.2.2"
+    uuid "^3.2.1"
 
 the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
   version "2.1.2"
@@ -8327,8 +8328,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2:
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.17"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.17.tgz#25bea657886cf31ec2cb5620d005432655d66d8d"
+  version "6.0.18"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.18.tgz#10699f61b356cc9afa102b0ddc3e74eb90289a0a"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     classnames "^2.2.5"
@@ -8360,7 +8361,7 @@ the-components@^6.0.0:
     the-link "^3.0.6"
     the-list "^3.1.4"
     the-main "^3.0.5"
-    the-menu "^2.0.9"
+    the-menu "^2.0.11"
     the-pager "^2.0.1"
     the-repeatable "^1.0.4"
     the-root "^2.0.3"
@@ -8368,7 +8369,7 @@ the-components@^6.0.0:
     the-router "^2.0.7"
     the-section "^2.0.1"
     the-spin "^3.1.0"
-    the-step "^1.0.3"
+    the-step "^1.0.6"
     the-style "^2.1.0"
     the-tab "^3.0.5"
     the-table "^3.0.7"
@@ -8427,8 +8428,8 @@ the-db-util@^1.1.0:
   resolved "https://registry.yarnpkg.com/the-db-util/-/the-db-util-1.1.0.tgz#7713ea7cdd47a52901142b0ed8b3da830e8206dd"
 
 the-db@^9.0.5:
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.1.4.tgz#ecac793a99802ffd861731514ad8dcfee351fe20"
+  version "9.1.5"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.1.5.tgz#63ce840149797018e855a458ce5f81f97afb4ddc"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.2"
@@ -8763,9 +8764,9 @@ the-main@^3.0.5:
     the-spin "^3.1.0"
     the-style "^2.1.0"
 
-the-menu@^2.0.9:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.10.tgz#64bbd1d95abe3f62973003c7bfc9adb8da02f8f4"
+the-menu@^2.0.11, the-menu@^2.0.9:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/the-menu/-/the-menu-2.0.11.tgz#a39586cb011c76284871956c29ee567501808a80"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -8841,11 +8842,11 @@ the-repeatable@^1.0.4:
     the-style "^2.0.0"
 
 the-resource-base@^1.1.0, the-resource-base@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.5.tgz#e05c8ea0b6a291ff0d74ffd0ab08961e970779d6"
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.6.tgz#ed0a9b9f9960c6e366b337986542f51ea3111420"
   dependencies:
     clay-constants "^3.4.4"
-    clay-resource "^5.4.16"
+    clay-resource "^5.5.4"
     clay-resource-name "^4.0.3"
 
 the-root@^2.0.3:
@@ -9085,15 +9086,16 @@ the-spin@^3.0.0, the-spin@^3.1.0:
     the-icon "^4.0.1"
     the-style "^2.1.0"
 
-the-step@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/the-step/-/the-step-1.0.3.tgz#ddcd2674ab4cdf2f8f98e630f7bc85a8e7f3bee3"
+the-step@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/the-step/-/the-step-1.0.7.tgz#1feb1beae85dce12cc3f9ea5c9a475b35cebeee1"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
-    the-button "^3.0.1"
-    the-component-util "^2.0.0"
-    the-spin "^3.0.0"
+    the-button "^3.0.7"
+    the-component-util "^2.1.2"
+    the-icon "^4.0.2"
+    the-spin "^3.1.0"
     the-style "^2.0.0"
 
 the-store@^5.1.3:
@@ -9156,12 +9158,12 @@ the-tag@^2.0.2:
     the-link "^3.0.6"
     the-style "^2.1.0"
 
-the-templates@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-2.5.8.tgz#c16eada7e8e1491988224fc9b7a3310883a0c55a"
+the-templates@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/the-templates/-/the-templates-3.1.3.tgz#339f846a6d5c026d6d74d6ba5c941a9629279c96"
   dependencies:
     aglob "^3.0.0"
-    ape-tmpl "^6.0.8"
+    ape-tmpl "^6.0.10"
     markdown-toc "^1.2.0"
     selfsigned "^1.10.2"
     stringcase "^4.1.1"

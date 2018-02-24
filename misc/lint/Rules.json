@@ -1,10 +1,5 @@
 {
   "client/scenes/!(index).js": {
-    "filenameRule": {
-      "endsWith": "Scene.js"
-    }
-  },
-  "client/scenes/*Scene.js": {
     "callRule": {
       "keypathArguments": {
         "bindScope": "client/scopes"
@@ -12,6 +7,9 @@
     },
     "decorateRule": {
       "declared": true
+    },
+    "filenameRule": {
+      "endsWith": "Scene.js"
     }
   },
   "client/ui/**/*.jsx": {
