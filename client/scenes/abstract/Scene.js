@@ -41,8 +41,9 @@ class Scene extends SceneBase {
     }
   }
 
-  goTo (url, params = {}) {
-    super.goTo(resolveUrl(url, params))
+  goTo (url, params = {}, options = {}) {
+    const {query = {}} = options
+    super.goTo(resolveUrl(url, params, {query}))
   }
 
 }

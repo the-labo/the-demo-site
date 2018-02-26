@@ -25,7 +25,7 @@ const Scene = require('./Scene')
 @withReady
 @withFilter
 @withHistory
-@bindDefaults({filter: {}, pageNumber: 1, pageSize: 25})
+@bindDefaults({counts: {}, entities: [], filter: {}, pageNumber: 1, pageSize: 25})
 class ListSceneBase extends Scene {}
 
 /** @lends ListScene */
