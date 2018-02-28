@@ -14,7 +14,7 @@ module.exports = Object.freeze(
     mysql: {
       name: Local.MYSQL_CONTAINER_NAME,
       options: {
-        image: 'mysql:8',
+        image: 'mysql:5.7.21',
         publish: `${Local.MYSQL_CONTAINER_PORT}:3306`
       }
     },

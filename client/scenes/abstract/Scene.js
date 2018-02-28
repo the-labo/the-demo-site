@@ -6,11 +6,13 @@
 'use strict'
 
 const {TheScene} = require('the-scene-base/shim')
+const {withLocation} = require('the-scene-mixins/shim')
 const {resolveUrl} = require('the-site-util')
 
 class SceneBase extends TheScene {}
 
 /** @lends Scene */
+@withLocation
 class Scene extends SceneBase {
   catchEntryError (e) {
     try {
@@ -42,8 +44,17 @@ class Scene extends SceneBase {
   }
 
   goTo (url, params = {}, options = {}) {
-    const {query = {}} = options
-    super.goTo(resolveUrl(url, params, {query}))
+    const {query = {}, reload = false} = options
+    const href = resolveUrl(url, params, {query})
+    if (reload) {
+      this.store.app.busy.true()
+      super.goTo(href)
+      this.reloadLocation().catch((e) => {
+        this.store.app.busy.false()
+      })
+    } else {
+      super.goTo(href)
+    }
   }
 
 }
