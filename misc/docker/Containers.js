@@ -21,6 +21,7 @@ module.exports = Object.freeze(
     redis: {
       name: Local.REDIS_CONTAINER_NAME,
       options: {
+        conf: path.resolve(__dirname, 'redis.conf'),
         image: 'redis:4',
         publish: `${Local.REDIS_CONTAINER_PORT}:6379`
       }
