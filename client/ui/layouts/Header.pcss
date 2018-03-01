@@ -13,6 +13,12 @@
   }
 }
 
+.user {
+  & :global(.user-card-name) {
+    display: none;
+  }
+}
+
 @media (min-width: 600px) {
   .self:global(.the-header) {
     & :global(.the-header-tab-item) {
@@ -23,6 +29,12 @@
         flex-direction: row;
         font-size: 14px;
       }
+    }
+  }
+
+  .user {
+    & :global(.user-card-name) {
+      display: inline-block;
     }
   }
 }

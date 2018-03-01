@@ -35,6 +35,12 @@ class DetailScene extends DetailSceneBase {
     await this.doSync()
     return this.get('entity')
   }
+
+  async reSyncIfCurrent (id) {
+    if (this.isKnownId(id)) {
+      await this.doSync()
+    }
+  }
 }
 
 module.exports = DetailScene

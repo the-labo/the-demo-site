@@ -11,15 +11,16 @@ import UserImage from '../images/UserImage'
 
 function UserCard ({
                      className,
+                     imageSize = 24,
                      user,
                    }) {
   return (
     <div className={c(styles.self, className)}>
       <UserImage {...{user}}
                  className={styles.image}
-                 size={24}
+                 size={imageSize}
       />
-      <span className={styles.text}>{user.displayName}</span>
+      <span className={c('user-card-name', styles.text)}>{user.displayName}</span>
     </div>
   )
 }
