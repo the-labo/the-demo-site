@@ -8,5 +8,4 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
-  get browserAccess () { return _d(require('./browserAccess')) },
 }

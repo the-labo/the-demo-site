@@ -20,6 +20,7 @@
     "format": "Format source codes",
     "format:client": "Format client files",
     "format:conf": "Format conf files",
+    "format:e2e": "Format e2e files",
     "format:json": "Format json files",
     "format:server": "Format server files",
     "icon:generate": "Generate icons",

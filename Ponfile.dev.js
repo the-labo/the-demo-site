@@ -115,6 +115,8 @@ module.exports = pon(
       ], {sort: true}),
       /** Format server files */
       'format:server': theCode('server/**/*.js', {}),
+      /** Format e2e files */
+      'format:e2e': theCode('e2e/**/*.js', {}),
     },
 
     // -----------------------------------
@@ -167,7 +169,7 @@ module.exports = pon(
       /** Start debugging */
       debug: ['ps:debug', 'env:debug', 'build', 'lint', 'debug:*'],
       /** Format source codes */
-      format: ['format:conf', 'format:json', 'format:client', 'format:server'],
+      format: ['format:conf', 'format:json', 'format:client', 'format:server', 'format:e2e'],
       /** Lint all */
       lint: ['lint:loc', 'lint:rules'],
       /** Open project */

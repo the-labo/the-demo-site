@@ -5,8 +5,8 @@
  */
 'use strict'
 
-const {E2EConfig} = require('./constants')
 const theE2E = require('the-e2e').default
+const {E2EConfig} = require('./constants')
 
 function create () {
   const e2e = theE2E(E2EConfig)

@@ -9036,9 +9036,9 @@ the-drawer@^3.0.0:
     the-style "^2.1.0"
     the-window "^5.3.3"
 
-the-e2e@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/the-e2e/-/the-e2e-1.3.0.tgz#3b20a168a7156127e43d41a47123fa9a5344058d"
+the-e2e@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/the-e2e/-/the-e2e-2.1.0.tgz#5a2647f21805e12ef1211a9f7c3ab77c98b065ac"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"

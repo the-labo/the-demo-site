@@ -95,7 +95,7 @@
     "sqlite3": "^3.1.13",
     "the-assets": "^2.1.0",
     "the-code": "^3.5.7",
-    "the-e2e": "^1.3.0",
+    "the-e2e": "^2.1.0",
     "the-lint": "^1.6.11",
     "the-refactor": "^1.0.3",
     "the-script-release": "^1.0.6",

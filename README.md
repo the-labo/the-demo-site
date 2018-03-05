@@ -319,6 +319,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | format | Format source codes | `pon format` |
 | format:client | Format client files | `pon format:client` |
 | format:conf | Format conf files | `pon format:conf` |
+| format:e2e | Format e2e files | `pon format:e2e` |
 | format:json | Format json files | `pon format:json` |
 | format:server | Format server files | `pon format:server` |
 | icon:generate | Generate icons | `pon icon:generate` |
