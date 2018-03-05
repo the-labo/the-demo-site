@@ -15,7 +15,7 @@ const endpoints = require('../endpoints')
 const env = require('../env')
 const mappings = require('../mappings')
 const conf = require('../../conf')
-const pkg = require('../../package.json')
+const pkg = require('../../package')
 
 const {ControllerMapping, ServiceMapping} = mappings
 

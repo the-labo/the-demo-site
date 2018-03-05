@@ -38,5 +38,8 @@ class HomeView extends React.Component {
 
 export default stateful(
   (state) => ({}),
-  ({}) => ({})
+  ({}) => ({
+    onUser: (user) => {
+    },
+  })
 )(HomeView)

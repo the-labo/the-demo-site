@@ -5,13 +5,13 @@
 
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
-import { withForm } from 'the-components'
+import { formed } from 'the-component-mixins'
 import { TheLocaleForm } from 'the-site-components'
 import { LocaleNames } from '@self/conf'
 import styles from './LocaleForm.pcss'
 
 @localized
-@withForm
+@formed
 class LocaleForm extends React.Component {
   render () {
     const props = this.props

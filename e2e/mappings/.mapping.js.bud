@@ -1,0 +1,28 @@
+/**
+ * Bud file for mappings
+ */
+'use strict'
+
+const {camelcase} = require('stringcase')
+const path = require('path')
+const aglob = require('aglob')
+const {mapping} = require('the-templates')
+
+module.exports = [
+  {
+    name: 'StoryMapping',
+    requirePath: '../stories',
+    requireAs: 'st',
+    mapping: aglob.sync(`${__dirname}/../stories/*Story.js`)
+      .map((filename) => path.basename(filename, '.js'))
+      .map((name) => ({
+        instanceName: camelcase(name).replace(/Story$/, ''),
+        className: name
+      })),
+    cjs: true
+  }
+].map(mapping)
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

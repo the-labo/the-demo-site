@@ -5,10 +5,10 @@
 
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
-import { withForm } from 'the-components'
+import { formed } from 'the-component-mixins'
 import { TheSearchForm } from 'the-site-components'
 
-@withForm
+@formed
 @localized
 class AdminUserFilterForm extends React.Component {
   render () {

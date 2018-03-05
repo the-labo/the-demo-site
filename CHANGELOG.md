@@ -1,5 +1,5 @@
-<a name="9.0.0"></a>
-## 9.0.0 (2018-03-01)
+<a name="9.0.1"></a>
+## <small>9.0.1 (2018-03-05)</small>
 
 * add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
@@ -7,7 +7,9 @@
 * bugfix ([e267a4c](https://github.com/the-labo/the-demo-site/commit/e267a4c))
 * fix doc ([4780e5d](https://github.com/the-labo/the-demo-site/commit/4780e5d))
 * fix formats ([fdd294a](https://github.com/the-labo/the-demo-site/commit/fdd294a))
+* fix redis ([e6df49d](https://github.com/the-labo/the-demo-site/commit/e6df49d))
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
+* fix user card ([590a1cc](https://github.com/the-labo/the-demo-site/commit/590a1cc))
 * refactoring ([11853d7](https://github.com/the-labo/the-demo-site/commit/11853d7))
 * refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
 * refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
@@ -16,8 +18,8 @@
 * refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
 * split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))
-* update docs ([0d3141c](https://github.com/the-labo/the-demo-site/commit/0d3141c))
 * update docs ([fca2a6a](https://github.com/the-labo/the-demo-site/commit/fca2a6a))
+* update docs ([0d3141c](https://github.com/the-labo/the-demo-site/commit/0d3141c))
 
 
 

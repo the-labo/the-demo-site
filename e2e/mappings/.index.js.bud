@@ -1,0 +1,17 @@
+/**
+ * @file bud file for index
+ */
+'use strict'
+
+const {dir} = require('the-templates')
+
+module.exports = dir({
+  dirname: __dirname,
+  cjs: true,
+  name: 'mappings',
+  description: 'Module mappings'
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

@@ -44,6 +44,11 @@ class Ctrl extends CtrBase {
   async syncUser () {
     this.user = (await this._fetchAuthorizedUser()) || null
   }
+
+  async waitToRefresh (ref) {
+    const {app: {db}} = this
+    await db.waitToRefresh(ref, {})
+  }
 }
 
 module.exports = Ctrl

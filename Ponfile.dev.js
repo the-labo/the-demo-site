@@ -11,9 +11,10 @@ const {doc, cwd, tasks} = require('./Ponfile')
 const theLint = require('the-lint/pon')
 const Local = require('./Local')
 const theCode = require('the-code/pon')
+const theE2E = require('the-e2e/pon')
 const {locales} = require('./conf')
 const {
-  command: {spawn: {npx}},
+  command: {spawn: {npx, npm}, fork},
   fs: {del,},
   open,
 } = require('pon-task-basic')
@@ -24,6 +25,10 @@ const Rules = require('./misc/lint/Rules')
 const Drawings = require('./misc/icon/Drawings')
 const icon = require('pon-task-icon')
 const PondocDev = require('./misc/project/Pondoc.dev')
+const StoryMapping = require('./e2e/mappings/StoryMapping')
+const {E2EConfig} = require('./e2e/constants')
+
+const e2e = theE2E(E2EConfig)
 
 module.exports = pon(
   /** @module tasks */
@@ -127,6 +132,8 @@ module.exports = pon(
     ...{
       /** Open app in browser */
       'open:app': open(`http://localhost:${Local.NGINX_CONTAINER_PORT}`),
+      /** Open homepage field in package.json */
+      'open:repo': npm('docs'),
     },
 
     // -----------------------------------
@@ -137,6 +144,18 @@ module.exports = pon(
       'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
       /** Run server tests */
       'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+    },
+
+    // -----------------------------------
+    // E2E
+    // -----------------------------------
+    ...{
+      /** Install drivers for E2E */
+      'e2e:install': e2e.install,
+      /** Listen for E2E tests */
+      'e2e:listen': e2e.listen,
+      /** Run stories for E2E tests */
+      'e2e:story': e2e.story(StoryMapping)
     },
 
     // -----------------------------------
@@ -152,11 +171,11 @@ module.exports = pon(
       /** Lint all */
       lint: ['lint:loc', 'lint:rules'],
       /** Open project */
-      open: 'open:*',
+      open: 'open:app',
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['pkg:fix', 'doc', 'lint']
+        ...['e2e:install', 'pkg:fix', 'doc', 'lint']
       ],
       start: ['debug:server'],
       stop: [],
@@ -181,6 +200,8 @@ module.exports = pon(
       l: 'lint',
       /** Shortcut for `open` task */
       o: 'open',
+      /** Shortcut for `open` task */
+      or: 'open:repo',
       /** Shortcut for `test` task */
       t: 'test',
       /** Shortcut for `watch` task */

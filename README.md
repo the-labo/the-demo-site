@@ -269,7 +269,8 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | prod:db | Prepare database for production | `pon prod:db` |
 | prod:js | Compile js files for production | `pon prod:js` |
 | prod:map | Delete source map files for production | `pon prod:map` |
-| ps:debug | Check another process exists | `pon ps:debug` |
+| ps:debug | Process check for debug | `pon ps:debug` |
+| ps:e2e | Process check for e2e | `pon ps:e2e` |
 | restart | Restart app as daemon | `pon restart` |
 | secret:dec | Decrypt secret file | `pon secret:dec` |
 | secret:enc | Encrypt secret file | `pon secret:enc` |
@@ -311,6 +312,9 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | doc:changelog | Generate changelog file | `pon doc:changelog` |
 | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
+| e2e:install | Install drivers for E2E | `pon e2e:install` |
+| e2e:listen | Listen for E2E tests | `pon e2e:listen` |
+| e2e:story | Run stories for E2E tests | `pon e2e:story` |
 | f | Shortcut for `format` task | `pon f` |
 | format | Format source codes | `pon format` |
 | format:client | Format client files | `pon format:client` |
@@ -324,6 +328,8 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | o | Shortcut for `open` task | `pon o` |
 | open | Open project | `pon open` |
 | open:app | Open app in browser | `pon open:app` |
+| open:repo | Open homepage field in package.json | `pon open:repo` |
+| or | Shortcut for `open` task | `pon or` |
 | prepare | Prepare project | `pon prepare` |
 | t | Shortcut for `test` task | `pon t` |
 | test | Run all tess | `pon test` |
@@ -444,8 +450,8 @@ Misc
 * `/images/app-icon.png`
 * `/build/bundle.js`
 * `/build/external-bundle.js`
-* `/the-demo-site-9.0.0.css`
-* `/the-demo-site-9.0.0.js`
+* `/the-demo-site-9.0.1.css`
+* `/the-demo-site-9.0.1.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`
@@ -471,6 +477,7 @@ Directory structure of this project
 | [conf](./conf) | Configuration of project |
 | [doc](./doc) | Documents |
 | [doc/guides](./doc/guides) | Guides for README |
+| [e2e](./e2e) | End-to-end testing scripts |
 | [misc](./misc) | Misc files |
 | [public](./public) | Public directory to serve static files. Auto-generated |
 | [server](./server) | Server side scripts |

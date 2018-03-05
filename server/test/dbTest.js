@@ -20,7 +20,6 @@ describe('db', () => {
       dialect: 'memory',
     })
     ok(db)
-
     {
       const {Profile, User} = db.resources
       const user01 = await User.create({name: 'foo'})

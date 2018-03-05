@@ -6,7 +6,7 @@
 
 const {isProduction} = require('the-check')
 const {hashProxy} = require('the-site-util')
-const pkg = require('../package.json')
+const pkg = require('../package')
 
 module.exports = Object.freeze(
   /** @lends Urls */

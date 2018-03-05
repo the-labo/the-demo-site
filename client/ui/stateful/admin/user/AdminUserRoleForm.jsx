@@ -5,12 +5,12 @@
 
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
-import { withForm } from 'the-components'
+import { formed } from 'the-component-mixins'
 import { TheUsersRoleForm } from 'the-site-components'
 import { withRole } from '../../../wrappers'
 
 @withRole
-@withForm
+@formed
 @localized
 class AdminUserRoleForm extends React.Component {
   render () {

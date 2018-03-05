@@ -5,10 +5,10 @@
 
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
-import { withForm } from 'the-components'
+import { formed } from 'the-component-mixins'
 import { TheRecoverResetForm } from 'the-site-components'
 
-@withForm
+@formed
 @localized
 class RecoverResetForm extends React.Component {
   render () {

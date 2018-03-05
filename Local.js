@@ -9,7 +9,7 @@ const theSecret = require('the-secret').default
 const theSetting = require('the-setting').default
 const {envOf, seatAccess} = require('the-site-util')
 const {inspect} = require('util')
-const pkg = require('./package.json')
+const pkg = require('./package')
 
 const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', {strict: true}))
 const seat = theSeat()
