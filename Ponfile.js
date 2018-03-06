@@ -322,7 +322,7 @@ module.exports = pon(
       /** Run all assets tasks */
       assets: ['assets:*'],
       /** Build all */
-      build: ['pkg:link', 'struct', 'format', 'ui'],
+      build: ['struct:compile', 'pkg:link', 'struct', 'format', 'ui'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
       /** Default for `pon` command */
@@ -337,7 +337,7 @@ module.exports = pon(
       logs: ['pm2:app/logs'],
       /** Prepare project */
       prepare: [
-        'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
+        'struct:compile', 'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
       ],
       /** Prepare and start on production */
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],

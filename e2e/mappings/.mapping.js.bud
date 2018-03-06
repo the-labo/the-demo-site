@@ -14,7 +14,8 @@ module.exports = [
     requirePath: '../stories',
     requireAs: 'st',
     mapping: aglob.sync(`${__dirname}/../stories/*Story.js`)
-      .map((filename) => path.basename(filename, '.js'))
+      .map((filename) => path.basename(filename, '.js').replace(/^\d+\./, ''))
+      .filter((name) => name !== 'Story')
       .map((name) => ({
         instanceName: camelcase(name).replace(/Story$/, ''),
         className: name

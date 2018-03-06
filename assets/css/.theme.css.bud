@@ -4,7 +4,7 @@
 'use strict'
 
 const {TheThemeStyle} = require('the-components')
-const {Styles} = require('@self/conf')
+const {Styles} = require('../../conf')
 
 module.exports = {
   force: true,

@@ -4,8 +4,8 @@ const {dir} = require('the-templates')
 
 module.exports = dir.recursive({
   dirname: __dirname,
-  name: 'bounds',
-  description: 'Bound components',
+  name: 'stateful',
+  description: 'Stateful components',
   ext: '.jsx',
 })
 

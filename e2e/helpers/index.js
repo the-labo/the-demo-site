@@ -8,4 +8,5 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
+  get elementHelper () { return _d(require('./elementHelper')) },
 }

@@ -168,6 +168,8 @@ module.exports = pon(
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Start debugging */
       debug: ['ps:debug', 'env:debug', 'build', 'lint', 'debug:*'],
+      /** Run e2e test */
+      e2e: ['e2e:story'],
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server', 'format:e2e'],
       /** Lint all */

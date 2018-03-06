@@ -3,48 +3,42 @@
  */
 'use strict'
 
-const amkdirp = require('amkdirp')
-const path = require('path')
+const {resolveUrl} = require('the-site-util')
 const {
-  Detector: E2EDetector,
-  Story: E2EStory,
-  util: e2eUtil,
-} = require('the-e2e')
-const {E2EConfig, GlobalExpressions} = require('../constants')
-
-class Detector extends E2EDetector {
-}
+  Finder,
+  TheStory,
+} = require('the-story-base')
+const {GlobalExpressions} = require('../constants')
+const {
+  asForm,
+  asGlobalHeader,
+} = require('../helpers/elementHelper')
+const {locales} = require('../../conf')
 
 /** @lends Story */
-class Story extends E2EStory {
+class Story extends TheStory {
+
   constructor (...args) {
     super(...args)
-    this.detect = new Detector(this.browser)
+
+    this.lang = 'en'
+    this.l = locales.bind(this.lang)
   }
 
-  async fillForm (form, values) {
-    for (const [name, val] of Object.entries(values)) {
-      const input = this.detect.byNameAttr(name)
-      await input.setValue(val)
-    }
+  GlobalHeader () {
+    const header = Finder.Stateful('Header').apply(this.browser)
+    return asGlobalHeader(header)
+  }
+
+  StatefulForm (name) {
+    const form = Finder.Stateful(name).apply(this.browser)
+    return asForm(form)
   }
 
   async open (url) {
     const {browser} = this
-    await browser.url(url)
-    const isLocalPath = /^\//.test(url)
-    if (isLocalPath) {
-      await this.waitUntil(GlobalExpressions.appStageExpression, 'mounted')
-    }
-  }
-
-  async submitForm (form) {
-    await new Detector(form).byRole('form-submit').click()
-  }
-
-  async waitUntil (expression, result) {
-    const {browser} = this
-    return e2eUtil.waitUntil(browser, expression, result)
+    await browser.url(resolveUrl(url, {}, {locale: this.lang}))
+    await this.waitToBe(GlobalExpressions.appStageExpression, 'mounted')
   }
 }
 
