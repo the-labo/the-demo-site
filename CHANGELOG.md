@@ -1,5 +1,5 @@
 <a name="9.0.1"></a>
-## <small>9.0.1 (2018-03-06)</small>
+## <small>9.0.1 (2018-03-07)</small>
 
 * add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
@@ -11,12 +11,13 @@
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
 * fix stories ([013a53a](https://github.com/the-labo/the-demo-site/commit/013a53a))
 * fix user card ([590a1cc](https://github.com/the-labo/the-demo-site/commit/590a1cc))
-* refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
 * refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
+* refactoring ([55c13d1](https://github.com/the-labo/the-demo-site/commit/55c13d1))
 * refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
+* refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
 * refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
 * refactoring ([11853d7](https://github.com/the-labo/the-demo-site/commit/11853d7))
-* refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
+* refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
 * split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * support e2e story ([268d25c](https://github.com/the-labo/the-demo-site/commit/268d25c))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))

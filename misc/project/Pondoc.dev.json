@@ -13,6 +13,7 @@
     "doc:changelog": "Generate changelog file",
     "doc:pondoc": "Generate pondoc file",
     "ds": "Shortcut for `debug:server` task",
+    "e2e": "Run e2e test",
     "e2e:install": "Install drivers for E2E",
     "e2e:listen": "Listen for E2E tests",
     "e2e:story": "Run stories for E2E tests",

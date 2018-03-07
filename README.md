@@ -312,6 +312,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | doc:changelog | Generate changelog file | `pon doc:changelog` |
 | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
+| e2e | Run e2e test | `pon e2e` |
 | e2e:install | Install drivers for E2E | `pon e2e:install` |
 | e2e:listen | Listen for E2E tests | `pon e2e:listen` |
 | e2e:story | Run stories for E2E tests | `pon e2e:story` |
