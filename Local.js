@@ -38,6 +38,7 @@ const Vars = Object.freeze(
     APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
     E2E_PORT: portNumberFor(`e2e@${__dirname}`),
+    E2E_SCREENSHOT_DIR: `${__dirname}/var/e2e/screenshots`,
     INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
     MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
     MYSQL_CONTAINER_PORT: portNumberFor(`mysql@${__dirname}`),

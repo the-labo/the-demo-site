@@ -11,7 +11,7 @@ const {doc, cwd, tasks} = require('./Ponfile')
 const theLint = require('the-lint/pon')
 const Local = require('./Local')
 const theCode = require('the-code/pon')
-const theE2E = require('the-e2e/pon')
+const theE2E = require('../the-e2e/pon')
 const {locales} = require('./conf')
 const {
   command: {spawn: {npx, npm}, fork},

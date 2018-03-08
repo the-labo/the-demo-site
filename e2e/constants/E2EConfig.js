@@ -11,6 +11,6 @@ module.exports = Object.freeze(
   {
     baseUrl: `http://localhost:${Local.NGINX_CONTAINER_PORT}`,
     port: Local.E2E_PORT,
-    screenshotPath: 'var/e2e/screenshots',
+    screenshotPath: Local.E2E_SCREENSHOT_DIR,
   }
 )

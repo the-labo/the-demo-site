@@ -2,6 +2,11 @@
 #
 # Setup ubuntu server
 
+if [ "$UID" == "0" ] ; then
+  echo "DO NOT USE sudo"
+  exit 1
+fi
+
 sudo apt-get update
 
 sudo apt-get install \

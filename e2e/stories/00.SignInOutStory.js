@@ -1,38 +1,27 @@
 'use strict'
 
+const asleep = require('asleep')
+const by = require('the-story-base/lib/by')
+const c = require('./concerns')
 const Story = require('./Story')
 const {Urls} = require('../../conf')
-const by = require('../../../the-story-base/lib/by')
-const asleep = require('asleep')
 
-class SignInOutStory extends Story {
+const SignInOutStoryBase = c.compose(
+  c.signOperative
+)(Story)
+
+class SignInOutStory extends SignInOutStoryBase {
 
   async run () {
     const {browser, l} = this
-    const $ = browser.$.bind(browser)
-    await this.open(Urls.SIGN_IN_URL)
     await this.phase('In', async ({ok}) => {
 
-      const Form = by.name('SignInForm')
-      await $(Form).setValue(by.name('name'), 'demo')
-      await $(Form).setValue(by.name('password'), 'demo')
-      await $(Form).click(by.text(l('buttons.DO_SIGN_IN')))
-
+      await this.operateSignIn('demo2', 'demo2')
       ok(true)
     })
 
     await this.phase('Out', async ({ok}) => {
-
-      const Header = by.class('the-header')
-
-      await $(Header).click(by.role('menu'))
-
-      const SignoutButton = by.text(l('buttons.DO_SIGN_OUT'))
-
-      await $(Header).waitForVisible(SignoutButton, 800)
-      await $(Header).click(SignoutButton)
-
-      await asleep(5000)
+      await this.operateSignOut()
     })
   }
 }

@@ -18,7 +18,8 @@ class AdminUserPager extends React.Component {
     } = this.props
 
     return (
-      <TheOperationPager {...{counts, l, onPage, showCounts}}/>
+      <TheOperationPager {...{counts, l, onPage, showCounts}}
+      />
     )
   }
 }

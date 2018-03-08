@@ -658,8 +658,8 @@ acorn@^4.0.3:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.4.1:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.1.tgz#84e05a9ea0acbe131227da50301e62464dc9c1d8"
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.2.tgz#51e0c3d18558c2bd1bd14e74e9150646a8eb3826"
 
 adigest@^3.0.0:
   version "3.0.0"
@@ -2403,7 +2403,7 @@ clay-driver-mysql@^5.2.22:
     moment "^2.20.1"
     mysql2 "^1.5.2"
 
-clay-driver-sequelize@^6.4.28, clay-driver-sequelize@^6.4.33:
+clay-driver-sequelize@^6.4.33, clay-driver-sequelize@^6.4.35:
   version "6.4.35"
   resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.35.tgz#57fee938d3ec79fe8b47e8767982a6af80a57080"
   dependencies:
@@ -2430,16 +2430,16 @@ clay-driver-sequelize@^6.4.28, clay-driver-sequelize@^6.4.33:
     utf8 "^3.0.0"
 
 clay-driver-sqlite@^6.3.12:
-  version "6.3.12"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.12.tgz#1361e48034adb398428677f030b1413295b5a06f"
+  version "6.3.13"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.13.tgz#64a43ae0554e5613184fdb8aaf2260c080b6b2e5"
   dependencies:
     amkdirp "^2.0.0"
-    asobj "^2.0.2"
+    asobj "^2.1.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.4.28"
-    filecopy "^4.0.0"
+    clay-driver-sequelize "^6.4.35"
+    filecopy "^4.0.1"
     mkdirp "^0.5.1"
-    moment "^2.20.1"
+    moment "^2.21.0"
 
 clay-entity@^2.0.4, clay-entity@^2.1.4:
   version "2.1.4"
@@ -2647,12 +2647,12 @@ clone@^2.1.1:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.1.tgz#d217d1e961118e3ac9a4b8bba3285553bf647cdb"
 
 cloneable-readable@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/cloneable-readable/-/cloneable-readable-1.0.0.tgz#a6290d413f217a61232f95e458ff38418cfb0117"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cloneable-readable/-/cloneable-readable-1.1.1.tgz#c27a4f3a943ca37bed9b01c7d572ee61b1302b15"
   dependencies:
     inherits "^2.0.1"
-    process-nextick-args "^1.0.6"
-    through2 "^2.0.1"
+    process-nextick-args "^2.0.0"
+    readable-stream "^2.3.5"
 
 cls-bluebird@^2.1.0:
   version "2.1.0"
@@ -2782,8 +2782,8 @@ commander@2.11.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
 commander@^2.14.1, commander@^2.8.1, commander@^2.9.0:
-  version "2.14.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.0.tgz#ad2a23a1c3b036e392469b8012cec6b33b4c1322"
 
 compare-func@^1.3.1:
   version "1.3.2"
@@ -3409,9 +3409,9 @@ dicer@0.2.5:
     readable-stream "1.1.x"
     streamsearch "0.1.2"
 
-diff@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
+diff@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
 diffie-hellman@^5.0.0:
   version "5.0.2"
@@ -4084,8 +4084,8 @@ form-data@~2.1.1:
     mime-types "^2.1.12"
 
 formidable@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.1.1.tgz#96b8886f7c3c3508b932d6bd70c4d3a88f35f1a9"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.0.tgz#ce291bfec67c176e282f891ece2c37de0c83ae84"
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -4634,8 +4634,8 @@ homedir-polyfill@^1.0.1:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
 
 htmlescape@^1.1.0:
   version "1.1.1"
@@ -5463,8 +5463,8 @@ locate-path@^2.0.0:
     path-exists "^3.0.0"
 
 lodash-es@^4.17.4, lodash-es@^4.17.5, lodash-es@^4.2.1:
-  version "4.17.5"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.5.tgz#9fc6e737b1c4d151d8f9cae2247305d552ce748f"
+  version "4.17.7"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.7.tgz#db240a3252c3dd8360201ac9feef91ac977ea856"
 
 lodash._basefor@^3.0.0:
   version "3.0.3"
@@ -5810,13 +5810,13 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
     minimist "0.0.8"
 
 mocha@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.2.tgz#caab0b813575141c5690c37d53c894b605ae60b5"
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.4.tgz#6b7aa328472da1088e69d47e75925fd3a3bb63c6"
   dependencies:
     browser-stdout "1.3.1"
     commander "2.11.0"
     debug "3.1.0"
-    diff "3.3.1"
+    diff "3.5.0"
     escape-string-regexp "1.0.5"
     glob "7.1.2"
     growl "1.10.3"
@@ -7136,13 +7136,13 @@ private@^0.1.6, private@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
 
-process-nextick-args@^1.0.6, process-nextick-args@~1.0.6:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
-
-process-nextick-args@~2.0.0:
+process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
+
+process-nextick-args@~1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
 
 process@~0.11.0:
   version "0.11.10"
@@ -7441,7 +7441,7 @@ readable-stream@2.3.2:
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3:
+readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.5:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
   dependencies:
@@ -7535,8 +7535,8 @@ reduce-reducers@^0.1.0:
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
 
 redux-actions@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.2.1.tgz#d64186b25649a13c05478547d7cd7537b892410d"
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.3.0.tgz#4e9967d86594b8c235bab6e08960b5c185f296d3"
   dependencies:
     invariant "^2.2.1"
     lodash "^4.13.1"
@@ -8077,7 +8077,7 @@ sg-socket-client@^2.0.1:
     sg-socket-constants "^1.6.2"
     socket.io-client "^2.0.1"
 
-sg-socket-client@^3.1.1:
+sg-socket-client@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/sg-socket-client/-/sg-socket-client-3.1.3.tgz#8f21cd8eb71b441972a379baaa1c4c6bf307bcb3"
   dependencies:
@@ -8567,20 +8567,20 @@ subarg@^1.0.0:
     minimist "^1.1.0"
 
 sugo-actor@^7.0.7:
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-7.0.7.tgz#0aff99953d8f1cf1682b5e63947d4ddeb9fc45df"
+  version "7.0.8"
+  resolved "https://registry.yarnpkg.com/sugo-actor/-/sugo-actor-7.0.8.tgz#dd659ff81d79c5c3b15f9d84c61967d20a4c3fc1"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     argx "^3.0.1"
     asenv "^2.0.2"
     asleep "^1.0.3"
-    asobj "^2.0.10"
+    asobj "^2.1.0"
     bwindow "^1.1.0"
     debug "^3.1.0"
     sg-queue "^1.1.4"
     sg-schemas "^2.1.3"
     sg-serializer "^1.1.6"
-    sg-socket-client "^3.1.1"
+    sg-socket-client "^3.1.3"
     sg-socket-constants "^1.6.2"
     sg-validator "^1.0.4"
     sugo-client "^2.0.1"
@@ -8590,8 +8590,8 @@ sugo-actor@^7.0.7:
     uuid "^3.2.1"
 
 sugo-caller@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-6.0.5.tgz#c84ba6757c4dd5c7fa27d151aade2512882403aa"
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/sugo-caller/-/sugo-caller-6.0.6.tgz#8d64eb94c83f80b21bb926a286c874e04cce1706"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     argx "^3.0.1"
@@ -8599,7 +8599,7 @@ sugo-caller@^6.0.5:
     sg-queue "^1.1.4"
     sg-schemas "^2.2.2"
     sg-serializer "^1.1.10"
-    sg-socket-client "^3.1.1"
+    sg-socket-client "^3.1.3"
     sg-socket-constants "^1.6.2"
     sg-validator "^1.1.1"
     sugo-client "^2.0.1"
@@ -8941,8 +8941,8 @@ the-check@^1.2.1, the-check@^1.2.2:
     hasbin "^1.2.3"
 
 the-client@^5.0.1:
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-5.1.5.tgz#2d7e87d7e55c879e401e25c5e2dd0acdc72246d5"
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-5.1.6.tgz#f76540185ddb5b8107ac1439912ccdfa8b872638"
   dependencies:
     argx "^3.0.2"
     asleep "^1.0.3"
@@ -9181,8 +9181,8 @@ the-drawer@^3.0.0:
     the-window "^5.3.3"
 
 the-e2e@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/the-e2e/-/the-e2e-2.1.8.tgz#791f0a9b406325a43c07bf667037dc09ae20b66f"
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/the-e2e/-/the-e2e-2.1.10.tgz#1cd5a7981ac4fac19f2f2ad994076acef74cd5fc"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -9282,8 +9282,8 @@ the-handle@^2.0.3:
     the-scene-base "^2.1.1"
 
 the-hash@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/the-hash/-/the-hash-1.0.3.tgz#2ab408d90a227a807ca2eda3f985f76a125f56fd"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/the-hash/-/the-hash-1.0.4.tgz#aa1f36ecf48f149b11f5361a8e088a512a24b6c0"
 
 the-head@^1.0.14:
   version "1.0.14"
@@ -9680,8 +9680,8 @@ the-server-util@^1.0.0:
     mkdirp "^0.5.1"
 
 the-server@^4.7.0:
-  version "4.12.5"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.12.5.tgz#731b5f727539c45fc315268228569763f772bd72"
+  version "4.12.6"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-4.12.6.tgz#eaf934f9aa6bfd2a716ed467aa9eb3fdf5dcf88e"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"
@@ -9697,7 +9697,7 @@ the-server@^4.7.0:
     sugo-hub "^8.2.9"
     sugo-module-scoped "^1.0.5"
     the-check "^1.2.2"
-    the-component-util "^2.1.2"
+    the-component-util "^2.2.1"
     the-controller-base "^4.0.4"
     uuid "^3.2.1"
 
@@ -9808,13 +9808,13 @@ the-store@^5.1.3:
     the-scope "^2.1.0"
 
 the-story-base@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.0.1.tgz#5220282c0adaa207ad7cf7961d3cb67c7be2a784"
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.0.10.tgz#1637502eca1bb81ddd718c90467780db94fd9622"
   dependencies:
     abind "^1.0.3"
     amkdirp "^2.0.0"
     asleep "^1.0.3"
-    chalk "^2.3.2"
+    aslogger "^2.0.0"
     tap-spec "^4.1.1"
     tape "^4.9.0"
 
@@ -9970,8 +9970,8 @@ timers-browserify@^1.0.1:
     process "~0.11.0"
 
 timers-ext@0.1, timers-ext@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/timers-ext/-/timers-ext-0.1.2.tgz#61cc47a76c1abd3195f14527f978d58ae94c5204"
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/timers-ext/-/timers-ext-0.1.3.tgz#cf3ae91ba16990401a74ce85b00efb8f605e6fdc"
   dependencies:
     es5-ext "~0.10.14"
     next-tick "1"
@@ -10366,8 +10366,8 @@ weak@^1.0.1:
     nan "^2.0.5"
 
 webdriverio@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-4.11.0.tgz#289baae2257301d95cfecefdec2038a6aa6b94c5"
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-4.12.0.tgz#e340def272183c8168a4dd0b382322f9d7bee10d"
   dependencies:
     archiver "~2.1.0"
     babel-runtime "^6.26.0"
