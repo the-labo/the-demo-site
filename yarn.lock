@@ -658,8 +658,8 @@ acorn@^4.0.3:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.4.1:
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.2.tgz#51e0c3d18558c2bd1bd14e74e9150646a8eb3826"
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
 adigest@^3.0.0:
   version "3.0.0"
@@ -8974,8 +8974,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^2.0.0:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-2.0.4.tgz#5f9bf95d27d44ebca43d5ca7845074ec18ef92a7"
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-2.0.7.tgz#eb22a55d02698e65d3fe3b9e1bed702a725ea384"
   dependencies:
     asobj "^2.1.0"
     bwindow "^1.1.0"
@@ -9808,13 +9808,14 @@ the-store@^5.1.3:
     the-scope "^2.1.0"
 
 the-story-base@^3.0.1:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.0.10.tgz#1637502eca1bb81ddd718c90467780db94fd9622"
+  version "3.0.16"
+  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.0.16.tgz#aeebaeec8b3ed92fe45168f6b33121fa46e80543"
   dependencies:
     abind "^1.0.3"
     amkdirp "^2.0.0"
     asleep "^1.0.3"
     aslogger "^2.0.0"
+    classnames "^2.2.5"
     tap-spec "^4.1.1"
     tape "^4.9.0"
 

@@ -8,8 +8,8 @@
 const _d = (m) => 'default' in m ? m.default : m
 
 module.exports = {
-  get PasswordChangeStory () { return _d(require('./00.PasswordChangeStory')) },
   get SignInOutStory () { return _d(require('./00.SignInOutStory')) },
+  get PasswordChangeStory () { return _d(require('./01.PasswordChangeStory')) },
   get Story () { return _d(require('./Story')) },
   get concerns () { return _d(require('./concerns')) },
 }

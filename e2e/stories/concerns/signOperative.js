@@ -6,7 +6,6 @@
  */
 'use strict'
 
-const by = require('the-story-base/lib/by')
 const {Urls} = require('../../../conf')
 
 /** @lends signOperative */
@@ -16,17 +15,21 @@ function signOperative (Class) {
       const {l} = this
       await this.open(Urls.SIGN_IN_URL)
       {
-        const $Form = this.accessByName('SignInForm')
+        const $Form = await this.accessByName('SignInForm')
         await $Form.setValues({name, password})
         await $Form.waitAndClickByText(l('buttons.DO_SIGN_IN'))
       }
+
+      return await this.status({})
     }
 
     async operateSignOut () {
       const {l} = this
-      const $Header = this.accessByClass('the-header')
+      const $Header = await this.accessByClass('the-header')
       await $Header.waitAndClickByRole('menu')
       await $Header.waitAndClickByText(l('buttons.DO_SIGN_OUT'))
+
+      return await this.status({})
     }
   }
 

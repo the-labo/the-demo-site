@@ -187,6 +187,8 @@ module.exports = pon(
       test: ['env:test', 'test:client', 'test:server'],
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
+      /** Upgrade package */
+      upgrade: ['pkg:upg', 'pkg:link', 'build'],
     },
     // -----------------------------------
     // Aliases
@@ -208,6 +210,8 @@ module.exports = pon(
       or: 'open:repo',
       /** Shortcut for `test` task */
       t: 'test',
+      /** Upgrade package */
+      u: 'upgrade',
       /** Shortcut for `watch` task */
       w: 'watch',
     }

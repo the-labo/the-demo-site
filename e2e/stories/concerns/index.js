@@ -10,5 +10,6 @@ const _d = (m) => 'default' in m ? m.default : m
 module.exports = {
   get accountOperative () { return _d(require('./accountOperative')) },
   get compose () { return _d(require('./compose')) },
+  get passwordOperative () { return _d(require('./passwordOperative')) },
   get signOperative () { return _d(require('./signOperative')) },
 }

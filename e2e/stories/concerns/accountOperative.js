@@ -14,33 +14,17 @@ function accountOperative (Class) {
   /** @lends AccountOperative */
   class AccountOperative extends Class {
 
-    async operateShowAccountPage () {
+    async operateAccountMypage () {
       await this.open(Urls.TOP_URL)
       const {browser, l} = this
 
-      const $Header = this.accessByClass('the-header')
+      const $Header = await this.accessByClass('the-header')
       await $Header.waitAndClickByRole('menu')
       await $Header.waitAndClickByText(l('buttons.SHOW_MYPAGE'))
 
-      return {
-        title: await browser.getTitle(),
-      }
+      return await this.status({})
     }
 
-    async operateChangeAccountPassword (password) {
-      await this.open(Urls.ACCOUNT_MYPAGE_URL)
-      const {browser, l} = this
-
-      const $view = this.accessByData('stateful-bind', 'MypageView')
-      await $view.waitAndClickByText(l('buttons.SHOW_PASSWORD_EDIT'))
-
-      const $form = this.accessByName('SignUpForm')
-      $form.setValues({password})
-
-      return {
-        title: await browser.getTitle(),
-      }
-    }
 
   }
 

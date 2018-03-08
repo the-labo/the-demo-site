@@ -1,7 +1,5 @@
 'use strict'
 
-const asleep = require('asleep')
-const by = require('the-story-base/lib/by')
 const c = require('./concerns')
 const Story = require('./Story')
 const {Urls} = require('../../conf')
@@ -9,28 +7,47 @@ const {Urls} = require('../../conf')
 const PasswordChangeStoryBase = c.compose(
   c.signOperative,
   c.accountOperative,
+  c.passwordOperative,
 )(Story)
 
 class PasswordChangeStory extends PasswordChangeStoryBase {
-
   async run () {
-    await this.phase('In', async ({ok}) => {
-      await this.operateSignIn('demo2', 'demo2')
+
+    const name = 'demo2'
+    const password = 'demo2'
+    const updatedPassword = 'demo2-updated'
+
+    await this.phase('Sign In', async ({ok}) => {
+      await this.operateSignIn(name, password)
       ok(true)
     })
 
-    await this.phase('mypage', async ({ok}) => {
+    await this.phase('Show mypage', async ({ok}) => {
       const {l} = this
-      const {title} = await this.operateShowAccountPage()
+      const {title} = await this.operateAccountMypage()
       ok(title.match(l('titles.ACCOUNT_MYPAGE_TITLE')))
     })
 
-    await this.phase('change', async ({ok}) => {
+    await this.phase('Change the password', async ({ok}) => {
       const {l} = this
-      const {title} = await this.operateChangeAccountPassword('demo2')
+      const {title} = await this.operatePasswordChange(updatedPassword)
     })
 
-    await this.phase('Out', async ({ok}) => {
+    await this.phase('Out After Change', async ({ok}) => {
+      await this.operateSignOut()
+    })
+
+    await this.phase('In With Changed', async ({ok}) => {
+      await this.operateSignIn(name, updatedPassword)
+      ok(true)
+    })
+
+    await this.phase('Restore to Old', async ({ok}) => {
+      const {l} = this
+      const {title} = await this.operatePasswordChange(password)
+    })
+
+    await this.phase('Out to Finish', async ({ok}) => {
       await this.operateSignOut()
     })
   }

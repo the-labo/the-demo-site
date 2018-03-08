@@ -14,13 +14,12 @@ class SignInOutStory extends SignInOutStoryBase {
 
   async run () {
     const {browser, l} = this
-    await this.phase('In', async ({ok}) => {
-
+    await this.phase('Sign In', async ({ok}) => {
       await this.operateSignIn('demo2', 'demo2')
       ok(true)
     })
 
-    await this.phase('Out', async ({ok}) => {
+    await this.phase('Sign Out', async ({ok}) => {
       await this.operateSignOut()
     })
   }

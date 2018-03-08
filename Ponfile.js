@@ -7,7 +7,7 @@
 
 const pon = require('pon')
 const {
-  command: {spawn: {git, npx}},
+  command: {spawn: {git, npx, yarn}},
   coz,
   env,
   fs: {chmod, concat, cp, del, mkdir, symlink, write},
@@ -151,7 +151,7 @@ module.exports = pon(
       /** Fix package.json */
       'pkg:fix': npx('fixpack'),
       /** Install packages */
-      'pkg:install': npx('yarn', 'install', '--ignore-scripts'),
+      'pkg:install': yarn('install', '--ignore-scripts'),
       /** Link self packages */
       'pkg:link': symlink({
         'Local.js': 'node_modules/@self/Local.js',
@@ -160,6 +160,8 @@ module.exports = pon(
         'shim/conf': 'node_modules/@self/conf',
         'shim/utils': 'node_modules/@self/utils',
       }, {force: true}),
+      /** Upgrade packages package.json */
+      'pkg:upg': yarn('upgrade', '--ignore-scripts'),
     },
 
     // -----------------------------------

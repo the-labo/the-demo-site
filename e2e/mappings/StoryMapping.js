@@ -8,6 +8,6 @@
 const st = require('../stories')
 
 module.exports = Object.freeze({
-  'passwordChange': st.PasswordChangeStory,
   'signInOut': st.SignInOutStory,
+  'passwordChange': st.PasswordChangeStory,
 })
