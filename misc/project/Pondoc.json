@@ -36,6 +36,7 @@
     "pkg:fix": "Fix package.json",
     "pkg:install": "Install packages",
     "pkg:link": "Link self packages",
+    "pkg:upg": "Upgrade packages package.json",
     "pm2:app": "Run app with pm2",
     "pm2:backup:dump": "Run backup cron with pm2",
     "pre": "Shortcut for 'prepare` task",

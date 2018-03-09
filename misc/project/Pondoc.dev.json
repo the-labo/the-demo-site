@@ -38,6 +38,8 @@
     "test": "Run all tess",
     "test:client": "Run client tests",
     "test:server": "Run server tests",
+    "u": "Upgrade package",
+    "upgrade": "Upgrade package",
     "w": "Shortcut for `watch` task",
     "watch": "Run watches"
   }

@@ -4,11 +4,11 @@
 'use strict'
 
 const {resolveUrl} = require('the-site-util')
-const {GlobalExpressions} = require('../constants')
-const {locales} = require('../../conf')
 const {
   TheStory,
-} = require('../../../the-story-base')
+} = require('the-story-base')
+const {GlobalExpressions} = require('../constants')
+const {locales} = require('../../conf')
 
 /** @lends Story */
 class Story extends TheStory {
@@ -27,12 +27,22 @@ class Story extends TheStory {
     logger.debug('Open URL', JSON.stringify(url))
   }
 
+  async phase (...args) {
+    await this.waitToBeReady()
+    return await super.phase(...args)
+  }
+
   async status (values) {
     const {browser} = this
     return {
       title: await browser.getTitle(),
       ...values,
     }
+  }
+
+  async waitToBeReady () {
+    const {browser} = this
+    await browser.waitForNotExist('.the-main-spin', 5000)
   }
 }
 

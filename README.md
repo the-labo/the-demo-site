@@ -259,6 +259,7 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | pkg:fix | Fix package.json | `pon pkg:fix` |
 | pkg:install | Install packages | `pon pkg:install` |
 | pkg:link | Link self packages | `pon pkg:link` |
+| pkg:upg | Upgrade packages package.json | `pon pkg:upg` |
 | pm2:app | Run app with pm2 | `pon pm2:app` |
 | pm2:backup:dump | Run backup cron with pm2 | `pon pm2:backup:dump` |
 | pre | Shortcut for 'prepare` task | `pon pre` |
@@ -337,6 +338,8 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | test | Run all tess | `pon test` |
 | test:client | Run client tests | `pon test:client` |
 | test:server | Run server tests | `pon test:server` |
+| u | Upgrade package | `pon u` |
+| upgrade | Upgrade package | `pon upgrade` |
 | w | Shortcut for `watch` task | `pon w` |
 | watch | Run watches | `pon watch` |
 
@@ -452,8 +455,8 @@ Misc
 * `/images/app-icon.png`
 * `/build/bundle.js`
 * `/build/external-bundle.js`
-* `/the-demo-site-9.0.1.css`
-* `/the-demo-site-9.0.1.js`
+* `/the-demo-site-9.0.2.css`
+* `/the-demo-site-9.0.2.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

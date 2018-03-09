@@ -1,24 +1,26 @@
-<a name="9.0.1"></a>
-## <small>9.0.1 (2018-03-08)</small>
+<a name="9.0.2"></a>
+## <small>9.0.2 (2018-03-08)</small>
 
 * add changelog ([64c2f78](https://github.com/the-labo/the-demo-site/commit/64c2f78))
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
 * add sign/signout ([411560a](https://github.com/the-labo/the-demo-site/commit/411560a))
-* bugfix ([e267a4c](https://github.com/the-labo/the-demo-site/commit/e267a4c))
+* add test case ([3749543](https://github.com/the-labo/the-demo-site/commit/3749543))
 * bugfix ([24d27ae](https://github.com/the-labo/the-demo-site/commit/24d27ae))
+* bugfix ([e267a4c](https://github.com/the-labo/the-demo-site/commit/e267a4c))
 * fix doc ([4780e5d](https://github.com/the-labo/the-demo-site/commit/4780e5d))
 * fix formats ([fdd294a](https://github.com/the-labo/the-demo-site/commit/fdd294a))
+* fix password operative ([f9f58f8](https://github.com/the-labo/the-demo-site/commit/f9f58f8))
 * fix redis ([e6df49d](https://github.com/the-labo/the-demo-site/commit/e6df49d))
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
 * fix stories ([013a53a](https://github.com/the-labo/the-demo-site/commit/013a53a))
 * fix user card ([590a1cc](https://github.com/the-labo/the-demo-site/commit/590a1cc))
 * refactoring ([55c13d1](https://github.com/the-labo/the-demo-site/commit/55c13d1))
-* refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
 * refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
-* refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
 * refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
-* refactoring ([11853d7](https://github.com/the-labo/the-demo-site/commit/11853d7))
 * refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
+* refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
+* refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
+* refactoring ([11853d7](https://github.com/the-labo/the-demo-site/commit/11853d7))
 * split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * support e2e story ([268d25c](https://github.com/the-labo/the-demo-site/commit/268d25c))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))

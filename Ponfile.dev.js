@@ -200,6 +200,10 @@ module.exports = pon(
       d: 'debug',
       /** Shortcut for `debug:server` task */
       ds: 'debug:server',
+      /** Shortcut for `e2e` task */
+      e: 'e2e',
+      /** Shortcut for `e2e:listen` task */
+      el: 'e2e:listen',
       /** Shortcut for `format` task */
       f: 'format',
       /** Shortcut for `lint` task */
@@ -210,7 +214,7 @@ module.exports = pon(
       or: 'open:repo',
       /** Shortcut for `test` task */
       t: 'test',
-      /** Upgrade package */
+      /** Shortcut for `upgrade` task */
       u: 'upgrade',
       /** Shortcut for `watch` task */
       w: 'watch',

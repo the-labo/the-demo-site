@@ -25,7 +25,6 @@ function accountOperative (Class) {
       return await this.status({})
     }
 
-
   }
 
   return AccountOperative
