@@ -9,7 +9,7 @@ const {
   TheStory,
 } = require('the-story-base')
 const {GlobalExpressions} = require('../constants')
-const {locales, UI} = require('../../conf')
+const {UI, locales} = require('../../conf')
 
 /** @lends Story */
 class Story extends TheStory {
@@ -22,7 +22,8 @@ class Story extends TheStory {
 
   async open (url) {
     const {browser, logger} = this
-    await browser.url(resolveUrl(url, {}, {locale: this.lang}))
+    const query = {locale: this.lang}
+    await browser.url(resolveUrl(url, {}, {query}))
     await this.ready()
     logger.debug('Open URL', JSON.stringify(url))
   }
