@@ -4,12 +4,13 @@
 'use strict'
 
 module.exports = [
-  'accountOperative',
-  'profileOperative',
+  '02.ProfileEditStory'
 ].map((name) => ({
   force: false,
   mode: '644',
-  data: {name},
+  data: {
+    name: name.replace(/^[\d.]*/, '')
+  },
   path: `${name}.js`
 }))
 

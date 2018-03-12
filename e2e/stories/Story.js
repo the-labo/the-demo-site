@@ -22,14 +22,23 @@ class Story extends TheStory {
   async open (url) {
     const {browser, logger} = this
     await browser.url(resolveUrl(url, {}, {locale: this.lang}))
-    await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted')
-
+    await this.ready()
     logger.debug('Open URL', JSON.stringify(url))
   }
 
   async phase (...args) {
-    await this.waitToBeReady()
-    return await super.phase(...args)
+    const result = await super.phase(...args)
+    await this.ready()
+    return result
+  }
+
+  async ready () {
+    const {browser} = this
+    await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted', 5000)
+    await browser.waitForNotVisible('.the-toast', 5000)
+
+    const $main = await this.accessByRole('main')
+    await $main.waitUntilReady()
   }
 
   async status (values) {
@@ -38,11 +47,6 @@ class Story extends TheStory {
       title: await browser.getTitle(),
       ...values,
     }
-  }
-
-  async waitToBeReady () {
-    const {browser} = this
-    await browser.waitForNotExist('.the-main-spin', 5000)
   }
 }
 

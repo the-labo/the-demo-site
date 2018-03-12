@@ -35,6 +35,7 @@ export default stateful(
       await changeScene.doExec()
       changeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))
+      changeScene.dropEntry()
     },
     onUpdate: (v) => changeScene.setEntry(v),
   })

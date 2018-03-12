@@ -1,0 +1,25 @@
+'use strict'
+
+const c = require('./concerns')
+const Story = require('./Story')
+const {Urls} = require('../../conf')
+
+const {{name}}Base = c.compose(
+c.signOperative,
+)(Story)
+
+class {{name}} extends {{name}}Base {
+async run () {
+
+await this.phase('__phase__', async ({ok}) => {
+await this.operateSignIn(name, password)
+ok(true)
+})
+}
+}
+
+module.exports = {{name}}
+
+if (!module.parent) {
+require('../singleton').telStory(module.exports)
+}

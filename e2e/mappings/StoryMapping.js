@@ -10,4 +10,5 @@ const st = require('../stories')
 module.exports = Object.freeze({
   'signInOut': st.SignInOutStory,
   'passwordChange': st.PasswordChangeStory,
+  'profileEdit': st.ProfileEditStory,
 })

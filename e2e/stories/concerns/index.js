@@ -11,5 +11,6 @@ module.exports = {
   get accountOperative () { return _d(require('./accountOperative')) },
   get compose () { return _d(require('./compose')) },
   get passwordOperative () { return _d(require('./passwordOperative')) },
+  get profileOperative () { return _d(require('./profileOperative')) },
   get signOperative () { return _d(require('./signOperative')) },
 }

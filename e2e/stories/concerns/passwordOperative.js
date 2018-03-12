@@ -6,7 +6,6 @@
  */
 'use strict'
 
-const by = require('the-story-base/lib/by')
 const {Urls} = require('../../../conf')
 
 /** @lends passwordOperative */

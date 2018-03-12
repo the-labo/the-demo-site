@@ -5,8 +5,8 @@
 * Add changelog ([58bec4f](https://github.com/the-labo/the-demo-site/commit/58bec4f))
 * add sign/signout ([411560a](https://github.com/the-labo/the-demo-site/commit/411560a))
 * add test case ([3749543](https://github.com/the-labo/the-demo-site/commit/3749543))
-* bugfix ([24d27ae](https://github.com/the-labo/the-demo-site/commit/24d27ae))
 * bugfix ([e267a4c](https://github.com/the-labo/the-demo-site/commit/e267a4c))
+* bugfix ([24d27ae](https://github.com/the-labo/the-demo-site/commit/24d27ae))
 * fix doc ([4780e5d](https://github.com/the-labo/the-demo-site/commit/4780e5d))
 * fix formats ([fdd294a](https://github.com/the-labo/the-demo-site/commit/fdd294a))
 * fix password operative ([f9f58f8](https://github.com/the-labo/the-demo-site/commit/f9f58f8))
@@ -14,18 +14,19 @@
 * Fix server error path ([ba8ef9b](https://github.com/the-labo/the-demo-site/commit/ba8ef9b))
 * fix stories ([013a53a](https://github.com/the-labo/the-demo-site/commit/013a53a))
 * fix user card ([590a1cc](https://github.com/the-labo/the-demo-site/commit/590a1cc))
+* refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
 * refactoring ([55c13d1](https://github.com/the-labo/the-demo-site/commit/55c13d1))
 * refactoring ([4ce693f](https://github.com/the-labo/the-demo-site/commit/4ce693f))
 * refactoring ([e200249](https://github.com/the-labo/the-demo-site/commit/e200249))
 * refactoring ([f0af8d0](https://github.com/the-labo/the-demo-site/commit/f0af8d0))
-* refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
-* refactoring ([7af00ca](https://github.com/the-labo/the-demo-site/commit/7af00ca))
 * refactoring ([11853d7](https://github.com/the-labo/the-demo-site/commit/11853d7))
+* refactoring ([868df8d](https://github.com/the-labo/the-demo-site/commit/868df8d))
 * split pon file and pon dev file ([73731c3](https://github.com/the-labo/the-demo-site/commit/73731c3))
 * support e2e story ([268d25c](https://github.com/the-labo/the-demo-site/commit/268d25c))
 * update deps ([a4425bb](https://github.com/the-labo/the-demo-site/commit/a4425bb))
 * update docs ([0d3141c](https://github.com/the-labo/the-demo-site/commit/0d3141c))
 * update docs ([fca2a6a](https://github.com/the-labo/the-demo-site/commit/fca2a6a))
+* v9.0.2 ([ecca89e](https://github.com/the-labo/the-demo-site/commit/ecca89e))
 
 
 
@@ -57,21 +58,6 @@
 * Releasing new package ([73a8e3b](https://github.com/the-labo/the-demo-site/commit/73a8e3b))
 * Releasing new package ([6bbdeea](https://github.com/the-labo/the-demo-site/commit/6bbdeea))
 * Version incremented to 8.0.2 ([e5fb149](https://github.com/the-labo/the-demo-site/commit/e5fb149))
-
-
-
-<a name="8.0.1"></a>
-## <small>8.0.1 (2018-02-13)</small>
-
-* add rules ([b42cd98](https://github.com/the-labo/the-demo-site/commit/b42cd98))
-* Add rules ([5431d08](https://github.com/the-labo/the-demo-site/commit/5431d08))
-* better formatter ([6beddc9](https://github.com/the-labo/the-demo-site/commit/6beddc9))
-* bug fix ([a664d0c](https://github.com/the-labo/the-demo-site/commit/a664d0c))
-* bugfix ([5a158af](https://github.com/the-labo/the-demo-site/commit/5a158af))
-* fix popping ([2ad4902](https://github.com/the-labo/the-demo-site/commit/2ad4902))
-* fix publishing ([813f6ca](https://github.com/the-labo/the-demo-site/commit/813f6ca))
-* Refactoring ([278bce0](https://github.com/the-labo/the-demo-site/commit/278bce0))
-* Releasing new package ([d132fbe](https://github.com/the-labo/the-demo-site/commit/d132fbe))
 
 
 

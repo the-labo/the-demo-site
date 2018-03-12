@@ -101,7 +101,7 @@
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",
     "the-script-update": "^1.0.0",
-    "the-story-base": "^3.0.1"
+    "the-story-base": "file:../the-story-base"
   },
   "engines": {
     "node": ">=8",

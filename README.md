@@ -313,10 +313,12 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | doc:changelog | Generate changelog file | `pon doc:changelog` |
 | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
+| e | Shortcut for `e2e` task | `pon e` |
 | e2e | Run e2e test | `pon e2e` |
 | e2e:install | Install drivers for E2E | `pon e2e:install` |
 | e2e:listen | Listen for E2E tests | `pon e2e:listen` |
 | e2e:story | Run stories for E2E tests | `pon e2e:story` |
+| el | Shortcut for `e2e:listen` task | `pon el` |
 | f | Shortcut for `format` task | `pon f` |
 | format | Format source codes | `pon format` |
 | format:client | Format client files | `pon format:client` |
@@ -338,7 +340,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | test | Run all tess | `pon test` |
 | test:client | Run client tests | `pon test:client` |
 | test:server | Run server tests | `pon test:server` |
-| u | Upgrade package | `pon u` |
+| u | Shortcut for `upgrade` task | `pon u` |
 | upgrade | Upgrade package | `pon upgrade` |
 | w | Shortcut for `watch` task | `pon w` |
 | watch | Run watches | `pon watch` |
