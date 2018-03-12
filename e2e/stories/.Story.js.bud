@@ -3,6 +3,7 @@
  */
 'use strict'
 
+const {Story} = require('the-templates')
 module.exports = [
   '02.ProfileEditStory',
   '03.SignUpDelStory',

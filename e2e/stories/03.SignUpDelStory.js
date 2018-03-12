@@ -12,9 +12,9 @@ const SignUpDelStoryBase = c.compose(
 class SignUpDelStory extends SignUpDelStoryBase {
   async run () {
 
-    const email = 'signupdel-name@example.com'
+    const email = 'e2e-new@example.com'
     const name = email.split('@')[0]
-    const password = 'signupdel-pass'
+    const password = email.split('@')[0] + '-pass'
 
     await this.phase('Sign Up', async ({ok}) => {
       await this.operateSignUp(email, name, password)

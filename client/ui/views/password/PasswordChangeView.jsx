@@ -58,10 +58,12 @@ export default stateful(
     done: state['password.change.done'],
     user: state['account.entity'],
   }),
-  ({passwordChangeScene}) => ({
+  ({
+     passwordChangeScene: changeScene,
+   }) => ({
     onAgain: async () => {
-      passwordChangeScene.set({done: false})
+      changeScene.init()
     },
-    onMount: () => passwordChangeScene.init(),
+    onMount: () => changeScene.init(),
   }),
 )(PasswordChangeView)

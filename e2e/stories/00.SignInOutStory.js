@@ -12,8 +12,8 @@ class SignInOutStory extends SignInOutStoryBase {
 
   async run () {
 
-    const name = 'demo2'
-    const password = 'demo2'
+    const name = 'e2e'
+    const password = 'e2e'
 
     await this.phase('Sign In', async ({ok}) => {
       await this.operateSignIn(name, password)

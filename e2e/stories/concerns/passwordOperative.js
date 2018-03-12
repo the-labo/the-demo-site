@@ -30,6 +30,7 @@ function passwordOperative (Class) {
 
       {
         const $form = await this.accessByName('PasswordChangeForm')
+        await $form.setValues({password})
         await $form.waitAndClickByClass('the-button-primary')
       }
 

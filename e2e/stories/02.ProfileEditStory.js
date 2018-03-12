@@ -13,8 +13,9 @@ const ProfileEditStoryBase = c.compose(
 class ProfileEditStory extends ProfileEditStoryBase {
   async run () {
 
-    const name = 'demo2'
-    const password = 'demo2'
+    const name = 'e2e'
+    const password = 'e2e'
+    const email = 'e2e@example.com'
 
     await this.phase('Sign in', async ({ok}) => {
       await this.operateSignIn(name, password)
@@ -28,11 +29,11 @@ class ProfileEditStory extends ProfileEditStoryBase {
     })
 
     await this.phase('Update profile', async ({ok}) => {
-      await this.operateProfileChange('[Test] Demo2-u', 'demo2-u@example.com')
+      await this.operateProfileChange(`[Test] new-${name}`, 'new-' + email)
     })
 
     await this.phase('Restore', async ({ok}) => {
-      await this.operateProfileChange('[Test] Demo2', 'demo2@example.com')
+      await this.operateProfileChange(`[Test] ${name}`, email)
     })
 
     await this.phase('Out to Finish', async ({ok}) => {

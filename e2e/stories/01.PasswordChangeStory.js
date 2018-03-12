@@ -13,9 +13,9 @@ const PasswordChangeStoryBase = c.compose(
 class PasswordChangeStory extends PasswordChangeStoryBase {
   async run () {
 
-    const name = 'demo2'
-    const password = 'demo2'
-    const updatedPassword = 'demo2-updated'
+    const name = 'e2e'
+    const password = 'e2e'
+    const updatedPassword = 'e2e-updated'
 
     await this.phase('Sign In', async ({ok}) => {
       await this.operateSignIn(name, password)

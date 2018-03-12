@@ -16,6 +16,13 @@ module.exports = [
       role: {$$as: 'Role', $$entity: true, id: 1},
     }
   }),
+  ...['e2e', 'e2e2', 'e2e3'].map((name, i) => {
+    return {
+      id: name,
+      name,
+      role: {$$as: 'Role', $$entity: true, id: 1},
+    }
+  }),
   ...seed.explode({
     id: ({index}) => String(index),
     name: ({internet: {email}}) => email().split('@')[0].toLowerCase().replace(/\./g, '_'),
