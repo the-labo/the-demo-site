@@ -9,9 +9,9 @@ module.exports = Object.freeze(
   {
     /** ID of container dom to mount React app */
     APP_CONTAINER_ID: 'app-container',
+    /** Default lang */
+    DEFAULT_LANG: 'en',
     /** Toast duration */
     TOAST_DURATION: 2000,
-    /** Default lang */
-    DEFAULT_LANG: 'en'
   }
 )
