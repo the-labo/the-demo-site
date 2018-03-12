@@ -9,14 +9,14 @@ const {
   TheStory,
 } = require('the-story-base')
 const {GlobalExpressions} = require('../constants')
-const {locales} = require('../../conf')
+const {locales, UI} = require('../../conf')
 
 /** @lends Story */
 class Story extends TheStory {
 
   constructor (...args) {
     super(...args)
-    this.lang = 'en'
+    this.lang = UI.DEFAULT_LANG
     this.l = locales.bind(this.lang)
   }
 

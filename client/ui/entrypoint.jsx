@@ -17,7 +17,7 @@ once('DOMContentLoaded', async () => {
 
   const props = get(GlobalKeys.PROPS)
   const {
-    lang = (get('navigator.language')).split('-')[0],
+    lang = (get('navigator.language')).split('-')[0] || UI.DEFAULT_LANG,
   } = props
   const app = (<App {...props} {...{client, handle, store}}/>)
   const l = locales.bind(lang)

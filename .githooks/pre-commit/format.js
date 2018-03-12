@@ -11,7 +11,7 @@ const flatten = (r = [], v) => [].concat(r, v)
 
 void async function () {
   const results = await pon.run('format', {disableLogging: true})
-  const filenames = Object.values(results).reduce(flatten).reduce((r, v) => [].concat(r, v))
+  const filenames = Object.values(results).reduce(flatten, []).reduce(flatten, [])
   if (filenames.length > 0) {
     console.error(
       `[COMMIT_REJECTED] Some files are just formatted. Add the changes to git and try again ( ${filenames.join(',')} )`

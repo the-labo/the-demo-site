@@ -40,7 +40,7 @@ function signOperative (Class) {
 
     async operateSignOut () {
       const {l} = this
-
+      await this.open(Urls.TOP_URL)
       {
         const $Header = await this.accessByClass('the-header')
         await $Header.waitAndClickByRole('menu')
