@@ -19,6 +19,7 @@ function signOperative (Class) {
         await $Form.setValues({name, password})
         await $Form.waitAndClickByText(l('buttons.DO_SIGN_IN'))
       }
+      await this.ready()
 
       return await this.status({})
     }
@@ -28,6 +29,7 @@ function signOperative (Class) {
       const $Header = await this.accessByClass('the-header')
       await $Header.waitAndClickByRole('menu')
       await $Header.waitAndClickByText(l('buttons.DO_SIGN_OUT'))
+      await this.ready()
 
       return await this.status({})
     }

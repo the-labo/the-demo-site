@@ -23,6 +23,7 @@ function profileOperative (Class) {
         })
         await $form.waitAndClickByClass('the-button-primary')
       }
+      await this.ready()
       {
         const $done = await this.accessByClass('the-done')
         await $done.waitAndClickByClass('the-done-link')

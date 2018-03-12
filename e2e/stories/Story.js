@@ -7,6 +7,7 @@ const {resolveUrl} = require('the-site-util')
 const {
   TheStory,
 } = require('the-story-base')
+const asleep = require('asleep')
 const {GlobalExpressions} = require('../constants')
 const {locales} = require('../../conf')
 
@@ -33,6 +34,7 @@ class Story extends TheStory {
   }
 
   async ready () {
+    await asleep(100)
     const {browser} = this
     await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted', 5000)
     await browser.waitForNotVisible('.the-toast', 5000)
