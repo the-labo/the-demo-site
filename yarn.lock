@@ -9731,8 +9731,8 @@ the-setting@^2.0.0:
     the-file-util "^1.0.0"
 
 the-site-components@^3.0.1:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-3.0.5.tgz#da4158a85110471bbc91c675e3b44c2035e3cfe4"
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/the-site-components/-/the-site-components-3.0.7.tgz#cb7c564daa141d31600ac0979331ead0d4fc30c4"
   dependencies:
     asobj "^2.1.0"
     classnames "^2.2.5"
@@ -9794,15 +9794,15 @@ the-spin@^3.0.0, the-spin@^3.1.0:
     the-style "^2.1.0"
 
 the-step@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/the-step/-/the-step-1.1.3.tgz#4c5fead4e567bb9a49760afc83a1910962751680"
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/the-step/-/the-step-1.1.4.tgz#ac1e872cf86dcd53cb19b39b4c3a9811dc29b4f4"
   dependencies:
     classnames "^2.2.5"
-    prop-types "^15.6.0"
-    the-button "^3.0.7"
-    the-component-util "^2.1.2"
+    prop-types "^15.6.1"
+    the-button "^3.0.15"
+    the-component-util "^2.2.1"
     the-condition "^3.0.0"
-    the-icon "^4.0.2"
+    the-icon "^4.0.4"
     the-spin "^3.1.0"
     the-style "^2.0.0"
 
@@ -9823,8 +9823,8 @@ the-store@^5.1.3:
     the-scope "^2.1.0"
 
 the-story-base@^3.0.29:
-  version "3.0.29"
-  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.0.29.tgz#0a117b8bee5428f19774fe502dc00b6ef71c096c"
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.1.0.tgz#d2d1e90d28fd3b08cd770354d1bf7985051c05e3"
   dependencies:
     abind "^1.0.3"
     amkdirp "^2.0.0"

@@ -11,6 +11,7 @@ module.exports = {
   get SignInOutStory () { return _d(require('./00.SignInOutStory')) },
   get PasswordChangeStory () { return _d(require('./01.PasswordChangeStory')) },
   get ProfileEditStory () { return _d(require('./02.ProfileEditStory')) },
+  get SignUpDelStory () { return _d(require('./03.SignUpDelStory')) },
   get Story () { return _d(require('./Story')) },
   get concerns () { return _d(require('./concerns')) },
 }

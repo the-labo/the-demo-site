@@ -1,7 +1,5 @@
 'use strict'
 
-const asleep = require('asleep')
-const by = require('the-story-base/lib/by')
 const c = require('./concerns')
 const Story = require('./Story')
 const {Urls} = require('../../conf')
@@ -13,9 +11,12 @@ const SignInOutStoryBase = c.compose(
 class SignInOutStory extends SignInOutStoryBase {
 
   async run () {
-    const {browser, l} = this
+
+    const name = 'demo2'
+    const password = 'demo2'
+
     await this.phase('Sign In', async ({ok}) => {
-      await this.operateSignIn('demo2', 'demo2')
+      await this.operateSignIn(name, password)
       ok(true)
     })
 
