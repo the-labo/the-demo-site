@@ -152,6 +152,8 @@ module.exports = pon(
       'pkg:fix': npx('fixpack'),
       /** Install packages */
       'pkg:install': yarn('install', '--ignore-scripts'),
+      /** Install packages forcefully */
+      'pkg:install:force': yarn('install', '--ignore-scripts --force'),
       /** Link self packages */
       'pkg:link': symlink({
         'Local.js': 'node_modules/@self/Local.js',

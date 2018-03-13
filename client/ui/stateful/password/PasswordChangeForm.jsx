@@ -30,8 +30,12 @@ export default stateful(
      l,
      passwordChangeScene: changeScene,
      toastScene,
-   }) => ({
+   }, propsProxy) => ({
     onSubmit: async () => {
+      const {password} = propsProxy.values
+      if (!password) {
+        return
+      }
       await changeScene.doExec()
       changeScene.set({done: true})
       toastScene.showInfo(l('toasts.PASSWORD_UPDATE_DID_SUCCESS'))

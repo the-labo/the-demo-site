@@ -188,7 +188,7 @@ module.exports = pon(
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
       /** Upgrade package */
-      upgrade: ['pkg:upg', 'pkg:link', 'build'],
+      upgrade: ['pkg:upg', 'pkg:install:force', 'pkg:link', 'build'],
     },
     // -----------------------------------
     // Aliases

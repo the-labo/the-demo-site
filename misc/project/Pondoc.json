@@ -35,6 +35,7 @@
     "p": "Shortcut for `prod` task",
     "pkg:fix": "Fix package.json",
     "pkg:install": "Install packages",
+    "pkg:install:force": "Install packages forcefully",
     "pkg:link": "Link self packages",
     "pkg:upg": "Upgrade packages package.json",
     "pm2:app": "Run app with pm2",

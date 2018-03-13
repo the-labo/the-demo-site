@@ -7214,8 +7214,8 @@ rc@^0.6.0:
     strip-json-comments "0.1.x"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.6.tgz#eb18989c6d4f4f162c399f79ddd29f3835568092"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"
@@ -7811,7 +7811,7 @@ rfunc-client@^2.0.12:
     superagent-promise-plugin "^3.2.0"
     uuid "^3.0.1"
 
-rfunc-client@^4.0.4:
+rfunc-client@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/rfunc-client/-/rfunc-client-4.0.6.tgz#c689550d5bf608fb4891b089fcfa52e1fe41337a"
   dependencies:
@@ -8744,8 +8744,8 @@ the-check@^1.2.1, the-check@^1.2.2:
     hasbin "^1.2.3"
 
 the-client@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-7.2.0.tgz#d717380360f57592ab03208f0c1f8986d539152e"
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-7.2.3.tgz#1bb77efc07f151a632bcae22cdbb3010b47a74a8"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.40"
     argx "^3.0.2"
@@ -8755,7 +8755,7 @@ the-client@^7.2.0:
     debug "^3.1.0"
     eventsource "^1.0.5"
     prop-types "^15.6.1"
-    rfunc-client "^4.0.4"
+    rfunc-client "^4.0.6"
     rfunc-constants "^1.0.3"
     the-check "^1.2.2"
     the-error "^2.0.0"
@@ -9485,8 +9485,8 @@ the-server-util@^1.0.0:
     mkdirp "^0.5.1"
 
 the-server@^6.1.4:
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-6.1.4.tgz#7f1fa3751be41665a78237ecba1cefd69aca8672"
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-6.1.5.tgz#f78b520853d58e5fc1c26ab35f808b3609c4381c"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"
@@ -9614,8 +9614,8 @@ the-store@^5.1.3:
     the-scope "^2.1.0"
 
 the-story-base@^3.0.29:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.1.1.tgz#e1ea40f91c4482a5d3b481b33503f46d19f864c8"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/the-story-base/-/the-story-base-3.1.2.tgz#a682be7dc5d43889ef2cedc217f2d2e692079605"
   dependencies:
     abind "^1.0.3"
     amkdirp "^2.0.0"

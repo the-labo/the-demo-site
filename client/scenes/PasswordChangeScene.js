@@ -14,6 +14,7 @@ class PasswordChangeSceneBase extends InputScene {}
 class PasswordChangeScene extends PasswordChangeSceneBase {
 
   async dealWith ({password}) {
+    
     const {accountCtrl} = this.controllers
     return await accountCtrl.updatePassword(password)
   }

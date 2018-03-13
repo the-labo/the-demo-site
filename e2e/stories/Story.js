@@ -37,7 +37,7 @@ class Story extends TheStory {
   async ready () {
     await this.sleep(100)
     const {browser} = this
-    await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted', 5000)
+    await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted', 10000)
     await browser.waitForNotVisible('.the-toast', 5000)
 
     const $main = await this.accessByRole('main')

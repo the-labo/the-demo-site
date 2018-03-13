@@ -261,6 +261,7 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | p | Shortcut for `prod` task | `pon p` |
 | pkg:fix | Fix package.json | `pon pkg:fix` |
 | pkg:install | Install packages | `pon pkg:install` |
+| pkg:install:force | Install packages forcefully | `pon pkg:install:force` |
 | pkg:link | Link self packages | `pon pkg:link` |
 | pkg:upg | Upgrade packages package.json | `pon pkg:upg` |
 | pm2:app | Run app with pm2 | `pon pm2:app` |

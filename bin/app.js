@@ -23,11 +23,7 @@ void async function () {
   `)
   }
 
-  if (isProduction()) {
-    await server.listenAsCluster(port, onListen)
-  } else {
-    await server.listen(port, onListen)
-  }
+  await server.listen(port, onListen)
 }().catch((err) => {
   console.error(err)
   process.exit(1)
