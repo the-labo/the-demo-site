@@ -13,6 +13,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
     "ape-tmpl": "^6.0.0",
+    "arequest": "^3.0.0",
     "asleep": "^1.0.3",
     "asobj": "^2.0.1",
     "classnames": "^2.2.5",

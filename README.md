@@ -394,6 +394,52 @@ the-db>
 
 <!-- Section from "doc/guides/21.Database.md" End -->
 
+<!-- Section from "doc/guides/30.E2E.md" Start -->
+
+<a name="section-doc-guides-30-e2-e"></a>
+
+E2E (End-to-End) Test
+-----------
+
+### Set Up Servers
+
+Run app server with debug mode
+
+```bash
+pon debug:server # Or just `pon ds`
+```
+
+Then, run e2e server (In other tab)
+
+```bash
+pon e2e:listen # Or just `pon el`
+```
+
+
+### Run E2E Test
+
+To run all tests, 
+
+```bash
+pon e2e # Or just `pon e`
+```
+
+
+To run single tests,
+
+```bash
+# List available test stories
+pon -l e2e:story
+
+# Example to run one of stories
+pon e2e:story/signInOut 
+```
+
+
+
+
+<!-- Section from "doc/guides/30.E2E.md" End -->
+
 <!-- Section from "doc/guides/90.Trouble.md" Start -->
 
 <a name="section-doc-guides-90-trouble"></a>
