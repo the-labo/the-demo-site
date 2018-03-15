@@ -44,6 +44,7 @@ const Vars = Object.freeze(
     MYSQL_CONTAINER_PORT: portNumberFor(`mysql@${__dirname}`),
     NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
     NGINX_CONTAINER_PORT: portNumberFor(`nginx@${__dirname}`),
+    NGINX_CONTAINER_SECURE_PORT: portNumberFor(`nginx:secure@${__dirname}`),
     PUBLIC_DIR: `${__dirname}/public`,
     REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
     REDIS_CONTAINER_PORT: portNumberFor(`redis@${__dirname}`),

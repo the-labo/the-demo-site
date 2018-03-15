@@ -1,0 +1,3 @@
+*.cert
+*.cert.key
+*.cert.key.pub

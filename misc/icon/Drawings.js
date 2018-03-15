@@ -14,26 +14,35 @@ module.exports = Object.freeze(
   /** @lends Drawings */
   {
     appIcon: {
-      text: pkg.name[0],
-      font: FONT_THEME,
-      shape: 'b',
-      color: Styles.DOMINANT_COLOR
+      path: 'assets/images/app-icon.png',
+      data: {
+        text: pkg.name[0],
+        font: FONT_THEME,
+        shape: 'b',
+        color: Styles.DOMINANT_COLOR
+      }
     },
     fbAppIcon: {
-      text: pkg.name,
-      font: FONT_THEME,
-      shape: 'a',
-      color: Styles.DOMINANT_COLOR,
-      size: 1024,
-      fontSize: 128
+      path: 'assets/images/fb/fb-app-icon.png',
+      data: {
+        text: pkg.name,
+        font: FONT_THEME,
+        shape: 'a',
+        color: Styles.DOMINANT_COLOR,
+        size: 1024,
+        fontSize: 128
+      },
     },
     officialAccountIcon: {
-      text: pkg.name,
-      font: FONT_THEME,
-      shape: 'a',
-      color: Styles.DOMINANT_COLOR,
-      size: 256,
-      fontSize: 24
+      path: 'assets/images/accounts/official-account-icon.png',
+      data: {
+        text: pkg.name,
+        font: FONT_THEME,
+        shape: 'a',
+        color: Styles.DOMINANT_COLOR,
+        size: 256,
+        fontSize: 24
+      },
     }
   }
 )

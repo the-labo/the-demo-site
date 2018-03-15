@@ -31,7 +31,10 @@ module.exports = Object.freeze(
       options: {
         image: 'nginx:1.13',
         httpPublishPort: Local.NGINX_CONTAINER_PORT,
+        httpsPublishPort: Local.NGINX_CONTAINER_SECURE_PORT,
         template: path.resolve(__dirname, 'nginx.conf.template'),
+        cert: path.resolve(__dirname, 'cert/self-signed.cert'),
+        certKey: path.resolve(__dirname, 'cert/self-signed.cert.key'),
         env: {
           HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
           APP_PORT: Local.APP_PORT

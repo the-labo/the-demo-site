@@ -7,6 +7,11 @@ http {
 
   server {
     listen ${HTTP_PORT};
+    listen ${HTTPS_PORT} ssl http2;
+
+    ssl_certificate ${CERT_PATH};
+    ssl_certificate_key ${CERT_KEY_PATH};
+
     location / {
       if (-f ${STATIC_DIR}/status/maintenance) {
          return 503;
@@ -34,5 +39,7 @@ http {
     }
     error_page 502 /server-error/server-error.html;
     error_page 503 /server-error/under-maintenance.html;
+
+
   }
 }

@@ -51,10 +51,8 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Generate icons */
-      'icon:generate': [
-        Drawings.appIcon && icon('assets/images/app-icon.png', Drawings.appIcon),
-        Drawings.fbAppIcon && icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
-        Drawings.officialAccountIcon && icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
+      'icon:gen': [
+        ...Object.entries(Drawings).map(([name, {path, data}]) => icon(path, data)),
       ].filter(Boolean),
     },
 

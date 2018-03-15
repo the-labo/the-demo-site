@@ -330,7 +330,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | format:e2e | Format e2e files | `pon format:e2e` |
 | format:json | Format json files | `pon format:json` |
 | format:server | Format server files | `pon format:server` |
-| icon:generate | Generate icons | `pon icon:generate` |
+| icon:gen | Generate icons | `pon icon:gen` |
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |
 | lint:loc | Validate locales | `pon lint:loc` |
