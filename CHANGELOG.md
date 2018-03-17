@@ -1,3 +1,23 @@
+<a name="9.1.1"></a>
+## <small>9.1.1 (2018-03-16)</small>
+
+* add e2e docs ([3919120](https://github.com/the-labo/the-demo-site/commit/3919120))
+* add ign in and del ([5e7e03d](https://github.com/the-labo/the-demo-site/commit/5e7e03d))
+* bugfix ([b58400c](https://github.com/the-labo/the-demo-site/commit/b58400c))
+* bugfix ([f50bd78](https://github.com/the-labo/the-demo-site/commit/f50bd78))
+* e2e test ([2966271](https://github.com/the-labo/the-demo-site/commit/2966271))
+* fix e2e tests ([ae71c46](https://github.com/the-labo/the-demo-site/commit/ae71c46))
+* fix format ([3fcbcd9](https://github.com/the-labo/the-demo-site/commit/3fcbcd9))
+* Fix tasks ([881fb13](https://github.com/the-labo/the-demo-site/commit/881fb13))
+* profile周りのテストを追加した ([3474925](https://github.com/the-labo/the-demo-site/commit/3474925))
+* profile周りのテストを追加した ([3f28266](https://github.com/the-labo/the-demo-site/commit/3f28266))
+* Releasing new package ([76f66b2](https://github.com/the-labo/the-demo-site/commit/76f66b2))
+* update deps ([2326e40](https://github.com/the-labo/the-demo-site/commit/2326e40))
+* upgrade the-server/the-client ([8841894](https://github.com/the-labo/the-demo-site/commit/8841894))
+* v9.1.1 ([158fe01](https://github.com/the-labo/the-demo-site/commit/158fe01))
+
+
+
 <a name="9.0.2"></a>
 ## <small>9.0.2 (2018-03-08)</small>
 
@@ -48,16 +68,6 @@
 * better test data ([cfa2ede](https://github.com/the-labo/the-demo-site/commit/cfa2ede))
 * Fix header menu ([62e1d2d](https://github.com/the-labo/the-demo-site/commit/62e1d2d))
 * Releasing new package ([5097c87](https://github.com/the-labo/the-demo-site/commit/5097c87))
-
-
-
-<a name="8.0.3"></a>
-## <small>8.0.3 (2018-02-14)</small>
-
-* add role change ([15930c6](https://github.com/the-labo/the-demo-site/commit/15930c6))
-* Releasing new package ([73a8e3b](https://github.com/the-labo/the-demo-site/commit/73a8e3b))
-* Releasing new package ([6bbdeea](https://github.com/the-labo/the-demo-site/commit/6bbdeea))
-* Version incremented to 8.0.2 ([e5fb149](https://github.com/the-labo/the-demo-site/commit/e5fb149))
 
 
 

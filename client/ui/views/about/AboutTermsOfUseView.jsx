@@ -24,7 +24,7 @@ class AboutTermsOfUseView extends React.Component {
                         text={title}
         />
         <TheView.Body>
-          <TheFrame src={`/partials/${lang}/privacy-policy.html`}/>
+          <TheFrame src={`/partials/${lang}/terms-of-use.html`}/>
         </TheView.Body>
       </TheView>
     )

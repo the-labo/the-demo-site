@@ -7,8 +7,7 @@
 const theSeat = require('the-seat').default
 const theSecret = require('the-secret').default
 const theSetting = require('the-setting').default
-const {envOf, seatAccess} = require('the-site-util')
-const {inspect} = require('util')
+const {asLocal, envOf, seatAccess} = require('the-site-util')
 const pkg = require('./package')
 
 const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', {strict: true}))
@@ -55,16 +54,15 @@ const Vars = Object.freeze(
 )
 
 /** @lends Local */
-const Local = {
+const Local = asLocal({
   __proto__: {
-    print: () => console.log(inspect(Local)),
     secret,
     setting,
   },
   ...secret.get(),
   ...setting.get(),
   ...Vars,
-}
+})
 
 module.exports = Local
 

@@ -507,8 +507,8 @@ Misc
 * `/images/app-icon.png`
 * `/build/bundle.js`
 * `/build/external-bundle.js`
-* `/the-demo-site-9.0.2.css`
-* `/the-demo-site-9.0.2.js`
+* `/the-demo-site-9.1.1.css`
+* `/the-demo-site-9.1.1.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`
