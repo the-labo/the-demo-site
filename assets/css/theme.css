@@ -460,7 +460,7 @@
 .the-step .the-step-button-hidden { visibility:hidden !important; }
 .the-step .the-step-content { position:relative;transition:height 300ms; }
 .the-step .the-step-content-wrap { display:block; }
-.the-step .the-step-inner { align-items:baseline;display:flex;flex-wrap:nowrap;justify-content:flex-start;position:relative;transition:left 300ms; }
+.the-step .the-step-inner { align-items:baseline;display:flex;flex-wrap:nowrap;justify-content:flex-start;max-height:100%;position:relative;transition:left 300ms; }
 .the-step .the-step-scroll { transition:height 300ms;width:100%; }
 .the-step { overflow:hidden;position:relative; }
 .the-step-bar .the-ste-bar-item { align-items:center;color:#BBB;cursor:pointer;display:inline-flex;flex-direction:column;flex-grow:1;justify-content:flex-start;width:auto; }

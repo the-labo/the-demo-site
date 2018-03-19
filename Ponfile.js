@@ -243,6 +243,7 @@ module.exports = pon(
         'assets/images': 'public/images',
         'assets/text': 'public',
         'assets/webfonts': 'public/webfonts',
+        'assets/mocks': 'public/mocks',
       }, {force: true}),
       /** Generate project directories */
       'struct:mkdir': mkdir([

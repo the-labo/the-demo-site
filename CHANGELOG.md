@@ -1,3 +1,10 @@
+<a name="9.2.0"></a>
+## 9.2.0 (2018-03-19)
+
+* bugfix ([98c5a7f](https://github.com/the-labo/the-demo-site/commit/98c5a7f))
+
+
+
 <a name="9.1.1"></a>
 ## <small>9.1.1 (2018-03-16)</small>
 
