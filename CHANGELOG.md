@@ -1,7 +1,8 @@
-<a name="9.2.0"></a>
-## 9.2.0 (2018-03-19)
+<a name="9.3.0"></a>
+## 9.3.0 (2018-03-22)
 
 * bugfix ([98c5a7f](https://github.com/the-labo/the-demo-site/commit/98c5a7f))
+* fix structure ([cc8a1c3](https://github.com/the-labo/the-demo-site/commit/cc8a1c3))
 
 
 

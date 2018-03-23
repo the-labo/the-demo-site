@@ -241,9 +241,9 @@ module.exports = pon(
         'assets/css': 'public/css',
         'assets/html/server-error': 'public/server-error',
         'assets/images': 'public/images',
+        'assets/mocks': 'public/mocks',
         'assets/text': 'public',
         'assets/webfonts': 'public/webfonts',
-        'assets/mocks': 'public/mocks',
       }, {force: true}),
       /** Generate project directories */
       'struct:mkdir': mkdir([

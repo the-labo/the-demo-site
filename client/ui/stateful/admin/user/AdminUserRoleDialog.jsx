@@ -21,6 +21,10 @@ class AdminUserRoleDialog extends React.Component {
       users,
     } = this.props
 
+    if (!active) {
+      return null
+    }
+
     return (
       <TheDialog present={active}
                  title={l('titles.ADMIN_USER_ROLE_TITLE')}

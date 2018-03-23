@@ -23,6 +23,17 @@ class AppScene extends AppSceneBase {
     this.mergeQueryToSearch({locale})
   }
 
+  goToUserHome () {
+    this.goTo(Urls.ALBUM_LIST_URL)
+  }
+
+  handleLocationChange (location) {
+    this.set({pathname: location.pathname})
+    setTimeout(() => {
+      this.setLocation(location)
+    }, 0) // Wait to router change
+  }
+
   handleRejectionReason (reason) {
     const href = {
       'ForbiddenError': Urls.ERROR_FORBIDDEN_URL,
