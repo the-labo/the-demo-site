@@ -21,10 +21,12 @@ create.for = (namespace, options = {}) => {
   } = options
   const client = Client.for(namespace, {
     onGone: () => {
-      connectionRetryScene.set({active: true, busy: false,})
-      unlessProduction(() =>
-        client.pingPongAnd(() => connectionRetryScene.doExec()),
-      )
+      setTimeout(() => {
+        connectionRetryScene.set({active: true, busy: false,})
+        unlessProduction(() =>
+          client.pingPongAnd(() => connectionRetryScene.doExec()),
+        )
+      }, 1000)
     }
   })
   return client

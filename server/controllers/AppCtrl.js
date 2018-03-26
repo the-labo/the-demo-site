@@ -14,7 +14,7 @@ const AppCtrlBase = compose(
 /** @lends AppCtrl */
 class AppCtrl extends AppCtrlBase {
   async get (name) {
-    await this._getSessionPreference(name)
+    return await this._getSessionPreference(name)
   }
 
   async set (name, value) {

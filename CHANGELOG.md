@@ -1,8 +1,16 @@
+<a name="9.4.0"></a>
+## 9.4.0 (2018-03-24)
+
+* bugfix ([4e1fa94](https://github.com/the-labo/the-demo-site/commit/4e1fa94))
+
+
+
 <a name="9.3.0"></a>
 ## 9.3.0 (2018-03-22)
 
 * bugfix ([98c5a7f](https://github.com/the-labo/the-demo-site/commit/98c5a7f))
 * fix structure ([cc8a1c3](https://github.com/the-labo/the-demo-site/commit/cc8a1c3))
+* v9.3.0 ([b294532](https://github.com/the-labo/the-demo-site/commit/b294532))
 
 
 
@@ -65,17 +73,6 @@
 * add normalize css ([5bff44b](https://github.com/the-labo/the-demo-site/commit/5bff44b))
 * add url check ([6e15f21](https://github.com/the-labo/the-demo-site/commit/6e15f21))
 * Releasing new package ([5ced65a](https://github.com/the-labo/the-demo-site/commit/5ced65a))
-
-
-
-<a name="8.0.4"></a>
-## <small>8.0.4 (2018-02-15)</small>
-
-* Add image on admin manage view ([3984ae0](https://github.com/the-labo/the-demo-site/commit/3984ae0))
-* add search filter ([2ec84a1](https://github.com/the-labo/the-demo-site/commit/2ec84a1))
-* better test data ([cfa2ede](https://github.com/the-labo/the-demo-site/commit/cfa2ede))
-* Fix header menu ([62e1d2d](https://github.com/the-labo/the-demo-site/commit/62e1d2d))
-* Releasing new package ([5097c87](https://github.com/the-labo/the-demo-site/commit/5097c87))
 
 
 

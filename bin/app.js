@@ -16,10 +16,10 @@ void async function () {
   function onListen () {
     console.log(`
   =============================
-  
   Access in your browser
-  http://localhost:${Local.NGINX_CONTAINER_PORT} 
-  https://localhost:${Local.NGINX_CONTAINER_SECURE_PORT} 
+  
+  HTTP -> http://localhost:${Local.NGINX_CONTAINER_PORT}
+  HTTPS -> https://localhost:${Local.NGINX_CONTAINER_SECURE_PORT} 
   
   =============================
   `)
