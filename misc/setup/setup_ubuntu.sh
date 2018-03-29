@@ -7,6 +7,7 @@ if [ "$UID" == "0" ] ; then
   exit 1
 fi
 
+
 sudo apt-get update
 
 sudo apt-get install \
@@ -30,12 +31,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 source ~/.bashrc
 nvm install 8
 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn -y
-
-
 npm i pon pm2 -g
 
 echo "export NODE_ENV=production" >> ~/.bashrc

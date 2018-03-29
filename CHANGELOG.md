@@ -2,6 +2,7 @@
 ## 9.4.0 (2018-03-24)
 
 * bugfix ([4e1fa94](https://github.com/the-labo/the-demo-site/commit/4e1fa94))
+* v9.4.0 ([20b4d73](https://github.com/the-labo/the-demo-site/commit/20b4d73))
 
 
 
@@ -63,16 +64,6 @@
 * update docs ([0d3141c](https://github.com/the-labo/the-demo-site/commit/0d3141c))
 * update docs ([fca2a6a](https://github.com/the-labo/the-demo-site/commit/fca2a6a))
 * v9.0.2 ([ecca89e](https://github.com/the-labo/the-demo-site/commit/ecca89e))
-
-
-
-<a name="8.1.2"></a>
-## <small>8.1.2 (2018-02-17)</small>
-
-* add normalize css ([517465b](https://github.com/the-labo/the-demo-site/commit/517465b))
-* add normalize css ([5bff44b](https://github.com/the-labo/the-demo-site/commit/5bff44b))
-* add url check ([6e15f21](https://github.com/the-labo/the-demo-site/commit/6e15f21))
-* Releasing new package ([5ced65a](https://github.com/the-labo/the-demo-site/commit/5ced65a))
 
 
 

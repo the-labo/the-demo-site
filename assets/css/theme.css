@@ -541,7 +541,6 @@
 .the-video .the-video-spinner { align-items:center;background-color:rgba(255,255,255,0.8);bottom:0;color:#BBB;display:flex;justify-content:center;left:0;position:absolute;right:0;top:0;z-index:1; }
 .the-video .the-video-spinner .the-icon-spin { font-size:larger; }
 .the-video .the-video-video { transition:width 300ms, height 300ms; }
-.the-video .the-video-video-empty { pointer-events:none; }
 .the-video .the-video-video-failed { opacity:0;visibility:hidden; }
 .the-video { background-color:#F8F8F8;display:inline-block;overflow:hidden;position:relative; }
 .the-video.the-video-fill {  }
