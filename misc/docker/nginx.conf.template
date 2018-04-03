@@ -13,6 +13,11 @@ http {
     gzip_vary on;
     gzip_types text/plain text/css text/html application/json application/javascript;
 
+    sendfile  on;
+    sendfile_max_chunk  1m;
+    tcp_nopush on;
+    tcp_nodelay on;
+
     ssl_certificate ${CERT_PATH};
     ssl_certificate_key ${CERT_KEY_PATH};
 
@@ -34,18 +39,19 @@ http {
       try_files $uri $uri/index.html $uri.html;
       root ${STATIC_DIR};
     }
-    location ~* ^/.+\.(html|htm|css|map|jpg|jpeg|png|ico) {
+    location ~* ^/.+\.(html|htm|map|jpg|jpeg|png|ico) {
       root ${STATIC_DIR};
     }
-    location ~* ^/.+\.(js|mjs) {
+    location ~* ^/.+\.(js|mjs|css) {
       root ${STATIC_DIR};
-      sendfile           on;
-      sendfile_max_chunk 10m;
-      tcp_nopush on;
+      access_log off;
+      add_header Cache-Control "public";
     }
     location /webfonts/ {
       add_header Access-Control-Allow-Origin '*';
+      access_log off;
       root ${STATIC_DIR};
+      add_header Cache-Control "public";
     }
     error_page 502 /server-error/server-error.html;
     error_page 503 /server-error/under-maintenance.html;

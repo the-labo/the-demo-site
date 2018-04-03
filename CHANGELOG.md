@@ -1,3 +1,11 @@
+<a name="9.5.0"></a>
+## 9.5.0 (2018-04-03)
+
+* fix logs ([a6c4687](https://github.com/the-labo/the-demo-site/commit/a6c4687))
+* fix nginx config ([8ee47d4](https://github.com/the-labo/the-demo-site/commit/8ee47d4))
+
+
+
 <a name="9.4.0"></a>
 ## 9.4.0 (2018-03-24)
 

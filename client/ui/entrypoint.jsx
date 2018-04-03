@@ -4,13 +4,20 @@ import React from 'react'
 import { isProduction } from 'the-check'
 import { history as historyFor, mount } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
-import { GlobalKeys, locales, UI } from '@self/conf'
+import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
 import client from '../client'
 import handle from '../handle'
 import store from '../store'
 
 set(GlobalKeys.STAGE, 'registering')
+
+void async function () {
+  const serviceWorker = get('navigator.serviceWorker')
+  if (serviceWorker) {
+    await serviceWorker.register(Urls.JS_SERVICE_WORKER_URL)
+  }
+}()
 
 once('DOMContentLoaded', async () => {
   set(GlobalKeys.STAGE, 'mounting')
@@ -28,10 +35,7 @@ once('DOMContentLoaded', async () => {
   handle.initAll()
 
   const {appScene, toastScene} = handle
-  history.listen((location) => {
-    appScene.set({pathname: location.pathname})
-    setTimeout(() => appScene.setLocation(location), 0) // Wait to router change
-  })
+  history.listen((location) => appScene.handleLocationChange(location))
   appScene.set({host: get('location.host'), locale: lang})
   appScene.setLocation(history.location)
 

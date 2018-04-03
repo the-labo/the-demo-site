@@ -65,6 +65,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
     JS_EXTERNAL_URL: '/build/external-bundle.js',
+    JS_SERVICE_WORKER_URL: '/service-worker.js',
 
     // -----------------------------------
     // Production
