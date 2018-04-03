@@ -1,0 +1,4 @@
+/**
+ * @file ServiceWorker
+ */
+'use strict'
