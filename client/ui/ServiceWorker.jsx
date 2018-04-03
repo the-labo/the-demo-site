@@ -44,16 +44,15 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  const cacheKey = [method, url, search].join(' - ')
   event.respondWith(
     async function () {
       const cache = await caches.open(STATIC_FILES_CACHE_NAME)
-      const cached = await cache.match(cacheKey)
+      const cached = await cache.match(event.request)
       if (cached) {
         return cached
       }
       const fetched = await fetch(event.request)
-      await cache.put(cacheKey, fetched.clone())
+      await cache.put(event.request, fetched.clone())
       return fetched
     }()
   )
