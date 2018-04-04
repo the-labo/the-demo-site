@@ -506,10 +506,10 @@ Misc
 * `/errors/not-found`
 * `/images/app-icon.png`
 * `/build/bundle.js`
-* `/workers/cache-service-worker.js`
+* `/cache-service-worker.js`
 * `/build/external-bundle.js`
-* `/the-demo-site-9.5.0.css`
-* `/the-demo-site-9.5.0.js`
+* `/the-demo-site-9.7.0.css`
+* `/the-demo-site-9.7.0.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

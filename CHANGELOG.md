@@ -1,3 +1,12 @@
+<a name="9.7.0"></a>
+## 9.7.0 (2018-04-04)
+
+* add cache ([9257256](https://github.com/the-labo/the-demo-site/commit/9257256))
+* fix cache policy ([8898725](https://github.com/the-labo/the-demo-site/commit/8898725))
+* update deps ([5ba3d3d](https://github.com/the-labo/the-demo-site/commit/5ba3d3d))
+
+
+
 <a name="9.5.0"></a>
 ## 9.5.0 (2018-04-03)
 
