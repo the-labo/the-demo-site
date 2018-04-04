@@ -15,7 +15,7 @@ set(GlobalKeys.STAGE, 'registering')
 void async function () {
   const serviceWorker = get('navigator.serviceWorker')
   if (serviceWorker) {
-    await serviceWorker.register(Urls.JS_SERVICE_WORKER_URL)
+    await serviceWorker.register(Urls.JS_CACHE_WORKER_URL)
   }
 }()
 

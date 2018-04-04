@@ -25,7 +25,8 @@ function Html ({appScope, renderingContext}) {
     Urls.PRODUCTION_JS_URL
   ] : [
     Urls.JS_EXTERNAL_URL,
-    Urls.JS_BUNDLE_URL
+    Urls.JS_BUNDLE_URL,
+    Urls.JS_CACHE_WORKER_URL,
   ]
   const css = isProduction() ? [
     Urls.PRODUCTION_CSS_URL
@@ -33,7 +34,7 @@ function Html ({appScope, renderingContext}) {
     Urls.CSS_NORMALIZE_URL,
     Urls.CSS_THEME_URL,
     Urls.CSS_FONT_URL,
-    Urls.CSS_BUNDLE_URL
+    Urls.CSS_BUNDLE_URL,
   ]
   return (
     <TheHtml>

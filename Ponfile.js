@@ -318,11 +318,11 @@ module.exports = pon(
         sourceRoot: '..',
         watchTargets: 'client/ui/**/*.pcss',
       }),
-      'ui:service-worker': env.dynamic(({isProduction}) =>
-        browser('client/shim/ui/ServiceWorker.js', `public${Urls.JS_SERVICE_WORKER_URL}`, {
+      'ui:workers': env.dynamic(({isProduction}) =>
+        browser('client/shim/workers/CacheServiceWorker.js', `public${Urls.JS_CACHE_WORKER_URL}`, {
           fullPaths: !isProduction(),
           transforms: [envify()],
-          watchTargets: 'client/shim/ui/ServiceWorker.js',
+          watchTargets: 'client/shim/workers/*.js',
         }), {sub: ['watch', 'deps']}
       ),
     },
@@ -366,7 +366,7 @@ module.exports = pon(
       /** Run all struct tasks */
       struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all ui tasks */
-      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:service-worker', 'ui:map'],
+      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:workers', 'ui:map'],
     },
 
     // -----------------------------------
