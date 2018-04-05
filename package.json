@@ -1,7 +1,7 @@
 {
   "name": "the-demo-site",
   "description": "Demo site of the-framework",
-  "version": "9.7.0",
+  "version": "9.7.1",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
@@ -48,7 +48,7 @@
     "the-date": "^1.0.1",
     "the-db": "^9.0.5",
     "the-decorators": "^1.0.0",
-    "the-entrypoint": "^1.0.1",
+    "the-entrypoint": "^1.0.2",
     "the-env": "^2.0.0",
     "the-error": "^2.0.0",
     "the-handle": "^2.0.3",
