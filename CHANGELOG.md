@@ -1,3 +1,12 @@
+<a name="9.7.1"></a>
+## <small>9.7.1 (2018-04-05)</small>
+
+* add service worker ([7a7a336](https://github.com/the-labo/the-demo-site/commit/7a7a336))
+* fix cache workers ([82529fd](https://github.com/the-labo/the-demo-site/commit/82529fd))
+* v9.7.1 ([7f05401](https://github.com/the-labo/the-demo-site/commit/7f05401))
+
+
+
 <a name="9.7.0"></a>
 ## 9.7.0 (2018-04-04)
 
@@ -22,15 +31,6 @@
 
 * bugfix ([4e1fa94](https://github.com/the-labo/the-demo-site/commit/4e1fa94))
 * v9.4.0 ([20b4d73](https://github.com/the-labo/the-demo-site/commit/20b4d73))
-
-
-
-<a name="9.3.0"></a>
-## 9.3.0 (2018-03-22)
-
-* bugfix ([98c5a7f](https://github.com/the-labo/the-demo-site/commit/98c5a7f))
-* fix structure ([cc8a1c3](https://github.com/the-labo/the-demo-site/commit/cc8a1c3))
-* v9.3.0 ([b294532](https://github.com/the-labo/the-demo-site/commit/b294532))
 
 
 

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount } from 'the-entrypoint'
+import { history as historyFor, mount, workers } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
@@ -13,10 +13,9 @@ import store from '../store'
 set(GlobalKeys.STAGE, 'registering')
 
 void async function () {
-  const serviceWorker = get('navigator.serviceWorker')
-  if (serviceWorker) {
-    await serviceWorker.register(Urls.JS_CACHE_WORKER_URL)
-  }
+  await workers([
+    Urls.JS_CACHE_WORKER_URL,
+  ])
 }()
 
 once('DOMContentLoaded', async () => {

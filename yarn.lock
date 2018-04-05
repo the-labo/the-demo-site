@@ -9237,12 +9237,12 @@ the-e2e@^2.1.8:
     the-ps "^1.0.10"
     webdriverio "^4.11.0"
 
-the-entrypoint@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/the-entrypoint/-/the-entrypoint-1.0.1.tgz#f591024a4023a9203957496ac065344c820e5513"
+the-entrypoint@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-entrypoint/-/the-entrypoint-1.0.2.tgz#f41b7d5c96db616823c46d35caf9c40f9673f976"
   dependencies:
     history "^4.7.2"
-    the-router "^2.0.6"
+    the-router "^2.0.7"
     the-window "^6.0.1"
 
 the-env@^2.0.0:
@@ -9879,6 +9879,12 @@ the-style@^2.0.0, the-style@^2.1.0:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     the-component-constants "^1.1.10"
+
+the-sw-util@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/the-sw-util/-/the-sw-util-1.0.1.tgz#3f85406883f54e1c37201fccc71b3b821071692f"
+  dependencies:
+    the-check "^1.2.2"
 
 the-tab@^3.0.6:
   version "3.0.6"

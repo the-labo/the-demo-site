@@ -7,10 +7,7 @@ const {Urls} = require('@self/conf')
 const {isProduction} = require('the-check')
 const {parse: parseUrl} = require('url')
 const {AppConsts} = require('../constants')
-
-const STATIC_FILES_CACHE_NAME = [
-  AppConsts.name, AppConsts.version, 'static-files'
-].join('-')
+const {appCache, cachingFetch} = require('the-sw-util')
 
 const filesToCache = [
   ...(
@@ -41,8 +38,7 @@ self.addEventListener('install', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  const {method, url} = event.request
-  const {pathname, search} = parseUrl(url)
+  const {pathname} = parseUrl(event.request.url)
   const shouldCache = filesToCache.includes(pathname) || patternsToCache.some((pattern) => pattern.test(pathname))
   if (!shouldCache) {
     return
@@ -50,14 +46,10 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     async function () {
-      const cache = await caches.open(STATIC_FILES_CACHE_NAME)
-      const cached = await cache.match(event.request)
-      if (cached) {
-        return cached
-      }
-      const fetched = await fetch(event.request)
-      await cache.put(event.request, fetched.clone())
-      return fetched
+      const cache = await appCache(AppConsts.name, AppConsts.version, {
+        scope: 'static-files',
+      })
+      return cachingFetch(cache, event.request)
     }()
   )
 })
