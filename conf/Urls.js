@@ -64,8 +64,13 @@ module.exports = Object.freeze(
     // JS
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
-    JS_CACHE_WORKER_URL: '/cache-service-worker.js',
+    JS_CACHE_WORKER_URL: '/CacheServiceWorker.js',
     JS_EXTERNAL_URL: '/build/external-bundle.js',
+
+    // -----------------------------------
+    // Manifest
+    // -----------------------------------
+    MANIFEST_URL: '/manifest/:lang',
 
     // -----------------------------------
     // Production

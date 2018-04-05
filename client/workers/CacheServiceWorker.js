@@ -6,13 +6,13 @@
 const {Urls} = require('@self/conf')
 const {isProduction} = require('the-check')
 const {parse: parseUrl} = require('url')
-const pkg = require('../../package') // TODO Hide info from browserify
+const {AppConsts} = require('../constants')
 
 const STATIC_FILES_CACHE_NAME = [
-  pkg.name, pkg.version, 'static-files'
+  AppConsts.name, AppConsts.version, 'static-files'
 ].join('-')
 
-const staticFilePathnames = [
+const filesToCache = [
   ...(
     isProduction() ? [
       Urls.PRODUCTION_CSS_URL,
@@ -29,6 +29,10 @@ const staticFilePathnames = [
   Urls.ICON_URL,
 ]
 
+const patternsToCache = [
+  /^\/webfonts\//
+]
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     async function () {
@@ -39,7 +43,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const {method, url} = event.request
   const {pathname, search} = parseUrl(url)
-  const shouldCache = staticFilePathnames.includes(pathname)
+  const shouldCache = filesToCache.includes(pathname) || patternsToCache.some((pattern) => pattern.test(pathname))
   if (!shouldCache) {
     return
   }

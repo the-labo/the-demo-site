@@ -241,6 +241,7 @@ module.exports = pon(
         'assets/css': 'public/css',
         'assets/html/server-error': 'public/server-error',
         'assets/images': 'public/images',
+        'assets/manifest': 'public/manifest',
         'assets/mocks': 'public/mocks',
         'assets/text': 'public',
         'assets/webfonts': 'public/webfonts',
@@ -319,8 +320,9 @@ module.exports = pon(
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(({isProduction}) =>
-        browser('client/shim/workers/CacheServiceWorker.js', `public${Urls.JS_CACHE_WORKER_URL}`, {
+        browser.all('client/shim/workers', `public`, {
           fullPaths: !isProduction(),
+          pattern: '*Worker.js',
           transforms: [envify()],
           watchTargets: 'client/shim/workers/*.js',
         }), {sub: ['watch', 'deps']}

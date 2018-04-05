@@ -6,6 +6,7 @@
 import React from 'react'
 import { isProduction } from 'the-check'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
+import { resolveUrl } from 'the-site-util'
 import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 
@@ -45,6 +46,7 @@ function Html ({appScope, renderingContext}) {
                color={Styles.DOMINANT_COLOR}
                globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
                icon={Urls.ICON_URL}
+               manifest={resolveUrl(Urls.MANIFEST_URL, {lang})}
                version={version}
       >
       </TheHead>

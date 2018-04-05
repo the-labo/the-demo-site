@@ -1,0 +1,28 @@
+/**
+ * Bud file for manifest json
+ */
+'use strict'
+
+const {locales, Styles} = require('../../conf')
+console.log(Object.keys(locales))
+
+module.exports = Object.keys(locales).map((lang) => {
+  const l = locales.bind(lang)
+  return {
+    force: true,
+    path: `manifest-${lang}.json`,
+    mode: '444',
+    tmpl: (d) => JSON.stringify(d, null, 2),
+    data: {
+      theme_color: Styles.DOMINANT_COLOR,
+      description: l('app.APP_DESC'),
+      name: l('app.APP_NAME'),
+      display: 'standalone',
+      lang
+    }
+  }
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
