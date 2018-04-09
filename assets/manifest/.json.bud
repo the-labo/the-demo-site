@@ -3,14 +3,14 @@
  */
 'use strict'
 
-const {locales, Styles} = require('../../conf')
-console.log(Object.keys(locales))
+const {locales, Styles, Urls} = require('../../conf')
 
 module.exports = Object.keys(locales).map((lang) => {
   const l = locales.bind(lang)
   return {
     force: true,
-    path: `manifest-${lang}.json`,
+    path: `${lang}/manifest.json`,
+    mkdirp: true,
     mode: '444',
     tmpl: (d) => JSON.stringify(d, null, 2),
     data: {
@@ -18,7 +18,13 @@ module.exports = Object.keys(locales).map((lang) => {
       description: l('app.APP_DESC'),
       name: l('app.APP_NAME'),
       display: 'standalone',
-      lang
+      lang,
+      icons: [
+        {
+          'src': Urls.ICON_URL,
+          'sizes': '256x256'
+        }
+      ]
     }
   }
 })

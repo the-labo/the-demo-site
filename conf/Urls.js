@@ -70,7 +70,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     // Manifest
     // -----------------------------------
-    MANIFEST_URL: '/manifest/:lang',
+    MANIFEST_URL: '/manifest/:lang/manifest.json',
 
     // -----------------------------------
     // Production

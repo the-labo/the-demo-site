@@ -3,5 +3,11 @@
   "description": "Demo site",
   "name": "the-demo-site",
   "display": "standalone",
-  "lang": "ja"
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/images/app-icon.png",
+      "sizes": "256x256"
+    }
+  ]
 }

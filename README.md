@@ -508,7 +508,7 @@ Misc
 * `/build/bundle.js`
 * `/CacheServiceWorker.js`
 * `/build/external-bundle.js`
-* `/manifest/:lang`
+* `/manifest/:lang/manifest.json`
 * `/the-demo-site-9.7.1.css`
 * `/the-demo-site-9.7.1.js`
 * `/sign/please`
