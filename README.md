@@ -506,8 +506,9 @@ Misc
 * `/errors/not-found`
 * `/images/app-icon.png`
 * `/build/bundle.js`
-* `/CacheServiceWorker.js`
 * `/build/external-bundle.js`
+* `/RootServiceWorker.js`
+* `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
 * `/the-demo-site-9.7.1.css`
 * `/the-demo-site-9.7.1.js`

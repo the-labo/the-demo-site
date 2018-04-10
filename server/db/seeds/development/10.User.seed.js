@@ -32,10 +32,3 @@ module.exports = [
     ...v,
   }))
 ]
-
-console.log(
-  seed.explode({
-    name: '#{commerce.color()}#{commerce.department().toLowerCase()}',
-    password: '#{commerce.productName().toLowerCase().replace(/ /g, "")}',
-  }, 10)
-)

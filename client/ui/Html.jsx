@@ -23,6 +23,7 @@ function Html ({appScope, renderingContext}) {
     lang,
   }
   const js = [
+    Urls.JS_SHIM_URL,
     ...(isProduction() ? [
       Urls.PRODUCTION_JS_URL,
     ] : [

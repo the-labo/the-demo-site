@@ -6,41 +6,43 @@
 'use strict'
 
 const pon = require('pon')
-const changelog = require('pon-task-changelog')
-const {doc, cwd, tasks} = require('./Ponfile')
-const theLint = require('the-lint/pon')
-const Local = require('./Local')
-const theCode = require('the-code/pon')
-const theE2E = require('../the-e2e/pon')
-const {locales} = require('./conf')
 const {
-  command: {spawn: {npx, npm}, fork},
-  fs: {del,},
+  command: {fork, spawn: {npm, npx}},
+  fs: {del},
   open,
 } = require('pon-task-basic')
+const changelog = require('pon-task-changelog')
 const {
-  mocha, fmtjson, pondoc
+  fmtjson, mocha, pondoc,
 } = require('pon-task-dev')
-const Rules = require('./misc/lint/Rules')
-const Drawings = require('./misc/icon/Drawings')
 const icon = require('pon-task-icon')
-const PondocDev = require('./misc/project/Pondoc.dev')
-const StoryMapping = require('./e2e/mappings/StoryMapping')
+const theCode = require('the-code/pon')
+const theLint = require('the-lint/pon')
+const {locales} = require('./conf')
 const {E2EConfig} = require('./e2e/constants')
+const StoryMapping = require('./e2e/mappings/StoryMapping')
+const Local = require('./Local')
+const Drawings = require('./misc/icon/Drawings')
+const Rules = require('./misc/lint/Rules')
+const PondocDev = require('./misc/project/Pondoc.dev')
+const {cwd, doc, tasks} = require('./Ponfile')
+const theE2E = require('../the-e2e/pon')
 
 const e2e = theE2E(E2EConfig)
 
 module.exports = pon(
   /** @module tasks */
   {
+
     // -----------------------------------
     // Meta info
     // -----------------------------------
     ...{
       $cwd: cwd,
-      $doc: {...doc, ...PondocDev},
       $dev: true,
+      $doc: {...doc, ...PondocDev},
     },
+
     // -----------------------------------
     // From Ponfile.js
     // -----------------------------------
@@ -52,7 +54,7 @@ module.exports = pon(
     ...{
       /** Generate icons */
       'icon:gen': [
-        ...Object.entries(Drawings).map(([name, {path, data}]) => icon(path, data)),
+        ...Object.entries(Drawings).map(([name, {data, path}]) => icon(path, data)),
       ].filter(Boolean),
     },
 
@@ -102,7 +104,9 @@ module.exports = pon(
         'client/scenes/**/*.js',
       ], {ignore: 'client/**/index.*'}),
       /** Format conf files */
-      'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
+      'format:conf': theCode(['Local.js', 'Ponfile.js', 'Ponfile.*.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
+      /** Format e2e files */
+      'format:e2e': theCode('e2e/**/*.js', {}),
       /** Format json files */
       'format:json': fmtjson([
         'conf/**/*.json',
@@ -113,8 +117,6 @@ module.exports = pon(
       ], {sort: true}),
       /** Format server files */
       'format:server': theCode('server/**/*.js', {}),
-      /** Format e2e files */
-      'format:e2e': theCode('e2e/**/*.js', {}),
     },
 
     // -----------------------------------
@@ -155,7 +157,7 @@ module.exports = pon(
       /** Listen for E2E tests */
       'e2e:listen': e2e.listen,
       /** Run stories for E2E tests */
-      'e2e:story': e2e.story(StoryMapping)
+      'e2e:story': e2e.story(StoryMapping),
     },
 
     // -----------------------------------
@@ -183,11 +185,12 @@ module.exports = pon(
       stop: [],
       /** Run all tess */
       test: ['env:test', 'test:client', 'test:server'],
-      /** Run watches */
-      watch: ['ui:*', 'ui:*/watch'],
       /** Upgrade package */
       upgrade: ['pkg:upg', 'pkg:install:force', 'pkg:link', 'build'],
+      /** Run watches */
+      watch: ['ui:*', 'ui:*/watch'],
     },
+
     // -----------------------------------
     // Aliases
     // -----------------------------------
@@ -216,6 +219,6 @@ module.exports = pon(
       u: 'upgrade',
       /** Shortcut for `watch` task */
       w: 'watch',
-    }
+    },
   }
 )

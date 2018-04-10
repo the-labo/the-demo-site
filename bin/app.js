@@ -5,6 +5,7 @@
  */
 'use strict'
 
+require('the-polyfill/apply')
 const {server} = require('../server')
 
 const {isProduction} = require('the-check')
