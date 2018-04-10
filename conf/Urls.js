@@ -65,7 +65,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
     JS_EXTERNAL_URL: '/build/external-bundle.js',
-    JS_ROOT_WORKER_URL: '/RootServiceWorker.js',
+    JS_ROOT_SERVICE_WORKER_URL: '/RootServiceWorker.js',
     JS_SHIM_URL: '/js/es5-shim.min.js',
 
     // -----------------------------------

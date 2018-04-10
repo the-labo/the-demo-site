@@ -1,9 +1,9 @@
 'use strict'
 
+import 'the-polyfill/apply'
 import React from 'react'
 import { isProduction } from 'the-check'
 import { history as historyFor, mount, workers } from 'the-entrypoint'
-import 'the-polyfill/apply'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
@@ -14,9 +14,9 @@ import store from '../store'
 set(GlobalKeys.STAGE, 'registering')
 
 void async function () {
-  await workers([
-    Urls.JS_ROOT_WORKER_URL,
-  ])
+  await workers({
+    '/': Urls.JS_ROOT_SERVICE_WORKER_URL,
+  })
 }()
 
 once('DOMContentLoaded', async () => {

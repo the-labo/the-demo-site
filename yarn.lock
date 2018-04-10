@@ -2280,8 +2280,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000821:
-  version "1.0.30000826"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000826.tgz#351faeed7f90a84b676598d4371441ec452f8372"
+  version "1.0.30000827"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000827.tgz#2dad2354e4810c3c9bb1cfc57f655c270c25fa52"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -9023,9 +9023,22 @@ the-client@^10.0.7:
     the-error "^2.0.0"
     uuid "^3.2.1"
 
-the-code@^3.4.6, the-code@^3.5.7, the-code@^3.6.2:
+the-code@^3.4.6, the-code@^3.6.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.7.2.tgz#7990219f9e863088706488f07475e29602b57f10"
+  dependencies:
+    aglob "^3.0.0"
+    asfs "^2.0.2"
+    babylon "^7.0.0-beta.40"
+    babylon-walk "^1.0.2"
+    debug "^3.1.0"
+    fmtjson "^4.0.0"
+    postcss "^6.0.21"
+    writeout "^2.2.1"
+
+the-code@^3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.7.3.tgz#c1d176781fbb1a3404025763f43a4ecdae4174e6"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -9252,9 +9265,9 @@ the-e2e@^2.1.8:
     the-ps "^1.0.10"
     webdriverio "^4.11.0"
 
-the-entrypoint@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/the-entrypoint/-/the-entrypoint-1.0.4.tgz#b2352c22059abb0eba64b4ac21227613cc1df0ab"
+the-entrypoint@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/the-entrypoint/-/the-entrypoint-2.0.0.tgz#a7ab7a06976cad62482052bcefe30d8929921550"
   dependencies:
     history "^4.7.2"
     the-router "^2.0.7"
