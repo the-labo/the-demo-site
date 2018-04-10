@@ -1,3 +1,13 @@
+<a name="9.7.2"></a>
+## <small>9.7.2 (2018-04-10)</small>
+
+* add manifest file ([c6b9160](https://github.com/the-labo/the-demo-site/commit/c6b9160))
+* add shims ([c7720b5](https://github.com/the-labo/the-demo-site/commit/c7720b5))
+* update deps ([7e7fd44](https://github.com/the-labo/the-demo-site/commit/7e7fd44))
+* v9.7.2 ([729c067](https://github.com/the-labo/the-demo-site/commit/729c067))
+
+
+
 <a name="9.7.1"></a>
 ## <small>9.7.1 (2018-04-05)</small>
 
@@ -23,14 +33,6 @@
 * fix logs ([a6c4687](https://github.com/the-labo/the-demo-site/commit/a6c4687))
 * fix nginx config ([8ee47d4](https://github.com/the-labo/the-demo-site/commit/8ee47d4))
 * v9.5.0 ([2f9d130](https://github.com/the-labo/the-demo-site/commit/2f9d130))
-
-
-
-<a name="9.4.0"></a>
-## 9.4.0 (2018-03-24)
-
-* bugfix ([4e1fa94](https://github.com/the-labo/the-demo-site/commit/4e1fa94))
-* v9.4.0 ([20b4d73](https://github.com/the-labo/the-demo-site/commit/20b4d73))
 
 
 

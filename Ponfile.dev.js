@@ -114,7 +114,7 @@ module.exports = pon(
         'server/**/*.json',
         'misc/**/*.json',
         'secrets.json',
-      ], {sort: true}),
+      ], {ignore: 'client/shim/**/*.json', sort: true}),
       /** Format server files */
       'format:server': theCode('server/**/*.js', {}),
     },
