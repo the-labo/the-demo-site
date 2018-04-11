@@ -10,6 +10,7 @@ const {locales} = require('@self/conf')
 const {emailOfUser, localeDate, nameOfUser} = require('./helpers')
 const Templates = require('./Templates')
 const env = require('../env')
+const debug = require('debug')('app:mail')
 
 /** @lends create */
 function create (config = env.mail) {

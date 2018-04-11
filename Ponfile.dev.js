@@ -179,7 +179,7 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['e2e:install', 'pkg:fix', 'doc', 'lint']
+        ...['e2e:install', 'pkg:fix', 'doc:pondoc', 'doc:pondoc:*', 'lint']
       ],
       start: ['debug:server'],
       stop: [],

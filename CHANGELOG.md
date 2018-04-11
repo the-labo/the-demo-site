@@ -1,3 +1,18 @@
+<a name="9.9.0"></a>
+## 9.9.0 (2018-04-11)
+
+
+
+
+<a name="9.8.0"></a>
+## 9.8.0 (2018-04-10)
+
+* bugfix ([0328b71](https://github.com/the-labo/the-demo-site/commit/0328b71))
+* Releasing new package ([9502177](https://github.com/the-labo/the-demo-site/commit/9502177))
+* v9.8.0 ([27d3b9d](https://github.com/the-labo/the-demo-site/commit/27d3b9d))
+
+
+
 <a name="9.7.2"></a>
 ## <small>9.7.2 (2018-04-10)</small>
 
@@ -24,15 +39,6 @@
 * fix cache policy ([8898725](https://github.com/the-labo/the-demo-site/commit/8898725))
 * update deps ([5ba3d3d](https://github.com/the-labo/the-demo-site/commit/5ba3d3d))
 * v9.7.0 ([f4555a5](https://github.com/the-labo/the-demo-site/commit/f4555a5))
-
-
-
-<a name="9.5.0"></a>
-## 9.5.0 (2018-04-03)
-
-* fix logs ([a6c4687](https://github.com/the-labo/the-demo-site/commit/a6c4687))
-* fix nginx config ([8ee47d4](https://github.com/the-labo/the-demo-site/commit/8ee47d4))
-* v9.5.0 ([2f9d130](https://github.com/the-labo/the-demo-site/commit/2f9d130))
 
 
 
