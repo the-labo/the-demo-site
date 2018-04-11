@@ -8,6 +8,6 @@ const pon = require('../../Ponfile')
 process.chdir(pon.cwd)
 
 void async function () {
-  await pon.run('doc:changelog', {disableLogging: true})
+  await pon.run('git:changelog', {disableLogging: true})
 }()
 
