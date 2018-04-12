@@ -314,8 +314,8 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | debug | Start debugging | `pon debug` |
 | debug:server | Run server for debug | `pon debug:server` |
 | debug:watch | Watch files for debug | `pon debug:watch` |
-| doc:changelog | Generate changelog file | `pon doc:changelog` |
 | doc:pondoc | Generate pondoc file | `pon doc:pondoc` |
+| doc:pondoc:dev | Generate pondoc file | `pon doc:pondoc:dev` |
 | ds | Shortcut for `debug:server` task | `pon ds` |
 | e | Shortcut for `e2e` task | `pon e` |
 | e2e | Run e2e test | `pon e2e` |
@@ -330,6 +330,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | format:e2e | Format e2e files | `pon format:e2e` |
 | format:json | Format json files | `pon format:json` |
 | format:server | Format server files | `pon format:server` |
+| git:changelog | Generate changelog file | `pon git:changelog` |
 | icon:gen | Generate icons | `pon icon:gen` |
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |

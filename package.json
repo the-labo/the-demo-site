@@ -48,7 +48,7 @@
     "the-date": "^1.0.1",
     "the-db": "^9.0.5",
     "the-decorators": "^1.0.0",
-    "the-entrypoint": "^2.0.0",
+    "the-entrypoint": "^2.1.0",
     "the-env": "^2.0.0",
     "the-error": "^2.0.0",
     "the-handle": "^2.0.3",

@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { catching, cycled, localized, provided, stateful, titled, handling } from 'the-component-mixins'
+import { catching, cycled, handling, localized, provided, stateful, titled } from 'the-component-mixins'
 import {
   TheMain,
   TheRoot,

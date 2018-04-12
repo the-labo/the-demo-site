@@ -7,7 +7,7 @@
 
 const pon = require('pon')
 const {
-  command: {fork, spawn: {npm, npx, git}},
+  command: {fork, spawn: {git, npm, npx}},
   fs: {del},
   open,
 } = require('pon-task-basic')
@@ -89,12 +89,14 @@ module.exports = pon(
       /** Generate changelog file */
       'git:changelog': [changelog(), git('add', 'CHANGELOG.md')],
     },
+
     // -----------------------------------
     // Sub Tasks for Document
     // -------  ----------------------------
     ...{
       /** Generate pondoc file */
       'doc:pondoc': pondoc('Ponfile.js', 'misc/project/Pondoc.json'),
+      /** Generate pondoc file */
       'doc:pondoc:dev': pondoc('Ponfile.dev.js', 'misc/project/Pondoc.dev.json'),
     },
 
