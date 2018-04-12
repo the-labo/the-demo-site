@@ -9009,9 +9009,9 @@ the-check@^1.2.1, the-check@^1.2.2, the-check@^1.2.3:
     asenv "^2.0.0"
     hasbin "^1.2.3"
 
-the-client@^10.1.14:
-  version "10.1.14"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-10.1.14.tgz#b9152f5b4c44ded38b378308df5a81bbeb5bfe4c"
+the-client@^10.2.0:
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-10.2.0.tgz#a19523e608e45858081faac0a8addcb4dd40dbaf"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.44"
     argx "^3.0.2"

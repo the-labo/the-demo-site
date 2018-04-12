@@ -40,7 +40,7 @@ function create (config) {
     version: isProduction() ? pkg.version : String(new Date().getTime()),
   }
 
-  return theServer({
+  const server = theServer({
     cacheDir: 'tmp/cache',
     controllers: ControllerMapping,
     endpoints,
@@ -49,6 +49,7 @@ function create (config) {
       app: (ctx) => app,
       client: (ctx) => createClient(),
       handle: (ctx) => createHandle(),
+      info: (ctx) => server.info(),
       store: (ctx) => createStore(),
     },
     langs: Object.keys(locales),
@@ -56,6 +57,7 @@ function create (config) {
     scope: app,
     static: isProduction() ? [] : [Local.PUBLIC_DIR],
   })
+  return server
 }
 
 module.exports = create

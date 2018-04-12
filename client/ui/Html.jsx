@@ -16,7 +16,7 @@ function Html ({appScope, renderingContext}) {
     cdnUrl,
     version,
   } = appScope
-  const {client, handle, lang, path, store} = renderingContext
+  const {client, handle, info, lang, path, store} = renderingContext
   const l = locales.bind(lang)
   handle.setAttributes({client, l, lang, store})
   const appProps = {
@@ -45,7 +45,9 @@ function Html ({appScope, renderingContext}) {
                {...{css, js}}
                cdn={cdnUrl}
                color={Styles.DOMINANT_COLOR}
-               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
+               globals={{
+                 [GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps, [client.infoKey]: info,
+               }}
                icon={Urls.ICON_URL}
                manifest={resolveUrl(Urls.MANIFEST_URL, {lang})}
                version={version}
