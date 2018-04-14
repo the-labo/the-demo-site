@@ -1,7 +1,7 @@
 {
   "name": "the-demo-site",
   "description": "Demo site of the-framework",
-  "version": "9.9.0",
+  "version": "9.10.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
@@ -55,7 +55,7 @@
     "the-loc": "^2.0.1",
     "the-mail": "^3.0.0",
     "the-password": "^2.0.0",
-    "the-polyfill": "^1.1.3",
+    "the-polyfill": "^1.2.0",
     "the-ps": "^1.0.8",
     "the-refresher": "^1.0.2",
     "the-resource-base": "^1.1.0",
@@ -103,7 +103,8 @@
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",
     "the-script-update": "^1.0.0",
-    "the-story-base": "^3.0.29"
+    "the-story-base": "^3.0.29",
+    "the-support": "^1.0.2"
   },
   "engines": {
     "node": ">=8",

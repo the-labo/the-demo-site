@@ -666,8 +666,8 @@
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
 "@types/node@*":
-  version "9.6.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.4.tgz#0ef7b4cfc3499881c81e0ea1ce61a23f6f4f5b42"
+  version "9.6.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.5.tgz#ee700810fdf49ac1c399fc5980b7559b3e5a381d"
 
 "@types/request@^2.0.3":
   version "2.47.0"
@@ -744,7 +744,7 @@ acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
-acorn@^5.4.1:
+acorn@^5.4.1, acorn@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
@@ -1226,7 +1226,7 @@ asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
 
-asobj@^2.0.1, asobj@^2.0.10, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.1.0:
+asobj@^2.0.1, asobj@^2.0.2, asobj@^2.0.5, asobj@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/asobj/-/asobj-2.1.0.tgz#31fe5447d4af10fa0b47048281e028b8cd3bc4be"
   dependencies:
@@ -1992,6 +1992,10 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
 
+browser-cookies@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/browser-cookies/-/browser-cookies-1.2.0.tgz#fca3ffb9b6a63aadc4d8c0999c6b57d0fa7d29b5"
+
 browser-pack@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/browser-pack/-/browser-pack-6.1.0.tgz#c34ba10d0b9ce162b5af227c7131c92c2ecd5774"
@@ -2280,8 +2284,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000821:
-  version "1.0.30000827"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000827.tgz#2dad2354e4810c3c9bb1cfc57f655c270c25fa52"
+  version "1.0.30000828"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000828.tgz#048f98de213f7a3c047bf78a9523c611855d4fdd"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2414,28 +2418,27 @@ clay-driver-base@^4.0.1, clay-driver-base@^4.1.1:
   dependencies:
     clay-constants "^3.4.4"
 
-clay-driver-json@^4.0.8:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/clay-driver-json/-/clay-driver-json-4.0.8.tgz#dc6500ecd35b981aa6c53881018c907d3a227cb1"
+clay-driver-json@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/clay-driver-json/-/clay-driver-json-4.0.9.tgz#43deab6d5e8c496b9b4c0db917e73e313be060c3"
   dependencies:
-    aglob "^3.0.0"
-    asfs "^2.0.1"
+    aglob "^3.0.1"
+    asfs "^2.0.3"
     asleep "^1.0.3"
-    clay-driver-memory "^4.1.8"
-    clay-serial "^2.0.1"
+    clay-driver-memory "^4.1.10"
+    clay-serial "^2.1.1"
     writeout "^2.2.0"
 
-clay-driver-localstorage@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/clay-driver-localstorage/-/clay-driver-localstorage-2.0.1.tgz#68f77fed56f8aada8a9f45123b450d54b89b6378"
+clay-driver-localstorage@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/clay-driver-localstorage/-/clay-driver-localstorage-2.0.2.tgz#a81c25a58eade959c2859f651bf3293273da2835"
   dependencies:
     asleep "^1.0.3"
     bwindow "^1.0.7"
     clay-driver-memory "^4.0.1"
-    clay-serial "^2.0.1"
-    co "^4.6.0"
+    clay-serial "^2.1.1"
 
-clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.10, clay-driver-memory@^4.1.8, clay-driver-memory@^4.1.9:
+clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.10:
   version "4.1.10"
   resolved "https://registry.yarnpkg.com/clay-driver-memory/-/clay-driver-memory-4.1.10.tgz#46869e329ea8ed86245bb10db916c0b9fb5820fe"
   dependencies:
@@ -2451,24 +2454,24 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.10, clay-driver-memory@^4.1.8
     clay-resource-name "^4.0.3"
     moment "^2.21.0"
 
-clay-driver-mysql@^5.2.23:
-  version "5.2.24"
-  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.24.tgz#902c59609f0b2fd6b4be7388f246a003fdfed595"
+clay-driver-mysql@^5.2.25:
+  version "5.2.25"
+  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.25.tgz#6a09efe78bc611121f0c797b8018b77f88f96e46"
   dependencies:
     amkdirp "^2.0.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.5.0"
+    clay-driver-sequelize "^6.5.3"
     execcli "^5.0.2"
     moment "^2.22.0"
     mysql2 "^1.5.3"
 
-clay-driver-sequelize@^6.5.0, clay-driver-sequelize@^6.5.1:
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.5.3.tgz#8d5a33a51a33097a62aa7aeaec1acab9a3074c5f"
+clay-driver-sequelize@^6.5.3:
+  version "6.5.4"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.5.4.tgz#351ecd143bdc8016ebc673117b683300551408b9"
   dependencies:
     amkdirp "^2.0.0"
     asenv "^2.0.2"
-    asfs "^2.0.2"
+    asfs "^2.0.3"
     asleep "^1.0.3"
     asobj "^2.1.0"
     clay-collection "^3.1.5"
@@ -2477,27 +2480,27 @@ clay-driver-sequelize@^6.5.0, clay-driver-sequelize@^6.5.1:
     clay-entity "^2.1.4"
     clay-id "^3.0.1"
     clay-list-pager "^2.1.1"
-    clay-resource-name "^4.0.2"
-    clay-resource-ref "^2.0.2"
-    clay-serial "^2.0.3"
+    clay-resource-name "^4.0.4"
+    clay-resource-ref "^2.0.4"
+    clay-serial "^2.1.1"
     continuation-local-storage "^3.2.1"
     lru-cache "^4.1.2"
     msgpack "^1.0.2"
     objnest "^4.1.2"
     retry-as-promised "^2.3.2"
-    sequelize "^4.37.5"
+    sequelize "^4.37.6"
     sg-queue "^1.1.4"
     stringcase "^4.1.1"
     utf8 "^3.0.0"
 
-clay-driver-sqlite@^6.3.14:
-  version "6.3.14"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.14.tgz#afb8289a593947eb25f01b4febd740460e97bdd5"
+clay-driver-sqlite@^6.3.15:
+  version "6.3.15"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.15.tgz#34fda371a00532e9e79d6319eb49d1c3534446b2"
   dependencies:
     amkdirp "^2.0.0"
     asobj "^2.1.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.5.1"
+    clay-driver-sequelize "^6.5.3"
     filecopy "^4.0.1"
     mkdirp "^0.5.1"
     moment "^2.22.0"
@@ -2539,36 +2542,36 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.4.2.tgz#396938b91316bd19797f0c61073421a76ca393c4"
+clay-lump@^4.4.5:
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.4.5.tgz#b7bc43a09e3b4b6b9ae1f68d5e3e577cc0ea9516"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
     aslogger "^2.0.0"
-    asobj "^2.0.10"
+    asobj "^2.1.0"
     clay-constants "^3.4.4"
     clay-crypto "^4.0.2"
-    clay-driver-base "^4.0.1"
-    clay-driver-memory "^4.1.9"
+    clay-driver-base "^4.1.1"
+    clay-driver-memory "^4.1.10"
     clay-entity "^2.1.4"
-    clay-policy "^2.1.7"
-    clay-resource "^5.5.4"
-    clay-resource-name "^4.0.3"
-    clay-resource-ref "^2.0.2"
+    clay-policy "^2.1.8"
+    clay-resource "^5.5.11"
+    clay-resource-name "^4.0.4"
+    clay-resource-ref "^2.0.4"
     debug "^3.1.0"
 
-clay-policy@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/clay-policy/-/clay-policy-2.1.7.tgz#f2695daf511a49a58603c40ef19a3ae1baf60ade"
+clay-policy@^2.1.7, clay-policy@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/clay-policy/-/clay-policy-2.1.8.tgz#cf1f032302057819926dcc8b120bf4eb4aac9f19"
   dependencies:
     adigest "^3.0.0"
-    asobj "^2.0.10"
+    asobj "^2.1.0"
     clay-constants "^3.4.4"
     clay-entity "^2.1.4"
     clay-errors "^3.0.1"
     clay-schemas "^4.1.1"
-    clay-serial "^2.0.3"
+    clay-serial "^2.1.1"
     co "^4.6.0"
     tv4 "^1.3.0"
 
@@ -2587,31 +2590,31 @@ clay-resource-collection@^2.0.3:
     clay-resource-name "^4.0.1"
     debug "^3.1.0"
 
-clay-resource-entity@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/clay-resource-entity/-/clay-resource-entity-2.6.1.tgz#79f3f2645a95615d2bc1e8ebbc50a538ae50137e"
+clay-resource-entity@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/clay-resource-entity/-/clay-resource-entity-2.6.2.tgz#c404f688ce44d2363be0cee68d768c159d26747a"
   dependencies:
     clay-entity "^2.1.4"
-    clay-resource-name "^4.0.3"
-    clay-resource-ref "^2.0.2"
+    clay-resource-name "^4.0.4"
+    clay-resource-ref "^2.0.4"
 
-clay-resource-name@^4.0.1, clay-resource-name@^4.0.2, clay-resource-name@^4.0.3, clay-resource-name@^4.0.4:
+clay-resource-name@^4.0.1, clay-resource-name@^4.0.3, clay-resource-name@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/clay-resource-name/-/clay-resource-name-4.0.4.tgz#caa96acce70acf783696d12c5e35a7f8f403a2c7"
   dependencies:
     clay-constants "^3.4.4"
 
-clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.2, clay-resource-ref@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/clay-resource-ref/-/clay-resource-ref-2.0.3.tgz#f990c1b0aa9a2495b71a180a56a2b7b5fc67e60d"
+clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/clay-resource-ref/-/clay-resource-ref-2.0.4.tgz#fb2084948d03d16a7c3eb1d98defe865f5ee1415"
   dependencies:
     clay-entity "^2.0.4"
     clay-id "^3.0.2"
-    clay-resource-name "^4.0.1"
+    clay-resource-name "^4.0.4"
 
-clay-resource@^5.5.4, clay-resource@^5.5.9:
-  version "5.5.9"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.5.9.tgz#df0d88817c888498e239fc2f21d2a58e9de1d494"
+clay-resource@^5.5.11, clay-resource@^5.5.12:
+  version "5.5.12"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.5.12.tgz#506de501a7aa09ebb3d666a17fc812f7e0f09d14"
   dependencies:
     asleep "^1.0.3"
     asobj "^2.1.0"
@@ -2623,9 +2626,9 @@ clay-resource@^5.5.4, clay-resource@^5.5.9:
     clay-policy "^2.1.7"
     clay-resource-cache "^2.0.1"
     clay-resource-collection "^2.0.3"
-    clay-resource-entity "^2.6.1"
-    clay-resource-name "^4.0.3"
-    clay-resource-ref "^2.0.2"
+    clay-resource-entity "^2.6.2"
+    clay-resource-name "^4.0.4"
+    clay-resource-ref "^2.0.4"
     clay-schemas "^4.0.5"
     debug "^3.1.0"
     objnest "^4.1.2"
@@ -2635,9 +2638,9 @@ clay-schemas@^4.0.5, clay-schemas@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/clay-schemas/-/clay-schemas-4.1.1.tgz#9968d773a2a42aa45581d09b378b16c0efb1c8d7"
 
-clay-serial@^2.0.1, clay-serial@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/clay-serial/-/clay-serial-2.0.3.tgz#8663d7fcec8d9f8affe6cad4c1b3917db3992a85"
+clay-serial@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/clay-serial/-/clay-serial-2.1.1.tgz#540c65a34df2cc81bdb5ccd5aee2c65042816677"
   dependencies:
     clay-constants "^3.0.2"
     clay-entity "^2.0.4"
@@ -2829,7 +2832,7 @@ commander@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
-commander@^2.14.1, commander@^2.8.1, commander@^2.9.0:
+commander@^2.14.1, commander@^2.15.1, commander@^2.8.1, commander@^2.9.0:
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
 
@@ -2847,10 +2850,6 @@ component-bind@1.0.0:
 component-emitter@1.2.1, component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
-
-component-indexof@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/component-indexof/-/component-indexof-0.0.3.tgz#11d091312239eb8f32c8f25ae9cb002ffe8d3c24"
 
 component-inherit@0.0.3:
   version "0.0.3"
@@ -5621,6 +5620,12 @@ lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.1, lodash@^4.17.4, lodash@^4.17.5, 
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
+log-syntax-error@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/log-syntax-error/-/log-syntax-error-0.1.1.tgz#89ce8487551c9297fb23c21682a80d28e94325be"
+  dependencies:
+    chalk "^1.0.0"
+
 long@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
@@ -5851,7 +5856,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
-minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
+minimatch@3.0.4, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -5913,8 +5918,8 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
     minimist "0.0.8"
 
 mocha@^5.0.0:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.5.tgz#e228e3386b9387a4710007a641f127b00be44b52"
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.1.0.tgz#5ff11cc39c0bb65330ac6c41f9086634e3e3f686"
   dependencies:
     browser-stdout "1.3.1"
     commander "2.11.0"
@@ -5924,6 +5929,7 @@ mocha@^5.0.0:
     glob "7.1.2"
     growl "1.10.3"
     he "1.1.1"
+    minimatch "3.0.4"
     mkdirp "0.5.1"
     supports-color "4.4.0"
 
@@ -6120,8 +6126,8 @@ node-pre-gyp@^0.6.39:
     tar-pack "^3.4.0"
 
 node-pre-gyp@~0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.9.0.tgz#bdd4c3afac9b1b1ebff0a9ff3362859eb6781bb8"
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.9.1.tgz#f11c07516dd92f87199dbc7e1838eab7cd56c9e0"
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
@@ -6615,14 +6621,14 @@ pon-cache@^1.0.1:
   dependencies:
     co "^4.6.0"
 
-pon-cli@^4.1.12:
-  version "4.1.13"
-  resolved "https://registry.yarnpkg.com/pon-cli/-/pon-cli-4.1.13.tgz#53b3b65fcdeb8b8f9584da248ec6840b5d438b9b"
+pon-cli@^4.1.13:
+  version "4.1.15"
+  resolved "https://registry.yarnpkg.com/pon-cli/-/pon-cli-4.1.15.tgz#35da5768c355517123a90a79cadfb497e45a75ae"
   dependencies:
     argx "^3.0.2"
-    commander "^2.14.1"
+    commander "^2.15.1"
     pon-task-init "^1.0.2"
-    ponfile "^4.2.2"
+    ponfile "^4.2.4"
 
 pon-context@^2.0.2:
   version "2.0.2"
@@ -6636,15 +6642,14 @@ pon-context@^2.0.2:
     uuid "^3.0.1"
 
 pon-logger@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/pon-logger/-/pon-logger-2.0.2.tgz#abc554eb4d1f9120dfa63a3fe7ada1d6ac1b14a4"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/pon-logger/-/pon-logger-2.0.3.tgz#5eac1ab271f5c5abae3ccecd4d031202b2dd5b4e"
   dependencies:
-    co "^4.6.0"
     colorprint "^4.1.0"
 
-pon-runner@^3.4.9:
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.4.10.tgz#ab183951919ece2049b65c518318367c10fe91e1"
+pon-runner@^3.4.10, pon-runner@^3.4.11:
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.4.11.tgz#ffc9e02c4cc9764ffe56abe5a8d2f2a36ea8fc23"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -6928,23 +6933,23 @@ pon-writer@^1.0.4:
     writeout "^2.2.0"
 
 pon@^5.2.6:
-  version "5.2.8"
-  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.8.tgz#c3b88ad515fb49b24024b9fc2e8bbbfe70c86f87"
+  version "5.2.9"
+  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.9.tgz#7078f0d9a39f4087ef8300c1f8b817f0c50a3069"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
     minimatch "^3.0.4"
-    pon-cli "^4.1.12"
+    pon-cli "^4.1.13"
     pon-context "^2.0.2"
-    pon-runner "^3.4.9"
-    ponfile "^4.2.3"
+    pon-runner "^3.4.10"
+    ponfile "^4.2.4"
 
-ponfile@^4.2.2, ponfile@^4.2.3:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/ponfile/-/ponfile-4.2.4.tgz#94d53b7b69766a6663345263c9fcc1014827556d"
+ponfile@^4.2.4:
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/ponfile/-/ponfile-4.2.5.tgz#f310cd44379e4c7d8d41f93520af02458d008ad1"
   dependencies:
     findup-sync "^2.0.0"
-    pon-runner "^3.4.9"
+    pon-runner "^3.4.11"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
@@ -7972,8 +7977,8 @@ resolve@1.1.7:
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
 resolve@^1.1.4, resolve@^1.3.2, resolve@^1.4.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.0.tgz#2bdf5374811207285df0df652b78f118ab8f3c5e"
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:
     path-parse "^1.0.5"
 
@@ -8171,7 +8176,7 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-sequelize@^4.37.5, sequelize@^4.37.6:
+sequelize@^4.37.6:
   version "4.37.6"
   resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.37.6.tgz#f37eec55a285cfdeab27f8a85c5db38034f87126"
   dependencies:
@@ -9010,12 +9015,13 @@ the-check@^1.2.1, the-check@^1.2.2, the-check@^1.2.3:
     hasbin "^1.2.3"
 
 the-client@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/the-client/-/the-client-10.2.0.tgz#a19523e608e45858081faac0a8addcb4dd40dbaf"
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/the-client/-/the-client-10.3.0.tgz#7587d5fffee39623969cda9f53d05fe3adb2ad7a"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.44"
     argx "^3.0.2"
     asleep "^1.0.3"
+    browser-cookies "^1.2.0"
     bstorage "^2.0.1"
     bwindow "^1.1.1"
     debug "^3.1.0"
@@ -9030,8 +9036,8 @@ the-client@^10.2.0:
     uuid "^3.2.1"
 
 the-code@^3.4.6, the-code@^3.6.2, the-code@^3.7.3:
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.7.3.tgz#c1d176781fbb1a3404025763f43a4ecdae4174e6"
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/the-code/-/the-code-3.7.4.tgz#ea7ee25f3ab1c7736e90a49429491ce0a51096e3"
   dependencies:
     aglob "^3.0.0"
     asfs "^2.0.2"
@@ -9173,8 +9179,8 @@ the-db-util@^1.1.0:
   resolved "https://registry.yarnpkg.com/the-db-util/-/the-db-util-1.1.0.tgz#7713ea7cdd47a52901142b0ed8b3da830e8206dd"
 
 the-db@^9.0.5:
-  version "9.3.32"
-  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.3.32.tgz#33e912814825c71eac6352319f3fc8f9100b602c"
+  version "9.3.36"
+  resolved "https://registry.yarnpkg.com/the-db/-/the-db-9.3.36.tgz#8eba94ea45aebf36058d3eabd47ba5e25e6ad614"
   dependencies:
     amkdirp "^2.0.0"
     asfs "^2.0.3"
@@ -9182,15 +9188,15 @@ the-db@^9.0.5:
     aslogger "^2.0.0"
     asobj "^2.1.0"
     clay-constants "^3.4.4"
-    clay-driver-json "^4.0.8"
-    clay-driver-localstorage "^2.0.1"
+    clay-driver-json "^4.0.9"
+    clay-driver-localstorage "^2.0.2"
     clay-driver-memory "^4.1.10"
-    clay-driver-mysql "^5.2.23"
-    clay-driver-sqlite "^6.3.14"
-    clay-lump "^4.4.2"
-    clay-resource "^5.5.9"
+    clay-driver-mysql "^5.2.25"
+    clay-driver-sqlite "^6.3.15"
+    clay-lump "^4.4.5"
+    clay-resource "^5.5.12"
     clay-resource-name "^4.0.4"
-    clay-resource-ref "^2.0.3"
+    clay-resource-ref "^2.0.4"
     debug "^3.1.0"
     execcli "^5.0.2"
     mkdirp "^0.5.1"
@@ -9199,9 +9205,9 @@ the-db@^9.0.5:
     sequelize "^4.37.6"
     the-check "^1.2.3"
     the-db-util "^1.1.0"
-    the-hash "^1.0.10"
+    the-hash "^1.0.11"
     the-refresher "^1.0.3"
-    the-resource-base "^1.2.17"
+    the-resource-base "^1.2.19"
     uuid "^3.2.1"
 
 the-decorators@^1.0.0:
@@ -9349,9 +9355,9 @@ the-handle@^3.0.4:
     the-check "^1.2.3"
     the-scene-base "^2.1.1"
 
-the-hash@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/the-hash/-/the-hash-1.0.10.tgz#11af7aa2d53fca52dfb6a66bea6f1e373d9712cd"
+the-hash@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/the-hash/-/the-hash-1.0.11.tgz#849a2895f819c9d031cde7ec460ce50771110081"
 
 the-head@^1.0.18:
   version "1.0.18"
@@ -9376,8 +9382,8 @@ the-header@^3.1.1:
     the-window "^6.0.1"
 
 the-html@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/the-html/-/the-html-1.0.8.tgz#be87e80e3ef68c91701ff154ac5f1ba1f8ee8149"
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/the-html/-/the-html-1.0.9.tgz#86600c4d9ddb58ce84b1e1e4f6b240c39855f0c1"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
@@ -9555,9 +9561,9 @@ the-password@^2.0.0:
   dependencies:
     abind "^1.0.3"
 
-the-polyfill@^1.1.3:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/the-polyfill/-/the-polyfill-1.1.5.tgz#8d601747b422e3be46a9f3505f7b510ea5758df9"
+the-polyfill@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/the-polyfill/-/the-polyfill-1.2.0.tgz#13921bccfde3858356b581a2a09fd771449baa82"
   dependencies:
     abind "^1.0.3"
     babel-polyfill "^6.26.0"
@@ -9603,13 +9609,13 @@ the-repeatable@^1.0.7:
     the-spin "^3.1.0"
     the-style "^2.0.0"
 
-the-resource-base@^1.1.0, the-resource-base@^1.2.17:
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.17.tgz#3ff4473de1c798fabcae35df209d2d010c273bed"
+the-resource-base@^1.1.0, the-resource-base@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.19.tgz#fa1d2554ed54f2f1934d335a8545bb2d87581b90"
   dependencies:
     clay-constants "^3.4.4"
-    clay-resource "^5.5.9"
-    clay-resource-name "^4.0.3"
+    clay-resource "^5.5.11"
+    clay-resource-name "^4.0.4"
 
 the-root@^2.0.4:
   version "2.0.4"
@@ -9801,16 +9807,16 @@ the-site-components@^3.0.1:
     the-style "^2.0.0"
 
 the-site-resources@^2.1.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/the-site-resources/-/the-site-resources-2.3.1.tgz#e6aaf656d1baed5b59f2ca6b2acba858f57cf6f2"
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/the-site-resources/-/the-site-resources-2.3.3.tgz#20038a183fd12cfb88fd1b3aaaa14411aaf0ea8a"
   dependencies:
     numeral "^2.0.6"
     the-cache "^2.0.1"
     the-check "^1.2.3"
     the-error "^2.0.0"
     the-password "^2.0.0"
-    the-resource-base "^1.2.17"
-    the-site-util "^1.9.0"
+    the-resource-base "^1.2.19"
+    the-site-util "^1.9.2"
     uuid "^3.2.1"
 
 the-site-routes@^1.0.0:
@@ -9832,14 +9838,14 @@ the-site-services@^1.0.3:
     the-date "^1.4.0"
     the-service-base "^1.0.3"
 
-the-site-util@^1.9.0, the-site-util@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.9.1.tgz#e560c880091feb9ed2ade1445deaca918afc5527"
+the-site-util@^1.9.1, the-site-util@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/the-site-util/-/the-site-util-1.9.2.tgz#7eb29f32c95f326062776e34f1e6592f860c72e2"
   dependencies:
-    bwindow "^1.1.0"
-    clay-resource-ref "^2.0.3"
+    bwindow "^1.1.1"
+    clay-resource-ref "^2.0.4"
     qs "^6.5.1"
-    the-hash "^1.0.10"
+    the-hash "^1.0.11"
     the-url "^1.2.2"
 
 the-spin@^3.0.0, the-spin@^3.1.0:
@@ -9903,11 +9909,21 @@ the-style@^2.0.0, the-style@^2.1.0:
     prop-types "^15.6.0"
     the-component-constants "^1.1.10"
 
-the-sw-util@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/the-sw-util/-/the-sw-util-1.0.8.tgz#f113a734d8184332c9975c217960bc9885df93e4"
+the-support@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-support/-/the-support-1.0.2.tgz#5d7734e05b2da6f2c89779c99c5e93dfe398bfd4"
   dependencies:
-    the-check "^1.2.2"
+    acorn "^5.5.3"
+    aglob "^3.0.1"
+    asfs "^2.0.3"
+    chalk "^2.3.2"
+    log-syntax-error "^0.1.1"
+
+the-sw-util@^1.0.8:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/the-sw-util/-/the-sw-util-1.0.9.tgz#3020ca0cfd4fe0168607f301f66cde12ef8f9136"
+  dependencies:
+    the-check "^1.2.3"
 
 the-tab@^3.0.6:
   version "3.0.6"
@@ -10429,10 +10445,8 @@ vinyl@^2.0.1:
     replace-ext "^1.0.0"
 
 vm-browserify@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.0.0.tgz#88768214567fd00a27be2f553712c9fc5aeb548f"
-  dependencies:
-    component-indexof "0.0.3"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.0.1.tgz#a15d7762c4c48fa6bf9f3309a21340f00ed23063"
 
 warning@^3.0.0:
   version "3.0.0"

@@ -18,6 +18,7 @@ const {
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
 const theLint = require('the-lint/pon')
+const theSupport = require('the-support/pon')
 const {locales} = require('./conf')
 const {E2EConfig} = require('./e2e/constants')
 const StoryMapping = require('./e2e/mappings/StoryMapping')
@@ -65,7 +66,7 @@ module.exports = pon(
       /** Cleanup cache files */
       'clean:cache': del('tmp/cache/**/*.*'),
       /** Cleanup public files */
-      'clean:public': del('public/build/*.*'),
+      'clean:public': del('public/build/*.*', 'public/*.*'),
       /** Cleanup shim files */
       'clean:shim': del(['shim/**/*.*', 'client/shim/**/*.*']),
     },
@@ -132,6 +133,7 @@ module.exports = pon(
     ...{
       /** Validate locales */
       'lint:loc': () => locales.validate(),
+      /** Lint by rules */
       'lint:rules': theLint(Rules),
     },
 
@@ -153,6 +155,8 @@ module.exports = pon(
       'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
       /** Run server tests */
       'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+      /** Check compatibility */
+      'test:support': theSupport('public/**/*.js'),
     },
 
     // -----------------------------------
@@ -186,12 +190,15 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['e2e:install', 'pkg:fix', 'doc:*', 'lint']
+        ...['e2e:install', 'pkg:fix', 'doc:*', 'lint'],
+        ...['test:support']
       ],
+      /** Start server */
       start: ['debug:server'],
+      /** Stop server */
       stop: [],
       /** Run all tess */
-      test: ['env:test', 'test:client', 'test:server'],
+      test: ['env:test', 'test:support', 'test:client', 'test:server'],
       /** Upgrade package */
       upgrade: ['pkg:upg', 'pkg:install:force', 'pkg:link', 'build'],
       /** Run watches */

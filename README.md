@@ -335,16 +335,20 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |
 | lint:loc | Validate locales | `pon lint:loc` |
+| lint:rules | Lint by rules | `pon lint:rules` |
 | o | Shortcut for `open` task | `pon o` |
 | open | Open project | `pon open` |
 | open:app | Open app in browser | `pon open:app` |
 | open:repo | Open homepage field in package.json | `pon open:repo` |
 | or | Shortcut for `open` task | `pon or` |
 | prepare | Prepare project | `pon prepare` |
+| start | Start server | `pon start` |
+| stop | Stop server | `pon stop` |
 | t | Shortcut for `test` task | `pon t` |
 | test | Run all tess | `pon test` |
 | test:client | Run client tests | `pon test:client` |
 | test:server | Run server tests | `pon test:server` |
+| test:support | Check compatibility | `pon test:support` |
 | u | Shortcut for `upgrade` task | `pon u` |
 | upgrade | Upgrade package | `pon upgrade` |
 | w | Shortcut for `watch` task | `pon w` |
