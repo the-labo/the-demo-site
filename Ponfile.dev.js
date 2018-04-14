@@ -66,7 +66,7 @@ module.exports = pon(
       /** Cleanup cache files */
       'clean:cache': del('tmp/cache/**/*.*'),
       /** Cleanup public files */
-      'clean:public': del('public/build/*.*', 'public/*.*'),
+      'clean:public': del(['public/build/*.*', 'public/*.*']),
       /** Cleanup shim files */
       'clean:shim': del(['shim/**/*.*', 'client/shim/**/*.*']),
     },
