@@ -2284,8 +2284,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000821:
-  version "1.0.30000828"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000828.tgz#048f98de213f7a3c047bf78a9523c611855d4fdd"
+  version "1.0.30000830"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000830.tgz#cb96b8a2dd3cbfe04acea2af3c4e894249095328"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2313,10 +2313,6 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chain-function@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
-
 chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -2327,9 +2323,9 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.1, chalk@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.2:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -2455,17 +2451,17 @@ clay-driver-memory@^4.0.1, clay-driver-memory@^4.1.10:
     moment "^2.21.0"
 
 clay-driver-mysql@^5.2.25:
-  version "5.2.25"
-  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.25.tgz#6a09efe78bc611121f0c797b8018b77f88f96e46"
+  version "5.2.26"
+  resolved "https://registry.yarnpkg.com/clay-driver-mysql/-/clay-driver-mysql-5.2.26.tgz#56f55ff03100c8623d95240198109e2077d313c1"
   dependencies:
     amkdirp "^2.0.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.5.3"
+    clay-driver-sequelize "^6.5.4"
     execcli "^5.0.2"
     moment "^2.22.0"
     mysql2 "^1.5.3"
 
-clay-driver-sequelize@^6.5.3:
+clay-driver-sequelize@^6.5.4:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.5.4.tgz#351ecd143bdc8016ebc673117b683300551408b9"
   dependencies:
@@ -2494,13 +2490,13 @@ clay-driver-sequelize@^6.5.3:
     utf8 "^3.0.0"
 
 clay-driver-sqlite@^6.3.15:
-  version "6.3.15"
-  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.15.tgz#34fda371a00532e9e79d6319eb49d1c3534446b2"
+  version "6.3.16"
+  resolved "https://registry.yarnpkg.com/clay-driver-sqlite/-/clay-driver-sqlite-6.3.16.tgz#90671d01e9dc4395424d59e94d74cf856afd5a5f"
   dependencies:
     amkdirp "^2.0.0"
     asobj "^2.1.0"
     clay-constants "^3.4.4"
-    clay-driver-sequelize "^6.5.3"
+    clay-driver-sequelize "^6.5.4"
     filecopy "^4.0.1"
     mkdirp "^0.5.1"
     moment "^2.22.0"
@@ -2543,8 +2539,8 @@ clay-list-sorter@^2.0.1:
   resolved "https://registry.yarnpkg.com/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
 clay-lump@^4.4.5:
-  version "4.4.5"
-  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.4.5.tgz#b7bc43a09e3b4b6b9ae1f68d5e3e577cc0ea9516"
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/clay-lump/-/clay-lump-4.4.6.tgz#298b5d39481631f378d8052575546f0e1d5925f7"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -2556,12 +2552,12 @@ clay-lump@^4.4.5:
     clay-driver-memory "^4.1.10"
     clay-entity "^2.1.4"
     clay-policy "^2.1.8"
-    clay-resource "^5.5.11"
+    clay-resource "^5.5.12"
     clay-resource-name "^4.0.4"
     clay-resource-ref "^2.0.4"
     debug "^3.1.0"
 
-clay-policy@^2.1.7, clay-policy@^2.1.8:
+clay-policy@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/clay-policy/-/clay-policy-2.1.8.tgz#cf1f032302057819926dcc8b120bf4eb4aac9f19"
   dependencies:
@@ -2612,9 +2608,9 @@ clay-resource-ref@^2.0.1, clay-resource-ref@^2.0.4:
     clay-id "^3.0.2"
     clay-resource-name "^4.0.4"
 
-clay-resource@^5.5.11, clay-resource@^5.5.12:
-  version "5.5.12"
-  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.5.12.tgz#506de501a7aa09ebb3d666a17fc812f7e0f09d14"
+clay-resource@^5.5.12, clay-resource@^5.5.13:
+  version "5.5.13"
+  resolved "https://registry.yarnpkg.com/clay-resource/-/clay-resource-5.5.13.tgz#607cc729af37c13610cb414ef736bd7f95c6f8ff"
   dependencies:
     asleep "^1.0.3"
     asobj "^2.1.0"
@@ -2623,7 +2619,7 @@ clay-resource@^5.5.11, clay-resource@^5.5.12:
     clay-driver-base "^4.1.1"
     clay-entity "^2.1.4"
     clay-errors "^3.1.1"
-    clay-policy "^2.1.7"
+    clay-policy "^2.1.8"
     clay-resource-cache "^2.0.1"
     clay-resource-collection "^2.0.3"
     clay-resource-entity "^2.6.2"
@@ -2647,7 +2643,7 @@ clay-serial@^2.1.1:
     clay-id "^3.0.1"
     clay-resource-ref "^2.0.1"
 
-clean-css@^4.1.9:
+clean-css@^4.1.11:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
   dependencies:
@@ -2926,8 +2922,8 @@ continuation-local-storage@^3.2.1:
     emitter-listener "^1.1.1"
 
 conventional-changelog-core@^2.0.4:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.10.tgz#3e47565ef9d148bcdceab6de6b3651a16dd28dc8"
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.11.tgz#19b5fbd55a9697773ed6661f4e32030ed7e30287"
   dependencies:
     conventional-changelog-writer "^3.0.9"
     conventional-commits-parser "^2.1.7"
@@ -3470,7 +3466,7 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-dom-helpers@^3.2.0:
+dom-helpers@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
 
@@ -3618,7 +3614,7 @@ error-inject@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
-error-stack-parser@^2.0.0:
+error-stack-parser@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.0.1.tgz#a3202b8fb03114aa9b40a0e3669e48b2b65a010a"
   dependencies:
@@ -3995,6 +3991,15 @@ filelink@^3.0.6:
     asfs "^1.0.5"
     co "^4.6.0"
     filedel "^2.0.4"
+    rimraf "^2.5.4"
+
+filelink@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/filelink/-/filelink-4.0.0.tgz#ec92d3f145e683791eae3ea35fc03aeb9641e048"
+  dependencies:
+    argx "^3.0.1"
+    asfs "^2.0.3"
+    filedel "^4.0.0"
     rimraf "^2.5.4"
 
 filemode@^2.0.3:
@@ -5965,14 +5970,14 @@ mold-source-map@^0.4.0, mold-source-map@~0.4.0:
     through "~2.2.7"
 
 moment-timezone@^0.5.14:
-  version "0.5.14"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.14.tgz#4eb38ff9538b80108ba467a458f3ed4268ccfcb1"
+  version "0.5.15"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.15.tgz#0e2acec4a424850b4e0e3e08984532726563ad4c"
   dependencies:
     moment ">= 2.9.0"
 
 "moment@>= 2.9.0", moment@^2.20.0, moment@^2.20.1, moment@^2.21.0, moment@^2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 ms@2.0.0:
   version "2.0.0"
@@ -6621,7 +6626,7 @@ pon-cache@^1.0.1:
   dependencies:
     co "^4.6.0"
 
-pon-cli@^4.1.13:
+pon-cli@^4.1.15:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/pon-cli/-/pon-cli-4.1.15.tgz#35da5768c355517123a90a79cadfb497e45a75ae"
   dependencies:
@@ -6641,13 +6646,23 @@ pon-context@^2.0.2:
     pon-writer "^1.0.4"
     uuid "^3.0.1"
 
-pon-logger@^2.0.2:
+pon-context@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/pon-context/-/pon-context-3.0.2.tgz#15a307bad44f5b9e7d3ba307c38632fb17fb1d39"
+  dependencies:
+    pon-logger "^2.0.3"
+    pon-timer "^2.0.1"
+    pon-watcher "^2.0.1"
+    pon-writer "^1.0.4"
+    uuid "^3.0.1"
+
+pon-logger@^2.0.2, pon-logger@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/pon-logger/-/pon-logger-2.0.3.tgz#5eac1ab271f5c5abae3ccecd4d031202b2dd5b4e"
   dependencies:
     colorprint "^4.1.0"
 
-pon-runner@^3.4.10, pon-runner@^3.4.11:
+pon-runner@^3.4.11:
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/pon-runner/-/pon-runner-3.4.11.tgz#ffc9e02c4cc9764ffe56abe5a8d2f2a36ea8fc23"
   dependencies:
@@ -6721,17 +6736,17 @@ pon-task-coz@^1.0.3:
     co "^4.6.0"
 
 pon-task-css@^5.0.6:
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-5.0.6.tgz#18e1d8764c2a76db27b15a5328652415cb4b4bdb"
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/pon-task-css/-/pon-task-css-5.0.7.tgz#f4a856b58924cb6015aa0ac270609f7c36f74092"
   dependencies:
     adigest "^3.0.0"
-    asfs "^2.0.1"
-    clean-css "^4.1.9"
+    asfs "^2.0.3"
+    clean-css "^4.1.11"
     pon-cache "^1.0.1"
     pon-task-compile "^3.0.3"
-    pon-task-fs "^3.1.3"
-    postcss "^6.0.14"
-    postcss-cssnext "^3.0.2"
+    pon-task-fs "^3.1.4"
+    postcss "^6.0.21"
+    postcss-cssnext "^3.1.0"
     postcss-modules "^1.1.0"
 
 pon-task-db@^2.0.1:
@@ -6793,7 +6808,7 @@ pon-task-fmtjson@^2.0.3:
   dependencies:
     fmtjson "^4.0.0"
 
-pon-task-fs@^3.1.3, pon-task-fs@^3.1.4:
+pon-task-fs@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/pon-task-fs/-/pon-task-fs-3.1.4.tgz#6b9372ac29fd5ed3707bcd1e44f1369b7a01d5cb"
   dependencies:
@@ -6933,18 +6948,18 @@ pon-writer@^1.0.4:
     writeout "^2.2.0"
 
 pon@^5.2.6:
-  version "5.2.9"
-  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.9.tgz#7078f0d9a39f4087ef8300c1f8b817f0c50a3069"
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/pon/-/pon-5.2.10.tgz#a875bc638aa8bf84aac7f8415a24f754d5b9feda"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
     minimatch "^3.0.4"
-    pon-cli "^4.1.13"
-    pon-context "^2.0.2"
-    pon-runner "^3.4.10"
-    ponfile "^4.2.4"
+    pon-cli "^4.1.15"
+    pon-context "^3.0.2"
+    pon-runner "^3.4.11"
+    ponfile "^4.2.5"
 
-ponfile@^4.2.4:
+ponfile@^4.2.4, ponfile@^4.2.5:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/ponfile/-/ponfile-4.2.5.tgz#f310cd44379e4c7d8d41f93520af02458d008ad1"
   dependencies:
@@ -7044,7 +7059,7 @@ postcss-color-rgba-fallback@^3.0.0:
     postcss-value-parser "^3.3.0"
     rgb-hex "^2.1.0"
 
-postcss-cssnext@^3.0.2:
+postcss-cssnext@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/postcss-cssnext/-/postcss-cssnext-3.1.0.tgz#927dc29341a938254cde38ea60a923b9dfedead9"
   dependencies:
@@ -7252,11 +7267,12 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 pretty-exceptions@^1.2.0:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/pretty-exceptions/-/pretty-exceptions-1.3.2.tgz#7cfbcef964fd7fce9e10451435b3be595f47068c"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/pretty-exceptions/-/pretty-exceptions-1.4.0.tgz#1bf7bc61d90d6e36881d8a18524823daa025b6fa"
   dependencies:
-    chalk "^2.3.1"
-    error-stack-parser "^2.0.0"
+    chalk "^2.3.2"
+    error-stack-parser "^2.0.1"
+    strip-ansi "^4.0.0"
 
 pretty-ms@^2.1.0:
   version "2.1.0"
@@ -7453,8 +7469,8 @@ react-click-outside@^3.0.0, react-click-outside@^3.0.1:
     hoist-non-react-statics "^2.1.1"
 
 react-dom@^16.2.0:
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.1.tgz#6a3c90a4fb62f915bdbcf6204422d93a7d4ca573"
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -7503,18 +7519,16 @@ react-router@^4.2.0:
     warning "^3.0.0"
 
 react-transition-group@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.0.tgz#8dd1af58f6af284b19fd057f512e74f20438ad31"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:
-    chain-function "^1.0.0"
-    dom-helpers "^3.2.0"
+    dom-helpers "^3.3.1"
     loose-envify "^1.3.1"
-    prop-types "^15.5.8"
-    warning "^3.0.0"
+    prop-types "^15.6.1"
 
 react@^16.2.0:
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.3.1.tgz#4a2da433d471251c69b6033ada30e2ed1202cfd8"
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -7657,8 +7671,8 @@ reduce-function-call@^1.0.1, reduce-function-call@^1.0.2:
     balanced-match "^0.4.2"
 
 reduce-reducers@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.5.tgz#ff77ca8068ff41007319b8b4b91533c7e0e54576"
 
 redux-actions@^2.3.0:
   version "2.3.0"
@@ -8751,8 +8765,8 @@ supports-color@^3.2.3:
     has-flag "^1.0.0"
 
 supports-color@^5.2.0, supports-color@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.3.0.tgz#5b24ac15db80fa927cf5227a4a33fd3c4c7676c0"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
 
@@ -8934,13 +8948,13 @@ the-aside@^1.1.2:
     the-style "^2.0.0"
 
 the-assets@^2.1.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-2.2.1.tgz#392b87896a72ec0c9889859e288d9e8a60209900"
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/the-assets/-/the-assets-2.2.2.tgz#d3ca4d6b3cc2371fe8f1e7da55b26f9e5b206bb3"
   dependencies:
     aglob "^3.0.1"
     es5-shim "^4.5.10"
     filecopy "^4.0.1"
-    filelink "^3.0.6"
+    filelink "^4.0.0"
 
 the-bar@^2.0.2:
   version "2.0.2"
@@ -9053,8 +9067,8 @@ the-component-constants@^1.1.0, the-component-constants@^1.1.10, the-component-c
   resolved "https://registry.yarnpkg.com/the-component-constants/-/the-component-constants-1.1.10.tgz#61a42cb29b66e2aa3d7a1e6d09b6ade8dea3268a"
 
 the-component-mixins@^2.0.22:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-2.1.0.tgz#8c36b0ba47d94b8f631365d6066848c75996e080"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/the-component-mixins/-/the-component-mixins-2.2.0.tgz#488310acfaa5ba248155169422bf62ddfd26f3f0"
   dependencies:
     asobj "^2.1.0"
     bwindow "^1.1.1"
@@ -9080,8 +9094,8 @@ the-component-util@^2.0.0, the-component-util@^2.1.0, the-component-util@^2.1.2,
     video-extensions "^1.1.0"
 
 the-components@^6.0.0:
-  version "6.0.49"
-  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.49.tgz#0ddc23c9a397905e4c25750c187c079528e1659d"
+  version "6.0.50"
+  resolved "https://registry.yarnpkg.com/the-components/-/the-components-6.0.50.tgz#b53aea87fc7eb58db2e17aaae88ff744a44a636a"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
@@ -9101,7 +9115,7 @@ the-components@^6.0.0:
     the-frame "^2.0.1"
     the-head "^1.0.18"
     the-header "^3.1.1"
-    the-html "^1.0.8"
+    the-html "^1.0.9"
     the-icon "^4.0.4"
     the-image "^2.0.3"
     the-info "^2.0.5"
@@ -9114,7 +9128,7 @@ the-components@^6.0.0:
     the-main "^3.0.7"
     the-menu "^2.0.13"
     the-pager "^2.0.1"
-    the-repeatable "^1.0.7"
+    the-repeatable "^1.0.8"
     the-root "^2.0.4"
     the-route "^3.1.11"
     the-router "^2.0.7"
@@ -9296,8 +9310,8 @@ the-file-util@^1.1.0:
     mkdirp "^0.5.1"
 
 the-flick@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/the-flick/-/the-flick-4.0.5.tgz#1d60afddc12521b54ed6ac6727b091df892211ff"
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/the-flick/-/the-flick-4.0.6.tgz#cda2361eb9805130e11c307599ab2b05f1206e46"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
@@ -9309,8 +9323,8 @@ the-flick@^4.0.5:
     the-image "^2.0.3"
     the-spin "^3.1.0"
     the-style "^2.1.0"
-    the-video "^2.0.14"
-    the-window "^6.0.1"
+    the-video "^2.0.15"
+    the-window "^6.1.0"
 
 the-footer@^2.1.2:
   version "2.1.2"
@@ -9381,7 +9395,7 @@ the-header@^3.1.1:
     the-style "^2.1.0"
     the-window "^6.0.1"
 
-the-html@^1.0.8:
+the-html@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/the-html/-/the-html-1.0.9.tgz#86600c4d9ddb58ce84b1e1e4f6b240c39855f0c1"
   dependencies:
@@ -9598,9 +9612,9 @@ the-refresher@^1.0.2, the-refresher@^1.0.3:
     asleep "^1.0.3"
     debug "^3.1.0"
 
-the-repeatable@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/the-repeatable/-/the-repeatable-1.0.7.tgz#b091c8102363cdbbc3cd5872b97977cd2303dc04"
+the-repeatable@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/the-repeatable/-/the-repeatable-1.0.8.tgz#fedd5f97f4442e5d19a4f8205d938b7957ebf18d"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
@@ -9610,12 +9624,14 @@ the-repeatable@^1.0.7:
     the-style "^2.0.0"
 
 the-resource-base@^1.1.0, the-resource-base@^1.2.19:
-  version "1.2.19"
-  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.19.tgz#fa1d2554ed54f2f1934d335a8545bb2d87581b90"
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/the-resource-base/-/the-resource-base-1.2.20.tgz#3e1c9f4972435c6c1e692ebc6dd5e753f67cfec3"
   dependencies:
     clay-constants "^3.4.4"
-    clay-resource "^5.5.11"
+    clay-resource "^5.5.13"
     clay-resource-name "^4.0.4"
+    the-check "^1.2.3"
+    the-hash "^1.0.11"
 
 the-root@^2.0.4:
   version "2.0.4"
@@ -9667,9 +9683,9 @@ the-scene-mixins@^1.5.3:
     the-check "^1.2.3"
     the-error "^2.0.0"
 
-the-scope@^2.0.2, the-scope@^2.1.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-2.1.2.tgz#007fb647148881ec512ceec4fbcd63edc27d6c32"
+the-scope@^2.0.2, the-scope@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/the-scope/-/the-scope-2.1.3.tgz#0d25c1b6516f55a79c360b5bb24440ad300d81f9"
   dependencies:
     the-check "^1.2.3"
 
@@ -9756,8 +9772,8 @@ the-server-util@^1.0.0:
     mkdirp "^0.5.1"
 
 the-server@^10.5.2:
-  version "10.5.2"
-  resolved "https://registry.yarnpkg.com/the-server/-/the-server-10.5.2.tgz#c44832ac9d2cf10698573d2987a70a1388c6d4eb"
+  version "10.5.3"
+  resolved "https://registry.yarnpkg.com/the-server/-/the-server-10.5.3.tgz#5d245b61d7ba0e2f4ebec907cca23a6a0b6182d3"
   dependencies:
     adigest "^3.0.0"
     aport "^2.0.0"
@@ -9873,8 +9889,8 @@ the-step@^1.1.5:
     the-style "^2.0.0"
 
 the-store@^5.4.8:
-  version "5.4.8"
-  resolved "https://registry.yarnpkg.com/the-store/-/the-store-5.4.8.tgz#d878c672c5f4c2942a4856af633a55e23831507a"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/the-store/-/the-store-5.5.0.tgz#06eccf9172df75d6873edc9189db1422acecf440"
   dependencies:
     argx "^3.0.2"
     asobj "^2.1.0"
@@ -9886,7 +9902,7 @@ the-store@^5.4.8:
     redux-actions "^2.3.0"
     redux-promise "^0.5.3"
     the-check "^1.2.3"
-    the-scope "^2.1.1"
+    the-scope "^2.1.3"
 
 the-story-base@^3.0.29:
   version "3.1.8"
@@ -9987,7 +10003,7 @@ the-url@^1.0.0, the-url@^1.2.2:
   dependencies:
     the-check "^1.2.3"
 
-the-video@^2.0.14, the-video@^2.0.15:
+the-video@^2.0.15:
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/the-video/-/the-video-2.0.15.tgz#b1328ca5bce193adb432ddadf88032751d6d6578"
   dependencies:
@@ -10309,8 +10325,8 @@ upath@^1.0.0:
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.4.tgz#ee2321ba0a786c50973db043a50b7bcba822361d"
 
 update-notifier@^2.3.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-2.4.0.tgz#f9b4c700fbfd4ec12c811587258777d563d8c866"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-2.5.0.tgz#d0744593e13f161e406acb1d9408b72cad08aff6"
   dependencies:
     boxen "^1.2.1"
     chalk "^2.0.1"

@@ -3,17 +3,13 @@
   "execMap": {
     "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
   },
-  "ext": "json,mjs,js",
+  "ext": "json,mjs,js,css",
   "ignore": [
-    ".*",
-    "node_modules",
-    "var",
-    "tmp",
-    "doc",
-    "assets",
-    "e2e",
-    "misc",
-    "example"
+    "public/the"
   ],
-  "noColors": true
+  "noColors": true,
+  "verbose": false,
+  "watch": [
+    "public/"
+  ]
 }
