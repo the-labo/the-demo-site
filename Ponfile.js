@@ -277,7 +277,7 @@ module.exports = pon(
         browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
           externals: Externals,
           fullPaths: !isProduction(),
-          transforms: [envify()],
+          transforms: [envify(process.env)],
           watchTargets: 'client/shim/**/*.js',
         }), {sub: ['watch', 'deps']}
       ),
@@ -291,7 +291,7 @@ module.exports = pon(
           ],
           requires: Externals,
           skipWatching: true,
-          transforms: [envify()],
+          transforms: [envify(process.env)],
           watchDelay: 300,
         }), {sub: ['deps']}
       ),
@@ -324,7 +324,7 @@ module.exports = pon(
         browser.all('client/shim/workers', `public`, {
           fullPaths: !isProduction(),
           pattern: '*Worker.js',
-          transforms: [envify()],
+          transforms: [envify(process.env)],
           watchTargets: 'client/shim/workers/*.js',
         }), {sub: ['watch', 'deps']}
       ),

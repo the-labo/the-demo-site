@@ -449,7 +449,7 @@
 .the-accordion-section .the-accordion-header-icon { box-sizing:border-box;height:1em;text-align:center;transform:rotate(90deg);transform-origin:50% 50%;transition:transform 100ms;width:1em; }
 .the-accordion-section .the-accordion-section-inner {  }
 .the-accordion-section .the-section-body { overflow:hidden; }
-.the-accordion-section .the-section-header { align-items:center;background-color:#FFF;border:1px solid #AAA;border-radius:4px;cursor:pointer;display:flex;font-size:1em;height:38px;line-height:36;margin:-1px;padding:0;position:relative;z-index:1; }
+.the-accordion-section .the-section-header { align-items:center;background-color:#FFF;border:1px solid #AAA;border-radius:4px;cursor:pointer;display:flex;font-size:1em;height:38px;line-height:36px;margin:-1px;padding:0;position:relative;z-index:1; }
 .the-accordion-section .the-section-header:active { opacity:0.8; }
 .the-accordion-section .the-section-header:hover { opacity:0.9; }
 .the-accordion-section { background-color:#FFF;border:1px solid #AAA;border-radius:4px;overflow:hidden;transition:max-height 300ms; }
