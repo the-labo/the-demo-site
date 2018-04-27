@@ -38,7 +38,6 @@ public
 
 .setting
 assets/css/theme.css
-package-lock.json
 
 *.bk
 

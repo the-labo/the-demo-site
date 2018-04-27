@@ -10,6 +10,7 @@ import styles from './RecoverResetView.pcss'
 import { RecoverResetForm } from '../../stateful'
 
 @localized
+@cycled
 @titled(({l}) => l('leads.RECOVER_RESET'))
 class RecoverResetView extends React.Component {
   render () {
@@ -50,7 +51,7 @@ export default stateful(
     failure: state['recover.reset.failure'],
     query: state['app.query'],
   }),
-  ({propsProxy, recoverResetScene}) => ({
+  ({recoverResetScene}, propsProxy) => ({
     onMount: () => {
       recoverResetScene.init()
       const {envelop, seal} = propsProxy.query

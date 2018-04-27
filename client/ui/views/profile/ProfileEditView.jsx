@@ -64,19 +64,22 @@ export default stateful(
   ({
      accountScene,
      profileEditScene,
-   }, propsProxy) => ({
-    onAgain: async () => {
-      profileEditScene.set({done: false})
-      await propsProxy.onPrepareProfile()
-    },
-    onMount: async () => {
-      profileEditScene.init()
-      await propsProxy.onPrepareProfile()
-    },
-    onPrepareProfile: async () => {
+   }, propsProxy) => {
+    const prepareProfile = async () => {
       await accountScene.doSync()
       const {profile} = accountScene.get('entity')
       profileEditScene.setEntryFromEntity(profile)
-    },
-  }),
+    }
+    return {
+      onAgain: async () => {
+        profileEditScene.set({done: false})
+        await prepareProfile()
+      },
+      onMount: async () => {
+        profileEditScene.init()
+        await prepareProfile()
+      },
+
+    }
+  },
 )(ProfileEditView)

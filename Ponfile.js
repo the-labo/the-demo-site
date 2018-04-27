@@ -7,7 +7,7 @@
 
 const pon = require('pon')
 const {
-  command: {spawn: {git, npx, yarn}},
+  command: {spawn: {git, npm, npx}},
   coz,
   env,
   fs: {chmod, concat, cp, del, mkdir, symlink, write},
@@ -151,9 +151,9 @@ module.exports = pon(
       /** Fix package.json */
       'pkg:fix': npx('fixpack'),
       /** Install packages */
-      'pkg:install': yarn('install', '--ignore-scripts'),
+      'pkg:install': npm('install', '--ignore-scripts'),
       /** Install packages forcefully */
-      'pkg:install:force': yarn('install', '--ignore-scripts --force'),
+      'pkg:install:force': npm('install', '--ignore-scripts --force'),
       /** Link self packages */
       'pkg:link': symlink({
         'Local.js': 'node_modules/@self/Local.js',
@@ -163,7 +163,7 @@ module.exports = pon(
         'shim/utils': 'node_modules/@self/utils',
       }, {force: true}),
       /** Upgrade packages package.json */
-      'pkg:upg': yarn('upgrade', '--ignore-scripts'),
+      'pkg:upg': npm('upgrade', '--ignore-scripts'),
     },
 
     // -----------------------------------
@@ -256,7 +256,7 @@ module.exports = pon(
         cp({
           'package.json': 'shim/package.json',
         }, {force: true}),
-        del('package-lock.json'), // Using yarn
+        del('package-lock.json'), // Using npm
       ],
       /** Render coz templates */
       'struct:render': [

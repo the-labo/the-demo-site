@@ -39,7 +39,7 @@ http {
       try_files $uri $uri/index.html $uri.html;
       root ${STATIC_DIR};
     }
-    location ~* ^/.+\.(html|htm|map|jpg|jpeg|png|ico) {
+    location ~* ^/.+\.(html|htm|map|jpg|jpeg|png|ico|svg) {
       root ${STATIC_DIR};
     }
     location ~* ^/.+\.(js|mjs|css) {

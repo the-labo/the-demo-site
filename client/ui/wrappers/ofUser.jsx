@@ -21,9 +21,13 @@ function ofUser (Component) {
     (state, ownProps) => ({
       user: ownProps.user || state['account.entity'],
     }),
-    (handle, propsProxy) => ({
-      onReceive ({user}) {
+    (handle, propsProxy, ownProps) => ({
+      onReceive: (recieved) => {
+        const {user} = recieved
         user && propsProxy.onUser?.(user)
+        if ('onReceive' in ownProps) {
+          ownProps.onReceive(recieved)
+        }
       },
     })
   )(OfUser)
