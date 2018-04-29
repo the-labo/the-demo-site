@@ -98,7 +98,7 @@ Requirements
 
 This project requires:
 
-+ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
++ [Node.js &gt;&#x3D;10](https://nodejs.org/en/)
 + [Docker](https://www.docker.com/)
 
 
@@ -115,7 +115,7 @@ Install CLI packages if you have not
 
 ```bash
 # Install global dependencies
-npm i -g yarn pon pm2 jsdoc mocha
+npm i -g pon pm2 jsdoc mocha
 ```
 
 Then, install dependencies and build the project
@@ -233,6 +233,7 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | assets:markdown | Render markdown assets | `pon assets:markdown` |
 | b | Shortcut for `build` task | `pon b` |
 | build | Build all | `pon build` |
+| check | Check bins | `pon check` |
 | db | Prepare DB | `pon db` |
 | db:cli | Open database cli | `pon db:cli` |
 | db:drop | Drop database | `pon db:drop` |
@@ -515,8 +516,8 @@ Misc
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-9.11.0.css`
-* `/the-demo-site-9.11.0.js`
+* `/the-demo-site-9.11.1.css`
+* `/the-demo-site-9.11.1.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

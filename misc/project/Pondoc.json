@@ -7,6 +7,7 @@
     "assets:markdown": "Render markdown assets",
     "b": "Shortcut for `build` task",
     "build": "Build all",
+    "check": "Check bins",
     "db": "Prepare DB",
     "db:cli": "Open database cli",
     "db:drop": "Drop database",

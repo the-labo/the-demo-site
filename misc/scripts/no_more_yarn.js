@@ -11,9 +11,9 @@ const projectDir = path.resolve(__dirname, '../../')
 const isLocalInstall = process.cwd() === projectDir
 if (isLocalInstall) {
   const byYarn = /yarn/.test(process.env.npm_execpath)
-  if (!byYarn) {
+  if (byYarn) {
     console.error(`
-${red('[YOU_MUST_USE_YARN]')} Use \`yarn install\` for this project, NOT \`npm install.\`
+${red('[NO_MORE_YARN]')} Do not \`yarn install\` for this project, just \`npm install.\` ( Because npm@6 works fast enough! )
  
 `)
     process.exit(1)

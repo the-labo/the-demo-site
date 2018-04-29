@@ -19,11 +19,13 @@ const md = require('pon-task-md')
 const pm2 = require('pon-task-pm2')
 const {browser, ccjs, css, map, react} = require('pon-task-web')
 const theAssets = require('the-assets')
+const theBin = require('the-bin/pon')
 const thePS = require('the-ps/pon')
 const {Urls, locales} = require('./conf')
 const Local = require('./Local')
 const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
 const Externals = require('./misc/browser/Externals')
+const Bins = require('./misc/project/Bins')
 const Containers = require('./misc/docker/Containers')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
@@ -62,6 +64,13 @@ module.exports = pon(
       'assets:markdown': md('assets/markdowns', 'public/partials', {
         vars: {...locales},
       }),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Check
+    // -----------------------------------
+    ...{
+      'check:bin': theBin.test(Bins),
     },
 
     // -----------------------------------
@@ -338,6 +347,8 @@ module.exports = pon(
       assets: ['assets:*'],
       /** Build all */
       build: ['struct:compile', 'pkg:link', 'struct', 'format', 'ui'],
+      /** Check bins */
+      check: ['check:*'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
       /** Default for `pon` command */
@@ -352,7 +363,15 @@ module.exports = pon(
       logs: ['pm2:app/logs'],
       /** Prepare project */
       prepare: [
-        'struct:compile', 'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
+        'check',
+        'struct:compile',
+        'pkg:link',
+        'secret:enc',
+        'struct',
+        'assets',
+        'docker',
+        'db',
+        'build',
       ],
       /** Prepare and start on production */
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
