@@ -4,7 +4,15 @@
 'use strict'
 
 import React from 'react'
-import { catching, cycled, handling, localized, provided, stateful, titled } from 'the-component-mixins'
+import {
+  catching,
+  cycled,
+  handling,
+  localized,
+  provided,
+  stateful,
+  titled,
+} from 'the-component-mixins'
 import {
   TheMain,
   TheRoot,
@@ -14,6 +22,23 @@ import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 import { ofUser } from './wrappers'
 
+@catching
+@stateful(
+  (state) => ({
+    busy: state['app.busy'],
+    pathname: state['app.pathname'],
+  }),
+  ({
+     accountScene,
+     appScene,
+     verifyNeedScene,
+   }) => ({
+    onMount: async () => {
+      await accountScene.doSync()
+      await verifyNeedScene.doSync({delay: 3 * 1000})
+    },
+  })
+)
 @ofUser
 @provided
 @handling
@@ -36,21 +61,4 @@ class App extends React.Component {
   }
 }
 
-export default catching(
-  stateful(
-    (state) => ({
-      busy: state['app.busy'],
-      pathname: state['app.pathname'],
-    }),
-    ({
-       accountScene,
-       appScene,
-       verifyNeedScene,
-     }) => ({
-      onMount: async () => {
-        await accountScene.doSync()
-        await verifyNeedScene.doSync({delay: 3 * 1000})
-      },
-    })
-  )(App)
-)
+export default App

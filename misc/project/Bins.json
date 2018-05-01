@@ -4,11 +4,11 @@
   },
   "jsdoc": {
     "dev": true,
-    "guide": "Try `jsdoc i -g pon`"
+    "guide": "Try `npm i -g jsdoc`"
   },
   "mocha": {
     "dev": true,
-    "guide": "Try `mocha i -g pon`"
+    "guide": "Try `npm i -g mocha`"
   },
   "pm2": {
     "guide": "Try `npm i -g pm2`"

@@ -43,17 +43,18 @@ class Scene extends SceneBase {
     }
   }
 
-  goTo (url, params = {}, options = {}) {
+  async goTo (url, params = {}, options = {}) {
     const {query = {}, reload = false} = options
     const href = resolveUrl(url, params, {query})
-    if (reload) {
-      this.store.app.busy.true()
-      super.goTo(href)
-      this.reloadLocation().catch((e) => {
-        this.store.app.busy.false()
-      })
-    } else {
-      super.goTo(href)
+    const {app} = this.store
+    app.busy.true()
+    try {
+      await super.goTo(href)
+      if (reload) {
+        await this.reloadLocation()
+      }
+    } finally {
+      app.busy.false()
     }
   }
 

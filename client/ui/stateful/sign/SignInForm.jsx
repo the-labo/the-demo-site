@@ -8,17 +8,7 @@ import { localized, stateful } from 'the-component-mixins'
 import { formed } from 'the-component-mixins'
 import { TheSignInForm } from 'the-site-components'
 
-@formed
-@localized
-class SignInForm extends React.Component {
-  render () {
-    return (
-      <TheSignInForm  {...this.props}/>
-    )
-  }
-}
-
-export default stateful(
+@stateful(
   (state) => ({
     errors: state['sign.in.entryErrors'],
     spinning: state['sign.in.busy'],
@@ -38,4 +28,15 @@ export default stateful(
     },
     onUpdate: (v) => inScene.setEntry(v),
   })
-)(SignInForm)
+)
+@formed
+@localized
+class SignInForm extends React.Component {
+  render () {
+    return (
+      <TheSignInForm  {...this.props}/>
+    )
+  }
+}
+
+export default SignInForm

@@ -25,8 +25,8 @@ const {Urls, locales} = require('./conf')
 const Local = require('./Local')
 const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
 const Externals = require('./misc/browser/Externals')
-const Bins = require('./misc/project/Bins')
 const Containers = require('./misc/docker/Containers')
+const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
@@ -265,7 +265,6 @@ module.exports = pon(
         cp({
           'package.json': 'shim/package.json',
         }, {force: true}),
-        del('package-lock.json'), // Using npm
       ],
       /** Render coz templates */
       'struct:render': [
