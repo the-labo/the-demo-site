@@ -18,7 +18,7 @@
     + [Set Up Servers](#set-up-servers)
     + [Run E2E Test](#run-e2e-test)
   * [Trouble Shooting](#trouble-shooting)
-    + [First Things You Try](#first-things-you-try)
+    + [First Things You Should Try](#first-things-you-should-try)
     + [Docker Containers Seam to Be Dead](#docker-containers-seam-to-be-dead)
   * [Misc](#misc)
     + [Provided Urls](#provided-urls)

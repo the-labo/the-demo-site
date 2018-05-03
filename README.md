@@ -76,7 +76,7 @@ Table of Contents
     + [Set Up Servers](#set-up-servers)
     + [Run E2E Test](#run-e2e-test)
   * [Trouble Shooting](#trouble-shooting)
-    + [First Things You Try](#first-things-you-try)
+    + [First Things You Should Try](#first-things-you-should-try)
     + [Docker Containers Seam to Be Dead](#docker-containers-seam-to-be-dead)
   * [Misc](#misc)
     + [Provided Urls](#provided-urls)
@@ -121,12 +121,11 @@ npm i -g pon pm2 jsdoc mocha
 Then, install dependencies and build the project
 
 ```bash
-# Install dependencies
-yarn install
+# Install dependencies and trigger prepare script
+npm install
 
-# Prepare project (Start up docker, create db, compile files, .etc)
-pon prepare
 ```
+
 
 <!-- Section from "doc/guides/02.Preparing.md" End -->
 
@@ -458,9 +457,9 @@ Trouble Shooting
 -----------
 
 
-### First Things You Try
+### First Things You Should Try
 
-When something goes funny, first thing you do clean build
+When something goes funny, the first thing to do is `clean` and `build`
 
 ```bash
 
@@ -516,8 +515,8 @@ Misc
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-9.11.1.css`
-* `/the-demo-site-9.11.1.js`
+* `/the-demo-site-9.11.3.css`
+* `/the-demo-site-9.11.3.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

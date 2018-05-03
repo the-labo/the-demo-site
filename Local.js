@@ -35,6 +35,7 @@ const Vars = Object.freeze(
   {
     APP_PORT: portNumberFor(`app@${__dirname}`),
     APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
+    APP_VERSION: pkg.version,
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
     E2E_PORT: portNumberFor(`e2e@${__dirname}`),
     E2E_SCREENSHOT_DIR: `${__dirname}/var/e2e/screenshots`,

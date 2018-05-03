@@ -286,6 +286,7 @@ module.exports = pon(
           externals: Externals,
           fullPaths: !isProduction(),
           transforms: [envify(process.env)],
+          version: Local.APP_VERSION,
           watchTargets: 'client/shim/**/*.js',
         }), {sub: ['watch', 'deps']}
       ),
@@ -300,6 +301,7 @@ module.exports = pon(
           requires: Externals,
           skipWatching: true,
           transforms: [envify(process.env)],
+          version: Local.APP_VERSION,
           watchDelay: 300,
         }), {sub: ['deps']}
       ),
@@ -333,6 +335,7 @@ module.exports = pon(
           fullPaths: !isProduction(),
           pattern: '*Worker.js',
           transforms: [envify(process.env)],
+          version: Local.APP_VERSION,
           watchTargets: 'client/shim/workers/*.js',
         }), {sub: ['watch', 'deps']}
       ),
