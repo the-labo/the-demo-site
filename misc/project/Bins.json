@@ -1,6 +1,9 @@
 {
+  "docker": {
+    "guide": "Install docker (https://docs.docker.com/install/)"
+  },
   "java": {
-    "guide": "Java not found. Install JDK (Java SE Development Kit)"
+    "guide": "Install JDK (Java SE Development Kit)"
   },
   "jsdoc": {
     "dev": true,
@@ -9,6 +12,14 @@
   "mocha": {
     "dev": true,
     "guide": "Try `npm i -g mocha`"
+  },
+  "node": {
+    "guide": "Try `nvm use 10` (or `nvm alias default 10`)",
+    "version": ">=10"
+  },
+  "npm": {
+    "guide": "Try `npm i -g npm@latest",
+    "version": ">=6"
   },
   "pm2": {
     "guide": "Try `npm i -g pm2`"

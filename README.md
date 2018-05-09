@@ -329,6 +329,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | format:conf | Format conf files | `pon format:conf` |
 | format:e2e | Format e2e files | `pon format:e2e` |
 | format:json | Format json files | `pon format:json` |
+| format:misc | Format misc files | `pon format:misc` |
 | format:server | Format server files | `pon format:server` |
 | git:changelog | Generate changelog file | `pon git:changelog` |
 | icon:gen | Generate icons | `pon icon:gen` |

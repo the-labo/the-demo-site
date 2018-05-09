@@ -14,12 +14,12 @@ void async function () {
     'client/ui/**/*Form.jsx'
   ], {
     '@withForm': '@formed',
-    'import { withForm } from \'the-components\'': 'import { formed } from \'the-component-mixins\'',
-    'getInputAttributesOf': 'inputPropsOf',
     'getFormAttributes': 'formPropsOf',
     'getFormAttributesOf': 'formPropsOf',
+    'getInputAttributesOf': 'inputPropsOf',
     'getLabelAttributesOf': 'labelPropsOf',
-    'getSubmitAttributesOf': 'submitPropsOf',
     'getSubmitAttributes': 'submitPropsOf',
+    'getSubmitAttributesOf': 'submitPropsOf',
+    'import { withForm } from \'the-components\'': 'import { formed } from \'the-component-mixins\'',
   })
 }()

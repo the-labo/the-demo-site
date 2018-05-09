@@ -123,6 +123,8 @@ module.exports = pon(
         'misc/**/*.json',
         'secrets.json',
       ], {ignore: 'client/shim/**/*.json', sort: true}),
+      /** Format misc files */
+      'format:misc': theCode('misc/**/*.js', {}),
       /** Format server files */
       'format:server': theCode('server/**/*.js', {}),
     },
@@ -182,7 +184,7 @@ module.exports = pon(
       /** Run e2e test */
       e2e: ['e2e:story'],
       /** Format source codes */
-      format: ['format:conf', 'format:json', 'format:client', 'format:server', 'format:e2e'],
+      format: ['format:conf', 'format:json', 'format:client', 'format:server', 'format:misc', 'format:e2e'],
       /** Lint all */
       lint: ['lint:loc', 'lint:rules'],
       /** Open project */

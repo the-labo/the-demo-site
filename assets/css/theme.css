@@ -237,10 +237,18 @@
 .the-input-radio .the-input-radio-label:hover { opacity:0.9; }
 .the-input-radio .the-input-radio-radio { height:1px;left:0;margin-bottom:-1px;margin-right:-1px;opacity:0;overflow:hidden;position:absolute;top:0;visibility:hidden;width:1px;z-index:-1; }
 .the-input-radio { border-radius:2px;box-sizing:border-box;display:inline-block;margin:0px;max-width:480px;position:relative;vertical-align:middle;width:100%; }
-.the-input-radio.the-input-asButton {  }
-.the-input-radio.the-input-asButton .the-input-radio-icon { display:none; }
-.the-input-radio.the-input-asButton .the-input-radio-item { background:#FFF;border:1px solid #CCC;border-radius:4px;font-size:smaller;margin:4px;padding:4px 8px;text-align:center; }
-.the-input-radio.the-input-asButton .the-input-radio-item-checked { border:2px solid #3A8; }
+.the-input-radio.the-input-as-button {  }
+.the-input-radio.the-input-as-button .the-input-radio-icon { display:none; }
+.the-input-radio.the-input-as-button .the-input-radio-item { background:#FFF;border:1px solid #CCC;border-radius:4px;font-size:smaller;margin:4px;padding:4px 8px;text-align:center; }
+.the-input-radio.the-input-as-button .the-input-radio-item-checked { border:2px solid #3A8; }
+.the-input-radio.the-input-as-toggle {  }
+.the-input-radio.the-input-as-toggle .the-input-radio-icon { display:none; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item { background:#FFF;border:1px solid #CCC;border-radius:0px;font-size:smaller;margin:4px -1px 4px 0;padding:0px;text-align:center; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item .the-input-radio-label { box-sizing:border-box;padding:6px 12px; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item:first-child { border-radius:4px 0 0 4px;margin-left:4px; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item:last-child { border-radius:0 4px 4px 0;margin-right:4px; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item.the-input-radio-item-checked { background-color:#3A8;border-width:1px;color:#FFF;position:relative;z-index:1; }
+.the-input-radio.the-input-as-toggle .the-input-radio-item-checked { border:2px solid #3A8; }
 .the-input-checkbox .the-input-checkbox-checkbox { height:1px;left:0;margin-bottom:-1px;margin-right:-1px;opacity:0;overflow:hidden;position:absolute;top:0;visibility:hidden;width:1px;z-index:-1; }
 .the-input-checkbox .the-input-checkbox-icon { color:#3A8;min-width:1em; }
 .the-input-checkbox .the-input-checkbox-item { align-items:center;box-sizing:border-box;display:inline-flex;justify-content:flex-center;margin:0 2px;overflow:hidden;text-overflow:ellipsis; }

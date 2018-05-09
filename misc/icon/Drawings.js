@@ -4,9 +4,9 @@
  */
 'use strict'
 
+const {Styles} = require('../../conf')
 const Local = require('../../Local')
 const pkg = require('../../package')
-const {Styles} = require('../../conf')
 
 const FONT_THEME = 'a'
 
@@ -14,35 +14,35 @@ module.exports = Object.freeze(
   /** @lends Drawings */
   {
     appIcon: {
-      path: 'assets/images/app-icon.png',
       data: {
-        text: pkg.name[0],
+        color: Styles.DOMINANT_COLOR,
         font: FONT_THEME,
         shape: 'b',
-        color: Styles.DOMINANT_COLOR
-      }
+        text: pkg.name[0],
+      },
+      path: 'assets/images/app-icon.png',
     },
     fbAppIcon: {
-      path: 'assets/images/fb/fb-app-icon.png',
       data: {
-        text: pkg.name,
-        font: FONT_THEME,
-        shape: 'a',
         color: Styles.DOMINANT_COLOR,
+        font: FONT_THEME,
+        fontSize: 128,
+        shape: 'a',
         size: 1024,
-        fontSize: 128
+        text: pkg.name,
       },
+      path: 'assets/images/fb/fb-app-icon.png',
     },
     officialAccountIcon: {
-      path: 'assets/images/accounts/official-account-icon.png',
       data: {
-        text: pkg.name,
-        font: FONT_THEME,
-        shape: 'a',
         color: Styles.DOMINANT_COLOR,
+        font: FONT_THEME,
+        fontSize: 24,
+        shape: 'a',
         size: 256,
-        fontSize: 24
+        text: pkg.name,
       },
-    }
+      path: 'assets/images/accounts/official-account-icon.png',
+    },
   }
 )
