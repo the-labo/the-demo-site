@@ -38,7 +38,6 @@ class Header extends React.Component {
                  notices={notices}
       >
         <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
-
         <TheHeader.Tab>
           <TheCondition if={Boolean(user && isAdmin(user))}>
             <TheHeader.TabItem icon={Icons.TAB_ADMIN_ICON}

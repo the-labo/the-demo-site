@@ -10,6 +10,10 @@ import { Icons, Urls } from '@self/conf'
 import styles from './AdminTopView.pcss'
 import { onlySigned } from '../../wrappers'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({})
+)
 @onlySigned
 @localized
 @titled(({l}) => l('titles.ADMIN_TOP_TITLE'))
@@ -36,6 +40,4 @@ class AdminTopView extends React.Component {
   }
 }
 
-export default stateful(
-
-)(AdminTopView)
+export default AdminTopView

@@ -1,6 +1,6 @@
 {
   "docker": {
-    "guide": "Install docker (https://docs.docker.com/install/)"
+    "guide": "Install docker from https://docs.docker.com/install/"
   },
   "java": {
     "guide": "Install JDK (Java SE Development Kit)"

@@ -3,17 +3,17 @@ sudo: required
 services:
 - docker
 node_js:
-- '8'
+- '10'
 before_install:
-- sudo apt-get -o Dpkg::Options::="--force-confnew" -y update
-- sudo apt-get -o Dpkg::Options::="--force-confnew" -y install docker-engine
 - npm install yarn pm2 pon jsdoc -g
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
 install:
 - yarn install
 script:
 - pon c b
-after_success:
-# - ./ci/travis/publish.js
+deploy:
+  provider: npm
+  email: okunishinishi@gmail.com
+  api_key:
+    secure: r4uj3GiXEmafuG2EFVASr93SWaPaoM/DGMmGWVdEjzv2KAMERXpj56lhn2xUqELVtmRMkrDG7/YXw7ThDo95HO/Y2JB6Q2wzS6+EIygb1fyYkhwIhiSNOXfEOhACFeWef+HGxO8ip+3yPw35vi/xRwrfSAasYWY3oya5e5gZvd5vtoIfxbzfCSgf0jz00stU87Ckce1tR+aAr1nH6f0ulKXwJaMSfEO7Q8UJINNyqwhw43H/hPQ0jVFN1AA8Dpx/7Vci3YtFEnrMqNX9twoLRx13OitSAKF0K/7C0XOAby5u1TV0W8aVw9uj/hHrcLA38wEt/2ZtcmkMveQVD9yJsG07wwEmwBsTpaP4d2E0BFXmeqKnWV46aeSBssBqVsYlX/qzFzMLl3Uk5TSDyhFy9buNG5JXuo6WJaCQnW+thLasy8pcx9tJ3lXfmo3D0/akBcLJJoBfqPgoYwKzMlZPk0yoM4qfj32dt+/C56vozdMJZM2ddgLvIp8tZJW6rLtFYDFy97CvrVrw901PZ+kHaYXojIFnoobnQQQWZBSrkBtzW5Ps96deRthxNkbv9OzHyV6Id8JFfyiGVKLJFlD5GZh7tQMhSza26uND6duPsO0pTVsIntWYUSfywBMzyVU7pCUycT33aVOX0RMfSs1X/cM06NV2PPgdK63j8+1tjlE=
+  on:
+    tags: true

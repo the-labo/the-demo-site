@@ -8,6 +8,10 @@ import { localized, stateful, titled } from 'the-component-mixins'
 import { TheFrame, TheView } from 'the-components'
 import styles from './AboutTermsOfUseView.pcss'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 @titled(({l}) => l('titles.TERMS_OF_USE_TITLE'))
 class AboutTermsOfUseView extends React.Component {
@@ -31,6 +35,4 @@ class AboutTermsOfUseView extends React.Component {
   }
 }
 
-export default stateful()(
-  AboutTermsOfUseView
-)
+export default AboutTermsOfUseView

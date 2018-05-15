@@ -1,4 +1,10 @@
 {
+  "client/!(shim)/**/+(*.js|*.jsx)": {
+    "contentRule": {
+      "endsWithNewLine": true,
+      "maxLines": 200
+    }
+  },
   "client/scenes/!(index).js": {
     "callRule": {
       "keypathArguments": {
@@ -77,7 +83,8 @@
   },
   "server/**/*.js": {
     "contentRule": {
-      "endsWithNewLine": true
+      "endsWithNewLine": true,
+      "maxLines": 200
     },
     "depsRule": {
       "importFrom": [

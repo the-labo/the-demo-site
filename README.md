@@ -232,7 +232,7 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | assets:markdown | Render markdown assets | `pon assets:markdown` |
 | b | Shortcut for `build` task | `pon b` |
 | build | Build all | `pon build` |
-| check | Check bins | `pon check` |
+| check | Check all | `pon check` |
 | db | Prepare DB | `pon db` |
 | db:cli | Open database cli | `pon db:cli` |
 | db:drop | Drop database | `pon db:drop` |

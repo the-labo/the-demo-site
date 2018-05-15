@@ -10,6 +10,13 @@ import styles from './HomeView.pcss'
 import { HomePanel, Intro } from '../stateful'
 import { ofUser } from '../wrappers'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({
+    onUser: (user) => {
+    },
+  })
+)
 @ofUser
 @localized
 @cycled
@@ -36,10 +43,4 @@ class HomeView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({}),
-  ({}) => ({
-    onUser: (user) => {
-    },
-  })
-)(HomeView)
+export default HomeView

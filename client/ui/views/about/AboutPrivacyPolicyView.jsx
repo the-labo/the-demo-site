@@ -8,6 +8,10 @@ import { localized, stateful, titled } from 'the-component-mixins'
 import { TheFrame, TheView } from 'the-components'
 import styles from './AboutPrivacyPolicyView.pcss'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({})
+)
 @localized
 @titled(({l}) => l('titles.PRIVACY_POLICY_TITLE'))
 class AboutPrivacyPolicyView extends React.Component {
@@ -31,6 +35,4 @@ class AboutPrivacyPolicyView extends React.Component {
   }
 }
 
-export default stateful()(
-  AboutPrivacyPolicyView
-)
+export default AboutPrivacyPolicyView

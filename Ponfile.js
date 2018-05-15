@@ -349,7 +349,7 @@ module.exports = pon(
       assets: ['assets:*'],
       /** Build all */
       build: ['struct:compile', 'pkg:link', 'struct', 'format', 'ui'],
-      /** Check bins */
+      /** Check all */
       check: ['check:*'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
