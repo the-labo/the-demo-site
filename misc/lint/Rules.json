@@ -1,15 +1,13 @@
 {
-  "client/!(shim)/**/+(*.js|*.jsx)": {
-    "contentRule": {
-      "endsWithNewLine": true,
-      "maxLines": 200
-    }
-  },
   "client/scenes/!(index).js": {
     "callRule": {
       "keypathArguments": {
         "bindScope": "client/scopes"
       }
+    },
+    "contentRule": {
+      "endsWithNewLine": true,
+      "maxLines": 200
     },
     "decorateRule": {
       "declared": true
@@ -23,6 +21,10 @@
       "keypathArguments": {
         "l": "conf/locales/en"
       }
+    },
+    "contentRule": {
+      "endsWithNewLine": true,
+      "maxLines": 200
     },
     "decorateRule": {
       "declared": true
