@@ -7,7 +7,6 @@ node_js:
 before_install:
 - npm install yarn pm2 pon jsdoc -g
 install:
-- rm -rf node_modules/
 - npm install
 script:
 - pon c b
