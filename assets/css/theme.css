@@ -431,7 +431,7 @@
 .the-repeatable.the-repeatable-horizontal {  }
 .the-repeatable.the-repeatable-horizontal .the-repeatable-item { flex-shrink:0; }
 .the-repeatable.the-repeatable-horizontal .the-repeatable-list { flex-wrap:noWrap;overflow:auto; }
-.the-root { align-items:stretch;display:flex;flex-direction:column;min-height:100vh; }
+.the-root { align-items:stretch;display:flex;flex-direction:column;min-height:100%; }
 .the-route {  }
 .the-route-stack .the-route { flex-shrink:0;position:relative;transition:margin 400ms;width:100%;z-index:1; }
 .the-route-stack .the-route-stack-inner { display:flex;overflow:hidden;transition:height 200ms; }
