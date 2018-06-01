@@ -8,6 +8,6 @@ const pon = require('../../Ponfile')
 process.chdir(pon.cwd)
 
 void async function () {
-  await pon.run('pkg:install', 'pkg:link', {disableLogging: true})
+  await pon.run('pkg:install', {disableLogging: true, throwIfEmpty: true})
 }()
 

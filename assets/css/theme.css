@@ -10,7 +10,7 @@
 .the-action-bar .the-action-bar-lead { color:#888;font-size:smaller;margin:0 0 8px;padding:0 8px; }
 .the-action-bar { background:rgba(0, 0, 0, 0.9);border-top:1px solid #333;bottom:0px;box-shadow:-1px -1px 4px rgba(0, 0, 0, 0.33);color:white;left:0px;position:fixed;right:0px;transition:bottom 400ms;z-index:4; }
 .the-action-bar.the-action-bar-hidden { bottom:-100%; }
-.the-body { color:#555;margin:0;padding:0;font-family:ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;font-size:16px;background-color:#FFF;min-height:100vh; }
+.the-body { background-color:#FFF;color:#555;font-family:ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;font-size:16px;margin:0;min-height:100vh;padding:0;touch-action:manipulation; }
 .the-button .the-button-icon { margin-left:0px;margin-right:2px; }
 .the-button .the-button-icon-right { margin-left:2px;margin-right:0px; }
 .the-button .the-button-large-icon { display:block;font-size:4em;margin:0px; }
@@ -23,7 +23,7 @@
 .the-button.the-button-disabled { background-color:#F0F0F0;color:#CCC;cursor:default;pointer-events:none; }
 .the-button.the-button-disabled:hover { box-shadow:none;cursor:default; }
 .the-button.the-button-disabled:active { box-shadow:none;cursor:default; }
-.the-button.the-button-disabled.the-button-primary { background-color:#F0F0F0;color:#CCC; }
+.the-button.the-button-disabled.the-button-primary { background-color:#F0F0F0;border-color:#CCC;color:#CCC; }
 .the-button.the-button-floated { box-shadow:2px 2px 4px rgba(0,0,0,0.33); }
 .the-button.the-button-floated:active { box-shadow:none; }
 .the-button.the-button-large { font-size:2em; }

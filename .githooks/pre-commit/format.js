@@ -4,13 +4,13 @@
  */
 'use strict'
 
-const pon = require('../../Ponfile')
+const pon = require('../../Ponfile.dev')
 process.chdir(pon.cwd)
 
 const flatten = (r = [], v) => [].concat(r, v)
 
-void async function () {
-  const results = await pon.run('format', {disableLogging: true})
+void (async function () {
+  const results = await pon.run('format', {disableLogging: true, throwIfEmpty: true})
   const filenames = Object.values(results).reduce(flatten, []).reduce(flatten, [])
   if (filenames.length > 0) {
     console.error(
@@ -18,6 +18,4 @@ void async function () {
     )
     process.exit(1)
   }
-
-}()
-
+}())

@@ -247,7 +247,6 @@ module.exports = pon(
       ],
       /** Execute file copy */
       'struct:cp': cp({
-        'assets/css': 'public/css',
         'assets/html/server-error': 'public/server-error',
         'assets/images': 'public/images',
         'assets/js': 'public/js',
@@ -317,7 +316,8 @@ module.exports = pon(
           'client/ui/base.pcss',
           'client/ui/constants/variables.pcss'
         ], 'public/build/bundle.pcss', {}),
-        css('public/build', 'public/build', {pattern: '*.pcss'})
+        css('public/build', 'public/build', {pattern: '*.pcss'}),
+        css('assets/css', 'public/css', {pattern: '*.css'}),
       ],
       /** Run css watch */
       'ui:css/watch': 'ui:css/*/watch',

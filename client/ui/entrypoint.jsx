@@ -37,8 +37,8 @@ once('DOMContentLoaded', async () => {
 
   const {appScene, toastScene} = handle
   history.listen((location) => appScene.handleLocationChange(location))
-  appScene.set({host: get('location.host'), locale: lang})
   appScene.setLocation(history.location)
+  appScene.set({host: get('location.host'), locale: lang})
 
   rescue((e) => {
     const handled = appScene.handleRejectionReason(e.reason)
