@@ -7,7 +7,7 @@ import React from 'react'
 import { isProduction } from 'the-check'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
 import { resolveUrl } from 'the-site-util'
-import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
+import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 
 /** @lends Html */
@@ -23,7 +23,7 @@ function Html ({appScope, renderingContext}) {
     lang,
   }
   const js = [
-    Urls.JS_SHIM_URL,
+    ...SrcSets.jsSet,
     ...(isProduction() ? [
       Urls.PRODUCTION_JS_URL,
     ] : [
@@ -31,13 +31,15 @@ function Html ({appScope, renderingContext}) {
       Urls.JS_BUNDLE_URL,
     ]),
   ]
-  const css = isProduction() ? [
-    Urls.PRODUCTION_CSS_URL
-  ] : [
-    Urls.CSS_NORMALIZE_URL,
-    Urls.CSS_THEME_URL,
-    Urls.CSS_FONT_URL,
-    Urls.CSS_BUNDLE_URL,
+  const css = [
+    ...SrcSets.cssSet,
+    ...(
+      isProduction() ? [
+        Urls.PRODUCTION_CSS_URL
+      ] : [
+        Urls.CSS_BUNDLE_URL
+      ]
+    )
   ]
   return (
     <TheHtml>

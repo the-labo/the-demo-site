@@ -11,6 +11,7 @@ import Icons from './Icons'
 import Lifetimes from './Lifetimes'
 import LocaleNames from './LocaleNames'
 import RoleCodes from './RoleCodes'
+import SrcSets from './SrcSets'
 import Styles from './Styles'
 import UI from './UI'
 import Urls from './Urls'
@@ -23,6 +24,7 @@ export {
   Lifetimes,
   LocaleNames,
   RoleCodes,
+  SrcSets,
   Styles,
   UI,
   Urls,

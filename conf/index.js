@@ -14,6 +14,7 @@ module.exports = {
   get Lifetimes () { return _d(require('./Lifetimes')) },
   get LocaleNames () { return _d(require('./LocaleNames')) },
   get RoleCodes () { return _d(require('./RoleCodes')) },
+  get SrcSets () { return _d(require('./SrcSets')) },
   get Styles () { return _d(require('./Styles')) },
   get UI () { return _d(require('./UI')) },
   get Urls () { return _d(require('./Urls')) },

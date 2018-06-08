@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {hours} = require('the-date')
+const {units: {hours}} = require('the-date')
 
 module.exports = Object.freeze(
   /** @lends Lifetimes */

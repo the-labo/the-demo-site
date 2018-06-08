@@ -500,6 +500,7 @@ Misc
 * `/admin/users`
 * `/a/:key`
 * `/build/bundle.css`
+* `/css/flatpickr.min.css`
 * `/css/fontawesome-all.css`
 * `/css/normalize.css`
 * `/css/theme.css`

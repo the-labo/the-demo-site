@@ -191,6 +191,7 @@ module.exports = pon(
       open: 'open:app',
       /** Prepare project */
       prepare: [
+        'clean:cache',
         ...tasks.prepare,
         ...['e2e:install', 'pkg:fix', 'doc:*', 'lint'],
         ...['test:support']
