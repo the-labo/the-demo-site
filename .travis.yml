@@ -5,7 +5,7 @@ services:
 node_js:
 - '10.0'
 before_install:
-- npm install yarn pm2 pon jsdoc -g
+- npm install npm@latest pm2 pon jsdoc -g
 install:
 - npm install
 script:
