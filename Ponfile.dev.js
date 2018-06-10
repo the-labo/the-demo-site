@@ -17,6 +17,7 @@ const {
 } = require('pon-task-dev')
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
+const theE2E = require('the-e2e/pon')
 const theLint = require('the-lint/pon')
 const theSupport = require('the-support/pon')
 const {locales} = require('./conf')
@@ -27,7 +28,6 @@ const Drawings = require('./misc/icon/Drawings')
 const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
 const {cwd, doc, tasks} = require('./Ponfile')
-const theE2E = require('../the-e2e/pon')
 
 const e2e = theE2E(E2EConfig)
 
