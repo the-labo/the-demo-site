@@ -6,6 +6,5 @@
 
 const create = require('./create')
 const handle = require('../handle')
-const AppConsts = require('../constants/AppConsts')
-const singleton = create.for('singleton', {handle, version: AppConsts.version})
+const singleton = create.for('singleton', {handle})
 module.exports = singleton

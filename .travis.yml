@@ -10,6 +10,8 @@ install:
 - npm install
 script:
 - pon c b
+env:
+- THE_DEMO_SITE_MASTER_PASSWORD=the-demo-site
 deploy:
   provider: npm
   email: okunishinishi@gmail.com
