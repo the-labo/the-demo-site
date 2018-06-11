@@ -363,8 +363,8 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         'check',
-        'struct:compile',
         'pkg:link',
+        'struct:compile',
         'secret:enc',
         'struct',
         'assets',
