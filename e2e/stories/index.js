@@ -5,13 +5,28 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const SignInOutStory_ = require('./00.SignInOutStory')
+const PasswordChangeStory_ = require('./01.PasswordChangeStory')
+const ProfileEditStory_ = require('./02.ProfileEditStory')
+const SignUpDelStory_ = require('./03.SignUpDelStory')
+const Story_ = require('./Story')
+const concerns_ = require('./concerns')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.SignInOutStory = _d(SignInOutStory_)
+exports.PasswordChangeStory = _d(PasswordChangeStory_)
+exports.ProfileEditStory = _d(ProfileEditStory_)
+exports.SignUpDelStory = _d(SignUpDelStory_)
+exports.Story = _d(Story_)
+exports.concerns = _d(concerns_)
 
 module.exports = {
-  get SignInOutStory () { return _d(require('./00.SignInOutStory')) },
-  get PasswordChangeStory () { return _d(require('./01.PasswordChangeStory')) },
-  get ProfileEditStory () { return _d(require('./02.ProfileEditStory')) },
-  get SignUpDelStory () { return _d(require('./03.SignUpDelStory')) },
-  get Story () { return _d(require('./Story')) },
-  get concerns () { return _d(require('./concerns')) },
+  SignInOutStory: _d(SignInOutStory_),
+  PasswordChangeStory: _d(PasswordChangeStory_),
+  ProfileEditStory: _d(ProfileEditStory_),
+  SignUpDelStory: _d(SignUpDelStory_),
+  Story: _d(Story_),
+  concerns: _d(concerns_),
 }

@@ -23,14 +23,11 @@ const theBin = require('the-bin/pon')
 const thePS = require('the-ps/pon')
 const {Urls, locales} = require('./conf')
 const Local = require('./Local')
-const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
-const Externals = require('./misc/browser/Externals')
 const Containers = require('./misc/docker/Containers')
 const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
-const {envify} = browser.transforms
 const {secret, setting} = Local
 const createDB = () => require('./server/db/create').forTask()
 
@@ -277,29 +274,12 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Bundle browser script */
-      'ui:browser': env.dynamic(({isProduction}) =>
-        browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
-          externals: Externals,
-          fullPaths: !isProduction(),
-          transforms: [envify(process.env)],
-          version: Local.APP_VERSION,
-          watchTargets: 'client/shim/**/*.js',
-        }), {sub: ['watch', 'deps']}
-      ),
-      /** Bundle external browser script */
-      'ui:browser-external': env.dynamic(({isProduction}) =>
-        browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-          fullPaths: !isProduction(),
-          ignores: [
-            // TODO remove patch
-            ...ExternalIgnorePatch({isProduction}),
-          ],
-          requires: Externals,
-          skipWatching: true,
-          transforms: [envify(process.env)],
-          version: Local.APP_VERSION,
-          watchDelay: 300,
-        }), {sub: ['deps']}
+      'ui:browser': env.dynamic(() =>
+        browser('./client/shim/ui/entrypoint.js',
+          `public${Urls.JS_BUNDLE_URL}`
+          , {
+            version: Local.APP_VERSION,
+          }), {sub: ['watch']}
       ),
       /** Compile stylesheets */
       'ui:css': [
@@ -318,8 +298,6 @@ module.exports = pon(
       ],
       /** Run css watch */
       'ui:css/watch': 'ui:css/*/watch',
-      /** Extract map files */
-      'ui:map': map('public', 'public', {pattern: '**/*.js', watchDelay: 400}),
       /** Compile react components */
       'ui:react': react('client', 'client/shim', {
         extractCss: `client/shim/ui/bundle.pcss`,
@@ -328,13 +306,9 @@ module.exports = pon(
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(({isProduction}) =>
-        browser.all('client/shim/workers', `public`, {
-          fullPaths: !isProduction(),
-          pattern: '*Worker.js',
-          transforms: [envify(process.env)],
+        browser.all('./client/shim/workers', `public`, {
           version: Local.APP_VERSION,
-          watchTargets: 'client/shim/workers/*.js',
-        }), {sub: ['watch', 'deps']}
+        }), {sub: ['watch']}
       ),
     },
 
@@ -387,7 +361,7 @@ module.exports = pon(
       /** Run all struct tasks */
       struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all ui tasks */
-      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:workers', 'ui:map'],
+      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:workers'],
     },
 
     // -----------------------------------

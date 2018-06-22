@@ -5,19 +5,46 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const abstract__ = require('./abstract')
+const account_ = require('./account')
+const admin_ = require('./admin')
+const app_ = require('./app')
+const connection_ = require('./connection')
+const password_ = require('./password')
+const profile_ = require('./profile')
+const quit_ = require('./quit')
+const recover_ = require('./recover')
+const sign_ = require('./sign')
+const toast_ = require('./toast')
+const verify_ = require('./verify')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.abstract = _d(abstract__)
+exports.account = _d(account_)
+exports.admin = _d(admin_)
+exports.app = _d(app_)
+exports.connection = _d(connection_)
+exports.password = _d(password_)
+exports.profile = _d(profile_)
+exports.quit = _d(quit_)
+exports.recover = _d(recover_)
+exports.sign = _d(sign_)
+exports.toast = _d(toast_)
+exports.verify = _d(verify_)
 
 module.exports = {
-  get abstract () { return _d(require('./abstract')) },
-  get account () { return _d(require('./account')) },
-  get admin () { return _d(require('./admin')) },
-  get app () { return _d(require('./app')) },
-  get connection () { return _d(require('./connection')) },
-  get password () { return _d(require('./password')) },
-  get profile () { return _d(require('./profile')) },
-  get quit () { return _d(require('./quit')) },
-  get recover () { return _d(require('./recover')) },
-  get sign () { return _d(require('./sign')) },
-  get toast () { return _d(require('./toast')) },
-  get verify () { return _d(require('./verify')) },
+  abstract: _d(abstract__),
+  account: _d(account_),
+  admin: _d(admin_),
+  app: _d(app_),
+  connection: _d(connection_),
+  password: _d(password_),
+  profile: _d(profile_),
+  quit: _d(quit_),
+  recover: _d(recover_),
+  sign: _d(sign_),
+  toast: _d(toast_),
+  verify: _d(verify_),
 }

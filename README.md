@@ -508,12 +508,11 @@ Misc
 * `/errors/not-found`
 * `/images/app-icon.png`
 * `/build/bundle.js`
-* `/build/external-bundle.js`
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-9.11.16.css`
-* `/the-demo-site-9.11.16.js`
+* `/the-demo-site-10.0.0.css`
+* `/the-demo-site-10.0.0.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

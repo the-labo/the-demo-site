@@ -1,8 +1,8 @@
 'use strict'
 
-const theLoc = require('the-loc').default
+const {TheLoc} = require('the-loc')
 
-const loc = theLoc({
+const loc = new TheLoc({
   en: require('./en'),
   ja: require('./ja')
 }, {

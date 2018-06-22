@@ -6,7 +6,7 @@
 
 import React from 'react'
 import { localized } from 'the-component-mixins'
-import { wrapStack } from 'the-component-mixins/helpers'
+import { wrapStack } from 'the-component-util'
 import { RoleCodes } from '@self/conf'
 
 const hasRole = (user, roleCode) => user?.role?.code === roleCode

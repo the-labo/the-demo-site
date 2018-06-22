@@ -6,7 +6,7 @@
 'use strict'
 
 const cluster = require('cluster')
-const theDB = require('the-db').default
+const theDB = require('the-db')
 const env = require('../env')
 const {HookMapping, PluginMapping, ResourceMapping} = require('../mappings')
 

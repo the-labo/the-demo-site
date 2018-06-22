@@ -5,14 +5,31 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const AliasResource_ = require('./AliasResource')
+const HistoryResource_ = require('./HistoryResource')
+const ProfileResource_ = require('./ProfileResource')
+const RoleResource_ = require('./RoleResource')
+const SignResource_ = require('./SignResource')
+const TokenResource_ = require('./TokenResource')
+const UserResource_ = require('./UserResource')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.AliasResource = _d(AliasResource_)
+exports.HistoryResource = _d(HistoryResource_)
+exports.ProfileResource = _d(ProfileResource_)
+exports.RoleResource = _d(RoleResource_)
+exports.SignResource = _d(SignResource_)
+exports.TokenResource = _d(TokenResource_)
+exports.UserResource = _d(UserResource_)
 
 module.exports = {
-  get AliasResource () { return _d(require('./AliasResource')) },
-  get HistoryResource () { return _d(require('./HistoryResource')) },
-  get ProfileResource () { return _d(require('./ProfileResource')) },
-  get RoleResource () { return _d(require('./RoleResource')) },
-  get SignResource () { return _d(require('./SignResource')) },
-  get TokenResource () { return _d(require('./TokenResource')) },
-  get UserResource () { return _d(require('./UserResource')) },
+  AliasResource: _d(AliasResource_),
+  HistoryResource: _d(HistoryResource_),
+  ProfileResource: _d(ProfileResource_),
+  RoleResource: _d(RoleResource_),
+  SignResource: _d(SignResource_),
+  TokenResource: _d(TokenResource_),
+  UserResource: _d(UserResource_),
 }

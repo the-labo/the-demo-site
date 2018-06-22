@@ -5,17 +5,40 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const AccountCtrl_ = require('./AccountCtrl')
+const AdminUserCtrl_ = require('./admin/AdminUserCtrl')
+const AdminCtrl_ = require('./AdminCtrl')
+const AppCtrl_ = require('./AppCtrl')
+const Ctrl_ = require('./Ctrl')
+const ListenCtrl_ = require('./ListenCtrl')
+const QuitCtrl_ = require('./QuitCtrl')
+const RecoverCtrl_ = require('./RecoverCtrl')
+const SignCtrl_ = require('./SignCtrl')
+const VerifyCtrl_ = require('./VerifyCtrl')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.AccountCtrl = _d(AccountCtrl_)
+exports.AdminUserCtrl = _d(AdminUserCtrl_)
+exports.AdminCtrl = _d(AdminCtrl_)
+exports.AppCtrl = _d(AppCtrl_)
+exports.Ctrl = _d(Ctrl_)
+exports.ListenCtrl = _d(ListenCtrl_)
+exports.QuitCtrl = _d(QuitCtrl_)
+exports.RecoverCtrl = _d(RecoverCtrl_)
+exports.SignCtrl = _d(SignCtrl_)
+exports.VerifyCtrl = _d(VerifyCtrl_)
 
 module.exports = {
-  get AccountCtrl () { return _d(require('./AccountCtrl')) },
-  get AdminUserCtrl () { return _d(require('./admin/AdminUserCtrl')) },
-  get AdminCtrl () { return _d(require('./AdminCtrl')) },
-  get AppCtrl () { return _d(require('./AppCtrl')) },
-  get Ctrl () { return _d(require('./Ctrl')) },
-  get ListenCtrl () { return _d(require('./ListenCtrl')) },
-  get QuitCtrl () { return _d(require('./QuitCtrl')) },
-  get RecoverCtrl () { return _d(require('./RecoverCtrl')) },
-  get SignCtrl () { return _d(require('./SignCtrl')) },
-  get VerifyCtrl () { return _d(require('./VerifyCtrl')) },
+  AccountCtrl: _d(AccountCtrl_),
+  AdminUserCtrl: _d(AdminUserCtrl_),
+  AdminCtrl: _d(AdminCtrl_),
+  AppCtrl: _d(AppCtrl_),
+  Ctrl: _d(Ctrl_),
+  ListenCtrl: _d(ListenCtrl_),
+  QuitCtrl: _d(QuitCtrl_),
+  RecoverCtrl: _d(RecoverCtrl_),
+  SignCtrl: _d(SignCtrl_),
+  VerifyCtrl: _d(VerifyCtrl_),
 }

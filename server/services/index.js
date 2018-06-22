@@ -5,13 +5,28 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const AccountService_ = require('./AccountService')
+const QuitService_ = require('./QuitService')
+const RecoverService_ = require('./RecoverService')
+const SignService_ = require('./SignService')
+const UserService_ = require('./UserService')
+const VerifyService_ = require('./VerifyService')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.AccountService = _d(AccountService_)
+exports.QuitService = _d(QuitService_)
+exports.RecoverService = _d(RecoverService_)
+exports.SignService = _d(SignService_)
+exports.UserService = _d(UserService_)
+exports.VerifyService = _d(VerifyService_)
 
 module.exports = {
-  get AccountService () { return _d(require('./AccountService')) },
-  get QuitService () { return _d(require('./QuitService')) },
-  get RecoverService () { return _d(require('./RecoverService')) },
-  get SignService () { return _d(require('./SignService')) },
-  get UserService () { return _d(require('./UserService')) },
-  get VerifyService () { return _d(require('./VerifyService')) },
+  AccountService: _d(AccountService_),
+  QuitService: _d(QuitService_),
+  RecoverService: _d(RecoverService_),
+  SignService: _d(SignService_),
+  UserService: _d(UserService_),
+  VerifyService: _d(VerifyService_),
 }

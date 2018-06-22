@@ -5,14 +5,31 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const check_ = require('./check')
+const create_ = require('./create')
+const destroy_ = require('./destroy')
+const filter_ = require('./filter')
+const list_ = require('./list')
+const password_ = require('./password')
+const role_ = require('./role')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.check = _d(check_)
+exports.create = _d(create_)
+exports.destroy = _d(destroy_)
+exports.filter = _d(filter_)
+exports.list = _d(list_)
+exports.password = _d(password_)
+exports.role = _d(role_)
 
 module.exports = {
-  get check () { return _d(require('./check')) },
-  get create () { return _d(require('./create')) },
-  get destroy () { return _d(require('./destroy')) },
-  get filter () { return _d(require('./filter')) },
-  get list () { return _d(require('./list')) },
-  get password () { return _d(require('./password')) },
-  get role () { return _d(require('./role')) },
+  check: _d(check_),
+  create: _d(create_),
+  destroy: _d(destroy_),
+  filter: _d(filter_),
+  list: _d(list_),
+  password: _d(password_),
+  role: _d(role_),
 }

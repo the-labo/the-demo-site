@@ -5,18 +5,43 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const GlobalKeys_ = require('./GlobalKeys')
+const HistoryTypes_ = require('./HistoryTypes')
+const Icons_ = require('./Icons')
+const Lifetimes_ = require('./Lifetimes')
+const LocaleNames_ = require('./LocaleNames')
+const RoleCodes_ = require('./RoleCodes')
+const SrcSets_ = require('./SrcSets')
+const Styles_ = require('./Styles')
+const UI_ = require('./UI')
+const Urls_ = require('./Urls')
+const locales_ = require('./locales')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.GlobalKeys = _d(GlobalKeys_)
+exports.HistoryTypes = _d(HistoryTypes_)
+exports.Icons = _d(Icons_)
+exports.Lifetimes = _d(Lifetimes_)
+exports.LocaleNames = _d(LocaleNames_)
+exports.RoleCodes = _d(RoleCodes_)
+exports.SrcSets = _d(SrcSets_)
+exports.Styles = _d(Styles_)
+exports.UI = _d(UI_)
+exports.Urls = _d(Urls_)
+exports.locales = _d(locales_)
 
 module.exports = {
-  get GlobalKeys () { return _d(require('./GlobalKeys')) },
-  get HistoryTypes () { return _d(require('./HistoryTypes')) },
-  get Icons () { return _d(require('./Icons')) },
-  get Lifetimes () { return _d(require('./Lifetimes')) },
-  get LocaleNames () { return _d(require('./LocaleNames')) },
-  get RoleCodes () { return _d(require('./RoleCodes')) },
-  get SrcSets () { return _d(require('./SrcSets')) },
-  get Styles () { return _d(require('./Styles')) },
-  get UI () { return _d(require('./UI')) },
-  get Urls () { return _d(require('./Urls')) },
-  get locales () { return _d(require('./locales')) },
+  GlobalKeys: _d(GlobalKeys_),
+  HistoryTypes: _d(HistoryTypes_),
+  Icons: _d(Icons_),
+  Lifetimes: _d(Lifetimes_),
+  LocaleNames: _d(LocaleNames_),
+  RoleCodes: _d(RoleCodes_),
+  SrcSets: _d(SrcSets_),
+  Styles: _d(Styles_),
+  UI: _d(UI_),
+  Urls: _d(Urls_),
+  locales: _d(locales_),
 }

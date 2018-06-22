@@ -4,12 +4,11 @@
     "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
   },
   "ext": "json,mjs,js,css",
-  "ignore": [
-    "public/the"
-  ],
+  "ignore": [],
   "noColors": true,
   "verbose": false,
   "watch": [
-    "public/"
+    "server",
+    "client"
   ]
 }

@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const StoryMapping_ = require('./StoryMapping')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.StoryMapping = _d(StoryMapping_)
 
 module.exports = {
-  get StoryMapping () { return _d(require('./StoryMapping')) },
+  StoryMapping: _d(StoryMapping_),
 }

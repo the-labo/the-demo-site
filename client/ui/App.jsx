@@ -22,6 +22,7 @@ import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 import { ofUser } from './wrappers'
 
+@handling
 @catching
 @stateful(
   (state) => ({
@@ -41,7 +42,6 @@ import { ofUser } from './wrappers'
 )
 @ofUser
 @provided
-@handling
 @localized.with(locales)
 @titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {

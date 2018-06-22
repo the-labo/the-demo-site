@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const UserHook_ = require('./UserHook')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.UserHook = _d(UserHook_)
 
 module.exports = {
-  get UserHook () { return _d(require('./UserHook')) },
+  UserHook: _d(UserHook_),
 }

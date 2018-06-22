@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const retry_ = require('./retry')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.retry = _d(retry_)
 
 module.exports = {
-  get retry () { return _d(require('./retry')) },
+  retry: _d(retry_),
 }

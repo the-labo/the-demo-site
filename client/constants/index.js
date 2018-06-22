@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const AppConsts_ = require('./AppConsts')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.AppConsts = _d(AppConsts_)
 
 module.exports = {
-  get AppConsts () { return _d(require('./AppConsts')) },
+  AppConsts: _d(AppConsts_),
 }

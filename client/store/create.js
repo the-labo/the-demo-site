@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const theStore = require('the-store').default
+const theStore = require('the-store')
 const {
   ObjectScope, ArrayScope, BooleanScope, StringScope, ValueScope, NumberScope,
 } = require('the-scope/shim/scopes')

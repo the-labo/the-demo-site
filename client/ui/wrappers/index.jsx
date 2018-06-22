@@ -11,9 +11,8 @@ import withMoment from './withMoment'
 import withRole from './withRole'
 
 export {
-  ofUser,
-  onlySigned,
-  withMoment,
-  withRole,
+ ofUser,
+ onlySigned,
+ withMoment,
+ withRole,
 }
-

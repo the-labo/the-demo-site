@@ -11,9 +11,8 @@ import Header from './Header'
 import Toasts from './Toasts'
 
 export {
-  Dialogs,
-  Footer,
-  Header,
-  Toasts,
+ Dialogs,
+ Footer,
+ Header,
+ Toasts,
 }
-

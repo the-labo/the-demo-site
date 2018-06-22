@@ -4,12 +4,12 @@
  */
 'use strict'
 
-const {units: {hours}} = require('the-date')
+const {Durations: {ONE_HOUR}} = require('the-date')
 
 module.exports = Object.freeze(
   /** @lends Lifetimes */
   {
-    RECOVER_EMAIL_LIFETIME: hours(48),
-    VERIFY_EMAIL_LIFETIME: hours(48),
+    RECOVER_EMAIL_LIFETIME: ONE_HOUR * 48,
+    VERIFY_EMAIL_LIFETIME: ONE_HOUR * 48,
   }
 )

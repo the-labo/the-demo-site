@@ -18,16 +18,15 @@ import Urls from './Urls'
 import locales from './locales'
 
 export {
-  GlobalKeys,
-  HistoryTypes,
-  Icons,
-  Lifetimes,
-  LocaleNames,
-  RoleCodes,
-  SrcSets,
-  Styles,
-  UI,
-  Urls,
-  locales,
+ GlobalKeys,
+ HistoryTypes,
+ Icons,
+ Lifetimes,
+ LocaleNames,
+ RoleCodes,
+ SrcSets,
+ Styles,
+ UI,
+ Urls,
+ locales,
 }
-

@@ -5,10 +5,19 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const withAdmin_ = require('./withAdmin')
+const withAlias_ = require('./withAlias')
+const withAuth_ = require('./withAuth')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.withAdmin = _d(withAdmin_)
+exports.withAlias = _d(withAlias_)
+exports.withAuth = _d(withAuth_)
 
 module.exports = {
-  get withAdmin () { return _d(require('./withAdmin')) },
-  get withAlias () { return _d(require('./withAlias')) },
-  get withAuth () { return _d(require('./withAuth')) },
+  withAdmin: _d(withAdmin_),
+  withAlias: _d(withAlias_),
+  withAuth: _d(withAuth_),
 }

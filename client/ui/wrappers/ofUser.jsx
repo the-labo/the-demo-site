@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { cycled, stateful } from 'the-component-mixins'
-import { wrapStack } from 'the-component-mixins/helpers'
+import { wrapStack } from 'the-component-util'
 
 function ofUser (Component) {
 

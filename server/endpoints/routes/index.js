@@ -5,9 +5,16 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const aliasRoute_ = require('./aliasRoute')
+const uploadRoute_ = require('./uploadRoute')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.aliasRoute = _d(aliasRoute_)
+exports.uploadRoute = _d(uploadRoute_)
 
 module.exports = {
-  get aliasRoute () { return _d(require('./aliasRoute')) },
-  get uploadRoute () { return _d(require('./uploadRoute')) },
+  aliasRoute: _d(aliasRoute_),
+  uploadRoute: _d(uploadRoute_),
 }

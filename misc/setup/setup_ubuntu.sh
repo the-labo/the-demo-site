@@ -29,13 +29,13 @@ sudo apt-get install git -y
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 source ~/.bashrc
-nvm install 8
+nvm install 10
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 sudo apt-get update && sudo apt-get install yarn -y
-npm i pon pm2 -g
+npm i pon pm2 npm@latest -g
 
 echo "export NODE_ENV=production" >> ~/.bashrc
 source ~/.bashrc

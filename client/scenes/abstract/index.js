@@ -5,15 +5,34 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const CallScene_ = require('./CallScene')
+const DetailScene_ = require('./DetailScene')
+const FilterScene_ = require('./FilterScene')
+const HashScene_ = require('./HashScene')
+const InputScene_ = require('./InputScene')
+const ListScene_ = require('./ListScene')
+const ProcessScene_ = require('./ProcessScene')
+const Scene_ = require('./Scene')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.CallScene = _d(CallScene_)
+exports.DetailScene = _d(DetailScene_)
+exports.FilterScene = _d(FilterScene_)
+exports.HashScene = _d(HashScene_)
+exports.InputScene = _d(InputScene_)
+exports.ListScene = _d(ListScene_)
+exports.ProcessScene = _d(ProcessScene_)
+exports.Scene = _d(Scene_)
 
 module.exports = {
-  get CallScene () { return _d(require('./CallScene')) },
-  get DetailScene () { return _d(require('./DetailScene')) },
-  get FilterScene () { return _d(require('./FilterScene')) },
-  get HashScene () { return _d(require('./HashScene')) },
-  get InputScene () { return _d(require('./InputScene')) },
-  get ListScene () { return _d(require('./ListScene')) },
-  get ProcessScene () { return _d(require('./ProcessScene')) },
-  get Scene () { return _d(require('./Scene')) },
+  CallScene: _d(CallScene_),
+  DetailScene: _d(DetailScene_),
+  FilterScene: _d(FilterScene_),
+  HashScene: _d(HashScene_),
+  InputScene: _d(InputScene_),
+  ListScene: _d(ListScene_),
+  ProcessScene: _d(ProcessScene_),
+  Scene: _d(Scene_),
 }

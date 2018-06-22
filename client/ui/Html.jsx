@@ -27,7 +27,6 @@ function Html ({appScope, renderingContext}) {
     ...(isProduction() ? [
       Urls.PRODUCTION_JS_URL,
     ] : [
-      Urls.JS_EXTERNAL_URL,
       Urls.JS_BUNDLE_URL,
     ]),
   ]

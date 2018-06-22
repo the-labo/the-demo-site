@@ -5,12 +5,25 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const ControllerMapping_ = require('./ControllerMapping')
+const HookMapping_ = require('./HookMapping')
+const PluginMapping_ = require('./PluginMapping')
+const ResourceMapping_ = require('./ResourceMapping')
+const ServiceMapping_ = require('./ServiceMapping')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.ControllerMapping = _d(ControllerMapping_)
+exports.HookMapping = _d(HookMapping_)
+exports.PluginMapping = _d(PluginMapping_)
+exports.ResourceMapping = _d(ResourceMapping_)
+exports.ServiceMapping = _d(ServiceMapping_)
 
 module.exports = {
-  get ControllerMapping () { return _d(require('./ControllerMapping')) },
-  get HookMapping () { return _d(require('./HookMapping')) },
-  get PluginMapping () { return _d(require('./PluginMapping')) },
-  get ResourceMapping () { return _d(require('./ResourceMapping')) },
-  get ServiceMapping () { return _d(require('./ServiceMapping')) },
+  ControllerMapping: _d(ControllerMapping_),
+  HookMapping: _d(HookMapping_),
+  PluginMapping: _d(PluginMapping_),
+  ResourceMapping: _d(ResourceMapping_),
+  ServiceMapping: _d(ServiceMapping_),
 }

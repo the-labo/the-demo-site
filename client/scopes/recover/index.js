@@ -5,9 +5,16 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const reset_ = require('./reset')
+const send_ = require('./send')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.reset = _d(reset_)
+exports.send = _d(send_)
 
 module.exports = {
-  get reset () { return _d(require('./reset')) },
-  get send () { return _d(require('./send')) },
+  reset: _d(reset_),
+  send: _d(send_),
 }

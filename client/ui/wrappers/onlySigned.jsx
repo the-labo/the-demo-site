@@ -5,9 +5,9 @@
 'use strict'
 
 import React from 'react'
-import { wrapStack } from 'the-component-mixins/helpers'
+import { stateful, stored } from 'the-component-mixins'
+import { wrapStack } from 'the-component-util'
 import { TheSpin, withHistory } from 'the-components'
-import { connect, withStore } from 'the-store'
 import { get } from 'the-window'
 import { Urls } from '@self/conf'
 
@@ -15,8 +15,8 @@ const debug = require('debug')('app:ui:onlySigned')
 
 function onlySigned (Component) {
   @withHistory
-  @withStore
-  @connect((state) => ({
+  @stored
+  @stateful.state((state) => ({
     hasSigned: Boolean(state['account.entity']),
     signedReady: state['account.ready'],
   }))
@@ -36,10 +36,8 @@ function onlySigned (Component) {
       }
       if (!hasSigned) {
         const {pathname} = get('location')
-        store.sign.up.back.set(pathname)
-        store.sign.in.back.set(pathname)
         debug(`Ask sign in for: ${pathname}`)
-        history.push(Urls.SIGN_ASK_URL)
+        history.push(Urls.TOP_URL)
       }
     }
 
@@ -56,7 +54,6 @@ function onlySigned (Component) {
       }
     }
   }
-
   OnlySigned.wrapStack = wrapStack(OnlySigned, Component)
 
   return OnlySigned

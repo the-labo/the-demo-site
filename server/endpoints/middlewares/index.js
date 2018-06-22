@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const tokenMW_ = require('./tokenMW')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.tokenMW = _d(tokenMW_)
 
 module.exports = {
-  get tokenMW () { return _d(require('./tokenMW')) },
+  tokenMW: _d(tokenMW_),
 }

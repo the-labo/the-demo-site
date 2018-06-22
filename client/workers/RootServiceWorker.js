@@ -18,7 +18,6 @@ const pathnamesToCache = [
       Urls.PRODUCTION_JS_URL,
     ] : [
       Urls.JS_BUNDLE_URL,
-      Urls.JS_EXTERNAL_URL,
       Urls.CSS_BUNDLE_URL,
       Urls.CSS_FONT_URL,
       Urls.CSS_NORMALIZE_URL,

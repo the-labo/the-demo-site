@@ -5,10 +5,19 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const confirm_ = require('./confirm')
+const need_ = require('./need')
+const send_ = require('./send')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.confirm = _d(confirm_)
+exports.need = _d(need_)
+exports.send = _d(send_)
 
 module.exports = {
-  get confirm () { return _d(require('./confirm')) },
-  get need () { return _d(require('./need')) },
-  get send () { return _d(require('./send')) },
+  confirm: _d(confirm_),
+  need: _d(need_),
+  send: _d(send_),
 }

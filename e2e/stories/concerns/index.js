@@ -5,12 +5,25 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const accountOperative_ = require('./accountOperative')
+const compose_ = require('./compose')
+const passwordOperative_ = require('./passwordOperative')
+const profileOperative_ = require('./profileOperative')
+const signOperative_ = require('./signOperative')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.accountOperative = _d(accountOperative_)
+exports.compose = _d(compose_)
+exports.passwordOperative = _d(passwordOperative_)
+exports.profileOperative = _d(profileOperative_)
+exports.signOperative = _d(signOperative_)
 
 module.exports = {
-  get accountOperative () { return _d(require('./accountOperative')) },
-  get compose () { return _d(require('./compose')) },
-  get passwordOperative () { return _d(require('./passwordOperative')) },
-  get profileOperative () { return _d(require('./profileOperative')) },
-  get signOperative () { return _d(require('./signOperative')) },
+  accountOperative: _d(accountOperative_),
+  compose: _d(compose_),
+  passwordOperative: _d(passwordOperative_),
+  profileOperative: _d(profileOperative_),
+  signOperative: _d(signOperative_),
 }

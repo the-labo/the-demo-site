@@ -3,7 +3,7 @@
 import moment from 'moment'
 import 'moment/locale/ja'
 import React from 'react'
-import { wrapStack } from 'the-component-mixins/helpers'
+import { wrapStack } from 'the-component-util'
 
 function withMoment (Component, options = {}) {
   class WithMoment extends React.Component {

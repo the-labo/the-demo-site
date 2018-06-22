@@ -5,24 +5,61 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const alt_ = require('./alt')
+const app_ = require('./app')
+const buttons_ = require('./buttons')
+const captions_ = require('./captions')
+const checks_ = require('./checks')
+const errors_ = require('./errors')
+const labels_ = require('./labels')
+const leads_ = require('./leads')
+const mail_ = require('./mail')
+const messages_ = require('./messages')
+const org_ = require('./org')
+const placeholders_ = require('./placeholders')
+const roleCodes_ = require('./roleCodes')
+const tabs_ = require('./tabs')
+const titles_ = require('./titles')
+const toasts_ = require('./toasts')
+const warnings_ = require('./warnings')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.alt = _d(alt_)
+exports.app = _d(app_)
+exports.buttons = _d(buttons_)
+exports.captions = _d(captions_)
+exports.checks = _d(checks_)
+exports.errors = _d(errors_)
+exports.labels = _d(labels_)
+exports.leads = _d(leads_)
+exports.mail = _d(mail_)
+exports.messages = _d(messages_)
+exports.org = _d(org_)
+exports.placeholders = _d(placeholders_)
+exports.roleCodes = _d(roleCodes_)
+exports.tabs = _d(tabs_)
+exports.titles = _d(titles_)
+exports.toasts = _d(toasts_)
+exports.warnings = _d(warnings_)
 
 module.exports = {
-  get alt () { return _d(require('./alt')) },
-  get app () { return _d(require('./app')) },
-  get buttons () { return _d(require('./buttons')) },
-  get captions () { return _d(require('./captions')) },
-  get checks () { return _d(require('./checks')) },
-  get errors () { return _d(require('./errors')) },
-  get labels () { return _d(require('./labels')) },
-  get leads () { return _d(require('./leads')) },
-  get mail () { return _d(require('./mail')) },
-  get messages () { return _d(require('./messages')) },
-  get org () { return _d(require('./org')) },
-  get placeholders () { return _d(require('./placeholders')) },
-  get roleCodes () { return _d(require('./roleCodes')) },
-  get tabs () { return _d(require('./tabs')) },
-  get titles () { return _d(require('./titles')) },
-  get toasts () { return _d(require('./toasts')) },
-  get warnings () { return _d(require('./warnings')) },
+  alt: _d(alt_),
+  app: _d(app_),
+  buttons: _d(buttons_),
+  captions: _d(captions_),
+  checks: _d(checks_),
+  errors: _d(errors_),
+  labels: _d(labels_),
+  leads: _d(leads_),
+  mail: _d(mail_),
+  messages: _d(messages_),
+  org: _d(org_),
+  placeholders: _d(placeholders_),
+  roleCodes: _d(roleCodes_),
+  tabs: _d(tabs_),
+  titles: _d(titles_),
+  toasts: _d(toasts_),
+  warnings: _d(warnings_),
 }
