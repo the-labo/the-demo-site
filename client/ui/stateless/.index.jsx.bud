@@ -5,7 +5,7 @@ const {dir} = require('the-templates')
 module.exports = dir.recursive({
   dirname: __dirname,
   name: 'stateless',
-  description: 'Fragment components',
+  description: 'Stateless components',
   ext: '.jsx',
 })
 

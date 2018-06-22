@@ -9,6 +9,7 @@ import { TheButton, TheButtonGroup, TheView } from 'the-components'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignUpView.pcss'
 import { SignUpForm } from '../../stateful'
+import { HeaderLessStyle } from '../../stateless'
 
 @localized
 @cycled
@@ -22,6 +23,7 @@ class SignUpView extends React.Component {
 
     return (
       <TheView className={styles.self}>
+        <HeaderLessStyle enabled/>
         <TheView.Header icon={Icons.SIGN_UP_ICON}
                         text={title}
         />
