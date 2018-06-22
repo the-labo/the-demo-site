@@ -196,7 +196,6 @@ module.exports = pon(
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
       'prod:js': ccjs([
-        `public${Urls.JS_EXTERNAL_URL}`,
         `public${Urls.JS_BUNDLE_URL}`
       ], `public${Urls.PRODUCTION_JS_URL}`),
       /** Delete source map files for production */
