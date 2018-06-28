@@ -1,12 +1,9 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const {scopes} = require('the-templates')
 
-module.exports = dir({
+module.exports = scopes({
   dirname: __dirname,
-  name: 'scopes',
-  cjs: true,
-  description: 'scopes'
 })
 
 if (!module.parent) {

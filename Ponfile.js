@@ -299,10 +299,8 @@ module.exports = pon(
       'ui:css/watch': 'ui:css/*/watch',
       /** Compile react components */
       'ui:react': react('client', 'client/shim', {
-        extractCss: `client/shim/ui/bundle.pcss`,
         pattern: ['*.js', '*.jsx', '!(shim)/**/+(*.jsx|*.js|*.json)'],
         sourceRoot: '..',
-        watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(({isProduction}) =>
         browser.all('./client/shim/workers', `public`, {

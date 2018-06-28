@@ -67,10 +67,8 @@
     "struct:render": "Render coz templates",
     "ui": "Run all ui tasks",
     "ui:browser": "Bundle browser script",
-    "ui:browser-external": "Bundle external browser script",
     "ui:css": "Compile stylesheets",
     "ui:css/watch": "Run css watch",
-    "ui:map": "Extract map files",
     "ui:react": "Compile react components"
   }
 }

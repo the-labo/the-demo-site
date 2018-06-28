@@ -287,10 +287,8 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | struct:render | Render coz templates | `pon struct:render` |
 | ui | Run all ui tasks | `pon ui` |
 | ui:browser | Bundle browser script | `pon ui:browser` |
-| ui:browser-external | Bundle external browser script | `pon ui:browser-external` |
 | ui:css | Compile stylesheets | `pon ui:css` |
 | ui:css/watch | Run css watch | `pon ui:css/watch` |
-| ui:map | Extract map files | `pon ui:map` |
 | ui:react | Compile react components | `pon ui:react` |
 
 
@@ -511,8 +509,8 @@ Misc
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-11.0.0.css`
-* `/the-demo-site-11.0.0.js`
+* `/the-demo-site-11.0.1.css`
+* `/the-demo-site-11.0.1.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`
