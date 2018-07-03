@@ -19,7 +19,8 @@ class SignUpScene extends SignUpSceneBase {
         const values = this.get('entry')
         const email = values['profile.email']
         if (email && !values.name) {
-          this.setEntry({name: email.split('@')[0]})
+          const name = email.split('@')[0].replace(/\./g, '')
+          this.setEntry({name: name})
         }
         break
       }

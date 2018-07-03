@@ -8,73 +8,91 @@
 const _d = (m) => (m && 'default' in m) ? m.default : m
 
 
-const abstractCall_ = _d(require('./abstract/call.json'))
-const abstractDetail_ = _d(require('./abstract/detail.json'))
-const abstractFilter_ = _d(require('./abstract/filter.json'))
-const abstractHash_ = _d(require('./abstract/hash.json'))
-const abstractInput_ = _d(require('./abstract/input.json'))
-const abstractList_ = _d(require('./abstract/list.json'))
-const abstractProcess_ = _d(require('./abstract/process.json'))
-const account_ = _d(require('./account.json'))
-const adminUserCheck_ = _d(require('./admin/user/check.json'))
-const adminUserCreate_ = _d(require('./admin/user/create.json'))
-const adminUserDestroy_ = _d(require('./admin/user/destroy.json'))
-const adminUserFilter_ = _d(require('./admin/user/filter.json'))
-const adminUserList_ = _d(require('./admin/user/list.json'))
-const adminUserPassword_ = _d(require('./admin/user/password.json'))
-const adminUserRole_ = _d(require('./admin/user/role.json'))
-const app_ = _d(require('./app.json'))
-const connectionRetry_ = _d(require('./connection/retry.json'))
-const passwordChange_ = _d(require('./password/change.json'))
-const profileEdit_ = _d(require('./profile/edit.json'))
-const quit_ = _d(require('./quit.json'))
-const recoverReset_ = _d(require('./recover/reset.json'))
-const recoverSend_ = _d(require('./recover/send.json'))
-const signAsk_ = _d(require('./sign/ask.json'))
-const signIn_ = _d(require('./sign/in.json'))
-const signOut_ = _d(require('./sign/out.json'))
-const signUp_ = _d(require('./sign/up.json'))
-const toast_ = _d(require('./toast.json'))
-const verifyConfirm_ = _d(require('./verify/confirm.json'))
-const verifyNeed_ = _d(require('./verify/need.json'))
-const verifySend_ = _d(require('./verify/send.json'))
+const abstractCall_ = require('./abstract/call.json')
+const abstractDetail_ = require('./abstract/detail.json')
+const abstractFilter_ = require('./abstract/filter.json')
+const abstractHash_ = require('./abstract/hash.json')
+const abstractInput_ = require('./abstract/input.json')
+const abstractList_ = require('./abstract/list.json')
+const abstractProcess_ = require('./abstract/process.json')
+const account_ = require('./account.json')
+const adminUserCheck_ = require('./admin/user/check.json')
+const adminUserCreate_ = require('./admin/user/create.json')
+const adminUserDestroy_ = require('./admin/user/destroy.json')
+const adminUserFilter_ = require('./admin/user/filter.json')
+const adminUserList_ = require('./admin/user/list.json')
+const adminUserPassword_ = require('./admin/user/password.json')
+const adminUserRole_ = require('./admin/user/role.json')
+const app_ = require('./app.json')
+const connectionRetry_ = require('./connection/retry.json')
+const passwordChange_ = require('./password/change.json')
+const profileEdit_ = require('./profile/edit.json')
+const quit_ = require('./quit.json')
+const recoverReset_ = require('./recover/reset.json')
+const recoverSend_ = require('./recover/send.json')
+const signAsk_ = require('./sign/ask.json')
+const signIn_ = require('./sign/in.json')
+const signOut_ = require('./sign/out.json')
+const signUp_ = require('./sign/up.json')
+const toast_ = require('./toast.json')
+const verifyConfirm_ = require('./verify/confirm.json')
+const verifyNeed_ = require('./verify/need.json')
+const verifySend_ = require('./verify/send.json')
 
+
+// `./abstract` directory
 exports.abstract = {}
-exports.abstract.call = abstractCall_
-exports.abstract.detail = abstractDetail_
-exports.abstract.filter = abstractFilter_
-exports.abstract.hash = abstractHash_
-exports.abstract.input = abstractInput_
-exports.abstract.list = abstractList_
-exports.abstract.process = abstractProcess_
-exports.account = account_
+exports.abstract.call = _d(abstractCall_)
+exports.abstract.detail = _d(abstractDetail_)
+exports.abstract.filter = _d(abstractFilter_)
+exports.abstract.hash = _d(abstractHash_)
+exports.abstract.input = _d(abstractInput_)
+exports.abstract.list = _d(abstractList_)
+exports.abstract.process = _d(abstractProcess_)
+exports.account = _d(account_)
+
+// `./admin` directory
 exports.admin = {}
+
+// `./admin/user` directory
 exports.admin.user = {}
-exports.admin.user.check = adminUserCheck_
-exports.admin.user.create = adminUserCreate_
-exports.admin.user.destroy = adminUserDestroy_
-exports.admin.user.filter = adminUserFilter_
-exports.admin.user.list = adminUserList_
-exports.admin.user.password = adminUserPassword_
-exports.admin.user.role = adminUserRole_
-exports.app = app_
+exports.admin.user.check = _d(adminUserCheck_)
+exports.admin.user.create = _d(adminUserCreate_)
+exports.admin.user.destroy = _d(adminUserDestroy_)
+exports.admin.user.filter = _d(adminUserFilter_)
+exports.admin.user.list = _d(adminUserList_)
+exports.admin.user.password = _d(adminUserPassword_)
+exports.admin.user.role = _d(adminUserRole_)
+exports.app = _d(app_)
+
+// `./connection` directory
 exports.connection = {}
-exports.connection.retry = connectionRetry_
+exports.connection.retry = _d(connectionRetry_)
+
+// `./password` directory
 exports.password = {}
-exports.password.change = passwordChange_
+exports.password.change = _d(passwordChange_)
+
+// `./profile` directory
 exports.profile = {}
-exports.profile.edit = profileEdit_
-exports.quit = quit_
+exports.profile.edit = _d(profileEdit_)
+exports.quit = _d(quit_)
+
+// `./recover` directory
 exports.recover = {}
-exports.recover.reset = recoverReset_
-exports.recover.send = recoverSend_
+exports.recover.reset = _d(recoverReset_)
+exports.recover.send = _d(recoverSend_)
+
+// `./sign` directory
 exports.sign = {}
-exports.sign.ask = signAsk_
-exports.sign.in = signIn_
-exports.sign.out = signOut_
-exports.sign.up = signUp_
-exports.toast = toast_
+exports.sign.ask = _d(signAsk_)
+exports.sign.in = _d(signIn_)
+exports.sign.out = _d(signOut_)
+exports.sign.up = _d(signUp_)
+exports.toast = _d(toast_)
+
+// `./verify` directory
 exports.verify = {}
-exports.verify.confirm = verifyConfirm_
-exports.verify.need = verifyNeed_
-exports.verify.send = verifySend_
+exports.verify.confirm = _d(verifyConfirm_)
+exports.verify.need = _d(verifyNeed_)
+exports.verify.send = _d(verifySend_)

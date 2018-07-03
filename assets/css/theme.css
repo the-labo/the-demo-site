@@ -222,6 +222,7 @@
 .the-input-radio .the-input-radio-label{cursor:pointer;display:inline-block;padding:2px 4px;}
 .the-input-radio .the-input-radio-label:active{opacity:0.8;}
 .the-input-radio .the-input-radio-label:hover{opacity:0.9;}
+.the-input-radio .the-input-radio-label > *{pointer-events:none;}
 .the-input-radio .the-input-radio-radio{height:1px;left:0px;margin-bottom:-1px;margin-right:-1px;opacity:0;overflow:hidden;position:absolute;top:0px;visibility:hidden;width:1px;z-index:-1;}
 .the-input-radio{border-radius:2px;box-sizing:border-box;display:inline-block;margin:0;max-width:480px;position:relative;vertical-align:middle;width:100%;}
 .the-input-radio.the-input-as-button .the-input-radio-icon{display:none;}
@@ -240,6 +241,7 @@
 .the-input-checkbox .the-input-checkbox-label{cursor:pointer;display:inline-block;padding:2px 4px;}
 .the-input-checkbox .the-input-checkbox-label:active{opacity:0.8;}
 .the-input-checkbox .the-input-checkbox-label:hover{opacity:0.9;}
+.the-input-checkbox .the-input-checkbox-label > *{pointer-events:none;}
 .the-input-checkbox{border-radius:2px;box-sizing:border-box;display:inline-block;margin:0;max-width:480px;position:relative;vertical-align:middle;width:100%;}
 .the-input-toggle .the-input-toggle-handle{background-color:white;border:1px solid #AAA;border-radius:50%;display:inline-block;flex-grow:0;-webkit-box-flex:0;flex-shrink:0;height:24px;position:relative;width:24px;z-index:4;}
 .the-input-toggle .the-input-toggle-inner{align-items:center;-webkit-box-align:center;background-color:#FFF;border:1px solid #AAA;border-radius:13px;display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;height:24px;justify-content:flex-start;-webkit-box-pack:start;min-width:74px;overflow:hidden;width:100%;}
