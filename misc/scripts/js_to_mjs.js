@@ -7,11 +7,11 @@
  */
 'use strict'
 
-const [, , pattern, ext = '.mjs'] = process.argv
 const aglob = require('aglob')
-const path = require('path')
 const fs = require('fs')
 const {EOL} = require('os')
+const path = require('path')
+const [, , pattern, ext = '.mjs'] = process.argv
 
 void async function run () {
   const cwd = process.cwd()

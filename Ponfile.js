@@ -228,10 +228,10 @@ module.exports = pon(
     ...{
       /** Change file permissions */
       'struct:chmod': chmod({
-        '.githooks/**/*.js': '577',
-        'bin/**/*.*': '577',
-        'misc/**/*.sh': '577',
-        'misc/scripts/*.*': '577',
+        '.githooks/**/*.js': '777',
+        'bin/**/*.*': '777',
+        'misc/**/*.sh': '777',
+        'misc/scripts/*.*': '777',
       }),
       /** Compile files */
       'struct:compile': [
