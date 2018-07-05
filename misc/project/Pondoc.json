@@ -28,6 +28,7 @@
     "env:prod": "Set env variables for production",
     "env:test": "Set env variables for test",
     "git:catchup": "Catch up to latest git",
+    "git:tags": "Fetch tags from git",
     "loc:print": "Print locale settings",
     "local:print": "Print local settings",
     "logs": "Show app daemon logs",

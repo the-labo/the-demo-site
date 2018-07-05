@@ -13,6 +13,7 @@ import App from './App'
 /** @lends Html */
 function Html ({appScope, renderingContext}) {
   const {
+    buildNumber,
     cdnUrl,
     version,
   } = appScope
@@ -51,7 +52,7 @@ function Html ({appScope, renderingContext}) {
                }}
                icon={Urls.ICON_URL}
                manifest={resolveUrl(Urls.MANIFEST_URL, {lang})}
-               version={version}
+               version={[version, buildNumber].join('-')}
       >
       </TheHead>
       <TheBody>

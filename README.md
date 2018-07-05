@@ -248,6 +248,7 @@ Tasks defined in [Ponfile.js]('./Ponfile.js')
 | env:prod | Set env variables for production | `pon env:prod` |
 | env:test | Set env variables for test | `pon env:test` |
 | git:catchup | Catch up to latest git | `pon git:catchup` |
+| git:tags | Fetch tags from git | `pon git:tags` |
 | loc:print | Print locale settings | `pon loc:print` |
 | local:print | Print local settings | `pon local:print` |
 | logs | Show app daemon logs | `pon logs` |

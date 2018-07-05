@@ -25,10 +25,13 @@ describe('server', () => {
       db,
     })
     await server.listen(port)
+    await asleep(100)
   })
 
   after(async () => {
+    await asleep(100)
     await server.close()
+    await asleep(100)
   })
 
   it('Get index page', async () => {

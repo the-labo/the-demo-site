@@ -122,6 +122,8 @@ module.exports = pon(
     ...{
       /** Catch up to latest git */
       'git:catchup': [git('stash'), git('pull')],
+      /** Fetch tags from git */
+      'git:tags': git('fetch', '--tags'),
     },
 
     // -----------------------------------

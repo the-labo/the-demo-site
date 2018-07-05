@@ -31,13 +31,14 @@ function create (config) {
   const seal = theSeal(sealConfig['SEAL_SECRET'])
 
   const app = {
+    buildNumber: String(new Date().getTime()),
     cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
     mail,
     seal,
     services: servicesProxy(ServiceMapping, db),
-    version: isProduction() ? pkg.version : String(new Date().getTime()),
+    version: pkg.version,
   }
 
   const server = theServer({
