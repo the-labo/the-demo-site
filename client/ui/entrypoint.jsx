@@ -47,6 +47,12 @@ once('DOMContentLoaded', async () => {
     }
   })
 
+  {
+    // ブラウザバックが動かない問題への暫定対処
+    const window = get('window')
+    window.addEventListener('popstate', () => appScene.busyFor(1))
+  }
+
   await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
 

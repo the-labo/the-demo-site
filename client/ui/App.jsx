@@ -38,7 +38,8 @@ import { ofUser } from './wrappers'
       await accountScene.doSync()
       await verifyNeedScene.doSync({delay: 3 * 1000})
     },
-  })
+  }),
+  {pure: false}
 )
 @ofUser
 @provided

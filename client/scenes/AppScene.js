@@ -28,10 +28,7 @@ class AppScene extends AppSceneBase {
   }
 
   handleLocationChange (location) {
-    this.set({pathname: location.pathname})
-    setTimeout(() => {
-      this.setLocation(location)
-    }, 0) // Wait to router change
+    this.setLocation(location)
   }
 
   handleRejectionReason (reason) {

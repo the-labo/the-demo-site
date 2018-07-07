@@ -17,6 +17,28 @@ import styles from './Header.pcss'
 import { UserCard } from '../stateless'
 import { withRole } from '../wrappers'
 
+@stateful(
+  (state) => ({
+    needsVerify: state['verify.need.needed'],
+    pathname: state['app.pathname'],
+    ready: state['account.ready'],
+    user: state['account.entity'],
+  }),
+  ({
+     l,
+     toastScene,
+     verifyNeedScene,
+     verifySendScene,
+   }) => ({
+    onVerify: async () => {
+      await verifySendScene.doExec()
+      await verifyNeedScene.doSync()
+      toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
+      verifyNeedScene.set({needed: false})
+    },
+  }),
+  {pure: false},
+)
 @withRole
 @localized
 class Header extends React.Component {
@@ -73,24 +95,4 @@ class Header extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    needsVerify: state['verify.need.needed'],
-    pathname: state['app.pathname'],
-    ready: state['account.ready'],
-    user: state['account.entity'],
-  }),
-  ({
-     l,
-     toastScene,
-     verifyNeedScene,
-     verifySendScene,
-   }) => ({
-    onVerify: async () => {
-      await verifySendScene.doExec()
-      await verifyNeedScene.doSync()
-      toastScene.showInfo(l('toasts.VERIFY_EMAIL_SENT'))
-      verifyNeedScene.set({needed: false})
-    },
-  })
-)(Header)
+export default Header

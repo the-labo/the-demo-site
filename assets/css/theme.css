@@ -8,7 +8,7 @@
 .the-action-bar .the-action-bar-lead{color:#888;font-size:smaller;margin:0 0 8px;padding:0 8px;}
 .the-action-bar{background:rgba(0, 0, 0, 0.9);border-top:1px solid #333;bottom:0;box-shadow:-1px -1px 4px rgba(0, 0, 0, 0.33);color:white;left:0;position:fixed;right:0;transition:bottom 400ms;-webkit-transition:bottom 400ms;-moz-transition:bottom 400ms;z-index:4;}
 .the-action-bar.the-action-bar-hidden{bottom:-100%;}
-.the-body{background-color:#FFF;box-sizing:border-box;color:#555;font-family:ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;font-size:16px;margin:0px;min-height:100%;padding:0px;touch-action:manipulation;}
+.the-body{background-color:#FFF;box-sizing:border-box;color:#555;font-family:ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;font-size:16px;height:100%;margin:0px;overflow-scrolling:touch;padding:0px;touch-action:manipulation;}
 .the-button .the-button-icon{margin-left:0;margin-right:2px;}
 .the-button .the-button-icon-right{margin-left:2px;margin-right:0;}
 .the-button .the-button-large-icon{display:block;font-size:3em;margin:0;}
@@ -181,6 +181,7 @@
 .the-header.the-header-reversed .the-header-inner .the-header-tab-item .the-link{color:white;opacity:0.8;}
 .the-header.the-header-reversed .the-header-inner .the-header-tab-item .the-link-active{border-bottom-color:white;opacity:1;}
 .the-header{min-height:44px;}
+.the-html{height:100%;}
 .the-icon{display:inline-block;margin:0 2px;}
 .the-image .the-image-failed{color:#BBB;text-align:center;}
 .the-image .the-image-img{object-fit:none;transition:width 300ms, height 300ms;-webkit-transition:width 300ms, height 300ms;-moz-transition:width 300ms, height 300ms;}
