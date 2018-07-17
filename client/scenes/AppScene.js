@@ -23,10 +23,6 @@ class AppScene extends AppSceneBase {
     this.mergeQueryToSearch({locale})
   }
 
-  goToUserHome () {
-    this.goTo(Urls.ALBUM_LIST_URL)
-  }
-
   handleLocationChange (location) {
     this.setLocation(location)
   }

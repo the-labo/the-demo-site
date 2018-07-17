@@ -141,6 +141,7 @@
 .the-form.the-form-inline .the-button{border-radius:0 4px 4px 0;box-sizing:border-box;height:36px;margin-left:-1px;white-space:nowrap;}
 .the-form.the-form-inline > *{margin:0;}
 .the-form.the-form-inline input{border-radius:4px 0 0 4px ;height:36px;}
+.the-frame .the-frame-embed-content{height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;}
 .the-frame .the-frame-iframe{border:none;display:block;width:100%;}
 .the-frame{display:block;position:relative;}
 .the-header .the-button{align-items:center;-webkit-box-align:center;display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;font-size:smaller;justify-content:center;-webkit-box-pack:center;line-height:2em;padding:0.25em 1em;}
@@ -222,6 +223,8 @@
 .the-input-textarea{box-sizing:border-box;display:inline-block;margin:0 4px;max-width:480px;position:relative;vertical-align:middle;width:100%;}
 .the-input-radio .the-input-radio-icon{color:#3A8;}
 .the-input-radio .the-input-radio-item{align-items:center;-webkit-box-align:center;box-sizing:border-box;display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;justify-content:center;-webkit-box-pack:center;margin:0 2px;overflow:hidden;text-overflow:ellipsis;}
+.the-input-radio .the-input-radio-item.the-input-radio-item-disabled{opacity:0.5;pointer-events:none;}
+.the-input-radio .the-input-radio-item.the-input-radio-item-disabled .the-input-radio-icon{color:inherit;}
 .the-input-radio .the-input-radio-label{cursor:pointer;display:inline-block;padding:2px 4px;}
 .the-input-radio .the-input-radio-label:active{opacity:0.8;}
 .the-input-radio .the-input-radio-label:hover{opacity:0.9;}
@@ -241,6 +244,8 @@
 .the-input-checkbox .the-input-checkbox-checkbox{height:1px;left:0px;margin-bottom:-1px;margin-right:-1px;opacity:0;overflow:hidden;position:absolute;top:0px;visibility:hidden;width:1px;z-index:-1;}
 .the-input-checkbox .the-input-checkbox-icon{color:#3A8;min-width:1em;}
 .the-input-checkbox .the-input-checkbox-item{align-items:center;-webkit-box-align:center;box-sizing:border-box;display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;justify-content:flex-center;-webkit-box-pack:flex-center;margin:0 2px;overflow:hidden;text-overflow:ellipsis;}
+.the-input-checkbox .the-input-checkbox-item.the-input-checkbox-item-disabled{opacity:0.5;pointer-events:none;}
+.the-input-checkbox .the-input-checkbox-item.the-input-checkbox-item-disabled .the-input-checkbox-icon{color:inherit;}
 .the-input-checkbox .the-input-checkbox-label{cursor:pointer;display:inline-block;padding:2px 4px;}
 .the-input-checkbox .the-input-checkbox-label:active{opacity:0.8;}
 .the-input-checkbox .the-input-checkbox-label:hover{opacity:0.9;}
