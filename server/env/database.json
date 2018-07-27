@@ -16,7 +16,7 @@
     "PASSWORD": "#{Local.DB_PASSWORD}",
     "PORT": "#{Local.DB_PORT}",
     "ROOT_PASSWORD": "#{Local.DB_ROOT_USER}",
-    "ROOT_USERNAME": "#{Local.DB_ROOT_USER}",
+    "ROOT_USERNAME": "#{Local.DB_ROOT_PASSWORD}",
     "USERNAME": "#{Local.DB_USER}"
   },
   "test": {

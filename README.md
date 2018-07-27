@@ -510,8 +510,8 @@ Misc
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-11.0.5.css`
-* `/the-demo-site-11.0.5.js`
+* `/the-demo-site-11.0.6.css`
+* `/the-demo-site-11.0.6.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`
