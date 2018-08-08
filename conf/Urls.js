@@ -8,6 +8,7 @@ const {isProduction} = require('the-check')
 const {hashProxy} = require('the-site-util')
 const pkg = require('../package')
 
+let prodAssetURL = `/v${pkg.version}`
 module.exports = Object.freeze(
   /** @lends Urls */
   {
@@ -65,6 +66,7 @@ module.exports = Object.freeze(
     // JS
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
+    JS_EXTERNAL_URL: '/build/external.js',
     JS_ROOT_SERVICE_WORKER_URL: '/RootServiceWorker.js',
     JS_SHIM_URL: '/js/es5-shim.min.js',
 
@@ -76,8 +78,10 @@ module.exports = Object.freeze(
     // -----------------------------------
     // Production
     // -----------------------------------
-    PRODUCTION_CSS_URL: `/${pkg.name}-${pkg.version}.css`,
-    PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
+    PROD_ASSET_URL: prodAssetURL,
+    PROD_CSS_BUNDLE_URL: `${prodAssetURL}/bundle.css`,
+    PROD_JS_BUNDLE_URL: `${prodAssetURL}/bundle.js`,
+    PROD_JS_EXTERNAL_URL: `${prodAssetURL}/external.js`,
 
     // -----------------------------------
     // Sign

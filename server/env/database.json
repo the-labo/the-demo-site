@@ -2,7 +2,7 @@
   "default": {
     "DATABASE": "thedemosite_dev",
     "DIALECT": "mysql",
-    "HOST": "localhost",
+    "HOST": "127.0.0.1",
     "PASSWORD": "thedemosite_dev",
     "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
     "ROOT_PASSWORD": "root",

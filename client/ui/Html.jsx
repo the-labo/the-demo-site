@@ -4,7 +4,6 @@
 'use strict'
 
 import React from 'react'
-import { isProduction } from 'the-check'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
 import { resolveUrl } from 'the-site-util'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
@@ -23,35 +22,18 @@ function Html ({appScope, renderingContext}) {
   const appProps = {
     lang,
   }
-  const js = [
-    ...SrcSets.jsSet,
-    ...(isProduction() ? [
-      Urls.PRODUCTION_JS_URL,
-    ] : [
-      Urls.JS_BUNDLE_URL,
-    ]),
-  ]
-  const css = [
-    ...SrcSets.cssSet,
-    ...(
-      isProduction() ? [
-        Urls.PRODUCTION_CSS_URL
-      ] : [
-        Urls.CSS_BUNDLE_URL
-      ]
-    )
-  ]
   return (
     <TheHtml>
-      <TheHead title={l('app.APP_NAME')}
-               {...{css, js}}
-               cdn={cdnUrl}
+      <TheHead cdn={cdnUrl}
                color={Styles.DOMINANT_COLOR}
+               css={SrcSets.cssSet}
                globals={{
                  [GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps, [client.infoKey]: info,
                }}
                icon={Urls.ICON_URL}
+               js={SrcSets.jsSet}
                manifest={resolveUrl(Urls.MANIFEST_URL, {lang})}
+               title={l('app.APP_NAME')}
                version={[version, buildNumber].join('-')}
       >
       </TheHead>

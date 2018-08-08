@@ -507,11 +507,14 @@ Misc
 * `/errors/not-found`
 * `/images/app-icon.png`
 * `/build/bundle.js`
+* `/build/external.js`
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/the-demo-site-11.0.6.css`
-* `/the-demo-site-11.0.6.js`
+* `/v11.0.8`
+* `/v11.0.8/bundle.css`
+* `/v11.0.8/bundle.js`
+* `/v11.0.8/external.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

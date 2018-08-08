@@ -16,9 +16,25 @@ module.exports = Object.freeze(
       Urls.CSS_NORMALIZE_URL,
       Urls.CSS_FONT_URL,
       Urls.CSS_FLATPICKR_URL,
+      ...(
+        isProduction() ? [
+          Urls.PROD_CSS_BUNDLE_URL,
+        ] : [
+          Urls.CSS_BUNDLE_URL,
+        ]
+      )
     ],
     jsSet: [
       Urls.JS_SHIM_URL,
+      ...(
+        isProduction() ? [
+          Urls.PROD_JS_EXTERNAL_URL,
+          Urls.PROD_JS_BUNDLE_URL,
+        ] : [
+          Urls.JS_EXTERNAL_URL,
+          Urls.JS_BUNDLE_URL,
+        ]
+      )
     ],
   }
 )

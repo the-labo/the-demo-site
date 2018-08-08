@@ -2260,6 +2260,7 @@
     max-width:480px;
     overflow:scroll;
     padding:16px;
+    position:relative;
     z-index:45;
 }
 
@@ -2272,6 +2273,11 @@
     flex-grow:1;-webkit-box-flex:1;
     padding:4px;
     text-align:center;
+}
+
+
+.the-input-select .the-input-select-options.the-input-select-options-full .the-input-select-options-list .the-input-select-option:hover {
+    opacity:0.8;
 }
 
 
@@ -3341,6 +3347,7 @@
     font-size:14px;
     margin-right:-1px;
     text-align:center;
+    -webkit-user-select:none;-moz-user-select:none;ms-user-select:none;user-select:none;
 }
 
 
@@ -3363,6 +3370,13 @@
     cursor:pointer;
     opacity:0.8;
     text-decoration:underline;
+}
+
+
+.the-pager .the-pager-item.the-pager-item-disabled {
+    color:gray;
+    cursor:default;
+    opacity:0.5;
 }
 
 

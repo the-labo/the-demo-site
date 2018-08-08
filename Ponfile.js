@@ -17,7 +17,10 @@ const {mysql, nginx, redis} = require('pon-task-docker')
 const es = require('pon-task-es')
 const md = require('pon-task-md')
 const pm2 = require('pon-task-pm2')
-const {browser, ccjs, css, map, react} = require('pon-task-web')
+const {
+  // browser,
+  ccjs, css, map, react,
+} = require('pon-task-web')
 const theAssets = require('the-assets')
 const theBin = require('the-bin/pon')
 const thePS = require('the-ps/pon')
@@ -28,6 +31,7 @@ const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
+const browser = require('../pon-task-browser')
 const {secret, setting} = Local
 const createDB = () => require('./server/db/create').forTask()
 
@@ -193,13 +197,17 @@ module.exports = pon(
       /** Compile css files for production */
       'prod:css': css.minify([
         `public${Urls.CSS_BUNDLE_URL}`,
-      ], `public${Urls.PRODUCTION_CSS_URL}`),
+      ], `public${Urls.PROD_CSS_BUNDLE_URL}`),
       /** Prepare database for production */
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
-      'prod:js': ccjs([
-        `public${Urls.JS_BUNDLE_URL}`
-      ], `public${Urls.PRODUCTION_JS_URL}`),
+      'prod:js': [
+        ccjs.dir(
+          `public/build`,
+          `public${Urls.PROD_ASSET_URL}`,
+          {}
+        )
+      ],
       /** Delete source map files for production */
       'prod:map': del('public/**/*.map'),
     },
@@ -276,9 +284,14 @@ module.exports = pon(
     ...{
       /** Bundle browser script */
       'ui:browser': env.dynamic(() =>
-        browser('./client/shim/ui/entrypoint.js',
-          `public${Urls.JS_BUNDLE_URL}`
-          , {
+        browser(
+          {
+            bundle: './client/shim/ui/entrypoint.js',
+          },
+          `public/build/[name].js`,
+          {
+            split: true,
+            splitName: 'external',
             version: Local.APP_VERSION,
           }), {sub: ['watch']}
       ),
