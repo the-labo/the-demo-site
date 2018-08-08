@@ -29,7 +29,7 @@
     "pon-task-es": "^4.2.5",
     "pon-task-md": "^1.0.1",
     "pon-task-pm2": "^2.2.1",
-    "pon-task-web": "^7.2.9",
+    "pon-task-web": "^8.0.0",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react": "^16.4.2",

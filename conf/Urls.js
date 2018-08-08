@@ -8,7 +8,8 @@ const {isProduction} = require('the-check')
 const {hashProxy} = require('the-site-util')
 const pkg = require('../package')
 
-let prodAssetURL = `/v${pkg.version}`
+const prodAssetURL = `/v${pkg.version}`
+
 module.exports = Object.freeze(
   /** @lends Urls */
   {

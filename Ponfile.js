@@ -18,7 +18,7 @@ const es = require('pon-task-es')
 const md = require('pon-task-md')
 const pm2 = require('pon-task-pm2')
 const {
-  // browser,
+  browser,
   ccjs, css, map, react,
 } = require('pon-task-web')
 const theAssets = require('the-assets')
@@ -31,7 +31,6 @@ const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
-const browser = require('../pon-task-browser')
 const {secret, setting} = Local
 const createDB = () => require('./server/db/create').forTask()
 
@@ -201,13 +200,7 @@ module.exports = pon(
       /** Prepare database for production */
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
-      'prod:js': [
-        ccjs.dir(
-          `public/build`,
-          `public${Urls.PROD_ASSET_URL}`,
-          {}
-        )
-      ],
+      'prod:js': ccjs.dir(`public/build`, `public${Urls.PROD_ASSET_URL}`, {}),
       /** Delete source map files for production */
       'prod:map': del('public/**/*.map'),
     },
@@ -284,16 +277,13 @@ module.exports = pon(
     ...{
       /** Bundle browser script */
       'ui:browser': env.dynamic(() =>
-        browser(
-          {
-            bundle: './client/shim/ui/entrypoint.js',
-          },
-          `public/build/[name].js`,
-          {
-            split: true,
-            splitName: 'external',
-            version: Local.APP_VERSION,
-          }), {sub: ['watch']}
+        browser({
+          bundle: './client/shim/ui/entrypoint.js',
+        }, `public/build/[name].js`, {
+          split: true,
+          splitName: 'external',
+          version: Local.APP_VERSION,
+        }), {sub: ['watch']}
       ),
       /** Compile stylesheets */
       'ui:css': [

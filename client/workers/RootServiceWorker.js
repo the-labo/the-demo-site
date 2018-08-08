@@ -4,13 +4,13 @@
  */
 'use strict'
 
-const {Urls, SrcSets} = require('@self/conf')
-const {isProduction} = require('the-check')
+const Urls = require('@self/conf/Urls')
+const SrcSets = require('@self/conf/SrcSets')
 const {parse: parseUrl} = require('url')
 const {AppConsts} = require('../constants')
 const {appCache, cachingFetch} = require('the-sw-util')
 
-const pathnamesToCache = [
+const pathsToCache = [
   ...SrcSets.jsSet,
   ...SrcSets.cssSet,
   Urls.ICON_URL,
@@ -32,7 +32,7 @@ self.addEventListener('fetch', (event) => {
   const {pathname, host} = parseUrl(url)
   const isOwn = host === location.host
   const shouldCache = urlsToCache.includes(url) ||
-    (isOwn && pathnamesToCache.includes(pathname) || patternsToCache.some((pattern) => pattern.test(pathname)))
+    (isOwn && pathsToCache.includes(pathname) || patternsToCache.some((pattern) => pattern.test(pathname)))
   if (!shouldCache) {
     return
   }
