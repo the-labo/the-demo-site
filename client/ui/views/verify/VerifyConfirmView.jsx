@@ -8,6 +8,23 @@ import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheCondition, TheDone, TheView } from 'the-components'
 import styles from './VerifyConfirmView.pcss'
 
+@stateful(
+  (state) => ({
+    busy: state['verify.confirm.busy'],
+    done: state['verify.confirm.done'],
+    failure: state['verify.confirm.failure'],
+    query: state['app.query'],
+  }),
+  ({verifyConfirmScene}, propsProxy) => (({
+    onMount: async () => {
+      verifyConfirmScene.init()
+      const {envelop, seal} = propsProxy.query
+      verifyConfirmScene.setEntry({envelop, seal})
+      await verifyConfirmScene.doExec()
+      verifyConfirmScene.set({done: true})
+    },
+  })),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.ACCOUNT_VERIFY_TITLE'))
@@ -47,20 +64,4 @@ class VerifyConfirmView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['verify.confirm.busy'],
-    done: state['verify.confirm.done'],
-    failure: state['verify.confirm.failure'],
-    query: state['app.query'],
-  }),
-  ({verifyConfirmScene}, propsProxy) => (({
-    onMount: async () => {
-      verifyConfirmScene.init()
-      const {envelop, seal} = propsProxy.query
-      verifyConfirmScene.setEntry({envelop, seal})
-      await verifyConfirmScene.doExec()
-      verifyConfirmScene.set({done: true})
-    },
-  })),
-)(VerifyConfirmView)
+export default VerifyConfirmView

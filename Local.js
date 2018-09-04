@@ -4,9 +4,9 @@
  */
 'use strict'
 
-const theSeat = require('the-seat').default
-const theSecret = require('the-secret').default
-const theSetting = require('the-setting').default
+const theSeat = require('the-seat')
+const theSecret = require('the-secret')
+const theSetting = require('the-setting')
 const {asLocal, envOf, seatAccess} = require('the-site-util')
 const pkg = require('./package')
 

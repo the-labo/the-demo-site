@@ -9,6 +9,21 @@ import { TheCondition, TheDone, TheLead, TheView } from 'the-components'
 import styles from './RecoverResetView.pcss'
 import { RecoverResetForm } from '../../stateful'
 
+@stateful(
+  (state) => ({
+    busy: state['recover.reset.busy'],
+    done: state['recover.reset.done'],
+    failure: state['recover.reset.failure'],
+    query: state['app.query'],
+  }),
+  ({recoverResetScene}, propsProxy) => ({
+    onMount: () => {
+      recoverResetScene.init()
+      const {envelop, seal} = propsProxy.query
+      recoverResetScene.setEntry({envelop, seal})
+    },
+  })
+)
 @localized
 @cycled
 @titled(({l}) => l('leads.RECOVER_RESET'))
@@ -44,18 +59,4 @@ class RecoverResetView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['recover.reset.busy'],
-    done: state['recover.reset.done'],
-    failure: state['recover.reset.failure'],
-    query: state['app.query'],
-  }),
-  ({recoverResetScene}, propsProxy) => ({
-    onMount: () => {
-      recoverResetScene.init()
-      const {envelop, seal} = propsProxy.query
-      recoverResetScene.setEntry({envelop, seal})
-    },
-  })
-)(RecoverResetView)
+export default RecoverResetView
