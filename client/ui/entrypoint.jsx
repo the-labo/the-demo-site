@@ -3,7 +3,7 @@
 import 'the-polyfill/apply'
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount, quelize, singleton, workers } from 'the-entrypoint'
+import { history as historyFor, mount, patch, quelize, singleton, workers } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
@@ -12,6 +12,8 @@ import handle from '../handle'
 import store from '../store'
 
 singleton()
+patch()
+
 set(GlobalKeys.STAGE, 'registering')
 
 void async function () {
