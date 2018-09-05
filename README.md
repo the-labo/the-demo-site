@@ -511,10 +511,10 @@ Misc
 * `/RootServiceWorker.js`
 * `/js/es5-shim.min.js`
 * `/manifest/:lang/manifest.json`
-* `/v11.0.10`
-* `/v11.0.10/bundle.css`
-* `/v11.0.10/bundle.js`
-* `/v11.0.10/external.js`
+* `/v11.0.12`
+* `/v11.0.12/bundle.css`
+* `/v11.0.12/bundle.js`
+* `/v11.0.12/external.js`
 * `/sign/please`
 * `/sign/signin`
 * `/sign/signout`

@@ -3,7 +3,7 @@
 import 'the-polyfill/apply'
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount, singleton, workers } from 'the-entrypoint'
+import { history as historyFor, mount, quelize, singleton, workers } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
@@ -27,11 +27,11 @@ once('DOMContentLoaded', async () => {
   const {
     lang = (get('navigator.language')).split('-')[0] || UI.DEFAULT_LANG,
   } = props
-  const app = (<App {...props} {...{client, handle, store}}/>)
+  const history = historyFor()
+  const app = (<App {...props} {...{client, handle, history, store}}/>)
   const l = locales.bind(lang)
   const controllers = await client.useAll({debug: !isProduction()})
 
-  const history = historyFor()
   handle.setAttributes({client, controllers, history, l, lang, store})
   handle.initAll()
 
@@ -46,6 +46,10 @@ once('DOMContentLoaded', async () => {
       toastScene.showError(l('errors.UNEXPECTED_ERROR'))
     }
   })
+
+  quelize(() => ({
+    locale: store.state['app.locale'],
+  }))
 
   await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)

@@ -1,6 +1,6 @@
 'use strict'
 
-const thePassword = require('the-password').default
+const thePassword = require('the-password')
 const Users = require('./10.User.seed')
 const {digest: digestPassword, generateSalt} = thePassword()
 

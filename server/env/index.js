@@ -1,6 +1,6 @@
 'use strict'
 
-const theEnv = require('the-env').default
+const theEnv = require('the-env')
 const Local = require('../../Local')
 
 const config = {

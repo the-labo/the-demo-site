@@ -8,6 +8,7 @@ import {
   catching,
   cycled,
   handling,
+  historical,
   localized,
   provided,
   stateful,
@@ -43,6 +44,7 @@ import { ofUser } from './wrappers'
 )
 @ofUser
 @provided
+@historical.root
 @localized.with(locales)
 @titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {

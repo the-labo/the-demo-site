@@ -5,16 +5,16 @@
 'use strict'
 
 import React from 'react'
-import { stateful, stored } from 'the-component-mixins'
+import { historical, stateful, stored } from 'the-component-mixins'
 import { wrapStack } from 'the-component-util'
-import { TheSpin, withHistory } from 'the-components'
+import { TheSpin } from 'the-components'
 import { get } from 'the-window'
 import { Urls } from '@self/conf'
 
 const debug = require('debug')('app:ui:onlySigned')
 
 function onlySigned (Component) {
-  @withHistory
+  @historical
   @stored
   @stateful.state((state) => ({
     hasSigned: Boolean(state['account.entity']),
@@ -54,6 +54,7 @@ function onlySigned (Component) {
       }
     }
   }
+
   OnlySigned.wrapStack = wrapStack(OnlySigned, Component)
 
   return OnlySigned
