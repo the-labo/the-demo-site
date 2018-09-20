@@ -329,6 +329,7 @@ Tasks defined in [Ponfile.dev.js]('./Ponfile.dev.js')
 | icon:gen | Generate icons | `pon icon:gen` |
 | l | Shortcut for `lint` task | `pon l` |
 | lint | Lint all | `pon lint` |
+| lint:health | Health check | `pon lint:health` |
 | lint:loc | Validate locales | `pon lint:loc` |
 | lint:rules | Lint by rules | `pon lint:rules` |
 | o | Shortcut for `open` task | `pon o` |

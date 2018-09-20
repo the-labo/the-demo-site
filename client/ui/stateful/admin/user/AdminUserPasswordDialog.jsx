@@ -9,6 +9,30 @@ import {
   TheOperationDialog,
 } from 'the-site-components'
 
+@stateful(
+  (state) => ({
+    active: state['admin.user.password.active'],
+    done: state['admin.user.password.done'],
+    passwords: state['admin.user.password.result'],
+    spinning: state['admin.user.password.busy'],
+    users: state['admin.user.password.targets'],
+  }),
+  ({
+     adminUserCheckScene: checkScene,
+     adminUserPasswordScene: passwordScene,
+   }, propsProxy) => ({
+    onClose: () => passwordScene.set({
+      active: false,
+      done: false,
+      targets: [],
+    }),
+    onYes: async () => {
+      await passwordScene.doExec()
+      passwordScene.set({done: true})
+      checkScene.init()
+    },
+  })
+)
 @localized
 class AdminUserPasswordDialog extends React.Component {
   render () {
@@ -48,27 +72,4 @@ class AdminUserPasswordDialog extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    active: state['admin.user.password.active'],
-    done: state['admin.user.password.done'],
-    passwords: state['admin.user.password.result'],
-    spinning: state['admin.user.password.busy'],
-    users: state['admin.user.password.targets'],
-  }),
-  ({
-     adminUserCheckScene: checkScene,
-     adminUserPasswordScene: passwordScene,
-   }, propsProxy) => ({
-    onClose: () => passwordScene.set({
-      active: false,
-      done: false,
-      targets: [],
-    }),
-    onYes: async () => {
-      await passwordScene.doExec()
-      passwordScene.set({done: true})
-      checkScene.init()
-    },
-  })
-)(AdminUserPasswordDialog)
+export default AdminUserPasswordDialog

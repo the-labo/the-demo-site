@@ -8,6 +8,10 @@ import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-components'
 import styles from './ErrorNotfoundView.pcss'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 @titled(({l}) => l('titles.ERROR_NOTFOUND_TITLE'))
 class ErrorNotfoundView extends React.Component {
@@ -34,7 +38,4 @@ class ErrorNotfoundView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({}),
-  ({}) => ({}),
-)(ErrorNotfoundView)
+export default ErrorNotfoundView

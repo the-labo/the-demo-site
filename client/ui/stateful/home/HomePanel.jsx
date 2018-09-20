@@ -9,6 +9,10 @@ import { TheButton, TheButtonGroup, TheContainer, TheLink, TheSpin } from 'the-c
 import { Urls } from '@self/conf'
 import styles from './HomePanel.pcss'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 class HomePanel extends React.Component {
   render () {
@@ -26,7 +30,4 @@ class HomePanel extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({}),
-  ({}) => ({}),
-)(HomePanel)
+export default HomePanel

@@ -9,21 +9,7 @@ import { formed } from 'the-component-mixins'
 import { TheUserCreateForm } from 'the-site-components'
 import { withRole } from '../../../wrappers'
 
-@withRole
-@formed
-@localized
-class AdminUserCreateForm extends React.Component {
-  render () {
-    const {roles} = this.props
-    return (
-      <TheUserCreateForm {...this.props}
-                         roles={roles}
-      />
-    )
-  }
-}
-
-export default stateful(
+@stateful(
   (state) => ({
     errors: state['admin.user.create.entryErrors'],
     spinning: state['admin.user.create.busy'],
@@ -43,4 +29,19 @@ export default stateful(
     },
     onUpdate: (v) => createScene.setEntry(v),
   })
-)(AdminUserCreateForm)
+)
+@withRole
+@formed
+@localized
+class AdminUserCreateForm extends React.Component {
+  render () {
+    const {roles} = this.props
+    return (
+      <TheUserCreateForm {...this.props}
+                         roles={roles}
+      />
+    )
+  }
+}
+
+export default AdminUserCreateForm

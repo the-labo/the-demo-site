@@ -8,17 +8,7 @@ import { localized, stateful } from 'the-component-mixins'
 import { formed } from 'the-component-mixins'
 import { TheRecoverResetForm } from 'the-site-components'
 
-@formed
-@localized
-class RecoverResetForm extends React.Component {
-  render () {
-    return (
-      <TheRecoverResetForm {...this.props}/>
-    )
-  }
-}
-
-export default stateful(
+@stateful(
   (state) => ({
     errors: state['recover.reset.entryErrors'],
     spinning: state['recover.reset.busy'],
@@ -37,4 +27,15 @@ export default stateful(
     },
     onUpdate: (v) => resetScene.setEntry(v),
   })
-)(RecoverResetForm)
+)
+@formed
+@localized
+class RecoverResetForm extends React.Component {
+  render () {
+    return (
+      <TheRecoverResetForm {...this.props}/>
+    )
+  }
+}
+
+export default RecoverResetForm

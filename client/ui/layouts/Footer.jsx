@@ -12,6 +12,10 @@ import { Urls } from '@self/conf'
 import styles from './Footer.pcss'
 import { LocaleForm } from '../stateful'
 
+@stateful(
+  () => ({}),
+  () => ({}),
+)
 @localized
 class Footer extends React.Component {
   render () {
@@ -47,7 +51,4 @@ class Footer extends React.Component {
   }
 }
 
-export default stateful(
-  () => ({}),
-  () => ({}),
-)(Footer)
+export default Footer

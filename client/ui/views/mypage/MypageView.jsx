@@ -19,6 +19,14 @@ import styles from './MypageView.pcss'
 import { UserImage } from '../../stateless'
 import { onlySigned } from '../../wrappers'
 
+@stateful(
+  (state) => ({
+    busy: state['account.busy'],
+    ready: state['account.ready'],
+    user: state['account.entity'],
+  }),
+  () => ({}),
+)
 @onlySigned
 @localized
 @cycled
@@ -79,11 +87,4 @@ class MypageView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['account.busy'],
-    ready: state['account.ready'],
-    user: state['account.entity'],
-  }),
-  () => ({}),
-)(MypageView)
+export default MypageView

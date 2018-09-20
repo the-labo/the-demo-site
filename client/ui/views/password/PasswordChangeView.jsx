@@ -11,6 +11,20 @@ import styles from './PasswordChangeView.pcss'
 import { PasswordChangeForm } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
+@stateful(
+  (state) => ({
+    done: state['password.change.done'],
+    user: state['account.entity'],
+  }),
+  ({
+     passwordChangeScene: changeScene,
+   }) => ({
+    onAgain: async () => {
+      changeScene.init()
+    },
+    onMount: () => changeScene.init(),
+  }),
+)
 @onlySigned
 @localized
 @cycled
@@ -53,17 +67,4 @@ class PasswordChangeView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    done: state['password.change.done'],
-    user: state['account.entity'],
-  }),
-  ({
-     passwordChangeScene: changeScene,
-   }) => ({
-    onAgain: async () => {
-      changeScene.init()
-    },
-    onMount: () => changeScene.init(),
-  }),
-)(PasswordChangeView)
+export default PasswordChangeView

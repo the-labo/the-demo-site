@@ -7,6 +7,36 @@ import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
 import { TheDestroyDialog } from 'the-site-components'
 
+@stateful(
+  (state) => ({
+    active: state['admin.user.destroy.active'],
+    done: state['admin.user.destroy.done'],
+    spinning: state['admin.user.destroy.busy'],
+    users: state['admin.user.destroy.targets'],
+  }),
+  ({
+     adminUserCheckScene: checkScene,
+     adminUserDestroyScene: destroyScene,
+     adminUserListScene: listScene,
+     l,
+     toastScene,
+   }, propsProxy) => ({
+    onClose: () => destroyScene.set({
+      active: false,
+      done: false,
+    }),
+    onSubmit: async () => {
+      await destroyScene.doExec()
+      destroyScene.set({
+        active: false,
+        done: true,
+      })
+      checkScene.init()
+      toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
+      await listScene.doSync()
+    },
+  })
+)
 @localized
 class AdminUserDestroyDialog extends React.Component {
   render () {
@@ -38,33 +68,4 @@ class AdminUserDestroyDialog extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    active: state['admin.user.destroy.active'],
-    done: state['admin.user.destroy.done'],
-    spinning: state['admin.user.destroy.busy'],
-    users: state['admin.user.destroy.targets'],
-  }),
-  ({
-     adminUserCheckScene: checkScene,
-     adminUserDestroyScene: destroyScene,
-     adminUserListScene: listScene,
-     l,
-     toastScene,
-   }, propsProxy) => ({
-    onClose: () => destroyScene.set({
-      active: false,
-      done: false,
-    }),
-    onSubmit: async () => {
-      await destroyScene.doExec()
-      destroyScene.set({
-        active: false,
-        done: true,
-      })
-      checkScene.init()
-      toastScene.showInfo(l('toasts.USER_DESTROY_DID_SUCCESS'))
-      await listScene.doSync()
-    },
-  })
-)(AdminUserDestroyDialog)
+export default AdminUserDestroyDialog

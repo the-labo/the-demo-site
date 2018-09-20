@@ -20,6 +20,40 @@ import {
 } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
+@stateful(
+  (state) => ({
+    busy: !state['admin.user.list.ready'] && state['admin.user.list.busy'],
+    query: state['app.query'],
+    ready: state['admin.user.list.ready'],
+  }),
+  ({
+     adminUserCheckScene: checkScene,
+     adminUserCreateScene: createScene,
+     adminUserFilterScene: filterScene,
+     adminUserListScene: listScene,
+   }, propsProxy) => ({
+    onCreate: () => {
+      createScene.init()
+      createScene.set({
+        active: true,
+        entry: {role: RoleCodes.NORMAL_ROLE},
+      })
+    },
+    onMount: async () => {
+      listScene.init()
+      filterScene.init()
+      checkScene.init()
+      createScene.init()
+
+      const {q = null} = propsProxy.query
+      listScene.setQ(q)
+      filterScene.setEntry({q})
+
+      await listScene.doSync()
+    },
+    onTearDown: () => {},
+  })
+)
 @onlySigned
 @cycled
 @localized
@@ -62,37 +96,4 @@ class AdminUserManageView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: !state['admin.user.list.ready'] && state['admin.user.list.busy'],
-    query: state['app.query'],
-    ready: state['admin.user.list.ready'],
-  }),
-  ({
-     adminUserCheckScene: checkScene,
-     adminUserCreateScene: createScene,
-     adminUserFilterScene: filterScene,
-     adminUserListScene: listScene,
-   }, propsProxy) => ({
-    onCreate: () => {
-      createScene.init()
-      createScene.set({
-        active: true,
-        entry: {role: RoleCodes.NORMAL_ROLE},
-      })
-    },
-    onMount: async () => {
-      listScene.init()
-      filterScene.init()
-      checkScene.init()
-      createScene.init()
-
-      const {q = null} = propsProxy.query
-      listScene.setQ(q)
-      filterScene.setEntry({q})
-
-      await listScene.doSync()
-    },
-    onTearDown: () => {},
-  })
-)(AdminUserManageView)
+export default AdminUserManageView

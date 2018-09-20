@@ -98,6 +98,7 @@
     "the-assets": "^2.5.0",
     "the-code": "^4.0.3",
     "the-e2e": "^2.1.12",
+    "the-health": "^1.0.5",
     "the-lint": "^1.7.5",
     "the-refactor": "^1.1.9",
     "the-script-release": "^1.0.6",

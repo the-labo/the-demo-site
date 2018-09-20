@@ -31,6 +31,7 @@
     "icon:gen": "Generate icons",
     "l": "Shortcut for `lint` task",
     "lint": "Lint all",
+    "lint:health": "Health check",
     "lint:loc": "Validate locales",
     "lint:rules": "Lint by rules",
     "o": "Shortcut for `open` task",

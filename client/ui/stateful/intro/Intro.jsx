@@ -6,6 +6,10 @@
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 class Intro extends React.Component {
   render () {
@@ -17,7 +21,4 @@ class Intro extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({}),
-  ({}) => ({}),
-)(Intro)
+export default Intro

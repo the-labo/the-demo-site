@@ -8,6 +8,22 @@ import { localized, stateful } from 'the-component-mixins'
 import { TheCreateDialog } from 'the-site-components'
 import AdminUserCreateForm from './AdminUserCreateForm'
 
+@stateful(
+  (state) => ({
+    active: state['admin.user.create.active'],
+    created: state['admin.user.create.result'],
+    done: state['admin.user.create.done'],
+    spinning: state['admin.user.create.busy'],
+  }),
+  ({
+     adminUserCreateScene: createScene,
+   }, propsProxy) => ({
+    onClose: () => createScene.set({
+      active: false,
+      done: false,
+    }),
+  })
+)
 @localized
 class AdminUserCreateDialog extends React.Component {
   render () {
@@ -37,19 +53,4 @@ class AdminUserCreateDialog extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    active: state['admin.user.create.active'],
-    created: state['admin.user.create.result'],
-    done: state['admin.user.create.done'],
-    spinning: state['admin.user.create.busy'],
-  }),
-  ({
-     adminUserCreateScene: createScene,
-   }, propsProxy) => ({
-    onClose: () => createScene.set({
-      active: false,
-      done: false,
-    }),
-  })
-)(AdminUserCreateDialog)
+export default AdminUserCreateDialog

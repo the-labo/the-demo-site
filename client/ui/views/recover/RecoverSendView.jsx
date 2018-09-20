@@ -9,6 +9,15 @@ import { TheCondition, TheDone, TheLead, TheView } from 'the-components'
 import styles from './RecoverSendView.pcss'
 import { RecoverSendForm } from '../../stateful'
 
+@stateful(
+  (state) => ({
+    done: state['recover.send.done'],
+    failure: state['recover.send.failure'],
+  }),
+  ({recoverSendScene}) => ({
+    onMount: () => recoverSendScene.init(),
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.RECOVER_SEND_TITLE'))
@@ -47,12 +56,4 @@ class RecoverSendView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    done: state['recover.send.done'],
-    failure: state['recover.send.failure'],
-  }),
-  ({recoverSendScene}) => ({
-    onMount: () => recoverSendScene.init(),
-  }),
-)(RecoverSendView)
+export default RecoverSendView

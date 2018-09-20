@@ -11,6 +11,25 @@ import { TheOperationList } from 'the-site-components'
 import { withMoment } from '../../../wrappers'
 import { withRole } from '../../../wrappers'
 
+@stateful(
+  (state) => ({
+    busy: state['admin.user.list.busy'],
+    checks: state['admin.user.check.values'],
+    sort: state['admin.user.list.sort'],
+    users: state['admin.user.list.entities'],
+  }),
+  ({
+     adminUserCheckScene: checkScene,
+     adminUserListScene: listScene,
+   }) => ({
+    onSort: async (name) => {
+      listScene.set({pageNumber: 1})
+      listScene.setSort(name)
+      await listScene.doSync()
+    },
+    onUpdateCheck: (v) => checkScene.setValues(v),
+  })
+)
 @withRole
 @withMoment
 @localized
@@ -72,22 +91,4 @@ class AdminUserList extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['admin.user.list.busy'],
-    checks: state['admin.user.check.values'],
-    sort: state['admin.user.list.sort'],
-    users: state['admin.user.list.entities'],
-  }),
-  ({
-     adminUserCheckScene: checkScene,
-     adminUserListScene: listScene,
-   }) => ({
-    onSort: async (name) => {
-      listScene.set({pageNumber: 1})
-      listScene.setSort(name)
-      await listScene.doSync()
-    },
-    onUpdateCheck: (v) => checkScene.setValues(v),
-  })
-)(AdminUserList)
+export default AdminUserList

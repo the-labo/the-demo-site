@@ -8,18 +8,7 @@ import { localized, stateful } from 'the-component-mixins'
 import { formed } from 'the-component-mixins'
 import { ThePasswordChangeForm } from 'the-site-components'
 
-@formed
-@localized
-class PasswordChangeForm extends React.Component {
-  render () {
-    return (
-      <ThePasswordChangeForm {...this.props}>
-      </ThePasswordChangeForm>
-    )
-  }
-}
-
-export default stateful(
+@stateful(
   (state) => ({
     errors: state['password.change.entryErrors'],
     spinning: state['password.change.busy'],
@@ -42,4 +31,16 @@ export default stateful(
     },
     onUpdate: (v) => changeScene.setEntry(v),
   })
-)(PasswordChangeForm)
+)
+@formed
+@localized
+class PasswordChangeForm extends React.Component {
+  render () {
+    return (
+      <ThePasswordChangeForm {...this.props}>
+      </ThePasswordChangeForm>
+    )
+  }
+}
+
+export default PasswordChangeForm

@@ -10,6 +10,21 @@ import {
 } from 'the-components'
 import AdminUserRoleForm from './AdminUserRoleForm'
 
+@stateful(
+  (state) => ({
+    active: state['admin.user.role.active'],
+    spinning: state['admin.user.role.busy'],
+    users: state['admin.user.role.targets'],
+  }),
+  ({
+     adminUserRoleScene: roleScene,
+   }, propsProxy) => ({
+    onClose: () => roleScene.set({
+      active: false,
+      targets: [],
+    }),
+  })
+)
 @localized
 class AdminUserRoleDialog extends React.Component {
   render () {
@@ -39,18 +54,4 @@ class AdminUserRoleDialog extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    active: state['admin.user.role.active'],
-    spinning: state['admin.user.role.busy'],
-    users: state['admin.user.role.targets'],
-  }),
-  ({
-     adminUserRoleScene: roleScene,
-   }, propsProxy) => ({
-    onClose: () => roleScene.set({
-      active: false,
-      targets: [],
-    }),
-  })
-)(AdminUserRoleDialog)
+export default AdminUserRoleDialog

@@ -18,6 +18,7 @@ const {
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
 const theE2E = require('the-e2e/pon')
+const theHealth = require('the-health/pon')
 const theLint = require('the-lint/pon')
 const theSupport = require('the-support/pon')
 const {locales} = require('./conf')
@@ -133,6 +134,8 @@ module.exports = pon(
     // Sub Tasks for Lint
     // -----------------------------------
     ...{
+      /** Health check */
+      'lint:health': theHealth(),
       /** Validate locales */
       'lint:loc': () => locales.validate(),
       /** Lint by rules */
@@ -186,7 +189,7 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server', 'format:misc', 'format:e2e'],
       /** Lint all */
-      lint: ['lint:loc', 'lint:rules'],
+      lint: ['lint:loc', 'lint:rules', 'lint:health'],
       /** Open project */
       open: 'open:app',
       /** Prepare project */
