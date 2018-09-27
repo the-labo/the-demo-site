@@ -14,7 +14,7 @@ const uploadRoute_ = require('./uploadRoute')
 exports.aliasRoute = _d(aliasRoute_)
 exports.uploadRoute = _d(uploadRoute_)
 
-module.exports = {
+module.exports = Object.freeze({
   aliasRoute: _d(aliasRoute_),
   uploadRoute: _d(uploadRoute_),
-}
+})

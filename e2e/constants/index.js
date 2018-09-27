@@ -14,7 +14,7 @@ const GlobalExpressions_ = require('./GlobalExpressions')
 exports.E2EConfig = _d(E2EConfig_)
 exports.GlobalExpressions = _d(GlobalExpressions_)
 
-module.exports = {
+module.exports = Object.freeze({
   E2EConfig: _d(E2EConfig_),
   GlobalExpressions: _d(GlobalExpressions_),
-}
+})

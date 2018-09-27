@@ -32,7 +32,7 @@ exports.UI = _d(UI_)
 exports.Urls = _d(Urls_)
 exports.locales = _d(locales_)
 
-module.exports = {
+module.exports = Object.freeze({
   GlobalKeys: _d(GlobalKeys_),
   HistoryTypes: _d(HistoryTypes_),
   Icons: _d(Icons_),
@@ -44,4 +44,4 @@ module.exports = {
   UI: _d(UI_),
   Urls: _d(Urls_),
   locales: _d(locales_),
-}
+})

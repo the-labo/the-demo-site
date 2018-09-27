@@ -12,6 +12,6 @@ const SceneMapping_ = require('./SceneMapping')
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.SceneMapping = _d(SceneMapping_)
 
-module.exports = {
+module.exports = Object.freeze({
   SceneMapping: _d(SceneMapping_),
-}
+})

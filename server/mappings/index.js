@@ -20,10 +20,10 @@ exports.PluginMapping = _d(PluginMapping_)
 exports.ResourceMapping = _d(ResourceMapping_)
 exports.ServiceMapping = _d(ServiceMapping_)
 
-module.exports = {
+module.exports = Object.freeze({
   ControllerMapping: _d(ControllerMapping_),
   HookMapping: _d(HookMapping_),
   PluginMapping: _d(PluginMapping_),
   ResourceMapping: _d(ResourceMapping_),
   ServiceMapping: _d(ServiceMapping_),
-}
+})

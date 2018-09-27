@@ -12,6 +12,6 @@ const AppConsts_ = require('./AppConsts')
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.AppConsts = _d(AppConsts_)
 
-module.exports = {
+module.exports = Object.freeze({
   AppConsts: _d(AppConsts_),
-}
+})

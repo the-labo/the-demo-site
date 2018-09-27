@@ -20,10 +20,10 @@ exports.passwordOperative = _d(passwordOperative_)
 exports.profileOperative = _d(profileOperative_)
 exports.signOperative = _d(signOperative_)
 
-module.exports = {
+module.exports = Object.freeze({
   accountOperative: _d(accountOperative_),
   compose: _d(compose_),
   passwordOperative: _d(passwordOperative_),
   profileOperative: _d(profileOperative_),
   signOperative: _d(signOperative_),
-}
+})

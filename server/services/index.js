@@ -22,11 +22,11 @@ exports.SignService = _d(SignService_)
 exports.UserService = _d(UserService_)
 exports.VerifyService = _d(VerifyService_)
 
-module.exports = {
+module.exports = Object.freeze({
   AccountService: _d(AccountService_),
   QuitService: _d(QuitService_),
   RecoverService: _d(RecoverService_),
   SignService: _d(SignService_),
   UserService: _d(UserService_),
   VerifyService: _d(VerifyService_),
-}
+})

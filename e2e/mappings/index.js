@@ -12,6 +12,6 @@ const StoryMapping_ = require('./StoryMapping')
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.StoryMapping = _d(StoryMapping_)
 
-module.exports = {
+module.exports = Object.freeze({
   StoryMapping: _d(StoryMapping_),
-}
+})

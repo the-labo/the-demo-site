@@ -72,7 +72,7 @@ exports.VerifyConfirmScene = _d(VerifyConfirmScene_)
 exports.VerifyNeedScene = _d(VerifyNeedScene_)
 exports.VerifySendScene = _d(VerifySendScene_)
 
-module.exports = {
+module.exports = Object.freeze({
   CallScene: _d(CallScene_),
   DetailScene: _d(DetailScene_),
   FilterScene: _d(FilterScene_),
@@ -104,4 +104,4 @@ module.exports = {
   VerifyConfirmScene: _d(VerifyConfirmScene_),
   VerifyNeedScene: _d(VerifyNeedScene_),
   VerifySendScene: _d(VerifySendScene_),
-}
+})

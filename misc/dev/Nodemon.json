@@ -1,7 +1,7 @@
 {
   "delay": 800,
   "execMap": {
-    "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
+    "js": "npx the-run --inspect=${INSPECT_PORT}"
   },
   "ext": "json,mjs,js,css",
   "ignore": [],

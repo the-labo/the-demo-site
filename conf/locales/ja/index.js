@@ -44,7 +44,7 @@ exports.titles = _d(titles_)
 exports.toasts = _d(toasts_)
 exports.warnings = _d(warnings_)
 
-module.exports = {
+module.exports = Object.freeze({
   alt: _d(alt_),
   app: _d(app_),
   buttons: _d(buttons_),
@@ -62,4 +62,4 @@ module.exports = {
   titles: _d(titles_),
   toasts: _d(toasts_),
   warnings: _d(warnings_),
-}
+})

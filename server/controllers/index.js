@@ -30,7 +30,7 @@ exports.RecoverCtrl = _d(RecoverCtrl_)
 exports.SignCtrl = _d(SignCtrl_)
 exports.VerifyCtrl = _d(VerifyCtrl_)
 
-module.exports = {
+module.exports = Object.freeze({
   AccountCtrl: _d(AccountCtrl_),
   AdminUserCtrl: _d(AdminUserCtrl_),
   AdminCtrl: _d(AdminCtrl_),
@@ -41,4 +41,4 @@ module.exports = {
   RecoverCtrl: _d(RecoverCtrl_),
   SignCtrl: _d(SignCtrl_),
   VerifyCtrl: _d(VerifyCtrl_),
-}
+})

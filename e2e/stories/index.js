@@ -22,11 +22,11 @@ exports.SignUpDelStory = _d(SignUpDelStory_)
 exports.Story = _d(Story_)
 exports.concerns = _d(concerns_)
 
-module.exports = {
+module.exports = Object.freeze({
   SignInOutStory: _d(SignInOutStory_),
   PasswordChangeStory: _d(PasswordChangeStory_),
   ProfileEditStory: _d(ProfileEditStory_),
   SignUpDelStory: _d(SignUpDelStory_),
   Story: _d(Story_),
   concerns: _d(concerns_),
-}
+})

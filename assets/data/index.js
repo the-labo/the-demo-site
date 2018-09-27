@@ -10,5 +10,5 @@ const _d = (m) => (m && 'default' in m) ? m.default : m
 
 
 
-module.exports = {
-}
+module.exports = Object.freeze({
+})

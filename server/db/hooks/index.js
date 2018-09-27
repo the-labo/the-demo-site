@@ -12,6 +12,6 @@ const UserHook_ = require('./UserHook')
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.UserHook = _d(UserHook_)
 
-module.exports = {
+module.exports = Object.freeze({
   UserHook: _d(UserHook_),
-}
+})

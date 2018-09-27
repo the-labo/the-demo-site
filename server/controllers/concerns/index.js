@@ -16,8 +16,8 @@ exports.withAdmin = _d(withAdmin_)
 exports.withAlias = _d(withAlias_)
 exports.withAuth = _d(withAuth_)
 
-module.exports = {
+module.exports = Object.freeze({
   withAdmin: _d(withAdmin_),
   withAlias: _d(withAlias_),
   withAuth: _d(withAuth_),
-}
+})

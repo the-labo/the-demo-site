@@ -24,7 +24,7 @@ exports.SignResource = _d(SignResource_)
 exports.TokenResource = _d(TokenResource_)
 exports.UserResource = _d(UserResource_)
 
-module.exports = {
+module.exports = Object.freeze({
   AliasResource: _d(AliasResource_),
   HistoryResource: _d(HistoryResource_),
   ProfileResource: _d(ProfileResource_),
@@ -32,4 +32,4 @@ module.exports = {
   SignResource: _d(SignResource_),
   TokenResource: _d(TokenResource_),
   UserResource: _d(UserResource_),
-}
+})

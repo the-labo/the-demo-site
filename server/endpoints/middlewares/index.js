@@ -12,6 +12,6 @@ const tokenMW_ = require('./tokenMW')
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.tokenMW = _d(tokenMW_)
 
-module.exports = {
+module.exports = Object.freeze({
   tokenMW: _d(tokenMW_),
-}
+})
