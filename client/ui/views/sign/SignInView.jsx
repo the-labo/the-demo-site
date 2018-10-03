@@ -11,6 +11,20 @@ import styles from './SignInView.pcss'
 import { SignInForm } from '../../stateful'
 import { HeaderLessStyle } from '../../stateless'
 
+@stateful(
+  (state) => ({
+    user: state['account.entity'],
+  }),
+  ({signInScene}) => ({
+    onMount: () => signInScene.init(),
+    onReceive: ({user}) => {
+      if (user) {
+        console.warn('[SigninView] Already signed')
+        signInScene.goBack()
+      }
+    },
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.SIGN_IN_TITLE'))
@@ -41,17 +55,4 @@ class SignInView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    user: state['account.entity'],
-  }),
-  ({signInScene}) => ({
-    onMount: () => signInScene.init(),
-    onReceive: ({user}) => {
-      if (user) {
-        console.warn('[SigninView] Already signed')
-        signInScene.goBack()
-      }
-    },
-  }),
-)(SignInView)
+export default SignInView

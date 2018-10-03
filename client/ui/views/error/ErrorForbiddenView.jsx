@@ -8,6 +8,10 @@ import { cycled, localized, stateful, titled } from 'the-component-mixins'
 import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-components'
 import styles from './ErrorForbiddenView.pcss'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 @titled(({l}) => l('titles.ERROR_NOTFOUND_TITLE'))
 class ErrorForbiddenView extends React.Component {
@@ -34,7 +38,4 @@ class ErrorForbiddenView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({}),
-  ({}) => ({}),
-)(ErrorForbiddenView)
+export default ErrorForbiddenView

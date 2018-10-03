@@ -8,17 +8,7 @@ import { localized, stateful } from 'the-component-mixins'
 import { formed } from 'the-component-mixins'
 import { TheRecoverSendForm } from 'the-site-components'
 
-@formed
-@localized
-class RecoverSendForm extends React.Component {
-  render () {
-    return (
-      <TheRecoverSendForm {...this.props}/>
-    )
-  }
-}
-
-export default stateful(
+@stateful(
   (state) => ({
     errors: state['recover.send.entryErrors'],
     spinning: state['recover.send.busy'],
@@ -36,4 +26,15 @@ export default stateful(
     },
     onUpdate: (v) => sendScene.setEntry(v),
   })
-)(RecoverSendForm)
+)
+@formed
+@localized
+class RecoverSendForm extends React.Component {
+  render () {
+    return (
+      <TheRecoverSendForm {...this.props}/>
+    )
+  }
+}
+
+export default RecoverSendForm

@@ -15,6 +15,27 @@ import {
 } from 'the-components'
 import styles from './QuitView.pcss'
 
+@stateful(
+  (state) => ({
+    busy: state['quit.busy'],
+    confirm: state['quit.confirm'],
+    done: state['quit.done'],
+  }),
+  ({
+     accountScene,
+     quitScene,
+   }) => ({
+    onCancel: () => quitScene.goToCancel(),
+    onConfirm: () => quitScene.set({confirm: true}),
+    onConfirmBack: () => quitScene.set({confirm: false}),
+    onExecute: async () => {
+      await quitScene.doExec()
+      quitScene.set({confirm: false, done: true})
+      await accountScene.doSync()
+    },
+    onMount: () => quitScene.init(),
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.QUIT_TITLE'))
@@ -84,24 +105,4 @@ class QuitView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['quit.busy'],
-    confirm: state['quit.confirm'],
-    done: state['quit.done'],
-  }),
-  ({
-     accountScene,
-     quitScene,
-   }) => ({
-    onCancel: () => quitScene.goToCancel(),
-    onConfirm: () => quitScene.set({confirm: true}),
-    onConfirmBack: () => quitScene.set({confirm: false}),
-    onExecute: async () => {
-      await quitScene.doExec()
-      quitScene.set({confirm: false, done: true})
-      await accountScene.doSync()
-    },
-    onMount: () => quitScene.init(),
-  }),
-)(QuitView)
+export default QuitView

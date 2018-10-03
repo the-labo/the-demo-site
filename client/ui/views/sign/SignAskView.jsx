@@ -9,6 +9,21 @@ import { TheButton, TheButtonGroup, TheLead, TheView } from 'the-components'
 import { Icons, Urls } from '@self/conf'
 import styles from './SignAskView.pcss'
 
+@stateful(
+  (state) => ({
+    back: state['sign.ask.back'] || '/',
+    user: state['account.entity'],
+  }),
+  ({
+     signAskScene,
+   }) => ({
+    onReceive: async ({user}) => {
+      if (user) {
+        signAskScene.goBack()
+      }
+    },
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.SIGN_ASK_TITLE'))
@@ -43,18 +58,4 @@ class SignAskView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    back: state['sign.ask.back'] || '/',
-    user: state['account.entity'],
-  }),
-  ({
-     signAskScene,
-   }) => ({
-    onReceive: async ({user}) => {
-      if (user) {
-        signAskScene.goBack()
-      }
-    },
-  }),
-)(SignAskView)
+export default SignAskView

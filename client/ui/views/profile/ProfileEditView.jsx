@@ -11,6 +11,34 @@ import styles from './ProfileEditView.pcss'
 import { ProfileEditForm } from '../../stateful'
 import { onlySigned } from '../../wrappers'
 
+@stateful(
+  (state) => ({
+    busy: state['account.busy'],
+    done: state['profile.edit.done'],
+    user: state['account.entity'],
+  }),
+  ({
+     accountScene,
+     profileEditScene,
+   }, propsProxy) => {
+    const prepareProfile = async () => {
+      await accountScene.doSync()
+      const {profile} = accountScene.get('entity')
+      profileEditScene.setEntryFromEntity(profile)
+    }
+    return {
+      onAgain: async () => {
+        profileEditScene.set({done: false})
+        await prepareProfile()
+      },
+      onMount: async () => {
+        profileEditScene.init()
+        await prepareProfile()
+      },
+
+    }
+  },
+)
 @onlySigned
 @localized
 @cycled
@@ -55,31 +83,4 @@ class ProfileEditView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['account.busy'],
-    done: state['profile.edit.done'],
-    user: state['account.entity'],
-  }),
-  ({
-     accountScene,
-     profileEditScene,
-   }, propsProxy) => {
-    const prepareProfile = async () => {
-      await accountScene.doSync()
-      const {profile} = accountScene.get('entity')
-      profileEditScene.setEntryFromEntity(profile)
-    }
-    return {
-      onAgain: async () => {
-        profileEditScene.set({done: false})
-        await prepareProfile()
-      },
-      onMount: async () => {
-        profileEditScene.init()
-        await prepareProfile()
-      },
-
-    }
-  },
-)(ProfileEditView)
+export default ProfileEditView

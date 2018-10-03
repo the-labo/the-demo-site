@@ -9,6 +9,25 @@ import { TheView } from 'the-components'
 import { Icons } from '@self/conf'
 import styles from './SignOutView.pcss'
 
+@stateful(
+  (state) => ({
+    busy: state['sign.out.busy'],
+    done: state['sign.out.done'],
+    user: state['account.entity'],
+  }),
+  ({
+     accountScene,
+     signOutScene,
+   }) => ({
+    onMount: async () => {
+      signOutScene.init()
+      await signOutScene.doExec()
+      await accountScene.doSync()
+      signOutScene.set({done: true})
+      signOutScene.goBack()
+    },
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.SIGN_OUT_TITLE'))
@@ -37,22 +56,4 @@ class SignOutView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['sign.out.busy'],
-    done: state['sign.out.done'],
-    user: state['account.entity'],
-  }),
-  ({
-     accountScene,
-     signOutScene,
-   }) => ({
-    onMount: async () => {
-      signOutScene.init()
-      await signOutScene.doExec()
-      await accountScene.doSync()
-      signOutScene.set({done: true})
-      signOutScene.goBack()
-    },
-  }),
-)(SignOutView)
+export default SignOutView

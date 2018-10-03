@@ -11,6 +11,25 @@ import styles from './SignUpView.pcss'
 import { SignUpForm } from '../../stateful'
 import { HeaderLessStyle } from '../../stateless'
 
+@stateful(
+  (state) => ({
+    user: state['account.entity'],
+  }),
+  ({
+     signAskScene,
+     signUpScene,
+   }, propsProxy) => ({
+    onMount: () => {
+      signAskScene.init()
+      const {user} = propsProxy
+      if (user) {
+        signUpScene.goBack()
+      } else {
+        signUpScene.init()
+      }
+    },
+  }),
+)
 @localized
 @cycled
 @titled(({l}) => l('titles.SIGN_UP_TITLE'))
@@ -45,22 +64,4 @@ class SignUpView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    user: state['account.entity'],
-  }),
-  ({
-     signAskScene,
-     signUpScene,
-   }, propsProxy) => ({
-    onMount: () => {
-      signAskScene.init()
-      const {user} = propsProxy
-      if (user) {
-        signUpScene.goBack()
-      } else {
-        signUpScene.init()
-      }
-    },
-  }),
-)(SignUpView)
+export default SignUpView
