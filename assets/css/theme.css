@@ -1603,6 +1603,7 @@
 .the-info .the-info-row-label {
     color:#BBB;
     display:inline-block;
+    flex-shrink:0;
     font-size:smaller;
     max-width:50%;
     overflow:hidden;
@@ -1614,8 +1615,10 @@
 
 .the-info .the-info-row-value {
     display:inline-block;
+    overflow:hidden;
     padding:4px;
     text-align:right;
+    text-overflow:ellipsis;
 }
 
 
