@@ -4,11 +4,10 @@
  */
 'use strict'
 
-const {TheVerifyService} = require('the-site-services')
+const { TheVerifyService } = require('the-site-services')
 
 /** @lends VerifyService */
 class VerifyService extends TheVerifyService {
-
 }
 
 module.exports = VerifyService

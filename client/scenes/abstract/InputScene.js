@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {clone} = require('asobj')
-const {withBusy, withEntry, withResult} = require('the-scene-mixins/shim')
+const { clone } = require('asobj')
+const { withBusy, withEntry, withResult } = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -15,7 +15,6 @@ class InputSceneBase extends Scene {}
 
 /** @lends InputScene */
 class InputScene extends InputSceneBase {
-
   setEntryFromEntity (entity) {
     const values = clone(entity || {}, {
       without: this.constructor.entitySkipFields,
@@ -36,7 +35,6 @@ class InputScene extends InputSceneBase {
   }
 
   static entitySkipFields = [/^\$/]
-
 }
 
 module.exports = InputScene

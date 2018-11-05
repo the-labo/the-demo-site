@@ -19,7 +19,7 @@ import { onlySigned } from '../../wrappers'
 @titled(({l}) => l('titles.ADMIN_TOP_TITLE'))
 class AdminTopView extends React.Component {
   render () {
-    const {l, title} = this.props
+    const { l, title } = this.props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={Icons.ADMIN_ICON}

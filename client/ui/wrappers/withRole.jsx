@@ -16,7 +16,7 @@ function withRole (Component) {
   @localized
   class WithRole extends React.Component {
     render () {
-      const {l} = this.props
+      const { l } = this.props
       const ComponentProps = {
         isAdmin (user) {
           return hasRole(user, RoleCodes.ADMIN_ROLE)

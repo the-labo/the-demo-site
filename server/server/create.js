@@ -5,11 +5,11 @@
  */
 'use strict'
 
-const {isProduction} = require('the-check')
+const { isProduction } = require('the-check')
 const theSeal = require('the-seal')
 const theServer = require('the-server')
-const {servicesProxy} = require('the-service-base')
-const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
+const { servicesProxy } = require('the-service-base')
+const { Html, createClient, createHandle, createStore } = require('@self/client/shim')
 const Local = require('@self/Local')
 const endpoints = require('../endpoints')
 const env = require('../env')
@@ -17,7 +17,7 @@ const mappings = require('../mappings')
 const conf = require('../../conf')
 const pkg = require('../../package')
 
-const {ControllerMapping, ServiceMapping} = mappings
+const { ControllerMapping, ServiceMapping } = mappings
 
 /** @lends create */
 function create (config) {

@@ -10,15 +10,15 @@ import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 
 /** @lends Html */
-function Html ({appScope, renderingContext}) {
+function Html ({ appScope, renderingContext }) {
   const {
     buildNumber,
     cdnUrl,
     version,
   } = appScope
-  const {client, handle, info, lang, path, store} = renderingContext
+  const { client, handle, info, lang, path, store } = renderingContext
   const l = locales.bind(lang)
-  handle.setAttributes({client, l, lang, store})
+  handle.setAttributes({ client, l, lang, store })
   const appProps = {
     lang,
   }
@@ -32,7 +32,7 @@ function Html ({appScope, renderingContext}) {
                }}
                icon={Urls.ICON_URL}
                js={SrcSets.jsSet}
-               manifest={resolveUrl(Urls.MANIFEST_URL, {lang})}
+               manifest={resolveUrl(Urls.MANIFEST_URL, { lang })}
                title={l('app.APP_NAME')}
                version={[version, buildNumber].join('-')}
       >
@@ -42,7 +42,7 @@ function Html ({appScope, renderingContext}) {
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
-            <App {...appProps} {...{client, handle, store}}/>
+            <App {...appProps} {...{ client, handle, store }}/>
           </TheRouter.Static>
         </div>
       </TheBody>

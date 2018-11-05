@@ -8,7 +8,7 @@ import { wrapStack } from 'the-component-util'
 function withMoment (Component, options = {}) {
   class WithMoment extends React.Component {
     render () {
-      const {lang} = this.props
+      const { lang } = this.props
       const toMoment = (date) => {
         if (!date) {
           return null

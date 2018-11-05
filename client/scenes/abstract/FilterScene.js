@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {withBusy, withEntry} = require('the-scene-mixins/shim')
+const { withBusy, withEntry } = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy

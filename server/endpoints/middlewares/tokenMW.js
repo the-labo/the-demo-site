@@ -9,10 +9,10 @@ function tokenMW (route) {
   async function tokenRoute (ctx) {
     const {
       app: {
-        db: {resources: {Token}},
+        db: { resources: { Token } },
       },
       query = {},
-      request: {body = {}},
+      request: { body = {} },
     } = ctx
     const token = body.token || query.token
     ctx.token = await Token.verify(token)

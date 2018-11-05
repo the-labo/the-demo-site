@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {isProduction} = require('the-check')
-const {hashProxy} = require('the-site-util')
+const { isProduction } = require('the-check')
+const { hashProxy } = require('the-site-util')
 const pkg = require('../package')
 
 const prodAssetURL = `/v${pkg.version}`
@@ -100,5 +100,5 @@ module.exports = Object.freeze(
 )
 
 if (!isProduction()) {
-  module.exports = hashProxy(module.exports, {name: 'Urls', unknownCheck: true})
+  module.exports = hashProxy(module.exports, { name: 'Urls', unknownCheck: true })
 }

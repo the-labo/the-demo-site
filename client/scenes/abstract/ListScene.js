@@ -15,7 +15,7 @@ const {
   withReady,
   withSort,
 } = require('the-scene-mixins/shim')
-const {hasMoreFor} = require('the-site-util')
+const { hasMoreFor } = require('the-site-util')
 const Scene = require('./Scene')
 
 @withBusy
@@ -39,9 +39,9 @@ class ListScene extends ListSceneBase {
   }
 
   setQ (q) {
-    this.set({pageNumber: 1})
-    this.setFilterByQ(q, {fields: this.constructor.qField})
-    this.replaceHistoryByQuery({q})
+    this.set({ pageNumber: 1 })
+    this.setFilterByQ(q, { fields: this.constructor.qField })
+    this.replaceHistoryByQuery({ q })
   }
 
   async dealWith (condition) {
@@ -51,8 +51,8 @@ class ListScene extends ListSceneBase {
   @withBusy.while
   @withReady.when
   async doSync () {
-    const {entities, meta: counts} = await this.dealWith(this.getCondition())
-    this.set({counts, entities, hasMore: hasMoreFor(counts)})
+    const { entities, meta: counts } = await this.dealWith(this.getCondition())
+    this.set({ counts, entities, hasMore: hasMoreFor(counts) })
   }
 
   /**
@@ -61,17 +61,17 @@ class ListScene extends ListSceneBase {
    */
   async doSyncMore () {
     const pageNumber = this.get('pageNumber')
-    this.set({pageNumber: pageNumber + 1})
+    this.set({ pageNumber: pageNumber + 1 })
 
-    const {entities, meta: counts} = await this.dealWith(this.getCondition())
-    this.set({counts: counts, hasMore: hasMoreFor(counts)})
+    const { entities, meta: counts } = await this.dealWith(this.getCondition())
+    this.set({ counts: counts, hasMore: hasMoreFor(counts) })
     this.addEntities(entities)
   }
 
   async doSyncOne (id) {
-    const {entities: [one]} = await this.dealWith({
-      filter: {id},
-      page: {number: 1, size: 1},
+    const { entities: [one] } = await this.dealWith({
+      filter: { id },
+      page: { number: 1, size: 1 },
     })
     if (one) {
       this.updateEntity(one)

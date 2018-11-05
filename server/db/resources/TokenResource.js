@@ -4,12 +4,12 @@
  */
 'use strict'
 
-const {TheTokenResource} = require('the-site-resources')
+const { TheTokenResource } = require('the-site-resources')
 
 /** @lends TokenResource */
 class TokenResource extends TheTokenResource {
   forUserMediaUpload (userId) {
-    return this.of({key: `media-upload-user#${userId}`})
+    return this.of({ key: `media-upload-user#${userId}` })
   }
 }
 

@@ -5,7 +5,6 @@ import { cycled, stateful } from 'the-component-mixins'
 import { wrapStack } from 'the-component-util'
 
 function ofUser (Component) {
-
   @cycled
   class OfUser extends React.Component {
     render () {
@@ -23,7 +22,7 @@ function ofUser (Component) {
     }),
     (handle, propsProxy, ownProps) => ({
       onReceive: (recieved) => {
-        const {user} = recieved
+        const { user } = recieved
         user && propsProxy.onUser?.(user)
         if ('onReceive' in ownProps) {
           ownProps.onReceive(recieved)

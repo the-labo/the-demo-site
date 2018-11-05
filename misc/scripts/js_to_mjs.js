@@ -9,13 +9,13 @@
 
 const aglob = require('aglob')
 const fs = require('fs')
-const {EOL} = require('os')
+const { EOL } = require('os')
 const path = require('path')
 const [, , pattern, ext = '.mjs'] = process.argv
 
 void async function run () {
   const cwd = process.cwd()
-  for (const filename of await aglob(pattern, {cwd})) {
+  for (const filename of await aglob(pattern, { cwd })) {
     const src = path.resolve(cwd, filename)
     const dest = path.resolve(
       path.dirname(src),

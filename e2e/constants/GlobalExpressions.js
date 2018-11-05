@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {GlobalKeys, Urls} = require('../../conf')
+const { GlobalKeys, Urls } = require('../../conf')
 
 module.exports = Object.freeze(
   /** @lends GlobalExpressions */

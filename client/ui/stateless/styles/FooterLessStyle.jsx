@@ -7,7 +7,7 @@ import React from 'react'
 
 class FooterLessStyle extends React.Component {
   render () {
-    const {enabled} = this.props
+    const { enabled } = this.props
     if (!enabled) {
       return null
     }

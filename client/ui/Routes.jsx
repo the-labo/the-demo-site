@@ -7,7 +7,7 @@ import { hashProxy } from 'the-site-util'
 import { Urls } from '@self/conf'
 import * as views from './views'
 
-const v = isProduction() ? views : hashProxy(views, {unknownCheck: true})
+const v = isProduction() ? views : hashProxy(views, { unknownCheck: true })
 
 const Routes = ({}) => (
   <TheRoute.Switch>

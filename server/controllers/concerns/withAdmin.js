@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {TheForbiddenError} = require('the-error')
-const {RoleCodes} = require('@self/conf')
+const { TheForbiddenError } = require('the-error')
+const { RoleCodes } = require('@self/conf')
 
 /** @lends withAdmin */
 function withAdmin (Class) {
@@ -23,7 +23,7 @@ function withAdmin (Class) {
     }
 
     async _isAdmin () {
-      const {user} = this
+      const { user } = this
       return Boolean(user && user.hasRoleOf(RoleCodes.ADMIN_ROLE))
     }
 

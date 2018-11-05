@@ -6,14 +6,13 @@
  */
 'use strict'
 
-const {Urls} = require('../../../conf')
+const { Urls } = require('../../../conf')
 
 /** @lends signOperative */
 function signOperative (Class) {
   class SignOperative extends Class {
-
     async operateSignDel () {
-      const {l} = this
+      const { l } = this
       await this.open(Urls.ACCOUNT_QUIT_URL)
       {
         const $view = await this.accessByClass('the-view')
@@ -26,11 +25,11 @@ function signOperative (Class) {
     }
 
     async operateSignIn (name, password) {
-      const {l} = this
+      const { l } = this
       await this.open(Urls.SIGN_IN_URL)
       {
         const $Form = await this.accessByName('SignInForm')
-        await $Form.setValues({name, password})
+        await $Form.setValues({ name, password })
         await $Form.waitAndClickByText(l('buttons.DO_SIGN_IN'))
       }
       await this.ready()
@@ -39,7 +38,7 @@ function signOperative (Class) {
     }
 
     async operateSignOut () {
-      const {l} = this
+      const { l } = this
       await this.open(Urls.TOP_URL)
       {
         const $Header = await this.accessByClass('the-header')
@@ -52,14 +51,14 @@ function signOperative (Class) {
     }
 
     async operateSignUp (email, name, password) {
-      const {l} = this
+      const { l } = this
       await this.open(Urls.SIGN_UP_URL)
       {
         const $Form = await this.accessByName('SignUpForm')
-        await $Form.setValues({'profile.email': email})
+        await $Form.setValues({ 'profile.email': email })
         await $Form.waitAndClickByText(l('buttons.SHOW_NEXT'))
         await this.sleep(200)
-        await $Form.setValues({name, password})
+        await $Form.setValues({ name, password })
         await $Form.waitAndClickByText(l('buttons.DO_SIGN_UP'))
       }
       await this.ready()

@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {isProduction} = require('the-check')
-const {hashProxy} = require('the-site-util')
+const { isProduction } = require('the-check')
+const { hashProxy } = require('the-site-util')
 const Urls = require('./Urls')
 
 module.exports = Object.freeze(
@@ -40,5 +40,5 @@ module.exports = Object.freeze(
 )
 
 if (!isProduction()) {
-  module.exports = hashProxy(module.exports, {name: 'SrcSets', unknownCheck: true})
+  module.exports = hashProxy(module.exports, { name: 'SrcSets', unknownCheck: true })
 }

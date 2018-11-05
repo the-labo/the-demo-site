@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {withBusy, withReady, withValues} = require('the-scene-mixins/shim')
+const { withBusy, withReady, withValues } = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withBusy
@@ -22,7 +22,7 @@ class HashScene extends HashSceneBase {
   @withReady.when
   async doSync () {
     const values = await this.dealWith()
-    this.set({values})
+    this.set({ values })
   }
 }
 

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {Styles} = require('../../conf')
+const { Styles } = require('../../conf')
 const Local = require('../../Local')
 const pkg = require('../../package')
 

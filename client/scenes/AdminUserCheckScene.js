@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindDefaults, bindScope} = require('the-scene-mixins/shim')
+const { bindDefaults, bindScope } = require('the-scene-mixins/shim')
 const HashScene = require('./abstract/HashScene')
 
 @bindScope('admin.user.check')

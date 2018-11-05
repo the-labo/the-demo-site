@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {withAuthorized} = require('the-controller-mixins')
+const { withAuthorized } = require('the-controller-mixins')
 
 /** @lends withAuth */
 function withAuth (Class) {
@@ -13,9 +13,9 @@ function withAuth (Class) {
   class withAuth extends WithAuthorized {
     async _fetchAuthorizedUser () {
       const {
-        resources: {User},
+        resources: { User },
       } = this
-      const {user} = (await this._getAuthorized()) || {}
+      const { user } = (await this._getAuthorized()) || {}
       if (!user) {
         return null
       }
@@ -24,12 +24,12 @@ function withAuth (Class) {
 
     async _reloadAuthorized () {
       const {
-        resources: {Sign},
+        resources: { Sign },
       } = this
       const user = await this._fetchAuthorizedUser()
       if (user) {
         const sign = await Sign.ofUser(user)
-        await this._setAuthorized({sign, user})
+        await this._setAuthorized({ sign, user })
       } else {
         await this._delAuthorized()
       }
@@ -37,7 +37,7 @@ function withAuth (Class) {
 
     async _verifyAuthorisedPassword (password) {
       const {
-        resources: {Sign},
+        resources: { Sign },
       } = this
       const user = await this._fetchAuthorizedUser()
       const sign = await Sign.of(user)

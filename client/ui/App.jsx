@@ -49,7 +49,7 @@ import { ofUser } from './wrappers'
 @titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {
   render () {
-    const {busy} = this.props
+    const { busy } = this.props
     return (
       <TheRoot>
         <Header/>

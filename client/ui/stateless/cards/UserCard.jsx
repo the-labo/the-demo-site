@@ -16,7 +16,7 @@ function UserCard ({
                    }) {
   return (
     <div className={c(styles.self, className)}>
-      <UserImage {...{user}}
+      <UserImage {...{ user }}
                  className={styles.image}
                  size={imageSize}
       />

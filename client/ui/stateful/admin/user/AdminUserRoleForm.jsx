@@ -37,7 +37,7 @@ import { withRole } from '../../../wrappers'
 @localized
 class AdminUserRoleForm extends React.Component {
   render () {
-    const {roles} = this.props
+    const { roles } = this.props
     return (
       <TheUsersRoleForm {...this.props}
                         roles={roles}

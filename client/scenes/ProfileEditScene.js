@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope} = require('the-scene-mixins/shim')
+const { bindScope } = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
 @bindScope('profile.edit')
@@ -12,9 +12,8 @@ class ProfileEditSceneBase extends InputScene {}
 
 /** @lends ProfileEditScene */
 class ProfileEditScene extends ProfileEditSceneBase {
-
   async dealWith (values) {
-    const {accountCtrl} = this.controllers
+    const { accountCtrl } = this.controllers
     return await accountCtrl.updateProfile(values)
   }
 

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBack, withBusy} = require('the-scene-mixins/shim')
+const { bindScope, withBack, withBusy } = require('the-scene-mixins/shim')
 const CallScene = require('./abstract/CallScene')
 
 @withBack
@@ -14,7 +14,7 @@ class SignOutSceneBase extends CallScene {}
 /** @lends SignOutScene */
 class SignOutScene extends SignOutSceneBase {
   async dealWith () {
-    const {signCtrl} = this.controllers
+    const { signCtrl } = this.controllers
     return await signCtrl.signOut()
   }
 }

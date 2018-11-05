@@ -5,7 +5,7 @@
 'use strict'
 
 const path = require('path')
-const {isMacOS} = require('the-check')
+const { isMacOS } = require('the-check')
 const Local = require('../../Local')
 
 module.exports = Object.freeze(
@@ -21,8 +21,6 @@ module.exports = Object.freeze(
     nginx: {
       name: Local.NGINX_CONTAINER_NAME,
       options: {
-        cert: path.resolve(__dirname, 'cert/self-signed.cert'),
-        certKey: path.resolve(__dirname, 'cert/self-signed.cert.key'),
         env: {
           APP_PORT: Local.APP_PORT,
           HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',

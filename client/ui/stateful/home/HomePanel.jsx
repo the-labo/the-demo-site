@@ -16,7 +16,7 @@ import styles from './HomePanel.pcss'
 @localized
 class HomePanel extends React.Component {
   render () {
-    const {l} = this.props
+    const { l } = this.props
     return (
       <div className={styles.self}>
         <TheContainer className={styles.content}>

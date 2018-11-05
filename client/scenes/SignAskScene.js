@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBack, withBusy} = require('the-scene-mixins/shim')
+const { bindScope, withBack, withBusy } = require('the-scene-mixins/shim')
 const Scene = require('./abstract/Scene')
 
 @withBusy
@@ -14,7 +14,6 @@ class SignaskSceneBase extends Scene {}
 
 /** @lends SignaskScene */
 class SignaskScene extends SignaskSceneBase {
-
 }
 
 module.exports = SignaskScene

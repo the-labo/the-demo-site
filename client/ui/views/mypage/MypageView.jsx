@@ -40,7 +40,7 @@ class MypageView extends React.Component {
       title,
       user,
     } = this.props
-    const {profile} = user || {}
+    const { profile } = user || {}
     return (
       <TheView className={styles.self}
                spinning={busy}>
@@ -59,7 +59,7 @@ class MypageView extends React.Component {
                     [l('labels.USER_NAME')]: user.name,
                     [l('labels.USER_PROFILE_NAME')]: profile?.name,
                     [l('labels.USER_EMAIL')]: profile?.email,
-                    [l('labels.USER_IMAGE')]: <UserImage {...{user}} size={64}/>,
+                    [l('labels.USER_IMAGE')]: <UserImage {...{ user }} size={64}/>,
                   }}/>
                   <br/>
                   <TheButtonGroup>

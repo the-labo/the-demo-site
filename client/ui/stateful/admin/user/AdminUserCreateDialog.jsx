@@ -37,7 +37,7 @@ class AdminUserCreateDialog extends React.Component {
     } = this.props
 
     return (
-      <TheCreateDialog {...{active, done, l, onClose, spinning}}
+      <TheCreateDialog {...{ active, done, l, onClose, spinning }}
                        doneTitle={l('titles.ADMIN_USER_CREATE_RESULT_TITLE')}
                        result={created && {
                          [l('labels.USER_NAME')]: created.name,

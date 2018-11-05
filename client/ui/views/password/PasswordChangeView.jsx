@@ -58,7 +58,7 @@ class PasswordChangeView extends React.Component {
           </TheCondition>
           <TheCondition unless={done}>
             <div>
-              <PasswordChangeForm {...{user}} />
+              <PasswordChangeForm {...{ user }} />
             </div>
           </TheCondition>
         </TheView.Body>

@@ -4,16 +4,15 @@
 'use strict'
 
 const asleep = require('asleep')
-const {resolveUrl} = require('the-site-util')
+const { resolveUrl } = require('the-site-util')
 const {
   TheStory,
 } = require('the-story-base')
-const {GlobalExpressions} = require('../constants')
-const {UI, locales} = require('../../conf')
+const { GlobalExpressions } = require('../constants')
+const { UI, locales } = require('../../conf')
 
 /** @lends Story */
 class Story extends TheStory {
-
   constructor (...args) {
     super(...args)
     this.lang = UI.DEFAULT_LANG
@@ -21,9 +20,9 @@ class Story extends TheStory {
   }
 
   async open (url) {
-    const {browser, logger} = this
-    const query = {locale: this.lang}
-    await browser.url(resolveUrl(url, {}, {query}))
+    const { browser, logger } = this
+    const query = { locale: this.lang }
+    await browser.url(resolveUrl(url, {}, { query }))
     await this.ready()
     logger.debug('Open URL', JSON.stringify(url))
   }
@@ -36,7 +35,7 @@ class Story extends TheStory {
 
   async ready () {
     await this.sleep(100)
-    const {browser} = this
+    const { browser } = this
     await browser.waitVariableToBe(GlobalExpressions.appStageExpression, 'mounted', 10000)
     await browser.waitForNotVisible('.the-toast', 5000)
 
@@ -45,7 +44,7 @@ class Story extends TheStory {
   }
 
   async status (values) {
-    const {browser} = this
+    const { browser } = this
     return {
       title: await browser.getTitle(),
       ...values,

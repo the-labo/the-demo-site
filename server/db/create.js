@@ -8,7 +8,7 @@
 const cluster = require('cluster')
 const theDB = require('the-db')
 const env = require('../env')
-const {HookMapping, PluginMapping, ResourceMapping} = require('../mappings')
+const { HookMapping, PluginMapping, ResourceMapping } = require('../mappings')
 
 /** @lends create */
 function create (config = env.database, options = {}) {
@@ -24,6 +24,6 @@ function create (config = env.database, options = {}) {
   }).unref()
 }
 
-create.forTask = () => create(env.database, {enableHooks: false})
+create.forTask = () => create(env.database, { enableHooks: false })
 
 module.exports = create

@@ -53,7 +53,7 @@ class AdminUserDestroyDialog extends React.Component {
     return (
       <TheDestroyDialog entities={users}
                         lead={l('leads.ADMIN_USER_DESTROY_CONFIRM')}
-                        renderItem={({displayName}) => displayName}
+                        renderItem={({ displayName }) => displayName}
                         title={l('titles.ADMIN_USER_DESTROY_CONFIRM_TITLE')}
                         {...{
                           active,

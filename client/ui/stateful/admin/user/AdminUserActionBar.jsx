@@ -61,7 +61,7 @@ class AdminUserActionBar extends React.Component {
         passwordReset: l('buttons.SHOW_RESET_PASSWORD'),
         roleChange: l('buttons.SHOW_ROLE_CHANGE'),
       }}
-                    danger={{destroy: true}}
+                    danger={{ destroy: true }}
                     handlers={{
                       destroy: onDestroy,
                       passwordReset: onPasswordReset,

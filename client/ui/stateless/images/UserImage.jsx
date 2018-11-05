@@ -16,7 +16,7 @@ function UserImage ({
                     }) {
   return (
     <TheUserImage className={c(styles.self, className)}
-                  {...{size, user}}
+                  {...{ size, user }}
     />
   )
 }

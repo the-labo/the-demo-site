@@ -7,7 +7,7 @@
 const aport = require('aport')
 const arequest = require('arequest')
 const asleep = require('asleep')
-const {equal, ok} = require('assert')
+const { equal, ok } = require('assert')
 const fs = require('fs')
 const createDB = require('../db/create')
 const createServer = require('../server/create')
@@ -20,7 +20,7 @@ describe('server', () => {
     port = await aport()
     db = createDB({
       dialect: 'memory',
-    }, {enableHooks: false})
+    }, { enableHooks: false })
     server = createServer({
       db,
     })
@@ -35,7 +35,7 @@ describe('server', () => {
   })
 
   it('Get index page', async () => {
-    const {body, statusCode} = await arequest({
+    const { body, statusCode } = await arequest({
       method: 'GET',
       url: `http://localhost:${port}`,
     })

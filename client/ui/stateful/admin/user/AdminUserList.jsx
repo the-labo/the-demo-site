@@ -50,7 +50,7 @@ class AdminUserList extends React.Component {
 
     return (
       <div className={c(className)}>
-        <TheOperationList {...{busy, l, onSort, onUpdateCheck, sort}}
+        <TheOperationList {...{ busy, l, onSort, onUpdateCheck, sort }}
                           entities={users}
                           fields={{
                             'name': {
@@ -81,8 +81,8 @@ class AdminUserList extends React.Component {
                               sortable: true,
                             },
                           }}
-                          isChecked={({id}) => checks[id]}
-                          isFreezed={({id}) => id === 'superadmin'}
+                          isChecked={({ id }) => checks[id]}
+                          isFreezed={({ id }) => id === 'superadmin'}
                           keys={['name', 'profile.email', 'profile.name', 'profile.image', 'role.code', 'sign.signInAt']}
 
         />

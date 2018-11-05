@@ -4,9 +4,9 @@
  */
 'use strict'
 
-const {compose} = require('the-controller-mixins')
-const {Lifetimes, Urls} = require('@self/conf')
-const {withAlias} = require('./concerns')
+const { compose } = require('the-controller-mixins')
+const { Lifetimes, Urls } = require('@self/conf')
+const { withAlias } = require('./concerns')
 const Ctrl = require('./Ctrl')
 
 const VerifyCtrlBase = compose(
@@ -15,16 +15,15 @@ const VerifyCtrlBase = compose(
 
 /** @lends VerifyCtrl */
 class VerifyCtrl extends VerifyCtrlBase {
-
   async needsVerify () {
     const {
-      services: {verifyService},
+      services: { verifyService },
       user,
     } = this
     if (!user) {
       return false
     }
-    return verifyService.pickNeeded({userId: user.id})
+    return verifyService.pickNeeded({ userId: user.id })
   }
 
   async send () {
@@ -33,27 +32,27 @@ class VerifyCtrl extends VerifyCtrlBase {
     const {
       lang,
       mail,
-      services: {verifyService},
+      services: { verifyService },
       user,
     } = this
-    const {envelop, expireAt} = await verifyService.processPrepare({
+    const { envelop, expireAt } = await verifyService.processPrepare({
       expireIn: Lifetimes.VERIFY_EMAIL_LIFETIME,
       userId: user.id,
     })
 
     const seal = await this._sealFor(envelop)
-    const url = await this._aliasUrlFor(Urls.ACCOUNT_VERIFY_URL, {envelop, expireAt, seal})
+    const url = await this._aliasUrlFor(Urls.ACCOUNT_VERIFY_URL, { envelop, expireAt, seal })
     this._debug(`Create verify url: ${url}`)
-    await mail.sendVerify({expireAt, lang, url, user})
+    await mail.sendVerify({ expireAt, lang, url, user })
   }
 
-  async verify ({envelop, seal: sealString} = {}) {
+  async verify ({ envelop, seal: sealString } = {}) {
     const {
-      services: {verifyService},
+      services: { verifyService },
     } = this
     await this._assertSeal(sealString, envelop)
-    const {sign, user} = await verifyService.processVerify({envelop})
-    await this._setAuthorized({sign, user})
+    const { sign, user } = await verifyService.processVerify({ envelop })
+    await this._setAuthorized({ sign, user })
     await this._reloadAuthorized()
   }
 }

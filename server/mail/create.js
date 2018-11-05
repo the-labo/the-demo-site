@@ -6,8 +6,8 @@
 'use strict'
 
 const theMail = require('the-mail')
-const {locales} = require('@self/conf')
-const {emailOfUser, localeDate, nameOfUser} = require('./helpers')
+const { locales } = require('@self/conf')
+const { emailOfUser, localeDate, nameOfUser } = require('./helpers')
 const Templates = require('./Templates')
 const env = require('../env')
 const debug = require('debug')('app:mail')
@@ -15,7 +15,7 @@ const debug = require('debug')('app:mail')
 /** @lends create */
 function create (config = env.mail) {
   const mail = theMail(config)
-  const {SENDER_ADDRESS} = config
+  const { SENDER_ADDRESS } = config
 
   function _render (lang, filename, vars) {
     const template = Templates[`${lang}/${filename}`] || Templates[`en/${filename}`]
@@ -26,7 +26,7 @@ function create (config = env.mail) {
   }
 
   Object.assign(mail, {
-    async sendGoodby ({lang, user}) {
+    async sendGoodby ({ lang, user }) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'goodby.mail', {
@@ -38,7 +38,7 @@ function create (config = env.mail) {
         to: emailOfUser(user),
       })
     },
-    async sendRecover ({expireAt, lang, url, user}) {
+    async sendRecover ({ expireAt, lang, url, user }) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'recover.mail', {
@@ -52,7 +52,7 @@ function create (config = env.mail) {
         to: emailOfUser(user),
       })
     },
-    async sendVerify ({expireAt, lang, url, user}) {
+    async sendVerify ({ expireAt, lang, url, user }) {
       const l = locales.bind(lang)
       return mail.send({
         content: _render(lang, 'verify.mail', {

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {compose, withListen} = require('the-controller-mixins')
+const { compose, withListen } = require('the-controller-mixins')
 const Ctrl = require('./Ctrl')
 
 const ListenCtrlBase = compose(

@@ -16,7 +16,7 @@ import styles from './ErrorForbiddenView.pcss'
 @titled(({l}) => l('titles.ERROR_NOTFOUND_TITLE'))
 class ErrorForbiddenView extends React.Component {
   render () {
-    const {l} = this.props
+    const { l } = this.props
 
     return (
       <TheView className={styles.self}>

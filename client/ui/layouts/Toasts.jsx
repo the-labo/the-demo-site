@@ -30,7 +30,7 @@ class Toasts extends React.Component {
       warn,
     } = this.props
     return (
-      <TheSiteToasts {...{error, info, onReset, warn}}
+      <TheSiteToasts {...{ error, info, onReset, warn }}
                      duration={UI.TOAST_DURATION}
       />
     )

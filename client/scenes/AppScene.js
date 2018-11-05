@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const {bindScope, withBusy, withHistory, withLocation, withQuery} = require('the-scene-mixins/shim')
-const {Urls} = require('@self/conf')
+const { bindScope, withBusy, withHistory, withLocation, withQuery } = require('the-scene-mixins/shim')
+const { Urls } = require('@self/conf')
 const Scene = require('./abstract/Scene')
 
 @withBusy
@@ -17,7 +17,6 @@ class AppSceneBase extends Scene {}
 
 /** @lends AppScene */
 class AppScene extends AppSceneBase {
-
   handleLocationChange (location) {
     setTimeout(() => {
       this.setLocation(location)
@@ -37,7 +36,7 @@ class AppScene extends AppSceneBase {
     return false
   }
 
-  setLocation ({pathname, search}) {
+  setLocation ({ pathname, search }) {
     this.set({
       pathname,
       query: this.queryWithSearch(search),

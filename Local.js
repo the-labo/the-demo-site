@@ -7,10 +7,10 @@
 const theSeat = require('the-seat')
 const theSecret = require('the-secret')
 const theSetting = require('the-setting')
-const {asLocal, envOf, seatAccess} = require('the-site-util')
+const { asLocal, envOf, seatAccess } = require('the-site-util')
 const pkg = require('./package')
 
-const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', {strict: true}))
+const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', { strict: true }))
 const seat = theSeat()
 const {
   containerNameFor,

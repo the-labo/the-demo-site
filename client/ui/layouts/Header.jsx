@@ -53,7 +53,7 @@ class Header extends React.Component {
     } = this.props
 
     const notices = user && needsVerify && {
-      [l('messages.NEEDS_EMAIL_VERIFIED')]: {[l('buttons.DO_SEND_VERIFY')]: onVerify},
+      [l('messages.NEEDS_EMAIL_VERIFIED')]: { [l('buttons.DO_SEND_VERIFY')]: onVerify },
     } || {}
     return (
       <TheHeader className={styles.self}
@@ -70,7 +70,7 @@ class Header extends React.Component {
         <TheCondition if={Boolean(ready)}>
           <TheHeader.RightArea>
             <TheCondition if={Boolean(user)}>
-              <TheDropdownMenu label={<UserCard {...{user}} />}
+              <TheDropdownMenu label={<UserCard {...{ user }} />}
                                righted
 
               >

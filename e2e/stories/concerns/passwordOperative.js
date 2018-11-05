@@ -6,20 +6,19 @@
  */
 'use strict'
 
-const {Urls} = require('../../../conf')
+const { Urls } = require('../../../conf')
 
 /** @lends passwordOperative */
 function passwordOperative (Class) {
   /** @lends PasswordOperative */
   class PasswordOperative extends Class {
-
     async operatePasswordChange (password) {
       await this.open(Urls.ACCOUNT_PASSWORD_URL)
-      const {l} = this
+      const { l } = this
 
       {
         const $form = await this.accessByName('PasswordChangeForm')
-        await $form.setValues({password})
+        await $form.setValues({ password })
         await $form.waitAndClickByClass('the-button-primary')
       }
 
@@ -30,13 +29,12 @@ function passwordOperative (Class) {
 
       {
         const $form = await this.accessByName('PasswordChangeForm')
-        await $form.setValues({password})
+        await $form.setValues({ password })
         await $form.waitAndClickByClass('the-button-primary')
       }
 
       return await this.status({})
     }
-
   }
 
   return PasswordOperative

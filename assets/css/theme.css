@@ -1175,6 +1175,86 @@
 }
 
 
+.the-hamburger .the-hamburger-close {
+    color:white;
+    font-size:smaller;
+    margin:0;
+    padding:8px 16px;
+    position:absolute;
+    right:0px;
+    top:0px;
+    z-index:4;
+}
+
+
+.the-hamburger .the-hamburger-cover {
+    background:rgba(0, 0, 0, 0.3);
+    bottom:0px;
+    box-sizing:border-box;
+    left:100%;
+    margin:0px;
+    overflow:hidden;
+    padding:0px;
+    position:absolute;
+    top:0px;
+    width:200vw;
+    z-index:4;
+}
+
+
+.the-hamburger .the-hamburger-inner {
+    display:block;
+    margin:0px;
+    padding:8px;
+    z-index:5;
+}
+
+
+.the-hamburger .the-hamburger-item {
+    box-sizing:border-box;
+    display:block;
+    margin:0px;
+    padding:0px;
+}
+
+
+.the-hamburger .the-hamburger-item .the-button {
+    background:transparent;
+    border:none;
+    box-sizing:border-box;
+    color:white;
+    display:block;
+    margin:0px;
+    text-align:left;
+    text-decoration:none;
+    width:100%;
+}
+
+
+.the-hamburger {
+    background:#3A8;
+    bottom:0px;
+    color:white;
+    left:0px;
+    max-width:480px;
+    position:fixed;
+    top:0px;
+    transition:left 300ms;-webkit-transition:left 300ms;-moz-transition:left 300ms;
+    width:80%;
+    z-index:8;
+}
+
+
+.the-hamburger.the-hamburger-hidden {
+    left:-100%;
+}
+
+
+.the-hamburger.the-hamburger-hidden .the-hamburger-cover {
+    width:0px;
+}
+
+
 .the-header .the-button {
     align-items:center;-webkit-box-align:center;
     display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;
@@ -2090,7 +2170,7 @@
     display:-webkit-inline-box;display:-moz-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-flex;display:inline-flex;
     height:24px;
     justify-content:flex-start;-webkit-box-pack:start;
-    min-width:74px;
+    min-width:50px;
     overflow:hidden;
     width:100%;
 }
@@ -2799,6 +2879,11 @@
 }
 
 
+.the-input-upload .the-input-upload-spin.the-spin.the-spinner-cover {
+    z-index:8;
+}
+
+
 .the-input-upload {
     color:#888;
     display:inline-block;
@@ -2911,6 +2996,8 @@
     box-shadow:1px 1px 1px rgba(0,0,0,.05) inset;
     box-sizing:border-box;
     display:block;
+    line-height:20px;
+    max-width:100%;
     min-height:28px;
     outline-color:#3A8;
     padding:4px 8px;
@@ -4470,6 +4557,16 @@
 
 .the-view .the-view-header .the-button-text {
     font-size:smaller;
+}
+
+
+.the-view .the-view-header .the-view-fixed {
+    bottom:0px;
+    left:0px;
+    position:fixed;
+    right:0px;
+    top:0px;
+    z-index:1;
 }
 
 

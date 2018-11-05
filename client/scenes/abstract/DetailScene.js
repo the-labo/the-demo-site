@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {withBusy, withId, withReady} = require('the-scene-mixins/shim')
+const { withBusy, withId, withReady } = require('the-scene-mixins/shim')
 const Scene = require('./Scene')
 
 @withId
@@ -23,7 +23,7 @@ class DetailScene extends DetailSceneBase {
   async doSync () {
     const id = this.get('id')
     const entity = await this.dealWith(id)
-    this.set({entity, missing: !entity})
+    this.set({ entity, missing: !entity })
   }
 
   async requestToSyncFor (id) {
@@ -31,7 +31,7 @@ class DetailScene extends DetailSceneBase {
     if (this.isKnownId(id)) {
       return null
     }
-    this.set({entity: null, id, missing: false})
+    this.set({ entity: null, id, missing: false })
     await this.doSync()
     return this.get('entity')
   }

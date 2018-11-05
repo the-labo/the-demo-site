@@ -7,16 +7,15 @@
 'use strict'
 
 const by = require('the-story-base/lib/by')
-const {Urls} = require('../../../conf')
+const { Urls } = require('../../../conf')
 
 /** @lends accountOperative */
 function accountOperative (Class) {
   /** @lends AccountOperative */
   class AccountOperative extends Class {
-
     async operateAccountMypage () {
       await this.open(Urls.TOP_URL)
-      const {browser, l} = this
+      const { browser, l } = this
 
       const $Header = await this.accessByClass('the-header')
       await $Header.waitAndClickByRole('menu')
@@ -24,7 +23,6 @@ function accountOperative (Class) {
 
       return await this.status({})
     }
-
   }
 
   return AccountOperative

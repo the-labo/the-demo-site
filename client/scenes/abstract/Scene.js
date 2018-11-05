@@ -5,9 +5,9 @@
  */
 'use strict'
 
-const {TheScene} = require('the-scene-base/shim')
-const {withLocation} = require('the-scene-mixins/shim')
-const {resolveUrl} = require('the-site-util')
+const { TheScene } = require('the-scene-base/shim')
+const { withLocation } = require('the-scene-mixins/shim')
+const { resolveUrl } = require('the-site-util')
 
 class SceneBase extends TheScene {}
 
@@ -35,7 +35,7 @@ class Scene extends SceneBase {
   }
 
   catchError (e) {
-    const {l, store} = this
+    const { l, store } = this
     try {
       return super.catchError(e)
     } catch (e) {
@@ -44,9 +44,9 @@ class Scene extends SceneBase {
   }
 
   async goTo (url, params = {}, options = {}) {
-    const {query = {}, reload = false} = options
-    const href = resolveUrl(url, params, {query})
-    const {app} = this.store
+    const { query = {}, reload = false } = options
+    const href = resolveUrl(url, params, { query })
+    const { app } = this.store
     app.busy.true()
     try {
       await super.goTo(href)
@@ -57,7 +57,6 @@ class Scene extends SceneBase {
       app.busy.false()
     }
   }
-
 }
 
 module.exports = Scene

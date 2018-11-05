@@ -30,19 +30,19 @@ function onlySigned (Component) {
     }
 
     makeSureSigned () {
-      const {hasSigned, history, signedReady, store} = this.props
+      const { hasSigned, history, signedReady, store } = this.props
       if (!signedReady) {
         return
       }
       if (!hasSigned) {
-        const {pathname} = get('location')
+        const { pathname } = get('location')
         debug(`Ask sign in for: ${pathname}`)
         history.push(Urls.TOP_URL)
       }
     }
 
     render () {
-      const {props} = this
+      const { props } = this
       if (props.signedReady) {
         return <Component {...props}/>
       } else {

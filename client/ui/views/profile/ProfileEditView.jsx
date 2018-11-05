@@ -74,7 +74,7 @@ class ProfileEditView extends React.Component {
           </TheCondition>
           <TheCondition unless={done}>
             <div>
-              <ProfileEditForm {...{user}} />
+              <ProfileEditForm {...{ user }} />
             </div>
           </TheCondition>
         </TheView.Body>

@@ -7,58 +7,57 @@
 process.chdir(`${__dirname}/../..`)
 
 const path = require('path')
-const {camelcase, pascalcase} = require('stringcase')
+const { camelcase, pascalcase } = require('stringcase')
 const theRefactor = require('the-refactor').create
 
 const refactor = theRefactor()
 void async function () {
-
   await refactor.renameDir('client/store/scopes', 'client/scopes')
 
   await refactor.rewrite('client/store/create.js', {
     'require(\'./scopes\')': 'require(\'../scopes\')',
   })
 
-  await refactor.rename('client/scopes/user*.json', ({dirname}) => ({
+  await refactor.rename('client/scopes/user*.json', ({ dirname }) => ({
     dirname: path.join(dirname, 'admin'),
   }))
 
-  await refactor.rename('client/scopes/admin/user*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/admin/user*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^user/, '')),
     dirname: path.join(dirname, 'user'),
   }))
 
-  await refactor.rename('client/scopes/recover*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/recover*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^recover/, '')),
     dirname: path.join(dirname, 'recover'),
   }))
 
-  await refactor.rename('client/scopes/sign*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/sign*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^sign/, '')),
     dirname: path.join(dirname, 'sign'),
   }))
 
-  await refactor.rename('client/scopes/verify*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/verify*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^verify/, '')),
     dirname: path.join(dirname, 'verify'),
   }))
 
-  await refactor.rename('client/scopes/caution*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/caution*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^caution/, '')),
     dirname: path.join(dirname, 'caution'),
   }))
 
-  await refactor.rename('client/scopes/password*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/password*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^password/, '')),
     dirname: path.join(dirname, 'password'),
   }))
 
-  await refactor.rename('client/scopes/profile*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/profile*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^profile/, '')),
     dirname: path.join(dirname, 'profile'),
   }))
 
-  await refactor.rename('client/scopes/profile*.json', ({basename, dirname}) => ({
+  await refactor.rename('client/scopes/profile*.json', ({ basename, dirname }) => ({
     basename: camelcase(basename.replace(/^profile/, '')),
     dirname: path.join(dirname, 'profile'),
   }))

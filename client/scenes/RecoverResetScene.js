@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withFailure} = require('the-scene-mixins/shim')
+const { bindScope, withFailure } = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
 @withFailure
@@ -13,14 +13,13 @@ class RecoverResetSceneBase extends InputScene {}
 
 /** @lends RecoverResetScene */
 class RecoverResetScene extends RecoverResetSceneBase {
-
   @withFailure.for(({l}) => ({
     ExpiredError: l('errors.RECOVER_EXPIRED_ERROR'),
     default: l('errors.RECOVER_FAILED_ERROR'),
   }))
-  async dealWith ({envelop, password, seal}) {
-    const {recoverCtrl} = this.controllers
-    return await recoverCtrl.reset({envelop, password, seal})
+  async dealWith ({ envelop, password, seal }) {
+    const { recoverCtrl } = this.controllers
+    return await recoverCtrl.reset({ envelop, password, seal })
   }
 }
 

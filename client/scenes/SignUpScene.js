@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBack} = require('the-scene-mixins/shim')
+const { bindScope, withBack } = require('the-scene-mixins/shim')
 const InputScene = require('./abstract/InputScene')
 
 @withBack
@@ -20,19 +20,19 @@ class SignUpScene extends SignUpSceneBase {
         const email = values['profile.email']
         if (email && !values.name) {
           const name = email.split('@')[0].replace(/\./g, '')
-          this.setEntry({name: name})
+          this.setEntry({ name: name })
         }
         break
       }
       default:
         break
     }
-    this.set({step})
+    this.set({ step })
   }
 
-  async dealWith ({name, password, profile}) {
-    const {signCtrl} = this.controllers
-    await signCtrl.signUp(name, password, {profile})
+  async dealWith ({ name, password, profile }) {
+    const { signCtrl } = this.controllers
+    await signCtrl.signUp(name, password, { profile })
   }
 }
 

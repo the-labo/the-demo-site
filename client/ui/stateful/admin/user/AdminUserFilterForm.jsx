@@ -32,7 +32,7 @@ import { TheSearchForm } from 'the-site-components'
 @localized
 class AdminUserFilterForm extends React.Component {
   render () {
-    const {l} = this.props
+    const { l } = this.props
     return (
       <TheSearchForm {...this.props}
                      placeholder={l('placeholders.USER_SEARCH')}

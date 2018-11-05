@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope} = require('the-scene-mixins/shim')
+const { bindScope } = require('the-scene-mixins/shim')
 const FilterScene = require('./abstract/FilterScene')
 
 @bindScope('admin.user.filter')

@@ -7,8 +7,8 @@
 
 const pon = require('pon')
 const {
-  command: {fork, spawn: {git, npm, npx}},
-  fs: {del},
+  command: { fork, spawn: { git, npm, npx } },
+  fs: { del },
   open,
 } = require('pon-task-basic')
 const changelog = require('pon-task-changelog')
@@ -21,14 +21,14 @@ const theE2E = require('the-e2e/pon')
 const theHealth = require('the-health/pon')
 const theLint = require('the-lint/pon')
 const theSupport = require('the-support/pon')
-const {locales} = require('./conf')
-const {E2EConfig} = require('./e2e/constants')
+const { locales } = require('./conf')
+const { E2EConfig } = require('./e2e/constants')
 const StoryMapping = require('./e2e/mappings/StoryMapping')
 const Local = require('./Local')
 const Drawings = require('./misc/icon/Drawings')
 const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
-const {cwd, doc, tasks} = require('./Ponfile')
+const { cwd, doc, tasks } = require('./Ponfile')
 
 const e2e = theE2E(E2EConfig)
 
@@ -42,7 +42,7 @@ module.exports = pon(
     ...{
       $cwd: cwd,
       $dev: true,
-      $doc: {...doc, ...PondocDev},
+      $doc: { ...doc, ...PondocDev },
     },
 
     // -----------------------------------
@@ -56,7 +56,7 @@ module.exports = pon(
     ...{
       /** Generate icons */
       'icon:gen': [
-        ...Object.entries(Drawings).map(([name, {data, path}]) => icon(path, data)),
+        ...Object.entries(Drawings).map(([name, { data, path }]) => icon(path, data)),
       ].filter(Boolean),
     },
 
@@ -111,9 +111,9 @@ module.exports = pon(
         'client/ui/**/*.pcss',
         'client/ui/**/*.jsx',
         'client/scenes/**/*.js',
-      ], {ignore: 'client/**/index.*'}),
+      ], { ignore: 'client/**/index.*' }),
       /** Format conf files */
-      'format:conf': theCode(['Local.js', 'Ponfile.js', 'Ponfile.*.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
+      'format:conf': theCode(['Local.js', 'Ponfile.js', 'Ponfile.*.js', 'conf/*.js'], { ignore: 'conf/index.js' }),
       /** Format e2e files */
       'format:e2e': theCode('e2e/**/*.js', {}),
       /** Format json files */
@@ -123,7 +123,7 @@ module.exports = pon(
         'server/**/*.json',
         'misc/**/*.json',
         'secrets.json',
-      ], {ignore: 'client/shim/**/*.json', sort: true}),
+      ], { ignore: 'client/shim/**/*.json', sort: true }),
       /** Format misc files */
       'format:misc': theCode('misc/**/*.js', {}),
       /** Format server files */
@@ -157,9 +157,9 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Run client tests */
-      'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
+      'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
       /** Run server tests */
-      'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+      'test:server': mocha('server/test/**/*.js', { timeout: 3000 }),
       /** Check compatibility */
       'test:support': theSupport('public/**/*.js'),
     },

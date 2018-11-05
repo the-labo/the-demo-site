@@ -6,13 +6,12 @@
  */
 'use strict'
 
-const {Urls} = require('../../../conf')
+const { Urls } = require('../../../conf')
 
 /** @lends profileOperative */
 function profileOperative (Class) {
   /** @lends ProfileOperative */
   class ProfileOperative extends Class {
-
     async operateProfileChange (profileName, email) {
       await this.open(Urls.ACCOUNT_PROFILE_URL)
       {
@@ -29,7 +28,6 @@ function profileOperative (Class) {
         await $done.waitAndClickByClass('the-done-link')
       }
     }
-
   }
 
   return ProfileOperative

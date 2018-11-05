@@ -43,7 +43,7 @@ class RecoverSendView extends React.Component {
             />
           </TheCondition>
           <TheCondition unless={done}>
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: 'center' }}>
               <TheLead error={failure}
                        text={l('leads.RECOVER_SEND')}
               />

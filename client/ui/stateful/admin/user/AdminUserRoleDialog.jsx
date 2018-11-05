@@ -48,7 +48,7 @@ class AdminUserRoleDialog extends React.Component {
                    spinning,
                  }}
       >
-        <AdminUserRoleForm {...{users}}/>
+        <AdminUserRoleForm {...{ users }}/>
       </TheDialog>
     )
   }

@@ -17,7 +17,7 @@ class AccountSceneBase extends DetailScene {}
 /** @lends AccountScene */
 class AccountScene extends AccountSceneBase {
   async dealWith (id) {
-    const {accountCtrl} = this.controllers
+    const { accountCtrl } = this.controllers
     return await accountCtrl.getCurrentUser()
   }
 }

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {compose, withPreference} = require('the-controller-mixins')
+const { compose, withPreference } = require('the-controller-mixins')
 const Ctrl = require('./Ctrl')
 
 const AppCtrlBase = compose(
@@ -20,7 +20,6 @@ class AppCtrl extends AppCtrlBase {
   async set (name, value) {
     await this._setSessionPreference(name, value)
   }
-
 }
 
 module.exports = AppCtrl
